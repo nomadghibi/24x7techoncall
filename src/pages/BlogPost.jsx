@@ -1,7 +1,7 @@
 
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { Paper, Typography } from '@mui/material';
 import Slider from 'react-slick';
 import GoBackButtonWithArrow from '../components/GoBackButtonWithArrow'; 

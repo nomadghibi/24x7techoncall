@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaCloud, FaChalkboardTeacher, FaShieldAlt } from 'react-icons/fa';
-import { Helmet } from 'react-helmet'; // Import Helmet
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 import HeroSection from '../../components/HeroSection';
 import heroImage from '../../assets/businesscomputertraining.webp';
 import emailjs from 'emailjs-com';

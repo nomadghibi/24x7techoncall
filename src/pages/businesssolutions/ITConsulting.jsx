@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet'; // Import Helmet
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 import { FaNetworkWired, FaLock, FaCloud, FaSync, FaBalanceScale, FaDesktop, FaDatabase, FaChalkboardTeacher, FaShieldAlt } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection'; // Adjust the path according to your file structure
 import heroImage from '../../assets/ITsolution.webp'; // Adjust the path according to your file structure

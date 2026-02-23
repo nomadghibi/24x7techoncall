@@ -3,7 +3,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Helmet } from 'react-helmet';  // Import Helmet for SEO
+import { Helmet } from 'react-helmet-async';  // Import Helmet for SEO
 import { Paper, Typography } from '@mui/material';
 import heroImage from '../assets/5-tips-blog-image.webp';
 import protectHeroImage from '../assets/ProtectYourComputerFromMalware.webp';

@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet'; // Import Helmet for SEO
+import { Helmet } from 'react-helmet-async'; // Import Helmet for SEO
 import { FaHdd, FaCompactDisc, FaServer, FaFileAlt, FaExclamationTriangle, FaBug, FaRedo, FaDatabase, FaTools } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection'; // Adjust the path according to your file structure
 import heroImage from '../../assets/DataRecovery2.webp'; // Adjust the path according to your file structure

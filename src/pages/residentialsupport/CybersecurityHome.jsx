@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet'; // Import Helmet
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 import { FaShieldAlt, FaLock, FaWifi, FaCloud, FaSync, FaUserShield, FaDatabase, FaKey, FaTools, FaChalkboardTeacher } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';

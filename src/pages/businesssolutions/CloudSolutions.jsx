@@ -1,7 +1,7 @@
 
 
 import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet'; // Import Helmet
+import { Helmet } from 'react-helmet-async'; // Import Helmet
 import { FaCloud, FaShieldAlt, FaSync, FaPlug, FaServer, FaTools } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
 import heroImage from '../../assets/cloudsolutions.webp';

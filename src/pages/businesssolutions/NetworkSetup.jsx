@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { FaNetworkWired, FaWifi, FaServer, FaShieldAlt, FaSync, FaPlug, FaDesktop, FaTools, FaProjectDiagram, FaHeadset } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
 import emailjs from 'emailjs-com';
+import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 import heroImage from '../../assets/NetworkSetupSupport.webp';
 
 const NetworkSetup = () => {
@@ -133,7 +134,7 @@ const NetworkSetup = () => {
     e.preventDefault();
 
     emailjs
-      .send('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
+      .send(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);

@@ -30,7 +30,7 @@
 //     e.preventDefault();
 
 //     // Use EmailJS to send the form data to your Gmail
-//     emailjs.sendForm('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
+//     emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey)
 //       .then((result) => {
 //         console.log('Email successfully sent:', result.text);
 //         alert('Your message has been sent successfully!');
@@ -323,6 +323,7 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { FaPhone, FaEnvelope, FaUser, FaCheckCircle } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
+import { emailPublicKey, emailServiceId, emailTemplateId } from '../utils/emailjsConfig';
 import heroImage from '../assets/aboutusitsupport.webp'; // Replace with your hero image path
 import usFlag from '../assets/us-flag.webp'; // Use the generated US flag image path
 import 'slick-carousel/slick/slick.css';
@@ -349,7 +350,7 @@ const AboutUs = () => {
     e.preventDefault();
 
     // Use EmailJS to send the form data to your Gmail
-    emailjs.sendForm('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
+    emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((result) => {
         console.log('Email successfully sent:', result.text);
         alert('Your message has been sent successfully!');

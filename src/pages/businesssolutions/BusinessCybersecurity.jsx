@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet'; // Import Helmet for SEO
 import { FaShieldAlt, FaLock, FaCloud, FaNetworkWired, FaSync, FaBalanceScale, FaDatabase, FaChalkboardTeacher, FaCogs } from 'react-icons/fa';
-import emailjs from 'emailjs-com'; // Import EmailJS
+import emailjs from 'emailjs-com';
+import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 import HeroSection from '../../components/HeroSection';
 import heroImage from '../../assets/businesscybersecurity.webp'; // Adjust the path according to your file structure
 
@@ -133,7 +134,7 @@ const BusinessCybersecurity = () => {
     e.preventDefault();
 
     // Use EmailJS to send the form data to your Gmail
-    emailjs.sendForm('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
+    emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((result) => {
         console.log('Email successfully sent:', result.text);
         alert('Your cybersecurity request has been submitted successfully!');

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { FaLaptopCode, FaServer, FaDatabase, FaShieldAlt, FaCloud, FaHeadset, FaCogs } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
 import emailjs from 'emailjs-com';
+import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 import heroImage from '../../assets/websitedevelopment.webp'; // Adjust the path according to your file structure
 
 const WebsiteDevelopment = () => {
@@ -98,7 +99,7 @@ const WebsiteDevelopment = () => {
     e.preventDefault();
 
     emailjs
-      .send('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
+      .send(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);

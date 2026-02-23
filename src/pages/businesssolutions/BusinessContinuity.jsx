@@ -6,6 +6,7 @@ import { FaLock, FaCloud, FaSync, FaBalanceScale, FaDesktop, FaDatabase, FaShiel
 import HeroSection from '../../components/HeroSection';
 import heroImage from '../../assets/businesscontiunity.webp'; // Adjust the path according to your file structure
 import emailjs from 'emailjs-com';
+import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 
 const BusinessContinuity = () => {
   const [formData, setFormData] = useState({
@@ -134,7 +135,7 @@ const BusinessContinuity = () => {
     e.preventDefault();
 
     // Send email using EmailJS
-    emailjs.send('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
+    emailjs.send(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Your message has been sent successfully!');

@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet'; // Import Helmet for SEO
 import { FaNetworkWired, FaTools, FaWifi, FaShieldAlt, FaWrench, FaTachometerAlt, FaKey, FaEye } from 'react-icons/fa';
-import emailjs from 'emailjs-com'; // Import EmailJS
+import emailjs from 'emailjs-com';
+import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 import HeroSection from '../../components/HeroSection'; // Adjust the path according to your file structure
 import heroImage from '../../assets/NetworkSetupSupport.webp'; // Adjust the path according to your file structure
 
@@ -119,7 +120,7 @@ const NetworkSetupSupport = () => {
     e.preventDefault();
 
     // Use EmailJS to send the form data to your Gmail
-    emailjs.sendForm('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
+    emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((result) => {
         console.log('Email successfully sent:', result.text);
         alert('Your network setup request has been submitted successfully!');

@@ -5,6 +5,7 @@ import { FaNetworkWired, FaServer, FaDatabase, FaShieldAlt, FaCloud, FaHeadset, 
 import HeroSection from '../../components/HeroSection';
 import heroImage from '../../assets/managedit.webp'; // Adjust the path according to your file structure
 import emailjs from 'emailjs-com';
+import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 
 const ManagedITServices = () => {
   const [formData, setFormData] = useState({
@@ -133,7 +134,7 @@ const ManagedITServices = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.send('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
+    emailjs.send(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((result) => {
         console.log(result.text);
         setIsSubmitted(true);

@@ -6,6 +6,7 @@ import HeroSection from '../../components/HeroSection'; // Adjust the path accor
 import heroImage from '../../assets/SoftwareTroubleshooting.webp'; // Adjust the path according to your file structure
 
 const SoftwareTroubleshooting = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -141,6 +142,15 @@ const SoftwareTroubleshooting = () => {
         <meta name="keywords" content="software troubleshooting, OS errors, application crashes, software installation, driver issues, system performance" />
         <link rel="canonical" href="https://bestcomputertec.com/residential-support/software-troubleshooting" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Software Troubleshooting | Best Computer Tech" />
+        <meta property="og:description" content="Expert software troubleshooting services including OS errors, application crashes, software installation, and more." />
+        <meta property="og:url" content="https://bestcomputertec.com/residential-support/software-troubleshooting" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Software Troubleshooting | Best Computer Tech" />
+        <meta name="twitter:description" content="Expert software troubleshooting services including OS errors, application crashes, software installation, and more." />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
       <HeroSection title="Software Troubleshooting" image={heroImage} />
       <div className="container p-8 mx-auto">

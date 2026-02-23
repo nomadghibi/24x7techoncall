@@ -9,6 +9,7 @@ import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 
 const BusinessContinuity = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -153,6 +154,15 @@ const BusinessContinuity = () => {
         <meta name="keywords" content="business continuity, disaster recovery, data backup, IT infrastructure management, risk assessment, emergency response planning, business impact analysis, security solutions, compliance management" />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/business-continuity" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Business Continuity Services - Best Computer Tech" />
+        <meta property="og:description" content="Ensure your business remains operational during disruptions with our comprehensive Business Continuity services. We provide disaster recovery, data backup, IT infrastructure management, and more." />
+        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/business-continuity" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Business Continuity Services - Best Computer Tech" />
+        <meta name="twitter:description" content="Ensure your business remains operational during disruptions with our comprehensive Business Continuity services. We provide disaster recovery, data backup, IT infrastructure management, and more." />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
       <HeroSection title="Business Continuity" image={heroImage} />

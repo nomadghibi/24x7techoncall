@@ -7,6 +7,7 @@ import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 
 const ITConsulting = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -153,6 +154,21 @@ const ITConsulting = () => {
         />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/it-consulting" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="IT Consulting Services - Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Strategic IT consulting services for businesses in Palm Bay and Melbourne, FL to improve operations, security, and growth."
+        />
+        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/it-consulting" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="IT Consulting Services - Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Strategic IT consulting services for businesses in Palm Bay and Melbourne, FL to improve operations, security, and growth."
+        />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
       <HeroSection title="IT Consulting" image={heroImage} />
       <div className="container p-8 mx-auto">

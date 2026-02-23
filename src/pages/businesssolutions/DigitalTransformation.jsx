@@ -8,6 +8,7 @@ import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 
 const DigitalTransformation = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -154,6 +155,21 @@ const DigitalTransformation = () => {
         />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/digital-transformation" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Digital Transformation Services - Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Modernize your business with digital transformation services including workflow automation, system integration, and strategic technology planning."
+        />
+        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/digital-transformation" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Digital Transformation Services - Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Modernize your business with digital transformation services including workflow automation, system integration, and strategic technology planning."
+        />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
       <HeroSection title="Digital Transformation" image={heroImage} />
       <div className="container p-8 mx-auto">

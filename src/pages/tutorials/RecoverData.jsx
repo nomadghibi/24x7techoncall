@@ -87,6 +87,7 @@ function RecoverData() {
           name="twitter:description"
           content="Recover deleted files with safer methods and avoid data overwrite."
         />
+        <meta name="twitter:image" content={heroImage} />
       </Helmet>
       <HeroSection title="How to Recover Lost Data" image={heroImage} />
       <div className="container p-8 mx-auto">

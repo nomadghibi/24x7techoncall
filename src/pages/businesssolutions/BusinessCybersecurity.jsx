@@ -8,6 +8,7 @@ import HeroSection from '../../components/HeroSection';
 import heroImage from '../../assets/businesscybersecurity.webp'; // Adjust the path according to your file structure
 
 const BusinessCybersecurity = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -162,6 +163,15 @@ const BusinessCybersecurity = () => {
         <meta name="keywords" content="cybersecurity, business security, advanced threat protection, endpoint security, network security, data encryption, SIEM, incident response, penetration testing" />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/cybersecurity" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Business Cybersecurity Services - Best Computer Tech" />
+        <meta property="og:description" content="Protect your business with advanced cybersecurity solutions from Best Computer Tech. We offer threat protection, endpoint security, data encryption, and more." />
+        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/cybersecurity" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Business Cybersecurity Services - Best Computer Tech" />
+        <meta name="twitter:description" content="Protect your business with advanced cybersecurity solutions from Best Computer Tech. We offer threat protection, endpoint security, data encryption, and more." />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
       <HeroSection title="Business Cybersecurity" image={heroImage} />

@@ -38,6 +38,7 @@ function KnowYourComputerHasVirus() {
           name="twitter:description"
           content="Identify virus symptoms and take immediate protective steps."
         />
+        <meta name="twitter:image" content={heroImage} />
       </Helmet>
       <HeroSection title="How to Know Your Computer Has a Virus" image={heroImage} />
       <div className="container p-8 mx-auto">
@@ -82,4 +83,3 @@ function KnowYourComputerHasVirus() {
 }
 
 export default KnowYourComputerHasVirus;
-

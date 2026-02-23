@@ -38,6 +38,7 @@ function SetUpEmail() {
           name="twitter:description"
           content="Set up email clients with the right IMAP/POP/SMTP settings in minutes."
         />
+        <meta name="twitter:image" content={heroImage} />
       </Helmet>
       <HeroSection title="How to Set Up Email on Your Computer" image={heroImage} />
       <div className="container p-8 mx-auto">
@@ -103,4 +104,3 @@ function SetUpEmail() {
 }
 
 export default SetUpEmail;
-

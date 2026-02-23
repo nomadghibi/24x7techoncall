@@ -280,6 +280,7 @@ function BusinessServices() {
           name="twitter:description"
           content="Business-focused IT services in Palm Bay and Melbourne, Florida."
         />
+        <meta name="twitter:image" content={businessImage} />
 
         {/* Preload LCP image */}
         <link rel="preload" as="image" href={businessImage} />

@@ -127,6 +127,7 @@ const BusinessComputerTraining = () => {
 
   // Canonical route for this page
   const canonicalUrl = 'https://bestcomputertec.com/business-solutions/computer-training';
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
 
   return (
     <div>
@@ -134,8 +135,17 @@ const BusinessComputerTraining = () => {
       <Helmet>
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <title>Business Computer Training | Your Company Name</title>
+        <title>Business Computer Training | Best Computer Tech</title>
         <meta name="description" content="Comprehensive computer training programs, including Microsoft 365 training, designed to boost your team's technical skills and productivity." />
+        <meta property="og:title" content="Business Computer Training | Best Computer Tech" />
+        <meta property="og:description" content="Comprehensive computer training programs, including Microsoft 365 training, designed to boost your team's technical skills and productivity." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Business Computer Training | Best Computer Tech" />
+        <meta name="twitter:description" content="Comprehensive computer training programs, including Microsoft 365 training, designed to boost your team's technical skills and productivity." />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
       <HeroSection title="Business Computer Training" image={heroImage} />

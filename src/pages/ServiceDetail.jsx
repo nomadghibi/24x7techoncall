@@ -2,6 +2,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import socialImage from '../assets/heroimage100.webp';
 
 const services = {
   'hardware-repairs': {
@@ -76,6 +77,7 @@ function ServiceDetail() {
     navigate('/checkout', { state: { service } });
   };
   const canonicalUrl = `https://bestcomputertec.com/services/${serviceId}`;
+  const pageImage = socialImage?.startsWith('http') ? socialImage : `https://bestcomputertec.com${socialImage || ''}`;
 
   return (
     <div className="container p-8 mx-auto">
@@ -89,9 +91,11 @@ function ServiceDetail() {
         <meta property="og:description" content={service.description} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content={`${service.title} | Best Computer Tech`} />
         <meta name="twitter:description" content={service.description} />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
       <h1 className="mb-4 text-4xl font-bold">{service.title}</h1>
       <p className="mb-4">{service.description}</p>

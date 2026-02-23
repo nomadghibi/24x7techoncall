@@ -9,6 +9,7 @@ import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 
 const ITSupport = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -154,6 +155,21 @@ const ITSupport = () => {
         />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/it-support" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Business IT Support - Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Reliable business IT support services for troubleshooting, maintenance, and system uptime in Palm Bay and Melbourne, FL."
+        />
+        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/it-support" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Business IT Support - Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Reliable business IT support services for troubleshooting, maintenance, and system uptime in Palm Bay and Melbourne, FL."
+        />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
       <HeroSection title="Business IT Support" image={heroImage} />
       <div className="container p-8 mx-auto">

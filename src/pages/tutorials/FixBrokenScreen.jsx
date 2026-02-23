@@ -38,6 +38,7 @@ function FixBrokenScreen() {
           name="twitter:description"
           content="Follow this practical guide to replace a broken laptop screen."
         />
+        <meta name="twitter:image" content={heroImage} />
       </Helmet>
       <HeroSection title="How to Fix a Broken Screen" image={heroImage} />
       <div className="container p-8 mx-auto">
@@ -114,5 +115,4 @@ function FixBrokenScreen() {
 }
 
 export default FixBrokenScreen;
-
 

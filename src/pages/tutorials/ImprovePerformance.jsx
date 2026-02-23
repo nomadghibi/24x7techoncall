@@ -38,6 +38,7 @@ function ImprovePerformance() {
           name="twitter:description"
           content="Use these steps to improve startup, speed, and overall system performance."
         />
+        <meta name="twitter:image" content={heroImage} />
       </Helmet>
       <HeroSection title="How to Improve Computer Performance" image={heroImage} />
       <div className="container p-8 mx-auto">

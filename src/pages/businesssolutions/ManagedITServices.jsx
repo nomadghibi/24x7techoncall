@@ -8,6 +8,7 @@ import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 
 const ManagedITServices = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -161,6 +162,15 @@ const ManagedITServices = () => {
         <meta name="keywords" content="Managed IT services, IT support, network management, server management, data backup, cybersecurity, cloud services" />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/managed-it-services" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Managed IT Services - Best Computer Tech" />
+        <meta property="og:description" content="Ensure your business runs smoothly with managed IT services from Best Computer Tech. From network management to cybersecurity, we cover all your IT needs." />
+        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/managed-it-services" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Managed IT Services - Best Computer Tech" />
+        <meta name="twitter:description" content="Ensure your business runs smoothly with managed IT services from Best Computer Tech. From network management to cybersecurity, we cover all your IT needs." />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
       <HeroSection title="Managed IT Services" image={heroImage} />

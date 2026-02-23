@@ -2,6 +2,7 @@ import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
+import socialImage from '../assets/heroimage100.webp';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,7 @@ function Contact() {
     message: '',
   });
   const canonicalUrl = 'https://bestcomputertec.com/contact';
+  const pageImage = socialImage?.startsWith('http') ? socialImage : `https://bestcomputertec.com${socialImage || ''}`;
   const contactSchema = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
@@ -93,12 +95,14 @@ function Contact() {
         />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Contact Best Computer Tech | Palm Bay, FL" />
         <meta
           name="twitter:description"
           content="Call or email Best Computer Tech for local IT and computer repair services in Palm Bay, FL."
         />
+        <meta name="twitter:image" content={pageImage} />
         <script type="application/ld+json">{JSON.stringify(contactSchema)}</script>
       </Helmet>
       <h1 className="mb-8 text-4xl font-bold text-center">Contact Best Computer Tech</h1>

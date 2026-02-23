@@ -30,6 +30,7 @@ function BeSafeOnline() {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How to Be Safe Online | Best Computer Tech" />
         <meta name="twitter:description" content="Follow these steps to stay safer online and reduce cybersecurity risks." />
+        <meta name="twitter:image" content={heroImage} />
       </Helmet>
 
       <HeroSection title="How to Be Safe Online" image={heroImage} />

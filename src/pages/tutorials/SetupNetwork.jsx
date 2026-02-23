@@ -38,6 +38,7 @@ function SetupNetwork() {
           name="twitter:description"
           content="Build a secure and efficient network with this practical setup guide."
         />
+        <meta name="twitter:image" content={heroImage} />
       </Helmet>
       <HeroSection title="How to Set Up a Network" image={heroImage} />
       <div className="container p-8 mx-auto">
@@ -126,4 +127,3 @@ function SetupNetwork() {
 }
 
 export default SetupNetwork;
-

@@ -8,6 +8,7 @@ import heroImage from '../../assets/cloudsolutions.webp';
 import emailjs from 'emailjs-com';
 
 const CloudSolutions = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
@@ -129,6 +130,21 @@ const CloudSolutions = () => {
         />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/cloud-solutions" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Cloud Solutions - Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Cloud solutions for SMBs including migration, cloud security, backup, and optimization in Palm Bay and Melbourne, FL."
+        />
+        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/cloud-solutions" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cloud Solutions - Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Cloud solutions for SMBs including migration, cloud security, backup, and optimization in Palm Bay and Melbourne, FL."
+        />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
       <HeroSection title="Cloud Solutions" image={heroImage} />
       <div className="container p-8 mx-auto">

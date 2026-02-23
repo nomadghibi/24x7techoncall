@@ -3,9 +3,11 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate for naviga
 import { Helmet } from 'react-helmet-async';
 import emailjs from 'emailjs-com'; // Import EmailJS
 import { FaUser, FaEnvelope, FaPhone, FaClipboardList } from 'react-icons/fa';
+import socialImage from '../assets/heroimage100.webp';
 
 const BookService = () => {
   const canonicalUrl = 'https://bestcomputertec.com/book-service';
+  const pageImage = socialImage?.startsWith('http') ? socialImage : `https://bestcomputertec.com${socialImage || ''}`;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -75,12 +77,14 @@ const BookService = () => {
         />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary" />
         <meta name="twitter:title" content="Book a Service | Best Computer Tech" />
         <meta
           name="twitter:description"
           content="Book a computer or IT support service appointment online."
         />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
       <h1 className="mb-8 text-4xl font-bold text-center">Book a Service</h1>
       <div className="max-w-3xl p-8 mx-auto bg-white rounded-lg shadow-lg">

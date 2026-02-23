@@ -9,6 +9,7 @@ import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 
 const BusinessDataRecovery = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -142,6 +143,15 @@ const BusinessDataRecovery = () => {
         <meta name="keywords" content="data recovery, business data recovery, hard drive recovery, RAID recovery, SSD recovery, database recovery, cloud data recovery" />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/data-recovery" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Business Data Recovery Services - Best Computer Tech" />
+        <meta property="og:description" content="Recover your business data with expert data recovery services from Best Computer Tech. We offer hard drive recovery, RAID recovery, cloud data recovery, and more." />
+        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/data-recovery" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Business Data Recovery Services - Best Computer Tech" />
+        <meta name="twitter:description" content="Recover your business data with expert data recovery services from Best Computer Tech. We offer hard drive recovery, RAID recovery, cloud data recovery, and more." />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
       <HeroSection title="Business Data Recovery" image={heroImage} />

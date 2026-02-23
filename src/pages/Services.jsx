@@ -107,6 +107,7 @@ function Services() {
           name="twitter:description"
           content="Browse local computer repair and IT support services from Best Computer Tech in Palm Bay and Melbourne, Florida."
         />
+        <meta name="twitter:image" content={heroImage} />
         <script type="application/ld+json">{JSON.stringify(servicesPageSchema)}</script>
       </Helmet>
       <HeroSection title="Our Services" image={heroImage} />

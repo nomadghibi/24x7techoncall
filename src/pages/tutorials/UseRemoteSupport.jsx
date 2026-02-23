@@ -38,6 +38,7 @@ function UseRemoteSupport() {
           name="twitter:description"
           content="Set up and use remote support securely with this practical guide."
         />
+        <meta name="twitter:image" content={heroImage} />
       </Helmet>
       <HeroSection title="How to Use Remote Support" image={heroImage} />
       <div className="container p-8 mx-auto">
@@ -97,4 +98,3 @@ function UseRemoteSupport() {
 }
 
 export default UseRemoteSupport;
-

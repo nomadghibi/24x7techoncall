@@ -9,6 +9,7 @@ import HeroSection from '../../components/HeroSection'; // Adjust the path accor
 import heroImage from '../../assets/cybersecurity.webp'; // Adjust the path according to your file structure
 
 const CybersecurityHome = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -151,6 +152,21 @@ const CybersecurityHome = () => {
         />
         <link rel="canonical" href="https://bestcomputertec.com/residential-support/cybersecurity-home" />
         <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Cybersecurity Services - Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Protect your home devices and personal data with cybersecurity services from Best Computer Tech in Palm Bay and Melbourne, FL."
+        />
+        <meta property="og:url" content="https://bestcomputertec.com/residential-support/cybersecurity-home" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cybersecurity Services - Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Protect your home devices and personal data with cybersecurity services from Best Computer Tech in Palm Bay and Melbourne, FL."
+        />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
       <HeroSection title="Cybersecurity for Home Users" image={heroImage} />
       <div className="container p-8 mx-auto">

@@ -777,6 +777,7 @@ function Home() {
           content="Local computer repair and IT support services for Palm Bay, Melbourne, and nearby Brevard County areas."
         />
         <meta property="og:url" content="https://bestcomputertec.com/" />
+        <meta property="og:image" content={heroImage1} />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Best Computer Tech | Palm Bay & Melbourne, FL" />
@@ -784,6 +785,7 @@ function Home() {
           name="twitter:description"
           content="Computer repair, IT support, network setup, and data recovery in Palm Bay and Melbourne, Florida."
         />
+        <meta name="twitter:image" content={heroImage1} />
         <meta name="geo.region" content="US-FL" />
         <meta name="geo.placename" content="Palm Bay, Melbourne, Florida" />
         <meta name="geo.position" content="28.0836;-80.6081" />

@@ -37,6 +37,42 @@ const businessSolutions = [
 
 function Services() {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/services';
+  const servicesPageSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Computer Repair and IT Support Services',
+    serviceType: [
+      'Computer Repair',
+      'Laptop Repair',
+      'Virus and Malware Removal',
+      'Network Setup and Support',
+      'Data Recovery',
+      'Managed IT Services',
+    ],
+    areaServed: [
+      { '@type': 'City', name: 'Palm Bay' },
+      { '@type': 'City', name: 'Melbourne' },
+      { '@type': 'City', name: 'West Melbourne' },
+      { '@type': 'AdministrativeArea', name: 'Brevard County' },
+    ],
+    provider: {
+      '@type': 'LocalBusiness',
+      '@id': 'https://bestcomputertec.com/#localbusiness',
+      name: 'Best Computer Tech LLC',
+      url: 'https://bestcomputertec.com/',
+      telephone: '+1-321-953-5199',
+      email: '365techoncall@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '602 Hurst Rd NE',
+        addressLocality: 'Palm Bay',
+        addressRegion: 'FL',
+        postalCode: '32907',
+        addressCountry: 'US',
+      },
+    },
+  };
 
   const handleServiceClick = (path) => {
     navigate(path);
@@ -45,9 +81,33 @@ function Services() {
   return (
     <div>
         <Helmet>
-        <title>Computer Repair Palm Bay Melbourne FL | Laptop Repair & Tech Support Services</title>
-        <meta name="description" content="Best Computer Repair and IT Support Services in Palm Bay/Melbourne, FL. We specialize in Laptop Repair, PC Repair, Network Setup, and Data Recovery. Call us for quick, reliable service." />
-        <meta name="keywords" content="Computer Repair Palm Bay/Melbourne FL, Tech Support Services, Laptop Repair, PC Repair, IT Support Plam bay/Melbourne, Virus Removal, Data Recovery, Network Setup" />
+        <title>Computer Repair Services in Palm Bay & Melbourne, FL | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Explore local computer repair and IT support services in Palm Bay, Melbourne, and Brevard County, FL. Best Computer Tech offers laptop repair, virus removal, network setup, and data recovery."
+        />
+        <meta
+          name="keywords"
+          content="computer repair Palm Bay FL, computer repair Melbourne FL, laptop repair Brevard County, local IT support, virus removal, network setup, data recovery"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Computer Repair Services in Palm Bay & Melbourne, FL | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Local computer repair and IT support services for Palm Bay, Melbourne, and nearby Brevard County areas."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={heroImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Computer Tech Services | Palm Bay & Melbourne, FL" />
+        <meta
+          name="twitter:description"
+          content="Browse local computer repair and IT support services from Best Computer Tech in Palm Bay and Melbourne, Florida."
+        />
+        <script type="application/ld+json">{JSON.stringify(servicesPageSchema)}</script>
       </Helmet>
       <HeroSection title="Our Services" image={heroImage} />
 

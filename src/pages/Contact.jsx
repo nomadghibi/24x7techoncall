@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -8,6 +9,32 @@ function Contact() {
     email: '',
     message: '',
   });
+  const canonicalUrl = 'https://bestcomputertec.com/contact';
+  const contactSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ContactPage',
+    name: 'Contact Best Computer Tech',
+    url: canonicalUrl,
+    mainEntity: {
+      '@type': 'LocalBusiness',
+      name: 'Best Computer Tech LLC',
+      telephone: '+1-321-953-5199',
+      email: '365techoncall@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '602 Hurst Rd NE',
+        addressLocality: 'Palm Bay',
+        addressRegion: 'FL',
+        postalCode: '32907',
+        addressCountry: 'US',
+      },
+      areaServed: [
+        { '@type': 'City', name: 'Palm Bay' },
+        { '@type': 'City', name: 'Melbourne' },
+        { '@type': 'AdministrativeArea', name: 'Brevard County' },
+      ],
+    },
+  };
 
   const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
@@ -46,13 +73,47 @@ function Contact() {
 
   return (
     <div className="container p-8 mx-auto">
-      <h1 className="mb-8 text-4xl font-bold text-center">Contact Us</h1>
+      <Helmet>
+        <title>Contact Computer Repair in Palm Bay, FL | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Contact Best Computer Tech for local computer repair and IT support in Palm Bay, Melbourne, and Brevard County, Florida."
+        />
+        <meta
+          name="keywords"
+          content="contact computer repair Palm Bay FL, IT support Melbourne FL, local tech support Brevard County"
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Contact Best Computer Tech | Palm Bay, FL" />
+        <meta
+          property="og:description"
+          content="Reach Best Computer Tech for local computer repair and IT support in Palm Bay and nearby Florida cities."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Contact Best Computer Tech | Palm Bay, FL" />
+        <meta
+          name="twitter:description"
+          content="Call or email Best Computer Tech for local IT and computer repair services in Palm Bay, FL."
+        />
+        <script type="application/ld+json">{JSON.stringify(contactSchema)}</script>
+      </Helmet>
+      <h1 className="mb-8 text-4xl font-bold text-center">Contact Best Computer Tech</h1>
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <div>
           <h2 className="mb-4 text-2xl font-semibold">Our Office</h2>
-          <p className="mb-2">602 Hurst Rd Palm Bay, Florida 32907 USA</p>
-          <p className="mb-2">Phone: (321) 953-5199</p>
-          <p className="mb-8">Email: 365techoncall@gmail.com</p>
+          <p className="mb-2">602 Hurst Rd NE, Palm Bay, Florida 32907, USA</p>
+          <p className="mb-2">
+            Phone:{' '}
+            <a className="text-blue-700 hover:underline" href="tel:+13219535199">(321) 953-5199</a>
+          </p>
+          <p className="mb-8">
+            Email:{' '}
+            <a className="text-blue-700 hover:underline" href="mailto:365techoncall@gmail.com">365techoncall@gmail.com</a>
+          </p>
           <h2 className="mb-4 text-2xl font-semibold">Get In Touch</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-4">

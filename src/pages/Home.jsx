@@ -494,7 +494,7 @@
 
 import React, { useMemo, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import {
   FaTools,
   FaBug,
@@ -565,6 +565,49 @@ BlogPostCard.displayName = 'BlogPostCard';
 
 function Home() {
   const navigate = useNavigate();
+  const localBusinessSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Best Computer Tech LLC',
+    url: 'https://bestcomputertec.com/',
+    telephone: '+1-321-953-5199',
+    email: '365techoncall@gmail.com',
+    priceRange: '$$',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '602 Hurst Rd NE',
+      addressLocality: 'Palm Bay',
+      addressRegion: 'FL',
+      postalCode: '32907',
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 28.0836,
+      longitude: -80.6081,
+    },
+    openingHoursSpecification: [
+      {
+        '@type': 'OpeningHoursSpecification',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+        opens: '09:00',
+        closes: '18:00',
+      },
+    ],
+    areaServed: [
+      { '@type': 'City', name: 'Palm Bay' },
+      { '@type': 'City', name: 'Melbourne' },
+      { '@type': 'City', name: 'West Melbourne' },
+      { '@type': 'AdministrativeArea', name: 'Brevard County' },
+    ],
+    serviceType: [
+      'Computer Repair',
+      'IT Support',
+      'Network Setup',
+      'Virus and Malware Removal',
+      'Data Recovery',
+    ],
+  };
 
   const handleReadMoreClick = useCallback((serviceId) => {
     const routes = {
@@ -716,15 +759,36 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>Best Computer Tech | Computer Repair & IT Support in Palm Bay/ Melbourne, FL</title>
+        <title>Computer Repair & IT Support in Palm Bay & Melbourne, FL | Best Computer Tech</title>
         <meta
           name="description"
-          content="Best Computer Tech LLC offers expert tech solutions in Palm Bay/ Melbourne, FL, including hardware repairs, software troubleshooting, virus removal, network setup, and reliable IT support. Contact us today for professional tech services."
+          content="Best Computer Tech provides local computer repair and IT support in Palm Bay, Melbourne, and Brevard County, FL. Fast hardware repair, virus removal, network setup, and data recovery."
         />
         <meta
           name="keywords"
-          content="computer repair, IT support, Palm Bay, Melbourne FL, hardware repairs, software troubleshooting, virus removal, network setup, data recovery, tech services, cloud consulting, computer training"
+          content="computer repair Palm Bay FL, computer repair Melbourne FL, local IT support Brevard County, virus removal Palm Bay, data recovery Melbourne, network setup Florida"
         />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://bestcomputertec.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Computer Repair & IT Support in Palm Bay & Melbourne, FL | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Local computer repair and IT support services for Palm Bay, Melbourne, and nearby Brevard County areas."
+        />
+        <meta property="og:url" content="https://bestcomputertec.com/" />
+        <meta property="og:locale" content="en_US" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Best Computer Tech | Palm Bay & Melbourne, FL" />
+        <meta
+          name="twitter:description"
+          content="Computer repair, IT support, network setup, and data recovery in Palm Bay and Melbourne, Florida."
+        />
+        <meta name="geo.region" content="US-FL" />
+        <meta name="geo.placename" content="Palm Bay, Melbourne, Florida" />
+        <meta name="geo.position" content="28.0836;-80.6081" />
+        <meta name="ICBM" content="28.0836, -80.6081" />
+        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
 
       {/* Hero Section */}
@@ -828,4 +892,3 @@ function Home() {
 }
 
 export default Home;
-

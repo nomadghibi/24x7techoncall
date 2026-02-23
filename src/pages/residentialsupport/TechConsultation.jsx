@@ -8,6 +8,7 @@ import HeroSection from '../../components/HeroSection'; // Adjust the path accor
 import heroImage from '../../assets/TechnicalSupportMaintenance.webp'; // Adjust the path according to your file structure
 
 const TechConsultation = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -147,11 +148,11 @@ const TechConsultation = () => {
 <meta property="og:description" content="Receive personalized tech consultation from the experts at Best Computer Tech. Serving Palm Bay and Melbourne, FL, we provide technology assessments, hardware and software solutions, and more." />
 <meta property="og:url" content="https://bestcomputertec.com/residential-support/tech-consultation" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://bestcomputertec.com/images/tech-consultation.jpg" />
+<meta property="og:image" content={pageImage} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Personalized Tech Consultation | Best Computer Tech" />
 <meta name="twitter:description" content="Expert tech consultation services in Palm Bay and Melbourne, FL. We offer personalized technology assessments, hardware recommendations, and more." />
-<meta name="twitter:image" content="https://bestcomputertec.com/images/tech-consultation.jpg" />
+<meta name="twitter:image" content={pageImage} />
 
       </Helmet>
       <HeroSection title="Personalized Tech Consultation" image={heroImage} />

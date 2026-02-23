@@ -6,6 +6,7 @@ import HeroSection from '../../components/HeroSection';
 import heroImage from '../../assets/computers-optimized.jpg'; // Adjust the path according to your file structure
 
 const RemoteSupport = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -131,11 +132,11 @@ const RemoteSupport = () => {
 <meta property="og:description" content="Best Computer Tech offers expert remote support services, including software troubleshooting, virus removal, and more. Serving Palm Bay and Melbourne, FL, we keep your systems optimized from anywhere." />
 <meta property="og:url" content="https://bestcomputertec.com/residential-support/remote-support" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://bestcomputertec.com/images/remote-support.jpg" />
+<meta property="og:image" content={pageImage} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Remote Support Services | Best Computer Tech" />
 <meta name="twitter:description" content="Expert remote support services in Palm Bay and Melbourne, FL. We provide software troubleshooting, virus removal, system optimization, and more to keep your systems running smoothly." />
-<meta name="twitter:image" content="https://bestcomputertec.com/images/remote-support.jpg" />
+<meta name="twitter:image" content={pageImage} />
 
       </Helmet>
       <HeroSection title="Remote Support" image={heroImage} />

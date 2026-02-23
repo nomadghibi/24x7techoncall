@@ -7,6 +7,7 @@ import HeroSection from '../../components/HeroSection'; // Adjust the path accor
 import heroImage from '../../assets/DataRecovery2.webp'; // Adjust the path according to your file structure
 
 const DataRecovery = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -132,11 +133,11 @@ const DataRecovery = () => {
 <meta property="og:description" content="Recover your lost data with Best Computer Tech. Serving Palm Bay and Melbourne, FL, we specialize in data recovery from hard drives, SSDs, RAID arrays, and more." />
 <meta property="og:url" content="https://bestcomputertec.com/residential-support/data-recovery" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://bestcomputertec.com/images/data-recovery.jpg" />
+<meta property="og:image" content={pageImage} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Data Recovery Services | Best Computer Tech" />
 <meta name="twitter:description" content="Expert data recovery services in Palm Bay and Melbourne, FL. We recover lost data from hard drives, SSDs, RAID arrays, and more." />
-<meta name="twitter:image" content="https://bestcomputertec.com/images/data-recovery.jpg" />
+<meta name="twitter:image" content={pageImage} />
 
       </Helmet>
       <HeroSection title="Data Recovery" image={heroImage} />

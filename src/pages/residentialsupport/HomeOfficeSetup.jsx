@@ -8,6 +8,7 @@ import HeroSection from '../../components/HeroSection'; // Adjust the path accor
 import heroImage from '../../assets/homeofficesetup.webp'; // Adjust the path according to your file structure
 
 const HomeOfficeSetup = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -151,11 +152,11 @@ const HomeOfficeSetup = () => {
 <meta property="og:description" content="Set up a functional and efficient home office with Best Computer Tech. Serving Palm Bay and Melbourne, FL, we offer comprehensive services including workspace design, equipment setup, and network configuration." />
 <meta property="og:url" content="https://bestcomputertec.com/residential-support/home-office-setup" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://bestcomputertec.com/images/home-office-setup.jpg" />
+<meta property="og:image" content={pageImage} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Home Office Setup Services | Best Computer Tech" />
 <meta name="twitter:description" content="Expert home office setup services in Palm Bay and Melbourne, FL. We provide workspace design, equipment setup, network configuration, and more to create your ideal home workspace." />
-<meta name="twitter:image" content="https://bestcomputertec.com/images/home-office-setup.jpg" />
+<meta name="twitter:image" content={pageImage} />
 
       </Helmet>
       <HeroSection title="Home Office Setup" image={heroImage} />

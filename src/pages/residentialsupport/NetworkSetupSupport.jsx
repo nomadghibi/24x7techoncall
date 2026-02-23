@@ -8,6 +8,7 @@ import HeroSection from '../../components/HeroSection'; // Adjust the path accor
 import heroImage from '../../assets/NetworkSetupSupport.webp'; // Adjust the path according to your file structure
 
 const NetworkSetupSupport = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -151,11 +152,11 @@ const NetworkSetupSupport = () => {
 <meta property="og:description" content="Get expert network setup and support services from Best Computer Tech. Serving Palm Bay and Melbourne, FL, we offer Wi-Fi setup, network security, VPN configuration, and more." />
 <meta property="og:url" content="https://bestcomputertec.com/residential-support/network-setup-support" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://bestcomputertec.com/images/network-setup-support.jpg" />
+<meta property="og:image" content={pageImage} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Network Setup and Support | Best Computer Tech" />
 <meta name="twitter:description" content="Professional network setup and support services in Palm Bay and Melbourne, FL. We handle everything from Wi-Fi setup to network security and performance optimization." />
-<meta name="twitter:image" content="https://bestcomputertec.com/images/network-setup-support.jpg" />
+<meta name="twitter:image" content={pageImage} />
 
       </Helmet>
       <HeroSection title="Network Setup and Support" image={heroImage} />

@@ -16,6 +16,7 @@ import { Helmet } from 'react-helmet-async';
 
 function HowTo() {
   const navigate = useNavigate();
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
 
   const tutorials = [
     {
@@ -80,11 +81,11 @@ function HowTo() {
         <meta property="og:description" content="Get expert tech support with our How To Guides. Serving Palm Bay and Melbourne, FL, we offer step-by-step tutorials to help you fix, set up, and optimize your devices." />
         <meta property="og:url" content="https://bestcomputertec.com/how-to" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://bestcomputertec.com/images/how-to-guides.jpg" />
+        <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How To Guides | Best Computer Tech" />
         <meta name="twitter:description" content="Find step-by-step tech tutorials on fixing, setting up, and optimizing your devices. Serving Palm Bay and Melbourne, FL." />
-        <meta name="twitter:image" content="https://bestcomputertec.com/images/how-to-guides.jpg" />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
       {/* Hero Section */}

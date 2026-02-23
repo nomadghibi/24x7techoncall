@@ -8,6 +8,7 @@ import HeroSection from '../../components/HeroSection'; // Adjust the path accor
 import heroImage from '../../assets/backupHeroImage.webp'; // Adjust the path according to your file structure
 
 const BackupDataProtection = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -152,11 +153,11 @@ const BackupDataProtection = () => {
 <meta property="og:description" content="Protect your data with Best Computer Tech’s backup and data protection services. Serving Palm Bay and Melbourne, FL, we offer cloud backup, disaster recovery, and encryption to keep your data safe and recoverable." />
 <meta property="og:url" content="https://bestcomputertec.com/residential-support/backup-data-protection" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://bestcomputertec.com/images/backup-data-protection.jpg" />
+<meta property="og:image" content={pageImage} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Backup and Data Protection Services | Best Computer Tech" />
 <meta name="twitter:description" content="Comprehensive backup and data protection services in Palm Bay and Melbourne, FL. Ensure your data is secure, encrypted, and recoverable with our expert solutions." />
-<meta name="twitter:image" content="https://bestcomputertec.com/images/backup-data-protection.jpg" />
+<meta name="twitter:image" content={pageImage} />
 
       </Helmet>
       <HeroSection title="Backup and Data Protection" image={heroImage} />

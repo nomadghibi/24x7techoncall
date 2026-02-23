@@ -8,6 +8,7 @@ import HeroSection from '../../components/HeroSection';
 import heroImage from '../../assets/HardwareRepairs.webp'; // Adjust the path according to your file structure
 
 const PcLaptopRepairs = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -151,11 +152,11 @@ const PcLaptopRepairs = () => {
 <meta property="og:description" content="Professional PC and laptop repair services including virus removal, screen replacement, and more. Serving Palm Bay & Melbourne, FL for over 20 years." />
 <meta property="og:url" content="https://bestcomputertec.com/residential-support/pc-laptop-repairs" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://bestcomputertec.com/images/pc-laptop-repairs.jpg" />
+<meta property="og:image" content={pageImage} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="PC and Laptop Repairs | Best Computer Tech" />
 <meta name="twitter:description" content="Expert PC and laptop repairs in Palm Bay and Melbourne, FL. We fix any brand, any problem. Free diagnostic available." />
-<meta name="twitter:image" content="https://bestcomputertec.com/images/pc-laptop-repairs.jpg" />
+<meta name="twitter:image" content={pageImage} />
 
       </Helmet>
       <HeroSection title="PC and Laptop Repairs" image={heroImage} />

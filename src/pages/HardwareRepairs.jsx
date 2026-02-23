@@ -5,6 +5,7 @@ import heroImage from '../assets/HardwareRepairs.webp';
 import { Helmet } from 'react-helmet-async';
 
 const HardwareRepairs = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -38,11 +39,11 @@ const HardwareRepairs = () => {
         <meta property="og:description" content="Get your hardware repaired by certified technicians at Best Computer Tech. Serving Palm Bay, Melbourne, and the Space Coast of Florida." />
         <meta property="og:url" content="https://bestcomputertec.com/hardware-repairs" />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://bestcomputertec.com/images/hardware-repairs.jpg" />
+        <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Hardware Repair Services | Best Computer Tech" />
         <meta name="twitter:description" content="Expert hardware repair services in Palm Bay, Melbourne, and the Space Coast of Florida. We fix screens, keyboards, batteries, and more." />
-        <meta name="twitter:image" content="https://bestcomputertec.com/images/hardware-repairs.jpg" />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
       <HeroSection title="Hardware Repairs" image={heroImage} />

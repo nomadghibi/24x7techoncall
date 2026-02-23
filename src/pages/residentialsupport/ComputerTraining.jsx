@@ -8,6 +8,7 @@ import HeroSection from '../../components/HeroSection'; // Adjust the path accor
 import heroImage from '../../assets/computer-training.webp'; // Adjust the path according to your file structure
 
 const ComputerTraining = () => {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -152,11 +153,11 @@ const ComputerTraining = () => {
 <meta property="og:description" content="Enhance your computer skills with Best Computer Tech. Serving Palm Bay and Melbourne, FL, we offer tailored training for all ages, including senior citizens, from basic computer use to advanced software training." />
 <meta property="og:url" content="https://bestcomputertec.com/residential-support/computer-training" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="https://bestcomputertec.com/images/computer-training.jpg" />
+<meta property="og:image" content={pageImage} />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="Computer Training Services | Best Computer Tech" />
 <meta name="twitter:description" content="Comprehensive computer training services in Palm Bay and Melbourne, FL. We provide personalized training for all ages, including senior citizens, covering basic to advanced skills." />
-<meta name="twitter:image" content="https://bestcomputertec.com/images/computer-training.jpg" />
+<meta name="twitter:image" content={pageImage} />
 
       </Helmet>
       <HeroSection title="Computer Training" image={heroImage} />

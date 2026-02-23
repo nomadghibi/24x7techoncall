@@ -146,11 +146,11 @@ const ComputerTraining = () => {
       <title>Computer Training Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
 <meta name="description" content="Improve your computer skills with our comprehensive training services in Palm Bay and Melbourne, FL. We offer personalized training for all ages, including senior citizens, covering everything from basic computer usage to advanced software and online security training." />
 <meta name="keywords" content="computer training near me, IT training Palm Bay, senior citizen computer training Melbourne FL, software training, online security training, data management, computer classes for seniors, Best Computer Tech" />
-<link rel="canonical" href="https://bestcomputertec.com/computer-training" />
+<link rel="canonical" href="https://bestcomputertec.com/residential-support/computer-training" />
 <meta name="robots" content="index, follow" />
 <meta property="og:title" content="Computer Training Services | Best Computer Tech | Palm Bay & Melbourne, FL" />
 <meta property="og:description" content="Enhance your computer skills with Best Computer Tech. Serving Palm Bay and Melbourne, FL, we offer tailored training for all ages, including senior citizens, from basic computer use to advanced software training." />
-<meta property="og:url" content="https://bestcomputertec.com/computer-training" />
+<meta property="og:url" content="https://bestcomputertec.com/residential-support/computer-training" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://bestcomputertec.com/images/computer-training.jpg" />
 <meta name="twitter:card" content="summary_large_image" />

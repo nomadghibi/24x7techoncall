@@ -159,7 +159,7 @@ const ManagedITServices = () => {
         <title>Managed IT Services - Best Computer Tech</title>
         <meta name="description" content="Ensure your business runs smoothly with managed IT services from Best Computer Tech. From network management to cybersecurity, we cover all your IT needs." />
         <meta name="keywords" content="Managed IT services, IT support, network management, server management, data backup, cybersecurity, cloud services" />
-        <link rel="canonical" href="https://bestcomputertec.com/managed-it-services" />
+        <link rel="canonical" href="https://bestcomputertec.com/business-solutions/managed-it-services" />
       </Helmet>
 
       <HeroSection title="Managed IT Services" image={heroImage} />

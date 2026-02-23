@@ -147,7 +147,7 @@ const ITConsulting = () => {
     <div>
       <Helmet>
         <title>IT Consulting Services - Best Computer Tech</title>
-        <link rel="canonical" href="https://bestcomputertec.com/it-consulting-services" />
+        <link rel="canonical" href="https://bestcomputertec.com/business-solutions/it-consulting" />
       </Helmet>
       <HeroSection title="IT Consulting" image={heroImage} />
       <div className="container p-8 mx-auto">

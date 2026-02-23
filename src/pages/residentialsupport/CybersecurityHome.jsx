@@ -145,7 +145,7 @@ const CybersecurityHome = () => {
     <div>
       <Helmet>
         <title>Cybersecurity Services - Best Computer Tech</title>
-        <link rel="canonical" href="https://bestcomputertec.com/cybersecurity-services" />
+        <link rel="canonical" href="https://bestcomputertec.com/residential-support/cybersecurity-home" />
       </Helmet>
       <HeroSection title="Cybersecurity for Home Users" image={heroImage} />
       <div className="container p-8 mx-auto">

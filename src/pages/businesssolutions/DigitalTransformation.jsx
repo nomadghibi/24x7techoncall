@@ -148,7 +148,7 @@ const DigitalTransformation = () => {
     <div>
       <Helmet>
         <title>Digital Transformation Services - Best Computer Tech</title>
-        <link rel="canonical" href="https://bestcomputertec.com/digital-transformation-services" />
+        <link rel="canonical" href="https://bestcomputertec.com/business-solutions/digital-transformation" />
       </Helmet>
       <HeroSection title="Digital Transformation" image={heroImage} />
       <div className="container p-8 mx-auto">

@@ -145,11 +145,11 @@ const NetworkSetupSupport = () => {
       <title>Network Setup and Support | Best Computer Tech | Palm Bay & Melbourne, FL</title>
 <meta name="description" content="Professional network setup and support services in Palm Bay and Melbourne, FL. We specialize in network design, Wi-Fi setup, security enhancements, VPN configuration, and performance optimization to ensure your network runs smoothly and securely." />
 <meta name="keywords" content="network setup near me, Wi-Fi configuration Palm Bay, network support Melbourne FL, network security, VPN setup, firewall configuration, performance optimization, network design, Best Computer Tech" />
-<link rel="canonical" href="https://bestcomputertec.com/network-setup-support" />
+<link rel="canonical" href="https://bestcomputertec.com/residential-support/network-setup-support" />
 <meta name="robots" content="index, follow" />
 <meta property="og:title" content="Network Setup and Support | Best Computer Tech | Palm Bay & Melbourne, FL" />
 <meta property="og:description" content="Get expert network setup and support services from Best Computer Tech. Serving Palm Bay and Melbourne, FL, we offer Wi-Fi setup, network security, VPN configuration, and more." />
-<meta property="og:url" content="https://bestcomputertec.com/network-setup-support" />
+<meta property="og:url" content="https://bestcomputertec.com/residential-support/network-setup-support" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://bestcomputertec.com/images/network-setup-support.jpg" />
 <meta name="twitter:card" content="summary_large_image" />

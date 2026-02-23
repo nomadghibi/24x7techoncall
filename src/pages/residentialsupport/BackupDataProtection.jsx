@@ -146,11 +146,11 @@ const BackupDataProtection = () => {
       <title>Backup and Data Protection Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
 <meta name="description" content="Secure your valuable data with our comprehensive backup and data protection services in Palm Bay and Melbourne, FL. We offer cloud backup, disaster recovery, and data encryption solutions to ensure your data is protected and easily recoverable." />
 <meta name="keywords" content="data protection near me, data backup Palm Bay, cloud backup Melbourne FL, disaster recovery, data encryption, secure data storage, backup services, Best Computer Tech" />
-<link rel="canonical" href="https://bestcomputertec.com/backup-data-protection" />
+<link rel="canonical" href="https://bestcomputertec.com/residential-support/backup-data-protection" />
 <meta name="robots" content="index, follow" />
 <meta property="og:title" content="Backup and Data Protection Services | Best Computer Tech | Palm Bay & Melbourne, FL" />
 <meta property="og:description" content="Protect your data with Best Computer Tech’s backup and data protection services. Serving Palm Bay and Melbourne, FL, we offer cloud backup, disaster recovery, and encryption to keep your data safe and recoverable." />
-<meta property="og:url" content="https://bestcomputertec.com/backup-data-protection" />
+<meta property="og:url" content="https://bestcomputertec.com/residential-support/backup-data-protection" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://bestcomputertec.com/images/backup-data-protection.jpg" />
 <meta name="twitter:card" content="summary_large_image" />

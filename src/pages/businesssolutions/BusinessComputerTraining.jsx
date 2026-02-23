@@ -125,8 +125,8 @@ const BusinessComputerTraining = () => {
     }
   };
 
-  // Define the canonical URL for this page
-  const canonicalUrl = "https://www.yourdomain.com/business-computer-training"; // Replace with your actual URL
+  // Canonical route for this page
+  const canonicalUrl = 'https://bestcomputertec.com/business-solutions/computer-training';
 
   return (
     <div>

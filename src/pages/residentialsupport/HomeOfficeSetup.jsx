@@ -145,11 +145,11 @@ const HomeOfficeSetup = () => {
       <title>Home Office Setup Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
 <meta name="description" content="Transform your home into a productive workspace with our expert home office setup services in Palm Bay and Melbourne, FL. We handle everything from workspace design and equipment setup to network configuration and remote access solutions." />
 <meta name="keywords" content="home office setup near me, workspace design Palm Bay, home office setup Melbourne FL, equipment setup, network configuration, remote access, home office solutions, Best Computer Tech" />
-<link rel="canonical" href="https://bestcomputertec.com/home-office-setup" />
+<link rel="canonical" href="https://bestcomputertec.com/residential-support/home-office-setup" />
 <meta name="robots" content="index, follow" />
 <meta property="og:title" content="Home Office Setup Services | Best Computer Tech | Palm Bay & Melbourne, FL" />
 <meta property="og:description" content="Set up a functional and efficient home office with Best Computer Tech. Serving Palm Bay and Melbourne, FL, we offer comprehensive services including workspace design, equipment setup, and network configuration." />
-<meta property="og:url" content="https://bestcomputertec.com/home-office-setup" />
+<meta property="og:url" content="https://bestcomputertec.com/residential-support/home-office-setup" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://bestcomputertec.com/images/home-office-setup.jpg" />
 <meta name="twitter:card" content="summary_large_image" />

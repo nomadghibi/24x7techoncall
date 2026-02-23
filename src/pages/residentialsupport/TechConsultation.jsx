@@ -141,11 +141,11 @@ const TechConsultation = () => {
       <title>Personalized Tech Consultation | Best Computer Tech | Palm Bay & Melbourne, FL</title>
 <meta name="description" content="Get expert personalized tech consultation services in Palm Bay and Melbourne, FL. We offer technology assessments, hardware recommendations, software solutions, network design, and security assessments tailored to your needs." />
 <meta name="keywords" content="tech consultation near me, technology assessment Palm Bay, tech consultation Melbourne FL, hardware recommendations, software solutions, network design, security assessments, personalized tech services, Best Computer Tech" />
-<link rel="canonical" href="https://bestcomputertec.com/tech-consultation" />
+<link rel="canonical" href="https://bestcomputertec.com/residential-support/tech-consultation" />
 <meta name="robots" content="index, follow" />
 <meta property="og:title" content="Personalized Tech Consultation | Best Computer Tech | Palm Bay & Melbourne, FL" />
 <meta property="og:description" content="Receive personalized tech consultation from the experts at Best Computer Tech. Serving Palm Bay and Melbourne, FL, we provide technology assessments, hardware and software solutions, and more." />
-<meta property="og:url" content="https://bestcomputertec.com/tech-consultation" />
+<meta property="og:url" content="https://bestcomputertec.com/residential-support/tech-consultation" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://bestcomputertec.com/images/tech-consultation.jpg" />
 <meta name="twitter:card" content="summary_large_image" />

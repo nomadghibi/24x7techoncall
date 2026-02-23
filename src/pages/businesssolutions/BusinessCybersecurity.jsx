@@ -160,7 +160,7 @@ const BusinessCybersecurity = () => {
         <title>Business Cybersecurity Services - Best Computer Tech</title>
         <meta name="description" content="Protect your business with advanced cybersecurity solutions from Best Computer Tech. We offer threat protection, endpoint security, data encryption, and more." />
         <meta name="keywords" content="cybersecurity, business security, advanced threat protection, endpoint security, network security, data encryption, SIEM, incident response, penetration testing" />
-        <link rel="canonical" href="https://bestcomputertec.com/business-cybersecurity" />
+        <link rel="canonical" href="https://bestcomputertec.com/business-solutions/cybersecurity" />
       </Helmet>
 
       <HeroSection title="Business Cybersecurity" image={heroImage} />

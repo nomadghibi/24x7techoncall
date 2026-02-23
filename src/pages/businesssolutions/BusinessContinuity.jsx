@@ -151,7 +151,7 @@ const BusinessContinuity = () => {
         <title>Business Continuity Services - Best Computer Tech</title>
         <meta name="description" content="Ensure your business remains operational during disruptions with our comprehensive Business Continuity services. We provide disaster recovery, data backup, IT infrastructure management, and more." />
         <meta name="keywords" content="business continuity, disaster recovery, data backup, IT infrastructure management, risk assessment, emergency response planning, business impact analysis, security solutions, compliance management" />
-        <link rel="canonical" href="https://bestcomputertec.com/business-continuity" />
+        <link rel="canonical" href="https://bestcomputertec.com/business-solutions/business-continuity" />
       </Helmet>
 
       <HeroSection title="Business Continuity" image={heroImage} />

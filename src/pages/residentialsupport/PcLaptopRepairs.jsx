@@ -145,11 +145,11 @@ const PcLaptopRepairs = () => {
       <title>PC and Laptop Repairs | Best Computer Tech | Palm Bay & Melbourne, FL</title>
 <meta name="description" content="Get expert PC and laptop repair services in Palm Bay and Melbourne, FL. We specialize in screen replacement, keyboard repair, virus removal, and more. Any brand, any problem, we fix it all!" />
 <meta name="keywords" content="PC repair near me, laptop repair near me, computer repair Palm Bay, computer repair Melbourne FL, screen replacement, keyboard repair, battery replacement, virus removal, Windows repair, Mac repair, free diagnostic" />
-<link rel="canonical" href="https://bestcomputertec.com/pc-laptop-repairs" />
+<link rel="canonical" href="https://bestcomputertec.com/residential-support/pc-laptop-repairs" />
 <meta name="robots" content="index, follow" />
 <meta property="og:title" content="PC and Laptop Repairs | Best Computer Tech | Palm Bay & Melbourne, FL" />
 <meta property="og:description" content="Professional PC and laptop repair services including virus removal, screen replacement, and more. Serving Palm Bay & Melbourne, FL for over 20 years." />
-<meta property="og:url" content="https://bestcomputertec.com/pc-laptop-repairs" />
+<meta property="og:url" content="https://bestcomputertec.com/residential-support/pc-laptop-repairs" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://bestcomputertec.com/images/pc-laptop-repairs.jpg" />
 <meta name="twitter:card" content="summary_large_image" />

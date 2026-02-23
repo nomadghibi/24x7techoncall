@@ -126,11 +126,11 @@ const DataRecovery = () => {
       <title>Data Recovery Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
 <meta name="description" content="Expert data recovery services in Palm Bay and Melbourne, FL. We specialize in recovering lost data from hard drives, SSDs, RAID arrays, and more. Trust our certified technicians to restore your important files securely and efficiently." />
 <meta name="keywords" content="data recovery near me, hard drive recovery Palm Bay, SSD recovery Melbourne FL, RAID recovery, virus recovery, data restoration, lost data recovery, Best Computer Tech" />
-<link rel="canonical" href="https://bestcomputertec.com/data-recovery" />
+<link rel="canonical" href="https://bestcomputertec.com/residential-support/data-recovery" />
 <meta name="robots" content="index, follow" />
 <meta property="og:title" content="Data Recovery Services | Best Computer Tech | Palm Bay & Melbourne, FL" />
 <meta property="og:description" content="Recover your lost data with Best Computer Tech. Serving Palm Bay and Melbourne, FL, we specialize in data recovery from hard drives, SSDs, RAID arrays, and more." />
-<meta property="og:url" content="https://bestcomputertec.com/data-recovery" />
+<meta property="og:url" content="https://bestcomputertec.com/residential-support/data-recovery" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://bestcomputertec.com/images/data-recovery.jpg" />
 <meta name="twitter:card" content="summary_large_image" />

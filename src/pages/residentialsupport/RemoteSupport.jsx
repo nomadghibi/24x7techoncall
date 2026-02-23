@@ -125,11 +125,11 @@ const RemoteSupport = () => {
       <title>Remote Support Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
 <meta name="description" content="Get expert remote support services in Palm Bay and Melbourne, FL. We offer software troubleshooting, virus removal, system optimization, network support, and email configuration to keep your systems running smoothly from anywhere." />
 <meta name="keywords" content="remote support near me, software troubleshooting Palm Bay, virus removal Melbourne FL, system optimization, network support, email configuration, remote IT help, Best Computer Tech" />
-<link rel="canonical" href="https://bestcomputertec.com/remote-support" />
+<link rel="canonical" href="https://bestcomputertec.com/residential-support/remote-support" />
 <meta name="robots" content="index, follow" />
 <meta property="og:title" content="Remote Support Services | Best Computer Tech | Palm Bay & Melbourne, FL" />
 <meta property="og:description" content="Best Computer Tech offers expert remote support services, including software troubleshooting, virus removal, and more. Serving Palm Bay and Melbourne, FL, we keep your systems optimized from anywhere." />
-<meta property="og:url" content="https://bestcomputertec.com/remote-support" />
+<meta property="og:url" content="https://bestcomputertec.com/residential-support/remote-support" />
 <meta property="og:type" content="website" />
 <meta property="og:image" content="https://bestcomputertec.com/images/remote-support.jpg" />
 <meta name="twitter:card" content="summary_large_image" />

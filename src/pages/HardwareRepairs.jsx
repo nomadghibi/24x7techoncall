@@ -1,12 +1,10 @@
 
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
 import heroImage from '../assets/HardwareRepairs.webp';
 import { Helmet } from 'react-helmet-async';
 
 const HardwareRepairs = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -26,10 +24,6 @@ const HardwareRepairs = () => {
     e.preventDefault();
     // Handle form submission logic here
     console.log(formData);
-  };
-
-  const handleBuyNowClick = () => {
-    navigate('/checkout', { state: { service: 'Hardware Repairs', price: '100.00' } });
   };
 
   return (

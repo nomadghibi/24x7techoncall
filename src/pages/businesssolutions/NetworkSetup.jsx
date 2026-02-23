@@ -1,7 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
-import { FaNetworkWired, FaLock, FaWifi, FaServer, FaShieldAlt, FaSync, FaPlug, FaDesktop, FaTools, FaProjectDiagram, FaHeadset } from 'react-icons/fa';
+import { FaNetworkWired, FaWifi, FaServer, FaShieldAlt, FaSync, FaPlug, FaDesktop, FaTools, FaProjectDiagram, FaHeadset } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
 import emailjs from 'emailjs-com';
 import heroImage from '../../assets/NetworkSetupSupport.webp';
@@ -133,9 +133,7 @@ const NetworkSetup = () => {
     e.preventDefault();
 
     emailjs
-      .send
-        ('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
-      
+      .send('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
@@ -315,5 +313,3 @@ const NetworkSetup = () => {
 };
 
 export default NetworkSetup;
-
-

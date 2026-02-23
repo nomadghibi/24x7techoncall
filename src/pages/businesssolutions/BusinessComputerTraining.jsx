@@ -227,7 +227,7 @@
 
 
 import React, { useState } from 'react';
-import { FaNetworkWired, FaLock, FaCloud, FaSync, FaBalanceScale, FaDesktop, FaDatabase, FaChalkboardTeacher, FaShieldAlt } from 'react-icons/fa';
+import { FaCloud, FaChalkboardTeacher, FaShieldAlt } from 'react-icons/fa';
 import { Helmet } from 'react-helmet'; // Import Helmet
 import HeroSection from '../../components/HeroSection';
 import heroImage from '../../assets/businesscomputertraining.webp';

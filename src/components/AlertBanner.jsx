@@ -6,7 +6,7 @@ const AlertBanner = () => {
 
   if (!isVisible) return null;
 
-  const handleLinkClick = (e) => {
+  const handleLinkClick = (_e) => {
     // Optional: Add any logging or handling here
     console.log('Learn More link clicked');
   };

@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet'; // Import Helmet for SEO
-import { FaShieldAlt, FaLock, FaCloud, FaNetworkWired, FaSync, FaBalanceScale, FaDesktop, FaDatabase, FaChalkboardTeacher, FaCogs } from 'react-icons/fa';
+import { FaShieldAlt, FaLock, FaCloud, FaNetworkWired, FaSync, FaBalanceScale, FaDatabase, FaChalkboardTeacher, FaCogs } from 'react-icons/fa';
 import emailjs from 'emailjs-com'; // Import EmailJS
 import HeroSection from '../../components/HeroSection';
 import heroImage from '../../assets/businesscybersecurity.webp'; // Adjust the path according to your file structure

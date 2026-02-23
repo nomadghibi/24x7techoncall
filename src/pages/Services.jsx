@@ -1,7 +1,7 @@
 
 
 import React from 'react';
-import { FaTools, FaBug, FaNetworkWired, FaDatabase, FaLaptopHouse, FaQuestionCircle, FaChalkboardTeacher, FaCloud, FaUserTie, FaShieldAlt, FaSave, FaServer, FaHeadset, FaLifeRing, FaDigitalOcean, FaCloudUploadAlt, FaCheckCircle, FaUsers, FaDollarSign } from 'react-icons/fa';
+import { FaTools, FaBug, FaNetworkWired, FaDatabase, FaLaptopHouse, FaQuestionCircle, FaChalkboardTeacher, FaUserTie, FaShieldAlt, FaSave, FaServer, FaHeadset, FaLifeRing, FaDigitalOcean, FaCloudUploadAlt, FaCheckCircle, FaUsers, FaDollarSign } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';

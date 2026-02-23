@@ -492,7 +492,7 @@
 
 
 
-import React, { useMemo, useState, useCallback } from 'react';
+import React, { useMemo, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import {
@@ -505,14 +505,12 @@ import {
   FaChalkboardTeacher,
   FaCloud,
   FaCamera,
-  FaPlay,
 } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
 import heroImage1 from '../assets/heroimage100.webp';
 import blogImage1 from '../assets/5-tips-blog-image.webp';
 import blogImage2 from '../assets/ProtectYourComputerFromMalware.webp';
 import blogImage3 from '../assets/backupHeroImage.webp';
-import tiredOfComputerIssuesImage from '../assets/computer-training.webp';
 import 'tailwindcss/tailwind.css';
 
 // Memoized static components to prevent unnecessary re-renders
@@ -531,6 +529,7 @@ const ServiceCard = React.memo(({ service, onReadMore }) => (
     </button>
   </div>
 ));
+ServiceCard.displayName = 'ServiceCard';
 
 const TestimonialCard = React.memo(({ testimonial }) => (
   <div className="p-6 text-left bg-white rounded-lg shadow-lg">
@@ -543,6 +542,7 @@ const TestimonialCard = React.memo(({ testimonial }) => (
     </p>
   </div>
 ));
+TestimonialCard.displayName = 'TestimonialCard';
 
 const BlogPostCard = React.memo(({ post }) => (
   <div className="flex flex-col justify-between p-4 bg-white rounded-lg shadow-md h-80">
@@ -561,10 +561,10 @@ const BlogPostCard = React.memo(({ post }) => (
     </Link>
   </div>
 ));
+BlogPostCard.displayName = 'BlogPostCard';
 
 function Home() {
   const navigate = useNavigate();
-  const [videoLoaded, setVideoLoaded] = useState(false);
 
   const handleReadMoreClick = useCallback((serviceId) => {
     const routes = {
@@ -704,10 +704,6 @@ function Home() {
     triggerOnce: true,
     threshold: 0.1,
   });
-  const { ref: promiseRef, inView: promiseInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
   const { ref: testimonialsRef, inView: testimonialsInView } = useInView({
     triggerOnce: true,
     threshold: 0.1,
@@ -716,10 +712,6 @@ function Home() {
     triggerOnce: true,
     threshold: 0.1,
   });
-
-  const loadVideo = useCallback(() => {
-    setVideoLoaded(true);
-  }, []);
 
   return (
     <div>
@@ -836,5 +828,4 @@ function Home() {
 }
 
 export default Home;
-
 

@@ -18,7 +18,7 @@ import pcPerformanceImage from '../assets/businessservices.webp';
 import itConsultingImage from '../assets/itconsulting.webp';
 import dataBackupImage from '../assets/datarecovery.webp';
 import onlineSafetyImage from '../assets/howtobesafe.webp';
-import aiImage from '../assets/ai.jpg';
+import aiImage from '../assets/ai-optimized.jpg';
 import chatgptImage from '../assets/chatgpt.webp';
 
 const generateRandomDate = (start, end) => {

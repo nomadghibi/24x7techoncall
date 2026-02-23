@@ -2,7 +2,7 @@ import React from 'react';
 import { FaUserTie, FaLaptopHouse, FaShieldAlt } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/computers.jpg'; // Ensure this path is correct
+import heroImage from '../assets/computers-optimized.jpg'; // Ensure this path is correct
 
 function AboutUs() {
   const navigate = useNavigate();

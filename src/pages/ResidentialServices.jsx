@@ -359,7 +359,7 @@ import {
 import './ResidentialServices.css';
 
 import heroImage from '../assets/residentail.webp'; // The image used for both title and CTA
-import computerImage from '../assets/computers.jpg';
+import computerImage from '../assets/computers-optimized.jpg';
 
 const services = [
   {

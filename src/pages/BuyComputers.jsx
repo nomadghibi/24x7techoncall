@@ -2,9 +2,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet'; // Import Helmet
-import computerImage1 from '../assets/computers.jpg';
-import computerImage2 from '../assets/computers.jpg';
-import computerImage3 from '../assets/computers.jpg';
+import computerImage1 from '../assets/computers-optimized.jpg';
+import computerImage2 from '../assets/computers-optimized.jpg';
+import computerImage3 from '../assets/computers-optimized.jpg';
 
 const BuyComputers = () => {
   const navigate = useNavigate();

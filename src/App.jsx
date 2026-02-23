@@ -91,7 +91,14 @@ const App = () => {
       <NavMenu handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} />
       <main id="main-content" tabIndex={-1} className="flex-grow mt-16">
         <ErrorBoundary>
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense
+            fallback={
+              <div className="flex items-center justify-center min-h-[40vh]" role="status" aria-live="polite">
+                <div className="w-8 h-8 border-4 border-blue-200 rounded-full border-t-blue-600 animate-spin" aria-hidden="true"></div>
+                <span className="sr-only">Loading page</span>
+              </div>
+            }
+          >
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/quick-tech-help" element={<QuickTechHelp />} />

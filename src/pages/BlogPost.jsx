@@ -383,6 +383,67 @@ function BlogPost() {
   const { slug } = useParams();
   const navigate = useNavigate();  // Use navigate for navigation
   const post = blogPostsData[slug];
+  const canonicalUrl = `https://bestcomputertec.com/blog/${slug}`;
+  const imageUrl = post?.heroImage?.startsWith('http')
+    ? post.heroImage
+    : `https://bestcomputertec.com${post?.heroImage || ''}`;
+  const parsedDate = new Date(post?.date || '');
+  const publishedDateIso = Number.isNaN(parsedDate.getTime()) ? undefined : parsedDate.toISOString();
+  const articleSchema = post
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BlogPosting',
+        mainEntityOfPage: {
+          '@type': 'WebPage',
+          '@id': canonicalUrl
+        },
+        headline: post.title,
+        description: post.description,
+        image: imageUrl ? [imageUrl] : undefined,
+        datePublished: publishedDateIso,
+        dateModified: publishedDateIso,
+        author: {
+          '@type': 'Organization',
+          name: 'Best Computer Tech LLC'
+        },
+        publisher: {
+          '@type': 'Organization',
+          name: 'Best Computer Tech LLC',
+          logo: {
+            '@type': 'ImageObject',
+            url: 'https://bestcomputertec.com/favicon.ico'
+          }
+        },
+        keywords: post.keywords,
+        inLanguage: 'en-US'
+      }
+    : null;
+  const breadcrumbSchema = post
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: 'https://bestcomputertec.com/'
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Blog',
+            item: 'https://bestcomputertec.com/blog'
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: post.title,
+            item: canonicalUrl
+          }
+        ]
+      }
+    : null;
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -396,21 +457,22 @@ function BlogPost() {
     <div>
       {/* SEO Meta Tags */}
       <Helmet>
-      <title>{post.title} | Best Computer Tech Blog | Palm Bay & Melbourne, FL</title>
-<meta name="description" content={post.description} />
-<meta name="keywords" content={post.keywords} />
-<link rel="canonical" href={`https://bestcomputertec.com/blog/${slug}`} />
-<meta name="robots" content="index, follow" />
-<meta property="og:title" content={`${post.title} | Best Computer Tech Blog | Palm Bay & Melbourne, FL`} />
-<meta property="og:description" content={post.description} />
-<meta property="og:url" content={`https://bestcomputertec.com/blog/${slug}`} />
-<meta property="og:type" content="article" />
-<meta property="og:image" content={post.heroImage} />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={`${post.title} | Best Computer Tech Blog`} />
-<meta name="twitter:description" content={post.description} />
-<meta name="twitter:image" content={post.heroImage} />
-
+        <title>{post.title} | Best Computer Tech Blog | Palm Bay & Melbourne, FL</title>
+        <meta name="description" content={post.description} />
+        <meta name="keywords" content={post.keywords} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content={`${post.title} | Best Computer Tech Blog | Palm Bay & Melbourne, FL`} />
+        <meta property="og:description" content={post.description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:image" content={imageUrl} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${post.title} | Best Computer Tech Blog`} />
+        <meta name="twitter:description" content={post.description} />
+        <meta name="twitter:image" content={imageUrl} />
+        <script type="application/ld+json">{JSON.stringify(articleSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
       <section className="py-20 text-white bg-gray-900 hero-section" style={{ backgroundImage: `url(${post.heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>

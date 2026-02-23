@@ -4,6 +4,39 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
+const routePrefetchers = {
+  '/': () => import('../pages/Home'),
+  '/about-us': () => import('../pages/AboutUs'),
+  '/residential-services': () => import('../pages/ResidentialServices'),
+  '/residential-support/pc-laptop-repairs': () => import('../pages/residentialsupport/PcLaptopRepairs'),
+  '/residential-support/virus-malware-removal': () => import('../pages/residentialsupport/VirusMalwareRemoval'),
+  '/residential-support/software-troubleshooting': () => import('../pages/residentialsupport/SoftwareTroubleshooting'),
+  '/residential-support/data-recovery': () => import('../pages/residentialsupport/DataRecovery'),
+  '/residential-support/network-setup-support': () => import('../pages/residentialsupport/NetworkSetupSupport'),
+  '/residential-support/remote-support': () => import('../pages/residentialsupport/RemoteSupport'),
+  '/residential-support/tech-consultation': () => import('../pages/residentialsupport/TechConsultation'),
+  '/residential-support/computer-training': () => import('../pages/residentialsupport/ComputerTraining'),
+  '/residential-support/home-office-setup': () => import('../pages/residentialsupport/HomeOfficeSetup'),
+  '/residential-support/backup-data-protection': () => import('../pages/residentialsupport/BackupDataProtection'),
+  '/residential-support/cybersecurity-home': () => import('../pages/residentialsupport/CybersecurityHome'),
+  '/business-services': () => import('../pages/BusinessServices'),
+  '/business-solutions/it-consulting': () => import('../pages/businesssolutions/ITConsulting'),
+  '/business-solutions/network-setup': () => import('../pages/businesssolutions/NetworkSetup'),
+  '/business-solutions/managed-it-services': () => import('../pages/businesssolutions/ManagedITServices'),
+  '/business-solutions/data-recovery': () => import('../pages/businesssolutions/BusinessDataRecovery'),
+  '/business-solutions/cloud-solutions': () => import('../pages/businesssolutions/CloudSolutions'),
+  '/business-solutions/cybersecurity': () => import('../pages/businesssolutions/BusinessCybersecurity'),
+  '/business-solutions/it-support': () => import('../pages/businesssolutions/ITSupport'),
+  '/business-solutions/business-continuity': () => import('../pages/businesssolutions/BusinessContinuity'),
+  '/business-solutions/computer-training': () => import('../pages/businesssolutions/BusinessComputerTraining'),
+  '/business-solutions/digital-transformation': () => import('../pages/businesssolutions/DigitalTransformation'),
+  '/contact': () => import('../pages/Contact'),
+  '/how-to': () => import('../pages/HowTo'),
+  '/blog': () => import('../pages/BlogOverview'),
+};
+
+const prefetchedPaths = new Set();
+
 const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
   const [residentialOpen, setResidentialOpen] = useState(false);
   const [businessOpen, setBusinessOpen] = useState(false);
@@ -20,9 +53,11 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
     if (menu === 'residential') {
       setResidentialOpen(!residentialOpen);
       setBusinessOpen(false);
+      prefetchPath('/residential-services');
     } else if (menu === 'business') {
       setBusinessOpen(!businessOpen);
       setResidentialOpen(false);
+      prefetchPath('/business-services');
     }
   };
 
@@ -38,10 +73,48 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
   const handleSubmenuItemClick = () => {
     closeSubmenus();
     setMobileMenuOpen(false);
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      window.setTimeout(() => {
+        mainContent.focus();
+      }, 0);
+    }
+  };
+
+  const prefetchPath = (path) => {
+    const prefetch = routePrefetchers[path];
+    if (!prefetch || prefetchedPaths.has(path)) {
+      return;
+    }
+    prefetchedPaths.add(path);
+    void prefetch();
+  };
+
+  const prefetchFromLink = (target) => {
+    const link = target?.closest?.('a[href]');
+    if (!link) {
+      return;
+    }
+    const href = link.getAttribute('href');
+    if (!href || !href.startsWith('/')) {
+      return;
+    }
+    prefetchPath(href);
+  };
+
+  const handleNavMouseOver = (event) => {
+    prefetchFromLink(event.target);
+  };
+
+  const handleNavFocusCapture = (event) => {
+    prefetchFromLink(event.target);
   };
 
   const handleMenuClick = (path) => {
-    navigate(path);
+    prefetchPath(path);
+    if (location.pathname !== path) {
+      navigate(path);
+    }
     closeSubmenus();
     const mainContent = document.getElementById('main-content');
     if (mainContent) {
@@ -49,8 +122,22 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
     }
   };
 
+  const handleDirectLinkClick = () => {
+    closeSubmenus();
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      window.setTimeout(() => {
+        mainContent.focus();
+      }, 0);
+    }
+  };
+
   return (
-    <nav className="fixed z-10 w-full p-4 text-white bg-gray-800">
+    <nav
+      className="fixed z-10 w-full p-4 text-white bg-gray-800"
+      onMouseOver={handleNavMouseOver}
+      onFocusCapture={handleNavFocusCapture}
+    >
       <div className="container flex items-center justify-between mx-auto">
         <Link to="/" className="flex items-center hover:underline">
           <FontAwesomeIcon icon={faHome} className="mr-2" />
@@ -64,14 +151,17 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
                 className="hover:underline"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleMenuClick('/about-us')}
+                onClick={handleDirectLinkClick}
               >
                 About Us
               </Link>
             </li>
             <li
               className="relative group"
-              onMouseEnter={() => setResidentialOpen(true)}
+              onMouseEnter={() => {
+                setResidentialOpen(true);
+                prefetchPath('/residential-services');
+              }}
               onMouseLeave={closeSubmenus}
             >
               <button
@@ -103,7 +193,10 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
             </li>
             <li
               className="relative group"
-              onMouseEnter={() => setBusinessOpen(true)}
+              onMouseEnter={() => {
+                setBusinessOpen(true);
+                prefetchPath('/business-services');
+              }}
               onMouseLeave={closeSubmenus}
             >
               <button
@@ -138,7 +231,7 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
                 className="hover:underline"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleMenuClick('/contact')}
+                onClick={handleDirectLinkClick}
               >
                 Contact
               </Link>
@@ -149,7 +242,7 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
                 className="hover:underline"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleMenuClick('/how-to')}
+                onClick={handleDirectLinkClick}
               >
                 How To
               </Link>
@@ -160,7 +253,7 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
                 className="hover:underline"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
-                onClick={() => handleMenuClick('/blog')}
+                onClick={handleDirectLinkClick}
               >
                 Blog
               </Link>

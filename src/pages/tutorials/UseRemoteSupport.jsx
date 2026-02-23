@@ -2,10 +2,12 @@ import React from 'react';
 import HeroSection from '../../components/HeroSection';
 import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import heroImage from '../../assets/remotetechsupport.webp'; // Adjust the path according to your file structure
 
 function UseRemoteSupport() {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/how-to/use-remote-support';
 
   const handleContactUs = () => {
     navigate('/contact'); // Adjust the path to your contact or booking page
@@ -13,6 +15,30 @@ function UseRemoteSupport() {
 
   return (
     <div>
+      <Helmet>
+        <title>How to Use Remote Support | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Follow this guide to securely use remote support for computer troubleshooting and technical help."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="How to Use Remote Support | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Step-by-step instructions for starting and safely managing a remote support session."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={heroImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How to Use Remote Support | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Set up and use remote support securely with this practical guide."
+        />
+      </Helmet>
       <HeroSection title="How to Use Remote Support" image={heroImage} />
       <div className="container p-8 mx-auto">
         <GoBackButtonWithArrow />
@@ -71,5 +97,4 @@ function UseRemoteSupport() {
 }
 
 export default UseRemoteSupport;
-
 

@@ -19,7 +19,17 @@ function BeSafeOnline() {
         <title>How to Be Safe Online | Palm Bay & Melbourne FL | Best Computer Tech</title>
         <meta name="description" content="Learn essential steps and guidelines to stay safe online, protect your personal information, and secure your digital presence. Stay vigilant against cyber threats with expert advice from Best Computer Tech." />
         <meta name="keywords" content="online safety, cybersecurity, Palm Bay, Melbourne FL, strong passwords, two-factor authentication, secure connections, personal information protection, antivirus software, phishing scams, VPN" />
+        <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://bestcomputertec.com/how-to/be-safe-online" />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="How to Be Safe Online | Best Computer Tech" />
+        <meta property="og:description" content="Learn practical cybersecurity habits to protect your accounts, devices, and personal data online." />
+        <meta property="og:url" content="https://bestcomputertec.com/how-to/be-safe-online" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={heroImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How to Be Safe Online | Best Computer Tech" />
+        <meta name="twitter:description" content="Follow these steps to stay safer online and reduce cybersecurity risks." />
       </Helmet>
 
       <HeroSection title="How to Be Safe Online" image={heroImage} />

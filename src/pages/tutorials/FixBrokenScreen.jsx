@@ -2,10 +2,12 @@ import React from 'react';
 import HeroSection from '../../components/HeroSection';
 import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import heroImage from '../../assets/fixbrokenscreen.webp'; // Adjust the path according to your file structure
 
 function FixBrokenScreen() {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/how-to/fix-broken-screen';
 
   const handleContactUs = () => {
     navigate('/contact'); // Adjust the path to your contact or booking page
@@ -13,6 +15,30 @@ function FixBrokenScreen() {
 
   return (
     <div>
+      <Helmet>
+        <title>How to Fix a Broken Screen | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Learn how to fix a broken laptop screen with this step-by-step guide from Best Computer Tech. Serving Palm Bay and Melbourne, Florida."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="How to Fix a Broken Screen | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Step-by-step instructions to replace a broken laptop screen safely and correctly."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={heroImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How to Fix a Broken Screen | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Follow this practical guide to replace a broken laptop screen."
+        />
+      </Helmet>
       <HeroSection title="How to Fix a Broken Screen" image={heroImage} />
       <div className="container p-8 mx-auto">
         <GoBackButtonWithArrow />
@@ -88,6 +114,5 @@ function FixBrokenScreen() {
 }
 
 export default FixBrokenScreen;
-
 
 

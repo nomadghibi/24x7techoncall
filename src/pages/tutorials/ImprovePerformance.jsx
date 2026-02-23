@@ -2,10 +2,12 @@ import React from 'react';
 import HeroSection from '../../components/HeroSection';
 import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import heroImage from '../../assets/howtoimprove.webp'; // Adjust the path according to your file structure
 
 function ImprovePerformance() {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/how-to/improve-performance';
 
   const handleContactUs = () => {
     navigate('/contact'); // Adjust the path to your contact or booking page
@@ -13,6 +15,30 @@ function ImprovePerformance() {
 
   return (
     <div>
+      <Helmet>
+        <title>How to Improve Computer Performance | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Learn practical ways to improve computer speed and stability, including cleanup, startup optimization, updates, and hardware upgrades."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="How to Improve Computer Performance | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="A straightforward optimization checklist to speed up and stabilize your computer."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={heroImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How to Improve Computer Performance | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Use these steps to improve startup, speed, and overall system performance."
+        />
+      </Helmet>
       <HeroSection title="How to Improve Computer Performance" image={heroImage} />
       <div className="container p-8 mx-auto">
         <GoBackButtonWithArrow />
@@ -73,4 +99,3 @@ function ImprovePerformance() {
 }
 
 export default ImprovePerformance;
-

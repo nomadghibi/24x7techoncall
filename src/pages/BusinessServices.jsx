@@ -243,6 +243,7 @@ const services = [
 function BusinessServices() {
   const navigate = useNavigate();
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const canonicalUrl = 'https://bestcomputertec.com/business-services';
 
   const handleServiceClick = (serviceId) => {
     navigate(`/business-solutions/${serviceId}`);
@@ -262,7 +263,23 @@ function BusinessServices() {
         <title>Comprehensive Business IT Services | Best Computer Tech</title>
         <meta name="description" content="Comprehensive IT services for businesses, including consultancy, cybersecurity, data recovery, website development, and more. We help your business thrive." />
         <meta name="keywords" content="IT consultancy, cybersecurity, data recovery, website development, cloud migration, managed IT services, business continuity, technical support" />
-        <link rel="canonical" href="https://bestcomputertec.com/business-services" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Comprehensive Business IT Services | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Explore business IT support services including cybersecurity, cloud solutions, managed IT, and data recovery."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={businessImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Business IT Services | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Business-focused IT services in Palm Bay and Melbourne, Florida."
+        />
 
         {/* Preload LCP image */}
         <link rel="preload" as="image" href={businessImage} />
@@ -392,4 +409,3 @@ function BusinessServices() {
 }
 
 export default BusinessServices;
-

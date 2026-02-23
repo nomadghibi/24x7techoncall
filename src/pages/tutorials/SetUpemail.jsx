@@ -2,10 +2,12 @@ import React from 'react';
 import HeroSection from '../../components/HeroSection';
 import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import heroImage from '../../assets/howtoemail.webp'; // Adjust the path according to your file structure
 
 function SetUpEmail() {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/how-to/set-up-email';
 
   const handleContactUs = () => {
     navigate('/contact'); // Adjust the path to your contact or booking page
@@ -13,6 +15,30 @@ function SetUpEmail() {
 
   return (
     <div>
+      <Helmet>
+        <title>How to Set Up Email on Your Computer | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Step-by-step instructions to set up email on your computer using Outlook, Thunderbird, Apple Mail, and other clients."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="How to Set Up Email on Your Computer | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Configure incoming and outgoing mail settings correctly for a reliable email setup."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={heroImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How to Set Up Email on Your Computer | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Set up email clients with the right IMAP/POP/SMTP settings in minutes."
+        />
+      </Helmet>
       <HeroSection title="How to Set Up Email on Your Computer" image={heroImage} />
       <div className="container p-8 mx-auto">
         <GoBackButtonWithArrow />
@@ -77,5 +103,4 @@ function SetUpEmail() {
 }
 
 export default SetUpEmail;
-
 

@@ -51,10 +51,12 @@ import React from 'react';
 import HeroSection from '../../components/HeroSection';
 import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import heroImage from '../../assets/datarecovery.webp'; // Adjust the path according to your file structure
 
 function RecoverData() {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/how-to/recover-data';
 
   const handleContactUs = () => {
     navigate('/contact'); // Adjust the path to your contact or booking page
@@ -62,6 +64,30 @@ function RecoverData() {
 
   return (
     <div>
+      <Helmet>
+        <title>How to Recover Lost Data | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Learn practical steps to recover lost files safely and improve your chances of successful data recovery."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="How to Recover Lost Data | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="A step-by-step recovery guide covering software tools, safe workflows, and backup tips."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={heroImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How to Recover Lost Data | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Recover deleted files with safer methods and avoid data overwrite."
+        />
+      </Helmet>
       <HeroSection title="How to Recover Lost Data" image={heroImage} />
       <div className="container p-8 mx-auto">
         <GoBackButtonWithArrow />

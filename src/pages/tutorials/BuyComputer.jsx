@@ -2,10 +2,12 @@ import React from 'react';
 import HeroSection from '../../components/HeroSection';
 import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import heroImage from '../../assets/howtobuycomputer.webp'; // Adjust the path according to your file structure
 
 function BuyComputer() {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/how-to/buy-computer';
 
   const handleContactUs = () => {
     navigate('/contact'); // Adjust the path to your contact or booking page
@@ -13,6 +15,30 @@ function BuyComputer() {
 
   return (
     <div>
+      <Helmet>
+        <title>How to Buy a Computer | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Use this buying guide to choose the right computer for your needs, budget, and long-term performance goals."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="How to Buy a Computer | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="A practical checklist for selecting the best desktop or laptop based on use case and budget."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={heroImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How to Buy a Computer | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Compare specs, budget, and future-proofing with this computer buying guide."
+        />
+      </Helmet>
       <HeroSection title="How to Buy a Computer" image={heroImage} />
       <div className="container p-8 mx-auto">
         <GoBackButtonWithArrow />
@@ -82,5 +108,4 @@ function BuyComputer() {
 }
 
 export default BuyComputer;
-
 

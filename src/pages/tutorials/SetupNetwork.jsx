@@ -2,10 +2,12 @@ import React from 'react';
 import HeroSection from '../../components/HeroSection';
 import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import heroImage from '../../assets/setupnetwork.webp'; // Adjust the path according to your file structure
 
 function SetupNetwork() {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/how-to/setup-network';
 
   const handleContactUs = () => {
     navigate('/contact'); // Adjust the path to your contact or booking page
@@ -13,6 +15,30 @@ function SetupNetwork() {
 
   return (
     <div>
+      <Helmet>
+        <title>How to Set Up a Network | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Step-by-step guide to set up a secure home or office network, including router setup, Wi-Fi security, and troubleshooting tips."
+        />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content="How to Set Up a Network | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Learn how to configure a reliable network with proper security and device connectivity."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:image" content={heroImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="How to Set Up a Network | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Build a secure and efficient network with this practical setup guide."
+        />
+      </Helmet>
       <HeroSection title="How to Set Up a Network" image={heroImage} />
       <div className="container p-8 mx-auto">
         <GoBackButtonWithArrow />
@@ -100,5 +126,4 @@ function SetupNetwork() {
 }
 
 export default SetupNetwork;
-
 

@@ -9,7 +9,6 @@ import {
   FaHandsHelping,
   FaTools,
   FaLock,
-  FaShoppingCart,
   FaEnvelope,
 } from 'react-icons/fa';
 import heroImage from '../assets/herohowtobesafe.webp'; // Ensure you have this image in your assets folder
@@ -60,12 +59,6 @@ function HowTo() {
       description: 'Guidelines to protect your personal information and ensure a secure online experience.',
       link: '/how-to/be-safe-online',
       icon: <FaLock className="mb-4 text-5xl text-pink-500" />,
-    },
-    {
-      title: 'How to Buy a Computer',
-      description: 'Tips to help you choose the right computer for your needs and budget.',
-      link: '/how-to/buy-computer',
-      icon: <FaShoppingCart className="mb-4 text-5xl text-teal-500" />,
     },
     {
       title: 'How to Set Up Email on Your Computer',

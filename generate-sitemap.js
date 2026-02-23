@@ -47,7 +47,6 @@ const staticRoutes = [
   '/how-to/use-remote-support',
   '/how-to/improve-performance',
   '/how-to/be-safe-online',
-  '/how-to/buy-computer',
   '/how-to/set-up-email',
   '/paynow',
   '/checkout',
@@ -56,7 +55,6 @@ const staticRoutes = [
   '/subscribe',
   '/pricing',
   '/about-us',
-  '/buy-computers',
   '/confirmation',
   '/buy-confirmation',
 ];

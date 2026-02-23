@@ -134,17 +134,6 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
             </li>
             <li>
               <Link
-                to="/buy-computers"
-                className="hover:underline"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                onClick={() => handleMenuClick('/buy-computers')}
-              >
-                Buy Computers
-              </Link>
-            </li>
-            <li>
-              <Link
                 to="/contact"
                 className="hover:underline"
                 onMouseEnter={handleMouseEnter}
@@ -222,7 +211,6 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
               <Link to="/business-solutions/digital-transformation" className="px-4 py-2 hover:underline" onClick={handleSubmenuItemClick}>Digital Transformation</Link>
             </div>
           )}
-          <Link to="/buy-computers" className="px-4 py-2 hover:underline" onClick={toggleMobileMenu}>Buy Computers</Link>
           <Link to="/contact" className="px-4 py-2 hover:underline" onClick={toggleMobileMenu}>Contact</Link>
           <Link to="/how-to" className="px-4 py-2 hover:underline" onClick={toggleMobileMenu}>How To</Link>
           <Link to="/blog" className="px-4 py-2 hover:underline" onClick={toggleMobileMenu}>Blog</Link>

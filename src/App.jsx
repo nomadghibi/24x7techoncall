@@ -1,7 +1,7 @@
 
 import { Suspense, lazy, useState, useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Footer from './components/Footer';
 import NavMenu from './components/NavMenu';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -47,7 +47,6 @@ const BookService = lazy(() => import('./pages/BookService'));
 const Subscribe = lazy(() => import('./pages/Subscribe'));
 const Pricing = lazy(() => import('./pages/Pricing'));
 const AboutUs = lazy(() => import('./pages/AboutUs'));
-const BuyComputers = lazy(() => import('./pages/BuyComputers'));
 const FixBrokenScreen = lazy(() => import('./pages/tutorials/FixBrokenScreen'));
 const KnowYourComputerHasVirus = lazy(() => import('./pages/tutorials/KnowYourComputerHasVirus'));
 const SetupNetwork = lazy(() => import('./pages/tutorials/SetupNetwork'));
@@ -55,7 +54,6 @@ const RecoverData = lazy(() => import('./pages/tutorials/RecoverData'));
 const UseRemoteSupport = lazy(() => import('./pages/tutorials/UseRemoteSupport'));
 const ImprovePerformance = lazy(() => import('./pages/tutorials/ImprovePerformance'));
 const BeSafeOnline = lazy(() => import('./pages/tutorials/BeSafeOnline'));
-const BuyComputer = lazy(() => import('./pages/tutorials/BuyComputer'));
 const SetupEmail = lazy(() => import('./pages/tutorials/SetUpemail'));
 const QuickTechHelp = lazy(() => import('./pages/QuickTechHelp'));
 const ConfirmationPage = lazy(() => import('./pages/ConfirmationPage'));
@@ -134,7 +132,7 @@ const App = () => {
               <Route path="/how-to/use-remote-support" element={<UseRemoteSupport />} />
               <Route path="/how-to/improve-performance" element={<ImprovePerformance />} />
               <Route path="/how-to/be-safe-online" element={<BeSafeOnline />} />
-              <Route path="/how-to/buy-computer" element={<BuyComputer />} />
+              <Route path="/how-to/buy-computer" element={<Navigate to="/how-to" replace />} />
               <Route path="/how-to/set-up-email" element={<SetupEmail />} />
               <Route path="/paynow" element={<PayNow />} />
               <Route path="/checkout" element={<Checkout />} />
@@ -144,7 +142,7 @@ const App = () => {
               <Route path="/subscribe" element={<Subscribe />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about-us" element={<AboutUs />} />
-              <Route path="/buy-computers" element={<BuyComputers />} />
+              <Route path="/buy-computers" element={<Navigate to="/services" replace />} />
               <Route path="/confirmation" element={<ConfirmationPage />} />
               <Route path="/buy-confirmation" element={<BuyConfirmationPage />} />
             </Routes>

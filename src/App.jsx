@@ -1,5 +1,5 @@
 
-import React, { Suspense, lazy, useState, useEffect } from 'react';
+import { Suspense, lazy, useState, useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer';
@@ -16,6 +16,7 @@ const SoftwareTroubleshooting = lazy(() => import('./pages/residentialsupport/So
 const DataRecovery = lazy(() => import('./pages/residentialsupport/DataRecovery'));
 const NetworkSetupSupport = lazy(() => import('./pages/residentialsupport/NetworkSetupSupport'));
 const RemoteSupport = lazy(() => import('./pages/residentialsupport/RemoteSupport'));
+const CloudConsulting = lazy(() => import('./pages/CloudConsulting'));
 const TechConsultation = lazy(() => import('./pages/residentialsupport/TechConsultation'));
 const ComputerTraining = lazy(() => import('./pages/residentialsupport/ComputerTraining'));
 const HomeOfficeSetup = lazy(() => import('./pages/residentialsupport/HomeOfficeSetup'));
@@ -65,11 +66,8 @@ const App = () => {
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    const preloadComponents = [
-      import('./pages/Home'),
-      import('./pages/ResidentialServices'),
-      // Add other critical components here
-    ];
+    void import('./pages/Home');
+    void import('./pages/ResidentialServices');
   }, []);
 
   const handleMouseMove = (e) => {
@@ -93,7 +91,7 @@ const App = () => {
         style={{ left: circlePosition.x, top: circlePosition.y }}
       ></div>
       <NavMenu handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} />
-      <main className="flex-grow mt-16">
+      <main id="main-content" tabIndex={-1} className="flex-grow mt-16">
         <ErrorBoundary>
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
@@ -106,6 +104,7 @@ const App = () => {
               <Route path="/residential-support/data-recovery" element={<DataRecovery />} />
               <Route path="/residential-support/network-setup-support" element={<NetworkSetupSupport />} />
               <Route path="/residential-support/remote-support" element={<RemoteSupport />} />
+              <Route path="/residential-support/cloud-consulting" element={<CloudConsulting />} />
               <Route path="/residential-support/tech-consultation" element={<TechConsultation />} />
               <Route path="/residential-support/computer-training" element={<ComputerTraining />} />
               <Route path="/residential-support/home-office-setup" element={<HomeOfficeSetup />} />

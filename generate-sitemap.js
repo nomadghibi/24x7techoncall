@@ -62,31 +62,24 @@ const staticRoutes = [
 ];
 
 // Transform staticRoutes into the format expected by SitemapStream
-const links = staticRoutes.map(route => ({
+const links = staticRoutes.map((route) => ({
   url: route,
   changefreq: 'weekly', // Set a default changefreq
   priority: 0.8, // Set a default priority
 }));
 
-// Add extra routes if needed
-links.push(
-  { url: '/', changefreq: 'daily', priority: 1.0 },
-  { url: '/about-us', changefreq: 'weekly', priority: 0.8 },
-  { url: '/contact', changefreq: 'monthly', priority: 0.5 }
-);
-
 const sitemapPath = resolve(__dirname, 'public', 'sitemap.xml');
 
-const sitemapStream = new SitemapStream({ hostname: 'https://yourdomain.com' });
+const sitemapStream = new SitemapStream({ hostname: 'https://bestcomputertec.com' });
 const writeStream = createWriteStream(sitemapPath);
 
 sitemapStream.pipe(writeStream);
 
-links.forEach(link => sitemapStream.write(link));
+links.forEach((link) => sitemapStream.write(link));
 sitemapStream.end();
 
 streamToPromise(sitemapStream).then(() => {
   console.log('Sitemap successfully created!');
-}).catch(err => {
+}).catch((err) => {
   console.error('Error generating sitemap', err);
 });

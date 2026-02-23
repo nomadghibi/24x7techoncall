@@ -1,3 +1,7 @@
+import typography from '@tailwindcss/typography';
+import aspectRatio from '@tailwindcss/aspect-ratio';
+import forms from '@tailwindcss/forms';
+
 // /** @type {import('tailwindcss').Config} */
 // export default {
 //   content: [
@@ -38,10 +42,8 @@ export default {
     },
   },
   plugins: [
-    // Include Tailwind CSS plugins for additional functionality
-    require('@tailwindcss/typography'), // Typography plugin for better text formatting
-    require('@tailwindcss/aspect-ratio'), // Aspect Ratio plugin for maintaining consistent media sizes
-    require('@tailwindcss/forms'), // Forms plugin for styling form elements
+    typography,
+    aspectRatio,
+    forms,
   ],
 }
-

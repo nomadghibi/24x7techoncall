@@ -1,24 +1,22 @@
 import axios from 'axios';
 
 const fetchGoogleReviews = async () => {
-  const placeId = 'YOUR_PLACE_ID'; // Replace with your actual place ID
-  const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
+  const placeId = import.meta.env.VITE_GOOGLE_PLACE_ID;
+  const apiKey = import.meta.env.VITE_GOOGLE_PLACES_API_KEY;
 
-  try {
-    const response = await axios.get(
-      `https://maps.googleapis.com/maps/api/place/details/json?place_id=${REDACTED_PLACE_ID
-602 Hurst Rd NE, Palm Bay, FL 32907, USA'}&fields=reviews&key=${REDACTED_API_KEY}`
-    );
-
-    if (response.data.result && response.data.result.reviews) {
-      return response.data.result.reviews;
-    } else {
-      throw new Error('No reviews found');
-    }
-  } catch (error) {
-    console.error('Error fetching reviews:', error);
-    throw error;
+  if (!placeId || !apiKey) {
+    throw new Error('Missing Google reviews configuration');
   }
+
+  const response = await axios.get(
+    `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`
+  );
+
+  if (response.data?.result?.reviews) {
+    return response.data.result.reviews;
+  }
+
+  throw new Error('No reviews found');
 };
 
 export default fetchGoogleReviews;

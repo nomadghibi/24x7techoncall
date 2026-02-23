@@ -334,7 +334,7 @@
 // export default ResidentialServices;
 
 
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -485,21 +485,6 @@ function ResidentialServices() {
   const loadVideo = () => {
     setVideoLoaded(true);
   };
-
-  useEffect(() => {
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js').then(
-          (registration) => {
-            console.log('SW registered: ', registration);
-          },
-          (registrationError) => {
-            console.log('SW registration failed: ', registrationError);
-          }
-        );
-      });
-    }
-  }, []);
 
   return (
     <div>

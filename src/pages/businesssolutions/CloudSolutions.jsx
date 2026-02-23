@@ -1,6 +1,6 @@
 
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet'; // Import Helmet
 import { FaCloud, FaShieldAlt, FaSync, FaPlug, FaServer, FaTools } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
@@ -8,6 +8,10 @@ import heroImage from '../../assets/cloudsolutions.webp';
 import emailjs from 'emailjs-com';
 
 const CloudSolutions = () => {
+  const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -91,11 +95,24 @@ const CloudSolutions = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+      alert('Cloud solutions form is temporarily unavailable due to missing email configuration.');
+      return;
+    }
+
     // Send email using EmailJS
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_USER_ID')
+    emailjs.send(emailServiceId, emailTemplateId, formData, emailPublicKey)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
         alert('Your message has been sent successfully!');
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          serviceType: '',
+          serviceDeliveryMethod: '',
+          problem: ''
+        });
       }, (error) => {
         console.log('FAILED...', error);
         alert('There was an error sending your message. Please try again later.');
@@ -106,7 +123,7 @@ const CloudSolutions = () => {
     <div>
       <Helmet>
         <title>Cloud Solutions - Best Computer Tech</title>
-        <link rel="canonical" href="https://bestcomputertec.com/cloud-solutions" />
+        <link rel="canonical" href="https://bestcomputertec.com/business-solutions/cloud-solutions" />
       </Helmet>
       <HeroSection title="Cloud Solutions" image={heroImage} />
       <div className="container p-8 mx-auto">

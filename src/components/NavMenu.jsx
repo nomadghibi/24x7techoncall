@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -43,7 +43,10 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
   const handleMenuClick = (path) => {
     navigate(path);
     closeSubmenus();
-    document.getElementById('main-content').focus(); // Move focus to the main content after navigation
+    const mainContent = document.getElementById('main-content');
+    if (mainContent) {
+      mainContent.focus();
+    }
   };
 
   return (
@@ -230,5 +233,3 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
 };
 
 export default NavMenu;
-
-

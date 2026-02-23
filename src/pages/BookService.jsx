@@ -1,6 +1,4 @@
-
-
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
 import emailjs from 'emailjs-com'; // Import EmailJS
 import { FaUser, FaEnvelope, FaPhone, FaClipboardList } from 'react-icons/fa';
@@ -15,6 +13,9 @@ const BookService = () => {
   });
 
   const navigate = useNavigate(); // Initialize navigate
+  const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,26 +27,29 @@ const BookService = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    // Use EmailJS to send the form data to your Gmail
-    emailjs.sendForm('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
+
+    if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+      alert('Booking is temporarily unavailable due to missing email configuration.');
+      return;
+    }
+
+    // Use EmailJS to send the form data
+    emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((result) => {
         console.log('Email successfully sent:', result.text);
         alert('Service booked successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          serviceType: '',
+          message: ''
+        });
         navigate('/confirmation'); // Navigate to confirmation page after booking
       }, (error) => {
         console.log('Failed to send email:', error.text);
         alert('Failed to book the service, please try again.');
       });
-
-    // Reset form fields after submission
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      serviceType: '',
-      message: ''
-    });
   };
 
   return (

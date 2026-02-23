@@ -1,15 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const GoogleReviews = () => {
   const [reviews, setReviews] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const placeId = import.meta.env.VITE_GOOGLE_PLACE_ID;
+  const apiKey = import.meta.env.VITE_GOOGLE_PLACES_API_KEY;
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const placeId = 'REDACTED_PLACE_ID'; // Replace with your actual place ID
-      const apiKey = 'REDACTED_API_KEY'; // Replace with your actual API key
+      if (!placeId || !apiKey) {
+        setError('Google reviews are unavailable due to missing configuration.');
+        setLoading(false);
+        return;
+      }
 
       try {
         const response = await axios.get(
@@ -28,8 +33,8 @@ const GoogleReviews = () => {
       }
     };
 
-    fetchReviews();
-  }, []);
+    void fetchReviews();
+  }, [apiKey, placeId]);
 
   if (loading) {
     return <div>Loading...</div>;

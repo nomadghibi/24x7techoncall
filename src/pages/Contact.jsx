@@ -1,5 +1,4 @@
-
-import React, { useEffect, useState } from 'react';
+import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 
@@ -10,13 +9,9 @@ function Contact() {
     message: '',
   });
 
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://www.google.com/recaptcha/api.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-  }, []);
+  const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (e) => {
     setFormData({
@@ -28,21 +23,25 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+      alert('Contact form is temporarily unavailable due to missing email configuration.');
+      return;
+    }
+
     // Send form data using EmailJS
-    emailjs.sendForm('service_rjpfye6', 'template_k76wxi8', e.target, 'RRqk9bqjxlo8Agwvr')
+    emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((result) => {
         console.log('Email successfully sent:', result.text);
         alert('Message sent successfully!');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
       }, (error) => {
         console.log('Failed to send email:', error.text);
         alert('Failed to send the message, please try again.');
       });
-
-    setFormData({
-      name: '',
-      email: '',
-      message: '',
-    });
   };
 
   return (

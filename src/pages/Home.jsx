@@ -515,27 +515,6 @@ import blogImage3 from '../assets/backupHeroImage.webp';
 import tiredOfComputerIssuesImage from '../assets/computer-training.webp';
 import 'tailwindcss/tailwind.css';
 
-// AlertBanner Component for Hurricane Milton
-const AlertBanner = () => {
-  const [isVisible, setIsVisible] = useState(true);
-
-  if (!isVisible) return null;
-
-  return (
-    <div className="relative p-4 text-center text-white bg-red-600">
-      ⚠️ Attention: Hurricane Milton is approaching. Please take necessary precautions and stay updated on local advisories.
-      <a href="https://www.weather.com/storms/hurricane-central" className="ml-2 underline">Learn More</a>
-      <button
-        className="absolute text-white top-1 right-1"
-        onClick={() => setIsVisible(false)}
-        aria-label="Close alert"
-      >
-        ✕
-      </button>
-    </div>
-  );
-};
-
 // Memoized static components to prevent unnecessary re-renders
 const ServiceCard = React.memo(({ service, onReadMore }) => (
   <div className="flex flex-col items-center w-full max-w-md p-6 bg-white rounded-lg shadow-md">
@@ -744,9 +723,6 @@ function Home() {
 
   return (
     <div>
-      {/* Hurricane Milton Alert Banner */}
-      <AlertBanner />
-
       <Helmet>
         <title>Best Computer Tech | Computer Repair & IT Support in Palm Bay/ Melbourne, FL</title>
         <meta
@@ -860,6 +836,5 @@ function Home() {
 }
 
 export default Home;
-
 
 

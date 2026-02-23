@@ -3,6 +3,7 @@ import { registerRoute } from 'workbox-routing';
 import { StaleWhileRevalidate } from 'workbox-strategies';
 import { CacheFirst } from 'workbox-strategies';
 import { precacheAndRoute } from 'workbox-precaching';
+import { ExpirationPlugin } from 'workbox-expiration';
 
 // Precache files (optional)
 precacheAndRoute(self.__WB_MANIFEST);

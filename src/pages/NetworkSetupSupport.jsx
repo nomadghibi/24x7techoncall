@@ -174,7 +174,7 @@
 
 // export default NetworkSetupSupport;
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Helmet } from 'react-helmet'; // Import Helmet
 import HeroSection from '../components/HeroSection';
 import heroImage from '../assets/NetworkSetupSupport.webp'; // Adjust the file path if necessary
@@ -494,7 +494,9 @@ const NetworkSetupSupport = () => {
             </div>
           </div>
         </div>
-      );
-    };
+      </div>
+    </div>
+  );
+};
 
-    export default NetworkSetupSupport;
+export default NetworkSetupSupport;

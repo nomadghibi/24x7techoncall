@@ -1,246 +1,59 @@
-
-// import React, { useState, useEffect } from 'react';
-// import { useLocation, useNavigate } from 'react-router-dom';
-// import '../pages/Checkout.css'; // Ensure Tailwind CSS is included
-
-// const Checkout = () => {
-//   const location = useLocation();
-//   const navigate = useNavigate();
-//   const service = location.state?.service;
-
-//   if (!service) {
-//     navigate('/'); // Redirect to home if no service is selected (avoiding direct access to the checkout page)
-//     return null;
-//   }
-
-//   const isProduct = service?.isProduct || false;
-//   const [orderDetails, setOrderDetails] = useState({
-//     item: service?.title || 'Default Service',
-//     price: parseFloat(service?.price.replace('$', '')) || 0,
-//     shipping: 'Free shipping',
-//     tax: 0.0,
-//     total: parseFloat(service?.price.replace('$', '')) || 0,
-//   });
-
-//   useEffect(() => {
-//     if (isProduct) {
-//       const taxAmount = orderDetails.price * 0.07; // Assuming a 7% sales tax rate
-//       setOrderDetails((prevDetails) => ({
-//         ...prevDetails,
-//         tax: taxAmount,
-//         total: prevDetails.price + taxAmount,
-//       }));
-//     }
-//   }, [isProduct, orderDetails.price]);
-
-//   const [billingDetails, setBillingDetails] = useState({
-//     firstName: '',
-//     lastName: '',
-//     streetAddress: '',
-//     apartment: '',
-//     city: '',
-//     state: '',
-//     zip: '',
-//     country: 'United States',
-//   });
-
-//   const [paymentError, setPaymentError] = useState('');
-
-//   const handleBillingDetailsChange = (e) => {
-//     const { name, value } = e.target;
-//     setBillingDetails((prevDetails) => ({
-//       ...prevDetails,
-//       [name]: value,
-//     }));
-//   };
-
-//   useEffect(() => {
-//     // Load PayPal script
-//     const script = document.createElement('script');
-//     script.src =
-//       'https://www.paypal.com/sdk/js?client-id=AU7xP5heE34hNJdS6nkH-9elJjzlpTyh3VbaXgm7SaGgbLwcXLslaw9BRkFJKZhu7HEku-9PuZl34gMm'; // Replace with your PayPal Client ID
-//     script.addEventListener('load', () => {
-//       window.paypal.Buttons({
-//         createOrder: (data, actions) => {
-//           return actions.order.create({
-//             purchase_units: [
-//               {
-//                 amount: {
-//                   value: orderDetails.total.toFixed(2), // Total amount to charge
-//                 },
-//                 description: orderDetails.item,
-//               },
-//             ],
-//           });
-//         },
-//         onApprove: async (data, actions) => {
-//           return actions.order.capture().then((details) => {
-//             const orderNumber = Math.floor(Math.random() * 1000000);
-
-//             navigate('/buy-confirmation', {
-//               state: {
-//                 orderNumber,
-//                 orderDetails: {
-//                   item: orderDetails.item,
-//                   total: orderDetails.total,
-//                   paymentMethod: 'PayPal',
-//                   billingDetails,
-//                 },
-//               },
-//             });
-//           });
-//         },
-//         onError: (err) => {
-//           setPaymentError('Payment processing failed. Please try again.');
-//           console.error('PayPal Checkout onError', err);
-//         },
-//       }).render('#paypal-button-container');
-//     });
-
-//     document.body.appendChild(script);
-
-//     return () => {
-//       script.removeEventListener('load', null);
-//       document.body.removeChild(script);
-//     };
-//   }, [orderDetails, billingDetails, navigate]);
-
-//   return (
-//     <div className="max-w-4xl p-6 mx-auto">
-//       <h1 className="mb-8 text-3xl font-bold text-center">Checkout</h1>
-//       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-//         <div className="p-6 bg-white rounded-md shadow-md">
-//           <h2 className="mb-4 text-2xl font-semibold">Billing Details</h2>
-//           <form>
-//             <div className="mb-4">
-//               <label className="block mb-1 text-sm font-medium text-gray-700">First Name</label>
-//               <input
-//                 type="text"
-//                 name="firstName"
-//                 value={billingDetails.firstName}
-//                 onChange={handleBillingDetailsChange}
-//                 required
-//                 className="w-full p-2 border border-gray-300 rounded-md"
-//               />
-//             </div>
-//             <div className="mb-4">
-//               <label className="block mb-1 text-sm font-medium text-gray-700">Last Name</label>
-//               <input
-//                 type="text"
-//                 name="lastName"
-//                 value={billingDetails.lastName}
-//                 onChange={handleBillingDetailsChange}
-//                 required
-//                 className="w-full p-2 border border-gray-300 rounded-md"
-//               />
-//             </div>
-//             <div className="mb-4">
-//               <label className="block mb-1 text-sm font-medium text-gray-700">Street Address</label>
-//               <input
-//                 type="text"
-//                 name="streetAddress"
-//                 value={billingDetails.streetAddress}
-//                 onChange={handleBillingDetailsChange}
-//                 placeholder="House number and street name"
-//                 required
-//                 className="w-full p-2 border border-gray-300 rounded-md"
-//               />
-//             </div>
-//             <div className="mb-4">
-//               <label className="block mb-1 text-sm font-medium text-gray-700">
-//                 Apartment, Suite, Unit, etc. (optional)
-//               </label>
-//               <input
-//                 type="text"
-//                 name="apartment"
-//                 value={billingDetails.apartment}
-//                 onChange={handleBillingDetailsChange}
-//                 className="w-full p-2 border border-gray-300 rounded-md"
-//               />
-//             </div>
-//             <div className="grid grid-cols-3 gap-4 mb-4">
-//               <div>
-//                 <label className="block mb-1 text-sm font-medium text-gray-700">City</label>
-//                 <input
-//                   type="text"
-//                   name="city"
-//                   value={billingDetails.city}
-//                   onChange={handleBillingDetailsChange}
-//                   required
-//                   className="w-full p-2 border border-gray-300 rounded-md"
-//                 />
-//               </div>
-//               <div>
-//                 <label className="block mb-1 text-sm font-medium text-gray-700">State</label>
-//                 <input
-//                   type="text"
-//                   name="state"
-//                   value={billingDetails.state}
-//                   onChange={handleBillingDetailsChange}
-//                   required
-//                   className="w-full p-2 border border-gray-300 rounded-md"
-//                 />
-//               </div>
-//               <div>
-//                 <label className="block mb-1 text-sm font-medium text-gray-700">ZIP / Postal Code</label>
-//                 <input
-//                   type="text"
-//                   name="zip"
-//                   value={billingDetails.zip}
-//                   onChange={handleBillingDetailsChange}
-//                   required
-//                   className="w-full p-2 border border-gray-300 rounded-md"
-//                 />
-//               </div>
-//             </div>
-//           </form>
-//         </div>
-//         <div className="p-6 bg-white rounded-md shadow-md">
-//           <h2 className="mb-4 text-2xl font-semibold">Your Order</h2>
-//           <ul className="mb-6">
-//             <li className="mb-2 text-lg">{orderDetails.item}</li>
-//             <li className="mb-1 text-gray-700">Subtotal: ${orderDetails.price.toFixed(2)}</li>
-//             <li className="mb-1 text-gray-700">{orderDetails.shipping}</li>
-//             {isProduct && <li className="mb-1 text-gray-700">Tax: ${orderDetails.tax.toFixed(2)}</li>}
-//             <li className="text-xl font-semibold">Total: ${orderDetails.total.toFixed(2)}</li>
-//           </ul>
-//           <div id="paypal-button-container"></div>
-//           {paymentError && <p className="mb-4 text-red-500">{paymentError}</p>}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Checkout;
-
-
-
-import React, { useState, useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet'; // Import Helmet for SEO
-import '../pages/Checkout.css'; // Ensure Tailwind CSS is included
+import { Helmet } from 'react-helmet';
+import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
+import '../pages/Checkout.css';
+
+const TAX_RATE = 0.07;
+
+const parsePrice = (value) => {
+  if (typeof value === 'number' && Number.isFinite(value)) {
+    return value;
+  }
+
+  if (typeof value === 'string') {
+    const normalized = value.replace(/[^0-9.]/g, '');
+    const parsed = Number.parseFloat(normalized);
+    return Number.isFinite(parsed) ? parsed : 0;
+  }
+
+  return 0;
+};
+
+const normalizeService = (state) => {
+  const service = state?.service;
+
+  if (service && typeof service === 'object') {
+    return {
+      title: service.title || service.item || 'Service',
+      price: parsePrice(service.price ?? state?.price),
+      isProduct: Boolean(service.isProduct),
+    };
+  }
+
+  if (typeof service === 'string') {
+    return {
+      title: service,
+      price: parsePrice(state?.price),
+      isProduct: false,
+    };
+  }
+
+  return null;
+};
 
 const Checkout = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const service = location.state?.service;
+  const paypalClientId = import.meta.env.VITE_PAYPAL_CLIENT_ID;
 
-  // Redirect to home if no service is selected (avoiding direct access to the checkout page)
+  const service = useMemo(() => normalizeService(location.state), [location.state]);
+
   useEffect(() => {
     if (!service) {
-      navigate('/');
+      navigate('/', { replace: true });
     }
   }, [service, navigate]);
-
-  const isProduct = service?.isProduct || false;
-  const [orderDetails, setOrderDetails] = useState({
-    item: service?.title || 'Default Service',
-    price: parseFloat(service?.price.replace('$', '')) || 0,
-    shipping: 'Free shipping',
-    tax: 0.0,
-    total: parseFloat(service?.price.replace('$', '')) || 0,
-  });
 
   const [billingDetails, setBillingDetails] = useState({
     firstName: '',
@@ -252,133 +65,56 @@ const Checkout = () => {
     zip: '',
     country: 'United States',
   });
-
   const [errors, setErrors] = useState({});
   const [paymentError, setPaymentError] = useState('');
 
-  // Calculate tax and total if the service is a product
-  useEffect(() => {
-    if (isProduct) {
-      const taxAmount = orderDetails.price * 0.07; // Assuming a 7% sales tax rate
-      setOrderDetails((prevDetails) => ({
-        ...prevDetails,
-        tax: taxAmount,
-        total: parseFloat(prevDetails.price) + taxAmount,
-      }));
-    }
-  }, [isProduct, orderDetails.price]);
+  if (!service) {
+    return null;
+  }
 
-  const handleBillingDetailsChange = (e) => {
-    const { name, value } = e.target;
-    setBillingDetails((prevDetails) => ({
-      ...prevDetails,
-      [name]: value,
-    }));
-    // Clear error for the field
-    setErrors((prevErrors) => ({
-      ...prevErrors,
-      [name]: '',
-    }));
-  };
-
-  useEffect(() => {
-    // Load PayPal script
-    const script = document.createElement('script');
-    script.src =
-      'https://www.paypal.com/sdk/js?client-id=AU7xP5heE34hNJdS6nkH-9elJjzlpTyh3VbaXgm7SaGgbLwcXLslaw9BRkFJKZhu7HEku-9PuZl34gMm'; // Replace with your PayPal Client ID
-    script.addEventListener('load', () => {
-      window.paypal
-        .Buttons({
-          createOrder: (data, actions) => {
-            return actions.order.create({
-              purchase_units: [
-                {
-                  amount: {
-                    value: orderDetails.total.toFixed(2), // Total amount to charge
-                  },
-                  description: orderDetails.item,
-                },
-              ],
-            });
-          },
-          onApprove: async (data, actions) => {
-            return actions.order.capture().then((details) => {
-              const orderNumber = Math.floor(Math.random() * 1000000);
-
-              navigate('/buy-confirmation', {
-                state: {
-                  orderNumber,
-                  orderDetails: {
-                    item: orderDetails.item,
-                    total: orderDetails.total,
-                    paymentMethod: 'PayPal',
-                    billingDetails,
-                  },
-                },
-              });
-            });
-          },
-          onError: (err) => {
-            setPaymentError('Payment processing failed. Please try again.');
-            console.error('PayPal Checkout onError', err);
-          },
-        })
-        .render('#paypal-button-container');
-    });
-
-    document.body.appendChild(script);
-
-    return () => {
-      script.removeEventListener('load', null);
-      document.body.removeChild(script);
-    };
-  }, [orderDetails, billingDetails, navigate]);
+  const tax = service.isProduct ? service.price * TAX_RATE : 0;
+  const total = service.price + tax;
 
   const validate = () => {
-    const newErrors = {};
-    if (!billingDetails.firstName.trim()) newErrors.firstName = 'First name is required';
-    if (!billingDetails.lastName.trim()) newErrors.lastName = 'Last name is required';
-    if (!billingDetails.streetAddress.trim()) newErrors.streetAddress = 'Street address is required';
-    if (!billingDetails.city.trim()) newErrors.city = 'City is required';
-    if (!billingDetails.state.trim()) newErrors.state = 'State is required';
-    if (!billingDetails.zip.trim()) newErrors.zip = 'ZIP/Postal code is required';
-    // Country is pre-filled; if dynamic, validate as needed
-    return newErrors;
+    const nextErrors = {};
+
+    if (!billingDetails.firstName.trim()) nextErrors.firstName = 'First name is required';
+    if (!billingDetails.lastName.trim()) nextErrors.lastName = 'Last name is required';
+    if (!billingDetails.streetAddress.trim()) nextErrors.streetAddress = 'Street address is required';
+    if (!billingDetails.city.trim()) nextErrors.city = 'City is required';
+    if (!billingDetails.state.trim()) nextErrors.state = 'State is required';
+    if (!billingDetails.zip.trim()) nextErrors.zip = 'ZIP/Postal code is required';
+
+    return nextErrors;
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // This form submission is handled by PayPal, so no action is needed here
+  const handleBillingDetailsChange = (event) => {
+    const { name, value } = event.target;
+    setBillingDetails((current) => ({ ...current, [name]: value }));
+    setErrors((current) => ({ ...current, [name]: '' }));
   };
 
-  // Define the canonical URL for this page
-  const canonicalUrl = 'https://www.yourdomain.com/checkout'; // Replace with your actual URL
+  const checkoutTitle = `Checkout | ${service.title}`;
 
   return (
     <div>
-      {/* Helmet for canonical URL and SEO metadata */}
       <Helmet>
-        <link rel="canonical" href={canonicalUrl} />
-        <title>Checkout | Your Company Name</title>
+        <link rel="canonical" href="https://bestcomputertec.com/checkout" />
+        <title>{checkoutTitle}</title>
         <meta
           name="description"
-          content={`Complete your purchase of ${orderDetails.item} securely using PayPal.`}
+          content={`Complete your purchase of ${service.title} securely with PayPal.`}
         />
       </Helmet>
 
       <div className="max-w-4xl p-6 mx-auto">
         <h1 className="mb-8 text-3xl font-bold text-center">Checkout</h1>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-          {/* Billing Details Section */}
           <div className="p-6 bg-white rounded-md shadow-md">
             <h2 className="mb-4 text-2xl font-semibold">Billing Details</h2>
-            <form onSubmit={handleSubmit} noValidate>
-              {/* First Name Field */}
+            <form noValidate>
               <div className="mb-4">
-                <label
-                  className="block mb-1 text-sm font-medium text-gray-700"
-                  htmlFor="firstName"
-                >
+                <label className="block mb-1 text-sm font-medium text-gray-700" htmlFor="firstName">
                   First Name
                 </label>
                 <input
@@ -387,12 +123,10 @@ const Checkout = () => {
                   id="firstName"
                   value={billingDetails.firstName}
                   onChange={handleBillingDetailsChange}
-                  className={`w-full p-2 border ${
-                    errors.firstName ? 'border-red-500' : 'border-gray-300'
-                  } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`w-full p-2 border ${errors.firstName ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
                   required
                   aria-invalid={errors.firstName ? 'true' : 'false'}
-                  aria-describedby={errors.firstName ? 'firstName-error' : null}
+                  aria-describedby={errors.firstName ? 'firstName-error' : undefined}
                 />
                 {errors.firstName && (
                   <p className="mt-1 text-xs text-red-500" id="firstName-error">
@@ -401,12 +135,8 @@ const Checkout = () => {
                 )}
               </div>
 
-              {/* Last Name Field */}
               <div className="mb-4">
-                <label
-                  className="block mb-1 text-sm font-medium text-gray-700"
-                  htmlFor="lastName"
-                >
+                <label className="block mb-1 text-sm font-medium text-gray-700" htmlFor="lastName">
                   Last Name
                 </label>
                 <input
@@ -415,12 +145,10 @@ const Checkout = () => {
                   id="lastName"
                   value={billingDetails.lastName}
                   onChange={handleBillingDetailsChange}
-                  className={`w-full p-2 border ${
-                    errors.lastName ? 'border-red-500' : 'border-gray-300'
-                  } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`w-full p-2 border ${errors.lastName ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
                   required
                   aria-invalid={errors.lastName ? 'true' : 'false'}
-                  aria-describedby={errors.lastName ? 'lastName-error' : null}
+                  aria-describedby={errors.lastName ? 'lastName-error' : undefined}
                 />
                 {errors.lastName && (
                   <p className="mt-1 text-xs text-red-500" id="lastName-error">
@@ -429,12 +157,8 @@ const Checkout = () => {
                 )}
               </div>
 
-              {/* Street Address Field */}
               <div className="mb-4">
-                <label
-                  className="block mb-1 text-sm font-medium text-gray-700"
-                  htmlFor="streetAddress"
-                >
+                <label className="block mb-1 text-sm font-medium text-gray-700" htmlFor="streetAddress">
                   Street Address
                 </label>
                 <input
@@ -444,12 +168,10 @@ const Checkout = () => {
                   value={billingDetails.streetAddress}
                   onChange={handleBillingDetailsChange}
                   placeholder="House number and street name"
-                  className={`w-full p-2 border ${
-                    errors.streetAddress ? 'border-red-500' : 'border-gray-300'
-                  } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`w-full p-2 border ${errors.streetAddress ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
                   required
                   aria-invalid={errors.streetAddress ? 'true' : 'false'}
-                  aria-describedby={errors.streetAddress ? 'streetAddress-error' : null}
+                  aria-describedby={errors.streetAddress ? 'streetAddress-error' : undefined}
                 />
                 {errors.streetAddress && (
                   <p className="mt-1 text-xs text-red-500" id="streetAddress-error">
@@ -458,12 +180,8 @@ const Checkout = () => {
                 )}
               </div>
 
-              {/* Apartment/Suite/Unit Field */}
               <div className="mb-4">
-                <label
-                  className="block mb-1 text-sm font-medium text-gray-700"
-                  htmlFor="apartment"
-                >
+                <label className="block mb-1 text-sm font-medium text-gray-700" htmlFor="apartment">
                   Apartment, Suite, Unit, etc. (optional)
                 </label>
                 <input
@@ -476,14 +194,9 @@ const Checkout = () => {
                 />
               </div>
 
-              {/* City, State, ZIP Fields */}
               <div className="grid grid-cols-3 gap-4 mb-4">
-                {/* City */}
                 <div>
-                  <label
-                    className="block mb-1 text-sm font-medium text-gray-700"
-                    htmlFor="city"
-                  >
+                  <label className="block mb-1 text-sm font-medium text-gray-700" htmlFor="city">
                     City
                   </label>
                   <input
@@ -492,12 +205,10 @@ const Checkout = () => {
                     id="city"
                     value={billingDetails.city}
                     onChange={handleBillingDetailsChange}
-                    className={`w-full p-2 border ${
-                      errors.city ? 'border-red-500' : 'border-gray-300'
-                    } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    className={`w-full p-2 border ${errors.city ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
                     required
                     aria-invalid={errors.city ? 'true' : 'false'}
-                    aria-describedby={errors.city ? 'city-error' : null}
+                    aria-describedby={errors.city ? 'city-error' : undefined}
                   />
                   {errors.city && (
                     <p className="mt-1 text-xs text-red-500" id="city-error">
@@ -506,12 +217,8 @@ const Checkout = () => {
                   )}
                 </div>
 
-                {/* State */}
                 <div>
-                  <label
-                    className="block mb-1 text-sm font-medium text-gray-700"
-                    htmlFor="state"
-                  >
+                  <label className="block mb-1 text-sm font-medium text-gray-700" htmlFor="state">
                     State
                   </label>
                   <input
@@ -520,12 +227,10 @@ const Checkout = () => {
                     id="state"
                     value={billingDetails.state}
                     onChange={handleBillingDetailsChange}
-                    className={`w-full p-2 border ${
-                      errors.state ? 'border-red-500' : 'border-gray-300'
-                    } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    className={`w-full p-2 border ${errors.state ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
                     required
                     aria-invalid={errors.state ? 'true' : 'false'}
-                    aria-describedby={errors.state ? 'state-error' : null}
+                    aria-describedby={errors.state ? 'state-error' : undefined}
                   />
                   {errors.state && (
                     <p className="mt-1 text-xs text-red-500" id="state-error">
@@ -534,12 +239,8 @@ const Checkout = () => {
                   )}
                 </div>
 
-                {/* ZIP / Postal Code */}
                 <div>
-                  <label
-                    className="block mb-1 text-sm font-medium text-gray-700"
-                    htmlFor="zip"
-                  >
+                  <label className="block mb-1 text-sm font-medium text-gray-700" htmlFor="zip">
                     ZIP / Postal Code
                   </label>
                   <input
@@ -548,12 +249,10 @@ const Checkout = () => {
                     id="zip"
                     value={billingDetails.zip}
                     onChange={handleBillingDetailsChange}
-                    className={`w-full p-2 border ${
-                      errors.zip ? 'border-red-500' : 'border-gray-300'
-                    } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    className={`w-full p-2 border ${errors.zip ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
                     required
                     aria-invalid={errors.zip ? 'true' : 'false'}
-                    aria-describedby={errors.zip ? 'zip-error' : null}
+                    aria-describedby={errors.zip ? 'zip-error' : undefined}
                   />
                   {errors.zip && (
                     <p className="mt-1 text-xs text-red-500" id="zip-error">
@@ -565,20 +264,67 @@ const Checkout = () => {
             </form>
           </div>
 
-          {/* Order Summary Section */}
           <div className="p-6 bg-white rounded-md shadow-md">
             <h2 className="mb-4 text-2xl font-semibold">Your Order</h2>
             <ul className="mb-6">
-              <li className="mb-2 text-lg">{orderDetails.item}</li>
-              <li className="mb-1 text-gray-700">Subtotal: ${orderDetails.price.toFixed(2)}</li>
-              <li className="mb-1 text-gray-700">{orderDetails.shipping}</li>
-              {isProduct && (
-                <li className="mb-1 text-gray-700">Tax: ${orderDetails.tax.toFixed(2)}</li>
-              )}
-              <li className="text-xl font-semibold">Total: ${orderDetails.total.toFixed(2)}</li>
+              <li className="mb-2 text-lg">{service.title}</li>
+              <li className="mb-1 text-gray-700">Subtotal: ${service.price.toFixed(2)}</li>
+              <li className="mb-1 text-gray-700">Free shipping</li>
+              {service.isProduct && <li className="mb-1 text-gray-700">Tax: ${tax.toFixed(2)}</li>}
+              <li className="text-xl font-semibold">Total: ${total.toFixed(2)}</li>
             </ul>
-            <div id="paypal-button-container"></div>
-            {paymentError && <p className="mb-4 text-red-500">{paymentError}</p>}
+
+            {!paypalClientId && (
+              <p className="mb-4 text-sm text-red-600">
+                Payment is temporarily unavailable. Set `VITE_PAYPAL_CLIENT_ID` in your environment.
+              </p>
+            )}
+
+            {paypalClientId && (
+              <PayPalScriptProvider options={{ 'client-id': paypalClientId, currency: 'USD' }}>
+                <PayPalButtons
+                  style={{ layout: 'vertical' }}
+                  onClick={(_data, actions) => {
+                    const validationErrors = validate();
+                    setErrors(validationErrors);
+                    if (Object.keys(validationErrors).length > 0) {
+                      return actions.reject();
+                    }
+                    return actions.resolve();
+                  }}
+                  createOrder={(_data, actions) =>
+                    actions.order.create({
+                      purchase_units: [
+                        {
+                          amount: { value: total.toFixed(2) },
+                          description: service.title,
+                        },
+                      ],
+                    })
+                  }
+                  onApprove={async (_data, actions) => {
+                    const details = await actions.order.capture();
+                    navigate('/buy-confirmation', {
+                      state: {
+                        orderNumber: details.id || Math.floor(Math.random() * 1000000),
+                        orderDetails: {
+                          item: service.title,
+                          total,
+                          paymentMethod: 'PayPal',
+                          billingDetails,
+                        },
+                      },
+                    });
+                  }}
+                  onError={(error) => {
+                    console.error('PayPal checkout error', error);
+                    setPaymentError('Payment processing failed. Please try again.');
+                  }}
+                />
+              </PayPalScriptProvider>
+            )}
+
+            {paymentError && <p className="mt-4 text-red-500">{paymentError}</p>}
           </div>
         </div>
       </div>

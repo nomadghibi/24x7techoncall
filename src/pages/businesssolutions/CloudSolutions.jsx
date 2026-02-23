@@ -97,7 +97,7 @@ const CloudSolutions = () => {
     e.preventDefault();
 
     if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
-      alert('Cloud solutions form is temporarily unavailable due to missing email configuration.');
+      alert('Cloud solutions form is temporarily unavailable. Please call (321) 953-5199 or email 365techoncall@gmail.com.');
       return;
     }
 
@@ -105,7 +105,7 @@ const CloudSolutions = () => {
     emailjs.send(emailServiceId, emailTemplateId, formData, emailPublicKey)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
-        alert('Your message has been sent successfully!');
+        alert('Thanks! Your request has been received. We will contact you within 1 business day.');
         setFormData({
           name: '',
           phone: '',
@@ -116,7 +116,7 @@ const CloudSolutions = () => {
         });
       }, (error) => {
         console.log('FAILED...', error);
-        alert('There was an error sending your message. Please try again later.');
+        alert('We could not send your request right now. Please try again, or call (321) 953-5199.');
       });
   };
 

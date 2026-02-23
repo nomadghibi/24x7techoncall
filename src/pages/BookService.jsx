@@ -33,7 +33,7 @@ const BookService = () => {
     e.preventDefault();
 
     if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
-      alert('Booking is temporarily unavailable due to missing email configuration.');
+      alert('Booking is temporarily unavailable. Please call (321) 953-5199 or email 365techoncall@gmail.com.');
       return;
     }
 
@@ -41,7 +41,7 @@ const BookService = () => {
     emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((result) => {
         console.log('Email successfully sent:', result.text);
-        alert('Service booked successfully!');
+        alert('Thanks! Your booking request has been received. We will contact you within 1 business day.');
         setFormData({
           name: '',
           email: '',
@@ -52,7 +52,7 @@ const BookService = () => {
         navigate('/confirmation'); // Navigate to confirmation page after booking
       }, (error) => {
         console.log('Failed to send email:', error.text);
-        alert('Failed to book the service, please try again.');
+        alert('We could not submit your booking right now. Please try again, or call (321) 953-5199.');
       });
   };
 

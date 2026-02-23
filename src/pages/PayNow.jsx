@@ -76,7 +76,7 @@ const PayNow = () => {
             onApprove={(_data, actions) =>
               actions.order.capture().then((details) => {
                 const firstName = details?.payer?.name?.given_name || 'customer';
-                alert(`Transaction completed by ${firstName}`);
+                alert(`Payment completed, ${firstName}. Your transaction was received successfully.`);
               })
             }
           />

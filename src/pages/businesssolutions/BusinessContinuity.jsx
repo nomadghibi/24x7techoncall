@@ -139,10 +139,10 @@ const BusinessContinuity = () => {
     emailjs.send(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
-        alert('Your message has been sent successfully!');
+        alert('Thanks! Your request has been received. We will contact you within 1 business day.');
       }, (error) => {
         console.log('FAILED...', error);
-        alert('There was an error sending your message. Please try again later.');
+        alert('We could not send your request right now. Please try again, or call (321) 953-5199.');
       });
   };
 

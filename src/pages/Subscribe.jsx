@@ -13,7 +13,7 @@ function Subscribe() {
   const handleSubscribe = (event) => {
     event.preventDefault();
     // Handle subscription logic here
-    alert('Thank you for subscribing!');
+    alert('Thanks for subscribing. Check your inbox for updates and helpful tips.');
     navigate('/');
   };
 

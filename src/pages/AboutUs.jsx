@@ -36,10 +36,10 @@ const AboutUs = () => {
     emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((result) => {
         console.log('Email successfully sent:', result.text);
-        alert('Your message has been sent successfully!');
+        alert('Thanks! Your request has been received. We will contact you within 1 business day.');
       }, (error) => {
         console.log('Failed to send email:', error.text);
-        alert('Failed to send the message, please try again.');
+        alert('We could not send your message right now. Please try again, or call (321) 953-5199.');
       });
 
     // Reset the form fields

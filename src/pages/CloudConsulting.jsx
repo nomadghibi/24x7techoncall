@@ -29,7 +29,7 @@ const CloudConsulting = () => {
     e.preventDefault();
     // Handle form submission logic here
     console.log(formData);
-    alert("Consultation request submitted!");
+    alert("Thanks! Your consultation request has been received. We will contact you within 1 business day.");
   };
 
   return (

@@ -53,7 +53,7 @@ function Contact() {
     e.preventDefault();
 
     if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
-      alert('Contact form is temporarily unavailable due to missing email configuration.');
+      alert('Contact form is temporarily unavailable. Please call (321) 953-5199 or email 365techoncall@gmail.com.');
       return;
     }
 
@@ -61,7 +61,7 @@ function Contact() {
     emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey)
       .then((result) => {
         console.log('Email successfully sent:', result.text);
-        alert('Message sent successfully!');
+        alert('Thanks! Your message has been received. We will contact you within 1 business day.');
         setFormData({
           name: '',
           email: '',
@@ -69,7 +69,7 @@ function Contact() {
         });
       }, (error) => {
         console.log('Failed to send email:', error.text);
-        alert('Failed to send the message, please try again.');
+        alert('We could not send your message right now. Please try again, or call (321) 953-5199.');
       });
   };
 

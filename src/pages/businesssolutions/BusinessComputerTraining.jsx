@@ -117,11 +117,11 @@ const BusinessComputerTraining = () => {
         problem: ''
       });
       // Optionally, replace the alert with a more user-friendly notification
-      alert('Your message has been sent successfully!');
+      alert('Thanks! Your request has been received. We will contact you within 1 business day.');
     } catch (error) {
       console.error('FAILED...', error);
       setIsSubmitting(false);
-      setSubmitError('There was an error sending your message. Please try again later.');
+      setSubmitError('We could not send your request right now. Please try again, or call (321) 953-5199.');
     }
   };
 

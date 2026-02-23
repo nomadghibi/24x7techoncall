@@ -143,11 +143,11 @@ const NetworkSetup = () => {
       .then(
         (response) => {
           console.log('SUCCESS!', response.status, response.text);
-          alert('Your message has been sent successfully!');
+          alert('Thanks! Your request has been received. We will contact you within 1 business day.');
         },
         (err) => {
           console.error('FAILED...', err);
-          alert('Failed to send your message. Please try again later.');
+          alert('We could not send your request right now. Please try again, or call (321) 953-5199.');
         }
       );
   };

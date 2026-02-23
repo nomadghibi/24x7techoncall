@@ -1,0 +1,6 @@
+/*    /index.html   200
+User-agent: *
+Disallow: /private/
+Allow: /
+
+Sitemap: https://bestcomputertec.comsitemap.xml

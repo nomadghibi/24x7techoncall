@@ -1,0 +1,45 @@
+.heroSection {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .custom-arrow {
+    cursor: pointer;
+  }
+  
+  .bg-blue-500 {
+    background-color: #3b82f6; /* Tailwind CSS color */
+  }
+  
+  .bg-green-500 {
+    background-color: #10b981; /* Tailwind CSS color */
+  }
+  
+  .bg-red-500 {
+    background-color: #ef4444; /* Tailwind CSS color */
+  }
+  
+  .bg-purple-500 {
+    background-color: #8b5cf6; /* Tailwind CSS color */
+  }
+  
+  .bg-teal-500 {
+    background-color: #14b8a6; /* Tailwind CSS color */
+  }
+  
+  .bg-pink-500 {
+    background-color: #ec4899; /* Tailwind CSS color */
+  }
+  
+  .bg-indigo-500 {
+    background-color: #6366f1; /* Tailwind CSS color */
+  }
+  
+  .bg-orange-500 {
+    background-color: #f97316; /* Tailwind CSS color */
+  }
+  
+  .bg-gray-500 {
+    background-color: #6b7280; /* Tailwind CSS color */
+  }
+  

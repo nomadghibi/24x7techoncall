@@ -59,13 +59,49 @@ const QuickTechHelp = lazy(() => import('./pages/QuickTechHelp'));
 const ConfirmationPage = lazy(() => import('./pages/ConfirmationPage'));
 const BuyConfirmationPage = lazy(() => import('./pages/BuyConfirmationPage'));
 
+const routePrefetchers = [
+  () => import('./pages/Home'),
+  () => import('./pages/ResidentialServices'),
+  () => import('./pages/BusinessServices'),
+  () => import('./pages/Services'),
+  () => import('./pages/HowTo'),
+  () => import('./pages/BlogOverview'),
+  () => import('./pages/Contact'),
+  () => import('./pages/Pricing'),
+  () => import('./pages/AboutUs'),
+  () => import('./pages/BookService'),
+];
+
 const App = () => {
   const [circlePosition, setCirclePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
   useEffect(() => {
-    void import('./pages/Home');
-    void import('./pages/ResidentialServices');
+    let cancelled = false;
+
+    const runPrefetch = () => {
+      routePrefetchers.forEach((prefetch, index) => {
+        window.setTimeout(() => {
+          if (!cancelled) {
+            void prefetch();
+          }
+        }, index * 120);
+      });
+    };
+
+    if ('requestIdleCallback' in window) {
+      const idleId = window.requestIdleCallback(runPrefetch, { timeout: 1200 });
+      return () => {
+        cancelled = true;
+        window.cancelIdleCallback(idleId);
+      };
+    }
+
+    const timeoutId = window.setTimeout(runPrefetch, 300);
+    return () => {
+      cancelled = true;
+      window.clearTimeout(timeoutId);
+    };
   }, []);
 
   const handleMouseMove = (e) => {

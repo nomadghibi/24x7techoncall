@@ -148,7 +148,12 @@ const ITSupport = () => {
     <div>
       <Helmet>
         <title>Business IT Support - Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Reliable business IT support services for troubleshooting, maintenance, and system uptime in Palm Bay and Melbourne, FL."
+        />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/it-support" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <HeroSection title="Business IT Support" image={heroImage} />
       <div className="container p-8 mx-auto">
@@ -300,4 +305,3 @@ const ITSupport = () => {
 };
 
 export default ITSupport;
-

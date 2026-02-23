@@ -435,6 +435,10 @@ ServiceCard.displayName = "ServiceCard";
 function ResidentialServices() {
   const navigate = useNavigate();
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const canonicalUrl = 'https://bestcomputertec.com/residential-services';
+  const pageImage = heroImage?.startsWith('http')
+    ? heroImage
+    : `https://bestcomputertec.com${heroImage || ''}`;
 
   const handleServiceClick = useCallback((serviceId) => {
     switch (serviceId) {
@@ -492,6 +496,17 @@ function ResidentialServices() {
         <title>Computer Repair Palm Bay Melbourne FL | Laptop Repair & Tech Support Services</title>
         <meta name="description" content="Best Computer Repair and IT Support Services in Palm Bay/Melbourne, FL. We specialize in Laptop Repair, PC Repair, Network Setup, and Data Recovery. Call us for quick, reliable service." />
         <meta name="keywords" content="Computer Repair Palm Bay/Melbourne FL, Tech Support Services, Laptop Repair, PC Repair, IT Support Palm bay/Melbourne, Virus Removal, Data Recovery, Network Setup" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Computer Repair Palm Bay Melbourne FL | Best Computer Tech" />
+        <meta property="og:description" content="Residential computer repair and IT support services in Palm Bay and Melbourne, FL." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Computer Repair Palm Bay Melbourne FL | Best Computer Tech" />
+        <meta name="twitter:description" content="Fast and reliable residential tech support services from Best Computer Tech." />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
       {/* Combined Hero Section with Title and CTA */}

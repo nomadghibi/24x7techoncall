@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+import { Helmet } from 'react-helmet-async';
 import emailjs from 'emailjs-com'; // Import EmailJS
 import { FaUser, FaEnvelope, FaPhone, FaClipboardList } from 'react-icons/fa';
 
 const BookService = () => {
+  const canonicalUrl = 'https://bestcomputertec.com/book-service';
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -54,6 +56,32 @@ const BookService = () => {
 
   return (
     <div className="container py-16 mx-auto">
+      <Helmet>
+        <title>Book a Service | Best Computer Tech | Palm Bay & Melbourne, FL</title>
+        <meta
+          name="description"
+          content="Book computer repair, IT support, and technology services with Best Computer Tech in Palm Bay and Melbourne, FL."
+        />
+        <meta
+          name="keywords"
+          content="book computer service Palm Bay, schedule IT support Melbourne FL, computer repair appointment"
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Book a Service | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Schedule your computer and IT service appointment with Best Computer Tech."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Book a Service | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Book a computer or IT support service appointment online."
+        />
+      </Helmet>
       <h1 className="mb-8 text-4xl font-bold text-center">Book a Service</h1>
       <div className="max-w-3xl p-8 mx-auto bg-white rounded-lg shadow-lg">
         <form onSubmit={handleSubmit}>

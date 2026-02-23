@@ -147,7 +147,12 @@ const ITConsulting = () => {
     <div>
       <Helmet>
         <title>IT Consulting Services - Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Strategic IT consulting services for businesses in Palm Bay and Melbourne, FL to improve operations, security, and growth."
+        />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/it-consulting" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <HeroSection title="IT Consulting" image={heroImage} />
       <div className="container p-8 mx-auto">

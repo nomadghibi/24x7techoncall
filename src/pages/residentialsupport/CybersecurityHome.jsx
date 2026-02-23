@@ -145,7 +145,12 @@ const CybersecurityHome = () => {
     <div>
       <Helmet>
         <title>Cybersecurity Services - Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Protect your home devices and personal data with cybersecurity services from Best Computer Tech in Palm Bay and Melbourne, FL."
+        />
         <link rel="canonical" href="https://bestcomputertec.com/residential-support/cybersecurity-home" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <HeroSection title="Cybersecurity for Home Users" image={heroImage} />
       <div className="container p-8 mx-auto">

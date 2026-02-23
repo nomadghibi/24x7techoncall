@@ -133,6 +133,7 @@ const BusinessComputerTraining = () => {
       {/* Helmet for canonical URL and SEO metadata */}
       <Helmet>
         <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
         <title>Business Computer Training | Your Company Name</title>
         <meta name="description" content="Comprehensive computer training programs, including Microsoft 365 training, designed to boost your team's technical skills and productivity." />
       </Helmet>

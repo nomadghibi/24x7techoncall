@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FaTools, FaBug, FaNetworkWired, FaDatabase, FaShieldAlt, FaCloud, FaHeadset, FaLaptopCode, FaMicrochip } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
 import emailjs from 'emailjs-com';
@@ -7,6 +8,10 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/businessservices.webp'; // Adjust the path according to your file structure
 
 const TechnicalSupportMaintenance = () => {
+  const canonicalUrl = 'https://bestcomputertec.com/business-solutions/technical-support-maintenance';
+  const pageImage = heroImage?.startsWith('http')
+    ? heroImage
+    : `https://bestcomputertec.com${heroImage || ''}`;
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -127,6 +132,34 @@ const TechnicalSupportMaintenance = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Technical Support and Maintenance | Best Computer Tech | Palm Bay & Melbourne, FL</title>
+        <meta
+          name="description"
+          content="Comprehensive technical support and maintenance services for businesses, including troubleshooting, repair, malware removal, and ongoing IT support."
+        />
+        <meta
+          name="keywords"
+          content="technical support maintenance, business IT support Palm Bay, managed support Melbourne FL, hardware and software troubleshooting"
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Technical Support and Maintenance | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Keep your business systems running smoothly with proactive technical support and maintenance."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Technical Support and Maintenance | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Expert technical support and maintenance services for reliable business operations."
+        />
+        <meta name="twitter:image" content={pageImage} />
+      </Helmet>
       <HeroSection title="Technical Support & Maintenance" image={heroImage} />
       <div className="container p-8 mx-auto">
         <h2 className="mb-4 text-3xl font-semibold">Comprehensive Technical Support and Maintenance</h2>

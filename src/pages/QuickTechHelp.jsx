@@ -1,10 +1,15 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/HeroSection';
 import heroImage from '../assets/QuickTechHelp.webp'; // Adjust the path according to your file structure
 
 const QuickTechHelp = () => {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/quick-tech-help';
+  const pageImage = heroImage?.startsWith('http')
+    ? heroImage
+    : `https://bestcomputertec.com${heroImage || ''}`;
 
   const handleBuyNowClick = () => {
     navigate('/checkout', { state: { service: 'Quick Tech Help', price: '19.95' } });
@@ -12,6 +17,34 @@ const QuickTechHelp = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Quick Tech Help | 15-Minute Remote Tech Support | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Get fast 15-minute remote tech support for common computer issues in Palm Bay, Melbourne, and Brevard County. Immediate help from certified technicians."
+        />
+        <meta
+          name="keywords"
+          content="quick tech help, 15 minute tech support, remote computer support, Palm Bay computer help, Melbourne FL tech support"
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Quick Tech Help | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Fast remote support for urgent computer problems from Best Computer Tech."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Quick Tech Help | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Need immediate computer help? Get 15-minute quick tech support from our experts."
+        />
+        <meta name="twitter:image" content={pageImage} />
+      </Helmet>
       <HeroSection title="Quick Tech Help" image={heroImage} />
       <div className="container p-8 mx-auto">
         <h2 className="mb-4 text-3xl font-semibold">Quick Tech Support - 15 Minutes Help Desk</h2>

@@ -141,6 +141,7 @@ const BusinessDataRecovery = () => {
         <meta name="description" content="Recover your business data with expert data recovery services from Best Computer Tech. We offer hard drive recovery, RAID recovery, cloud data recovery, and more." />
         <meta name="keywords" content="data recovery, business data recovery, hard drive recovery, RAID recovery, SSD recovery, database recovery, cloud data recovery" />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/data-recovery" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
 
       <HeroSection title="Business Data Recovery" image={heroImage} />

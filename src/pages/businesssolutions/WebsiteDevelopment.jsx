@@ -1,6 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FaLaptopCode, FaServer, FaDatabase, FaShieldAlt, FaCloud, FaHeadset, FaCogs } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
 import emailjs from 'emailjs-com';
@@ -8,6 +9,10 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/websitedevelopment.webp'; // Adjust the path according to your file structure
 
 const WebsiteDevelopment = () => {
+  const canonicalUrl = 'https://bestcomputertec.com/business-solutions/website-development';
+  const pageImage = heroImage?.startsWith('http')
+    ? heroImage
+    : `https://bestcomputertec.com${heroImage || ''}`;
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -114,6 +119,34 @@ const WebsiteDevelopment = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Website Development Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
+        <meta
+          name="description"
+          content="Custom website development services for businesses including frontend, backend, hosting, security, and SEO support."
+        />
+        <meta
+          name="keywords"
+          content="website development Palm Bay, business web design Melbourne FL, SEO website services, custom website support"
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Website Development Services | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Build and grow your online presence with secure, high-performance website development services."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Website Development Services | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Professional website development and maintenance services for local businesses."
+        />
+        <meta name="twitter:image" content={pageImage} />
+      </Helmet>
       <HeroSection title="Website Development Services" image={heroImage} />
       <div className="container p-8 mx-auto">
         <h2 className="mb-4 text-3xl font-semibold">Expert Website Development Services</h2>

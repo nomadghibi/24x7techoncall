@@ -1,12 +1,23 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const BuyConfirmationPage = () => {
   const location = useLocation();
   const { orderNumber, orderDetails } = location.state || {};
+  const canonicalUrl = 'https://bestcomputertec.com/buy-confirmation';
 
   return (
     <div className="container p-8 mx-auto text-center">
+      <Helmet>
+        <title>Order Confirmation | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Confirmation page for completed orders at Best Computer Tech."
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <h1 className="mb-4 text-4xl font-bold text-green-600">Thank You for Your Order!</h1>
       <p className="mb-8 text-lg">
         Your order <strong>{orderNumber}</strong> has been successfully placed.

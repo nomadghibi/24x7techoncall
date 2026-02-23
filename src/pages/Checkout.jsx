@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import { PayPalButtons, PayPalScriptProvider } from '@paypal/react-paypal-js';
 import '../pages/Checkout.css';
 
@@ -105,6 +105,7 @@ const Checkout = () => {
           name="description"
           content={`Complete your purchase of ${service.title} securely with PayPal.`}
         />
+        <meta name="robots" content="noindex, nofollow" />
       </Helmet>
 
       <div className="max-w-4xl p-6 mx-auto">

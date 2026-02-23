@@ -123,7 +123,12 @@ const CloudSolutions = () => {
     <div>
       <Helmet>
         <title>Cloud Solutions - Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Cloud solutions for SMBs including migration, cloud security, backup, and optimization in Palm Bay and Melbourne, FL."
+        />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/cloud-solutions" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <HeroSection title="Cloud Solutions" image={heroImage} />
       <div className="container p-8 mx-auto">

@@ -2,13 +2,24 @@
 
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { FaHome, FaArrowRight, FaEnvelope } from 'react-icons/fa';
 
 const ConfirmationPage = () => {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/confirmation';
 
   return (
     <div className="container py-16 mx-auto text-center">
+      <Helmet>
+        <title>Service Request Received | Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Confirmation page for completed service requests submitted to Best Computer Tech."
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="noindex, nofollow" />
+      </Helmet>
       <div className="max-w-xl p-8 mx-auto bg-white rounded-lg shadow-lg">
         <h1 className="mb-6 text-4xl font-bold text-blue-500">Thank You!</h1>
         <p className="mb-6 text-lg text-gray-700">

@@ -9,6 +9,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
 const AboutUs = () => {
+  const canonicalUrl = 'https://bestcomputertec.com/about-us';
+  const pageImage = heroImage?.startsWith('http')
+    ? heroImage
+    : `https://bestcomputertec.com${heroImage || ''}`;
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -54,16 +58,17 @@ const AboutUs = () => {
         <title>About Us | Your Trusted IT Support Partner in Palm Bay & Melbourne, FL</title>
         <meta name="description" content="Discover our team and mission at Best Computer Tech. As your trusted IT support partner in Palm Bay and Melbourne, FL, we offer expert computer repair, tech support, and comprehensive IT solutions tailored to your needs." />
         <meta name="keywords" content="About Us, IT Support Palm Bay, IT Support Melbourne FL, Computer Repair Palm Bay, Tech Support Melbourne, Best Computer Tech, IT solutions Palm Bay, Melbourne FL computer repair, tech support services, company mission, local IT experts" />
+        <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="About Us | Your Trusted IT Support Partner in Palm Bay & Melbourne, FL" />
         <meta property="og:description" content="Learn about Best Computer Tech, your go-to IT support partner in Palm Bay and Melbourne, FL. We specialize in computer repair, tech support, and IT solutions tailored to meet your business and personal needs." />
-        <meta property="og:url" content="https://bestcomputertec.com/about-us" />
+        <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content="https://bestcomputertec.com/images/about-us.jpg" />
+        <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us | Your Trusted IT Support Partner in Palm Bay & Melbourne, FL" />
         <meta name="twitter:description" content="Get to know Best Computer Tech, your trusted partner for IT support in Palm Bay and Melbourne, FL. We provide expert computer repair, tech support, and IT solutions." />
-        <meta name="twitter:image" content="https://bestcomputertec.com/images/about-us.jpg" />
+        <meta name="twitter:image" content={pageImage} />
       </Helmet>
       
       {/* Hero Section */}

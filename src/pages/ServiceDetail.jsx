@@ -75,6 +75,7 @@ function ServiceDetail() {
     event.preventDefault();
     navigate('/checkout', { state: { service } });
   };
+  const canonicalUrl = `https://bestcomputertec.com/services/${serviceId}`;
 
   return (
     <div className="container p-8 mx-auto">
@@ -82,6 +83,15 @@ function ServiceDetail() {
         <title>{service.title} | Palm Bay/Melbourne FL | Tech Support Services</title>
         <meta name="description" content={`${service.description} - Available in Palm Bay/Melbourne, FL. Contact us today for expert IT support.`} />
         <meta name="keywords" content={`${service.title}, Palm Bay/Melbourne FL, IT Services, Tech Support, Computer Repair`} />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content={`${service.title} | Best Computer Tech`} />
+        <meta property="og:description" content={service.description} />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content={`${service.title} | Best Computer Tech`} />
+        <meta name="twitter:description" content={service.description} />
       </Helmet>
       <h1 className="mb-4 text-4xl font-bold">{service.title}</h1>
       <p className="mb-4">{service.description}</p>

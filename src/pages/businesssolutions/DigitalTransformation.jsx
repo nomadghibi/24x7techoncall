@@ -148,7 +148,12 @@ const DigitalTransformation = () => {
     <div>
       <Helmet>
         <title>Digital Transformation Services - Best Computer Tech</title>
+        <meta
+          name="description"
+          content="Modernize your business with digital transformation services including workflow automation, system integration, and strategic technology planning."
+        />
         <link rel="canonical" href="https://bestcomputertec.com/business-solutions/digital-transformation" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <HeroSection title="Digital Transformation" image={heroImage} />
       <div className="container p-8 mx-auto">

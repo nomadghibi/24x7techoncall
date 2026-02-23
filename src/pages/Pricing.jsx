@@ -3,6 +3,7 @@
 import React from 'react';
 import { FaCheck } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import heroImage from '../assets/priceimage.webp'; // Make sure you have this image in your assets folder
 
 const pricingPlans = [
@@ -77,6 +78,10 @@ const pricingPlans = [
 
 function Pricing() {
   const navigate = useNavigate();
+  const canonicalUrl = 'https://bestcomputertec.com/pricing';
+  const pageImage = heroImage?.startsWith('http')
+    ? heroImage
+    : `https://bestcomputertec.com${heroImage || ''}`;
 
   const handleOrderClick = (planTitle) => {
     navigate('/checkout', { state: { service: { title: planTitle, price: planTitle === 'Standard Rate Onsite' ? 95 : planTitle === 'Annual Subscription Plan' ? 199 : 99 } } });
@@ -84,6 +89,34 @@ function Pricing() {
 
   return (
     <div>
+      <Helmet>
+        <title>Pricing Plans | Best Computer Tech | Palm Bay & Melbourne, FL</title>
+        <meta
+          name="description"
+          content="View transparent pricing plans for remote and onsite computer support services from Best Computer Tech."
+        />
+        <meta
+          name="keywords"
+          content="computer service pricing Palm Bay, onsite tech support rates Melbourne FL, remote tech support plans"
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Pricing Plans | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Compare our remote and onsite support plans with clear, affordable pricing."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Pricing Plans | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Explore Best Computer Tech pricing for residential and business support."
+        />
+        <meta name="twitter:image" content={pageImage} />
+      </Helmet>
       {/* Hero Section */}
       <section className="relative flex items-center justify-center h-64 mb-12 bg-gray-900 bg-center bg-cover" style={{ backgroundImage: `url(${heroImage})` }}>
         <div className="absolute inset-0 bg-black opacity-50"></div>
@@ -125,4 +158,3 @@ function Pricing() {
 }
 
 export default Pricing;
-

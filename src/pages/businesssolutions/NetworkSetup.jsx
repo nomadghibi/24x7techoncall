@@ -1,6 +1,7 @@
 
 
 import React, { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { FaNetworkWired, FaWifi, FaServer, FaShieldAlt, FaSync, FaPlug, FaDesktop, FaTools, FaProjectDiagram, FaHeadset } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
 import emailjs from 'emailjs-com';
@@ -8,6 +9,10 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/NetworkSetupSupport.webp';
 
 const NetworkSetup = () => {
+  const canonicalUrl = 'https://bestcomputertec.com/business-solutions/network-setup';
+  const pageImage = heroImage?.startsWith('http')
+    ? heroImage
+    : `https://bestcomputertec.com${heroImage || ''}`;
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -149,6 +154,34 @@ const NetworkSetup = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Business Network Setup Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
+        <meta
+          name="description"
+          content="Professional network setup services for businesses including design, implementation, Wi-Fi, VPN, security, and monitoring in Palm Bay and Melbourne, FL."
+        />
+        <meta
+          name="keywords"
+          content="business network setup Palm Bay, network security services Melbourne FL, Wi-Fi setup business, VPN setup support, network monitoring"
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Business Network Setup Services | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Reliable business network setup and support for secure, high-performance operations."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Business Network Setup Services | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Get expert business network setup, security, and support from Best Computer Tech."
+        />
+        <meta name="twitter:image" content={pageImage} />
+      </Helmet>
       <HeroSection title="Network Setup" image={heroImage} />
       <div className="container p-8 mx-auto">
         <h2 className="mb-4 text-3xl font-semibold">Expert Network Setup Services</h2>

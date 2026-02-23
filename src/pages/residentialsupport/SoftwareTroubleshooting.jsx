@@ -140,6 +140,7 @@ const SoftwareTroubleshooting = () => {
         <meta name="description" content="Expert software troubleshooting services including OS errors, application crashes, software installation, and more." />
         <meta name="keywords" content="software troubleshooting, OS errors, application crashes, software installation, driver issues, system performance" />
         <link rel="canonical" href="https://bestcomputertec.com/residential-support/software-troubleshooting" />
+        <meta name="robots" content="index, follow" />
       </Helmet>
       <HeroSection title="Software Troubleshooting" image={heroImage} />
       <div className="container p-8 mx-auto">

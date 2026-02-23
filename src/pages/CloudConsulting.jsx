@@ -1,8 +1,13 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/HeroSection';
 import heroImage from '../assets/fixbrokenscreen.webp'; // Ensure you have this image in your assets
 
 const CloudConsulting = () => {
+  const canonicalUrl = 'https://bestcomputertec.com/residential-support/cloud-consulting';
+  const pageImage = heroImage?.startsWith('http')
+    ? heroImage
+    : `https://bestcomputertec.com${heroImage || ''}`;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -29,6 +34,34 @@ const CloudConsulting = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Cloud Consulting Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
+        <meta
+          name="description"
+          content="Plan, migrate, and optimize cloud solutions with expert cloud consulting support for homes and small businesses in Palm Bay and Melbourne, FL."
+        />
+        <meta
+          name="keywords"
+          content="cloud consulting Palm Bay, cloud migration support Melbourne FL, cloud optimization services, small business cloud support"
+        />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Cloud Consulting Services | Best Computer Tech" />
+        <meta
+          property="og:description"
+          content="Get expert cloud consulting for migration, optimization, security, and cost control."
+        />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={pageImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cloud Consulting Services | Best Computer Tech" />
+        <meta
+          name="twitter:description"
+          content="Cloud strategy and migration support for Palm Bay and Melbourne area clients."
+        />
+        <meta name="twitter:image" content={pageImage} />
+      </Helmet>
       <HeroSection title="Cloud Consulting Services" image={heroImage} />
       <div className="container p-8 mx-auto">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -150,4 +183,3 @@ const CloudConsulting = () => {
 };
 
 export default CloudConsulting;
-

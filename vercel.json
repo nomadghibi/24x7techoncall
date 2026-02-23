@@ -3,24 +3,26 @@
   "framework": "vite",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "redirects": [
+  "routes": [
     {
-      "source": "/:path*",
+      "src": "/(.*)",
       "has": [
         {
-          "type": "header",
-          "key": "host",
+          "type": "host",
           "value": "www.bestcomputertec.com"
         }
       ],
-      "destination": "https://bestcomputertec.com/:path*",
-      "permanent": true
-    }
-  ],
-  "rewrites": [
+      "status": 308,
+      "headers": {
+        "Location": "https://bestcomputertec.com/$1"
+      }
+    },
     {
-      "source": "/((?!assets/|.*\\..*).*)",
-      "destination": "/index.html"
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }

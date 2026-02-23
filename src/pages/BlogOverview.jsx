@@ -130,24 +130,75 @@ const blogPosts = [
 ];
 
 const BlogOverview = () => {
+  const canonicalUrl = 'https://bestcomputertec.com/blog';
+  const blogOverviewImage = heroImage?.startsWith('http')
+    ? heroImage
+    : `https://bestcomputertec.com${heroImage || ''}`;
+  const blogSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'Best Computer Tech Blog',
+    url: canonicalUrl,
+    description:
+      'Tech support and cybersecurity insights for home users and small businesses in Palm Bay and Melbourne, FL.',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Best Computer Tech LLC',
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://bestcomputertec.com/favicon.ico'
+      }
+    }
+  };
+  const blogItemListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    itemListElement: blogPosts.map((post, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      url: `https://bestcomputertec.com${post.link}`,
+      name: post.title
+    }))
+  };
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://bestcomputertec.com/'
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Blog',
+        item: canonicalUrl
+      }
+    ]
+  };
+
   return (
     <div className="container p-8 mx-auto">
       <Helmet>
-      <title>Blog Overview | Best Computer Tech | Palm Bay & Melbourne, FL</title>
-<meta name="description" content="Stay ahead in the tech world with our latest blog posts on IT support, cybersecurity, cloud solutions, digital transformation, and more. Serving Palm Bay and Melbourne, FL." />
-<meta name="keywords" content="IT blog, tech blog, cybersecurity tips, cloud solutions, digital transformation, IT consulting, small business IT, Palm Bay tech blog, Melbourne FL IT news" />
-<link rel="canonical" href="https://bestcomputertec.com/blog" />
-<meta name="robots" content="index, follow" />
-<meta property="og:title" content="Blog Overview | Best Computer Tech | Palm Bay & Melbourne, FL" />
-<meta property="og:description" content="Explore the Best Computer Tech blog for insights on IT support, cybersecurity, cloud solutions, and more. Serving Palm Bay and Melbourne, FL." />
-<meta property="og:url" content="https://bestcomputertec.com/blog" />
-<meta property="og:type" content="website" />
-<meta property="og:image" content="https://bestcomputertec.com/images/blog-overview.jpg" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Blog Overview | Best Computer Tech" />
-<meta name="twitter:description" content="Discover the latest blog posts from Best Computer Tech on IT support, cybersecurity, and more. Stay informed with insights from Palm Bay and Melbourne, FL." />
-<meta name="twitter:image" content="https://bestcomputertec.com/images/blog-overview.jpg" />
-
+        <title>Blog Overview | Best Computer Tech | Palm Bay & Melbourne, FL</title>
+        <meta name="description" content="Stay ahead in the tech world with our latest blog posts on IT support, cybersecurity, cloud solutions, digital transformation, and more. Serving Palm Bay and Melbourne, FL." />
+        <meta name="keywords" content="IT blog, tech blog, cybersecurity tips, cloud solutions, digital transformation, IT consulting, small business IT, Palm Bay tech blog, Melbourne FL IT news" />
+        <link rel="canonical" href={canonicalUrl} />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Blog Overview | Best Computer Tech | Palm Bay & Melbourne, FL" />
+        <meta property="og:description" content="Explore the Best Computer Tech blog for insights on IT support, cybersecurity, cloud solutions, and more. Serving Palm Bay and Melbourne, FL." />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content={blogOverviewImage} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Blog Overview | Best Computer Tech" />
+        <meta name="twitter:description" content="Discover the latest blog posts from Best Computer Tech on IT support, cybersecurity, and more. Stay informed with insights from Palm Bay and Melbourne, FL." />
+        <meta name="twitter:image" content={blogOverviewImage} />
+        <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(blogItemListSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
       <h1 className="mb-8 text-4xl font-bold text-center">Tech Insights and IT Support Tips | Best Computer Tech Blog</h1>
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3">

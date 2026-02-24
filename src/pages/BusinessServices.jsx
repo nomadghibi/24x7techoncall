@@ -312,6 +312,8 @@ function BusinessServices() {
                       className="rounded-lg"
                       loading="lazy"
                       decoding="async"
+                      width={1280}
+                      height={720}
                     />
                     <FaPlay className="absolute text-6xl text-white inset-center" />
                   </div>

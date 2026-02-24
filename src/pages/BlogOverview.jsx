@@ -212,6 +212,8 @@ const BlogOverview = () => {
                   loading={index < 3 ? 'eager' : 'lazy'}
                   decoding="async"
                   className="object-cover w-full h-32 mb-4 bg-gray-300 rounded"
+                  width={512}
+                  height={512}
                 />
               )}
               <div>

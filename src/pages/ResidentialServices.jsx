@@ -538,6 +538,8 @@ function ResidentialServices() {
                       className="rounded-lg"
                       loading="lazy"
                       decoding="async"
+                      width={1280}
+                      height={720}
                     />
                     <FaPlay className="absolute text-6xl text-white inset-center" />
                   </div>
@@ -592,7 +594,14 @@ function ResidentialServices() {
         {/* Annual Subscription Plan Coupon Style */}
         <div className="flex flex-col p-6 mt-12 bg-white border-2 border-gray-500 border-dashed rounded-lg shadow-lg md:flex-row">
           <div className="relative flex items-center justify-center w-full md:w-1/2 fade-image">
-            <img src={computerImage} alt="Subscription Plan" loading="lazy" decoding="async" />
+            <img
+              src={computerImage}
+              alt="Subscription Plan"
+              loading="lazy"
+              decoding="async"
+              width={1152}
+              height={1152}
+            />
           </div>
           <div className="w-full p-6 bg-white md:w-1/2">
             <h2 className="mb-4 text-3xl font-bold text-center text-gray-800">💻 Keep Your Computer Running Smoothly With Our Annual Subscription Plan!</h2>

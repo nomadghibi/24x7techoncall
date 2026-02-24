@@ -91,6 +91,8 @@ const BuyComputers = () => {
                 className="w-full h-auto lg:max-w-md"
                 loading="lazy"
                 decoding="async"
+                width={1152}
+                height={1152}
               />
             </div>
             <div className="flex-1 lg:ml-8">

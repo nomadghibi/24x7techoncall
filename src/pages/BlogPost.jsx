@@ -565,6 +565,8 @@ function BlogPost() {
                         loading="lazy"
                         decoding="async"
                         className="object-cover w-full h-32 mb-4 bg-gray-300 rounded"
+                        width={512}
+                        height={512}
                       />
                     )}
                     <Typography variant="h6" component="h3" className="mb-2">

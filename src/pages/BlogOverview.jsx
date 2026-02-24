@@ -23,6 +23,13 @@ import chatgptImage from '../assets/optimized-blog/chatgpt-512.jpg';
 
 const blogPosts = [
   {
+    title: 'AI Trends in 2026: What Businesses Should Do Next',
+    summary: 'A practical 2026 guide to AI trends, agents, governance, and realistic adoption steps for growing companies.',
+    link: '/blog/ai-trends-2026-what-businesses-should-do-next',
+    date: 'February 24, 2026',
+    image: aiImage
+  },
+  {
     title: '5 Tips to Keep Your Computer Running Smoothly',
     summary: 'Use this 2026 maintenance checklist to keep your computer stable, secure, and fast.',
     link: '/blog/5-tips-to-keep-your-computer-running-smoothly',

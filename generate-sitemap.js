@@ -49,6 +49,7 @@ const staticRoutes = [
   '/how-to/be-safe-online',
   '/how-to/set-up-email',
   '/blog',
+  '/blog/ai-trends-2026-what-businesses-should-do-next',
   '/blog/5-tips-to-keep-your-computer-running-smoothly',
   '/blog/how-to-protect-your-computer-from-malware',
   '/blog/the-benefits-of-regular-data-backup',

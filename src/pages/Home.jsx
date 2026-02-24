@@ -507,11 +507,13 @@ import {
   FaCamera,
 } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
-import heroImage1 from '../assets/heroimage100.webp';
-import blogImage1 from '../assets/5-tips-blog-image.webp';
-import blogImage2 from '../assets/ProtectYourComputerFromMalware.webp';
-import blogImage3 from '../assets/backupHeroImage.webp';
-import 'tailwindcss/tailwind.css';
+import blogImage1 from '../assets/optimized-home/5-tips-blog-image-512.jpg';
+import blogImage2 from '../assets/optimized-home/protect-malware-512.jpg';
+import blogImage3 from '../assets/optimized-home/backup-hero-512.jpg';
+
+const heroImageMobile = '/hero-home-640.jpg';
+const heroImageDesktop = '/hero-home-1024.webp';
+const heroImageSocial = 'https://bestcomputertec.com/hero-home-1024.webp';
 
 // Memoized static components to prevent unnecessary re-renders
 const ServiceCard = React.memo(({ service, onReadMore }) => (
@@ -551,6 +553,11 @@ const BlogPostCard = React.memo(({ post }) => (
         src={post.image}
         alt={post.title}
         className="object-cover w-full h-32 mb-4 bg-gray-300 rounded"
+        loading="lazy"
+        decoding="async"
+        fetchPriority="low"
+        width={512}
+        height={512}
       />
     )}
     <h3 className="mb-2 text-xl font-semibold text-gray-800">{post.title}</h3>
@@ -777,7 +784,7 @@ function Home() {
           content="Local computer repair and IT support services for Palm Bay, Melbourne, and nearby Brevard County areas."
         />
         <meta property="og:url" content="https://bestcomputertec.com/" />
-        <meta property="og:image" content={heroImage1} />
+        <meta property="og:image" content={heroImageSocial} />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Best Computer Tech | Palm Bay & Melbourne, FL" />
@@ -785,7 +792,7 @@ function Home() {
           name="twitter:description"
           content="Computer repair, IT support, network setup, and data recovery in Palm Bay and Melbourne, Florida."
         />
-        <meta name="twitter:image" content={heroImage1} />
+        <meta name="twitter:image" content={heroImageSocial} />
         <meta name="geo.region" content="US-FL" />
         <meta name="geo.placename" content="Palm Bay, Melbourne, Florida" />
         <meta name="geo.position" content="28.0836;-80.6081" />
@@ -796,7 +803,18 @@ function Home() {
       {/* Hero Section */}
       <section className="relative hero-section">
         <div className="relative">
-          <img src={heroImage1} alt="Hero" className="object-cover w-full h-96" />
+          <img
+            src={heroImageMobile}
+            srcSet={`${heroImageMobile} 640w, ${heroImageDesktop} 1024w`}
+            sizes="100vw"
+            alt="Best Computer Tech computer repair and IT support in Palm Bay and Melbourne"
+            className="object-cover w-full h-96"
+            width={1024}
+            height={1024}
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
+          />
           <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
             <div className="text-center text-white">
               <h1 className="mb-4 text-5xl font-bold leading-tight">

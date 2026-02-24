@@ -9,6 +9,7 @@ function Contact() {
   const location = useLocation();
   const prefill = location.state?.prefill;
   const prefillMessage = typeof prefill?.message === 'string' ? prefill.message.trim() : '';
+  const isBusinessContractPrefill = prefill?.source === 'business-contract';
   const prefillSourceLabel = prefill?.source === 'diagnose-my-issue'
     ? 'diagnosis wizard'
     : prefill?.source === 'price-estimator'
@@ -17,6 +18,7 @@ function Contact() {
         ? 'business contract selector'
       : '';
   const hasPrefillNotice = Boolean(prefillSourceLabel) && Boolean(prefillMessage);
+  const [businessLocations, setBusinessLocations] = useState('');
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -71,6 +73,34 @@ function Contact() {
       };
     });
   }, [prefillMessage]);
+
+  useEffect(() => {
+    if (!isBusinessContractPrefill) {
+      return;
+    }
+
+    setFormData((prev) => {
+      const linePrefix = '5) Number of office locations:';
+      const linePattern = /^5\) Number of office locations:.*$/m;
+      const replacementLine = businessLocations
+        ? `${linePrefix} ${businessLocations}`
+        : linePrefix;
+
+      if (!linePattern.test(prev.message)) {
+        return prev;
+      }
+
+      const nextMessage = prev.message.replace(linePattern, replacementLine);
+      if (nextMessage === prev.message) {
+        return prev;
+      }
+
+      return {
+        ...prev,
+        message: nextMessage,
+      };
+    });
+  }, [businessLocations, isBusinessContractPrefill]);
 
   const handleChange = (e) => {
     setFormData({
@@ -186,6 +216,27 @@ function Contact() {
               />
             </div>
             <div className="mb-4">
+              {isBusinessContractPrefill && (
+                <div className="mb-4">
+                  <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="business_locations">
+                    Number of Office Locations
+                  </label>
+                  <select
+                    id="business_locations"
+                    name="business_locations"
+                    value={businessLocations}
+                    onChange={(e) => setBusinessLocations(e.target.value)}
+                    className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    required
+                  >
+                    <option value="" disabled>Select number of locations</option>
+                    <option value="1 location">1 location</option>
+                    <option value="2-3 locations">2-3 locations</option>
+                    <option value="4-5 locations">4-5 locations</option>
+                    <option value="6+ locations">6+ locations</option>
+                  </select>
+                </div>
+              )}
               <input type="hidden" name="diagnosis_source" value={prefill?.source || ''} />
               <input type="hidden" name="diagnosis_recommended_service" value={prefill?.recommendedService || ''} />
               <input type="hidden" name="diagnosis_recommended_route" value={prefill?.recommendedRoute || ''} />

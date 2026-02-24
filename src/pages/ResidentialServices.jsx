@@ -631,7 +631,7 @@ function ResidentialServices() {
               </div>
               <div className="flex items-center">
                 <FaShieldAlt className="mr-2 text-blue-500 w-7 h-7" />
-                <p>24/7 phone support</p>
+                <p>Phone support during business hours</p>
               </div>
               <div className="flex items-center">
                 <FaSave className="mr-2 text-blue-500 w-7 h-7" />
@@ -643,7 +643,7 @@ function ResidentialServices() {
               </div>
               <div className="flex items-center">
                 <FaBug className="mr-2 text-blue-500 w-7 h-7" />
-                <p>Anti-virus installation and maintenance</p>
+                <p>Antivirus installation for customer-provided software</p>
               </div>
               <div className="flex items-center">
                 <FaLaptop className="mr-2 text-blue-500 w-7 h-7" />

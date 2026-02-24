@@ -19,19 +19,36 @@ export default defineConfig({
       }),
   ].filter(Boolean),
   build: {
+    modulePreload: false,
     chunkSizeWarningLimit: 500,
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (!id.includes('node_modules')) {
-            if (id.includes('components')) return 'components'
-            return
-          }
+          if (!id.includes('node_modules')) return
 
+          if (
+            id.includes('/node_modules/react/') ||
+            id.includes('/node_modules/react-dom/') ||
+            id.includes('/node_modules/react-router')
+          ) {
+            return 'vendor-react'
+          }
           if (id.includes('/node_modules/slick-carousel/') || id.includes('/node_modules/react-slick/')) {
             return 'vendor-slick'
           }
-          return 'vendor'
+          if (id.includes('/node_modules/@fortawesome/')) {
+            return 'vendor-fa'
+          }
+          if (id.includes('/node_modules/react-icons/')) {
+            return 'vendor-react-icons'
+          }
+          if (id.includes('/node_modules/@mui/') || id.includes('/node_modules/@emotion/')) {
+            return 'vendor-mui'
+          }
+          if (id.includes('/node_modules/@paypal/') || id.includes('/node_modules/@react-google-maps/')) {
+            return 'vendor-integrations'
+          }
+          return
         },
       },
     },

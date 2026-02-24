@@ -24,6 +24,21 @@ import dataBackupImage from '../assets/datarecovery.webp';
 import onlineSafetyImage from '../assets/howtobesafe.webp';
 import aiImage from '../assets/ai2.webp';
 import chatgptImage from '../assets/chatgpt.webp';
+import cardImage5Tips from '../assets/optimized-blog/5-tips-512.jpg';
+import cardImageProtectMalware from '../assets/optimized-blog/protect-malware-512.jpg';
+import cardImageBackup from '../assets/optimized-blog/backup-512.jpg';
+import cardImageSeo from '../assets/optimized-blog/seo-512.jpg';
+import cardImageWebspeed from '../assets/optimized-blog/webspeed-512.jpg';
+import cardImageQualityContent from '../assets/optimized-blog/quality-content-512.jpg';
+import cardImageItSupport from '../assets/optimized-blog/it-support-512.jpg';
+import cardImageNetworkSecurity from '../assets/optimized-blog/business-cybersecurity-512.jpg';
+import cardImageRemoteSupport from '../assets/optimized-blog/remote-it-support-512.jpg';
+import cardImagePcPerformance from '../assets/optimized-blog/business-services-512.jpg';
+import cardImageItConsulting from '../assets/optimized-blog/it-consulting-512.jpg';
+import cardImageDataBackup from '../assets/optimized-blog/data-recovery-512.jpg';
+import cardImageOnlineSafety from '../assets/optimized-blog/online-safety-512.jpg';
+import cardImageAi from '../assets/optimized-blog/ai2-512.jpg';
+import cardImageChatgpt from '../assets/optimized-blog/chatgpt-512.jpg';
 
 // Blog posts data
 const blogPostsData = {
@@ -344,6 +359,24 @@ const blogPostsData = {
   }
 };
 
+const relatedCardImagesBySlug = {
+  '5-tips-to-keep-your-computer-running-smoothly': cardImage5Tips,
+  'how-to-protect-your-computer-from-malware': cardImageProtectMalware,
+  'the-benefits-of-regular-data-backup': cardImageBackup,
+  'seo-tips-for-your-tech-website': cardImageSeo,
+  'optimizing-your-site-speed-for-better-performance': cardImageWebspeed,
+  'creating-quality-content-for-better-seo': cardImageQualityContent,
+  'essential-it-support-tips-for-small-businesses': cardImageItSupport,
+  'how-to-secure-your-business-network': cardImageNetworkSecurity,
+  'top-remote-it-support-tools-2024': cardImageRemoteSupport,
+  'improving-personal-computer-performance': cardImagePcPerformance,
+  'role-of-it-consulting-in-business-growth': cardImageItConsulting,
+  'best-practices-for-data-recovery-and-backup': cardImageDataBackup,
+  'how-to-be-safe-online': cardImageOnlineSafety,
+  'the-future-of-ai': cardImageAi,
+  'how-chatgpt-is-transforming-customer-support': cardImageChatgpt
+};
+
 const sliderSettings = {
   dots: false,
   infinite: true,
@@ -520,12 +553,19 @@ function BlogPost() {
         <Slider {...sliderSettings}>
           {Object.keys(blogPostsData).map((key, index) => {
             const relatedPost = blogPostsData[key];
+            const relatedPostCardImage = relatedCardImagesBySlug[key] || relatedPost.heroImage;
             return (
               <div key={index} className="px-4">
                 <Paper elevation={3} className="flex flex-col justify-between p-4 border border-gray-300 h-80">
                   <div>
-                    {relatedPost.heroImage && (
-                      <img src={relatedPost.heroImage} alt={relatedPost.title} className="object-cover w-full h-32 mb-4 bg-gray-300 rounded" />
+                    {relatedPostCardImage && (
+                      <img
+                        src={relatedPostCardImage}
+                        alt={relatedPost.title}
+                        loading="lazy"
+                        decoding="async"
+                        className="object-cover w-full h-32 mb-4 bg-gray-300 rounded"
+                      />
                     )}
                     <Typography variant="h6" component="h3" className="mb-2">
                       {relatedPost.title}

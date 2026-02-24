@@ -1,63 +1,84 @@
 
 import { Suspense, lazy, useEffect } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, Link, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
 import NavMenu from './components/NavMenu';
 import ErrorBoundary from './components/ErrorBoundary';
 import './index.css';
 
+const lazyWithRetry = (importer, retries = 2, retryDelayMs = 350) =>
+  lazy(async () => {
+    let lastError;
+
+    for (let attempt = 0; attempt <= retries; attempt += 1) {
+      try {
+        return await importer();
+      } catch (error) {
+        lastError = error;
+        if (attempt === retries) {
+          throw error;
+        }
+        await new Promise((resolve) => {
+          window.setTimeout(resolve, retryDelayMs * (attempt + 1));
+        });
+      }
+    }
+
+    throw lastError;
+  });
+
 // Dynamic imports for code-splitting
-const Home = lazy(() => import('./pages/Home'));
-const ResidentialServices = lazy(() => import('./pages/ResidentialServices'));
-const PcLaptopRepairs = lazy(() => import('./pages/residentialsupport/PcLaptopRepairs'));
-const VirusMalwareRemoval = lazy(() => import('./pages/residentialsupport/VirusMalwareRemoval'));
-const SoftwareTroubleshooting = lazy(() => import('./pages/residentialsupport/SoftwareTroubleshooting'));
-const DataRecovery = lazy(() => import('./pages/residentialsupport/DataRecovery'));
-const NetworkSetupSupport = lazy(() => import('./pages/residentialsupport/NetworkSetupSupport'));
-const RemoteSupport = lazy(() => import('./pages/residentialsupport/RemoteSupport'));
-const CloudConsulting = lazy(() => import('./pages/CloudConsulting'));
-const TechConsultation = lazy(() => import('./pages/residentialsupport/TechConsultation'));
-const ComputerTraining = lazy(() => import('./pages/residentialsupport/ComputerTraining'));
-const HomeOfficeSetup = lazy(() => import('./pages/residentialsupport/HomeOfficeSetup'));
-const BackupDataProtection = lazy(() => import('./pages/residentialsupport/BackupDataProtection'));
-const CybersecurityHome = lazy(() => import('./pages/residentialsupport/CybersecurityHome'));
-const BusinessServices = lazy(() => import('./pages/BusinessServices'));
-const ITConsulting = lazy(() => import('./pages/businesssolutions/ITConsulting'));
-const NetworkSetup = lazy(() => import('./pages/businesssolutions/NetworkSetup'));
-const ManagedITServices = lazy(() => import('./pages/businesssolutions/ManagedITServices'));
-const BusinessDataRecovery = lazy(() => import('./pages/businesssolutions/BusinessDataRecovery'));
-const CloudSolutions = lazy(() => import('./pages/businesssolutions/CloudSolutions'));
-const BusinessCybersecurity = lazy(() => import('./pages/businesssolutions/BusinessCybersecurity'));
-const ITSupport = lazy(() => import('./pages/businesssolutions/ITSupport'));
-const BusinessContinuity = lazy(() => import('./pages/businesssolutions/BusinessContinuity'));
-const BusinessComputerTraining = lazy(() => import('./pages/businesssolutions/BusinessComputerTraining'));
-const DigitalTransformation = lazy(() => import('./pages/businesssolutions/DigitalTransformation'));
-const TechnicalSupportMaintenance = lazy(() => import('./pages/businesssolutions/TechnicalSupportMaintenance'));
-const WebsiteDevelopment = lazy(() => import('./pages/businesssolutions/WebsiteDevelopment'));
-const Services = lazy(() => import('./pages/Services'));
-const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
-const Contact = lazy(() => import('./pages/Contact'));
-const HowTo = lazy(() => import('./pages/HowTo'));
-const PayNow = lazy(() => import('./pages/PayNow'));
-const Checkout = lazy(() => import('./pages/Checkout'));
-const BlogPost = lazy(() => import('./pages/BlogPost'));
-const BlogOverview = lazy(() => import('./pages/BlogOverview'));
-const BookService = lazy(() => import('./pages/BookService'));
-const Subscribe = lazy(() => import('./pages/Subscribe'));
-const Pricing = lazy(() => import('./pages/Pricing'));
-const AboutUs = lazy(() => import('./pages/AboutUs'));
-const FixBrokenScreen = lazy(() => import('./pages/tutorials/FixBrokenScreen'));
-const KnowYourComputerHasVirus = lazy(() => import('./pages/tutorials/KnowYourComputerHasVirus'));
-const SetupNetwork = lazy(() => import('./pages/tutorials/SetupNetwork'));
-const RecoverData = lazy(() => import('./pages/tutorials/RecoverData'));
-const UseRemoteSupport = lazy(() => import('./pages/tutorials/UseRemoteSupport'));
-const ImprovePerformance = lazy(() => import('./pages/tutorials/ImprovePerformance'));
-const BeSafeOnline = lazy(() => import('./pages/tutorials/BeSafeOnline'));
-const SetupEmail = lazy(() => import('./pages/tutorials/SetUpemail'));
-const QuickTechHelp = lazy(() => import('./pages/QuickTechHelp'));
-const ConfirmationPage = lazy(() => import('./pages/ConfirmationPage'));
-const BuyConfirmationPage = lazy(() => import('./pages/BuyConfirmationPage'));
+const Home = lazyWithRetry(() => import('./pages/Home'));
+const ResidentialServices = lazyWithRetry(() => import('./pages/ResidentialServices'));
+const PcLaptopRepairs = lazyWithRetry(() => import('./pages/residentialsupport/PcLaptopRepairs'));
+const VirusMalwareRemoval = lazyWithRetry(() => import('./pages/residentialsupport/VirusMalwareRemoval'));
+const SoftwareTroubleshooting = lazyWithRetry(() => import('./pages/residentialsupport/SoftwareTroubleshooting'));
+const DataRecovery = lazyWithRetry(() => import('./pages/residentialsupport/DataRecovery'));
+const NetworkSetupSupport = lazyWithRetry(() => import('./pages/residentialsupport/NetworkSetupSupport'));
+const RemoteSupport = lazyWithRetry(() => import('./pages/residentialsupport/RemoteSupport'));
+const CloudConsulting = lazyWithRetry(() => import('./pages/CloudConsulting'));
+const TechConsultation = lazyWithRetry(() => import('./pages/residentialsupport/TechConsultation'));
+const ComputerTraining = lazyWithRetry(() => import('./pages/residentialsupport/ComputerTraining'));
+const HomeOfficeSetup = lazyWithRetry(() => import('./pages/residentialsupport/HomeOfficeSetup'));
+const BackupDataProtection = lazyWithRetry(() => import('./pages/residentialsupport/BackupDataProtection'));
+const CybersecurityHome = lazyWithRetry(() => import('./pages/residentialsupport/CybersecurityHome'));
+const BusinessServices = lazyWithRetry(() => import('./pages/BusinessServices'));
+const ITConsulting = lazyWithRetry(() => import('./pages/businesssolutions/ITConsulting'));
+const NetworkSetup = lazyWithRetry(() => import('./pages/businesssolutions/NetworkSetup'));
+const ManagedITServices = lazyWithRetry(() => import('./pages/businesssolutions/ManagedITServices'));
+const BusinessDataRecovery = lazyWithRetry(() => import('./pages/businesssolutions/BusinessDataRecovery'));
+const CloudSolutions = lazyWithRetry(() => import('./pages/businesssolutions/CloudSolutions'));
+const BusinessCybersecurity = lazyWithRetry(() => import('./pages/businesssolutions/BusinessCybersecurity'));
+const ITSupport = lazyWithRetry(() => import('./pages/businesssolutions/ITSupport'));
+const BusinessContinuity = lazyWithRetry(() => import('./pages/businesssolutions/BusinessContinuity'));
+const BusinessComputerTraining = lazyWithRetry(() => import('./pages/businesssolutions/BusinessComputerTraining'));
+const DigitalTransformation = lazyWithRetry(() => import('./pages/businesssolutions/DigitalTransformation'));
+const TechnicalSupportMaintenance = lazyWithRetry(() => import('./pages/businesssolutions/TechnicalSupportMaintenance'));
+const WebsiteDevelopment = lazyWithRetry(() => import('./pages/businesssolutions/WebsiteDevelopment'));
+const Services = lazyWithRetry(() => import('./pages/Services'));
+const ServiceDetail = lazyWithRetry(() => import('./pages/ServiceDetail'));
+const Contact = lazyWithRetry(() => import('./pages/Contact'));
+const HowTo = lazyWithRetry(() => import('./pages/HowTo'));
+const PayNow = lazyWithRetry(() => import('./pages/PayNow'));
+const Checkout = lazyWithRetry(() => import('./pages/Checkout'));
+const BlogPost = lazyWithRetry(() => import('./pages/BlogPost'));
+const BlogOverview = lazyWithRetry(() => import('./pages/BlogOverview'));
+const BookService = lazyWithRetry(() => import('./pages/BookService'));
+const Subscribe = lazyWithRetry(() => import('./pages/Subscribe'));
+const Pricing = lazyWithRetry(() => import('./pages/Pricing'));
+const AboutUs = lazyWithRetry(() => import('./pages/AboutUs'));
+const FixBrokenScreen = lazyWithRetry(() => import('./pages/tutorials/FixBrokenScreen'));
+const KnowYourComputerHasVirus = lazyWithRetry(() => import('./pages/tutorials/KnowYourComputerHasVirus'));
+const SetupNetwork = lazyWithRetry(() => import('./pages/tutorials/SetupNetwork'));
+const RecoverData = lazyWithRetry(() => import('./pages/tutorials/RecoverData'));
+const UseRemoteSupport = lazyWithRetry(() => import('./pages/tutorials/UseRemoteSupport'));
+const ImprovePerformance = lazyWithRetry(() => import('./pages/tutorials/ImprovePerformance'));
+const BeSafeOnline = lazyWithRetry(() => import('./pages/tutorials/BeSafeOnline'));
+const SetupEmail = lazyWithRetry(() => import('./pages/tutorials/SetUpemail'));
+const QuickTechHelp = lazyWithRetry(() => import('./pages/QuickTechHelp'));
+const ConfirmationPage = lazyWithRetry(() => import('./pages/ConfirmationPage'));
+const BuyConfirmationPage = lazyWithRetry(() => import('./pages/BuyConfirmationPage'));
 
 const routePrefetchers = [
   () => import('./pages/Home'),
@@ -149,6 +170,21 @@ const getServiceName = (pathname) => {
   return toTitleCase(lastSegment);
 };
 
+const NotFound = () => (
+  <section className="max-w-2xl px-6 py-16 mx-auto text-center">
+    <h1 className="mb-4 text-4xl font-bold text-gray-900">Page not found</h1>
+    <p className="mb-8 text-lg text-gray-600">
+      The page you requested does not exist or may have moved.
+    </p>
+    <Link
+      to="/"
+      className="inline-flex items-center px-5 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700"
+    >
+      Back to Home
+    </Link>
+  </section>
+);
+
 const App = () => {
   const location = useLocation();
   const normalizedPath = location.pathname === '/' ? '/' : location.pathname.replace(/\/+$/, '');
@@ -213,7 +249,7 @@ const App = () => {
     <div className="flex flex-col min-h-screen">
       <NavMenu />
       <main id="main-content" tabIndex={-1} className="flex-grow mt-16">
-        <ErrorBoundary>
+        <ErrorBoundary key={normalizedPath}>
           <Suspense
             fallback={
               <div className="flex items-center justify-center min-h-[40vh]" role="status" aria-live="polite">
@@ -275,6 +311,7 @@ const App = () => {
               <Route path="/buy-computers" element={<Navigate to="/services" replace />} />
               <Route path="/confirmation" element={<ConfirmationPage />} />
               <Route path="/buy-confirmation" element={<BuyConfirmationPage />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </ErrorBoundary>

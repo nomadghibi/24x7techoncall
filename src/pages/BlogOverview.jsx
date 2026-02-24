@@ -5,21 +5,21 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';  // Import Helmet for SEO
 import { Paper, Typography } from '@mui/material';
-import heroImage from '../assets/5-tips-blog-image.webp';
-import protectHeroImage from '../assets/ProtectYourComputerFromMalware.webp';
-import protectHeroImage2 from '../assets/seo.webp';
-import protectHeroImage3 from '../assets/webspeed.webp';
-import protectHeroImage4 from '../assets/qcontent.webp';
-import backupHeroImage from '../assets/backupHeroImage.webp';
-import itSupportImage from '../assets/itSupportImage.webp';
-import networkSecurityImage from '../assets/businesscybersecurity.webp';
-import remoteItSupportImage from '../assets/remotetechsupport.webp';
-import pcPerformanceImage from '../assets/businessservices.webp';
-import itConsultingImage from '../assets/itconsulting.webp';
-import dataBackupImage from '../assets/datarecovery.webp';
-import onlineSafetyImage from '../assets/howtobesafe.webp';
-import aiImage from '../assets/ai-optimized.jpg';
-import chatgptImage from '../assets/chatgpt.webp';
+import heroImage from '../assets/optimized-blog/5-tips-512.jpg';
+import protectHeroImage from '../assets/optimized-blog/protect-malware-512.jpg';
+import protectHeroImage2 from '../assets/optimized-blog/seo-512.jpg';
+import protectHeroImage3 from '../assets/optimized-blog/webspeed-512.jpg';
+import protectHeroImage4 from '../assets/optimized-blog/quality-content-512.jpg';
+import backupHeroImage from '../assets/optimized-blog/backup-512.jpg';
+import itSupportImage from '../assets/optimized-blog/it-support-512.jpg';
+import networkSecurityImage from '../assets/optimized-blog/business-cybersecurity-512.jpg';
+import remoteItSupportImage from '../assets/optimized-blog/remote-it-support-512.jpg';
+import pcPerformanceImage from '../assets/optimized-blog/business-services-512.jpg';
+import itConsultingImage from '../assets/optimized-blog/it-consulting-512.jpg';
+import dataBackupImage from '../assets/optimized-blog/data-recovery-512.jpg';
+import onlineSafetyImage from '../assets/optimized-blog/online-safety-512.jpg';
+import aiImage from '../assets/optimized-blog/ai-optimized-512.jpg';
+import chatgptImage from '../assets/optimized-blog/chatgpt-512.jpg';
 
 const blogPosts = [
   {
@@ -206,7 +206,13 @@ const BlogOverview = () => {
           <Link to={post.link} key={index} className="block">
             <Paper elevation={3} className="flex flex-col justify-between p-4 border border-gray-300 h-80">
               {post.image && (
-                <img src={post.image} alt={post.title} className="object-cover w-full h-32 mb-4 bg-gray-300 rounded" />
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  loading={index < 3 ? 'eager' : 'lazy'}
+                  decoding="async"
+                  className="object-cover w-full h-32 mb-4 bg-gray-300 rounded"
+                />
               )}
               <div>
                 <Typography variant="h6" component="h3" className="mb-2">

@@ -240,6 +240,62 @@ const services = [
   }
 ];
 
+const managedContractPlans = [
+  {
+    id: 'business-core',
+    name: 'Business Core',
+    price: '$125',
+    billing: 'per user / month (10-user minimum, annual term)',
+    sla: 'Business-hours support SLA',
+    summary: 'Best for stable teams that need proactive IT management and predictable support.',
+    features: [
+      'Help desk support during business hours',
+      'Device monitoring, patching, and maintenance',
+      'Backup health checks and recovery guidance',
+      'Microsoft 365 and basic user admin support',
+      'Remote support and vendor coordination',
+    ],
+  },
+  {
+    id: 'business-secure',
+    name: 'Business Secure',
+    price: '$165',
+    billing: 'per user / month (10-user minimum, annual term)',
+    sla: 'Faster priority queue during business hours',
+    summary: 'Adds stronger security controls for teams with higher risk or compliance pressure.',
+    features: [
+      'Everything in Business Core',
+      'Endpoint protection and threat monitoring',
+      'Email security hardening and anti-phishing controls',
+      'Security awareness training for staff',
+      'Quarterly security review with action plan',
+    ],
+    highlight: true,
+  },
+  {
+    id: 'business-complete',
+    name: 'Business Complete',
+    price: '$215',
+    billing: 'per user / month (10-user minimum, annual term)',
+    sla: 'Priority response plus scheduled onsite time',
+    summary: 'For growing teams that want strategy, priority handling, and regular onsite support.',
+    features: [
+      'Everything in Business Secure',
+      'Scheduled onsite support blocks',
+      'Vendor and ISP escalation management',
+      'Quarterly vCIO roadmap and budgeting review',
+      'Priority issue triage for critical business systems',
+    ],
+  },
+];
+
+const contractTerms = [
+  'One-time onboarding is quoted separately based on users, devices, and environment complexity.',
+  'Hardware, software licenses, major project work, and compliance audits are outside monthly contract scope.',
+  'After-hours support is available as an add-on or billed at premium emergency rates.',
+  'Annual prepay discount available for qualified contracts.',
+];
+
 function BusinessServices() {
   const navigate = useNavigate();
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -251,6 +307,31 @@ function BusinessServices() {
 
   const handleBookServiceClick = () => {
     navigate('/book-service');
+  };
+
+  const handleManagedPlanQuote = (plan) => {
+    const prefillMessage = [
+      'Business Managed IT Contract Request',
+      `Selected plan: ${plan.name} (${plan.price} ${plan.billing})`,
+      '',
+      'Please share:',
+      '- Number of users:',
+      '- Number of computers/devices:',
+      '- Current pain points:',
+      '- Current provider/tools:',
+      '- Preferred contact time:',
+    ].join('\n');
+
+    navigate('/contact', {
+      state: {
+        prefill: {
+          source: 'business-contract',
+          message: prefillMessage,
+          recommendedService: 'Managed IT Services',
+          recommendedRoute: '/business-services',
+        },
+      },
+    });
   };
 
   const loadVideo = () => {
@@ -396,6 +477,67 @@ function BusinessServices() {
           ))}
         </div>
       </div>
+
+      {/* Yearly Managed IT Contracts */}
+      <section className="py-16 bg-gray-50">
+        <div className="container p-8 mx-auto">
+          <div className="max-w-4xl mx-auto mb-10 text-center">
+            <h2 className="mb-4 text-4xl font-bold text-gray-900">Yearly Managed IT Contracts</h2>
+            <p className="text-lg text-gray-700">
+              Transparent annual contract options for Palm Bay and Melbourne businesses that want predictable IT support, stronger security,
+              and fewer operational disruptions.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            {managedContractPlans.map((plan) => (
+              <article
+                key={plan.id}
+                className={`flex flex-col h-full p-6 bg-white border rounded-xl shadow-sm ${
+                  plan.highlight ? 'border-blue-500 shadow-lg' : 'border-gray-200'
+                }`}
+              >
+                {plan.highlight && (
+                  <span className="inline-block px-3 py-1 mb-3 text-xs font-semibold tracking-wide text-blue-800 bg-blue-100 rounded-full">
+                    MOST SELECTED
+                  </span>
+                )}
+                <h3 className="mb-2 text-2xl font-semibold text-gray-900">{plan.name}</h3>
+                <p className="mb-1 text-4xl font-bold text-blue-600">{plan.price}</p>
+                <p className="mb-3 text-sm text-gray-600">{plan.billing}</p>
+                <p className="mb-3 text-sm font-medium text-gray-700">{plan.sla}</p>
+                <p className="mb-4 text-gray-700">{plan.summary}</p>
+                <ul className="mb-6 space-y-2">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex items-start text-gray-700">
+                      <FaCheckCircle className="w-4 h-4 mt-1 mr-2 text-green-600 shrink-0" />
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <button
+                  onClick={() => handleManagedPlanQuote(plan)}
+                  className="w-full px-4 py-3 mt-auto font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700"
+                >
+                  Request {plan.name} Quote
+                </button>
+              </article>
+            ))}
+          </div>
+
+          <div className="max-w-4xl p-5 mx-auto mt-8 border border-blue-100 rounded-lg bg-blue-50">
+            <h3 className="mb-2 text-xl font-semibold text-blue-900">Contract Terms at a Glance</h3>
+            <ul className="space-y-2 text-blue-900">
+              {contractTerms.map((term) => (
+                <li key={term} className="flex items-start">
+                  <FaCheckCircle className="w-4 h-4 mt-1 mr-2 text-blue-700 shrink-0" />
+                  <span>{term}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
       {/* Get in Touch Section */}
       <section className="py-16 mt-16 text-center bg-blue-50">

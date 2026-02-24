@@ -7,9 +7,16 @@ import socialImage from '../assets/optimized-hero/heroimage100-1152.jpg';
 
 function Contact() {
   const location = useLocation();
-  const wizardPrefill = location.state?.prefill;
-  const prefillMessage = typeof wizardPrefill?.message === 'string' ? wizardPrefill.message.trim() : '';
-  const hasWizardPrefill = wizardPrefill?.source === 'diagnose-my-issue' && Boolean(prefillMessage);
+  const prefill = location.state?.prefill;
+  const prefillMessage = typeof prefill?.message === 'string' ? prefill.message.trim() : '';
+  const prefillSourceLabel = prefill?.source === 'diagnose-my-issue'
+    ? 'diagnosis wizard'
+    : prefill?.source === 'price-estimator'
+      ? 'price estimator'
+      : prefill?.source === 'business-contract'
+        ? 'business contract selector'
+      : '';
+  const hasPrefillNotice = Boolean(prefillSourceLabel) && Boolean(prefillMessage);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -142,9 +149,9 @@ function Contact() {
             <a className="text-blue-700 hover:underline" href="mailto:365techoncall@gmail.com">365techoncall@gmail.com</a>
           </p>
           <h2 className="mb-4 text-2xl font-semibold">Get In Touch</h2>
-          {hasWizardPrefill && (
+          {hasPrefillNotice && (
             <div className="p-3 mb-4 text-sm text-blue-800 border border-blue-200 rounded bg-blue-50">
-              Diagnosis details were pre-filled from the wizard. You can edit this message before submitting.
+              Details were pre-filled from the {prefillSourceLabel}. You can edit this message before submitting.
             </div>
           )}
           <form onSubmit={handleSubmit}>
@@ -179,9 +186,11 @@ function Contact() {
               />
             </div>
             <div className="mb-4">
-              <input type="hidden" name="diagnosis_source" value={wizardPrefill?.source || ''} />
-              <input type="hidden" name="diagnosis_recommended_service" value={wizardPrefill?.recommendedService || ''} />
-              <input type="hidden" name="diagnosis_recommended_route" value={wizardPrefill?.recommendedRoute || ''} />
+              <input type="hidden" name="diagnosis_source" value={prefill?.source || ''} />
+              <input type="hidden" name="diagnosis_recommended_service" value={prefill?.recommendedService || ''} />
+              <input type="hidden" name="diagnosis_recommended_route" value={prefill?.recommendedRoute || ''} />
+              <input type="hidden" name="prefill_source" value={prefill?.source || ''} />
+              <input type="hidden" name="prefill_estimated_range" value={prefill?.estimatedRange || ''} />
               <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="message">
                 Message
               </label>

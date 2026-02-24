@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const routePrefetchers = {
+  '/': () => import('../pages/Home'),
   '/about-us': () => import('../pages/AboutUs'),
   '/residential-services': () => import('../pages/ResidentialServices'),
   '/residential-support/pc-laptop-repairs': () => import('../pages/residentialsupport/PcLaptopRepairs'),

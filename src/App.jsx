@@ -5,10 +5,10 @@ import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
 import NavMenu from './components/NavMenu';
 import ErrorBoundary from './components/ErrorBoundary';
-import Home from './pages/Home';
 import './index.css';
 
 // Dynamic imports for code-splitting
+const Home = lazy(() => import('./pages/Home'));
 const ResidentialServices = lazy(() => import('./pages/ResidentialServices'));
 const PcLaptopRepairs = lazy(() => import('./pages/residentialsupport/PcLaptopRepairs'));
 const VirusMalwareRemoval = lazy(() => import('./pages/residentialsupport/VirusMalwareRemoval'));
@@ -60,6 +60,7 @@ const ConfirmationPage = lazy(() => import('./pages/ConfirmationPage'));
 const BuyConfirmationPage = lazy(() => import('./pages/BuyConfirmationPage'));
 
 const routePrefetchers = [
+  () => import('./pages/Home'),
   () => import('./pages/ResidentialServices'),
   () => import('./pages/BusinessServices'),
   () => import('./pages/Services'),
@@ -171,21 +172,7 @@ const App = () => {
     : null;
 
   useEffect(() => {
-    const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
-    const isSmallScreen = window.matchMedia?.('(max-width: 768px)')?.matches;
-    const isConstrainedNetwork = Boolean(
-      connection?.saveData ||
-      (typeof connection?.effectiveType === 'string' &&
-        ['slow-2g', '2g', '3g'].includes(connection.effectiveType))
-    );
-
-    if (isSmallScreen || isConstrainedNetwork) {
-      return;
-    }
-
     let cancelled = false;
-    let idleId;
-    let kickoffId;
 
     const runPrefetch = () => {
       routePrefetchers.forEach((prefetch, index) => {
@@ -193,26 +180,22 @@ const App = () => {
           if (!cancelled) {
             void prefetch();
           }
-        }, index * 180);
+        }, index * 120);
       });
     };
 
-    kickoffId = window.setTimeout(() => {
-      if ('requestIdleCallback' in window) {
-        idleId = window.requestIdleCallback(runPrefetch, { timeout: 2000 });
-        return;
-      }
-      runPrefetch();
-    }, 1800);
+    if ('requestIdleCallback' in window) {
+      const idleId = window.requestIdleCallback(runPrefetch, { timeout: 1200 });
+      return () => {
+        cancelled = true;
+        window.cancelIdleCallback(idleId);
+      };
+    }
 
+    const timeoutId = window.setTimeout(runPrefetch, 300);
     return () => {
       cancelled = true;
-      if (kickoffId) {
-        window.clearTimeout(kickoffId);
-      }
-      if (idleId && 'cancelIdleCallback' in window) {
-        window.cancelIdleCallback(idleId);
-      }
+      window.clearTimeout(timeoutId);
     };
   }, []);
 

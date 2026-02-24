@@ -5,7 +5,7 @@ import { FaLaptopHouse, FaDesktop, FaNetworkWired, FaPrint, FaShieldAlt, FaDatab
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 import HeroSection from '../../components/HeroSection'; // Adjust the path according to your file structure
-import heroImage from '../../assets/homeofficesetup.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/homeofficesetup-1152.jpg'; // Adjust the path according to your file structure
 
 const HomeOfficeSetup = () => {
   const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');

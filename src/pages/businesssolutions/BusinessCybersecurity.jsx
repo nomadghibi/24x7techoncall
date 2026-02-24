@@ -5,7 +5,7 @@ import { FaShieldAlt, FaLock, FaCloud, FaNetworkWired, FaSync, FaBalanceScale, F
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 import HeroSection from '../../components/HeroSection';
-import heroImage from '../../assets/businesscybersecurity.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/businesscybersecurity-1152.jpg'; // Adjust the path according to your file structure
 
 const BusinessCybersecurity = () => {
   const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');

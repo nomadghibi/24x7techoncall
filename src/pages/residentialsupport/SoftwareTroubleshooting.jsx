@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async'; // Import Helmet for SEO
 import { FaWindows, FaAppStore, FaDownload, FaCogs, FaRocket, FaDatabase, FaExclamationTriangle, FaShieldAlt, FaSyncAlt, FaHdd, FaLifeRing } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection'; // Adjust the path according to your file structure
-import heroImage from '../../assets/SoftwareTroubleshooting.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/softwaretroubleshooting-1152.jpg'; // Adjust the path according to your file structure
 
 const SoftwareTroubleshooting = () => {
   const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');

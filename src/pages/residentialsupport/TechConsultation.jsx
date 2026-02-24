@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async'; // Import Helmet for SEO
 import { FaLaptop, FaTools, FaServer, FaShieldAlt, FaCogs, FaDatabase, FaCloud, FaChalkboardTeacher, FaLifeRing, FaNetworkWired, FaLightbulb } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection'; // Adjust the path according to your file structure
-import heroImage from '../../assets/TechnicalSupportMaintenance.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/technicalsupportmaintenance-1152.jpg'; // Adjust the path according to your file structure
 
 const TechConsultation = () => {
   const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');

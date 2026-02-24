@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/HardwareRepairs.webp';
+import heroImage from '../assets/optimized-hero/hardwarerepairs-1152.jpg';
 import { Helmet } from 'react-helmet-async';
 
 const HardwareRepairs = () => {

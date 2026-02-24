@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { FaPhone, FaEnvelope, FaUser, FaCheckCircle } from 'react-icons/fa';
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../utils/emailjsConfig';
-import heroImage from '../assets/aboutusitsupport.webp'; // Replace with your hero image path
-import usFlag from '../assets/us-flag.webp'; // Use the generated US flag image path
+import heroImage from '../assets/optimized-hero/aboutusitsupport-1152.jpg'; // Replace with your hero image path
+import usFlag from '../assets/optimized-hero/us-flag-1152.jpg'; // Use the generated US flag image path
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 

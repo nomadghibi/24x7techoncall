@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/fixbrokenscreen.webp'; // Ensure you have this image in your assets
+import heroImage from '../assets/optimized-hero/fixbrokenscreen-1152.jpg'; // Ensure you have this image in your assets
 
 const CloudConsulting = () => {
   const canonicalUrl = 'https://bestcomputertec.com/residential-support/cloud-consulting';

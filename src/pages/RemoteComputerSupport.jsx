@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/RemoteComputerSupport.webp';
+import heroImage from '../assets/optimized-hero/remotecomputersupport-1152.jpg';
 
 const RemoteComputerSupport = () => {
   const navigate = useNavigate();

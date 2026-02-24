@@ -2,7 +2,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import socialImage from '../assets/heroimage100.webp';
+import socialImage from '../assets/optimized-hero/heroimage100-1152.jpg';
 
 const services = {
   'hardware-repairs': {

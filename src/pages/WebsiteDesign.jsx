@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/Website Design Services.webp'; // Ensure you have a relevant image
+import heroImage from '../assets/optimized-hero/website-design-services-1152.jpg'; // Ensure you have a relevant image
 
 const WebsiteDesign = () => {
   const [formData, setFormData] = useState({

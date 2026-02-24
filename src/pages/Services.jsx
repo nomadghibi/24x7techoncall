@@ -6,7 +6,7 @@ import { Helmet } from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/ourservices.webp';
+import heroImage from '../assets/optimized-hero/ourservices-1152.jpg';
 
 const residentialServices = [
   { id: 'pc-laptop-repairs', title: 'PC and Laptop Repairs', icon: <FaTools className="mx-auto mb-4 text-4xl text-blue-500" />, path: '/residential-support/pc-laptop-repairs' },

@@ -6,7 +6,7 @@ import { FaLaptopCode, FaServer, FaDatabase, FaShieldAlt, FaCloud, FaHeadset, Fa
 import HeroSection from '../../components/HeroSection';
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
-import heroImage from '../../assets/websitedevelopment.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/websitedevelopment-1152.jpg'; // Adjust the path according to your file structure
 
 const WebsiteDevelopment = () => {
   const canonicalUrl = 'https://bestcomputertec.com/business-solutions/website-development';

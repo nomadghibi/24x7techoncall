@@ -3,7 +3,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet'; // Import Helmet for SEO
 import HeroSection from '../../components/HeroSection'; // Adjust the path according to your file structure
-import heroImage from '../../assets/businessservices.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/businessservices-1152.jpg'; // Adjust the path according to your file structure
 import { FaCheckCircle, FaUsers, FaDollarSign } from 'react-icons/fa'; // Import necessary icons
 
 const BusinessSolutions = () => {

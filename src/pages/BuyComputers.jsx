@@ -2,9 +2,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet'; // Import Helmet
-import computerImage1 from '../assets/computers-optimized.jpg';
-import computerImage2 from '../assets/computers-optimized.jpg';
-import computerImage3 from '../assets/computers-optimized.jpg';
+import computerImage1 from '../assets/optimized-hero/computers-optimized-1152.jpg';
+import computerImage2 from '../assets/optimized-hero/computers-optimized-1152.jpg';
+import computerImage3 from '../assets/optimized-hero/computers-optimized-1152.jpg';
 
 const BuyComputers = () => {
   const navigate = useNavigate();
@@ -85,7 +85,13 @@ const BuyComputers = () => {
           <h2 className="mb-4 text-3xl font-bold">{bundle.title}</h2>
           <div className="flex flex-col lg:flex-row">
             <div className="flex-1">
-              <img src={bundle.image} alt={bundle.title} className="w-full h-auto lg:max-w-md" />
+              <img
+                src={bundle.image}
+                alt={bundle.title}
+                className="w-full h-auto lg:max-w-md"
+                loading="lazy"
+                decoding="async"
+              />
             </div>
             <div className="flex-1 lg:ml-8">
               <ul className="mb-4 list-disc list-inside">

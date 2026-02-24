@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async'; // Import Helmet for SEO
 import { FaTools, FaBug, FaTachometerAlt, FaNetworkWired, FaPrint, FaEnvelope, FaDatabase, FaShieldAlt, FaDownload, FaQuestionCircle } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
-import heroImage from '../../assets/computers-optimized.jpg'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/computers-optimized-1152.jpg'; // Adjust the path according to your file structure
 
 const RemoteSupport = () => {
   const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');

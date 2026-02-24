@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/QuickTechHelp.webp'; // Adjust the path according to your file structure
+import heroImage from '../assets/optimized-hero/quicktechhelp-1152.jpg'; // Adjust the path according to your file structure
 
 const QuickTechHelp = () => {
   const navigate = useNavigate();

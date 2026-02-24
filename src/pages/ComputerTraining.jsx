@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/computer-training.webp';
+import heroImage from '../assets/optimized-hero/computer-training-1152.jpg';
 
 const ComputerTraining = () => {
   const [formData, setFormData] = useState({

@@ -23,8 +23,8 @@
 // } from 'react-icons/fa';
 // import './ResidentialServices.css';
 
-// import heroImage from '../assets/residentail.webp'; // The image used for both title and CTA
-// import computerImage from '../assets/computers.jpg';
+// import heroImage from '../assets/optimized-hero/residentail-1152.jpg'; // The image used for both title and CTA
+// import computerImage from '../assets/optimized-hero/computers-1152.jpg';
 
 // const services = [
 //   {
@@ -358,8 +358,8 @@ import {
 } from 'react-icons/fa';
 import './ResidentialServices.css';
 
-import heroImage from '../assets/residentail.webp'; // The image used for both title and CTA
-import computerImage from '../assets/computers-optimized.jpg';
+import heroImage from '../assets/optimized-hero/residentail-1152.jpg'; // The image used for both title and CTA
+import computerImage from '../assets/optimized-hero/computers-optimized-1152.jpg';
 
 const services = [
   {
@@ -536,6 +536,8 @@ function ResidentialServices() {
                       src="https://img.youtube.com/vi/8GOvDyPOW7c/maxresdefault.jpg"
                       alt="Video Thumbnail"
                       className="rounded-lg"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <FaPlay className="absolute text-6xl text-white inset-center" />
                   </div>
@@ -590,7 +592,7 @@ function ResidentialServices() {
         {/* Annual Subscription Plan Coupon Style */}
         <div className="flex flex-col p-6 mt-12 bg-white border-2 border-gray-500 border-dashed rounded-lg shadow-lg md:flex-row">
           <div className="relative flex items-center justify-center w-full md:w-1/2 fade-image">
-            <img src={computerImage} alt="Subscription Plan" />
+            <img src={computerImage} alt="Subscription Plan" loading="lazy" decoding="async" />
           </div>
           <div className="w-full p-6 bg-white md:w-1/2">
             <h2 className="mb-4 text-3xl font-bold text-center text-gray-800">💻 Keep Your Computer Running Smoothly With Our Annual Subscription Plan!</h2>

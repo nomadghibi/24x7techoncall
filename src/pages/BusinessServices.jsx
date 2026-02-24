@@ -5,7 +5,7 @@
 // import { FaCheckCircle, FaUsers, FaDollarSign, FaPlay } from 'react-icons/fa';
 // import { useNavigate } from 'react-router-dom';
 // import { motion } from 'framer-motion';
-// import businessImage from '../assets/businessservices.webp';
+// import businessImage from '../assets/optimized-hero/businessservices-1152.jpg';
 
 // const services = [
 //   {
@@ -199,7 +199,7 @@ import { Helmet } from 'react-helmet-async';
 import { FaCheckCircle, FaUsers, FaDollarSign, FaPlay } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import businessImage from '../assets/businessservices.webp';
+import businessImage from '../assets/optimized-hero/businessservices-1152.jpg';
 
 const services = [
   {
@@ -310,6 +310,8 @@ function BusinessServices() {
                       src="https://img.youtube.com/vi/8GOvDyPOW7c/maxresdefault.jpg"
                       alt="Video Thumbnail"
                       className="rounded-lg"
+                      loading="lazy"
+                      decoding="async"
                     />
                     <FaPlay className="absolute text-6xl text-white inset-center" />
                   </div>

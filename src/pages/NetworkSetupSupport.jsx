@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 // import HeroSection from '../components/HeroSection';
-// import heroImage from '../assets/NetworkSetupSupport.webp';
+// import heroImage from '../assets/optimized-hero/networksetupsupport-1152.jpg';
 
 // const NetworkSetupSupport = () => {
 //   const [formData, setFormData] = useState({
@@ -177,7 +177,7 @@
 import { useState } from 'react';
 import { Helmet } from 'react-helmet'; // Import Helmet
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/NetworkSetupSupport.webp'; // Adjust the file path if necessary
+import heroImage from '../assets/optimized-hero/networksetupsupport-1152.jpg'; // Adjust the file path if necessary
 
 const NetworkSetupSupport = () => {
   const [formData, setFormData] = useState({

@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { FaWindows, FaApple, FaLinux, FaMicrosoft } from 'react-icons/fa'; // Importing icons from react-icons
 import { SiAdobe, SiGoogledrive } from 'react-icons/si';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/SoftwareTroubleshooting.webp'; // Ensure this is the correct path to your image
+import heroImage from '../assets/optimized-hero/softwaretroubleshooting-1152.jpg'; // Ensure this is the correct path to your image
 
 const SoftwareTroubleshooting = () => {
   const [formData, setFormData] = useState({

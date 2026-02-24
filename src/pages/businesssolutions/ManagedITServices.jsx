@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async'; // Import Helmet for SEO
 import { FaNetworkWired, FaServer, FaDatabase, FaShieldAlt, FaCloud, FaHeadset, FaLaptopCode, FaMicrochip, FaCogs } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
-import heroImage from '../../assets/managedit.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/managedit-1152.jpg'; // Adjust the path according to your file structure
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 

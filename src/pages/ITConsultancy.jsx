@@ -2,7 +2,7 @@
 
 // // import React, { useState } from 'react';
 // // import HeroSection from '../components/HeroSection';
-// // import heroImage from '../assets/NetworkSetupSupport.webp'; // Ensure you have a relevant image
+// // import heroImage from '../assets/optimized-hero/networksetupsupport-1152.jpg'; // Ensure you have a relevant image
 
 // // const ITConsultancy = () => {
 // //   const [formData, setFormData] = useState({
@@ -206,7 +206,7 @@
 
 // import React, { useReducer } from 'react';
 // import HeroSection from '../components/HeroSection';
-// import heroImage from '../assets/NetworkSetupSupport.webp'; // Ensure you have a relevant image
+// import heroImage from '../assets/optimized-hero/networksetupsupport-1152.jpg'; // Ensure you have a relevant image
 
 // const initialState = {
 //   name: '',
@@ -550,7 +550,7 @@
 import React, { useReducer } from 'react';
 import { Helmet } from 'react-helmet'; // Import Helmet
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/NetworkSetupSupport.webp'; // Ensure you have a relevant image
+import heroImage from '../assets/optimized-hero/networksetupsupport-1152.jpg'; // Ensure you have a relevant image
 
 const initialState = {
   name: '',

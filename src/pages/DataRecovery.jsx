@@ -1,6 +1,6 @@
 // import React, { useState } from 'react';
 // import HeroSection from '../components/HeroSection';
-// import heroImage from '../assets/DataRecovery2.webp'; // Adjust the file path if necessary
+// import heroImage from '../assets/optimized-hero/datarecovery2-1152.jpg'; // Adjust the file path if necessary
 
 // const DataRecovery = () => {
 //   const [formData, setFormData] = useState({
@@ -145,7 +145,7 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet'; // Import Helmet
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/DataRecovery2.webp'; // Adjust the file path if necessary
+import heroImage from '../assets/optimized-hero/datarecovery2-1152.jpg'; // Adjust the file path if necessary
 
 const DataRecovery = () => {
   const [formData, setFormData] = useState({

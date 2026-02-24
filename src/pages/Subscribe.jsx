@@ -1,5 +1,5 @@
 import React from 'react';
-import heroImage from '../assets/Subscribe.webp'; // Add a suitable hero image for the newsletter page
+import heroImage from '../assets/optimized-hero/subscribe-1152.jpg'; // Add a suitable hero image for the newsletter page
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 

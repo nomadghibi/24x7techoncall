@@ -4,7 +4,7 @@ import React from 'react';
 import { FaCheck } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import heroImage from '../assets/priceimage.webp'; // Make sure you have this image in your assets folder
+import heroImage from '../assets/optimized-hero/priceimage-1152.jpg'; // Make sure you have this image in your assets folder
 
 const pricingPlans = [
   {

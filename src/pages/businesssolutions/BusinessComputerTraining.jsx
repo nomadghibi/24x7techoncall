@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FaCloud, FaChalkboardTeacher, FaShieldAlt } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async'; // Import Helmet
 import HeroSection from '../../components/HeroSection';
-import heroImage from '../../assets/businesscomputertraining.webp';
+import heroImage from '../../assets/optimized-hero/businesscomputertraining-1152.jpg';
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 

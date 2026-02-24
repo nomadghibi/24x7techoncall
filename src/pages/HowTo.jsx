@@ -11,7 +11,7 @@ import {
   FaLock,
   FaEnvelope,
 } from 'react-icons/fa';
-import heroImage from '../assets/herohowtobesafe.webp'; // Ensure you have this image in your assets folder
+import heroImage from '../assets/optimized-hero/herohowtobesafe-1152.jpg'; // Ensure you have this image in your assets folder
 import { Helmet } from 'react-helmet-async';
 
 function HowTo() {

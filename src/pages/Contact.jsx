@@ -2,7 +2,7 @@ import { useState } from 'react';
 import emailjs from 'emailjs-com';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
-import socialImage from '../assets/heroimage100.webp';
+import socialImage from '../assets/optimized-hero/heroimage100-1152.jpg';
 
 function Contact() {
   const [formData, setFormData] = useState({

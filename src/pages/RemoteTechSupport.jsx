@@ -1,7 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/remotetechsupport.webp';
+import heroImage from '../assets/optimized-hero/remotetechsupport-1152.jpg';
 
 const RemoteTechSupport = () => {
   return (

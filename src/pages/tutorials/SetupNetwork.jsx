@@ -3,7 +3,7 @@ import HeroSection from '../../components/HeroSection';
 import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import heroImage from '../../assets/setupnetwork.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/setupnetwork-1152.jpg'; // Adjust the path according to your file structure
 
 function SetupNetwork() {
   const navigate = useNavigate();

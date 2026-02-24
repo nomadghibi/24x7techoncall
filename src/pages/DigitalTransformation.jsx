@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import HeroSection from '../components/HeroSection';
-import heroImage from '../assets/DigitalTransformation.webp'; // Ensure you have a relevant image
+import heroImage from '../assets/optimized-hero/digitaltransformation-1152.jpg'; // Ensure you have a relevant image
 
 const DigitalTransformation = () => {
   const [formData, setFormData] = useState({

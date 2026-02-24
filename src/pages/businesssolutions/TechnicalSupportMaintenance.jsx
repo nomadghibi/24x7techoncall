@@ -5,7 +5,7 @@ import { FaTools, FaBug, FaNetworkWired, FaDatabase, FaShieldAlt, FaCloud, FaHea
 import HeroSection from '../../components/HeroSection';
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
-import heroImage from '../../assets/businessservices.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/businessservices-1152.jpg'; // Adjust the path according to your file structure
 
 const TechnicalSupportMaintenance = () => {
   const canonicalUrl = 'https://bestcomputertec.com/business-solutions/technical-support-maintenance';

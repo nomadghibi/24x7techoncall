@@ -5,7 +5,7 @@ import { FaLaptop, FaKeyboard, FaBatteryFull, FaHdd, FaMemory, FaMicrochip, FaFa
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 import HeroSection from '../../components/HeroSection';
-import heroImage from '../../assets/HardwareRepairs.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/hardwarerepairs-1152.jpg'; // Adjust the path according to your file structure
 
 const PcLaptopRepairs = () => {
   const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');

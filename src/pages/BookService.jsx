@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'; // Import useNavigate for naviga
 import { Helmet } from 'react-helmet-async';
 import emailjs from 'emailjs-com'; // Import EmailJS
 import { FaUser, FaEnvelope, FaPhone, FaClipboardList } from 'react-icons/fa';
-import socialImage from '../assets/heroimage100.webp';
+import socialImage from '../assets/optimized-hero/heroimage100-1152.jpg';
 
 const BookService = () => {
   const canonicalUrl = 'https://bestcomputertec.com/book-service';

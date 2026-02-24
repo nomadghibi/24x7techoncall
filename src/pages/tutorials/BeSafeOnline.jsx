@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet-async'; // Import Helmet for SEO
 import HeroSection from '../../components/HeroSection';
 import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
 import { useNavigate } from 'react-router-dom';
-import heroImage from '../../assets/herohowtobesafe.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/herohowtobesafe-1152.jpg'; // Adjust the path according to your file structure
 
 function BeSafeOnline() {
   const navigate = useNavigate();

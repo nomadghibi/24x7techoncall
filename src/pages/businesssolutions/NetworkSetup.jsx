@@ -6,7 +6,7 @@ import { FaNetworkWired, FaWifi, FaServer, FaShieldAlt, FaSync, FaPlug, FaDeskto
 import HeroSection from '../../components/HeroSection';
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
-import heroImage from '../../assets/NetworkSetupSupport.webp';
+import heroImage from '../../assets/optimized-hero/networksetupsupport-1152.jpg';
 
 const NetworkSetup = () => {
   const canonicalUrl = 'https://bestcomputertec.com/business-solutions/network-setup';

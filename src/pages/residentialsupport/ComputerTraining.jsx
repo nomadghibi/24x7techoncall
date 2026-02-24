@@ -5,7 +5,7 @@ import { FaDesktop, FaTools, FaChalkboardTeacher, FaDatabase, FaNetworkWired } f
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 import HeroSection from '../../components/HeroSection'; // Adjust the path according to your file structure
-import heroImage from '../../assets/computer-training.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/computer-training-1152.jpg'; // Adjust the path according to your file structure
 
 const ComputerTraining = () => {
   const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');

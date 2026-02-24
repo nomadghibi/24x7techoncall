@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async'; // Import Helmet for SEO
 import { FaHdd, FaServer, FaDatabase, FaCloud, FaShieldAlt, FaFileAlt, FaUsb, FaExternalLinkAlt } from 'react-icons/fa';
 import HeroSection from '../../components/HeroSection';
-import heroImage from '../../assets/businessdatarecovery.webp'; // Adjust the path according to your file structure
+import heroImage from '../../assets/optimized-hero/businessdatarecovery-1152.jpg'; // Adjust the path according to your file structure
 import emailjs from 'emailjs-com';
 import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/emailjsConfig';
 

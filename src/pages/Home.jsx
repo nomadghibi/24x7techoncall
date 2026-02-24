@@ -13,9 +13,100 @@ import {
   FaCamera,
 } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
-import blogImage1 from '../assets/optimized-home/5-tips-blog-image-512.jpg';
-import blogImage2 from '../assets/optimized-home/protect-malware-512.jpg';
-import blogImage3 from '../assets/optimized-home/backup-hero-512.jpg';
+import blogImage1 from '../assets/optimized-blog/5-tips-512.jpg';
+import blogImage2 from '../assets/optimized-blog/protect-malware-512.jpg';
+import blogImage3 from '../assets/optimized-blog/backup-512.jpg';
+import blogImage4 from '../assets/optimized-blog/seo-512.jpg';
+import blogImage5 from '../assets/optimized-blog/webspeed-512.jpg';
+import blogImage6 from '../assets/optimized-blog/quality-content-512.jpg';
+import blogImage7 from '../assets/optimized-blog/it-support-512.jpg';
+import blogImage8 from '../assets/optimized-blog/business-cybersecurity-512.jpg';
+import blogImage9 from '../assets/optimized-blog/business-services-512.jpg';
+import blogImage10 from '../assets/optimized-blog/ai-optimized-512.jpg';
+
+const homeBlogPool = [
+  {
+    title: 'Computer Repairs Near You: Local Guide for Palm Bay and Melbourne',
+    summary:
+      'Use this local checklist to find trusted computer repair near you, compare options, and choose the right service in Palm Bay and Melbourne.',
+    link: '/blog/computer-repairs-near-you-palm-bay-melbourne-guide',
+    date: 'February 24, 2026',
+    image: blogImage9,
+  },
+  {
+    title: 'AI Trends in 2026: What Businesses Should Do Next',
+    summary:
+      'A practical 2026 guide to AI trends, governance, and realistic adoption steps for growing companies.',
+    link: '/blog/ai-trends-2026-what-businesses-should-do-next',
+    date: 'February 24, 2026',
+    image: blogImage10,
+  },
+  {
+    title: '5 Tips to Keep Your Computer Running Smoothly',
+    summary: 'Use this maintenance checklist to keep your computer stable, secure, and fast.',
+    link: '/blog/5-tips-to-keep-your-computer-running-smoothly',
+    date: 'February 10, 2026',
+    image: blogImage1,
+  },
+  {
+    title: 'How to Protect Your Computer from Malware',
+    summary: 'Reduce malware risk with layered security, MFA, safer downloads, and backup recovery.',
+    link: '/blog/how-to-protect-your-computer-from-malware',
+    date: 'February 5, 2026',
+    image: blogImage2,
+  },
+  {
+    title: 'The Benefits of Regular Data Backup',
+    summary: 'Build a stronger backup strategy with the 3-2-1 rule, versioning, and restore testing.',
+    link: '/blog/the-benefits-of-regular-data-backup',
+    date: 'January 28, 2026',
+    image: blogImage3,
+  },
+  {
+    title: 'SEO Tips for Your Tech Website',
+    summary: 'Use practical local SEO tactics to improve rankings and generate better leads.',
+    link: '/blog/seo-tips-for-your-tech-website',
+    date: 'January 20, 2026',
+    image: blogImage4,
+  },
+  {
+    title: 'Optimizing Your Site Speed for Better Performance',
+    summary: 'Improve Core Web Vitals with a focused speed checklist for service business websites.',
+    link: '/blog/optimizing-your-site-speed-for-better-performance',
+    date: 'January 12, 2026',
+    image: blogImage5,
+  },
+  {
+    title: 'Creating Quality Content for Better SEO',
+    summary: 'Build stronger SEO content using topic clusters, local context, and refresh workflows.',
+    link: '/blog/creating-quality-content-for-better-seo',
+    date: 'January 6, 2026',
+    image: blogImage6,
+  },
+  {
+    title: 'Essential IT Support Tips for Small Businesses',
+    summary: 'Use a proactive IT support framework to reduce downtime and improve business security.',
+    link: '/blog/essential-it-support-tips-for-small-businesses',
+    date: 'December 30, 2025',
+    image: blogImage7,
+  },
+  {
+    title: 'How to Secure Your Business Network',
+    summary: 'Strengthen network security with segmentation, firewall hardening, and clear response planning.',
+    link: '/blog/how-to-secure-your-business-network',
+    date: 'December 18, 2025',
+    image: blogImage8,
+  },
+];
+
+const pickRandomPosts = (posts, count) => {
+  const shuffled = [...posts];
+  for (let i = shuffled.length - 1; i > 0; i -= 1) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+  }
+  return shuffled.slice(0, count);
+};
 
 const heroImageMobile = '/hero-home-640.jpg';
 const heroImageMid = '/hero-home-768.jpg';
@@ -231,32 +322,7 @@ function Home() {
     []
   );
 
-  const blogPosts = useMemo(
-    () => [
-      {
-        title: '5 Tips to Keep Your Computer Running Smoothly',
-        summary: 'Learn the best practices to ensure your computer remains fast and efficient.',
-        link: '/blog/5-tips-to-keep-your-computer-running-smoothly',
-        date: 'July 1, 2024',
-        image: blogImage1,
-      },
-      {
-        title: 'How to Protect Your Computer from Malware',
-        summary: 'Understand how to safeguard your computer from various malware threats.',
-        link: '/blog/how-to-protect-your-computer-from-malware',
-        date: 'June 25, 2024',
-        image: blogImage2,
-      },
-      {
-        title: 'The Benefits of Regular Data Backup',
-        summary: 'Discover why regular data backups are crucial for protecting your important files.',
-        link: '/blog/the-benefits-of-regular-data-backup',
-        date: 'June 20, 2024',
-        image: blogImage3,
-      },
-    ],
-    []
-  );
+  const blogPosts = useMemo(() => pickRandomPosts(homeBlogPool, 3), []);
 
   const { ref: techSolutionsRef, inView: techSolutionsInView } = useInView({
     triggerOnce: true,
@@ -331,12 +397,20 @@ function Home() {
               <p className="mb-8 text-xl">
                 Your Computer, Our Expertise - Best Computer Tech Support!
               </p>
-              <Link
-                to="/services"
-                className="px-6 py-3 font-semibold text-white transition duration-300 bg-blue-500 rounded-full hover:bg-blue-700"
-              >
-                Get Started
-              </Link>
+              <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <Link
+                  to="/diagnose-my-issue"
+                  className="px-6 py-3 font-semibold text-white transition duration-300 bg-green-600 rounded-full hover:bg-green-700"
+                >
+                  Diagnose My Issue
+                </Link>
+                <Link
+                  to="/services"
+                  className="px-6 py-3 font-semibold text-white transition duration-300 bg-blue-500 rounded-full hover:bg-blue-700"
+                >
+                  Get Started
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -383,7 +457,7 @@ function Home() {
         <h2 className="mb-8 text-4xl font-bold">Blog Posts</h2>
         <div className="container grid grid-cols-1 gap-8 px-4 mx-auto md:grid-cols-2 lg:grid-cols-3">
           {blogPosts.map((post, index) => (
-            <BlogPostCard key={index} post={post} />
+            <BlogPostCard key={post.link || index} post={post} />
           ))}
         </div>
       </section>

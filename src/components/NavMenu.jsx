@@ -7,6 +7,7 @@ import { faHome, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 const routePrefetchers = {
   '/': () => import('../pages/Home'),
   '/about-us': () => import('../pages/AboutUs'),
+  '/diagnose-my-issue': () => import('../pages/DiagnoseMyIssue'),
   '/residential-services': () => import('../pages/ResidentialServices'),
   '/residential-support/pc-laptop-repairs': () => import('../pages/residentialsupport/PcLaptopRepairs'),
   '/residential-support/virus-malware-removal': () => import('../pages/residentialsupport/VirusMalwareRemoval'),
@@ -154,6 +155,15 @@ const NavMenu = () => {
                 About Us
               </Link>
             </li>
+            <li>
+              <Link
+                to="/diagnose-my-issue"
+                className="hover:underline"
+                onClick={handleDirectLinkClick}
+              >
+                Diagnose My Issue
+              </Link>
+            </li>
             <li
               className="relative group"
               onMouseEnter={() => {
@@ -265,6 +275,7 @@ const NavMenu = () => {
         <div className="flex flex-col space-y-2 md:hidden">
           <Link to="/" className="px-4 py-2 hover:underline" onClick={toggleMobileMenu}>Home</Link>
           <Link to="/about-us" className="px-4 py-2 hover:underline" onClick={toggleMobileMenu}>About Us</Link>
+          <Link to="/diagnose-my-issue" className="px-4 py-2 hover:underline" onClick={toggleMobileMenu}>Diagnose My Issue</Link>
           <button className="px-4 py-2 text-left hover:underline" onClick={() => handleSubmenuToggle('residential')}>Residential Services</button>
           {residentialOpen && (
             <div className="flex flex-col pl-4">

@@ -23,6 +23,13 @@ import chatgptImage from '../assets/optimized-blog/chatgpt-512.jpg';
 
 const blogPosts = [
   {
+    title: 'Computer Repairs Near You: Local Guide for Palm Bay and Melbourne',
+    summary: 'Use this local checklist to find trusted computer repair near you, compare options, and choose the right service in Palm Bay and Melbourne, FL.',
+    link: '/blog/computer-repairs-near-you-palm-bay-melbourne-guide',
+    date: 'February 24, 2026',
+    image: pcPerformanceImage
+  },
+  {
     title: 'AI Trends in 2026: What Businesses Should Do Next',
     summary: 'A practical 2026 guide to AI trends, agents, governance, and realistic adoption steps for growing companies.',
     link: '/blog/ai-trends-2026-what-businesses-should-do-next',

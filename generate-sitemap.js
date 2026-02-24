@@ -11,6 +11,7 @@ const __dirname = resolve(__filename, '..');
 // Define all the static routes for the site
 const staticRoutes = [
   '/',
+  '/diagnose-my-issue',
   '/quick-tech-help',
   '/residential-services',
   '/residential-support/pc-laptop-repairs',
@@ -49,6 +50,7 @@ const staticRoutes = [
   '/how-to/be-safe-online',
   '/how-to/set-up-email',
   '/blog',
+  '/blog/computer-repairs-near-you-palm-bay-melbourne-guide',
   '/blog/ai-trends-2026-what-businesses-should-do-next',
   '/blog/5-tips-to-keep-your-computer-running-smoothly',
   '/blog/how-to-protect-your-computer-from-malware',

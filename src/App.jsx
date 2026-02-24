@@ -77,11 +77,13 @@ const ImprovePerformance = lazyWithRetry(() => import('./pages/tutorials/Improve
 const BeSafeOnline = lazyWithRetry(() => import('./pages/tutorials/BeSafeOnline'));
 const SetupEmail = lazyWithRetry(() => import('./pages/tutorials/SetUpemail'));
 const QuickTechHelp = lazyWithRetry(() => import('./pages/QuickTechHelp'));
+const DiagnoseMyIssue = lazyWithRetry(() => import('./pages/DiagnoseMyIssue'));
 const ConfirmationPage = lazyWithRetry(() => import('./pages/ConfirmationPage'));
 const BuyConfirmationPage = lazyWithRetry(() => import('./pages/BuyConfirmationPage'));
 
 const routePrefetchers = [
   () => import('./pages/Home'),
+  () => import('./pages/DiagnoseMyIssue'),
   () => import('./pages/ResidentialServices'),
   () => import('./pages/BusinessServices'),
   () => import('./pages/Services'),
@@ -260,6 +262,7 @@ const App = () => {
           >
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="/diagnose-my-issue" element={<DiagnoseMyIssue />} />
               <Route path="/quick-tech-help" element={<QuickTechHelp />} />
               <Route path="/residential-services" element={<ResidentialServices />} />
               <Route path="/residential-support/pc-laptop-repairs" element={<PcLaptopRepairs />} />

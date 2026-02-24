@@ -1,10 +1,15 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import { Helmet } from 'react-helmet-async';
 import socialImage from '../assets/optimized-hero/heroimage100-1152.jpg';
 
 function Contact() {
+  const location = useLocation();
+  const wizardPrefill = location.state?.prefill;
+  const prefillMessage = typeof wizardPrefill?.message === 'string' ? wizardPrefill.message.trim() : '';
+  const hasWizardPrefill = wizardPrefill?.source === 'diagnose-my-issue' && Boolean(prefillMessage);
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -41,6 +46,24 @@ function Contact() {
   const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+  useEffect(() => {
+    if (!prefillMessage) {
+      return;
+    }
+
+    setFormData((prev) => {
+      if (prev.message.includes(prefillMessage)) {
+        return prev;
+      }
+      return {
+        ...prev,
+        message: prev.message.trim()
+          ? `${prefillMessage}\n\n---\n${prev.message.trim()}`
+          : prefillMessage,
+      };
+    });
+  }, [prefillMessage]);
 
   const handleChange = (e) => {
     setFormData({
@@ -119,6 +142,11 @@ function Contact() {
             <a className="text-blue-700 hover:underline" href="mailto:365techoncall@gmail.com">365techoncall@gmail.com</a>
           </p>
           <h2 className="mb-4 text-2xl font-semibold">Get In Touch</h2>
+          {hasWizardPrefill && (
+            <div className="p-3 mb-4 text-sm text-blue-800 border border-blue-200 rounded bg-blue-50">
+              Diagnosis details were pre-filled from the wizard. You can edit this message before submitting.
+            </div>
+          )}
           <form onSubmit={handleSubmit}>
             <div className="mb-4">
               <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="name">
@@ -151,6 +179,9 @@ function Contact() {
               />
             </div>
             <div className="mb-4">
+              <input type="hidden" name="diagnosis_source" value={wizardPrefill?.source || ''} />
+              <input type="hidden" name="diagnosis_recommended_service" value={wizardPrefill?.recommendedService || ''} />
+              <input type="hidden" name="diagnosis_recommended_route" value={wizardPrefill?.recommendedRoute || ''} />
               <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="message">
                 Message
               </label>

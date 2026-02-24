@@ -1,7 +1,7 @@
 
 import { Suspense, lazy, useEffect } from 'react';
-import { HelmetProvider } from 'react-helmet-async';
-import { Routes, Route, Navigate } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
 import NavMenu from './components/NavMenu';
 import ErrorBoundary from './components/ErrorBoundary';
@@ -72,7 +72,105 @@ const routePrefetchers = [
   () => import('./pages/BookService'),
 ];
 
+const BASE_URL = 'https://bestcomputertec.com';
+const NOINDEX_PATHS = new Set(['/checkout', '/paynow', '/confirmation', '/buy-confirmation']);
+const SERVICE_ROOT_PATHS = new Set(['/residential-services', '/business-services', '/services']);
+const SERVICE_PATH_PREFIXES = ['/residential-support/', '/business-solutions/', '/services/'];
+
+const areaServed = [
+  { '@type': 'City', name: 'Palm Bay' },
+  { '@type': 'City', name: 'Melbourne' },
+  { '@type': 'City', name: 'West Melbourne' },
+  { '@type': 'AdministrativeArea', name: 'Brevard County' },
+];
+
+const localBusinessProvider = {
+  '@type': 'LocalBusiness',
+  name: 'Best Computer Tech LLC',
+  url: `${BASE_URL}/`,
+  telephone: '+1-321-953-5199',
+  email: '365techoncall@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: '602 Hurst Rd NE',
+    addressLocality: 'Palm Bay',
+    addressRegion: 'FL',
+    postalCode: '32907',
+    addressCountry: 'US',
+  },
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Best Computer Tech LLC',
+  url: `${BASE_URL}/`,
+  telephone: '+1-321-953-5199',
+  email: '365techoncall@gmail.com',
+  priceRange: '$$',
+  areaServed,
+  address: localBusinessProvider.address,
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+};
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Best Computer Tech',
+  url: `${BASE_URL}/`,
+  inLanguage: 'en-US',
+};
+
+const toTitleCase = (value) =>
+  value
+    .split('-')
+    .filter(Boolean)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+
+const getServiceName = (pathname) => {
+  if (pathname === '/residential-services') return 'Residential Computer Services';
+  if (pathname === '/business-services') return 'Business IT Services';
+  if (pathname === '/services') return 'Computer and IT Services';
+
+  const segments = pathname.split('/').filter(Boolean);
+  const lastSegment = segments[segments.length - 1];
+
+  if (!lastSegment) return 'Computer and IT Services';
+  if (pathname.startsWith('/services/')) return `${toTitleCase(lastSegment)} Service`;
+
+  return toTitleCase(lastSegment);
+};
+
 const App = () => {
+  const location = useLocation();
+  const normalizedPath = location.pathname === '/' ? '/' : location.pathname.replace(/\/+$/, '');
+  const isNoindexPath = NOINDEX_PATHS.has(normalizedPath);
+  const isServicePath =
+    SERVICE_ROOT_PATHS.has(normalizedPath) ||
+    SERVICE_PATH_PREFIXES.some((prefix) => normalizedPath.startsWith(prefix));
+  const canonicalUrl = normalizedPath === '/' ? `${BASE_URL}/` : `${BASE_URL}${normalizedPath}`;
+  const serviceName = getServiceName(normalizedPath);
+  const serviceSchema = isServicePath
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'Service',
+        name: serviceName,
+        serviceType: serviceName,
+        description: `Professional ${serviceName.toLowerCase()} in Palm Bay, Melbourne, and Brevard County, Florida.`,
+        url: canonicalUrl,
+        areaServed,
+        provider: localBusinessProvider,
+      }
+    : null;
+
   useEffect(() => {
     let cancelled = false;
 
@@ -103,6 +201,15 @@ const App = () => {
 
   return (
     <HelmetProvider> {/* Wrap the entire app in HelmetProvider */}
+    {!isNoindexPath && (
+      <Helmet>
+        <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
+        <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
+        {serviceSchema && (
+          <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
+        )}
+      </Helmet>
+    )}
     <div className="flex flex-col min-h-screen">
       <NavMenu />
       <main id="main-content" tabIndex={-1} className="flex-grow mt-16">

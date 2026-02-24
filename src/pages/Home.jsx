@@ -18,6 +18,8 @@ import blogImage2 from '../assets/optimized-home/protect-malware-512.jpg';
 import blogImage3 from '../assets/optimized-home/backup-hero-512.jpg';
 
 const heroImageMobile = '/hero-home-640.jpg';
+const heroImageMid = '/hero-home-768.jpg';
+const heroImageLarge = '/hero-home-896.jpg';
 const heroImageDesktop = '/hero-home-1024.jpg';
 const heroImageSocial = 'https://bestcomputertec.com/hero-home-1024.jpg';
 
@@ -311,7 +313,7 @@ function Home() {
         <div className="relative">
           <img
             src={heroImageMobile}
-            srcSet={`${heroImageMobile} 640w, ${heroImageDesktop} 1024w`}
+            srcSet={`${heroImageMobile} 640w, ${heroImageMid} 768w, ${heroImageLarge} 896w, ${heroImageDesktop} 1024w`}
             sizes="100vw"
             alt="Best Computer Tech computer repair and IT support in Palm Bay and Melbourne"
             className="object-cover w-full h-96"

@@ -80,8 +80,8 @@ function Contact() {
     }
 
     setFormData((prev) => {
-      const linePrefix = '5) Number of office locations:';
-      const linePattern = /^5\) Number of office locations:.*$/m;
+      const linePrefix = '- Office locations:';
+      const linePattern = /^- Office locations:.*$/m;
       const replacementLine = businessLocations
         ? `${linePrefix} ${businessLocations}`
         : linePrefix;

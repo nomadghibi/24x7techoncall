@@ -512,8 +512,8 @@ import blogImage2 from '../assets/optimized-home/protect-malware-512.jpg';
 import blogImage3 from '../assets/optimized-home/backup-hero-512.jpg';
 
 const heroImageMobile = '/hero-home-640.jpg';
-const heroImageDesktop = '/hero-home-1024.webp';
-const heroImageSocial = 'https://bestcomputertec.com/hero-home-1024.webp';
+const heroImageDesktop = '/hero-home-1024.jpg';
+const heroImageSocial = 'https://bestcomputertec.com/hero-home-1024.jpg';
 
 // Memoized static components to prevent unnecessary re-renders
 const ServiceCard = React.memo(({ service, onReadMore }) => (

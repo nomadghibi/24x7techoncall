@@ -37,7 +37,7 @@ const routePrefetchers = {
 
 const prefetchedPaths = new Set();
 
-const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
+const NavMenu = () => {
   const [residentialOpen, setResidentialOpen] = useState(false);
   const [businessOpen, setBusinessOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -149,8 +149,6 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
               <Link
                 to="/about-us"
                 className="hover:underline"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
                 onClick={handleDirectLinkClick}
               >
                 About Us
@@ -229,8 +227,6 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
               <Link
                 to="/contact"
                 className="hover:underline"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
                 onClick={handleDirectLinkClick}
               >
                 Contact
@@ -240,8 +236,6 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
               <Link
                 to="/how-to"
                 className="hover:underline"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
                 onClick={handleDirectLinkClick}
               >
                 How To
@@ -251,8 +245,6 @@ const NavMenu = ({ handleMouseEnter, handleMouseLeave }) => {
               <Link
                 to="/blog"
                 className="hover:underline"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
                 onClick={handleDirectLinkClick}
               >
                 Blog

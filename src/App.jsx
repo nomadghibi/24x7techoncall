@@ -1,5 +1,5 @@
 
-import { Suspense, lazy, useState, useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Footer from './components/Footer';
@@ -73,9 +73,6 @@ const routePrefetchers = [
 ];
 
 const App = () => {
-  const [circlePosition, setCirclePosition] = useState({ x: 0, y: 0 });
-  const [isHovered, setIsHovered] = useState(false);
-
   useEffect(() => {
     let cancelled = false;
 
@@ -104,27 +101,10 @@ const App = () => {
     };
   }, []);
 
-  const handleMouseMove = (e) => {
-    setCirclePosition({ x: e.clientX, y: e.clientY });
-  };
-
-  const handleMouseEnter = () => {
-    setIsHovered(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHovered(false);
-  };
-
   return (
     <HelmetProvider> {/* Wrap the entire app in HelmetProvider */}
-    <div className="flex flex-col min-h-screen" onMouseMove={handleMouseMove}>
-      <div className={`dim-overlay ${isHovered ? 'visible' : ''}`}></div>
-      <div
-        className="circle"
-        style={{ left: circlePosition.x, top: circlePosition.y }}
-      ></div>
-      <NavMenu handleMouseEnter={handleMouseEnter} handleMouseLeave={handleMouseLeave} />
+    <div className="flex flex-col min-h-screen">
+      <NavMenu />
       <main id="main-content" tabIndex={-1} className="flex-grow mt-16">
         <ErrorBoundary>
           <Suspense

@@ -476,7 +476,7 @@ function ResidentialServices() {
     const subscriptionPlan = {
       title: 'Annual Subscription Plan',
       price: '$199.00',
-      description: 'Keep Your Computer Running Smoothly With Our Annual Subscription Plan!',
+      description: 'Annual care plan for ongoing computer maintenance and support.',
     };
 
     navigate('/checkout', { state: { service: subscriptionPlan } });
@@ -604,8 +604,14 @@ function ResidentialServices() {
             />
           </div>
           <div className="w-full p-6 bg-white md:w-1/2">
-            <h2 className="mb-4 text-3xl font-bold text-center text-gray-800">💻 Keep Your Computer Running Smoothly With Our Annual Subscription Plan!</h2>
-            <p className="mb-4 text-lg text-center text-gray-700">For just $199/year, you'll get:</p>
+            <h2 className="mb-4 text-3xl font-bold text-center text-gray-800">💻 Keep Your Computer Running Smoothly: Annual Care Plan</h2>
+            <p className="mb-2 text-lg text-center text-gray-700">Our annual plan is <strong>$199/year</strong>.</p>
+            <p className="mb-4 text-base text-center text-gray-700">
+              In Palm Bay and Melbourne, one-time computer support is commonly priced per incident and often lands around
+              $90-$180+ depending on the issue, urgency, and onsite vs remote service. If you typically need two or more fixes
+              or tune-ups per year, this plan is usually strong value.
+            </p>
+            <p className="mb-4 text-lg text-center text-gray-700">Included services:</p>
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               <div className="flex items-center">
                 <FaBug className="mr-2 text-blue-500 w-7 h-7" />
@@ -644,13 +650,19 @@ function ResidentialServices() {
                 <p>Computer tune-ups</p>
               </div>
             </div>
-            <p className="mb-4 text-lg text-center text-gray-700">Don't wait, sign up today and keep your computer running like new!</p>
-            <p className="mb-4 text-lg text-center text-gray-700">Here are some additional benefits of our annual subscription plan:</p>
+            <p className="mb-4 text-base text-center text-gray-700">
+              Best for households in Palm Bay and Melbourne with multiple devices, remote workers, seniors, or anyone who
+              wants predictable support costs.
+            </p>
+            <p className="mb-4 text-lg text-center text-gray-700">Why customers choose this plan:</p>
             <ul className="mb-4 text-left text-gray-700 list-disc list-inside">
-              <li>You'll save money over the long run by paying for a year's worth of service upfront.</li>
-              <li>You'll have peace of mind knowing that your computer is always in good hands with our team of experts.</li>
-              <li>You'll get access to our 24/7 support team, so you can get help whenever you need it.</li>
+              <li>Predictable yearly spend instead of surprise one-time repair charges.</li>
+              <li>Proactive checkups and tune-ups to reduce slowdowns and recurring issues.</li>
+              <li>Higher value for repeat support needs compared with paying per incident.</li>
             </ul>
+            <p className="mb-4 text-sm text-center text-gray-600">
+              Not sure if this is the right fit? Call us for a quick recommendation based on your devices and usage.
+            </p>
             <div className="text-center">
               <button
                 onClick={handleOrderNow}

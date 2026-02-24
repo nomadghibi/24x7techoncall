@@ -343,6 +343,8 @@ function BusinessServices() {
         prefill: {
           source: 'business-contract',
           message: prefillMessage,
+          planName: plan.name,
+          pricingBaseline: `${plan.price} ${plan.billing}`,
           recommendedService: 'Managed IT Services',
           recommendedRoute: '/business-services',
         },

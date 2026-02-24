@@ -10,6 +10,43 @@ const QuickTechHelp = () => {
   const pageImage = heroImage?.startsWith('http')
     ? heroImage
     : `https://bestcomputertec.com${heroImage || ''}`;
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    name: 'Quick Tech Help - 15 Minute Remote Tech Support',
+    serviceType: 'Remote Computer Support',
+    description:
+      'Fast 15-minute remote tech support for common computer issues in Palm Bay, Melbourne, and Brevard County, Florida.',
+    url: canonicalUrl,
+    areaServed: [
+      { '@type': 'City', name: 'Palm Bay' },
+      { '@type': 'City', name: 'Melbourne' },
+      { '@type': 'AdministrativeArea', name: 'Brevard County' },
+    ],
+    provider: {
+      '@type': 'LocalBusiness',
+      name: 'Best Computer Tech LLC',
+      url: 'https://bestcomputertec.com/',
+      telephone: '+1-321-953-5199',
+      email: '365techoncall@gmail.com',
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: '602 Hurst Rd NE',
+        addressLocality: 'Palm Bay',
+        addressRegion: 'FL',
+        postalCode: '32907',
+        addressCountry: 'US',
+      },
+    },
+    offers: {
+      '@type': 'Offer',
+      price: '19.95',
+      priceCurrency: 'USD',
+      url: canonicalUrl,
+      availability: 'https://schema.org/InStock',
+    },
+    image: pageImage,
+  };
 
   const handleBuyNowClick = () => {
     navigate('/checkout', { state: { service: 'Quick Tech Help', price: '19.95' } });
@@ -44,6 +81,7 @@ const QuickTechHelp = () => {
           content="Need immediate computer help? Get 15-minute quick tech support from our experts."
         />
         <meta name="twitter:image" content={pageImage} />
+        <script type="application/ld+json">{JSON.stringify(serviceSchema)}</script>
       </Helmet>
       <HeroSection title="Quick Tech Help" image={heroImage} />
       <div className="container p-8 mx-auto">

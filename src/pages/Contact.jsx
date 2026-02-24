@@ -772,20 +772,25 @@ function Contact() {
               <input type="hidden" name="business_goal_3" value={businessContractData.goal3} />
               <input type="hidden" name="business_requester_role" value={businessContractData.requesterRole} />
               <input type="hidden" name="business_requester_phone" value={businessContractData.requesterPhone} />
-              <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="message">
-                {isBusinessContractPrefill ? 'Generated request summary' : 'Message'}
-              </label>
-              <textarea
-                className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-                id="message"
-                name="message" // Must match the EmailJS template variable
-                rows={isBusinessContractPrefill ? 18 : 4}
-                placeholder={isBusinessContractPrefill ? 'Summary is generated from your selections.' : 'Your message'}
-                value={formData.message}
-                onChange={handleChange}
-                readOnly={isBusinessContractPrefill}
-                required
-              />
+              {isBusinessContractPrefill ? (
+                <input type="hidden" id="message" name="message" value={formData.message} />
+              ) : (
+                <>
+                  <label className="block mb-2 text-sm font-bold text-gray-700" htmlFor="message">
+                    Message
+                  </label>
+                  <textarea
+                    className="w-full px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                    id="message"
+                    name="message" // Must match the EmailJS template variable
+                    rows="4"
+                    placeholder="Your message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                  />
+                </>
+              )}
             </div>
             <button
               className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"

@@ -311,15 +311,31 @@ function BusinessServices() {
 
   const handleManagedPlanQuote = (plan) => {
     const prefillMessage = [
-      'Business Managed IT Contract Request',
-      `Selected plan: ${plan.name} (${plan.price} ${plan.billing})`,
+      'Hello Best Computer Tech Team,',
       '',
-      'Please share:',
+      `I am interested in the ${plan.name} yearly managed IT contract (${plan.price} ${plan.billing}).`,
+      '',
+      'Business details:',
+      '- Company name:',
+      '- Industry:',
       '- Number of users:',
       '- Number of computers/devices:',
-      '- Current pain points:',
-      '- Current provider/tools:',
-      '- Preferred contact time:',
+      '- Number of office locations:',
+      '',
+      'Current environment:',
+      '- Microsoft 365 or Google Workspace:',
+      '- Current backup solution:',
+      '- Current security tools:',
+      '',
+      'Primary goals for the next 12 months:',
+      '-',
+      '',
+      'Preferred start date:',
+      'Preferred contact method (phone/email):',
+      'Best time to reach me:',
+      '',
+      'Thank you,',
+      '[Your Name]',
     ].join('\n');
 
     navigate('/contact', {

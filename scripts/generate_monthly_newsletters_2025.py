@@ -39,19 +39,28 @@ class MonthlyNewsletter:
     masthead: str = "Best Computer Tech Monthly Newsletter"
     intro_note: tuple[str, ...] = ()
     custom_sections: tuple["ArticleSection", ...] | None = None
+    slug_override: str | None = None
+    title_override: str | None = None
+    issue_label_override: str | None = None
 
     @property
     def slug(self) -> str:
+        if self.slug_override:
+            return self.slug_override
         month = f"{self.month_number:02d}"
         theme_slug = re.sub(r"[^a-z0-9]+", "-", self.theme.lower()).strip("-")
         return f"best-computer-tech-monthly-newsletter-{self.year}-{month}-{theme_slug}"
 
     @property
     def title(self) -> str:
+        if self.title_override:
+            return self.title_override
         return f"Best Computer Tech Monthly Newsletter - {self.month_name} {self.year}"
 
     @property
     def issue_label(self) -> str:
+        if self.issue_label_override:
+            return self.issue_label_override
         return f"{self.month_name} {self.year} - {self.theme}"
 
 
@@ -479,8 +488,35 @@ NEWSLETTERS_2025 = (
     MonthlyNewsletter(
         month_number=1,
         month_name="January",
-        year=2026,
+        year=2025,
         theme="Agents Become Co-Workers",
+        lead_story="Agentic AI moves from pilots to production.",
+        lead_details=(
+            "Teams stop prompting and start delegating workflows such as support triage, follow-ups, reporting, and approvals.",
+            "The new baseline includes human-in-the-loop reviews, audit trails, and explicit tool permissions.",
+        ),
+        also_watching=(
+            "AI governance policy plus logging is now part of app design.",
+            "Agent sprawl is increasing when teams deploy too many bots without ownership.",
+        ),
+        tool_of_the_month="Password manager plus passkeys (for example 1Password or Bitwarden).",
+        next_steps=(
+            "Automate one workflow first such as lead follow-up, ticket triage, or invoicing reminders.",
+            "Require role-based access, logs, and a kill switch before broader deployment.",
+        ),
+        seo_keywords=(
+            "agentic AI workflows",
+            "IT support Palm Bay",
+            "business automation Melbourne FL",
+            "AI governance checklist",
+            "computer consulting Brevard County",
+        ),
+    ),
+    MonthlyNewsletter(
+        month_number=1,
+        month_name="January",
+        year=2026,
+        theme="Delegation Mode: How Small Businesses Use AI Agents in 2026",
         lead_story="Agentic AI moves from pilots to production.",
         lead_details=(
             "If 2024 was the year businesses tried AI, 2026 is the year they start delegating real work to it.",
@@ -695,6 +731,9 @@ NEWSLETTERS_2025 = (
                 ),
             ),
         ),
+        slug_override="best-computer-tech-monthly-newsletter-2026-01-agents-become-co-workers",
+        title_override="The Tech Pulse 2026 - January 2026 Delegation Mode",
+        issue_label_override="January 2026 - Delegation Mode: How Small Businesses Use AI Agents in 2026",
     ),
     MonthlyNewsletter(
         month_number=2,

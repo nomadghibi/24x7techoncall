@@ -8,9 +8,17 @@ const monthlyNewsletters2025 = [
     id: '2026-01',
     title: 'January 2026 - Agents Become Co-Workers',
     publishDate: 'January 2026',
-    summary: 'Agentic AI moves from pilots to production with workflow ownership, audit trails, and safer delegation.',
+    summary: 'Delegation Mode playbook: how small businesses use agentic AI workflows with approvals, audit trails, and controlled permissions.',
     seoFocus: 'agentic AI workflows, IT support Palm Bay, business automation Melbourne FL',
     file: '/newsletters/best-computer-tech-monthly-newsletter-2026-01-agents-become-co-workers.pdf',
+  },
+  {
+    id: '2025-01',
+    title: 'January 2025 - Agents Become Co-Workers',
+    publishDate: 'January 2025',
+    summary: 'Agentic AI moves from pilots to production with workflow ownership, audit trails, and safer delegation.',
+    seoFocus: 'agentic AI workflows, IT support Palm Bay, business automation Melbourne FL',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2025-01-agents-become-co-workers.pdf',
   },
   {
     id: '2025-02',

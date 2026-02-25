@@ -200,7 +200,7 @@ const NavMenu = () => {
 
         {/* ── Logo ── */}
         <Link to="/" className="flex items-center shrink-0" onClick={handleDirectLinkClick}>
-          <img src={logo} alt="Best Computer Tech" className="h-16 w-auto" />
+          <img src={logo} alt="Best Computer Tech" className="h-24 w-auto" />
         </Link>
 
         {/* ── Desktop nav links ── */}

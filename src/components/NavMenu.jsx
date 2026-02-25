@@ -197,7 +197,7 @@ const NavMenu = () => {
       <div className={`mx-auto max-w-7xl rounded-2xl transition-all duration-300 ${
         scrolled
           ? 'bg-gray-900/95 backdrop-blur-md shadow-2xl shadow-black/50 ring-1 ring-white/10'
-          : 'bg-gray-900/80 backdrop-blur-sm shadow-lg shadow-black/30 ring-1 ring-white/5'
+          : 'bg-transparent shadow-none ring-0'
       }`}>
       <div className="flex items-center justify-between px-6 py-3">
 

@@ -7,7 +7,7 @@ import {
   FaSearch, FaServer, FaCogs, FaDatabase, FaCloud,
   FaCheckCircle, FaChartLine, FaHeadphones,
 } from 'react-icons/fa';
-import logo from '../assets/logo2.png';
+import logo from '../assets/optimized-logo/logo-256.png';
 
 // ── Route prefetching ──────────────────────────────────────────────────────
 const routePrefetchers = {
@@ -211,7 +211,14 @@ const NavMenu = () => {
           className="flex items-center shrink-0 rounded-xl bg-white p-1.5 shadow-2xl shadow-black/50 ring-2 ring-white/90"
           onClick={handleDirectLinkClick}
         >
-          <img src={logo} alt="Best Computer Tech" className="h-14 w-auto sm:h-16" />
+          <img
+            src={logo}
+            alt="Best Computer Tech"
+            className="h-14 w-auto sm:h-16"
+            width={256}
+            height={256}
+            decoding="async"
+          />
         </Link>
 
         {/* ── Desktop nav links ── */}

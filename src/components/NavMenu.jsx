@@ -191,8 +191,8 @@ const NavMenu = () => {
       onMouseOver={(e) => prefetchFromLink(e.target)}
       onFocusCapture={(e) => prefetchFromLink(e.target)}
     >
-      <div className={`w-full transition-all duration-300 ${
-        scrolled ? 'bg-gray-900 shadow-lg border-b border-cyan-500/50' : 'bg-gray-900 border-b border-gray-700'
+      <div className={`w-full border-b-2 border-cyan-500 transition-all duration-300 ${
+        scrolled ? 'bg-gray-900 shadow-lg' : 'bg-gray-900'
       }`}>
         <div className="container mx-auto flex items-center justify-between px-6 py-4 max-w-7xl">
 

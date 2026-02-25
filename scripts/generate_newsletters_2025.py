@@ -192,14 +192,14 @@ def generate_pdf(newsletter: Newsletter):
 
 NEWSLETTERS = (
     Newsletter(
-        slug="best-computer-tech-newsletter-2026-q1-local-security-performance",
-        title="Best Computer Tech Newsletter - 2026 Q1",
+        slug="best-computer-tech-newsletter-2025-q1-local-security-performance",
+        title="Best Computer Tech Newsletter - 2025 Q1",
         subtitle=(
             "Local computer repair and IT support guidance for Palm Bay and Melbourne, Florida. "
             "This issue focuses on security hardening and performance recovery."
         ),
-        issue_label="2026 Q1 Local Security and Performance Brief",
-        publish_date="January 2026",
+        issue_label="2025 Q1 Local Security and Performance Brief",
+        publish_date="January 2025",
         seo_keywords=(
             "computer repair Palm Bay",
             "IT support Melbourne FL",
@@ -209,7 +209,7 @@ NEWSLETTERS = (
         ),
         sections=(
             Section(
-                heading="1) Local IT Snapshot: What Changed in Early 2026",
+                heading="1) Local IT Snapshot: What Changed in Early 2025",
                 paragraphs=(
                     "Customers across Palm Bay and Melbourne are dealing with the same pattern: slower endpoints, more phishing attempts, and inconsistent backup quality. "
                     "Most incidents are avoidable with a stronger monthly maintenance cycle and better staff awareness.",
@@ -249,9 +249,9 @@ NEWSLETTERS = (
                 ),
             ),
             Section(
-                heading="4) Local SEO Signals for Service Businesses in 2026",
+                heading="4) Local SEO Signals for Service Businesses in 2025",
                 paragraphs=(
-                    "Search visibility for service providers now depends heavily on local relevance and trust signals. "
+                    "Search visibility for service providers depends heavily on local relevance and trust signals. "
                     "For computer repair in Palm Bay and IT support in Melbourne FL, publish practical content tied to real local questions and service intent.",
                     "Keep service pages updated with accurate scope, business hours, and response expectations. "
                     "Inconsistent claims reduce trust and can hurt conversion quality even if rankings hold.",
@@ -259,7 +259,7 @@ NEWSLETTERS = (
                 bullets=(
                     "Use service area language consistently: Palm Bay, Melbourne, and Brevard County",
                     "Refresh FAQ blocks with real customer support questions",
-                    "Publish one practical how to or checklist article each month",
+                    "Publish one practical how-to or checklist article each month",
                     "Link newsletter insights to relevant service pages",
                 ),
             ),
@@ -278,14 +278,14 @@ NEWSLETTERS = (
         ),
     ),
     Newsletter(
-        slug="best-computer-tech-newsletter-2026-q2-ai-backup-cybersecurity",
-        title="Best Computer Tech Newsletter - 2026 Q2",
+        slug="best-computer-tech-newsletter-2025-q2-ai-backup-cybersecurity",
+        title="Best Computer Tech Newsletter - 2025 Q2",
         subtitle=(
             "Practical AI adoption, backup resilience, and cybersecurity planning for local businesses. "
             "Built for teams that need clear priorities and measurable outcomes."
         ),
-        issue_label="2026 Q2 AI, Backup, and Cybersecurity Operations Brief",
-        publish_date="April 2026",
+        issue_label="2025 Q2 AI, Backup, and Cybersecurity Operations Brief",
+        publish_date="April 2025",
         seo_keywords=(
             "managed IT services Palm Bay",
             "business cybersecurity Melbourne FL",
@@ -297,15 +297,15 @@ NEWSLETTERS = (
             Section(
                 heading="1) AI Adoption: Focus on Workflow, Not Hype",
                 paragraphs=(
-                    "In 2026, the strongest AI outcomes come from targeted workflow improvements, not broad tool rollouts. "
-                    "Teams should begin with one high friction process, define metrics, and keep human approval in place.",
-                    "For local service businesses, high value use cases include ticket triage drafts, client communication templates, and documentation summaries. "
+                    "In 2025, the strongest AI outcomes come from targeted workflow improvements, not broad tool rollouts. "
+                    "Teams should begin with one high-friction process, define metrics, and keep human approval in place.",
+                    "For local service businesses, high-value use cases include ticket triage drafts, client communication templates, and documentation summaries. "
                     "These uses improve speed while keeping accountability with your team.",
                 ),
                 bullets=(
                     "Pick one process with measurable delay or rework",
                     "Set baseline metrics before launch",
-                    "Require human review for customer facing responses",
+                    "Require human review for customer-facing responses",
                     "Review accuracy and policy compliance weekly",
                 ),
             ),
@@ -315,7 +315,7 @@ NEWSLETTERS = (
                     "Backup quality is judged by recovery success, not by storage volume. "
                     "A reliable plan uses multiple copies, multiple media types, offsite protection, and routine restore testing.",
                     "Small business incidents in Brevard County often reveal gaps in restore readiness. "
-                    "Quarterly recovery tests should be non negotiable for financial records, customer files, and critical collaboration data.",
+                    "Quarterly recovery tests should be non-negotiable for financial records, customer files, and critical collaboration data.",
                 ),
                 bullets=(
                     "Maintain 3 copies of important data",
@@ -325,15 +325,15 @@ NEWSLETTERS = (
                 ),
             ),
             Section(
-                heading="3) Cybersecurity Priorities for Q2 2026",
+                heading="3) Cybersecurity Priorities for Q2 2025",
                 paragraphs=(
                     "Threat activity continues to prioritize credential theft and social engineering. "
                     "Most successful attacks combine email deception with weak identity controls.",
-                    "Local businesses can materially reduce risk through role based access, mailbox protection, and incident response runbooks. "
+                    "Local businesses can materially reduce risk through role-based access, mailbox protection, and incident response runbooks. "
                     "Fast escalation paths prevent small events from becoming long outages.",
                 ),
                 bullets=(
-                    "Enforce MFA and conditional access on high risk sign ins",
+                    "Enforce MFA and conditional access on high-risk sign-ins",
                     "Disable legacy authentication where possible",
                     "Run monthly mailbox rule and forwarding audits",
                     "Keep a written incident response contact tree",
@@ -343,7 +343,7 @@ NEWSLETTERS = (
                 heading="4) Network and Endpoint Governance",
                 paragraphs=(
                     "As hybrid work continues, network consistency matters as much as endpoint security. "
-                    "Segmenting business critical systems and standardizing remote access reduces support complexity and lateral movement risk.",
+                    "Segmenting business-critical systems and standardizing remote access reduces support complexity and lateral movement risk.",
                     "Patch compliance should be tracked by exception, not by assumptions. "
                     "If exceptions are unresolved for more than 30 days, they should be escalated to leadership.",
                 ),
@@ -358,8 +358,8 @@ NEWSLETTERS = (
                 heading="5) Measurement Framework for Leadership",
                 paragraphs=(
                     "Leadership needs operational KPIs tied to business outcomes. "
-                    "Useful metrics include first response time, repeat incident rate, restore success rate, and unresolved high severity tickets.",
-                    "Tracking these consistently creates a practical roadmap for managed IT investments and staffing decisions in the second half of 2026.",
+                    "Useful metrics include first response time, repeat incident rate, restore success rate, and unresolved high-severity tickets.",
+                    "Tracking these consistently creates a practical roadmap for managed IT investments and staffing decisions for the second half of 2025.",
                 ),
                 bullets=(
                     "First response SLA attainment",
@@ -370,8 +370,106 @@ NEWSLETTERS = (
             ),
         ),
         call_to_action=(
-            "If your business needs a clearer 2026 IT roadmap, call Best Computer Tech at (321) 953-5199. "
+            "If your business needs a clearer 2025 IT roadmap, call Best Computer Tech at (321) 953-5199. "
             "We provide managed IT services, cybersecurity, and data recovery support for Palm Bay, Melbourne, and surrounding Brevard County locations."
+        ),
+    ),
+    Newsletter(
+        slug="best-computer-tech-newsletter-2025-q3-business-continuity-endpoint-lifecycle",
+        title="Best Computer Tech Newsletter - 2025 Q3",
+        subtitle=(
+            "Business continuity, endpoint lifecycle planning, and service quality controls for fast-growing local teams. "
+            "This issue focuses on reducing downtime and preparing for Q4 demand."
+        ),
+        issue_label="2025 Q3 Business Continuity and Endpoint Lifecycle Brief",
+        publish_date="July 2025",
+        seo_keywords=(
+            "business continuity planning Palm Bay",
+            "managed IT support Melbourne FL",
+            "endpoint lifecycle management Brevard County",
+            "network uptime monitoring Florida",
+            "small business disaster recovery Palm Bay",
+        ),
+        sections=(
+            Section(
+                heading="1) Mid-Year Risk Review: Where Local Teams Lose Time",
+                paragraphs=(
+                    "By Q3, many support issues are no longer new threats. They are repeated failures from deferred maintenance, weak access controls, and inconsistent escalation ownership. "
+                    "A mid-year risk review should identify the top recurring incident categories and assign action owners.",
+                    "For Palm Bay and Melbourne organizations, repeated outages are often tied to the same systems: aging endpoints, backup gaps, and untracked vendor dependencies. "
+                    "Documenting these patterns helps leadership prioritize fixes with measurable ROI.",
+                ),
+                bullets=(
+                    "Rank the top 5 recurring incident types from Q1 and Q2",
+                    "Assign a technical owner and deadline for each recurring issue",
+                    "Publish a simple escalation matrix for after-hours events",
+                    "Track resolution time trends by category",
+                ),
+            ),
+            Section(
+                heading="2) Endpoint Lifecycle Planning That Avoids Emergency Replacements",
+                paragraphs=(
+                    "Device failures spike when hardware refresh decisions are delayed until systems are already unstable. "
+                    "A practical lifecycle policy can lower emergency spend and reduce user disruption.",
+                    "Build replacement plans based on business role, application load, and security requirements. "
+                    "Not every device needs premium specs, but every user does need a stable and supportable baseline.",
+                ),
+                bullets=(
+                    "Maintain an endpoint inventory with purchase year and warranty status",
+                    "Set refresh windows by user role instead of one-size-fits-all cycles",
+                    "Standardize approved models to simplify support and spare parts",
+                    "Budget quarterly for planned replacements",
+                ),
+            ),
+            Section(
+                heading="3) Continuity Testing: Backups Are Not a Strategy Without Restores",
+                paragraphs=(
+                    "Many businesses report that backups are "
+                    "running, but fewer can prove recoverability under time pressure. "
+                    "Continuity plans should include tested restore paths for core systems.",
+                    "At minimum, test restoration of line-of-business data, shared files, and email continuity each quarter. "
+                    "The objective is to reduce downtime and make incident communication predictable.",
+                ),
+                bullets=(
+                    "Run one tabletop incident drill each quarter",
+                    "Verify restore time objectives for critical applications",
+                    "Record restore test outcomes in a shared runbook",
+                    "Update leadership contacts after every drill",
+                ),
+            ),
+            Section(
+                heading="4) Service Desk Standards That Improve Customer Confidence",
+                paragraphs=(
+                    "Technical quality is only one part of service quality. Customers judge reliability through communication speed, clarity, and follow-through. "
+                    "Service desks should define update frequency standards for open incidents.",
+                    "Set clear expectations for first response, escalation timing, and closure summaries. "
+                    "These controls improve client trust and reduce avoidable follow-up calls.",
+                ),
+                bullets=(
+                    "Define first-response targets by severity",
+                    "Require status updates for open tickets older than 24 hours",
+                    "Send post-resolution summaries with root cause and prevention step",
+                    "Review customer satisfaction notes in weekly operations meetings",
+                ),
+            ),
+            Section(
+                heading="5) Q4 Readiness Checklist",
+                paragraphs=(
+                    "Q3 is the right time to prepare for Q4 service demand. "
+                    "Use September to close unresolved security exceptions, finalize replacement orders, and confirm holiday support coverage.",
+                    "A focused readiness checklist reduces year-end surprise outages and protects customer response times during peak periods.",
+                ),
+                bullets=(
+                    "Close all critical patch exceptions before October",
+                    "Finalize Q4 hardware and licensing renewals",
+                    "Confirm on-call roster and escalation contacts",
+                    "Refresh business continuity documentation",
+                ),
+            ),
+        ),
+        call_to_action=(
+            "Want help building your Q3 to Q4 IT operations roadmap? Contact Best Computer Tech at (321) 953-5199 or visit bestcomputertec.com/contact "
+            "for managed IT support and business continuity services in Palm Bay, Melbourne, and Brevard County."
         ),
     ),
 )

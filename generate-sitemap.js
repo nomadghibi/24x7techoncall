@@ -70,8 +70,9 @@ const staticRoutes = [
   '/blog/how-chatgpt-is-transforming-customer-support',
   '/book-service',
   '/subscribe',
-  '/newsletters/best-computer-tech-newsletter-2026-q1-local-security-performance.pdf',
-  '/newsletters/best-computer-tech-newsletter-2026-q2-ai-backup-cybersecurity.pdf',
+  '/newsletters/best-computer-tech-newsletter-2025-q1-local-security-performance.pdf',
+  '/newsletters/best-computer-tech-newsletter-2025-q2-ai-backup-cybersecurity.pdf',
+  '/newsletters/best-computer-tech-newsletter-2025-q3-business-continuity-endpoint-lifecycle.pdf',
   '/pricing',
   '/about-us',
 ];

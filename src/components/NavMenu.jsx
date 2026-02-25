@@ -7,7 +7,10 @@ import {
   FaSearch, FaServer, FaCogs, FaDatabase, FaCloud,
   FaCheckCircle, FaChartLine, FaHeadphones,
 } from 'react-icons/fa';
-import logo from '../assets/optimized-logo/logo-256.png';
+import logo128Avif from '../assets/optimized-logo/logo-128.avif';
+import logo256Avif from '../assets/optimized-logo/logo-256.avif';
+import logo128Png from '../assets/optimized-logo/logo-128.png';
+import logo256Png from '../assets/optimized-logo/logo-256.png';
 
 // ── Route prefetching ──────────────────────────────────────────────────────
 const routePrefetchers = {
@@ -211,14 +214,23 @@ const NavMenu = () => {
           className="flex items-center shrink-0 rounded-xl bg-white p-1.5 shadow-2xl shadow-black/50 ring-2 ring-white/90"
           onClick={handleDirectLinkClick}
         >
-          <img
-            src={logo}
-            alt="Best Computer Tech"
-            className="h-14 w-auto sm:h-16"
-            width={256}
-            height={256}
-            decoding="async"
-          />
+          <picture>
+            <source
+              type="image/avif"
+              srcSet={`${logo128Avif} 128w, ${logo256Avif} 256w`}
+              sizes="98px"
+            />
+            <img
+              src={logo128Png}
+              srcSet={`${logo128Png} 128w, ${logo256Png} 256w`}
+              sizes="98px"
+              alt="Best Computer Tech"
+              className="h-14 w-auto sm:h-16"
+              width={256}
+              height={256}
+              decoding="async"
+            />
+          </picture>
         </Link>
 
         {/* ── Desktop nav links ── */}

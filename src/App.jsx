@@ -6,6 +6,7 @@ import Footer from './components/Footer';
 import NavMenu from './components/NavMenu';
 import TopBar from './components/TopBar';
 import ErrorBoundary from './components/ErrorBoundary';
+import Home from './pages/Home';
 import './index.css';
 
 const lazyWithRetry = (importer, retries = 2, retryDelayMs = 350) =>
@@ -30,7 +31,6 @@ const lazyWithRetry = (importer, retries = 2, retryDelayMs = 350) =>
   });
 
 // Dynamic imports for code-splitting
-const Home = lazyWithRetry(() => import('./pages/Home'));
 const ResidentialServices = lazyWithRetry(() => import('./pages/ResidentialServices'));
 const PcLaptopRepairs = lazyWithRetry(() => import('./pages/residentialsupport/PcLaptopRepairs'));
 const VirusMalwareRemoval = lazyWithRetry(() => import('./pages/residentialsupport/VirusMalwareRemoval'));
@@ -84,7 +84,6 @@ const ConfirmationPage = lazyWithRetry(() => import('./pages/ConfirmationPage'))
 const BuyConfirmationPage = lazyWithRetry(() => import('./pages/BuyConfirmationPage'));
 
 const routePrefetchers = [
-  () => import('./pages/Home'),
   () => import('./pages/DiagnoseMyIssue'),
   () => import('./pages/PriceEstimator'),
   () => import('./pages/ResidentialServices'),

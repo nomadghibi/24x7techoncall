@@ -5,12 +5,12 @@ import { Helmet } from 'react-helmet-async';
 
 const monthlyNewsletters2025 = [
   {
-    id: '2025-01',
-    title: 'January 2025 - Agents Become Co-Workers',
-    publishDate: 'January 2025',
+    id: '2026-01',
+    title: 'January 2026 - Agents Become Co-Workers',
+    publishDate: 'January 2026',
     summary: 'Agentic AI moves from pilots to production with workflow ownership, audit trails, and safer delegation.',
     seoFocus: 'agentic AI workflows, IT support Palm Bay, business automation Melbourne FL',
-    file: '/newsletters/best-computer-tech-monthly-newsletter-2025-01-agents-become-co-workers.pdf',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-01-agents-become-co-workers.pdf',
   },
   {
     id: '2025-02',
@@ -111,7 +111,7 @@ function Subscribe() {
   const newsletterSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Best Computer Tech 2025 Monthly Newsletter Archive',
+    name: 'Best Computer Tech 2025-2026 Monthly Newsletter Archive',
     itemListElement: monthlyNewsletters2025.map((issue, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -138,11 +138,11 @@ function Subscribe() {
         <title>Subscribe to Our Newsletter | Best Computer Tech</title>
         <meta
           name="description"
-          content="Subscribe for monthly 2025 IT newsletters and download practical issues on AI operations, cybersecurity, compliance, and business automation for Palm Bay and Melbourne, FL."
+          content="Subscribe for monthly IT newsletters and download practical issues on AI operations, cybersecurity, compliance, and business automation for Palm Bay and Melbourne, FL."
         />
         <meta
           name="keywords"
-          content="monthly IT newsletter 2025, Palm Bay technology updates, Melbourne FL cybersecurity newsletter, business automation tips"
+          content="monthly IT newsletter, Palm Bay technology updates, Melbourne FL cybersecurity newsletter, business automation tips"
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
@@ -158,7 +158,7 @@ function Subscribe() {
         <meta name="twitter:title" content="Subscribe to Our Newsletter | Best Computer Tech" />
         <meta
           name="twitter:description"
-          content="Download monthly 2025 newsletters with practical AI, cybersecurity, and operations guidance."
+          content="Download monthly newsletters with practical AI, cybersecurity, and operations guidance."
         />
         <meta name="twitter:image" content={pageImage} />
         <script type="application/ld+json">{JSON.stringify(newsletterSchema)}</script>
@@ -196,7 +196,7 @@ function Subscribe() {
         </div>
 
         <section className="max-w-5xl mx-auto mt-12">
-          <h2 className="mb-4 text-3xl font-semibold text-center">2025 Monthly Newsletter Downloads</h2>
+          <h2 className="mb-4 text-3xl font-semibold text-center">Monthly Newsletter Downloads</h2>
           <p className="mb-8 text-center text-gray-700">
             Download each monthly issue with practical guidance for local computer repair, IT support, cybersecurity, and business operations.
           </p>

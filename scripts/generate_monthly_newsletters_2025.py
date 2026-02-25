@@ -36,6 +36,9 @@ class MonthlyNewsletter:
     tool_of_the_month: str
     next_steps: tuple[str, ...]
     seo_keywords: tuple[str, ...]
+    masthead: str = "Best Computer Tech Monthly Newsletter"
+    intro_note: tuple[str, ...] = ()
+    custom_sections: tuple["ArticleSection", ...] | None = None
 
     @property
     def slug(self) -> str:
@@ -244,6 +247,9 @@ def build_long_paragraph(issue: MonthlyNewsletter, focus: str, paragraph_index: 
 
 
 def build_issue_sections(issue: MonthlyNewsletter) -> tuple[ArticleSection, ...]:
+    if issue.custom_sections is not None:
+        return issue.custom_sections
+
     sections: list[ArticleSection] = []
 
     lead_paragraphs = list(issue.lead_details) + [
@@ -394,18 +400,26 @@ def build_story(
     issue_words: int,
 ):
     story = [
-        Paragraph("Best Computer Tech Monthly Newsletter", style_map["title"]),
+        Paragraph(issue.masthead, style_map["title"]),
         Paragraph(f"{issue.month_name} {issue.year} - {issue.theme}", style_map["issue"]),
         Paragraph(
             "Long-form local technology guidance for Palm Bay, Melbourne, and Brevard County businesses.",
             style_map["subtitle"],
         ),
+    ]
+
+    for intro_paragraph in issue.intro_note:
+        story.append(Paragraph(intro_paragraph, style_map["body"]))
+
+    story.extend(
+        [
         Paragraph("SEO keywords focus: " + ", ".join(issue.seo_keywords), style_map["meta"]),
         Paragraph(f"Issue length: approximately {issue_words} words", style_map["meta"]),
         Paragraph("Lead Story", style_map["h2"]),
         callout_box(issue.lead_story, style_map["callout"], width),
         Spacer(1, 0.08 * inch),
-    ]
+        ]
+    )
 
     for section in sections:
         story.append(Paragraph(section.heading, style_map["h2"]))
@@ -465,21 +479,21 @@ NEWSLETTERS_2025 = (
     MonthlyNewsletter(
         month_number=1,
         month_name="January",
-        year=2025,
+        year=2026,
         theme="Agents Become Co-Workers",
         lead_story="Agentic AI moves from pilots to production.",
         lead_details=(
-            "Teams stop prompting and start delegating workflows such as support triage, follow-ups, reporting, and approvals.",
-            "The new baseline includes human-in-the-loop reviews, audit trails, and explicit tool permissions.",
+            "If 2024 was the year businesses tried AI, 2026 is the year they start delegating real work to it.",
+            "The goal is practical: more leads captured, fewer missed follow-ups, cleaner operations, and better margins without hiring a much larger team.",
         ),
         also_watching=(
-            "AI governance policy plus logging is now part of app design.",
-            "Agent sprawl is increasing when teams deploy too many bots without ownership.",
+            "AI governance: policy plus logging becomes part of app design.",
+            "Agent sprawl: too many bots, too little ownership.",
         ),
-        tool_of_the_month="Password manager plus passkeys (for example 1Password or Bitwarden).",
+        tool_of_the_month="Password manager plus passkeys (for example 1Password / Bitwarden).",
         next_steps=(
-            "Automate one workflow first such as lead follow-up, ticket triage, or invoicing reminders.",
-            "Require role-based access, logs, and a kill switch before broader deployment.",
+            "Pick one workflow to automate (lead follow-up, ticket triage, invoicing reminders).",
+            "Require role-based access plus logs plus a kill switch.",
         ),
         seo_keywords=(
             "agentic AI workflows",
@@ -487,6 +501,199 @@ NEWSLETTERS_2025 = (
             "business automation Melbourne FL",
             "AI governance checklist",
             "computer consulting Brevard County",
+        ),
+        masthead="The Tech Pulse 2026",
+        intro_note=(
+            "Hi [First Name],",
+            "Welcome to The Tech Pulse 2026: practical technology guidance for small business owners who want more leads, fewer missed follow-ups, cleaner operations, and better margins without hiring a bigger team.",
+            "January 2026 - Delegation Mode: How Small Businesses Use AI Agents in 2026.",
+            "Below is a complete, owner-friendly guide to what Delegation Mode looks like in 2026, where it works best, and how to adopt it safely without turning your business into an experiment.",
+        ),
+        custom_sections=(
+            ArticleSection(
+                heading="What Changes in Delegation Mode",
+                paragraphs=(
+                    "Old model (prompting): you ask AI a question, it gives text, and staff manually decides and executes the steps.",
+                    "New model (delegation): you assign AI a task, the system runs a workflow across email, SMS, CRM, calendar, and helpdesk, staff reviews critical steps, and activity is logged.",
+                    "This shift is happening because small businesses are tired of repeated bottlenecks: leads go cold after hours, follow-ups depend on memory, quotes are delayed, invoice reminders are inconsistent, customer context is fragmented, and owners spend weekends compiling reports.",
+                    "The promise of agentic AI is straightforward: more done with the same staff and fewer dropped balls.",
+                ),
+            ),
+            ArticleSection(
+                heading="What Agentic AI Actually Means (Without the Hype)",
+                paragraphs=(
+                    "An AI agent is not just a chatbot. It is a system that understands goals, uses tools, executes multi-step processes, asks for approvals when required, and leaves an audit trail.",
+                    "Think of it as a hyper-fast assistant that never forgets follow-ups, can work nights and weekends, and communicates in your brand voice when given clear permissions and rules.",
+                    "Agents are not replacing your people. They remove repetitive work so staff can focus on conversations that need empathy, sales that need judgment, onsite quality, escalations, and long-term client relationships.",
+                ),
+                bullets=(
+                    "Understands a goal: book a service call, follow up on an estimate, or summarize weekly performance.",
+                    "Uses tools: email, SMS, forms, CRM, calendar, payments, helpdesk, and spreadsheets.",
+                    "Executes workflows with exception handling and staff escalation.",
+                    "Requests approval for critical actions and logs who approved what.",
+                ),
+            ),
+            ArticleSection(
+                heading="The 5 Places Small Businesses Get Immediate ROI",
+                paragraphs=(
+                    "The businesses winning with agents in 2026 start with workflows that are repetitive, rules-based, and measurable.",
+                    "If you automate everything at once, you create confusion. Start with one workflow and make results visible.",
+                ),
+            ),
+            ArticleSection(
+                heading="1) Lead Response and Follow-Up (Never Miss a Lead)",
+                paragraphs=(
+                    "Lead response is often the biggest revenue leak. Businesses lose deals because replies are slow, qualification is weak, or follow-up does not happen consistently.",
+                    "An agent can respond immediately, ask qualifying questions, route the opportunity, send follow-up sequences, propose booking times, and flag high-intent leads.",
+                    "In home service scenarios, that means a lead coming in at night gets a professional response in minutes with clear next steps and scheduling options.",
+                    "Staff receives pre-qualified opportunities instead of a raw inbox backlog.",
+                ),
+                bullets=(
+                    "Reply instantly to forms, calls, and messages.",
+                    "Collect service type, location, timeline, budget range, and supporting details.",
+                    "Route by service line and urgency.",
+                    "Follow up when prospects go quiet.",
+                ),
+            ),
+            ArticleSection(
+                heading="2) Scheduling and Reminders (Reduce No-Shows and Chaos)",
+                paragraphs=(
+                    "Scheduling failures damage both revenue and customer trust through double booking, missed confirmations, and no-shows.",
+                    "Agents can send confirmations immediately, deliver reminders at defined intervals, support policy-based rescheduling, and collect pre-visit information.",
+                    "The result is fewer interruptions for front-desk staff and better prepared onsite or in-office teams.",
+                ),
+                bullets=(
+                    "Send confirmation at booking.",
+                    "Send reminder at 24 hours and 2 hours.",
+                    "Manage allowed rescheduling windows.",
+                    "Escalate missing confirmations to staff.",
+                ),
+            ),
+            ArticleSection(
+                heading="3) Estimates, Proposals, and Approvals (Draft, Review, Send)",
+                paragraphs=(
+                    "Quotes are often delayed because details are scattered and teams are overloaded.",
+                    "Agents can compile intake notes, draft proposals in your template, flag missing details, route for approval, send after approval, and trigger follow-up messages.",
+                    "Human-in-the-loop is essential: the agent drafts, staff approves, and the system sends.",
+                ),
+            ),
+            ArticleSection(
+                heading="4) Billing and Collections (Consistent, Professional Follow-Up)",
+                paragraphs=(
+                    "Collection follow-up is often inconsistent because staff avoids difficult conversations while juggling other priorities.",
+                    "Agents can send polite reminder sequences, provide payment options, escalate at defined intervals, and confirm receipts.",
+                    "This improves predictability and reduces emotional friction around collections.",
+                ),
+            ),
+            ArticleSection(
+                heading="5) Weekly Reporting (Owner Visibility Without Weekend Spreadsheets)",
+                paragraphs=(
+                    "Owners often either fly blind or spend too much manual time gathering numbers.",
+                    "A weekly rollup from an agent can summarize leads, booking rate, close rate, source mix, overdue invoices, unresolved customer issues, and next-week risk flags.",
+                    "That gives leadership better decision speed with lower reporting overhead.",
+                ),
+            ),
+            ArticleSection(
+                heading="The Delegation Ladder: Scale Without Breaking Operations",
+                paragraphs=(
+                    "A common failure pattern is giving an agent too much authority too early. Use a staged delegation ladder instead.",
+                ),
+                bullets=(
+                    "Level 1 Draft Only: agent drafts, humans send.",
+                    "Level 2 Low-Risk Execution: confirmations, reminders, and internal updates.",
+                    "Level 3 Approval Gates: quotes, refunds, cancellations, and exceptions require approval.",
+                    "Level 4 Autopilot with Escalation: full workflow with escalation for ambiguity, high value, risk, or customer distress.",
+                    "Most small businesses should spend 30 to 90 days between levels based on error rate and confidence.",
+                ),
+            ),
+            ArticleSection(
+                heading="Foundation Requirements Before Delegation Works",
+                paragraphs=(
+                    "Agents fail less often when the business foundation is clear. You do not need perfection, but you do need structure.",
+                ),
+                bullets=(
+                    "One source of truth for customer records (preferably CRM).",
+                    "Clear service categories and outcomes.",
+                    "Message templates and brand voice standards.",
+                    "Exception SOPs for angry customers, legal threats, refunds, high-dollar jobs, and safety issues.",
+                ),
+            ),
+            ArticleSection(
+                heading="Safety Baseline for 2026 (Non-Negotiable)",
+                paragraphs=(
+                    "If you delegate to agents, protect against bad messages, incorrect scheduling, accidental data exposure, and unclear authorization.",
+                ),
+                bullets=(
+                    "Approval gates for money, commitments, cancellations, and legal or compliance actions.",
+                    "Audit trails with who, what, when, system touched, and final outcome.",
+                    "Least-privilege tool permissions and scoped credentials.",
+                    "Kill switch to stop sends, scheduling, and record updates immediately.",
+                ),
+            ),
+            ArticleSection(
+                heading="Month-One Rollout Plan (Realistic for Small Teams)",
+                paragraphs=(
+                    "Week 1: pick one workflow and map trigger, first response, qualification, routing, follow-up schedule, and escalation rules.",
+                    "Week 2: run in Draft Only mode and track corrections, time saved, and error patterns.",
+                    "Week 3: enable low-risk execution for confirmations, reminders, and internal updates.",
+                    "Week 4: add approval queues and logging for sends, scheduling, and CRM updates.",
+                ),
+                bullets=(
+                    "Track response time, follow-up completion, booked appointments, and collection timing.",
+                    "Document failures and update templates weekly.",
+                ),
+            ),
+            ArticleSection(
+                heading="Metrics That Matter",
+                paragraphs=(
+                    "Do not measure AI usage. Measure business outcomes that affect revenue, quality, and risk.",
+                ),
+                bullets=(
+                    "Sales: response time, contact rate, booking rate, quote turnaround, close rate.",
+                    "Operations: no-show rate, time to resolution, backlog size, rework rate.",
+                    "Finance: DSO, overdue invoice count, collection rate.",
+                    "Team: time spent on repetitive follow-up and staff workload quality.",
+                ),
+            ),
+            ArticleSection(
+                heading="Mini Case Patterns You Can Model",
+                paragraphs=(
+                    "Home services teams with evening and weekend lead leakage usually improve booking consistency when they automate first response and follow-up.",
+                    "Professional offices reduce front desk interruption by automating confirmations, reminders, and policy-based rescheduling.",
+                    "Service businesses with cash-flow pressure improve overdue balances using structured reminder sequences and escalation rules.",
+                ),
+            ),
+            ArticleSection(
+                heading="Common Fears and Practical Responses",
+                paragraphs=(
+                    "Fear: It will send the wrong message. Response: start in Draft Only mode, use approvals, and keep a kill switch.",
+                    "Fear: Staff will resist. Response: frame as workload relief, involve staff in templates and escalation design, and make them owners of approval gates.",
+                    "Fear: Privacy and trust risk. Response: be transparent, keep humans accountable, limit access, and log all critical actions.",
+                ),
+            ),
+            ArticleSection(
+                heading="Bottom Line",
+                paragraphs=(
+                    "This is the year small businesses move from trying AI to delegating repeatable work with controls.",
+                    "The highest-ROI first workflow remains lead response and follow-up: run Draft Only for 7 to 14 days, then enable low-risk automation, keep approval gates for critical steps, and measure response time, booking rate, and follow-up completion.",
+                ),
+            ),
+            ArticleSection(
+                heading="Quick Reply and I Will Recommend Your First Workflow",
+                paragraphs=(
+                    "Reply with your business type, your top bottleneck (leads, scheduling, follow-ups, billing, support), and how many staff handle it today.",
+                    "You will receive a recommended first agent workflow, message templates, approval gates, and a rollout plan your team can execute.",
+                ),
+            ),
+            ArticleSection(
+                heading="2026 Topic Preview",
+                paragraphs=(
+                    "February: AI Security Arms Race. March: AI PCs and Local Inference. April: Robots in Real Businesses.",
+                    "May: Customer Support Gets Rebuilt. June: Privacy and Compliance Catch Up. July: Post-Quantum Migration Planning.",
+                    "August: Green Compute and Efficiency. September: The Interface Evolves. October: Fraud, Trust, and Verification.",
+                    "November: Automation for Small Business. December: From Tools to Systems.",
+                ),
+            ),
         ),
     ),
     MonthlyNewsletter(

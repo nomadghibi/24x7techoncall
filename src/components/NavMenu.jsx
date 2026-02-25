@@ -187,16 +187,14 @@ const NavMenu = () => {
 
   return (
     <nav
-      className="fixed top-2 z-40 w-full px-4 pt-2 text-white"
+      className="fixed top-0 z-40 w-full text-white"
       onMouseOver={(e) => prefetchFromLink(e.target)}
       onFocusCapture={(e) => prefetchFromLink(e.target)}
     >
-      <div className={`mx-auto max-w-7xl rounded-2xl transition-all duration-300 ${
-        scrolled
-          ? 'bg-gray-900/95 backdrop-blur-md shadow-2xl shadow-black/50 ring-1 ring-white/10'
-          : 'bg-gray-900/85 backdrop-blur-sm shadow-lg shadow-black/30 ring-1 ring-white/10'
+      <div className={`w-full transition-all duration-300 ${
+        scrolled ? 'bg-gray-900 shadow-lg' : 'bg-gray-900'
       }`}>
-        <div className="flex items-center justify-between px-6 py-4">
+        <div className="container mx-auto flex items-center justify-between px-6 py-4 max-w-7xl">
 
           {/* ── Text Logo ── */}
           <Link to="/" className="flex flex-col leading-tight shrink-0" onClick={handleDirectLinkClick}>

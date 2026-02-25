@@ -1,73 +1,82 @@
-
 import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
-  FaLaptop,
-  FaBug,
-  FaNetworkWired,
-  FaDatabase,
-  FaHandsHelping,
-  FaTools,
-  FaLock,
-  FaEnvelope,
+  FaLaptop, FaBug, FaNetworkWired, FaDatabase,
+  FaHandsHelping, FaTools, FaLock, FaEnvelope,
+  FaChevronRight, FaHeadset,
 } from 'react-icons/fa';
-import heroImage from '../assets/optimized-hero/herohowtobesafe-1152.jpg'; // Ensure you have this image in your assets folder
+import heroImage from '../assets/optimized-hero/herohowtobesafe-1152.jpg';
 import { Helmet } from 'react-helmet-async';
 
-function HowTo() {
-  const navigate = useNavigate();
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+const tutorials = [
+  {
+    title: 'How to Fix a Broken Screen',
+    description: 'Step-by-step guide to replacing a broken laptop screen safely and correctly.',
+    link: '/how-to/fix-broken-screen',
+    icon: <FaLaptop />,
+    bg: 'bg-blue-50',
+    color: 'text-blue-600',
+  },
+  {
+    title: 'How to Know Your Computer Has a Virus',
+    description: 'Learn to identify malware symptoms and take immediate protective steps.',
+    link: '/how-to/know-your-computer-has-virus',
+    icon: <FaBug />,
+    bg: 'bg-green-50',
+    color: 'text-green-600',
+  },
+  {
+    title: 'How to Set Up a Network',
+    description: 'Instructions for setting up a secure and efficient network at home or office.',
+    link: '/how-to/setup-network',
+    icon: <FaNetworkWired />,
+    bg: 'bg-purple-50',
+    color: 'text-purple-600',
+  },
+  {
+    title: 'How to Recover Lost Data',
+    description: 'Steps to recover lost or corrupted data from your devices with the right tools.',
+    link: '/how-to/recover-data',
+    icon: <FaDatabase />,
+    bg: 'bg-orange-50',
+    color: 'text-orange-600',
+  },
+  {
+    title: 'How to Use Remote Support',
+    description: 'Guide to getting secure remote support for your computer issues using AeroAdmin.',
+    link: '/how-to/use-remote-support',
+    icon: <FaHandsHelping />,
+    bg: 'bg-red-50',
+    color: 'text-red-600',
+  },
+  {
+    title: 'How to Improve Computer Performance',
+    description: "Tips and tricks to optimize your computer's speed and stability.",
+    link: '/how-to/improve-performance',
+    icon: <FaTools />,
+    bg: 'bg-yellow-50',
+    color: 'text-yellow-600',
+  },
+  {
+    title: 'How to Be Safe Online',
+    description: 'Guidelines to protect your personal information and ensure a secure online experience.',
+    link: '/how-to/be-safe-online',
+    icon: <FaLock />,
+    bg: 'bg-pink-50',
+    color: 'text-pink-600',
+  },
+  {
+    title: 'How to Set Up Email on Your Computer',
+    description: 'Instructions for configuring your email client with the correct server settings.',
+    link: '/how-to/set-up-email',
+    icon: <FaEnvelope />,
+    bg: 'bg-indigo-50',
+    color: 'text-indigo-600',
+  },
+];
 
-  const tutorials = [
-    {
-      title: 'How to Fix a Broken Screen',
-      description: 'Step-by-step guide to fixing a broken screen on your laptop.',
-      link: '/how-to/fix-broken-screen',
-      icon: <FaLaptop className="mb-4 text-5xl text-blue-500" />,
-    },
-    {
-      title: 'How to Know That Your Computer Has a Virus',
-      description: 'Learn how to identify if your computer is infected with a virus.',
-      link: '/how-to/know-your-computer-has-virus',
-      icon: <FaBug className="mb-4 text-5xl text-green-500" />,
-    },
-    {
-      title: 'How to Set Up a Network',
-      description: 'Instructions for setting up a secure and efficient network at home or office.',
-      link: '/how-to/setup-network',
-      icon: <FaNetworkWired className="mb-4 text-5xl text-purple-500" />,
-    },
-    {
-      title: 'How to Recover Lost Data',
-      description: 'Steps to recover lost or corrupted data from your devices.',
-      link: '/how-to/recover-data',
-      icon: <FaDatabase className="mb-4 text-5xl text-orange-500" />,
-    },
-    {
-      title: 'How to Use Remote Support',
-      description: 'Guide to getting remote support for your computer issues.',
-      link: '/how-to/use-remote-support',
-      icon: <FaHandsHelping className="mb-4 text-5xl text-red-500" />,
-    },
-    {
-      title: 'How to Improve Computer Performance',
-      description: "Tips and tricks to optimize your computer's performance.",
-      link: '/how-to/improve-performance',
-      icon: <FaTools className="mb-4 text-5xl text-yellow-500" />,
-    },
-    {
-      title: 'How to Be Safe Online',
-      description: 'Guidelines to protect your personal information and ensure a secure online experience.',
-      link: '/how-to/be-safe-online',
-      icon: <FaLock className="mb-4 text-5xl text-pink-500" />,
-    },
-    {
-      title: 'How to Set Up Email on Your Computer',
-      description: 'Instructions for configuring your email client on your computer.',
-      link: '/how-to/set-up-email',
-      icon: <FaEnvelope className="mb-4 text-5xl text-indigo-500" />,
-    },
-  ];
+function HowTo() {
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
 
   return (
     <div>
@@ -88,69 +97,77 @@ function HowTo() {
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
-      {/* Hero Section */}
+      {/* Hero */}
       <section
-        className="relative py-20 text-white bg-gray-900 hero-section"
-        style={{
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
+        className="relative min-h-[360px] flex items-center text-white"
+        style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="container relative z-10 mx-auto text-center">
-          <h1 className="mb-4 text-5xl font-bold leading-tight">How To Guides</h1>
-          <p className="mb-8 text-xl">Your source for step-by-step tech support and tutorials!</p>
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-950/85 via-blue-950/75 to-gray-950/85"></div>
+        <div className="relative z-10 container mx-auto px-6 py-16 max-w-4xl text-center">
+          <span className="inline-block bg-blue-600 text-white text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+            Free Expert Resources
+          </span>
+          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">How To Guides</h1>
+          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
+            Step-by-step tutorials to help you fix, optimize, and protect your devices — from our local IT experts in Brevard County, FL.
+          </p>
         </div>
       </section>
 
-      {/* Tutorials Section */}
-      <div className="container p-8 mx-auto">
-        <h1 className="mb-8 text-4xl font-bold text-center">How To Guides</h1>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-          {tutorials.map((tutorial, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center p-6 text-center transition-transform duration-300 transform bg-white rounded-lg shadow-lg hover:scale-105"
-            >
-              {tutorial.icon}
-              <h2 className="mb-4 text-2xl font-semibold">{tutorial.title}</h2>
-              <p className="mb-4">{tutorial.description}</p>
-              <Link to={tutorial.link} className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700">
-                Read More
+      {/* Tutorials Grid */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center mb-12">
+            <p className="text-blue-600 font-semibold uppercase tracking-widest text-sm mb-2">Browse Topics</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Choose a Tutorial</h2>
+          </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {tutorials.map((tutorial, index) => (
+              <Link
+                key={index}
+                to={tutorial.link}
+                className="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 hover:border-blue-200 transition-all duration-300 overflow-hidden"
+              >
+                <div className={`p-7 flex items-center justify-center ${tutorial.bg}`}>
+                  <span className={`text-4xl ${tutorial.color}`}>{tutorial.icon}</span>
+                </div>
+                <div className="flex flex-col flex-grow p-5">
+                  <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors leading-snug">
+                    {tutorial.title}
+                  </h3>
+                  <p className="text-sm text-gray-500 flex-grow leading-relaxed">{tutorial.description}</p>
+                  <div className="mt-4 flex items-center text-blue-600 text-sm font-semibold">
+                    Read Guide
+                    <FaChevronRight className="ml-1 text-xs group-hover:translate-x-1 transition-transform" />
+                  </div>
+                </div>
               </Link>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* CTA Section */}
-      <section className="py-16 mt-16 text-center bg-blue-50">
-        <div className="container mx-auto">
-          <h2 className="mb-8 text-4xl font-bold">Get in Touch with Us</h2>
-          <p className="mb-8 text-lg text-gray-700">
-            We'd love to hear from you! Whether you need tech support, want to book a service, or have questions, feel
-            free to reach out.
+      {/* CTA */}
+      <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 py-16 text-white text-center">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <FaHeadset className="mx-auto text-5xl text-blue-300 mb-5" />
+          <h2 className="text-3xl font-bold mb-3">Still Need Help?</h2>
+          <p className="text-blue-100 mb-8 text-lg">
+            Our local IT experts in Palm Bay &amp; Melbourne are ready to assist — in person, remotely, or on-site.
           </p>
-          <div className="flex justify-center space-x-4">
-            <button
-              onClick={() => navigate('/contact')}
-              className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700"
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              to="/contact"
+              className="bg-white text-blue-900 font-bold px-7 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
             >
               Contact Us
-            </button>
-            <button
-              onClick={() => navigate('/book-service')}
-              className="px-6 py-3 font-semibold text-white bg-green-500 rounded-full hover:bg-green-700"
-            >
-              Book a Service
-            </button>
-            <button
-              onClick={() => navigate('/subscribe')}
-              className="px-6 py-3 font-semibold text-white bg-purple-500 rounded-full hover:bg-purple-700"
+            </Link>
+            <Link
+              to="/subscribe"
+              className="border-2 border-white text-white font-bold px-7 py-3 rounded-full hover:bg-white/10 transition-colors"
             >
               Subscribe to Newsletter
-            </button>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,138 +1,119 @@
-// import React from 'react';
-// import HeroSection from '../../components/HeroSection';
-// import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
-// import heroImage from '../../assets/optimized-hero/datarecovery-1152.jpg'; // Adjust the path according to your file structure
-
-// function RecoverData() {
-//   return (
-//     <div>
-//       <HeroSection title="How to Recover Lost Data" image={heroImage} />
-//       <div className="container p-8 mx-auto">
-//         <GoBackButtonWithArrow />
-//         <h1 className="mb-4 text-4xl font-bold">How to Recover Lost Data</h1>
-//         <p className="mb-4">Losing important data can be a stressful experience, but with the right tools and steps, you can often recover lost files. Follow these steps to recover lost data:</p>
-
-//         <h2 className="mb-4 text-3xl font-semibold">Step 1: Stop Using the Affected Device</h2>
-//         <p className="mb-4">To prevent overwriting the lost data, stop using the device immediately until you begin the recovery process.</p>
-
-//         <h2 className="mb-4 text-3xl font-semibold">Step 2: Use Data Recovery Software</h2>
-//         <ol className="mb-4 list-decimal list-inside">
-//           <li>Download and install reputable data recovery software such as Recuva, EaseUS Data Recovery, or Disk Drill.</li>
-//           <li>Run the software and follow the on-screen instructions to scan for recoverable files.</li>
-//           <li>Preview the files found by the software to ensure they are intact and can be recovered.</li>
-//         </ol>
-
-//         <h2 className="mb-4 text-3xl font-semibold">Step 3: Recover the Data</h2>
-//         <ol className="mb-4 list-decimal list-inside">
-//           <li>Select the files you want to recover and choose a different location to save them (e.g., an external drive).</li>
-//           <li>Complete the recovery process and verify that the files are accessible and not corrupted.</li>
-//         </ol>
-
-//         <h2 className="mb-4 text-3xl font-semibold">Step 4: Backup Your Data</h2>
-//         <p className="mb-4">To avoid future data loss, regularly back up your important files to an external drive or cloud storage service.</p>
-
-//         <h2 className="mb-4 text-3xl font-semibold">Tips for Successful Data Recovery</h2>
-//         <ul className="mb-4 list-disc list-inside">
-//           <li>Act quickly to increase the chances of successful recovery.</li>
-//           <li>Use reliable and reputable data recovery software.</li>
-//           <li>Avoid saving recovered files to the same drive where data loss occurred.</li>
-//         </ul>
-
-//         <p className="mb-4">By following these steps and tips, you can increase the likelihood of recovering lost data and safeguarding your important files in the future.</p>
-
-  
-//       </div>
-//     </div>
-//   );
-// }
-
-// export default RecoverData;
 import React from 'react';
-import HeroSection from '../../components/HeroSection';
-import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import heroImage from '../../assets/optimized-hero/datarecovery-1152.jpg'; // Adjust the path according to your file structure
+import { FaArrowLeft, FaHeadset } from 'react-icons/fa';
+import heroImage from '../../assets/optimized-hero/datarecovery-1152.jpg';
 
 function RecoverData() {
-  const navigate = useNavigate();
   const canonicalUrl = 'https://bestcomputertec.com/how-to/recover-data';
-
-  const handleContactUs = () => {
-    navigate('/contact'); // Adjust the path to your contact or booking page
-  };
 
   return (
     <div>
       <Helmet>
         <title>How to Recover Lost Data | Best Computer Tech</title>
-        <meta
-          name="description"
-          content="Learn practical steps to recover lost files safely and improve your chances of successful data recovery."
-        />
+        <meta name="description" content="Learn practical steps to recover lost files safely and improve your chances of successful data recovery." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content="How to Recover Lost Data | Best Computer Tech" />
-        <meta
-          property="og:description"
-          content="A step-by-step recovery guide covering software tools, safe workflows, and backup tips."
-        />
+        <meta property="og:description" content="A step-by-step recovery guide covering software tools, safe workflows, and backup tips." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How to Recover Lost Data | Best Computer Tech" />
-        <meta
-          name="twitter:description"
-          content="Recover deleted files with safer methods and avoid data overwrite."
-        />
+        <meta name="twitter:description" content="Recover deleted files with safer methods and avoid data overwrite." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
-      <HeroSection title="How to Recover Lost Data" image={heroImage} />
-      <div className="container p-8 mx-auto">
-        <GoBackButtonWithArrow />
-        <h1 className="mb-4 text-4xl font-bold">How to Recover Lost Data</h1>
-        <p className="mb-4">Losing important data can be a stressful experience, but with the right tools and steps, you can often recover lost files. Follow these steps to recover lost data:</p>
 
-        <h2 className="mb-4 text-3xl font-semibold">Step 1: Stop Using the Affected Device</h2>
-        <p className="mb-4">To prevent overwriting the lost data, stop using the device immediately until you begin the recovery process.</p>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 2: Use Data Recovery Software</h2>
-        <ol className="mb-4 list-decimal list-inside">
-          <li>Download and install reputable data recovery software such as Recuva, EaseUS Data Recovery, or Disk Drill.</li>
-          <li>Run the software and follow the on-screen instructions to scan for recoverable files.</li>
-          <li>Preview the files found by the software to ensure they are intact and can be recovered.</li>
-        </ol>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 3: Recover the Data</h2>
-        <ol className="mb-4 list-decimal list-inside">
-          <li>Select the files you want to recover and choose a different location to save them (e.g., an external drive).</li>
-          <li>Complete the recovery process and verify that the files are accessible and not corrupted.</li>
-        </ol>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 4: Backup Your Data</h2>
-        <p className="mb-4">To avoid future data loss, regularly back up your important files to an external drive or cloud storage service.</p>
-
-        <h2 className="mb-4 text-3xl font-semibold">Tips for Successful Data Recovery</h2>
-        <ul className="mb-4 list-disc list-inside">
-          <li>Act quickly to increase the chances of successful recovery.</li>
-          <li>Use reliable and reputable data recovery software.</li>
-          <li>Avoid saving recovered files to the same drive where data loss occurred.</li>
-        </ul>
-
-        <p className="mb-4">By following these steps and tips, you can increase the likelihood of recovering lost data and safeguarding your important files in the future.</p>
-
-        <div className="text-center">
-          <p className="mb-4 text-lg font-semibold text-gray-700">If you need professional assistance with data recovery, we're here to help!</p>
-          <button 
-            onClick={handleContactUs} 
-            className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700"
-          >
-            Contact Us
-          </button>
+      {/* Hero */}
+      <section
+        className="relative min-h-[320px] flex items-end text-white"
+        style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-transparent"></div>
+        <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-3">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-gray-500">/</span>
+            <Link to="/how-to" className="hover:text-white transition-colors">How To</Link>
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-300">Recover Lost Data</span>
+          </nav>
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight">How to Recover Lost Data</h1>
         </div>
-      </div>
+      </section>
+
+      {/* Article */}
+      <article className="container mx-auto px-6 py-12 max-w-4xl">
+        <Link to="/how-to" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors group">
+          <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+          Back to How To Guides
+        </Link>
+
+        <p className="text-lg text-gray-600 mb-10">
+          Losing important data can be a stressful experience, but with the right tools and steps, you can often recover lost files. Follow these steps to recover lost data:
+        </p>
+
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 1: Stop Using the Affected Device</h2>
+            <p className="text-gray-700">To prevent overwriting the lost data, stop using the device immediately until you begin the recovery process.</p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 2: Use Data Recovery Software</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+              <li>Download and install reputable data recovery software such as Recuva, EaseUS Data Recovery, or Disk Drill.</li>
+              <li>Run the software and follow the on-screen instructions to scan for recoverable files.</li>
+              <li>Preview the files found by the software to ensure they are intact and can be recovered.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 3: Recover the Data</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+              <li>Select the files you want to recover and choose a different location to save them (e.g., an external drive).</li>
+              <li>Complete the recovery process and verify that the files are accessible and not corrupted.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 4: Backup Your Data</h2>
+            <p className="text-gray-700">To avoid future data loss, regularly back up your important files to an external drive or cloud storage service.</p>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-amber-500 pl-4">Tips for Successful Data Recovery</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-amber-500">
+              <li>Act quickly to increase the chances of successful recovery.</li>
+              <li>Use reliable and reputable data recovery software.</li>
+              <li>Avoid saving recovered files to the same drive where data loss occurred.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="mt-8 text-gray-600">
+          By following these steps and tips, you can increase the likelihood of recovering lost data and safeguarding your important files in the future.
+        </p>
+      </article>
+
+      {/* CTA */}
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-14 text-white text-center">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <FaHeadset className="mx-auto text-4xl text-blue-300 mb-4" />
+          <h2 className="text-3xl font-bold mb-3">Need Professional Data Recovery?</h2>
+          <p className="text-blue-100 mb-6">
+            Lost critical files or dealing with a failing drive? Our data recovery specialists in Palm Bay &amp; Melbourne can help retrieve what matters most.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-block bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+          >
+            Contact Us Today
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

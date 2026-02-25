@@ -1,22 +1,14 @@
-
 import React from 'react';
-import { Helmet } from 'react-helmet-async'; // Import Helmet for SEO
-import HeroSection from '../../components/HeroSection';
-import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
-import { useNavigate } from 'react-router-dom';
-import heroImage from '../../assets/optimized-hero/herohowtobesafe-1152.jpg'; // Adjust the path according to your file structure
+import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import { FaArrowLeft, FaHeadset } from 'react-icons/fa';
+import heroImage from '../../assets/optimized-hero/herohowtobesafe-1152.jpg';
 
 function BeSafeOnline() {
-  const navigate = useNavigate();
-
-  const handleContactUs = () => {
-    navigate('/contact'); // Adjust the path to your contact or booking page
-  };
-
   return (
     <div>
       <Helmet>
-        <title>How to Be Safe Online | Palm Bay & Melbourne FL | Best Computer Tech</title>
+        <title>How to Be Safe Online | Palm Bay &amp; Melbourne FL | Best Computer Tech</title>
         <meta name="description" content="Learn essential steps and guidelines to stay safe online, protect your personal information, and secure your digital presence. Stay vigilant against cyber threats with expert advice from Best Computer Tech." />
         <meta name="keywords" content="online safety, cybersecurity, Palm Bay, Melbourne FL, strong passwords, two-factor authentication, secure connections, personal information protection, antivirus software, phishing scams, VPN" />
         <meta name="robots" content="index, follow" />
@@ -33,84 +25,135 @@ function BeSafeOnline() {
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
 
-      <HeroSection title="How to Be Safe Online" image={heroImage} />
-
-      <div className="container p-8 mx-auto">
-        <GoBackButtonWithArrow />
-        <h1 className="mb-4 text-4xl font-bold">How to Be Safe Online</h1>
-        <p className="mb-4">Staying safe online is crucial in today’s digital world. Follow these comprehensive guidelines to protect your personal information and ensure a secure online experience.</p>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 1: Use Strong and Unique Passwords</h2>
-        <ul className="mb-4 list-disc list-inside">
-          <li>Create Strong Passwords: Use a combination of upper and lower case letters, numbers, and special characters to create robust passwords that are difficult to guess.</li>
-          <li>Unique Passwords: Avoid using the same password across multiple sites. Each account should have a unique password to prevent a breach in one account from compromising others.</li>
-          <li>Password Manager: Use a reputable password manager to generate, store, and manage strong passwords securely, reducing the risk of forgotten passwords or reusing old ones.</li>
-        </ul>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 2: Enable Two-Factor Authentication (2FA)</h2>
-        <ol className="mb-4 list-decimal list-inside">
-          <li>Set Up 2FA: Enable two-factor authentication on your online accounts for an extra layer of security. This process requires a second form of verification, making unauthorized access more difficult.</li>
-          <li>Verification Methods: Use authentication apps like Google Authenticator, Microsoft Authenticator, or receive codes via SMS. Authentication apps are generally more secure than SMS-based 2FA.</li>
-        </ol>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 3: Be Cautious with Emails and Links</h2>
-        <ul className="mb-4 list-disc list-inside">
-          <li>Phishing Scams: Be wary of unsolicited emails asking for personal information or containing suspicious links. Phishing is a common method used by attackers to steal sensitive information.</li>
-          <li>Verify URLs: Hover over links to see the actual URL before clicking. Ensure the URL is legitimate and avoid clicking on links from unknown or untrusted sources.</li>
-          <li>Attachments: Do not open email attachments from unknown or untrusted sources. Attachments can contain malware that can infect your computer or steal data.</li>
-        </ul>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 4: Secure Your Devices</h2>
-        <ol className="mb-4 list-decimal list-inside">
-          <li>Install Antivirus Software: Use reputable antivirus software to protect your devices from malware, ransomware, and other malicious threats. Keep the software updated regularly.</li>
-          <li>Keep Software Updated: Regularly update your operating system, browser, and applications to protect against vulnerabilities that could be exploited by attackers.</li>
-          <li>Firewall: Enable your device’s firewall to block unauthorized access and protect your network from external threats.</li>
-        </ol>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 5: Use Secure Connections</h2>
-        <ul className="mb-4 list-disc list-inside">
-          <li>HTTPS: Ensure websites use HTTPS to encrypt data between your browser and the site, providing a secure connection that protects your information from eavesdroppers.</li>
-          <li>VPN: Use a Virtual Private Network (VPN) to encrypt your internet connection, especially when using public Wi-Fi networks. A VPN helps protect your data from being intercepted by cybercriminals.</li>
-        </ul>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 6: Protect Your Personal Information</h2>
-        <ol className="mb-4 list-decimal list-inside">
-          <li>Limit Sharing: Be mindful of the personal information you share on social media and other online platforms. Avoid oversharing details that could be used for identity theft or fraud.</li>
-          <li>Privacy Settings: Regularly review and adjust privacy settings on your social media accounts and apps to control who can see your information.</li>
-          <li>Personal Details: Avoid sharing sensitive information like your home address, phone number, and financial details publicly, even in seemingly private forums.</li>
-        </ol>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 7: Monitor Your Online Accounts</h2>
-        <ul className="mb-4 list-disc list-inside">
-          <li>Regular Checks: Regularly check your online accounts for any suspicious activity, such as unauthorized logins or transactions. Prompt detection can help mitigate potential damage.</li>
-          <li>Account Alerts: Enable alerts for account activities such as login attempts, password changes, and new device logins to stay informed about your account’s security.</li>
-        </ul>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 8: Educate Yourself and Others</h2>
-        <ol className="mb-4 list-decimal list-inside">
-          <li>Stay Informed: Keep up to date with the latest online security threats, scams, and best practices to avoid falling victim to new types of attacks.</li>
-          <li>Teach Others: Share your knowledge about online safety with friends, family, and colleagues. Educating others helps build a more secure online community.</li>
-        </ol>
-
-        <h2 className="mb-4 text-3xl font-semibold">Additional Tips</h2>
-        <ul className="mb-4 list-disc list-inside">
-          <li>Backup Data: Regularly back up important data to an external drive or secure cloud storage to prevent data loss in case of a cyber attack or hardware failure.</li>
-          <li>Log Out: Always log out of accounts when using shared or public computers to prevent unauthorized access.</li>
-          <li>Avoid Public Wi-Fi for Sensitive Transactions: Avoid using public Wi-Fi networks for online banking, shopping, or other sensitive transactions. If necessary, use a VPN for added security.</li>
-        </ul>
-
-        <p className="mb-4">By following these steps, you can significantly enhance your online safety and protect your personal information from cyber threats. Stay vigilant and proactive in securing your digital presence.</p>
-      
-        <div className="text-center">
-          <p className="mb-4 text-lg font-semibold text-gray-700">If you need professional assistance with online safety, we're here to help!</p>
-          <button 
-            onClick={handleContactUs} 
-            className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700"
-          >
-            Contact Us
-          </button>
+      {/* Hero */}
+      <section
+        className="relative min-h-[320px] flex items-end text-white"
+        style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-transparent"></div>
+        <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-3">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-gray-500">/</span>
+            <Link to="/how-to" className="hover:text-white transition-colors">How To</Link>
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-300">Be Safe Online</span>
+          </nav>
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight">How to Be Safe Online</h1>
         </div>
-      </div>
+      </section>
+
+      {/* Article */}
+      <article className="container mx-auto px-6 py-12 max-w-4xl">
+        <Link to="/how-to" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors group">
+          <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+          Back to How To Guides
+        </Link>
+
+        <p className="text-lg text-gray-600 mb-10">
+          Staying safe online is crucial in today's digital world. Follow these comprehensive guidelines to protect your personal information and ensure a secure online experience.
+        </p>
+
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 1: Use Strong and Unique Passwords</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+              <li>Create Strong Passwords: Use a combination of upper and lower case letters, numbers, and special characters to create robust passwords that are difficult to guess.</li>
+              <li>Unique Passwords: Avoid using the same password across multiple sites. Each account should have a unique password to prevent a breach in one account from compromising others.</li>
+              <li>Password Manager: Use a reputable password manager to generate, store, and manage strong passwords securely, reducing the risk of forgotten passwords or reusing old ones.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 2: Enable Two-Factor Authentication (2FA)</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+              <li>Set Up 2FA: Enable two-factor authentication on your online accounts for an extra layer of security. This process requires a second form of verification, making unauthorized access more difficult.</li>
+              <li>Verification Methods: Use authentication apps like Google Authenticator, Microsoft Authenticator, or receive codes via SMS. Authentication apps are generally more secure than SMS-based 2FA.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 3: Be Cautious with Emails and Links</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+              <li>Phishing Scams: Be wary of unsolicited emails asking for personal information or containing suspicious links. Phishing is a common method used by attackers to steal sensitive information.</li>
+              <li>Verify URLs: Hover over links to see the actual URL before clicking. Ensure the URL is legitimate and avoid clicking on links from unknown or untrusted sources.</li>
+              <li>Attachments: Do not open email attachments from unknown or untrusted sources. Attachments can contain malware that can infect your computer or steal data.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 4: Secure Your Devices</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+              <li>Install Antivirus Software: Use reputable antivirus software to protect your devices from malware, ransomware, and other malicious threats. Keep the software updated regularly.</li>
+              <li>Keep Software Updated: Regularly update your operating system, browser, and applications to protect against vulnerabilities that could be exploited by attackers.</li>
+              <li>Firewall: Enable your device's firewall to block unauthorized access and protect your network from external threats.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 5: Use Secure Connections</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+              <li>HTTPS: Ensure websites use HTTPS to encrypt data between your browser and the site, providing a secure connection that protects your information from eavesdroppers.</li>
+              <li>VPN: Use a Virtual Private Network (VPN) to encrypt your internet connection, especially when using public Wi-Fi networks. A VPN helps protect your data from being intercepted by cybercriminals.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 6: Protect Your Personal Information</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+              <li>Limit Sharing: Be mindful of the personal information you share on social media and other online platforms. Avoid oversharing details that could be used for identity theft or fraud.</li>
+              <li>Privacy Settings: Regularly review and adjust privacy settings on your social media accounts and apps to control who can see your information.</li>
+              <li>Personal Details: Avoid sharing sensitive information like your home address, phone number, and financial details publicly, even in seemingly private forums.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 7: Monitor Your Online Accounts</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+              <li>Regular Checks: Regularly check your online accounts for any suspicious activity, such as unauthorized logins or transactions. Prompt detection can help mitigate potential damage.</li>
+              <li>Account Alerts: Enable alerts for account activities such as login attempts, password changes, and new device logins to stay informed about your account's security.</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 8: Educate Yourself and Others</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+              <li>Stay Informed: Keep up to date with the latest online security threats, scams, and best practices to avoid falling victim to new types of attacks.</li>
+              <li>Teach Others: Share your knowledge about online safety with friends, family, and colleagues. Educating others helps build a more secure online community.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-amber-500 pl-4">Additional Tips</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-amber-500">
+              <li>Backup Data: Regularly back up important data to an external drive or secure cloud storage to prevent data loss in case of a cyber attack or hardware failure.</li>
+              <li>Log Out: Always log out of accounts when using shared or public computers to prevent unauthorized access.</li>
+              <li>Avoid Public Wi-Fi for Sensitive Transactions: Avoid using public Wi-Fi networks for online banking, shopping, or other sensitive transactions. If necessary, use a VPN for added security.</li>
+            </ul>
+          </div>
+        </div>
+
+        <p className="mt-8 text-gray-600">
+          By following these steps, you can significantly enhance your online safety and protect your personal information from cyber threats. Stay vigilant and proactive in securing your digital presence.
+        </p>
+      </article>
+
+      {/* CTA */}
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-14 text-white text-center">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <FaHeadset className="mx-auto text-4xl text-blue-300 mb-4" />
+          <h2 className="text-3xl font-bold mb-3">Need Help with Online Security?</h2>
+          <p className="text-blue-100 mb-6">
+            Our cybersecurity experts in Palm Bay &amp; Melbourne can audit your setup, remove threats, and strengthen your digital defenses.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-block bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+          >
+            Contact Us Today
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

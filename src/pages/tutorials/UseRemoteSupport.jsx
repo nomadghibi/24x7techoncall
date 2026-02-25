@@ -1,98 +1,128 @@
 import React from 'react';
-import HeroSection from '../../components/HeroSection';
-import GoBackButtonWithArrow from '../../components/GoBackButtonWithArrow';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import heroImage from '../../assets/optimized-hero/remotetechsupport-1152.jpg'; // Adjust the path according to your file structure
+import { FaArrowLeft, FaHeadset } from 'react-icons/fa';
+import heroImage from '../../assets/optimized-hero/remotetechsupport-1152.jpg';
 
 function UseRemoteSupport() {
-  const navigate = useNavigate();
   const canonicalUrl = 'https://bestcomputertec.com/how-to/use-remote-support';
-
-  const handleContactUs = () => {
-    navigate('/contact'); // Adjust the path to your contact or booking page
-  };
 
   return (
     <div>
       <Helmet>
         <title>How to Use Remote Support | Best Computer Tech</title>
-        <meta
-          name="description"
-          content="Follow this guide to securely use remote support for computer troubleshooting and technical help."
-        />
+        <meta name="description" content="Follow this guide to securely use remote support for computer troubleshooting and technical help." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
         <meta property="og:title" content="How to Use Remote Support | Best Computer Tech" />
-        <meta
-          property="og:description"
-          content="Step-by-step instructions for starting and safely managing a remote support session."
-        />
+        <meta property="og:description" content="Step-by-step instructions for starting and safely managing a remote support session." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="How to Use Remote Support | Best Computer Tech" />
-        <meta
-          name="twitter:description"
-          content="Set up and use remote support securely with this practical guide."
-        />
+        <meta name="twitter:description" content="Set up and use remote support securely with this practical guide." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
-      <HeroSection title="How to Use Remote Support" image={heroImage} />
-      <div className="container p-8 mx-auto">
-        <GoBackButtonWithArrow />
-        <h1 className="mb-4 text-4xl font-bold">How to Use Remote Support with AeroAdmin</h1>
-        <p className="mb-4">Follow these steps to get remote support for your computer issues using AeroAdmin:</p>
 
-        <h2 className="mb-4 text-3xl font-semibold">Step 1: Download AeroAdmin</h2>
-        <ol className="mb-4 list-decimal list-inside">
-          <li>Go to the AeroAdmin website: <a href="https://www.aeroadmin.com" target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">www.aeroadmin.com</a></li>
-          <li>Click on the "Download" button to download the AeroAdmin application.</li>
-          <li>Once the download is complete, open the AeroAdmin application. No installation is required.</li>
-        </ol>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 2: Share Your ID</h2>
-        <ol className="mb-4 list-decimal list-inside">
-          <li>Open AeroAdmin on your computer.</li>
-          <li>In the "Your ID" field, you will see a unique ID assigned to your computer.</li>
-          <li>Share this ID with the support technician so they can connect to your computer.</li>
-        </ol>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 3: Allow Remote Control</h2>
-        <ol className="mb-4 list-decimal list-inside">
-          <li>When the support technician attempts to connect to your computer, you will see a connection request pop-up.</li>
-          <li>Click "Accept" to allow the remote control session.</li>
-          <li>You can monitor the remote session and end it at any time by clicking "Stop" in the AeroAdmin window.</li>
-        </ol>
-
-        <h2 className="mb-4 text-3xl font-semibold">Step 4: End the Remote Session</h2>
-        <ol className="mb-4 list-decimal list-inside">
-          <li>Once the support technician has resolved your issue, they will end the remote session.</li>
-          <li>If you need to end the session yourself, click the "Stop" button in AeroAdmin.</li>
-          <li>Close the AeroAdmin application when the session is complete.</li>
-        </ol>
-
-        <p className="mb-4">Using AeroAdmin for remote support is a secure and efficient way to get help with your computer issues without the need for an in-person visit.</p>
-
-        <h2 className="mb-4 text-3xl font-semibold">Security Tips</h2>
-        <ul className="mb-4 list-disc list-inside">
-          <li>Only share your AeroAdmin ID with trusted support technicians.</li>
-          <li>Monitor the remote session to ensure no unauthorized actions are taken.</li>
-          <li>End the remote session immediately if you suspect any malicious activity.</li>
-        </ul>
-
-        <div className="text-center">
-          <p className="mb-4 text-lg font-semibold text-gray-700">If you need professional assistance with remote support, we're here to help!</p>
-          <button 
-            onClick={handleContactUs} 
-            className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700"
-          >
-            Contact Us
-          </button>
+      {/* Hero */}
+      <section
+        className="relative min-h-[320px] flex items-end text-white"
+        style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-transparent"></div>
+        <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-3">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-gray-500">/</span>
+            <Link to="/how-to" className="hover:text-white transition-colors">How To</Link>
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-300">Use Remote Support</span>
+          </nav>
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight">How to Use Remote Support</h1>
         </div>
-      </div>
+      </section>
+
+      {/* Article */}
+      <article className="container mx-auto px-6 py-12 max-w-4xl">
+        <Link to="/how-to" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors group">
+          <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+          Back to How To Guides
+        </Link>
+
+        <p className="text-lg text-gray-600 mb-10">
+          Follow these steps to get remote support for your computer issues using AeroAdmin:
+        </p>
+
+        <div className="space-y-8">
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 1: Download AeroAdmin</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+              <li>Go to the AeroAdmin website: <a href="https://www.aeroadmin.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.aeroadmin.com</a></li>
+              <li>Click on the "Download" button to download the AeroAdmin application.</li>
+              <li>Once the download is complete, open the AeroAdmin application. No installation is required.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 2: Share Your ID</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+              <li>Open AeroAdmin on your computer.</li>
+              <li>In the "Your ID" field, you will see a unique ID assigned to your computer.</li>
+              <li>Share this ID with the support technician so they can connect to your computer.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 3: Allow Remote Control</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+              <li>When the support technician attempts to connect to your computer, you will see a connection request pop-up.</li>
+              <li>Click "Accept" to allow the remote control session.</li>
+              <li>You can monitor the remote session and end it at any time by clicking "Stop" in the AeroAdmin window.</li>
+            </ol>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 4: End the Remote Session</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+              <li>Once the support technician has resolved your issue, they will end the remote session.</li>
+              <li>If you need to end the session yourself, click the "Stop" button in AeroAdmin.</li>
+              <li>Close the AeroAdmin application when the session is complete.</li>
+            </ol>
+          </div>
+
+          <p className="text-gray-600">
+            Using AeroAdmin for remote support is a secure and efficient way to get help with your computer issues without the need for an in-person visit.
+          </p>
+
+          <div>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-amber-500 pl-4">Security Tips</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-amber-500">
+              <li>Only share your AeroAdmin ID with trusted support technicians.</li>
+              <li>Monitor the remote session to ensure no unauthorized actions are taken.</li>
+              <li>End the remote session immediately if you suspect any malicious activity.</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      {/* CTA */}
+      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-14 text-white text-center">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <FaHeadset className="mx-auto text-4xl text-blue-300 mb-4" />
+          <h2 className="text-3xl font-bold mb-3">Ready for Remote Support?</h2>
+          <p className="text-blue-100 mb-6">
+            Our certified technicians are available to connect remotely and solve your computer issues — fast, secure, and hassle-free.
+          </p>
+          <Link
+            to="/contact"
+            className="inline-block bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+          >
+            Contact Us Today
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

@@ -1,12 +1,8 @@
 
 import React, { useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { Paper, Typography } from '@mui/material';
-import Slider from 'react-slick';
-import GoBackButtonWithArrow from '../components/GoBackButtonWithArrow'; 
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import { FaArrowLeft, FaHeadset, FaFileAlt } from 'react-icons/fa';
 
 // Import hero images
 import heroImage from '../assets/optimized-hero/5-tips-blog-image-1152.jpg'; 
@@ -599,44 +595,8 @@ const relatedCardImagesBySlug = {
   'how-chatgpt-is-transforming-customer-support': cardImageChatgpt
 };
 
-const sliderSettings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  responsive: [
-    {
-      breakpoint: 1280,
-      settings: {
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false
-      }
-    },
-    {
-      breakpoint: 1024,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        infinite: true,
-        dots: false
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1
-      }
-    }
-  ]
-};
-
 function BlogPost() {
   const { slug } = useParams();
-  const navigate = useNavigate();  // Use navigate for navigation
   const post = blogPostsData[slug];
   const canonicalUrl = `https://bestcomputertec.com/blog/${slug}`;
   const imageUrl = post?.heroImage?.startsWith('http')
@@ -705,7 +665,18 @@ function BlogPost() {
   }, [slug]);
 
   if (!post) {
-    return <div>Post not found</div>;
+    return (
+      <div className="min-h-[60vh] flex items-center justify-center text-center px-6">
+        <div>
+          <FaFileAlt className="mx-auto text-6xl text-gray-300 mb-6" />
+          <h1 className="text-3xl font-bold text-gray-800 mb-3">Post Not Found</h1>
+          <p className="text-gray-500 mb-6">The blog post you're looking for doesn't exist or may have been moved.</p>
+          <Link to="/blog" className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-700 transition-colors">
+            ← Back to Blog
+          </Link>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -730,95 +701,116 @@ function BlogPost() {
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
-      <section className="py-20 text-white bg-gray-900 hero-section" style={{ backgroundImage: `url(${post.heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
-        <div className="container mx-auto text-center">
-          <h1 className="mb-4 text-5xl font-bold leading-tight">{post.title}</h1>
-          <p className="mb-8 text-xl">{post.date}</p>
+      {/* Hero */}
+      <section
+        className="relative min-h-[380px] flex items-end text-white"
+        style={{ backgroundImage: `url(${post.heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-gray-950/20"></div>
+        <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
+          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-gray-500">/</span>
+            <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-400 truncate max-w-xs">{post.title}</span>
+          </nav>
+          <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3">{post.title}</h1>
+          <p className="text-blue-200 text-sm">{post.date}</p>
         </div>
       </section>
-      <div className="container p-8 mx-auto">
-        <GoBackButtonWithArrow />
-        <div className="prose max-w-none">
-          <h1 className="mb-4 text-4xl font-bold">{post.title}</h1>
-          <p className="mb-4 text-gray-600">{post.date}</p>
+
+      {/* Article */}
+      <article className="container mx-auto px-6 py-12 max-w-3xl">
+        <Link to="/blog" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors group">
+          <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
+          Back to Blog
+        </Link>
+        <div className="prose prose-gray max-w-none text-gray-700 leading-relaxed">
           <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br />') }} />
-          <div className="p-4 mt-8 border rounded-lg bg-gray-50 border-gray-200">
-            <h3 className="mb-2 text-xl font-semibold text-gray-900">Our Other Websites</h3>
-            <p className="text-gray-700">
-              Visit{' '}
-              <a
-                href="https://techezeai.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                techezeai.com
-              </a>{' '}
-              and{' '}
-              <a
-                href="https://reliablewebstudio.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
-              >
-                reliablewebstudio.com
-              </a>
-              .
-            </p>
+        </div>
+        <div className="mt-10 p-6 rounded-xl bg-blue-50 border border-blue-100">
+          <h3 className="text-lg font-bold text-gray-900 mb-2">Our Other Websites</h3>
+          <p className="text-gray-700">
+            Visit{' '}
+            <a href="https://techezeai.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              techezeai.com
+            </a>{' '}
+            and{' '}
+            <a href="https://reliablewebstudio.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+              reliablewebstudio.com
+            </a>
+            .
+          </p>
+        </div>
+      </article>
+
+      {/* Related Blog Posts */}
+      <section className="bg-gray-50 py-16">
+        <div className="container mx-auto px-6 max-w-7xl">
+          <div className="text-center mb-10">
+            <p className="text-blue-600 font-semibold uppercase tracking-widest text-sm mb-2">Keep Reading</p>
+            <h2 className="text-3xl font-bold text-gray-900">Related Blog Posts</h2>
+          </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {Object.keys(blogPostsData)
+              .filter((key) => key !== slug)
+              .slice(0, 3)
+              .map((key) => {
+                const relatedPost = blogPostsData[key];
+                const relatedPostCardImage = relatedCardImagesBySlug[key] || relatedPost.heroImage;
+                return (
+                  <Link
+                    key={key}
+                    to={`/blog/${key}`}
+                    className="group bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 hover:border-blue-200 transition-all overflow-hidden flex flex-col"
+                  >
+                    {relatedPostCardImage && (
+                      <div className="h-48 overflow-hidden">
+                        <img
+                          src={relatedPostCardImage}
+                          alt={relatedPost.title}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                        />
+                      </div>
+                    )}
+                    <div className="p-5 flex flex-col flex-grow">
+                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors line-clamp-2">
+                        {relatedPost.title}
+                      </h3>
+                      <p className="text-sm text-gray-500 mb-3">{relatedPost.date}</p>
+                      <span className="mt-auto text-blue-600 text-sm font-semibold">Read Article →</span>
+                    </div>
+                  </Link>
+                );
+              })}
           </div>
         </div>
-      </div>
-
-      {/* Related Blog Posts Section */}
-      <section className="mt-16 text-center">
-        <h2 className="mb-8 text-4xl font-bold">Related Blog Posts</h2>
-        <Slider {...sliderSettings}>
-          {Object.keys(blogPostsData).map((key, index) => {
-            const relatedPost = blogPostsData[key];
-            const relatedPostCardImage = relatedCardImagesBySlug[key] || relatedPost.heroImage;
-            return (
-              <div key={index} className="px-4">
-                <Paper elevation={3} className="flex flex-col justify-between p-4 border border-gray-300 h-80">
-                  <div>
-                    {relatedPostCardImage && (
-                      <img
-                        src={relatedPostCardImage}
-                        alt={relatedPost.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="object-cover w-full h-32 mb-4 bg-gray-300 rounded"
-                        width={512}
-                        height={512}
-                      />
-                    )}
-                    <Typography variant="h6" component="h3" className="mb-2">
-                      {relatedPost.title}
-                    </Typography>
-                    <Typography variant="body2" component="p" className="mb-4 text-gray-700">
-                      {relatedPost.content.slice(0, 100)}...
-                    </Typography>
-                    <Typography variant="caption" component="p" className="text-gray-500">
-                      {relatedPost.date}
-                    </Typography>
-                  </div>
-                  <Link to={`/blog/${key}`} className="mt-auto text-blue-500 hover:underline">
-                    Read More
-                  </Link>
-                </Paper>
-              </div>
-            );
-          })}
-        </Slider>
       </section>
-       {/* Get in Touch Section */}
-       <section className="py-16 mt-16 text-center bg-blue-50">
-        <div className="container mx-auto">
-          <h2 className="mb-8 text-4xl font-bold">Get in Touch with Us</h2>
-          <p className="mb-8 text-lg text-gray-700">We'd love to hear from you! Whether you need tech support, want to book a service, or have questions, feel free to reach out.</p>
-          <div className="flex justify-center space-x-4">
-            <button onClick={() => navigate('/contact')} className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700">Contact Us</button>
-            <button onClick={() => navigate('/book-service')} className="px-6 py-3 font-semibold text-white bg-green-500 rounded-full hover:bg-green-700">Book a Service</button>
-            <button onClick={() => navigate('/subscribe')} className="px-6 py-3 font-semibold text-white bg-purple-500 rounded-full hover:bg-purple-700">Subscribe to Newsletter</button>
+
+      {/* CTA */}
+      <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 py-16 text-white text-center">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <FaHeadset className="mx-auto text-5xl text-blue-300 mb-5" />
+          <h2 className="text-3xl font-bold mb-3">Need IT Support?</h2>
+          <p className="text-blue-100 mb-8 text-lg">
+            Our local experts in Palm Bay &amp; Melbourne are ready to help with any tech issue — in person, remotely, or on-site.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              to="/contact"
+              className="bg-white text-blue-900 font-bold px-7 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+            >
+              Contact Us
+            </Link>
+            <Link
+              to="/subscribe"
+              className="border-2 border-white text-white font-bold px-7 py-3 rounded-full hover:bg-white/10 transition-colors"
+            >
+              Subscribe to Newsletter
+            </Link>
           </div>
         </div>
       </section>

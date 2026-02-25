@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   FaBars, FaTimes, FaChevronDown, FaPhoneAlt,
@@ -77,6 +77,7 @@ const NavMenu = () => {
   const [businessOpen, setBusinessOpen]       = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen]   = useState(false);
   const [scrolled, setScrolled]               = useState(false);
+  const closeTimer = useRef(null);
   const location  = useLocation();
   const navigate  = useNavigate();
 
@@ -94,6 +95,14 @@ const NavMenu = () => {
   const closeSubmenus = () => {
     setResidentialOpen(false);
     setBusinessOpen(false);
+  };
+
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(closeSubmenus, 200);
+  };
+
+  const cancelClose = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
   };
 
   const handleSubmenuToggle = (menu) => {
@@ -159,6 +168,8 @@ const NavMenu = () => {
       className={`absolute left-0 top-full z-50 mt-1 min-w-max bg-white rounded-xl shadow-2xl border-t-4 border-cyan-500 ${
         open ? 'block' : 'hidden'
       }`}
+      onMouseEnter={cancelClose}
+      onMouseLeave={scheduleClose}
     >
       <div className="p-3 grid grid-cols-2 gap-0.5">
         {links.map((item) => (
@@ -218,8 +229,8 @@ const NavMenu = () => {
             {/* Residential dropdown */}
             <li
               className="relative"
-              onMouseEnter={() => { setResidentialOpen(true); prefetchPath('/residential-services'); }}
-              onMouseLeave={closeSubmenus}
+              onMouseEnter={() => { cancelClose(); setResidentialOpen(true); prefetchPath('/residential-services'); }}
+              onMouseLeave={scheduleClose}
             >
               <button
                 className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-cyan-400 ${
@@ -243,8 +254,8 @@ const NavMenu = () => {
             {/* Business dropdown */}
             <li
               className="relative"
-              onMouseEnter={() => { setBusinessOpen(true); prefetchPath('/business-services'); }}
-              onMouseLeave={closeSubmenus}
+              onMouseEnter={() => { cancelClose(); setBusinessOpen(true); prefetchPath('/business-services'); }}
+              onMouseLeave={scheduleClose}
             >
               <button
                 className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-cyan-400 ${

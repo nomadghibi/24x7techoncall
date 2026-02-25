@@ -7,7 +7,7 @@ import {
   FaSearch, FaServer, FaCogs, FaDatabase, FaCloud,
   FaCheckCircle, FaChartLine, FaHeadphones,
 } from 'react-icons/fa';
-import logo from '../assets/logobct.png';
+import logo from '../assets/logo2.png';
 
 // ── Route prefetching ──────────────────────────────────────────────────────
 const routePrefetchers = {

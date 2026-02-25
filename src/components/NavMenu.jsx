@@ -190,7 +190,7 @@ const NavMenu = () => {
 
   return (
     <nav
-      className={`fixed z-50 w-full bg-gray-900 text-white transition-shadow duration-300 ${
+      className={`fixed top-7 z-40 w-full bg-gray-900 text-white transition-shadow duration-300 ${
         scrolled ? 'shadow-lg' : ''
       }`}
       onMouseOver={(e) => prefetchFromLink(e.target)}

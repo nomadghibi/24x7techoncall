@@ -152,10 +152,10 @@ const NavMenu = () => {
     location.pathname === path || location.pathname.startsWith(path + '/');
 
   const mainNavButtonClass = (isCurrent = false) =>
-    `inline-flex items-center gap-1 px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
+    `inline-flex items-center gap-1 px-3.5 py-1.5 rounded-full text-sm font-medium transition-all duration-200 ${
       isCurrent
-        ? 'bg-blue-700 text-white shadow-sm'
-        : 'bg-blue-600 text-white hover:bg-blue-700'
+        ? 'bg-white/20 text-white ring-1 ring-white/40 shadow-sm'
+        : 'bg-white/10 text-gray-100 ring-1 ring-white/20 hover:bg-white/20 hover:text-white'
     }`;
 
   const linkClass = (path) => mainNavButtonClass(isActive(path));
@@ -201,7 +201,7 @@ const NavMenu = () => {
       <div className={`mx-auto max-w-7xl rounded-2xl transition-all duration-300 ${
         scrolled
           ? 'bg-gray-900/95 backdrop-blur-md shadow-2xl shadow-black/50 ring-1 ring-white/10'
-          : 'bg-transparent shadow-none ring-0'
+          : 'bg-gray-900/72 backdrop-blur-sm shadow-lg shadow-black/35 ring-1 ring-white/10'
       }`}>
       <div className="flex items-center justify-between px-6 py-3">
 
@@ -215,7 +215,7 @@ const NavMenu = () => {
         </Link>
 
         {/* ── Desktop nav links ── */}
-        <ul className="hidden md:flex items-center gap-4 lg:gap-6">
+        <ul className="hidden md:flex items-center gap-3 lg:gap-4">
           <li>
             <Link to="/about-us" className={linkClass('/about-us')} onClick={handleDirectLinkClick}>
               About Us

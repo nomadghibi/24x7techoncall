@@ -7,8 +7,6 @@ import {
   FaSearch, FaServer, FaCogs, FaDatabase, FaCloud,
   FaCheckCircle, FaChartLine, FaHeadphones,
 } from 'react-icons/fa';
-import logo128Avif from '../assets/optimized-logo/logo-128.avif';
-import logo256Avif from '../assets/optimized-logo/logo-256.avif';
 import logo128Png from '../assets/optimized-logo/logo-128.png';
 import logo256Png from '../assets/optimized-logo/logo-256.png';
 
@@ -211,26 +209,19 @@ const NavMenu = () => {
         {/* ── Logo ── */}
         <Link
           to="/"
-          className="flex items-center shrink-0 rounded-xl bg-white p-1.5 shadow-2xl shadow-black/50 ring-2 ring-white/90"
+          className="flex items-center shrink-0 rounded-xl px-2 py-1.5"
           onClick={handleDirectLinkClick}
         >
-          <picture>
-            <source
-              type="image/avif"
-              srcSet={`${logo128Avif} 128w, ${logo256Avif} 256w`}
-              sizes="98px"
-            />
-            <img
-              src={logo128Png}
-              srcSet={`${logo128Png} 128w, ${logo256Png} 256w`}
-              sizes="98px"
-              alt="Best Computer Tech"
-              className="h-14 w-auto sm:h-16"
-              width={256}
-              height={256}
-              decoding="async"
-            />
-          </picture>
+          <img
+            src={logo128Png}
+            srcSet={`${logo128Png} 128w, ${logo256Png} 256w`}
+            sizes="(max-width: 640px) 112px, 140px"
+            alt="Best Computer Tech"
+            className="h-10 w-auto sm:h-12"
+            width={256}
+            height={118}
+            decoding="async"
+          />
         </Link>
 
         {/* ── Desktop nav links ── */}

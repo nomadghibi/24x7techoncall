@@ -135,7 +135,7 @@ const NavMenu = () => {
 
   return (
     <nav
-      className="fixed z-10 w-full p-4 text-white bg-gray-800"
+      className="fixed z-50 w-full p-4 text-white bg-gray-800"
       onMouseOver={handleNavMouseOver}
       onFocusCapture={handleNavFocusCapture}
     >
@@ -182,7 +182,7 @@ const NavMenu = () => {
                 Residential Services
               </button>
               <div
-                className={`absolute left-0 top-full bg-white shadow-lg z-10 w-max ${
+                className={`absolute left-0 top-full bg-white shadow-lg z-50 w-max ${
                   residentialOpen ? 'block' : 'hidden'
                 }`}
               >
@@ -217,7 +217,7 @@ const NavMenu = () => {
                 Business Solutions
               </button>
               <div
-                className={`absolute left-0 top-full bg-white shadow-lg z-10 w-max ${
+                className={`absolute left-0 top-full bg-white shadow-lg z-50 w-max ${
                   businessOpen ? 'block' : 'hidden'
                 }`}
               >

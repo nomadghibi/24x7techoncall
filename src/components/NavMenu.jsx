@@ -207,7 +207,7 @@ const NavMenu = () => {
         </Link>
 
         {/* ── Desktop nav links ── */}
-        <ul className="hidden md:flex items-center gap-1 lg:gap-2">
+        <ul className="hidden md:flex items-center gap-4 lg:gap-6">
           <li>
             <Link to="/about-us" className={linkClass('/about-us')} onClick={handleDirectLinkClick}>
               About Us

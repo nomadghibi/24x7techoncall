@@ -12,6 +12,7 @@ const __dirname = resolve(__filename, '..');
 const staticRoutes = [
   '/',
   '/diagnose-my-issue',
+  '/price-estimator',
   '/quick-tech-help',
   '/residential-services',
   '/residential-support/pc-laptop-repairs',
@@ -69,6 +70,8 @@ const staticRoutes = [
   '/blog/how-chatgpt-is-transforming-customer-support',
   '/book-service',
   '/subscribe',
+  '/newsletters/best-computer-tech-newsletter-2026-q1-local-security-performance.pdf',
+  '/newsletters/best-computer-tech-newsletter-2026-q2-ai-backup-cybersecurity.pdf',
   '/pricing',
   '/about-us',
 ];

@@ -3,12 +3,47 @@ import heroImage from '../assets/optimized-hero/subscribe-1152.jpg'; // Add a su
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
+const newsletters2026 = [
+  {
+    id: '2026-q1',
+    title: '2026 Q1 Local Security and Performance Brief',
+    publishDate: 'January 2026',
+    summary: 'Actionable guidance for computer repair prevention, endpoint hardening, and performance recovery for Palm Bay and Melbourne.',
+    seoFocus: 'computer repair Palm Bay, IT support Melbourne FL, virus removal Palm Bay, computer tune up Melbourne',
+    file: '/newsletters/best-computer-tech-newsletter-2026-q1-local-security-performance.pdf',
+  },
+  {
+    id: '2026-q2',
+    title: '2026 Q2 AI, Backup, and Cybersecurity Operations Brief',
+    publishDate: 'April 2026',
+    summary: 'Practical roadmap for AI adoption, backup resilience, and cybersecurity operations for small businesses in Brevard County.',
+    seoFocus: 'managed IT services Palm Bay, business cybersecurity Melbourne FL, data backup and recovery Brevard County',
+    file: '/newsletters/best-computer-tech-newsletter-2026-q2-ai-backup-cybersecurity.pdf',
+  },
+];
+
 function Subscribe() {
   const navigate = useNavigate();
   const canonicalUrl = 'https://bestcomputertec.com/subscribe';
   const pageImage = heroImage?.startsWith('http')
     ? heroImage
     : `https://bestcomputertec.com${heroImage || ''}`;
+  const newsletterSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Best Computer Tech 2026 Newsletter Archive',
+    itemListElement: newsletters2026.map((issue, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'CreativeWork',
+        name: issue.title,
+        datePublished: issue.publishDate,
+        url: `https://bestcomputertec.com${issue.file}`,
+        description: issue.summary,
+      },
+    })),
+  };
 
   const handleSubscribe = (event) => {
     event.preventDefault();
@@ -23,11 +58,11 @@ function Subscribe() {
         <title>Subscribe to Our Newsletter | Best Computer Tech</title>
         <meta
           name="description"
-          content="Subscribe to Best Computer Tech updates for technology tips, service updates, and special offers in Palm Bay and Melbourne, FL."
+          content="Subscribe to Best Computer Tech updates and download 2026 newsletters with local IT tips, cybersecurity checklists, and performance guidance for Palm Bay and Melbourne, FL."
         />
         <meta
           name="keywords"
-          content="tech newsletter subscription, Best Computer Tech updates, Palm Bay IT tips, Melbourne FL computer tips"
+          content="2026 tech newsletter PDF download, computer repair Palm Bay tips, IT support Melbourne FL updates, cybersecurity checklist newsletter"
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
@@ -43,9 +78,10 @@ function Subscribe() {
         <meta name="twitter:title" content="Subscribe to Our Newsletter | Best Computer Tech" />
         <meta
           name="twitter:description"
-          content="Stay updated with IT tips, cybersecurity advice, and promotions."
+          content="Download 2026 newsletters and stay updated with IT tips, cybersecurity advice, and local support guidance."
         />
         <meta name="twitter:image" content={pageImage} />
+        <script type="application/ld+json">{JSON.stringify(newsletterSchema)}</script>
       </Helmet>
       <section className="py-20 text-white bg-gray-900 hero-section" style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="container mx-auto text-center">
@@ -78,6 +114,42 @@ function Subscribe() {
             </form>
           </div>
         </div>
+
+        <section className="max-w-5xl mx-auto mt-12">
+          <h2 className="mb-4 text-3xl font-semibold text-center">2026 Newsletter Downloads</h2>
+          <p className="mb-8 text-center text-gray-700">
+            Download our professional 2026 issues with practical guidance for local computer repair, IT support, cybersecurity, and operations.
+          </p>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            {newsletters2026.map((issue) => (
+              <article key={issue.id} className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+                <h3 className="mb-2 text-xl font-bold text-gray-900">{issue.title}</h3>
+                <p className="mb-3 text-sm text-gray-600">Published: {issue.publishDate}</p>
+                <p className="mb-3 text-gray-700">{issue.summary}</p>
+                <p className="mb-4 text-sm text-gray-600">
+                  <strong>SEO focus:</strong> {issue.seoFocus}
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <a
+                    href={issue.file}
+                    download
+                    className="px-4 py-2 font-semibold text-white bg-blue-600 rounded hover:bg-blue-700"
+                  >
+                    Download PDF
+                  </a>
+                  <a
+                    href={issue.file}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 font-semibold text-blue-700 bg-blue-100 rounded hover:bg-blue-200"
+                  >
+                    Preview
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
       </div>
     </div>
   );

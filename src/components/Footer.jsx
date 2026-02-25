@@ -27,7 +27,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-gray-900 text-gray-300">
+    <footer className="bg-slate-950 text-gray-300">
       {/* ── Main columns ── */}
       <div className="container mx-auto px-6 py-14 max-w-7xl">
         <div className="grid grid-cols-1 gap-10 sm:grid-cols-2 lg:grid-cols-4">
@@ -134,7 +134,7 @@ function Footer() {
       </div>
 
       {/* ── Bottom bar ── */}
-      <div className="border-t border-gray-700">
+      <div className="border-t border-slate-800">
         <div className="container mx-auto px-6 py-5 max-w-7xl flex flex-col items-center justify-between gap-3 sm:flex-row">
           <p className="text-xs text-gray-500">
             &copy; 2009–{currentYear} Best Computer Tech LLC. All rights reserved.

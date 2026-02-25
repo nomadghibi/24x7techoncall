@@ -1,364 +1,15 @@
-
-// import React, { useState, useEffect, useCallback } from 'react';
-// import { Helmet } from 'react-helmet-async';
-// import { useNavigate } from 'react-router-dom';
-// import { motion } from 'framer-motion';
-// import {
-//   FaTools,
-//   FaBug,
-//   FaNetworkWired,
-//   FaDatabase,
-//   FaLaptopHouse,
-//   FaChalkboardTeacher,
-//   FaCloud,
-//   FaCheckCircle,
-//   FaUsers,
-//   FaDollarSign,
-//   FaShieldAlt,
-//   FaSave,
-//   FaLaptop,
-//   FaLifeRing,
-//   FaPlay,
-//   FaPhoneAlt // Added FaPhoneAlt for the CTA icon
-// } from 'react-icons/fa';
-// import './ResidentialServices.css';
-
-// import heroImage from '../assets/optimized-hero/residentail-1152.jpg'; // The image used for both title and CTA
-// import computerImage from '../assets/optimized-hero/computers-1152.jpg';
-
-// const services = [
-//   {
-//     id: 'hardware-repairs',
-//     title: 'Hardware Repairs',
-//     description: 'Fixing broken screens, malfunctioning keyboards, and other hardware issues.',
-//     icon: <FaTools className="mx-auto mb-4 text-4xl text-blue-500" />,
-//   },
-//   {
-//     id: 'software-troubleshooting',
-//     title: 'Software Troubleshooting',
-//     description: 'Resolving operating system errors, application crashes, and software installation issues.',
-//     icon: <FaBug className="mx-auto mb-4 text-4xl text-blue-500" />,
-//   },
-//   {
-//     id: 'virus-malware-removal',
-//     title: 'Virus and Malware Removal',
-//     description: 'Protecting your computer from harmful viruses and ensuring your data is safe.',
-//     icon: <FaBug className="mx-auto mb-4 text-4xl text-blue-500" />,
-//   },
-//   {
-//     id: 'network-setup-support',
-//     title: 'Network Setup and Support',
-//     description: 'Setting up and maintaining secure and efficient home or office networks.',
-//     icon: <FaNetworkWired className="mx-auto mb-4 text-4xl text-blue-500" />,
-//   },
-//   {
-//     id: 'data-recovery',
-//     title: 'Data Recovery',
-//     description: 'Retrieving lost or corrupted data from hard drives and other storage devices.',
-//     icon: <FaDatabase className="mx-auto mb-4 text-4xl text-blue-500" />,
-//   },
-//   {
-//     id: 'remote-computer-support',
-//     title: 'Remote Computer Support',
-//     description: 'Providing professional support for your computer issues without the need for a technician visit.',
-//     icon: <FaLaptopHouse className="mx-auto mb-4 text-4xl text-blue-500" />,
-//   },
-//   {
-//     id: 'cloud-consulting',
-//     title: 'Cloud Consulting',
-//     description: 'Expert advice on leveraging cloud technology to enhance your business operations.',
-//     icon: <FaCloud className="mx-auto mb-4 text-4xl text-blue-500" />,
-//   },
-//   {
-//     id: 'computer-training',
-//     title: 'Computer Training',
-//     description: 'Learn how to use your computer more effectively with our professional training sessions.',
-//     icon: <FaChalkboardTeacher className="mx-auto mb-4 text-4xl text-blue-500" />,
-//   },
-// ];
-
-// const ServiceCard = React.memo(({ service, onClick }) => (
-//   <motion.div
-//     className="block"
-//     initial={{ opacity: 0, y: 20 }}
-//     animate={{ opacity: 1, y: 0 }}
-//     transition={{ duration: 0.5, delay: services.indexOf(service) * 0.1 }}
-//   >
-//     <div
-//       className="flex flex-col h-full p-6 text-center transition-transform duration-300 transform bg-white rounded-lg shadow-lg cursor-pointer hover:scale-105 hover:shadow-2xl"
-//       onClick={() => onClick(service.id)}
-//     >
-//       {service.icon}
-//       <h2 className="mb-4 text-2xl font-semibold text-gray-800">{service.title}</h2>
-//       <p className="flex-grow mb-4 text-gray-600">{service.description}</p>
-//     </div>
-//   </motion.div>
-// ));
-
-// ServiceCard.displayName = "ServiceCard";
-
-// function ResidentialServices() {
-//   const navigate = useNavigate();
-//   const [videoLoaded, setVideoLoaded] = useState(false);
-
-//   const handleServiceClick = useCallback((serviceId) => {
-//     switch (serviceId) {
-//       case 'hardware-repairs':
-//         navigate('/residential-support/pc-laptop-repairs');
-//         break;
-//       case 'software-troubleshooting':
-//         navigate('/residential-support/software-troubleshooting');
-//         break;
-//       case 'virus-malware-removal':
-//         navigate('/residential-support/virus-malware-removal');
-//         break;
-//       case 'network-setup-support':
-//         navigate('/residential-support/network-setup-support');
-//         break;
-//       case 'data-recovery':
-//         navigate('/residential-support/data-recovery');
-//         break;
-//       case 'remote-computer-support':
-//         navigate('/residential-support/remote-support');
-//         break;
-//       case 'cloud-consulting':
-//         navigate('/residential-support/cloud-consulting');
-//         break;
-//       case 'computer-training':
-//         navigate('/residential-support/computer-training');
-//         break;
-//       default:
-//         navigate(`/services/${serviceId}`);
-//         break;
-//     }
-//   }, [navigate]);
-
-//   const handleOrderNow = () => {
-//     const subscriptionPlan = {
-//       title: 'Annual Subscription Plan',
-//       price: '$199.00',
-//       description: 'Keep Your Computer Running Smoothly With Our Annual Subscription Plan!',
-//     };
-
-//     navigate('/checkout', { state: { service: subscriptionPlan } });
-//   };
-
-//   const handleBookServiceClick = () => {
-//     navigate('/book-service');
-//   };
-
-//   const loadVideo = () => {
-//     setVideoLoaded(true);
-//   };
-
-//   useEffect(() => {
-//     if ('serviceWorker' in navigator) {
-//       window.addEventListener('load', () => {
-//         navigator.serviceWorker.register('/sw.js').then(
-//           (registration) => {
-//             console.log('SW registered: ', registration);
-//           },
-//           (registrationError) => {
-//             console.log('SW registration failed: ', registrationError);
-//           }
-//         );
-//       });
-//     }
-//   }, []);
-
-//   return (
-//     <div>
-//       <Helmet>
-//         <title>Computer Repair Palm Bay Melbourne FL | Laptop Repair & Tech Support Services</title>
-//         <meta name="description" content="Best Computer Repair and IT Support Services in Palm Bay/Melbourne, FL. We specialize in Laptop Repair, PC Repair, Network Setup, and Data Recovery. Call us for quick, reliable service." />
-//         <meta name="keywords" content="Computer Repair Palm Bay/Melbourne FL, Tech Support Services, Laptop Repair, PC Repair, IT Support Palm bay/Melbourne, Virus Removal, Data Recovery, Network Setup" />
-//       </Helmet>
-
-//       {/* Combined Hero Section with Title and CTA */}
-//       <div className="relative flex flex-col items-center justify-center w-full py-24 bg-center bg-cover h-96" style={{ backgroundImage: `url(${heroImage})` }}>
-//         <div className="max-w-4xl p-6 text-center text-white bg-black bg-opacity-50 rounded-lg">
-//           <h1 className="mb-4 text-5xl font-bold leading-tight">Our Residential Services</h1>
-//           <p className="mb-4 text-xl">Best Computer Repair and IT Support Services in Palm Bay/Melbourne, FL.</p>
-//           <p className="mb-4 text-xl">Get a free diagnostic over the phone. Call us now!</p>
-//           <a href="tel:3219535199" className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700">
-//             <FaPhoneAlt className="inline mr-2" /> Call Us: (321) 953-5199
-//           </a>
-//         </div>
-//       </div>
-
-//       {/* Why Choose Us Section */}
-//       <section className="py-20 bg-gray-100">
-//         <div className="container mx-auto">
-//           <h2 className="mb-12 text-4xl font-bold text-center text-gray-800">Why Choose Us?</h2>
-          
-//           <div className="flex flex-wrap justify-center p-6 bg-white rounded-lg shadow-lg md:flex-nowrap">
-//             {/* Left Section with Video */}
-//             <div className="w-full md:w-1/2">
-//               <div className="overflow-hidden rounded-lg">
-//                 {!videoLoaded ? (
-//                   <div className="relative cursor-pointer youtube-facade" onClick={loadVideo}>
-//                     <img
-//                       src="https://img.youtube.com/vi/8GOvDyPOW7c/maxresdefault.jpg"
-//                       alt="Video Thumbnail"
-//                       className="rounded-lg"
-//                     />
-//                     <FaPlay className="absolute text-6xl text-white inset-center" />
-//                   </div>
-//                 ) : (
-//                   <iframe
-//                     width="100%"
-//                     height="315"
-//                     src="https://www.youtube.com/embed/8GOvDyPOW7c?rel=0&autoplay=1&loop=0&playlist=8GOvDyPOW7c"
-//                     title="Company Introduction Video"
-//                     frameBorder="0"
-//                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//                     allowFullScreen
-//                     className="rounded-lg"
-//                   ></iframe>
-//                 )}
-//               </div>
-//             </div>
-
-//             {/* Right Section with Three Circular Cards and Text Next to Circles */}
-//             <div className="flex flex-col items-start justify-center w-full mt-6 space-y-6 md:w-1/2 md:mt-0 md:ml-8">
-//               <div className="flex items-center space-x-4">
-//                 <div className="flex items-center justify-center w-24 h-24 text-white bg-blue-500 rounded-full shadow-md">
-//                   <FaCheckCircle className="text-3xl" />
-//                 </div>
-//                 <p className="text-lg font-semibold text-gray-800">Expert Technicians</p>
-//               </div>
-//               <div className="flex items-center space-x-4">
-//                 <div className="flex items-center justify-center w-24 h-24 text-white bg-green-500 rounded-full shadow-md">
-//                   <FaUsers className="text-3xl" />
-//                 </div>
-//                 <p className="text-lg font-semibold text-gray-800">Customer Satisfaction</p>
-//               </div>
-//               <div className="flex items-center space-x-4">
-//                 <div className="flex items-center justify-center w-24 h-24 text-white bg-red-500 rounded-full shadow-md">
-//                   <FaDollarSign className="text-3xl" />
-//                 </div>
-//                 <p className="text-lg font-semibold text-gray-800">Affordable Rates</p>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </section>
-
-//       {/* Services Section */}
-//       <div className="container p-8 mx-auto">
-//         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-//           {services.map((service) => (
-//             <ServiceCard key={service.id} service={service} onClick={handleServiceClick} />
-//           ))}
-//         </div>
-
-//         {/* Annual Subscription Plan Card */}
-//         <div className="flex flex-col mt-12 md:flex-row">
-//           <div className="relative flex items-center justify-center w-full md:w-1/2 fade-image">
-//             <img src={computerImage} alt="Subscription Plan" />
-//           </div>
-//           <div className="w-full p-6 bg-white rounded-lg shadow-lg md:w-1/2">
-//             <h2 className="mb-4 text-3xl font-bold text-gray-800">Keep Your Computer Running Smoothly With Our Annual Subscription Plan!</h2>
-//             <p className="mb-4 text-lg text-gray-700">For just $199/year, you'll get:</p>
-//             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-//               <div className="flex items-center">
-//                 <FaBug className="mr-2 text-blue-500 w-7 h-7" />
-//                 <p>Unlimited virus removal</p>
-//               </div>
-//               <div className="flex items-center">
-//                 <FaLaptop className="mr-2 text-blue-500 w-7 h-7" />
-//                 <p>Speed optimization</p>
-//               </div>
-//               <div className="flex items-center">
-//                 <FaLaptopHouse className="mr-2 text-blue-500 w-7 h-7" />
-//                 <p>Faster startup</p>
-//               </div>
-//               <div className="flex items-center">
-//                 <FaLifeRing className="mr-2 text-blue-500 w-7 h-7" />
-//                 <p>Routine checkups</p>
-//               </div>
-//               <div className="flex items-center">
-//                 <FaShieldAlt className="mr-2 text-blue-500 w-7 h-7" />
-//                 <p>24/7 phone support</p>
-//               </div>
-//               <div className="flex items-center">
-//                 <FaSave className="mr-2 text-blue-500 w-7 h-7" />
-//                 <p>Data backup</p>
-//               </div>
-//               <div className="flex items-center">
-//                 <FaLaptopHouse className="mr-2 text-blue-500 w-7 h-7" />
-//                 <p>Remote tech support</p>
-//               </div>
-//               <div className="flex items-center">
-//                 <FaBug className="mr-2 text-blue-500 w-7 h-7" />
-//                 <p>Anti-virus installation and maintenance</p>
-//               </div>
-//               <div className="flex items-center">
-//                 <FaLaptop className="mr-2 text-blue-500 w-7 h-7" />
-//                 <p>Computer tune-ups</p>
-//               </div>
-//             </div>
-//             <p className="mb-4 text-lg text-gray-700">Don't wait, sign up today and keep your computer running like new!</p>
-//             <p className="mb-4 text-lg text-gray-700">Here are some additional benefits of our annual subscription plan:</p>
-//             <ul className="mb-4 text-left text-gray-700 list-disc list-inside">
-//               <li>You'll save money over the long run by paying for a year's worth of service upfront.</li>
-//               <li>You'll have peace of mind knowing that your computer is always in good hands with our team of experts.</li>
-//               <li>You'll get access to our 24/7 support team, so you can get help whenever you need it.</li>
-//             </ul>
-//             <button
-//               onClick={handleOrderNow}
-//               className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700"
-//             >
-//               ORDER NOW!
-//             </button>
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Contact and Booking Section */}
-//       <section className="py-16 mt-16 text-center bg-blue-50">
-//         <div className="container mx-auto">
-//           <h2 className="mb-8 text-4xl font-bold">Get in Touch with Us</h2>
-//           <p className="mb-8 text-lg text-gray-700">We'd love to hear from you! Whether you need tech support, want to book a service, or have questions, feel free to reach out.</p>
-//           <div className="flex justify-center space-x-4">
-//             <button onClick={() => navigate('/contact')} className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700">Contact Us</button>
-//             <button onClick={handleBookServiceClick} className="px-6 py-3 font-semibold text-white bg-green-500 rounded-full hover:bg-green-700">Book a Service</button>
-//             <button onClick={() => navigate('/subscribe')} className="px-6 py-3 font-semibold text-white bg-purple-500 rounded-full hover:bg-purple-700">Subscribe to Newsletter</button>
-//           </div>
-//         </div>
-//       </section>
-//     </div>
-//   );
-// }
-
-// export default ResidentialServices;
-
-
 import React, { useState, useCallback } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  FaTools,
-  FaBug,
-  FaNetworkWired,
-  FaDatabase,
-  FaLaptopHouse,
-  FaChalkboardTeacher,
-  FaCloud,
-  FaCheckCircle,
-  FaUsers,
-  FaDollarSign,
-  FaShieldAlt,
-  FaSave,
-  FaLaptop,
-  FaLifeRing,
-  FaPlay,
-  FaPhoneAlt // Added FaPhoneAlt for the CTA icon
+  FaTools, FaBug, FaNetworkWired, FaDatabase,
+  FaLaptopHouse, FaChalkboardTeacher, FaCloud,
+  FaCheckCircle, FaDollarSign, FaShieldAlt, FaSave,
+  FaLaptop, FaLifeRing, FaPlay, FaPhoneAlt, FaBolt,
 } from 'react-icons/fa';
-import './ResidentialServices.css';
 
-import heroImage from '../assets/optimized-hero/residentail-1152.jpg'; // The image used for both title and CTA
+import heroImage from '../assets/optimized-hero/residentail-1152.jpg';
 import computerImage from '../assets/optimized-hero/computers-optimized-1152.jpg';
 
 const services = [
@@ -366,128 +17,143 @@ const services = [
     id: 'hardware-repairs',
     title: 'Hardware Repairs',
     description: 'Fixing broken screens, malfunctioning keyboards, and other hardware issues.',
-    icon: <FaTools className="mx-auto mb-4 text-4xl text-blue-500" />,
+    icon: <FaTools className="text-3xl text-blue-500" />,
   },
   {
     id: 'software-troubleshooting',
     title: 'Software Troubleshooting',
-    description: 'Resolving operating system errors, application crashes, and software installation issues.',
-    icon: <FaBug className="mx-auto mb-4 text-4xl text-blue-500" />,
+    description: 'Resolving OS errors, application crashes, and software installation issues.',
+    icon: <FaLaptop className="text-3xl text-green-500" />,
   },
   {
     id: 'virus-malware-removal',
-    title: 'Virus and Malware Removal',
-    description: 'Protecting your computer from harmful viruses and ensuring your data is safe.',
-    icon: <FaBug className="mx-auto mb-4 text-4xl text-blue-500" />,
+    title: 'Virus & Malware Removal',
+    description: 'Protecting your computer from harmful viruses and keeping your data safe.',
+    icon: <FaBug className="text-3xl text-red-500" />,
   },
   {
     id: 'network-setup-support',
-    title: 'Network Setup and Support',
-    description: 'Setting up and maintaining secure and efficient home or office networks.',
-    icon: <FaNetworkWired className="mx-auto mb-4 text-4xl text-blue-500" />,
+    title: 'Network Setup & Support',
+    description: 'Setting up and maintaining secure, efficient home or office networks.',
+    icon: <FaNetworkWired className="text-3xl text-purple-500" />,
   },
   {
     id: 'data-recovery',
     title: 'Data Recovery',
-    description: 'Retrieving lost or corrupted data from hard drives and other storage devices.',
-    icon: <FaDatabase className="mx-auto mb-4 text-4xl text-blue-500" />,
+    description: 'Retrieving lost or corrupted data from hard drives and storage devices.',
+    icon: <FaDatabase className="text-3xl text-yellow-500" />,
   },
   {
     id: 'remote-computer-support',
     title: 'Remote Computer Support',
-    description: 'Providing professional support for your computer issues without the need for a technician visit.',
-    icon: <FaLaptopHouse className="mx-auto mb-4 text-4xl text-blue-500" />,
+    description: 'Professional support for your computer issues without needing a technician visit.',
+    icon: <FaLaptopHouse className="text-3xl text-teal-500" />,
   },
   {
     id: 'cloud-consulting',
     title: 'Cloud Consulting',
-    description: 'Expert advice on leveraging cloud technology to enhance your business operations.',
-    icon: <FaCloud className="mx-auto mb-4 text-4xl text-blue-500" />,
+    description: 'Expert advice on leveraging cloud technology for your home or business.',
+    icon: <FaCloud className="text-3xl text-indigo-500" />,
   },
   {
     id: 'computer-training',
     title: 'Computer Training',
-    description: 'Learn how to use your computer more effectively with our professional training sessions.',
-    icon: <FaChalkboardTeacher className="mx-auto mb-4 text-4xl text-blue-500" />,
+    description: 'Learn to use your computer more effectively with our professional training sessions.',
+    icon: <FaChalkboardTeacher className="text-3xl text-orange-500" />,
   },
 ];
 
-const ServiceCard = React.memo(({ service, onClick }) => (
+const whyUs = [
+  {
+    icon: <FaCheckCircle className="w-6 h-6 text-blue-600" />,
+    bg: 'bg-blue-50',
+    title: 'Expert Technicians',
+    desc: 'Certified pros with years of hands-on experience across all brands and platforms.',
+  },
+  {
+    icon: <FaBolt className="w-6 h-6 text-yellow-600" />,
+    bg: 'bg-yellow-50',
+    title: 'Fast Turnaround',
+    desc: 'Most issues resolved same day — we know downtime is costly.',
+  },
+  {
+    icon: <FaDollarSign className="w-6 h-6 text-green-600" />,
+    bg: 'bg-green-50',
+    title: 'Affordable Rates',
+    desc: 'Transparent pricing with no hidden fees. You know the cost before we start.',
+  },
+];
+
+const ServiceCard = React.memo(({ service, onClick, index }) => (
   <motion.div
     className="block"
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: services.indexOf(service) * 0.1 }}
+    transition={{ duration: 0.4, delay: index * 0.08 }}
   >
     <div
-      className="flex flex-col h-full p-6 text-center transition-transform duration-300 transform bg-white rounded-lg shadow-lg cursor-pointer hover:scale-105 hover:shadow-2xl"
+      className="flex flex-col h-full p-6 text-center bg-white rounded-xl shadow-sm border border-gray-100 cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-200"
       onClick={() => onClick(service.id)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => e.key === 'Enter' && onClick(service.id)}
     >
-      {service.icon}
-      <h2 className="mb-4 text-2xl font-semibold text-gray-800">{service.title}</h2>
-      <p className="flex-grow mb-4 text-gray-600">{service.description}</p>
+      <div className="flex items-center justify-center mb-4 w-14 h-14 rounded-full bg-gray-50 mx-auto">
+        {service.icon}
+      </div>
+      <h3 className="mb-2 text-lg font-bold text-gray-800">{service.title}</h3>
+      <p className="flex-grow text-sm text-gray-600 mb-4">{service.description}</p>
+      <span className="text-sm font-semibold text-blue-600">Learn More →</span>
     </div>
   </motion.div>
 ));
+ServiceCard.displayName = 'ServiceCard';
 
-ServiceCard.displayName = "ServiceCard";
+const annualBenefits = [
+  { icon: <FaBug className="w-5 h-5 text-blue-500" />, label: 'Unlimited virus removal' },
+  { icon: <FaLaptop className="w-5 h-5 text-blue-500" />, label: 'Speed optimization' },
+  { icon: <FaLaptopHouse className="w-5 h-5 text-blue-500" />, label: 'Faster startup' },
+  { icon: <FaLifeRing className="w-5 h-5 text-blue-500" />, label: 'Routine check-ups' },
+  { icon: <FaShieldAlt className="w-5 h-5 text-blue-500" />, label: 'Phone support during business hours' },
+  { icon: <FaSave className="w-5 h-5 text-blue-500" />, label: 'Data backup assistance' },
+  { icon: <FaLaptopHouse className="w-5 h-5 text-blue-500" />, label: 'Remote tech support' },
+  { icon: <FaBug className="w-5 h-5 text-blue-500" />, label: 'Antivirus installation & maintenance' },
+  { icon: <FaLaptop className="w-5 h-5 text-blue-500" />, label: 'Computer tune-ups as needed' },
+];
 
 function ResidentialServices() {
   const navigate = useNavigate();
   const [videoLoaded, setVideoLoaded] = useState(false);
+
   const canonicalUrl = 'https://bestcomputertec.com/residential-services';
   const pageImage = heroImage?.startsWith('http')
     ? heroImage
     : `https://bestcomputertec.com${heroImage || ''}`;
 
   const handleServiceClick = useCallback((serviceId) => {
-    switch (serviceId) {
-      case 'hardware-repairs':
-        navigate('/residential-support/pc-laptop-repairs');
-        break;
-      case 'software-troubleshooting':
-        navigate('/residential-support/software-troubleshooting');
-        break;
-      case 'virus-malware-removal':
-        navigate('/residential-support/virus-malware-removal');
-        break;
-      case 'network-setup-support':
-        navigate('/residential-support/network-setup-support');
-        break;
-      case 'data-recovery':
-        navigate('/residential-support/data-recovery');
-        break;
-      case 'remote-computer-support':
-        navigate('/residential-support/remote-support');
-        break;
-      case 'cloud-consulting':
-        navigate('/residential-support/cloud-consulting');
-        break;
-      case 'computer-training':
-        navigate('/residential-support/computer-training');
-        break;
-      default:
-        navigate(`/services/${serviceId}`);
-        break;
-    }
+    const routes = {
+      'hardware-repairs': '/residential-support/pc-laptop-repairs',
+      'software-troubleshooting': '/residential-support/software-troubleshooting',
+      'virus-malware-removal': '/residential-support/virus-malware-removal',
+      'network-setup-support': '/residential-support/network-setup-support',
+      'data-recovery': '/residential-support/data-recovery',
+      'remote-computer-support': '/residential-support/remote-support',
+      'cloud-consulting': '/residential-support/cloud-consulting',
+      'computer-training': '/residential-support/computer-training',
+    };
+    navigate(routes[serviceId] || `/services/${serviceId}`);
   }, [navigate]);
 
   const handleOrderNow = () => {
-    const subscriptionPlan = {
-      title: 'Annual Subscription Plan',
-      price: '$199.00',
-      description: 'Annual care plan for ongoing computer maintenance and support.',
-    };
-
-    navigate('/checkout', { state: { service: subscriptionPlan } });
-  };
-
-  const handleBookServiceClick = () => {
-    navigate('/book-service');
-  };
-
-  const loadVideo = () => {
-    setVideoLoaded(true);
+    navigate('/checkout', {
+      state: {
+        service: {
+          title: 'Annual Subscription Plan',
+          price: '$199.00',
+          description: 'Annual care plan for ongoing computer maintenance and support.',
+        },
+      },
+    });
   };
 
   return (
@@ -495,7 +161,7 @@ function ResidentialServices() {
       <Helmet>
         <title>Computer Repair Palm Bay Melbourne FL | Laptop Repair & Tech Support Services</title>
         <meta name="description" content="Best Computer Repair and IT Support Services in Palm Bay/Melbourne, FL. We specialize in Laptop Repair, PC Repair, Network Setup, and Data Recovery. Call us for quick, reliable service." />
-        <meta name="keywords" content="Computer Repair Palm Bay/Melbourne FL, Tech Support Services, Laptop Repair, PC Repair, IT Support Palm bay/Melbourne, Virus Removal, Data Recovery, Network Setup" />
+        <meta name="keywords" content="Computer Repair Palm Bay/Melbourne FL, Tech Support Services, Laptop Repair, PC Repair, IT Support Palm Bay/Melbourne, Virus Removal, Data Recovery, Network Setup" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Computer Repair Palm Bay Melbourne FL | Best Computer Tech" />
@@ -509,181 +175,213 @@ function ResidentialServices() {
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
-      {/* Combined Hero Section with Title and CTA */}
-      <div className="relative flex flex-col items-center justify-center w-full py-24 bg-center bg-cover h-96" style={{ backgroundImage: `url(${heroImage})` }}>
-        <div className="max-w-4xl p-6 text-center text-white bg-black bg-opacity-50 rounded-lg">
-          <h1 className="mb-4 text-5xl font-bold leading-tight">Our Residential Services</h1>
-          <p className="mb-4 text-xl">Best Computer Repair and IT Support Services in Palm Bay/Melbourne, FL.</p>
-          <p className="mb-4 text-xl">Get a free diagnostic over the phone. Call us now!</p>
-          <a href="tel:3219535199" className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700">
-            <FaPhoneAlt className="inline mr-2" /> Call Us: (321) 953-5199
-          </a>
+      {/* ── Hero ── */}
+      <section
+        className="relative flex items-center justify-center text-white bg-center bg-cover"
+        style={{ backgroundImage: `url(${heroImage})`, minHeight: '480px' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
+        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
+          <p className="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-3">
+            Palm Bay &amp; Melbourne, FL
+          </p>
+          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4">
+            Residential Computer &amp; IT Services
+          </h1>
+          <p className="text-lg text-gray-200 mb-4">
+            Fast, reliable tech support for your home — onsite and remote.
+          </p>
+          <p className="text-base text-blue-200 mb-8">
+            Get a free diagnostic over the phone. Call us now!
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+            <a
+              href="tel:3219535199"
+              className="inline-flex items-center gap-2 px-7 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors shadow-lg"
+            >
+              <FaPhoneAlt /> Call Us: (321) 953-5199
+            </a>
+            <Link
+              to="/book-service"
+              className="inline-flex items-center gap-2 px-7 py-3 font-semibold text-white bg-white/10 border border-white/40 rounded-full hover:bg-white/20 transition-colors"
+            >
+              Book a Service
+            </Link>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Why Choose Us Section */}
-      <section className="py-20 bg-gray-100">
-        <div className="container mx-auto">
-          <h2 className="mb-12 text-4xl font-bold text-center text-gray-800">Why Choose Us?</h2>
-          
-          <div className="flex flex-wrap justify-center p-6 bg-white rounded-lg shadow-lg md:flex-nowrap">
-            {/* Left Section with Video */}
-            <div className="w-full md:w-1/2">
-              <div className="overflow-hidden rounded-lg">
-                {!videoLoaded ? (
-                  <div className="relative cursor-pointer youtube-facade" onClick={loadVideo}>
-                    <img
-                      src="https://img.youtube.com/vi/8GOvDyPOW7c/maxresdefault.jpg"
-                      alt="Video Thumbnail"
-                      className="rounded-lg"
-                      loading="lazy"
-                      decoding="async"
-                      width={1280}
-                      height={720}
-                    />
-                    <FaPlay className="absolute text-6xl text-white inset-center" />
+      {/* ── Why Choose Us ── */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10">
+            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">Why Us</p>
+            <h2 className="text-3xl font-bold text-gray-800">Why Homeowners Choose Best Computer Tech</h2>
+          </div>
+
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center">
+            {/* YouTube Video */}
+            <div className="w-full md:w-1/2 rounded-xl overflow-hidden">
+              {!videoLoaded ? (
+                <div
+                  className="relative cursor-pointer group"
+                  onClick={() => setVideoLoaded(true)}
+                >
+                  <img
+                    src="https://img.youtube.com/vi/8GOvDyPOW7c/maxresdefault.jpg"
+                    alt="Best Computer Tech introduction video"
+                    className="w-full rounded-xl"
+                    loading="lazy"
+                    decoding="async"
+                    width={1280}
+                    height={720}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 rounded-xl group-hover:bg-black/40 transition-colors">
+                    <div className="w-16 h-16 flex items-center justify-center bg-white/90 rounded-full shadow-lg group-hover:scale-110 transition-transform">
+                      <FaPlay className="text-blue-600 text-2xl ml-1" />
+                    </div>
                   </div>
-                ) : (
+                </div>
+              ) : (
+                <div className="relative pb-[56.25%] h-0 overflow-hidden rounded-xl">
                   <iframe
-                    width="100%"
-                    height="315"
-                    src="https://www.youtube.com/embed/8GOvDyPOW7c?rel=0&autoplay=1&loop=0&playlist=8GOvDyPOW7c"
-                    title="Company Introduction Video"
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/8GOvDyPOW7c?rel=0&autoplay=1"
+                    title="Best Computer Tech Introduction"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
-                    className="rounded-lg"
-                  ></iframe>
-                )}
-              </div>
+                  />
+                </div>
+              )}
             </div>
 
-            {/* Right Section with Three Circular Cards and Text Next to Circles */}
-            <div className="flex flex-col items-start justify-center w-full mt-6 space-y-6 md:w-1/2 md:mt-0 md:ml-8">
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center w-24 h-24 text-white bg-blue-500 rounded-full shadow-md">
-                  <FaCheckCircle className="text-3xl" />
+            {/* Why Us Points */}
+            <div className="w-full md:w-1/2 flex flex-col gap-5">
+              {whyUs.map((item, i) => (
+                <div key={i} className={`flex items-start gap-4 p-4 rounded-xl ${item.bg}`}>
+                  <div className="p-2 bg-white rounded-lg shadow-sm shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <p className="font-bold text-gray-800 mb-1">{item.title}</p>
+                    <p className="text-sm text-gray-600">{item.desc}</p>
+                  </div>
                 </div>
-                <p className="text-lg font-semibold text-gray-800">Expert Technicians</p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Services Grid ── */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="text-center mb-10">
+            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">What We Fix</p>
+            <h2 className="text-3xl font-bold text-gray-800">Our Residential Services</h2>
+            <p className="text-gray-500 mt-2">Click any service to learn more.</p>
+          </div>
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+            {services.map((service, index) => (
+              <ServiceCard key={service.id} service={service} onClick={handleServiceClick} index={index} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Annual Subscription Plan ── */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
+            <div className="flex flex-col lg:flex-row">
+
+              {/* Image */}
+              <div className="lg:w-2/5 relative">
+                <img
+                  src={computerImage}
+                  alt="Annual Subscription Plan"
+                  className="w-full h-full object-cover"
+                  style={{ minHeight: '320px' }}
+                  loading="lazy"
+                  decoding="async"
+                  width={1152}
+                  height={1152}
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/10" />
               </div>
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center w-24 h-24 text-white bg-green-500 rounded-full shadow-md">
-                  <FaUsers className="text-3xl" />
+
+              {/* Content */}
+              <div className="lg:w-3/5 p-8">
+                <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+                  Best Value
+                </span>
+                <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                  Annual Computer Care Plan — $199/year
+                </h2>
+                <p className="text-gray-600 text-sm mb-6">
+                  One-time repairs in Palm Bay and Melbourne typically run $90–$180+ per incident. If you need two or more fixes per year, this plan pays for itself — and you get proactive care all year long.
+                </p>
+
+                <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 mb-6">
+                  {annualBenefits.map((b, i) => (
+                    <div key={i} className="flex items-center gap-3 text-sm text-gray-700">
+                      {b.icon}
+                      {b.label}
+                    </div>
+                  ))}
                 </div>
-                <p className="text-lg font-semibold text-gray-800">Customer Satisfaction</p>
-              </div>
-              <div className="flex items-center space-x-4">
-                <div className="flex items-center justify-center w-24 h-24 text-white bg-red-500 rounded-full shadow-md">
-                  <FaDollarSign className="text-3xl" />
+
+                <p className="text-sm text-gray-500 mb-6">
+                  Best for households with multiple devices, remote workers, seniors, or anyone who wants predictable support costs.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={handleOrderNow}
+                    className="px-7 py-3 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+                  >
+                    Subscribe Now — $199/yr
+                  </button>
+                  <a
+                    href="tel:3219535199"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-3 font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors"
+                  >
+                    <FaPhoneAlt className="w-4 h-4" /> Not sure? Call us first
+                  </a>
                 </div>
-                <p className="text-lg font-semibold text-gray-800">Affordable Rates</p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <div className="container p-8 mx-auto">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3">
-          {services.map((service) => (
-            <ServiceCard key={service.id} service={service} onClick={handleServiceClick} />
-          ))}
-        </div>
-
-        {/* Annual Subscription Plan Coupon Style */}
-        <div className="flex flex-col p-6 mt-12 bg-white border-2 border-gray-500 border-dashed rounded-lg shadow-lg md:flex-row">
-          <div className="relative flex items-center justify-center w-full md:w-1/2 fade-image">
-            <img
-              src={computerImage}
-              alt="Subscription Plan"
-              loading="lazy"
-              decoding="async"
-              width={1152}
-              height={1152}
-            />
-          </div>
-          <div className="w-full p-6 bg-white md:w-1/2">
-            <h2 className="mb-4 text-3xl font-bold text-center text-gray-800">💻 Keep Your Computer Running Smoothly: Annual Care Plan</h2>
-            <p className="mb-2 text-lg text-center text-gray-700">Our annual plan is <strong>$199/year</strong>.</p>
-            <p className="mb-4 text-base text-center text-gray-700">
-              In Palm Bay and Melbourne, one-time computer support is commonly priced per incident and often lands around
-              $90-$180+ depending on the issue, urgency, and onsite vs remote service. If you typically need two or more fixes
-              or tune-ups per year, this plan is usually strong value.
-            </p>
-            <p className="mb-4 text-lg text-center text-gray-700">Included services:</p>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-              <div className="flex items-center">
-                <FaBug className="mr-2 text-blue-500 w-7 h-7" />
-                <p>Unlimited virus removal</p>
-              </div>
-              <div className="flex items-center">
-                <FaLaptop className="mr-2 text-blue-500 w-7 h-7" />
-                <p>Speed optimization</p>
-              </div>
-              <div className="flex items-center">
-                <FaLaptopHouse className="mr-2 text-blue-500 w-7 h-7" />
-                <p>Faster startup</p>
-              </div>
-              <div className="flex items-center">
-                <FaLifeRing className="mr-2 text-blue-500 w-7 h-7" />
-                <p>Routine checkups</p>
-              </div>
-              <div className="flex items-center">
-                <FaShieldAlt className="mr-2 text-blue-500 w-7 h-7" />
-                <p>Phone support during business hours</p>
-              </div>
-              <div className="flex items-center">
-                <FaSave className="mr-2 text-blue-500 w-7 h-7" />
-                <p>Data backup</p>
-              </div>
-              <div className="flex items-center">
-                <FaLaptopHouse className="mr-2 text-blue-500 w-7 h-7" />
-                <p>Remote tech support</p>
-              </div>
-              <div className="flex items-center">
-                <FaBug className="mr-2 text-blue-500 w-7 h-7" />
-                <p>Antivirus installation for customer-provided software</p>
-              </div>
-              <div className="flex items-center">
-                <FaLaptop className="mr-2 text-blue-500 w-7 h-7" />
-                <p>Computer tune-ups</p>
-              </div>
-            </div>
-            <p className="mb-4 text-base text-center text-gray-700">
-              Best for households in Palm Bay and Melbourne with multiple devices, remote workers, seniors, or anyone who
-              wants predictable support costs.
-            </p>
-            <p className="mb-4 text-lg text-center text-gray-700">Why customers choose this plan:</p>
-            <ul className="mb-4 text-left text-gray-700 list-disc list-inside">
-              <li>Predictable yearly spend instead of surprise one-time repair charges.</li>
-              <li>Proactive checkups and tune-ups to reduce slowdowns and recurring issues.</li>
-              <li>Higher value for repeat support needs compared with paying per incident.</li>
-            </ul>
-            <p className="mb-4 text-sm text-center text-gray-600">
-              Not sure if this is the right fit? Call us for a quick recommendation based on your devices and usage.
-            </p>
-            <div className="text-center">
-              <button
-                onClick={handleOrderNow}
-                className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700"
-              >
-                ORDER NOW!
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Contact and Booking Section */}
-      <section className="py-16 mt-16 text-center bg-blue-50">
-        <div className="container mx-auto">
-          <h2 className="mb-8 text-4xl font-bold">Get in Touch with Us</h2>
-          <p className="mb-8 text-lg text-gray-700">We'd love to hear from you! Whether you need tech support, want to book a service, or have questions, feel free to reach out.</p>
-          <div className="flex justify-center space-x-4">
-            <button onClick={() => navigate('/contact')} className="px-6 py-3 font-semibold text-white bg-blue-500 rounded-full hover:bg-blue-700">Contact Us</button>
-            <button onClick={handleBookServiceClick} className="px-6 py-3 font-semibold text-white bg-green-500 rounded-full hover:bg-green-700">Book a Service</button>
-            <button onClick={() => navigate('/subscribe')} className="px-6 py-3 font-semibold text-white bg-purple-500 rounded-full hover:bg-purple-700">Subscribe to Newsletter</button>
+      {/* ── CTA ── */}
+      <section className="py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <h2 className="text-3xl font-bold mb-3">Ready to Get Started?</h2>
+          <p className="text-blue-200 mb-8">
+            Call us, book a service online, or send a message. We're here Mon–Fri, 9am–6pm.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <a
+              href="tel:3219535199"
+              className="flex items-center gap-2 px-7 py-3 font-bold text-blue-900 bg-white rounded-full hover:bg-blue-50 transition-colors shadow"
+            >
+              <FaPhoneAlt className="w-4 h-4" /> (321) 953-5199
+            </a>
+            <Link
+              to="/book-service"
+              className="px-7 py-3 font-semibold text-white bg-green-600 rounded-full hover:bg-green-700 transition-colors"
+            >
+              Book a Service
+            </Link>
+            <Link
+              to="/contact"
+              className="px-7 py-3 font-semibold text-white bg-white/10 border border-white/40 rounded-full hover:bg-white/20 transition-colors"
+            >
+              Contact Us
+            </Link>
           </div>
         </div>
       </section>

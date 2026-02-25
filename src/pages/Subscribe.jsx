@@ -3,30 +3,102 @@ import heroImage from '../assets/optimized-hero/subscribe-1152.jpg'; // Add a su
 import { useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 
-const newsletters2025 = [
+const monthlyNewsletters2026 = [
   {
-    id: '2025-q1',
-    title: '2025 Q1 Local Security and Performance Brief',
-    publishDate: 'January 2025',
-    summary: 'Actionable guidance for computer repair prevention, endpoint hardening, and performance recovery for Palm Bay and Melbourne.',
-    seoFocus: 'computer repair Palm Bay, IT support Melbourne FL, virus removal Palm Bay, computer tune up Melbourne',
-    file: '/newsletters/best-computer-tech-newsletter-2025-q1-local-security-performance.pdf',
+    id: '2026-01',
+    title: 'January 2026 - Agents Become Co-Workers',
+    publishDate: 'January 2026',
+    summary: 'Agentic AI moves from pilots to production with workflow ownership, audit trails, and safer delegation.',
+    seoFocus: 'agentic AI workflows, IT support Palm Bay, business automation Melbourne FL',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-01-agents-become-co-workers.pdf',
   },
   {
-    id: '2025-q2',
-    title: '2025 Q2 AI, Backup, and Cybersecurity Operations Brief',
-    publishDate: 'April 2025',
-    summary: 'Practical roadmap for AI adoption, backup resilience, and cybersecurity operations for small businesses in Brevard County.',
-    seoFocus: 'managed IT services Palm Bay, business cybersecurity Melbourne FL, data backup and recovery Brevard County',
-    file: '/newsletters/best-computer-tech-newsletter-2025-q2-ai-backup-cybersecurity.pdf',
+    id: '2026-02',
+    title: 'February 2026 - AI Security Arms Race',
+    publishDate: 'February 2026',
+    summary: 'Identity-first security planning for smarter phishing, deepfake scams, and stronger verification controls.',
+    seoFocus: 'MFA setup, phishing protection, cybersecurity Palm Bay',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-02-ai-security-arms-race.pdf',
   },
   {
-    id: '2025-q3',
-    title: '2025 Q3 Business Continuity and Endpoint Lifecycle Brief',
-    publishDate: 'July 2025',
-    summary: 'Mid-year execution plan for endpoint lifecycle planning, continuity drills, and IT service quality improvements.',
-    seoFocus: 'business continuity planning Palm Bay, managed IT support Melbourne FL, endpoint lifecycle management Brevard County',
-    file: '/newsletters/best-computer-tech-newsletter-2025-q3-business-continuity-endpoint-lifecycle.pdf',
+    id: '2026-03',
+    title: 'March 2026 - AI PCs and Local Inference',
+    publishDate: 'March 2026',
+    summary: 'How to reduce cloud costs and improve privacy with practical on-device AI workflows.',
+    seoFocus: 'AI PC setup, local inference, managed IT Melbourne FL',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-03-ai-pcs-and-local-inference.pdf',
+  },
+  {
+    id: '2026-04',
+    title: 'April 2026 - Robots in Real Businesses',
+    publishDate: 'April 2026',
+    summary: 'Robotics adoption strategy for measurable ROI in logistics, service operations, and repetitive tasks.',
+    seoFocus: 'robotics ROI, IT consulting Palm Bay, operations automation',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-04-robots-in-real-businesses.pdf',
+  },
+  {
+    id: '2026-05',
+    title: 'May 2026 - Customer Support Gets Rebuilt',
+    publishDate: 'May 2026',
+    summary: 'Building resolution pipelines with AI triage, better knowledge bases, and transparent human handoffs.',
+    seoFocus: 'AI customer support, helpdesk optimization, IT support Melbourne FL',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-05-customer-support-gets-rebuilt.pdf',
+  },
+  {
+    id: '2026-06',
+    title: 'June 2026 - Privacy and Compliance Catch Up',
+    publishDate: 'June 2026',
+    summary: 'Operational privacy controls, audit logs, and AI data boundaries for small business compliance.',
+    seoFocus: 'AI compliance policy, audit logs, managed IT Palm Bay',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-06-privacy-and-compliance-catch-up.pdf',
+  },
+  {
+    id: '2026-07',
+    title: 'July 2026 - Post-Quantum Migration Planning',
+    publishDate: 'July 2026',
+    summary: 'A practical roadmap for encryption inventory, crypto agility, and phased post-quantum readiness.',
+    seoFocus: 'post-quantum planning, encryption inventory, Brevard County IT consulting',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-07-post-quantum-migration-planning.pdf',
+  },
+  {
+    id: '2026-08',
+    title: 'August 2026 - Green Compute and Efficiency',
+    publishDate: 'August 2026',
+    summary: 'How to control AI energy and cloud spend with smarter model routing and usage dashboards.',
+    seoFocus: 'AI cost optimization, green compute strategy, IT cost control Palm Bay',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-08-green-compute-and-efficiency.pdf',
+  },
+  {
+    id: '2026-09',
+    title: 'September 2026 - The Interface Evolves',
+    publishDate: 'September 2026',
+    summary: 'Turning repetitive workflows into SOP-driven automation with intent-based interfaces.',
+    seoFocus: 'workflow SOP automation, multimodal interfaces, business IT productivity',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-09-the-interface-evolves.pdf',
+  },
+  {
+    id: '2026-10',
+    title: 'October 2026 - Fraud, Trust, and Verification',
+    publishDate: 'October 2026',
+    summary: 'Designing trust signals and verification steps that reduce fraud, chargebacks, and support burden.',
+    seoFocus: 'fraud prevention workflows, trust signals, cybersecurity Melbourne FL',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-10-fraud-trust-and-verification.pdf',
+  },
+  {
+    id: '2026-11',
+    title: 'November 2026 - Automation for Small Business',
+    publishDate: 'November 2026',
+    summary: 'Practical CRM and follow-up automations that drive faster lead response and measurable growth.',
+    seoFocus: 'small business automation, CRM workflows, managed IT Palm Bay',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-11-automation-for-small-business.pdf',
+  },
+  {
+    id: '2026-12',
+    title: 'December 2026 - From Tools to Systems',
+    publishDate: 'December 2026',
+    summary: 'Year-end framework for KPI-driven automation, stack consolidation, and stronger governance.',
+    seoFocus: 'automation KPI tracking, stack consolidation, business IT strategy',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-12-from-tools-to-systems.pdf',
   },
 ];
 
@@ -39,8 +111,8 @@ function Subscribe() {
   const newsletterSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Best Computer Tech 2025 Newsletter Archive',
-    itemListElement: newsletters2025.map((issue, index) => ({
+    name: 'Best Computer Tech 2026 Monthly Newsletter Archive',
+    itemListElement: monthlyNewsletters2026.map((issue, index) => ({
       '@type': 'ListItem',
       position: index + 1,
       item: {
@@ -66,11 +138,11 @@ function Subscribe() {
         <title>Subscribe to Our Newsletter | Best Computer Tech</title>
         <meta
           name="description"
-          content="Subscribe to Best Computer Tech updates and download 2025 newsletters with local IT tips, cybersecurity checklists, and performance guidance for Palm Bay and Melbourne, FL."
+          content="Subscribe for monthly 2026 IT newsletters and download practical issues on AI operations, cybersecurity, compliance, and business automation for Palm Bay and Melbourne, FL."
         />
         <meta
           name="keywords"
-          content="2025 tech newsletter PDF download, computer repair Palm Bay tips, IT support Melbourne FL updates, cybersecurity checklist newsletter"
+          content="monthly IT newsletter 2026, Palm Bay technology updates, Melbourne FL cybersecurity newsletter, business automation tips"
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
@@ -86,7 +158,7 @@ function Subscribe() {
         <meta name="twitter:title" content="Subscribe to Our Newsletter | Best Computer Tech" />
         <meta
           name="twitter:description"
-          content="Download 2025 newsletters and stay updated with IT tips, cybersecurity advice, and local support guidance."
+          content="Download monthly 2026 newsletters with practical AI, cybersecurity, and operations guidance."
         />
         <meta name="twitter:image" content={pageImage} />
         <script type="application/ld+json">{JSON.stringify(newsletterSchema)}</script>
@@ -124,12 +196,12 @@ function Subscribe() {
         </div>
 
         <section className="max-w-5xl mx-auto mt-12">
-          <h2 className="mb-4 text-3xl font-semibold text-center">2025 Newsletter Downloads</h2>
+          <h2 className="mb-4 text-3xl font-semibold text-center">2026 Monthly Newsletter Downloads</h2>
           <p className="mb-8 text-center text-gray-700">
-            Download our professional 2025 issues with practical guidance for local computer repair, IT support, cybersecurity, and operations.
+            Download each monthly issue with practical guidance for local computer repair, IT support, cybersecurity, and business operations.
           </p>
-          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            {newsletters2025.map((issue) => (
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {monthlyNewsletters2026.map((issue) => (
               <article key={issue.id} className="p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
                 <h3 className="mb-2 text-xl font-bold text-gray-900">{issue.title}</h3>
                 <p className="mb-3 text-sm text-gray-600">Published: {issue.publishDate}</p>

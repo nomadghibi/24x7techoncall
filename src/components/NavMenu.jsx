@@ -214,7 +214,7 @@ const NavMenu = () => {
           <img
             src={logoNew}
             alt="Best Computer Tech"
-            className="h-16 w-auto sm:h-20"
+            className="h-20 w-auto sm:h-24"
             decoding="async"
           />
         </Link>

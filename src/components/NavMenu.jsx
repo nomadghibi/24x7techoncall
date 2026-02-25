@@ -151,10 +151,14 @@ const NavMenu = () => {
   const isActive = (path) =>
     location.pathname === path || location.pathname.startsWith(path + '/');
 
-  const linkClass = (path) =>
-    `text-sm font-medium transition-colors hover:text-blue-400 ${
-      isActive(path) ? 'text-blue-400 border-b-2 border-blue-400 pb-0.5' : 'text-gray-200'
+  const mainNavButtonClass = (isCurrent = false) =>
+    `inline-flex items-center gap-1 px-4 py-2 rounded-full text-sm font-semibold transition-colors ${
+      isCurrent
+        ? 'bg-blue-700 text-white shadow-sm'
+        : 'bg-blue-600 text-white hover:bg-blue-700'
     }`;
+
+  const linkClass = (path) => mainNavButtonClass(isActive(path));
 
   // ── Dropdown panel ────────────────────────────────────────────────────
   const DropdownPanel = ({ links, viewAllTo, viewAllLabel, open }) => (
@@ -230,11 +234,9 @@ const NavMenu = () => {
             onMouseLeave={closeSubmenus}
           >
             <button
-              className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-blue-400 ${
+              className={mainNavButtonClass(
                 isActive('/residential-services') || isActive('/residential-support')
-                  ? 'text-blue-400'
-                  : 'text-gray-200'
-              }`}
+              )}
               onClick={(e) => { e.preventDefault(); handleMenuClick('/residential-services'); }}
             >
               Residential Services
@@ -257,11 +259,9 @@ const NavMenu = () => {
             onMouseLeave={closeSubmenus}
           >
             <button
-              className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-blue-400 ${
+              className={mainNavButtonClass(
                 isActive('/business-services') || isActive('/business-solutions')
-                  ? 'text-blue-400'
-                  : 'text-gray-200'
-              }`}
+              )}
               onClick={(e) => { e.preventDefault(); handleMenuClick('/business-services'); }}
             >
               Business Solutions

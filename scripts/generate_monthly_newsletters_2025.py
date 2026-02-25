@@ -540,7 +540,6 @@ NEWSLETTERS_2025 = (
         ),
         masthead="The Tech Pulse 2026",
         intro_note=(
-            "Hi [First Name],",
             "Welcome to The Tech Pulse 2026: practical technology guidance for small business owners who want more leads, fewer missed follow-ups, cleaner operations, and better margins without hiring a bigger team.",
             "January 2026 - Delegation Mode: How Small Businesses Use AI Agents in 2026.",
             "Below is a complete, owner-friendly guide to what Delegation Mode looks like in 2026, where it works best, and how to adopt it safely without turning your business into an experiment.",
@@ -763,7 +762,6 @@ NEWSLETTERS_2025 = (
         ),
         masthead="The Tech Pulse 2026",
         intro_note=(
-            "Hi [First Name],",
             "Welcome back to The Tech Pulse 2026: practical tech guidance for small business owners who want fewer fire drills, stronger security, and smoother operations.",
             "February 2026 - Identity-First Security: Beating AI-Powered Phishing and Fraud.",
             "If January was about delegating work to AI agents, February is about trust.",

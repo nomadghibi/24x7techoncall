@@ -8,6 +8,12 @@ import ErrorBoundary from './components/ErrorBoundary';
 import Home from './pages/Home';
 import './index.css';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+};
+
 const lazyWithRetry = (importer, retries = 2, retryDelayMs = 350) =>
   lazy(async () => {
     let lastError;
@@ -250,6 +256,7 @@ const App = () => {
       </Helmet>
     )}
     <div className="flex flex-col min-h-screen">
+      <ScrollToTop />
       <NavMenu />
       <main id="main-content" tabIndex={-1} className="flex-grow mt-24">
         <ErrorBoundary key={normalizedPath}>

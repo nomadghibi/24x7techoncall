@@ -7,8 +7,7 @@ import {
   FaSearch, FaServer, FaCogs, FaDatabase, FaCloud,
   FaCheckCircle, FaChartLine, FaHeadphones,
 } from 'react-icons/fa';
-import logo128Png from '../assets/optimized-logo/logo-128.png';
-import logo256Png from '../assets/optimized-logo/logo-256.png';
+import logoNew from '../assets/optimized-logo/logo-new.png';
 
 // ── Route prefetching ──────────────────────────────────────────────────────
 const routePrefetchers = {
@@ -213,13 +212,9 @@ const NavMenu = () => {
           onClick={handleDirectLinkClick}
         >
           <img
-            src={logo128Png}
-            srcSet={`${logo128Png} 128w, ${logo256Png} 256w`}
-            sizes="(max-width: 640px) 112px, 140px"
+            src={logoNew}
             alt="Best Computer Tech"
             className="h-10 w-auto sm:h-12"
-            width={256}
-            height={118}
             decoding="async"
           />
         </Link>

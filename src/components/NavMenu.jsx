@@ -187,7 +187,7 @@ const NavMenu = () => {
 
   return (
     <nav
-      className="fixed top-7 z-40 w-full px-4 pt-2 text-white"
+      className="fixed top-2 z-40 w-full px-4 pt-2 text-white"
       onMouseOver={(e) => prefetchFromLink(e.target)}
       onFocusCapture={(e) => prefetchFromLink(e.target)}
     >

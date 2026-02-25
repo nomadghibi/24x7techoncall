@@ -4,7 +4,6 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Routes, Route, Navigate, Link, useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
 import NavMenu from './components/NavMenu';
-import TopBar from './components/TopBar';
 import ErrorBoundary from './components/ErrorBoundary';
 import Home from './pages/Home';
 import './index.css';
@@ -251,9 +250,8 @@ const App = () => {
       </Helmet>
     )}
     <div className="flex flex-col min-h-screen">
-      <TopBar />
       <NavMenu />
-      <main id="main-content" tabIndex={-1} className="flex-grow mt-32">
+      <main id="main-content" tabIndex={-1} className="flex-grow mt-24">
         <ErrorBoundary key={normalizedPath}>
           <Suspense
             fallback={

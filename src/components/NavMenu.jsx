@@ -208,7 +208,7 @@ const NavMenu = () => {
         {/* ── Logo ── */}
         <Link
           to="/"
-          className="flex items-center shrink-0 rounded-xl px-2 py-1.5"
+          className="flex items-center shrink-0"
           onClick={handleDirectLinkClick}
         >
           <img

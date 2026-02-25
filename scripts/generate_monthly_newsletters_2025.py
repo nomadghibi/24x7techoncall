@@ -738,6 +738,198 @@ NEWSLETTERS_2025 = (
     MonthlyNewsletter(
         month_number=2,
         month_name="February",
+        year=2026,
+        theme="Identity-First Security: Beating AI-Powered Phishing and Fraud",
+        lead_story="Perimeter security is not enough. Identity is now the frontline for small business defense.",
+        lead_details=(
+            "In 2026, attackers are using AI to craft convincing phishing, payment fraud, and impersonation campaigns.",
+            "Strong controls now focus on identity verification, device trust, and risk-based approvals before money or data moves.",
+        ),
+        also_watching=(
+            "AI-powered fraud messages now mimic vendor style, timing, and formatting with fewer obvious warning signs.",
+            "Small businesses are moving from trust-by-default to verification-by-default for high-risk requests.",
+        ),
+        tool_of_the_month="Password manager plus authenticator-based MFA, with passkeys enabled where supported.",
+        next_steps=(
+            "Turn on MFA for email and financial systems, then remove weak or reused passwords.",
+            "Enforce out-of-band verification for payment changes and money-moving requests.",
+        ),
+        seo_keywords=(
+            "identity-first security",
+            "phishing protection Palm Bay",
+            "small business cybersecurity Melbourne FL",
+            "MFA setup Brevard County",
+            "fraud prevention IT support",
+        ),
+        masthead="The Tech Pulse 2026",
+        intro_note=(
+            "Hi [First Name],",
+            "Welcome back to The Tech Pulse 2026: practical tech guidance for small business owners who want fewer fire drills, stronger security, and smoother operations.",
+            "February 2026 - Identity-First Security: Beating AI-Powered Phishing and Fraud.",
+            "If January was about delegating work to AI agents, February is about trust.",
+        ),
+        custom_sections=(
+            ArticleSection(
+                heading="What Changed in 2026 (and Why You Feel It)",
+                paragraphs=(
+                    "Scams are no longer easy to spot by bad grammar or generic wording. AI now helps attackers write believable messages, mimic vendor tone, and generate realistic invoices and urgent payment requests.",
+                    "Voice impersonation and identity spoofing are increasing pressure on teams that process payments, payroll updates, customer records, and account changes.",
+                    "The practical shift is clear: stop trusting messages by default and verify identity before money or sensitive data moves.",
+                ),
+            ),
+            ArticleSection(
+                heading="The 3 Biggest Fraud Patterns Hitting Small Businesses Right Now",
+                paragraphs=(
+                    "Most high-cost incidents are now tied to routine workflows that feel familiar to staff. Attackers win when urgency bypasses verification.",
+                    "The controls below are designed for owner-led teams that need simple policies and repeatable execution, not enterprise complexity.",
+                ),
+            ),
+            ArticleSection(
+                heading="1) Vendor Invoice Fraud (Pay This Updated Bank Account)",
+                paragraphs=(
+                    "This scam targets normal accounts-payable behavior. A message appears to come from a trusted vendor and asks your team to use new ACH details.",
+                    "AI makes these messages harder to detect because formatting, tone, and timing look credible, especially near month-end and after hours.",
+                    "If payment instructions change, verify through a known channel before approving transfer. Do not trust contact details in the incoming email.",
+                ),
+                bullets=(
+                    "Call a known vendor number from your saved contacts, not the message body.",
+                    "Confirm banking changes in the vendor portal you already use.",
+                    "Require a second approver for first payment to new account details.",
+                ),
+            ),
+            ArticleSection(
+                heading="2) Password and Email Takeover (The Silent Killer)",
+                paragraphs=(
+                    "Email compromise remains one of the highest-impact incidents because email can reset other credentials, impersonate staff, and authorize fraudulent requests.",
+                    "Common entry points include reused passwords, weak credentials, and fake login pages that mimic Microsoft or Google sign-in flows.",
+                    "A strong baseline combines password manager adoption, universal MFA, and passkeys where available.",
+                ),
+                bullets=(
+                    "Use unique passwords for every service account and user login.",
+                    "Enable authenticator-based MFA for all users, especially owners and admins.",
+                    "Disable stale accounts and shared inbox passwords that cannot be audited.",
+                ),
+            ),
+            ArticleSection(
+                heading="3) Boss or Staff Impersonation (Email and Voice)",
+                paragraphs=(
+                    "Attackers increasingly send urgent messages that appear to come from leadership: transfer funds, buy gift cards, or change payroll instructions immediately.",
+                    "AI-generated voice and writing style imitation can create just enough confidence to trigger compliance under time pressure.",
+                    "The fix is procedural, not optional: no money movement without verification through a second channel.",
+                ),
+                bullets=(
+                    "Owner request to transfer funds requires secondary verification before execution.",
+                    "Payroll changes require in-person or verified HR workflow confirmation.",
+                    "Refunds above a defined threshold require explicit approval.",
+                ),
+            ),
+            ArticleSection(
+                heading="Identity-First Security in Plain English",
+                paragraphs=(
+                    "Identity-first security replaces trust-by-location with trust-by-verification. Being on the company network is not enough for high-risk actions.",
+                    "Every important request is checked for who initiated it, what device is involved, whether behavior is normal, and whether risk level requires extra approval.",
+                    "This model is practical for SMB operations because it reduces fraud risk without blocking normal work.",
+                ),
+                bullets=(
+                    "Verify who is requesting access or action.",
+                    "Verify what device is being used and whether it is expected.",
+                    "Verify whether the request pattern is normal for that user and role.",
+                    "Require additional controls for high-risk actions.",
+                ),
+            ),
+            ArticleSection(
+                heading="The Small Business Zero-Trust Checklist (Without Enterprise Complexity)",
+                paragraphs=(
+                    "You do not need a complex platform stack to run identity-first security. Start with enforceable rules across email, payments, admin access, and staff behavior.",
+                    "Simple, written controls applied consistently usually outperform complicated policies that nobody follows.",
+                ),
+            ),
+            ArticleSection(
+                heading="Step 1: Lock Down Email (Your Real Control Center)",
+                paragraphs=(
+                    "Email remains the master key to most SaaS tools, finance systems, and customer communication channels.",
+                    "If only one control is completed this month, complete full MFA coverage and credential cleanup for email accounts.",
+                ),
+                bullets=(
+                    "Turn on MFA for every mailbox, especially owner and admin accounts.",
+                    "Enforce password manager usage and unique passwords.",
+                    "Remove old staff accounts and eliminate shared inbox passwords.",
+                ),
+            ),
+            ArticleSection(
+                heading="Step 2: Use Passkeys Where Possible",
+                paragraphs=(
+                    "Passkeys reduce phishing risk because they are not entered into fake login forms the same way passwords are.",
+                    "Keep current password and MFA controls where needed, and add passkeys as Google, Microsoft, Apple, and key SaaS platforms support them.",
+                ),
+            ),
+            ArticleSection(
+                heading="Step 3: Put Money-Moving Actions Behind Verification",
+                paragraphs=(
+                    "A single policy prevents many high-cost incidents: any request involving money must be verified through a second channel.",
+                    "This should be documented in accounts payable, payroll, and refund workflows so staff follows one consistent standard.",
+                ),
+                bullets=(
+                    "Vendor banking changes: verify using known phone contact.",
+                    "Wire or ACH transfers: owner confirmation plus second approver.",
+                    "Payroll changes: secure HR process confirmation.",
+                    "Large refunds: approval threshold with audit trail.",
+                ),
+            ),
+            ArticleSection(
+                heading="Step 4: Reduce Admin Access (Least Privilege)",
+                paragraphs=(
+                    "Broad admin access is convenient but expensive during incidents. Standard user accounts should be default, with privileged access limited and time-scoped.",
+                    "Separating billing and admin functions from daily work reduces blast radius if one account is compromised.",
+                ),
+            ),
+            ArticleSection(
+                heading="Step 5: Train Staff Using a 60-Second Script",
+                paragraphs=(
+                    "Long training sessions are less effective than short, repeatable rules. Teams perform better when guidance is clear and consistently reinforced.",
+                ),
+                bullets=(
+                    "If it is urgent and money-related, assume it could be fake.",
+                    "If a message asks for login action, go to the site directly instead of clicking links.",
+                    "If payment details change, verify by phone with saved contacts.",
+                    "If unsure, pause and escalate.",
+                ),
+            ),
+            ArticleSection(
+                heading="Tool of the Month: Password Manager Plus MFA (Non-Negotiable)",
+                paragraphs=(
+                    "Password managers like Bitwarden or 1Password stop credential reuse and make strong, unique passwords practical for every staff member.",
+                    "Pair this with authenticator-based MFA and add passkeys on supported platforms to reduce phishing success rates.",
+                ),
+            ),
+            ArticleSection(
+                heading="What To Do Next (30-60 Minutes, Owner-Friendly)",
+                paragraphs=(
+                    "Use this February action plan to install controls quickly without slowing the business.",
+                ),
+                bullets=(
+                    "Turn on MFA for email and financial accounts.",
+                    "Adopt a password manager for owners and admin-capable staff.",
+                    "Set policy: no payment changes without phone verification.",
+                    "Add a two-person rule for transfers above a defined threshold.",
+                    "Post a one-paragraph staff security policy in team chat and SOP docs.",
+                ),
+            ),
+            ArticleSection(
+                heading="Quick Reply and I Will Tailor This to Your Business",
+                paragraphs=(
+                    "Reply with your business type, core tools (Google Workspace or Microsoft 365, accounting, CRM), and whether staff handles invoices and payments.",
+                    "You will get a custom one-page setup plan with MFA priorities, verification rules, and a checklist aligned to your workflow.",
+                ),
+            ),
+        ),
+        slug_override="best-computer-tech-monthly-newsletter-2026-02-identity-first-security-beating-ai-powered-phishing-and-fraud",
+        title_override="The Tech Pulse 2026 - February 2026 Identity-First Security",
+        issue_label_override="February 2026 - Identity-First Security: Beating AI-Powered Phishing and Fraud",
+    ),
+    MonthlyNewsletter(
+        month_number=2,
+        month_name="February",
         year=2025,
         theme="AI Security Arms Race",
         lead_story="Phishing gets smarter, and security shifts to identity-first controls.",

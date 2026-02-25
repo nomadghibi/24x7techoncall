@@ -13,6 +13,14 @@ const monthlyNewsletters2025 = [
     file: '/newsletters/best-computer-tech-monthly-newsletter-2026-01-agents-become-co-workers.pdf',
   },
   {
+    id: '2026-02',
+    title: 'February 2026 - Identity-First Security',
+    publishDate: 'February 2026',
+    summary: 'Owner-friendly anti-fraud playbook for AI-powered phishing, invoice scams, and identity verification workflows.',
+    seoFocus: 'identity-first security, phishing protection Palm Bay, small business cybersecurity Melbourne FL',
+    file: '/newsletters/best-computer-tech-monthly-newsletter-2026-02-identity-first-security-beating-ai-powered-phishing-and-fraud.pdf',
+  },
+  {
     id: '2025-01',
     title: 'January 2025 - Agents Become Co-Workers',
     publishDate: 'January 2025',

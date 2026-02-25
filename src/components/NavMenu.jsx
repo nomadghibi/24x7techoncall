@@ -14,6 +14,7 @@ const routePrefetchers = {
   '/': () => import('../pages/Home'),
   '/about-us': () => import('../pages/AboutUs'),
   '/diagnose-my-issue': () => import('../pages/DiagnoseMyIssue'),
+  '/price-estimator': () => import('../pages/PriceEstimator'),
   '/residential-services': () => import('../pages/ResidentialServices'),
   '/residential-support/pc-laptop-repairs': () => import('../pages/residentialsupport/PcLaptopRepairs'),
   '/residential-support/virus-malware-removal': () => import('../pages/residentialsupport/VirusMalwareRemoval'),
@@ -202,8 +203,12 @@ const NavMenu = () => {
       <div className="flex items-center justify-between px-6 py-3">
 
         {/* ── Logo ── */}
-        <Link to="/" className="flex items-center shrink-0" onClick={handleDirectLinkClick}>
-          <img src={logo} alt="Best Computer Tech" className="h-24 w-auto" />
+        <Link
+          to="/"
+          className="flex items-center shrink-0 rounded-xl bg-white p-1.5 shadow-2xl shadow-black/50 ring-2 ring-white/90"
+          onClick={handleDirectLinkClick}
+        >
+          <img src={logo} alt="Best Computer Tech" className="h-14 w-auto sm:h-16" />
         </Link>
 
         {/* ── Desktop nav links ── */}
@@ -216,6 +221,11 @@ const NavMenu = () => {
           <li>
             <Link to="/diagnose-my-issue" className={linkClass('/diagnose-my-issue')} onClick={handleDirectLinkClick}>
               Diagnose My Issue
+            </Link>
+          </li>
+          <li>
+            <Link to="/price-estimator" className={linkClass('/price-estimator')} onClick={handleDirectLinkClick}>
+              Price Estimator
             </Link>
           </li>
 
@@ -321,6 +331,7 @@ const NavMenu = () => {
             <Link to="/" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Home</Link>
             <Link to="/about-us" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>About Us</Link>
             <Link to="/diagnose-my-issue" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Diagnose My Issue</Link>
+            <Link to="/price-estimator" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Price Estimator</Link>
 
             {/* Residential mobile toggle */}
             <button

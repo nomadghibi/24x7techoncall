@@ -14,7 +14,6 @@ const routePrefetchers = {
   '/': () => import('../pages/Home'),
   '/about-us': () => import('../pages/AboutUs'),
   '/diagnose-my-issue': () => import('../pages/DiagnoseMyIssue'),
-  '/price-estimator': () => import('../pages/PriceEstimator'),
   '/residential-services': () => import('../pages/ResidentialServices'),
   '/residential-support/pc-laptop-repairs': () => import('../pages/residentialsupport/PcLaptopRepairs'),
   '/residential-support/virus-malware-removal': () => import('../pages/residentialsupport/VirusMalwareRemoval'),
@@ -223,11 +222,6 @@ const NavMenu = () => {
               Diagnose My Issue
             </Link>
           </li>
-          <li>
-            <Link to="/price-estimator" className={linkClass('/price-estimator')} onClick={handleDirectLinkClick}>
-              Price Estimator
-            </Link>
-          </li>
 
           {/* Residential dropdown */}
           <li
@@ -331,7 +325,6 @@ const NavMenu = () => {
             <Link to="/" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Home</Link>
             <Link to="/about-us" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>About Us</Link>
             <Link to="/diagnose-my-issue" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Diagnose My Issue</Link>
-            <Link to="/price-estimator" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Price Estimator</Link>
 
             {/* Residential mobile toggle */}
             <button

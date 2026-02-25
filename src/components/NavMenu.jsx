@@ -190,13 +190,16 @@ const NavMenu = () => {
 
   return (
     <nav
-      className={`fixed top-7 z-40 w-full bg-gray-900 text-white transition-shadow duration-300 ${
-        scrolled ? 'shadow-lg' : ''
-      }`}
+      className="fixed top-7 z-40 w-full px-4 pt-2 text-white"
       onMouseOver={(e) => prefetchFromLink(e.target)}
       onFocusCapture={(e) => prefetchFromLink(e.target)}
     >
-      <div className="container mx-auto flex items-center justify-between px-6 py-3 max-w-7xl">
+      <div className={`mx-auto max-w-7xl rounded-2xl transition-all duration-300 ${
+        scrolled
+          ? 'bg-gray-900/95 backdrop-blur-md shadow-2xl shadow-black/50 ring-1 ring-white/10'
+          : 'bg-gray-900/80 backdrop-blur-sm shadow-lg shadow-black/30 ring-1 ring-white/5'
+      }`}>
+      <div className="flex items-center justify-between px-6 py-3">
 
         {/* ── Logo ── */}
         <Link to="/" className="flex items-center shrink-0" onClick={handleDirectLinkClick}>
@@ -313,7 +316,7 @@ const NavMenu = () => {
 
       {/* ── Mobile menu ── */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-gray-900 border-t border-gray-700">
+        <div className="md:hidden bg-gray-900/95 border-t border-gray-700/60 rounded-b-2xl overflow-hidden">
           <div className="flex flex-col">
             <Link to="/" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Home</Link>
             <Link to="/about-us" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>About Us</Link>
@@ -385,6 +388,7 @@ const NavMenu = () => {
           </div>
         </div>
       )}
+      </div>
     </nav>
   );
 };

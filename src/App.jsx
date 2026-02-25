@@ -252,7 +252,7 @@ const App = () => {
     <div className="flex flex-col min-h-screen">
       <TopBar />
       <NavMenu />
-      <main id="main-content" tabIndex={-1} className="flex-grow mt-24">
+      <main id="main-content" tabIndex={-1} className="flex-grow mt-28">
         <ErrorBoundary key={normalizedPath}>
           <Suspense
             fallback={

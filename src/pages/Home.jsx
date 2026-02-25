@@ -11,6 +11,16 @@ import {
   FaChalkboardTeacher,
   FaCloud,
   FaCamera,
+  FaLaptop,
+  FaStar,
+  FaMapMarkerAlt,
+  FaBolt,
+  FaShieldAlt,
+  FaHandshake,
+  FaPhoneAlt,
+  FaAward,
+  FaUsers,
+  FaRegClock,
 } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
 import blogImage1 from '../assets/optimized-blog/5-tips-512.jpg';
@@ -114,44 +124,58 @@ const heroImageLarge = '/hero-home-896.jpg';
 const heroImageDesktop = '/hero-home-1024.jpg';
 const heroImageSocial = 'https://bestcomputertec.com/hero-home-1024.jpg';
 
-// Memoized static components to prevent unnecessary re-renders
+const StarRating = ({ count = 5 }) => (
+  <div className="flex gap-0.5 mb-3">
+    {Array.from({ length: count }).map((_, i) => (
+      <FaStar key={i} className="text-yellow-400 w-4 h-4" />
+    ))}
+  </div>
+);
+
 const ServiceCard = React.memo(({ service, onReadMore }) => (
-  <div className="flex flex-col items-center w-full max-w-md p-6 bg-white rounded-lg shadow-md">
-    <div className="w-1/3">
+  <div
+    className="flex flex-col items-center text-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-200 cursor-pointer"
+    onClick={() => onReadMore(service.id)}
+    role="button"
+    tabIndex={0}
+    onKeyDown={(e) => e.key === 'Enter' && onReadMore(service.id)}
+  >
+    <div className="mb-4 p-3 rounded-full bg-gray-50">
       {service.icon}
     </div>
-    <h3 className="mb-2 text-xl font-semibold text-gray-800">{service.title}</h3>
-    <p className="mb-4 text-gray-700">{service.description}</p>
-    <button
-      onClick={() => onReadMore(service.id)}
-      className="px-4 py-2 font-bold text-white transition duration-300 bg-blue-500 rounded hover:bg-blue-700"
-    >
-      Read More
-    </button>
+    <h3 className="mb-2 text-lg font-bold text-gray-800">{service.title}</h3>
+    <p className="mb-5 text-sm text-gray-600 flex-1">{service.description}</p>
+    <span className="text-sm font-semibold text-blue-600 hover:text-blue-800">
+      Learn More →
+    </span>
   </div>
 ));
 ServiceCard.displayName = 'ServiceCard';
 
 const TestimonialCard = React.memo(({ testimonial }) => (
-  <div className="p-6 text-left bg-white rounded-lg shadow-lg">
-    <div className="mb-4">
-      <h3 className="text-lg font-semibold text-gray-800">{testimonial.name}</h3>
-      <p className="text-sm text-gray-500">{testimonial.date}</p>
+  <div className="p-6 text-left bg-white rounded-xl shadow-sm border border-gray-100">
+    <StarRating />
+    <p className="text-gray-700 leading-relaxed mb-4 italic">"{testimonial.feedback}"</p>
+    <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
+      <div className="w-9 h-9 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-sm shrink-0">
+        {testimonial.name.charAt(0)}
+      </div>
+      <div>
+        <p className="font-semibold text-gray-800 text-sm">{testimonial.name}</p>
+        <p className="text-xs text-gray-400">{testimonial.date}</p>
+      </div>
     </div>
-    <p className="text-sm leading-relaxed text-gray-700">
-      {testimonial.feedback}
-    </p>
   </div>
 ));
 TestimonialCard.displayName = 'TestimonialCard';
 
 const BlogPostCard = React.memo(({ post }) => (
-  <div className="flex flex-col justify-between p-4 bg-white rounded-lg shadow-md h-80">
+  <article className="flex flex-col bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-shadow">
     {post.image && (
       <img
         src={post.image}
         alt={post.title}
-        className="object-cover w-full h-32 mb-4 bg-gray-300 rounded"
+        className="object-cover w-full h-44"
         loading="lazy"
         decoding="async"
         fetchPriority="low"
@@ -159,18 +183,24 @@ const BlogPostCard = React.memo(({ post }) => (
         height={512}
       />
     )}
-    <h3 className="mb-2 text-xl font-semibold text-gray-800">{post.title}</h3>
-    <p className="mb-4 text-gray-700">{post.summary}</p>
-    <p className="text-sm text-gray-500">{post.date}</p>
-    <Link to={post.link} className="mt-2 text-blue-500 hover:underline">
-      Read More
-    </Link>
-  </div>
+    <div className="flex flex-col flex-1 p-5">
+      <p className="text-xs text-gray-400 mb-2">{post.date}</p>
+      <h3 className="text-base font-bold text-gray-800 mb-2 leading-snug">{post.title}</h3>
+      <p className="text-sm text-gray-600 flex-1 mb-4">{post.summary}</p>
+      <Link
+        to={post.link}
+        className="text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+      >
+        Read Article →
+      </Link>
+    </div>
+  </article>
 ));
 BlogPostCard.displayName = 'BlogPostCard';
 
 function Home() {
   const navigate = useNavigate();
+
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
@@ -238,61 +268,61 @@ function Home() {
         id: 'hardware-repairs',
         title: 'Hardware Repairs',
         description: 'Fixing broken screens, malfunctioning keyboards, and other hardware issues.',
-        icon: <FaTools size={40} color="#3B82F6" />,
+        icon: <FaTools size={32} color="#3B82F6" />,
       },
       {
         id: 'software-troubleshooting',
         title: 'Software Troubleshooting',
         description: 'Resolving operating system errors, application crashes, and software installation issues.',
-        icon: <FaBug size={40} color="#10B981" />,
+        icon: <FaLaptop size={32} color="#10B981" />,
       },
       {
         id: 'virus-malware-removal',
-        title: 'Virus and Malware Removal',
+        title: 'Virus & Malware Removal',
         description: 'Protecting your computer from harmful viruses and ensuring your data is safe.',
-        icon: <FaBug size={40} color="#EF4444" />,
+        icon: <FaBug size={32} color="#EF4444" />,
       },
       {
         id: 'network-setup-support',
-        title: 'Network Setup and Support',
+        title: 'Network Setup & Support',
         description: 'Setting up and maintaining secure and efficient home or office networks.',
-        icon: <FaNetworkWired size={40} color="#8B5CF6" />,
+        icon: <FaNetworkWired size={32} color="#8B5CF6" />,
       },
       {
         id: 'data-recovery',
         title: 'Data Recovery',
         description: 'Retrieving lost or corrupted data from hard drives and other storage devices.',
-        icon: <FaDatabase size={40} color="#FBBF24" />,
+        icon: <FaDatabase size={32} color="#FBBF24" />,
       },
       {
         id: 'remote-computer-support',
         title: 'Remote Computer Support',
-        description: 'Providing professional support for your computer issues without the need for a technician visit.',
-        icon: <FaLaptopHouse size={40} color="#14B8A6" />,
+        description: 'Professional support for your computer issues without the need for a technician visit.',
+        icon: <FaLaptopHouse size={32} color="#14B8A6" />,
       },
       {
         id: 'quick-tech-help',
         title: 'Quick Tech Help',
         description: 'Have a question about your computer? Get a quick repair quote before taking it to the shop.',
-        icon: <FaQuestionCircle size={40} color="#EC4899" />,
+        icon: <FaQuestionCircle size={32} color="#EC4899" />,
       },
       {
         id: 'cloud-consulting',
         title: 'Cloud Consulting',
-        description: 'Get expert cloud support from the comfort of your home.',
-        icon: <FaCloud size={40} color="#6366F1" />,
+        description: 'Get expert cloud support and migration guidance from the comfort of your home.',
+        icon: <FaCloud size={32} color="#6366F1" />,
       },
       {
         id: 'computer-training',
         title: 'Computer Training',
         description: 'Learn how to use your computer more effectively with our professional training sessions.',
-        icon: <FaChalkboardTeacher size={40} color="#F97316" />,
+        icon: <FaChalkboardTeacher size={32} color="#F97316" />,
       },
       {
         id: 'security-camera-installation',
-        title: 'Security Camera and Network Cabling Installation',
+        title: 'Security Camera & Cabling',
         description: 'Professional installation of security cameras and network cabling for your home or office.',
-        icon: <FaCamera size={40} color="#6B7280" />,
+        icon: <FaCamera size={32} color="#6B7280" />,
       },
     ],
     []
@@ -324,18 +354,10 @@ function Home() {
 
   const blogPosts = useMemo(() => pickRandomPosts(homeBlogPool, 3), []);
 
-  const { ref: techSolutionsRef, inView: techSolutionsInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-  const { ref: testimonialsRef, inView: testimonialsInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-  const { ref: blogRef, inView: blogInView } = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const { ref: techSolutionsRef, inView: techSolutionsInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref: whyUsRef, inView: whyUsInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref: testimonialsRef, inView: testimonialsInView } = useInView({ triggerOnce: true, threshold: 0.1 });
+  const { ref: blogRef, inView: blogInView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
     <div>
@@ -353,19 +375,13 @@ function Home() {
         <link rel="canonical" href="https://bestcomputertec.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Computer Repair & IT Support in Palm Bay & Melbourne, FL | Best Computer Tech" />
-        <meta
-          property="og:description"
-          content="Local computer repair and IT support services for Palm Bay, Melbourne, and nearby Brevard County areas."
-        />
+        <meta property="og:description" content="Local computer repair and IT support services for Palm Bay, Melbourne, and nearby Brevard County areas." />
         <meta property="og:url" content="https://bestcomputertec.com/" />
         <meta property="og:image" content={heroImageSocial} />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Best Computer Tech | Palm Bay & Melbourne, FL" />
-        <meta
-          name="twitter:description"
-          content="Computer repair, IT support, network setup, and data recovery in Palm Bay and Melbourne, Florida."
-        />
+        <meta name="twitter:description" content="Computer repair, IT support, network setup, and data recovery in Palm Bay and Melbourne, Florida." />
         <meta name="twitter:image" content={heroImageSocial} />
         <meta name="geo.region" content="US-FL" />
         <meta name="geo.placename" content="Palm Bay, Melbourne, Florida" />
@@ -374,119 +390,243 @@ function Home() {
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
 
-      {/* Hero Section */}
+      {/* ── Hero ── */}
       <section className="relative hero-section">
-        <div className="relative">
-          <img
-            src={heroImageMobile}
-            srcSet={`${heroImageMobile} 640w, ${heroImageMid} 768w, ${heroImageLarge} 896w, ${heroImageDesktop} 1024w`}
-            sizes="100vw"
-            alt="Best Computer Tech computer repair and IT support in Palm Bay and Melbourne"
-            className="object-cover w-full h-96"
-            width={1024}
-            height={1024}
-            loading="eager"
-            fetchPriority="high"
-            decoding="async"
-          />
-          <div className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-50">
-            <div className="text-center text-white">
-              <h1 className="mb-4 text-5xl font-bold leading-tight">
-                Welcome to Best Computer Tech
-              </h1>
-              <p className="mb-8 text-xl">
-                Your Computer, Our Expertise - Best Computer Tech Support!
-              </p>
-              <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
-                <Link
-                  to="/diagnose-my-issue"
-                  className="px-6 py-3 font-semibold text-white transition duration-300 bg-green-600 rounded-full hover:bg-green-700"
-                >
-                  Diagnose My Issue
-                </Link>
-                <Link
-                  to="/services"
-                  className="px-6 py-3 font-semibold text-white transition duration-300 bg-blue-500 rounded-full hover:bg-blue-700"
-                >
-                  Get Started
-                </Link>
-              </div>
+        <img
+          src={heroImageMobile}
+          srcSet={`${heroImageMobile} 640w, ${heroImageMid} 768w, ${heroImageLarge} 896w, ${heroImageDesktop} 1024w`}
+          sizes="100vw"
+          alt="Best Computer Tech computer repair and IT support in Palm Bay and Melbourne"
+          className="object-cover w-full"
+          style={{ minHeight: '580px', maxHeight: '680px' }}
+          width={1024}
+          height={1024}
+          loading="eager"
+          fetchPriority="high"
+          decoding="async"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 flex items-center justify-center">
+          <div className="text-center text-white px-4 max-w-3xl mx-auto">
+            <p className="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-3">
+              Palm Bay &amp; Melbourne, FL
+            </p>
+            <h1 className="mb-4 text-4xl sm:text-5xl font-bold leading-tight">
+              Fast, Reliable Computer Repair &amp; IT Support
+            </h1>
+            <p className="mb-8 text-lg sm:text-xl text-gray-200">
+              Local experts you can trust — serving Brevard County homes and businesses since day one.
+            </p>
+            <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
+              <Link
+                to="/diagnose-my-issue"
+                className="px-7 py-3 font-semibold text-white bg-green-600 rounded-full hover:bg-green-700 transition-colors shadow-lg"
+              >
+                Diagnose My Issue
+              </Link>
+              <Link
+                to="/services"
+                className="px-7 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors shadow-lg"
+              >
+                View All Services
+              </Link>
+              <a
+                href="tel:+13219535199"
+                className="px-7 py-3 font-semibold text-white bg-white/10 border border-white/40 rounded-full hover:bg-white/20 transition-colors flex items-center gap-2"
+              >
+                <FaPhoneAlt className="w-4 h-4" />
+                (321) 953-5199
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
-      <section
-        className={`py-16 bg-gray-100 ${techSolutionsInView ? 'animate-fadeIn' : 'opacity-0'}`}
-        ref={techSolutionsRef}
-      >
-        <div className="container mx-auto text-center">
-          <h2 className="mb-8 text-4xl font-bold text-gray-800">
-            Personal Technology Solutions and Reliable IT Support
-          </h2>
-          <p className="mb-32 text-lg text-gray-700">
-            Technology is an integral part of our lives. At Best Computer Tech LLC, we ensure your technology runs smoothly with expert solutions, from support to personalized recommendations.
-          </p>
-          <div className="flex flex-wrap justify-center gap-8">
-            {services.map((service) => (
-              <ServiceCard key={service.id} service={service} onReadMore={handleReadMoreClick} />
-            ))}
+      {/* ── Trust Bar ── */}
+      <section className="bg-blue-700 text-white py-6">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div className="flex flex-col items-center gap-1">
+              <FaAward className="w-7 h-7 opacity-80 mb-1" />
+              <span className="text-2xl font-bold">10+</span>
+              <span className="text-sm text-blue-200">Years of Experience</span>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <FaUsers className="w-7 h-7 opacity-80 mb-1" />
+              <span className="text-2xl font-bold">500+</span>
+              <span className="text-sm text-blue-200">Happy Clients</span>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <FaRegClock className="w-7 h-7 opacity-80 mb-1" />
+              <span className="text-2xl font-bold">Same Day</span>
+              <span className="text-sm text-blue-200">Response Time</span>
+            </div>
+            <div className="flex flex-col items-center gap-1">
+              <FaStar className="w-7 h-7 opacity-80 mb-1" />
+              <span className="text-2xl font-bold">5-Star</span>
+              <span className="text-sm text-blue-200">Google Rated</span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Testimonials Section */}
+      {/* ── Services ── */}
       <section
-        className={`mt-10 mb-10 text-center ${testimonialsInView ? 'animate-fadeIn' : 'opacity-0'}`}
+        className={`py-16 bg-gray-50 ${techSolutionsInView ? 'animate-fadeIn' : 'opacity-0'}`}
+        ref={techSolutionsRef}
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-3">Our Services</h2>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              From quick fixes to full IT management — we keep your technology running so you don't have to worry.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {services.map((service) => (
+              <ServiceCard key={service.id} service={service} onReadMore={handleReadMoreClick} />
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              to="/services"
+              className="inline-block px-8 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors"
+            >
+              See All Services
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why Choose Us ── */}
+      <section
+        className={`py-16 bg-white ${whyUsInView ? 'animate-fadeIn' : 'opacity-0'}`}
+        ref={whyUsRef}
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-3">Why Choose Best Computer Tech?</h2>
+            <p className="text-lg text-gray-500 max-w-xl mx-auto">
+              We're your local Brevard County team — not a call center, not a chain. Just real experts who care.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-blue-50">
+              <div className="mb-4 p-3 bg-blue-100 rounded-full">
+                <FaMapMarkerAlt className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-2">Locally Based</h3>
+              <p className="text-sm text-gray-600">We live and work in Palm Bay &amp; Melbourne. We know your community.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-green-50">
+              <div className="mb-4 p-3 bg-green-100 rounded-full">
+                <FaBolt className="w-7 h-7 text-green-600" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-2">Fast Turnaround</h3>
+              <p className="text-sm text-gray-600">Most repairs completed same day or next day. No long waits.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-purple-50">
+              <div className="mb-4 p-3 bg-purple-100 rounded-full">
+                <FaShieldAlt className="w-7 h-7 text-purple-600" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-2">Trusted &amp; Secure</h3>
+              <p className="text-sm text-gray-600">We protect your data and privacy on every job, guaranteed.</p>
+            </div>
+            <div className="flex flex-col items-center text-center p-6 rounded-xl bg-yellow-50">
+              <div className="mb-4 p-3 bg-yellow-100 rounded-full">
+                <FaHandshake className="w-7 h-7 text-yellow-600" />
+              </div>
+              <h3 className="font-bold text-gray-800 mb-2">No Fix, No Fee</h3>
+              <p className="text-sm text-gray-600">If we can't fix it, you don't pay. Simple, honest service.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Testimonials ── */}
+      <section
+        className={`py-16 bg-gray-50 ${testimonialsInView ? 'animate-fadeIn' : 'opacity-0'}`}
         ref={testimonialsRef}
       >
-        <h2 className="mb-5 text-4xl font-bold text-gray-800">What Our Customers Are Saying</h2>
-        <p className="mb-8 text-lg text-gray-600">
-          See why our clients love working with us. Their experiences speak for our commitment to excellent service.
-        </p>
-        <div className="container grid grid-cols-1 gap-8 px-4 mx-auto md:grid-cols-3">
-          {testimonials.slice(0, 3).map((testimonial, index) => (
-            <TestimonialCard key={index} testimonial={testimonial} />
-          ))}
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-3">What Our Customers Say</h2>
+            <p className="text-lg text-gray-500">
+              Real reviews from real clients across Palm Bay and Melbourne.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+            {testimonials.map((testimonial, index) => (
+              <TestimonialCard key={index} testimonial={testimonial} />
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a
+              href="https://www.google.com/maps/place/Best+Computer+Tech"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+            >
+              <FaStar className="text-yellow-400" />
+              Read more reviews on Google
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Blog Section */}
-      <section className={`text-center ${blogInView ? 'animate-fadeIn' : 'opacity-0'}`} ref={blogRef}>
-        <h2 className="mb-8 text-4xl font-bold">Blog Posts</h2>
-        <div className="container grid grid-cols-1 gap-8 px-4 mx-auto md:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.map((post, index) => (
-            <BlogPostCard key={post.link || index} post={post} />
-          ))}
+      {/* ── Blog ── */}
+      <section
+        className={`py-16 bg-white ${blogInView ? 'animate-fadeIn' : 'opacity-0'}`}
+        ref={blogRef}
+      >
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl font-bold text-gray-800 mb-3">Latest from Our Blog</h2>
+            <p className="text-lg text-gray-500">Tech tips, guides, and IT news for homes and businesses.</p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
+            {blogPosts.map((post, index) => (
+              <BlogPostCard key={post.link || index} post={post} />
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link
+              to="/blog"
+              className="inline-block px-8 py-3 font-semibold text-blue-600 bg-blue-50 border border-blue-200 rounded-full hover:bg-blue-100 transition-colors"
+            >
+              View All Articles
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section className="py-16 mt-16 text-center bg-blue-50">
-        <h2 className="mb-8 text-4xl font-bold">Get in Touch with Us</h2>
-        <p className="mb-8 text-lg text-gray-700">
-          We'd love to hear from you! Whether you need tech support, want to book a service, or have questions, feel free to reach out.
-        </p>
-        <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-          <Link
-            to="/contact"
-            className="px-6 py-3 font-semibold text-white transition duration-300 bg-blue-500 rounded-full hover:bg-blue-700"
-          >
-            Contact Us
-          </Link>
-          <Link
-            to="/book-service"
-            className="px-6 py-3 font-semibold text-white transition duration-300 bg-green-500 rounded-full hover:bg-green-700"
-          >
-            Book a Service
-          </Link>
-          <Link
-            to="/subscribe"
-            className="px-6 py-3 font-semibold text-white transition duration-300 bg-purple-500 rounded-full hover:bg-purple-700"
-          >
-            Subscribe to Newsletter
-          </Link>
+      {/* ── CTA ── */}
+      <section className="py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center">
+        <div className="container mx-auto px-4 max-w-2xl">
+          <h2 className="text-4xl font-bold mb-4">Ready to Fix Your Tech?</h2>
+          <p className="text-lg text-blue-200 mb-8">
+            Call us, send a message, or book a service online. We're here Mon–Fri, 9am–6pm.
+          </p>
+          <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <a
+              href="tel:+13219535199"
+              className="flex items-center gap-2 px-7 py-3 font-bold text-blue-900 bg-white rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+            >
+              <FaPhoneAlt className="w-4 h-4" />
+              (321) 953-5199
+            </a>
+            <Link
+              to="/contact"
+              className="px-7 py-3 font-semibold text-white bg-white/10 border border-white/40 rounded-full hover:bg-white/20 transition-colors"
+            >
+              Send a Message
+            </Link>
+            <Link
+              to="/book-service"
+              className="px-7 py-3 font-semibold text-white bg-green-600 rounded-full hover:bg-green-700 transition-colors"
+            >
+              Book a Service
+            </Link>
+          </div>
         </div>
       </section>
     </div>

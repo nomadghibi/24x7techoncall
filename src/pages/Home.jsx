@@ -411,7 +411,7 @@ function Home() {
             <img
               src={logo}
               alt="Best Computer Tech"
-              className="h-44 w-auto mx-auto mb-5 drop-shadow-xl bg-transparent"
+              className="h-56 w-auto mx-auto mb-5 drop-shadow-xl bg-transparent"
             />
             <p className="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-3">
               Palm Bay &amp; Melbourne, FL

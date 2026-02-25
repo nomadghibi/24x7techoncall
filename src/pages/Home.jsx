@@ -23,6 +23,7 @@ import {
   FaRegClock,
 } from 'react-icons/fa';
 import { useInView } from 'react-intersection-observer';
+import logo from '../assets/logo2.png';
 import blogImage1 from '../assets/optimized-blog/5-tips-512.jpg';
 import blogImage2 from '../assets/optimized-blog/protect-malware-512.jpg';
 import blogImage3 from '../assets/optimized-blog/backup-512.jpg';
@@ -407,6 +408,11 @@ function Home() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70 flex items-center justify-center">
           <div className="text-center text-white px-4 max-w-3xl mx-auto">
+            <img
+              src={logo}
+              alt="Best Computer Tech"
+              className="h-28 w-auto mx-auto mb-5 drop-shadow-xl"
+            />
             <p className="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-3">
               Palm Bay &amp; Melbourne, FL
             </p>

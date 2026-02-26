@@ -6,7 +6,7 @@ import {
   FaTools, FaBug, FaNetworkWired, FaDatabase,
   FaLaptopHouse, FaChalkboardTeacher, FaCloud,
   FaCheckCircle, FaDollarSign, FaShieldAlt, FaSave,
-  FaLaptop, FaLifeRing, FaPlay, FaPhoneAlt, FaBolt,
+  FaLaptop, FaLifeRing, FaPlay, FaPhoneAlt, FaBolt, FaArrowRight,
 } from 'react-icons/fa';
 
 import heroImage from '../assets/optimized-hero/residentail-1152.jpg';
@@ -17,108 +17,133 @@ const services = [
     id: 'hardware-repairs',
     title: 'Hardware Repairs',
     description: 'Fixing broken screens, malfunctioning keyboards, and other hardware issues.',
-    icon: <FaTools className="text-3xl text-blue-500" />,
+    icon: FaTools,
+    color: 'text-blue-500',
+    bg: 'bg-blue-50',
   },
   {
     id: 'software-troubleshooting',
     title: 'Software Troubleshooting',
     description: 'Resolving OS errors, application crashes, and software installation issues.',
-    icon: <FaLaptop className="text-3xl text-green-500" />,
+    icon: FaLaptop,
+    color: 'text-green-500',
+    bg: 'bg-green-50',
   },
   {
     id: 'virus-malware-removal',
     title: 'Virus & Malware Removal',
     description: 'Protecting your computer from harmful viruses and keeping your data safe.',
-    icon: <FaBug className="text-3xl text-red-500" />,
+    icon: FaBug,
+    color: 'text-red-500',
+    bg: 'bg-red-50',
   },
   {
     id: 'network-setup-support',
     title: 'Network Setup & Support',
     description: 'Setting up and maintaining secure, efficient home or office networks.',
-    icon: <FaNetworkWired className="text-3xl text-purple-500" />,
+    icon: FaNetworkWired,
+    color: 'text-purple-500',
+    bg: 'bg-purple-50',
   },
   {
     id: 'data-recovery',
     title: 'Data Recovery',
     description: 'Retrieving lost or corrupted data from hard drives and storage devices.',
-    icon: <FaDatabase className="text-3xl text-yellow-500" />,
+    icon: FaDatabase,
+    color: 'text-yellow-500',
+    bg: 'bg-yellow-50',
   },
   {
     id: 'remote-computer-support',
     title: 'Remote Computer Support',
     description: 'Professional support for your computer issues without needing a technician visit.',
-    icon: <FaLaptopHouse className="text-3xl text-teal-500" />,
+    icon: FaLaptopHouse,
+    color: 'text-teal-500',
+    bg: 'bg-teal-50',
   },
   {
     id: 'cloud-consulting',
     title: 'Cloud Consulting',
     description: 'Expert advice on leveraging cloud technology for your home or business.',
-    icon: <FaCloud className="text-3xl text-indigo-500" />,
+    icon: FaCloud,
+    color: 'text-indigo-500',
+    bg: 'bg-indigo-50',
   },
   {
     id: 'computer-training',
     title: 'Computer Training',
     description: 'Learn to use your computer more effectively with our professional training sessions.',
-    icon: <FaChalkboardTeacher className="text-3xl text-orange-500" />,
+    icon: FaChalkboardTeacher,
+    color: 'text-orange-500',
+    bg: 'bg-orange-50',
   },
 ];
 
 const whyUs = [
   {
-    icon: <FaCheckCircle className="w-6 h-6 text-blue-600" />,
-    bg: 'bg-blue-50',
+    icon: <FaCheckCircle className="w-6 h-6 text-cyan-500" />,
+    bg: 'bg-cyan-50',
     title: 'Expert Technicians',
     desc: 'Certified pros with years of hands-on experience across all brands and platforms.',
   },
   {
-    icon: <FaBolt className="w-6 h-6 text-yellow-600" />,
+    icon: <FaBolt className="w-6 h-6 text-yellow-500" />,
     bg: 'bg-yellow-50',
     title: 'Fast Turnaround',
     desc: 'Most issues resolved same day — we know downtime is costly.',
   },
   {
-    icon: <FaDollarSign className="w-6 h-6 text-green-600" />,
+    icon: <FaDollarSign className="w-6 h-6 text-green-500" />,
     bg: 'bg-green-50',
     title: 'Affordable Rates',
     desc: 'Transparent pricing with no hidden fees. You know the cost before we start.',
   },
 ];
 
-const ServiceCard = React.memo(({ service, onClick, index }) => (
-  <motion.div
-    className="block"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4, delay: index * 0.08 }}
-  >
-    <div
-      className="flex flex-col h-full p-6 text-center bg-white rounded-xl shadow-sm border border-gray-100 cursor-pointer hover:shadow-md hover:-translate-y-1 transition-all duration-200"
-      onClick={() => onClick(service.id)}
-      role="button"
-      tabIndex={0}
-      onKeyDown={(e) => e.key === 'Enter' && onClick(service.id)}
+const ServiceCard = React.memo(({ service, onClick, index }) => {
+  const Icon = service.icon;
+  return (
+    <motion.div
+      className="block"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
     >
-      <div className="flex items-center justify-center mb-4 w-14 h-14 rounded-full bg-gray-50 mx-auto">
-        {service.icon}
+      <div
+        className="flex flex-col h-full bg-white rounded-2xl shadow-sm border border-gray-100 cursor-pointer hover:shadow-md hover:-translate-y-1 hover:border-cyan-200 transition-all duration-200 overflow-hidden"
+        onClick={() => onClick(service.id)}
+        role="button"
+        tabIndex={0}
+        onKeyDown={(e) => e.key === 'Enter' && onClick(service.id)}
+      >
+        <div className={`p-6 flex items-center justify-center ${service.bg}`}>
+          <Icon className={`text-4xl ${service.color}`} />
+        </div>
+        <div className="flex flex-col flex-grow p-5">
+          <h3 className="mb-2 text-base font-bold text-gray-900 group-hover:text-cyan-600 leading-snug">
+            {service.title}
+          </h3>
+          <p className="flex-grow text-sm text-gray-500 mb-4 leading-relaxed">{service.description}</p>
+          <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-500">
+            Learn More <FaArrowRight className="w-3 h-3" />
+          </span>
+        </div>
       </div>
-      <h3 className="mb-2 text-lg font-bold text-gray-800">{service.title}</h3>
-      <p className="flex-grow text-sm text-gray-600 mb-4">{service.description}</p>
-      <span className="text-sm font-semibold text-blue-600">Learn More →</span>
-    </div>
-  </motion.div>
-));
+    </motion.div>
+  );
+});
 ServiceCard.displayName = 'ServiceCard';
 
 const annualBenefits = [
-  { icon: <FaBug className="w-5 h-5 text-blue-500" />, label: 'Unlimited virus removal' },
-  { icon: <FaLaptop className="w-5 h-5 text-blue-500" />, label: 'Speed optimization' },
-  { icon: <FaLaptopHouse className="w-5 h-5 text-blue-500" />, label: 'Faster startup' },
-  { icon: <FaLifeRing className="w-5 h-5 text-blue-500" />, label: 'Routine check-ups' },
-  { icon: <FaShieldAlt className="w-5 h-5 text-blue-500" />, label: 'Phone support during business hours' },
-  { icon: <FaSave className="w-5 h-5 text-blue-500" />, label: 'Data backup assistance' },
-  { icon: <FaLaptopHouse className="w-5 h-5 text-blue-500" />, label: 'Remote tech support' },
-  { icon: <FaBug className="w-5 h-5 text-blue-500" />, label: 'Antivirus installation & maintenance' },
-  { icon: <FaLaptop className="w-5 h-5 text-blue-500" />, label: 'Computer tune-ups as needed' },
+  { icon: <FaBug className="w-4 h-4 text-cyan-500 shrink-0" />, label: 'Unlimited virus removal' },
+  { icon: <FaLaptop className="w-4 h-4 text-cyan-500 shrink-0" />, label: 'Speed optimization' },
+  { icon: <FaLaptopHouse className="w-4 h-4 text-cyan-500 shrink-0" />, label: 'Faster startup' },
+  { icon: <FaLifeRing className="w-4 h-4 text-cyan-500 shrink-0" />, label: 'Routine check-ups' },
+  { icon: <FaShieldAlt className="w-4 h-4 text-cyan-500 shrink-0" />, label: 'Phone support during business hours' },
+  { icon: <FaSave className="w-4 h-4 text-cyan-500 shrink-0" />, label: 'Data backup assistance' },
+  { icon: <FaLaptopHouse className="w-4 h-4 text-cyan-500 shrink-0" />, label: 'Remote tech support' },
+  { icon: <FaBug className="w-4 h-4 text-cyan-500 shrink-0" />, label: 'Antivirus installation & maintenance' },
+  { icon: <FaLaptop className="w-4 h-4 text-cyan-500 shrink-0" />, label: 'Computer tune-ups as needed' },
 ];
 
 function ResidentialServices() {
@@ -177,33 +202,35 @@ function ResidentialServices() {
 
       {/* ── Hero ── */}
       <section
-        className="relative flex items-center justify-center text-white bg-center bg-cover"
-        style={{ backgroundImage: `url(${heroImage})`, minHeight: '480px' }}
+        className="relative min-h-[460px] flex items-end text-white"
+        style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-        <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-3">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/55 to-transparent" />
+        <div className="relative z-10 container mx-auto px-6 py-12 max-w-6xl">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-3">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-300">Residential Services</span>
+          </nav>
+          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-2">
             Palm Bay &amp; Melbourne, FL
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4">
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">
             Residential Computer &amp; IT Services
           </h1>
-          <p className="text-lg text-gray-200 mb-4">
-            Fast, reliable tech support for your home — onsite and remote.
+          <p className="mt-3 text-cyan-100 text-lg max-w-2xl">
+            Fast, reliable tech support for your home — onsite and remote. Free diagnostic over the phone.
           </p>
-          <p className="text-base text-blue-200 mb-8">
-            Get a free diagnostic over the phone. Call us now!
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <a
               href="tel:3219535199"
-              className="inline-flex items-center gap-2 px-7 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors shadow-lg"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3 font-bold text-gray-900 bg-cyan-500 hover:bg-cyan-400 rounded-full transition-colors shadow-lg"
             >
-              <FaPhoneAlt /> Call Us: (321) 953-5199
+              <FaPhoneAlt className="w-4 h-4" /> Call Us: (321) 953-5199
             </a>
             <Link
               to="/book-service"
-              className="inline-flex items-center gap-2 px-7 py-3 font-semibold text-white bg-white/10 border border-white/40 rounded-full hover:bg-white/20 transition-colors"
+              className="inline-flex items-center justify-center gap-2 px-7 py-3 font-semibold text-white bg-white/10 border border-white/30 rounded-full hover:bg-white/20 transition-colors"
             >
               Book a Service
             </Link>
@@ -213,10 +240,10 @@ function ResidentialServices() {
 
       {/* ── Why Choose Us ── */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-10">
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">Why Us</p>
-            <h2 className="text-3xl font-bold text-gray-800">Why Homeowners Choose Best Computer Tech</h2>
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Why Us</p>
+            <h2 className="text-3xl font-bold text-gray-900">Why Homeowners Choose Best Computer Tech</h2>
           </div>
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center">
@@ -237,8 +264,8 @@ function ResidentialServices() {
                     height={720}
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/30 rounded-xl group-hover:bg-black/40 transition-colors">
-                    <div className="w-16 h-16 flex items-center justify-center bg-white/90 rounded-full shadow-lg group-hover:scale-110 transition-transform">
-                      <FaPlay className="text-blue-600 text-2xl ml-1" />
+                    <div className="w-16 h-16 flex items-center justify-center bg-cyan-500 rounded-full shadow-lg group-hover:scale-110 transition-transform">
+                      <FaPlay className="text-gray-900 text-xl ml-1" />
                     </div>
                   </div>
                 </div>
@@ -257,7 +284,7 @@ function ResidentialServices() {
             </div>
 
             {/* Why Us Points */}
-            <div className="w-full md:w-1/2 flex flex-col gap-5">
+            <div className="w-full md:w-1/2 flex flex-col gap-4">
               {whyUs.map((item, i) => (
                 <div key={i} className={`flex items-start gap-4 p-4 rounded-xl ${item.bg}`}>
                   <div className="p-2 bg-white rounded-lg shadow-sm shrink-0">
@@ -276,11 +303,11 @@ function ResidentialServices() {
 
       {/* ── Services Grid ── */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-10">
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">What We Fix</p>
-            <h2 className="text-3xl font-bold text-gray-800">Our Residential Services</h2>
-            <p className="text-gray-500 mt-2">Click any service to learn more.</p>
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">What We Fix</p>
+            <h2 className="text-3xl font-bold text-gray-900">Our Residential Services</h2>
+            <p className="text-gray-500 mt-2 text-sm">Click any service to learn more.</p>
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {services.map((service, index) => (
@@ -292,8 +319,8 @@ function ResidentialServices() {
 
       {/* ── Annual Subscription Plan ── */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <div className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
             <div className="flex flex-col lg:flex-row">
 
               {/* Image */}
@@ -313,10 +340,10 @@ function ResidentialServices() {
 
               {/* Content */}
               <div className="lg:w-3/5 p-8">
-                <span className="inline-block bg-blue-100 text-blue-700 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
+                <span className="inline-block bg-cyan-100 text-cyan-700 text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wide">
                   Best Value
                 </span>
-                <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Annual Computer Care Plan — $199/year
                 </h2>
                 <p className="text-gray-600 text-sm mb-6">
@@ -339,13 +366,13 @@ function ResidentialServices() {
                 <div className="flex flex-col sm:flex-row gap-3">
                   <button
                     onClick={handleOrderNow}
-                    className="px-7 py-3 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+                    className="px-7 py-3 font-bold text-gray-900 bg-cyan-500 hover:bg-cyan-400 rounded-lg transition-colors"
                   >
                     Subscribe Now — $199/yr
                   </button>
                   <a
                     href="tel:3219535199"
-                    className="inline-flex items-center justify-center gap-2 px-7 py-3 font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-7 py-3 font-semibold text-gray-700 bg-gray-100 border border-gray-200 rounded-lg hover:bg-gray-200 transition-colors"
                   >
                     <FaPhoneAlt className="w-4 h-4" /> Not sure? Call us first
                   </a>
@@ -357,28 +384,29 @@ function ResidentialServices() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-20 bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center">
-        <div className="container mx-auto px-4 max-w-2xl">
+      <section className="py-16 bg-gray-900 border-t-4 border-cyan-500 text-white text-center">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-3">Get Started Today</p>
           <h2 className="text-3xl font-bold mb-3">Ready to Get Started?</h2>
-          <p className="text-blue-200 mb-8">
+          <p className="text-gray-400 mb-8">
             Call us, book a service online, or send a message. We're here Mon–Fri, 9am–6pm.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="tel:3219535199"
-              className="flex items-center gap-2 px-7 py-3 font-bold text-blue-900 bg-white rounded-full hover:bg-blue-50 transition-colors shadow"
+              className="flex items-center gap-2 px-7 py-3 font-bold text-gray-900 bg-cyan-500 hover:bg-cyan-400 rounded-full transition-colors shadow"
             >
               <FaPhoneAlt className="w-4 h-4" /> (321) 953-5199
             </a>
             <Link
               to="/book-service"
-              className="px-7 py-3 font-semibold text-white bg-green-600 rounded-full hover:bg-green-700 transition-colors"
+              className="px-7 py-3 font-semibold text-white bg-white/10 border border-white/30 rounded-full hover:bg-white/20 transition-colors"
             >
               Book a Service
             </Link>
             <Link
               to="/contact"
-              className="px-7 py-3 font-semibold text-white bg-white/10 border border-white/40 rounded-full hover:bg-white/20 transition-colors"
+              className="px-7 py-3 font-semibold text-white bg-white/10 border border-white/30 rounded-full hover:bg-white/20 transition-colors"
             >
               Contact Us
             </Link>

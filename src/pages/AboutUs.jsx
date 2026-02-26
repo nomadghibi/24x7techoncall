@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
-  FaPhone, FaEnvelope, FaUser, FaCheckCircle,
-  FaAward, FaTools, FaBolt, FaStar,
+  FaCheckCircle, FaAward, FaTools, FaBolt, FaStar,
   FaMapMarkerAlt, FaShieldAlt, FaHandshake, FaCertificate,
   FaUsers, FaLaptop, FaPhoneAlt,
 } from 'react-icons/fa';
@@ -12,7 +12,7 @@ import heroImage from '../assets/optimized-hero/aboutusbcttech.png';
 import usFlag from '../assets/optimized-hero/us-flag-1152.jpg';
 
 const inputClass =
-  'block w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition';
+  'block w-full px-4 py-3 text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition';
 const labelClass = 'block mb-1 text-sm font-semibold text-gray-700';
 
 const AboutUs = () => {
@@ -69,33 +69,35 @@ const AboutUs = () => {
       </Helmet>
 
       {/* ── Hero ── */}
-      <section className="relative w-full">
-        <img
-          src={heroImage}
-          alt="About Best Computer Tech — Trusted IT Support Since 2009, Space Coast Florida"
-          className="w-full object-cover"
-          style={{ maxHeight: '560px', objectPosition: 'center top' }}
-          loading="eager"
-          fetchPriority="high"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 flex justify-center pb-8 px-4">
+      <section
+        className="relative min-h-[420px] flex items-end text-white"
+        style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center top' }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/50 to-transparent" />
+        <div className="relative z-10 container mx-auto px-6 py-12 max-w-6xl">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-3">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-300">About Us</span>
+          </nav>
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">About Best Computer Tech</h1>
+          <p className="mt-3 text-cyan-100 text-lg max-w-2xl">Your trusted local IT experts serving Palm Bay, Melbourne, and all of Brevard County since 2009.</p>
           <a
             href="tel:3219535199"
-            className="inline-flex items-center gap-2 px-7 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors shadow-lg"
+            className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-full transition-colors shadow-lg"
           >
-            <FaPhoneAlt /> Call Now: (321) 953-5199
+            <FaPhoneAlt className="w-4 h-4" /> Call Now: (321) 953-5199
           </a>
         </div>
       </section>
 
       {/* ── Our Story ── */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">Our Story</p>
-              <h2 className="text-3xl font-bold text-gray-800 mb-6">Trusted IT Support Since 2009</h2>
+              <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Our Story</p>
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-cyan-500 pl-4">Trusted IT Support Since 2009</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
                 Since 2009, Best Computer Tech (BCT) has been a trusted name in IT support, offering comprehensive solutions both onsite on Florida's Space Coast and remotely across the USA. Our mission is to deliver exceptional tech support tailored to the diverse needs of residential and business clients.
               </p>
@@ -110,7 +112,7 @@ const AboutUs = () => {
                   'Remote & On-site IT Support',
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
-                    <FaCheckCircle className="text-green-500 shrink-0" />
+                    <FaCheckCircle className="text-cyan-500 shrink-0" />
                     <span className="text-gray-700 font-medium">{item}</span>
                   </div>
                 ))}
@@ -118,18 +120,15 @@ const AboutUs = () => {
             </div>
 
             {/* US-based card with flag image */}
-            <div
-              className="relative rounded-2xl overflow-hidden shadow-lg"
-              style={{ minHeight: '360px' }}
-            >
+            <div className="relative rounded-2xl overflow-hidden shadow-lg" style={{ minHeight: '360px' }}>
               <img
                 src={usFlag}
                 alt="US-based tech support company"
                 className="absolute inset-0 w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/85 via-gray-950/40 to-transparent" />
               <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                <FaMapMarkerAlt className="w-8 h-8 mb-3 text-blue-300" />
+                <FaMapMarkerAlt className="w-8 h-8 mb-3 text-cyan-400" />
                 <h3 className="text-2xl font-bold mb-2">US-Based Tech Support</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
                   Proudly serving Palm Bay, Melbourne, and all of Brevard County — with remote support available nationwide.
@@ -142,33 +141,33 @@ const AboutUs = () => {
 
       {/* ── Core Values ── */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">What Drives Us</p>
-            <h2 className="text-3xl font-bold text-gray-800">Our Mission &amp; Values</h2>
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">What Drives Us</p>
+            <h2 className="text-3xl font-bold text-gray-900">Our Mission &amp; Values</h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-              <div className="w-14 h-14 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-4">
-                <FaLaptop className="w-6 h-6 text-blue-600" />
+            <div className="bg-white rounded-xl p-6 shadow-sm border-t-4 border-cyan-500 text-center">
+              <div className="w-14 h-14 rounded-full bg-cyan-50 flex items-center justify-center mx-auto mb-4">
+                <FaLaptop className="w-6 h-6 text-cyan-500" />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">Our Mission</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 To ensure every client enjoys a seamless, trouble-free experience with their technology — through honest, high-quality service.
               </p>
             </div>
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-              <div className="w-14 h-14 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
-                <FaUsers className="w-6 h-6 text-green-600" />
+            <div className="bg-white rounded-xl p-6 shadow-sm border-t-4 border-cyan-500 text-center">
+              <div className="w-14 h-14 rounded-full bg-cyan-50 flex items-center justify-center mx-auto mb-4">
+                <FaUsers className="w-6 h-6 text-cyan-500" />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">Our Team</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
                 Dedicated IT professionals passionate about solving tech problems. We're committed to your complete satisfaction on every job.
               </p>
             </div>
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 text-center">
-              <div className="w-14 h-14 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-4">
-                <FaHandshake className="w-6 h-6 text-purple-600" />
+            <div className="bg-white rounded-xl p-6 shadow-sm border-t-4 border-cyan-500 text-center">
+              <div className="w-14 h-14 rounded-full bg-cyan-50 flex items-center justify-center mx-auto mb-4">
+                <FaHandshake className="w-6 h-6 text-cyan-500" />
               </div>
               <h3 className="text-xl font-bold text-gray-800 mb-2">Our Promise</h3>
               <p className="text-gray-600 text-sm leading-relaxed">
@@ -181,36 +180,36 @@ const AboutUs = () => {
 
       {/* ── Why Choose Us ── */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">Why Us</p>
-            <h2 className="text-3xl font-bold text-gray-800">Why Choose Best Computer Tech?</h2>
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Why Us</p>
+            <h2 className="text-3xl font-bold text-gray-900">Why Choose Best Computer Tech?</h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="flex flex-col items-center text-center p-6 bg-blue-50 rounded-xl">
-              <div className="mb-4 p-3 bg-blue-100 rounded-full">
-                <FaCertificate className="w-6 h-6 text-blue-600" />
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 border-t-4 border-t-cyan-500 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-cyan-50 rounded-lg flex items-center justify-center mb-4">
+                <FaCertificate className="w-6 h-6 text-cyan-500" />
               </div>
               <h3 className="font-bold text-gray-800 mb-2">Expert Technicians</h3>
               <p className="text-sm text-gray-600">Certified and experienced in all kinds of computer issues — from hardware repairs to complex IT solutions.</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-green-50 rounded-xl">
-              <div className="mb-4 p-3 bg-green-100 rounded-full">
-                <FaTools className="w-6 h-6 text-green-600" />
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 border-t-4 border-t-cyan-500 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-cyan-50 rounded-lg flex items-center justify-center mb-4">
+                <FaTools className="w-6 h-6 text-cyan-500" />
               </div>
               <h3 className="font-bold text-gray-800 mb-2">Comprehensive Services</h3>
               <p className="text-sm text-gray-600">Repair, network setup, data recovery, cybersecurity, and more — everything under one roof.</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-yellow-50 rounded-xl">
-              <div className="mb-4 p-3 bg-yellow-100 rounded-full">
-                <FaBolt className="w-6 h-6 text-yellow-600" />
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 border-t-4 border-t-cyan-500 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-cyan-50 rounded-lg flex items-center justify-center mb-4">
+                <FaBolt className="w-6 h-6 text-cyan-500" />
               </div>
               <h3 className="font-bold text-gray-800 mb-2">Fast Turnaround</h3>
               <p className="text-sm text-gray-600">Most repairs completed same day or next day. We minimize your downtime — at home or at work.</p>
             </div>
-            <div className="flex flex-col items-center text-center p-6 bg-red-50 rounded-xl">
-              <div className="mb-4 p-3 bg-red-100 rounded-full">
-                <FaStar className="w-6 h-6 text-red-500" />
+            <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 border-t-4 border-t-cyan-500 flex flex-col items-center text-center hover:shadow-md transition-shadow">
+              <div className="w-14 h-14 bg-cyan-50 rounded-lg flex items-center justify-center mb-4">
+                <FaStar className="w-6 h-6 text-cyan-500" />
               </div>
               <h3 className="font-bold text-gray-800 mb-2">5-Star Satisfaction</h3>
               <p className="text-sm text-gray-600">Our positive reviews and loyal client base reflect our commitment to excellence across Brevard County.</p>
@@ -220,41 +219,36 @@ const AboutUs = () => {
       </section>
 
       {/* ── Achievements ── */}
-      <section className="py-16 bg-blue-700 text-white">
-        <div className="container mx-auto px-4 max-w-6xl">
+      <section className="py-16 bg-gray-900 border-t-4 border-cyan-500 text-white">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-200 mb-2">By the Numbers</p>
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-2">By the Numbers</p>
             <h2 className="text-3xl font-bold">Our Achievements</h2>
           </div>
           <div className="grid grid-cols-2 gap-6 lg:grid-cols-4 text-center mb-12">
-            <div className="p-6 bg-blue-600 rounded-xl">
-              <p className="text-4xl font-bold mb-1">15+</p>
-              <p className="text-blue-200 text-sm">Years in Business</p>
-            </div>
-            <div className="p-6 bg-blue-600 rounded-xl">
-              <p className="text-4xl font-bold mb-1">1,500+</p>
-              <p className="text-blue-200 text-sm">Satisfied Customers</p>
-            </div>
-            <div className="p-6 bg-blue-600 rounded-xl">
-              <p className="text-4xl font-bold mb-1">10,000+</p>
-              <p className="text-blue-200 text-sm">Successful Repairs</p>
-            </div>
-            <div className="p-6 bg-blue-600 rounded-xl">
-              <p className="text-4xl font-bold mb-1">99%</p>
-              <p className="text-blue-200 text-sm">Customer Satisfaction</p>
-            </div>
+            {[
+              { stat: '15+', label: 'Years in Business' },
+              { stat: '1,500+', label: 'Satisfied Customers' },
+              { stat: '10,000+', label: 'Successful Repairs' },
+              { stat: '99%', label: 'Customer Satisfaction' },
+            ].map(({ stat, label }) => (
+              <div key={label} className="p-6 bg-gray-800 rounded-xl border border-gray-700">
+                <p className="text-4xl font-bold text-cyan-400 mb-1">{stat}</p>
+                <p className="text-gray-400 text-sm">{label}</p>
+              </div>
+            ))}
           </div>
 
           {/* Google Reviews CTA */}
           <div className="text-center">
-            <p className="text-blue-200 mb-4 text-sm">See what our clients are saying</p>
+            <p className="text-gray-400 mb-4 text-sm">See what our clients are saying</p>
             <a
               href="https://www.google.com/search?q=best+computer+tech+palm+bay+fl"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-8 py-3 font-semibold text-blue-700 bg-white rounded-full hover:bg-blue-50 transition-colors shadow"
+              className="inline-flex items-center gap-2 px-8 py-3 font-bold text-gray-900 bg-cyan-500 hover:bg-cyan-400 rounded-full transition-colors shadow"
             >
-              <FaStar className="text-yellow-400" /> Read Our Google Reviews
+              <FaStar className="text-gray-900" /> Read Our Google Reviews
             </a>
           </div>
         </div>
@@ -262,24 +256,24 @@ const AboutUs = () => {
 
       {/* ── Contact Form ── */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-2xl">
+        <div className="container mx-auto px-6 max-w-2xl">
           <div className="text-center mb-10">
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">Get In Touch</p>
-            <h2 className="text-3xl font-bold text-gray-800">Let's Talk About Your Technology</h2>
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Get In Touch</p>
+            <h2 className="text-3xl font-bold text-gray-900">Let's Talk About Your Technology</h2>
             <p className="text-gray-500 text-sm mt-2">Fill out the form and we'll get back to you within 1 business day.</p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-md p-8">
+          <div className="bg-white rounded-xl shadow-md p-8 border border-gray-100">
             {submitted ? (
               <div className="flex flex-col items-center gap-4 py-10 text-center">
-                <FaCheckCircle className="text-green-500 w-16 h-16" />
+                <FaCheckCircle className="text-cyan-500 w-16 h-16" />
                 <h3 className="text-2xl font-bold text-gray-800">Message Received!</h3>
                 <p className="text-gray-600 max-w-sm">
                   Thanks for reaching out. We'll contact you within 1 business day — often the same day.
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-2 text-sm text-blue-600 underline hover:text-blue-800"
+                  className="mt-2 text-sm text-cyan-500 underline hover:text-cyan-600"
                 >
                   Send another message
                 </button>
@@ -363,7 +357,7 @@ const AboutUs = () => {
 
                 {/* Newsletter opt-in */}
                 <label className="inline-flex items-center gap-2 text-sm text-gray-600 cursor-pointer">
-                  <input type="checkbox" name="subscribe" className="rounded text-blue-600 focus:ring-blue-500" />
+                  <input type="checkbox" name="subscribe" className="rounded text-cyan-500 focus:ring-cyan-500" />
                   Subscribe to our quarterly newsletter
                 </label>
 
@@ -377,14 +371,14 @@ const AboutUs = () => {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-3 px-6 font-bold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                  className="w-full py-3 px-6 font-bold text-gray-900 bg-cyan-500 hover:bg-cyan-400 rounded-lg transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? 'Sending...' : 'Send Message'}
                 </button>
 
                 <p className="text-xs text-gray-400 text-center">
                   Or call us directly at{' '}
-                  <a href="tel:3219535199" className="text-blue-600 hover:underline">(321) 953-5199</a>
+                  <a href="tel:3219535199" className="text-cyan-500 hover:underline">(321) 953-5199</a>
                 </p>
               </form>
             )}

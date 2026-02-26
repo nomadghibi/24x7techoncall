@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   FaLaptop, FaBug, FaNetworkWired, FaDatabase,
   FaHandsHelping, FaTools, FaLock, FaEnvelope,
-  FaChevronRight, FaHeadset,
+  FaArrowRight, FaHeadset, FaPhoneAlt,
 } from 'react-icons/fa';
 import heroImage from '../assets/optimized-hero/herohowtobesafe-1152.jpg';
 import { Helmet } from 'react-helmet-async';
@@ -13,65 +13,73 @@ const tutorials = [
     title: 'How to Fix a Broken Screen',
     description: 'Step-by-step guide to replacing a broken laptop screen safely and correctly.',
     link: '/how-to/fix-broken-screen',
-    icon: <FaLaptop />,
+    icon: FaLaptop,
     bg: 'bg-blue-50',
-    color: 'text-blue-600',
+    color: 'text-blue-500',
+    border: 'group-hover:border-blue-300',
   },
   {
     title: 'How to Know Your Computer Has a Virus',
     description: 'Learn to identify malware symptoms and take immediate protective steps.',
     link: '/how-to/know-your-computer-has-virus',
-    icon: <FaBug />,
+    icon: FaBug,
     bg: 'bg-green-50',
-    color: 'text-green-600',
+    color: 'text-green-500',
+    border: 'group-hover:border-green-300',
   },
   {
     title: 'How to Set Up a Network',
     description: 'Instructions for setting up a secure and efficient network at home or office.',
     link: '/how-to/setup-network',
-    icon: <FaNetworkWired />,
+    icon: FaNetworkWired,
     bg: 'bg-purple-50',
-    color: 'text-purple-600',
+    color: 'text-purple-500',
+    border: 'group-hover:border-purple-300',
   },
   {
     title: 'How to Recover Lost Data',
     description: 'Steps to recover lost or corrupted data from your devices with the right tools.',
     link: '/how-to/recover-data',
-    icon: <FaDatabase />,
+    icon: FaDatabase,
     bg: 'bg-orange-50',
-    color: 'text-orange-600',
+    color: 'text-orange-500',
+    border: 'group-hover:border-orange-300',
   },
   {
     title: 'How to Use Remote Support',
     description: 'Guide to getting secure remote support for your computer issues using AeroAdmin.',
     link: '/how-to/use-remote-support',
-    icon: <FaHandsHelping />,
+    icon: FaHandsHelping,
     bg: 'bg-red-50',
-    color: 'text-red-600',
+    color: 'text-red-500',
+    border: 'group-hover:border-red-300',
   },
   {
     title: 'How to Improve Computer Performance',
     description: "Tips and tricks to optimize your computer's speed and stability.",
     link: '/how-to/improve-performance',
-    icon: <FaTools />,
+    icon: FaTools,
     bg: 'bg-yellow-50',
-    color: 'text-yellow-600',
+    color: 'text-yellow-500',
+    border: 'group-hover:border-yellow-300',
   },
   {
     title: 'How to Be Safe Online',
     description: 'Guidelines to protect your personal information and ensure a secure online experience.',
     link: '/how-to/be-safe-online',
-    icon: <FaLock />,
+    icon: FaLock,
     bg: 'bg-pink-50',
-    color: 'text-pink-600',
+    color: 'text-pink-500',
+    border: 'group-hover:border-pink-300',
   },
   {
     title: 'How to Set Up Email on Your Computer',
     description: 'Instructions for configuring your email client with the correct server settings.',
     link: '/how-to/set-up-email',
-    icon: <FaEnvelope />,
+    icon: FaEnvelope,
     bg: 'bg-indigo-50',
-    color: 'text-indigo-600',
+    color: 'text-indigo-500',
+    border: 'group-hover:border-indigo-300',
   },
 ];
 
@@ -97,74 +105,95 @@ function HowTo() {
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
-      {/* Hero */}
+      {/* ── Hero ── */}
       <section
-        className="relative min-h-[360px] flex items-center text-white"
+        className="relative min-h-[400px] flex items-end text-white"
         style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-950/85 via-blue-950/75 to-gray-950/85"></div>
-        <div className="relative z-10 container mx-auto px-6 py-16 max-w-4xl text-center">
-          <span className="inline-block bg-blue-600 text-white text-xs font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-5">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/55 to-transparent" />
+        <div className="relative z-10 container mx-auto px-6 py-12 max-w-6xl">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-3">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-300">How To</span>
+          </nav>
+          <span className="inline-block bg-cyan-500 text-gray-900 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-4">
             Free Expert Resources
           </span>
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-4">How To Guides</h1>
-          <p className="text-lg text-blue-100 max-w-2xl mx-auto">
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">How To Guides</h1>
+          <p className="mt-3 text-cyan-100 text-lg max-w-2xl">
             Step-by-step tutorials to help you fix, optimize, and protect your devices — from our local IT experts in Brevard County, FL.
           </p>
+          <a
+            href="tel:3219535199"
+            className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-full transition-colors shadow-lg"
+          >
+            <FaPhoneAlt className="w-4 h-4" /> Need Help? Call (321) 953-5199
+          </a>
         </div>
       </section>
 
-      {/* Tutorials Grid */}
+      {/* ── Tutorials Grid ── */}
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-12">
-            <p className="text-blue-600 font-semibold uppercase tracking-widest text-sm mb-2">Browse Topics</p>
+            <p className="text-cyan-500 font-semibold uppercase tracking-widest text-sm mb-2">Browse Topics</p>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Choose a Tutorial</h2>
+            <p className="text-gray-500 mt-3 max-w-xl mx-auto text-sm">
+              Free, expert-written guides to help you solve common tech problems on your own.
+            </p>
           </div>
+
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {tutorials.map((tutorial, index) => (
-              <Link
-                key={index}
-                to={tutorial.link}
-                className="group flex flex-col bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 hover:border-blue-200 transition-all duration-300 overflow-hidden"
-              >
-                <div className={`p-7 flex items-center justify-center ${tutorial.bg}`}>
-                  <span className={`text-4xl ${tutorial.color}`}>{tutorial.icon}</span>
-                </div>
-                <div className="flex flex-col flex-grow p-5">
-                  <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors leading-snug">
-                    {tutorial.title}
-                  </h3>
-                  <p className="text-sm text-gray-500 flex-grow leading-relaxed">{tutorial.description}</p>
-                  <div className="mt-4 flex items-center text-blue-600 text-sm font-semibold">
-                    Read Guide
-                    <FaChevronRight className="ml-1 text-xs group-hover:translate-x-1 transition-transform" />
+            {tutorials.map((tutorial, index) => {
+              const Icon = tutorial.icon;
+              return (
+                <Link
+                  key={index}
+                  to={tutorial.link}
+                  className={`group flex flex-col bg-white rounded-2xl shadow-sm border border-gray-100 ${tutorial.border} hover:shadow-md hover:-translate-y-1 transition-all duration-200 overflow-hidden`}
+                >
+                  <div className={`p-7 flex items-center justify-center ${tutorial.bg}`}>
+                    <Icon className={`text-4xl ${tutorial.color}`} />
                   </div>
-                </div>
-              </Link>
-            ))}
+                  <div className="flex flex-col flex-grow p-5">
+                    <h3 className="text-base font-bold text-gray-900 mb-2 group-hover:text-cyan-600 transition-colors leading-snug">
+                      {tutorial.title}
+                    </h3>
+                    <p className="text-sm text-gray-500 flex-grow leading-relaxed">{tutorial.description}</p>
+                    <div className="mt-4 flex items-center gap-1.5 text-cyan-500 text-sm font-semibold">
+                      Read Guide
+                      <FaArrowRight className="w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 py-16 text-white text-center">
+      {/* ── CTA ── */}
+      <section className="bg-gray-900 border-t-4 border-cyan-500 py-16 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
-          <FaHeadset className="mx-auto text-5xl text-blue-300 mb-5" />
+          <div className="w-16 h-16 rounded-full bg-cyan-500/20 flex items-center justify-center mx-auto mb-5">
+            <FaHeadset className="text-3xl text-cyan-400" />
+          </div>
+          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-3">We're Here to Help</p>
           <h2 className="text-3xl font-bold mb-3">Still Need Help?</h2>
-          <p className="text-blue-100 mb-8 text-lg">
+          <p className="text-gray-400 mb-8 text-lg">
             Our local IT experts in Palm Bay &amp; Melbourne are ready to assist — in person, remotely, or on-site.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
-              className="bg-white text-blue-900 font-bold px-7 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+              className="bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold px-7 py-3 rounded-full transition-colors shadow-lg"
             >
               Contact Us
             </Link>
             <Link
               to="/subscribe"
-              className="border-2 border-white text-white font-bold px-7 py-3 rounded-full hover:bg-white/10 transition-colors"
+              className="border-2 border-white/30 text-white font-bold px-7 py-3 rounded-full hover:bg-white/10 transition-colors"
             >
               Subscribe to Newsletter
             </Link>

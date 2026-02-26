@@ -93,8 +93,8 @@ const faqs = [
     a: 'No long-term contract. The Annual Subscription is billed once per year and renews automatically. You can cancel before the renewal date.',
   },
   {
-    q: 'What if my issue isn\'t fixed?',
-    a: 'We stand behind our work. On-Demand Remote sessions include a 30-day warranty. If the same issue returns, we\'ll fix it at no extra charge.',
+    q: "What if my issue isn't fixed?",
+    a: "We stand behind our work. On-Demand Remote sessions include a 30-day warranty. If the same issue returns, we'll fix it at no extra charge.",
   },
   {
     q: 'Do you service businesses as well as homes?',
@@ -143,34 +143,37 @@ function Pricing() {
 
       {/* ── Hero ── */}
       <section
-        className="relative flex items-center justify-center text-white bg-center bg-cover"
-        style={{ backgroundImage: `url(${heroImage})`, minHeight: '420px' }}
+        className="relative min-h-[420px] flex items-end text-white"
+        style={{ backgroundImage: `url(${heroImage})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
-        <div className="relative z-10 text-center px-4 max-w-2xl mx-auto">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-3">
+        <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/50 to-transparent" />
+        <div className="relative z-10 container mx-auto px-6 py-12 max-w-6xl">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-3">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-gray-500">/</span>
+            <span className="text-gray-300">Pricing</span>
+          </nav>
+          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-2">
             Transparent &amp; Affordable
           </p>
-          <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4">
-            Simple, Honest Pricing
-          </h1>
-          <p className="text-lg text-gray-200 mb-8">
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">Simple, Honest Pricing</h1>
+          <p className="mt-3 text-cyan-100 text-lg max-w-2xl">
             No hidden fees. No surprises. Pick the plan that fits your needs.
           </p>
           <a
             href="tel:3219535199"
-            className="inline-flex items-center gap-2 px-7 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors shadow-lg"
+            className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-full transition-colors shadow-lg"
           >
-            <FaPhoneAlt /> Questions? Call (321) 953-5199
+            <FaPhoneAlt className="w-4 h-4" /> Questions? Call (321) 953-5199
           </a>
         </div>
       </section>
 
       {/* ── Pricing Cards ── */}
       <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-6xl">
+        <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-800 mb-2">
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
               Residential Remote &amp; Onsite Computer Services
             </h2>
             <p className="text-gray-500">
@@ -182,39 +185,41 @@ function Pricing() {
             {pricingPlans.map((plan) => (
               <div
                 key={plan.id}
-                className={`relative flex flex-col rounded-2xl shadow-md overflow-hidden border transition-shadow hover:shadow-xl ${
+                className={`relative flex flex-col rounded-2xl overflow-hidden shadow-md transition-shadow hover:shadow-xl ${
                   plan.highlight
-                    ? 'border-blue-500 ring-2 ring-blue-500 bg-white'
-                    : 'border-gray-200 bg-white'
+                    ? 'ring-2 ring-cyan-500'
+                    : 'border border-gray-200'
                 }`}
               >
                 {/* Badge */}
                 {plan.badge && (
-                  <div className="absolute top-0 right-0 bg-blue-600 text-white text-xs font-bold px-4 py-1 rounded-bl-xl flex items-center gap-1">
+                  <div className="absolute top-0 right-0 bg-cyan-500 text-gray-900 text-xs font-bold px-4 py-1 rounded-bl-xl flex items-center gap-1">
                     <FaStar className="w-3 h-3" /> {plan.badge}
                   </div>
                 )}
 
                 {/* Header */}
-                <div className={`px-6 pt-8 pb-6 text-center ${plan.highlight ? 'bg-blue-600 text-white' : 'bg-gray-50 text-gray-800'}`}>
+                <div className={`px-6 pt-8 pb-6 text-center ${plan.highlight ? 'bg-gray-900 text-white' : 'bg-white text-gray-800'}`}>
                   <h2 className="text-xl font-bold mb-1">{plan.title}</h2>
-                  <p className={`text-sm mb-5 ${plan.highlight ? 'text-blue-100' : 'text-gray-500'}`}>
+                  <p className={`text-sm mb-5 ${plan.highlight ? 'text-gray-400' : 'text-gray-500'}`}>
                     {plan.tagline}
                   </p>
                   <div className="flex items-end justify-center gap-1">
-                    <span className="text-5xl font-extrabold">{plan.price}</span>
-                    <span className={`text-sm mb-2 ${plan.highlight ? 'text-blue-200' : 'text-gray-400'}`}>
+                    <span className={`text-5xl font-extrabold ${plan.highlight ? 'text-cyan-400' : 'text-gray-900'}`}>
+                      {plan.price}
+                    </span>
+                    <span className={`text-sm mb-2 ${plan.highlight ? 'text-gray-400' : 'text-gray-400'}`}>
                       /{plan.period}
                     </span>
                   </div>
                 </div>
 
                 {/* Features */}
-                <div className="px-6 py-6 flex-1">
+                <div className="px-6 py-6 flex-1 bg-white">
                   <ul className="space-y-3">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-gray-700">
-                        <FaCheck className="text-green-500 mt-0.5 shrink-0" />
+                        <FaCheck className="text-cyan-500 mt-0.5 shrink-0" />
                         {feature}
                       </li>
                     ))}
@@ -227,13 +232,13 @@ function Pricing() {
                 </div>
 
                 {/* CTA */}
-                <div className="px-6 pb-8">
+                <div className="px-6 pb-8 bg-white">
                   <button
                     onClick={() => handleOrderClick(plan)}
                     className={`w-full py-3 font-bold rounded-lg transition-colors ${
                       plan.highlight
-                        ? 'bg-blue-600 text-white hover:bg-blue-700'
-                        : 'bg-gray-800 text-white hover:bg-gray-900'
+                        ? 'bg-cyan-500 text-gray-900 hover:bg-cyan-400'
+                        : 'bg-gray-900 text-white hover:bg-gray-800'
                     }`}
                   >
                     {plan.cta}
@@ -247,14 +252,14 @@ function Pricing() {
 
       {/* ── FAQ ── */}
       <section className="py-16 bg-white">
-        <div className="container mx-auto px-4 max-w-3xl">
+        <div className="container mx-auto px-6 max-w-3xl">
           <div className="text-center mb-10">
-            <p className="text-sm font-semibold uppercase tracking-widest text-blue-600 mb-2">Common Questions</p>
-            <h2 className="text-3xl font-bold text-gray-800">Pricing FAQ</h2>
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Common Questions</p>
+            <h2 className="text-3xl font-bold text-gray-900">Pricing FAQ</h2>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, i) => (
-              <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-100">
+              <div key={i} className="bg-gray-50 rounded-xl p-6 border border-gray-100 border-l-4 border-l-cyan-500">
                 <h3 className="font-bold text-gray-800 mb-2">{faq.q}</h3>
                 <p className="text-sm text-gray-600 leading-relaxed">{faq.a}</p>
               </div>
@@ -264,22 +269,23 @@ function Pricing() {
       </section>
 
       {/* ── Custom Quote CTA ── */}
-      <section className="py-16 bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center">
-        <div className="container mx-auto px-4 max-w-2xl">
+      <section className="py-16 bg-gray-900 border-t-4 border-cyan-500 text-white text-center">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-3">Custom Plans Available</p>
           <h2 className="text-3xl font-bold mb-3">Need a Custom Quote?</h2>
-          <p className="text-blue-200 mb-8">
+          <p className="text-gray-400 mb-8">
             Running a business or need something not listed above? We build custom IT plans for businesses of all sizes across Brevard County.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
               href="tel:3219535199"
-              className="flex items-center gap-2 px-7 py-3 font-bold text-blue-900 bg-white rounded-full hover:bg-blue-50 transition-colors shadow"
+              className="flex items-center gap-2 px-7 py-3 font-bold text-gray-900 bg-cyan-500 hover:bg-cyan-400 rounded-full transition-colors shadow"
             >
               <FaPhoneAlt className="w-4 h-4" /> (321) 953-5199
             </a>
             <Link
               to="/contact"
-              className="flex items-center gap-2 px-7 py-3 font-semibold text-white bg-white/10 border border-white/40 rounded-full hover:bg-white/20 transition-colors"
+              className="flex items-center gap-2 px-7 py-3 font-semibold text-white bg-white/10 border border-white/30 rounded-full hover:bg-white/20 transition-colors"
             >
               <FaEnvelope className="w-4 h-4" /> Send a Message
             </Link>

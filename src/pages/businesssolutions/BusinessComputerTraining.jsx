@@ -57,7 +57,7 @@ const BusinessComputerTraining = () => {
     }
   };
 
-  const inputClass = "w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white";
+  const inputClass = "w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white";
   const labelClass = "block text-sm font-semibold text-gray-700 mb-1";
 
   return (
@@ -85,7 +85,7 @@ const BusinessComputerTraining = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 max-w-6xl">
-          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-3">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-3">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-gray-500">/</span>
             <Link to="/business-solutions" className="hover:text-white transition-colors">Business Solutions</Link>
@@ -93,14 +93,14 @@ const BusinessComputerTraining = () => {
             <span className="text-gray-300">Business Computer Training</span>
           </nav>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight">Business Computer Training</h1>
-          <p className="mt-3 text-blue-100 text-lg max-w-2xl">Customized IT training programs to upskill your team and boost productivity.</p>
+          <p className="mt-3 text-cyan-100 text-lg max-w-2xl">Customized IT training programs to upskill your team and boost productivity.</p>
         </div>
       </section>
 
       {/* Intro */}
       <section className="bg-white py-12">
         <div className="container mx-auto px-6 max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-blue-600 pl-4">Professional Computer Training for Businesses</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Professional Computer Training for Businesses</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
             At Best Computer Tech, we offer comprehensive computer training programs, including specialized Microsoft 365 training, designed to boost your team's technical skills and productivity. Our expert trainers deliver customized training solutions tailored to the unique needs of your business.
           </p>
@@ -110,24 +110,24 @@ const BusinessComputerTraining = () => {
       {/* Services Grid */}
       <section className="bg-gray-50 py-12">
         <div className="container mx-auto px-6 max-w-6xl">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-6">Click any service to learn more</p>
+          <p className="text-sm font-semibold text-cyan-500 uppercase tracking-wider mb-6">Click any service to learn more</p>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <div
                 key={service.id}
-                className="bg-white rounded-xl shadow-sm border border-gray-100 cursor-pointer hover:shadow-md hover:border-blue-200 transition-all service-card overflow-hidden"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 cursor-pointer hover:shadow-md hover:border-cyan-200 transition-all service-card overflow-hidden"
                 onClick={() => handleServiceClick(service)}
               >
                 <div className="p-6">
-                  <div className="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="text-xl text-blue-600" />
+                  <div className="w-11 h-11 bg-cyan-50 rounded-lg flex items-center justify-center mb-4">
+                    <service.icon className="text-xl text-cyan-500" />
                   </div>
                   <h3 className="text-base font-semibold text-gray-900 mb-1">{service.title}</h3>
                   <p className="text-gray-500 text-sm">{service.description}</p>
                 </div>
                 {selectedService?.id === service.id && (
-                  <div className="px-6 pb-6 pt-3 border-t border-blue-100 bg-blue-50">
-                    <p className="text-blue-800 text-sm leading-relaxed">{service.details}</p>
+                  <div className="px-6 pb-6 pt-3 border-t border-cyan-100 bg-cyan-50">
+                    <p className="text-gray-700 text-sm leading-relaxed">{service.details}</p>
                   </div>
                 )}
               </div>
@@ -140,12 +140,12 @@ const BusinessComputerTraining = () => {
       <section className="py-14 bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-            <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 rounded-2xl p-8 text-white flex flex-col justify-center">
-              <p className="text-blue-300 text-sm font-semibold uppercase tracking-wider mb-2">Affordable Pricing</p>
+            <div className="bg-gray-900 rounded-2xl p-8 text-white flex flex-col justify-center">
+              <p className="text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-2">Affordable Pricing</p>
               <p className="text-6xl font-bold mb-1">$95</p>
-              <p className="text-blue-200 text-lg mb-4">Starting price</p>
-              <p className="text-blue-100 mb-8">Our Training Services are designed to offer you the best support at affordable prices. Contact us today to learn more about our pricing and packages.</p>
-              <Link to="/contact" className="inline-block bg-white text-blue-900 font-bold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors text-center shadow-lg">
+              <p className="text-gray-400 text-lg mb-4">Starting price</p>
+              <p className="text-gray-400 mb-8">Our Training Services are designed to offer you the best support at affordable prices. Contact us today to learn more about our pricing and packages.</p>
+              <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-cyan-400 transition-colors text-center shadow-lg">
                 Get a Free Quote
               </Link>
             </div>
@@ -188,7 +188,7 @@ const BusinessComputerTraining = () => {
                 </div>
                 {submitError && <p className="text-red-500 text-sm">{submitError}</p>}
                 {submitSuccess && <p className="text-green-600 text-sm">Your request has been submitted successfully!</p>}
-                <button type="submit" disabled={isSubmitting} className="w-full bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-60">
+                <button type="submit" disabled={isSubmitting} className="w-full bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-lg hover:bg-cyan-400 transition-colors disabled:opacity-60">
                   {isSubmitting ? 'Submitting...' : 'Submit Request'}
                 </button>
               </form>
@@ -203,7 +203,7 @@ const BusinessComputerTraining = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <FaMapMarkerAlt className="text-blue-600 text-xl flex-shrink-0" />
+                <FaMapMarkerAlt className="text-cyan-500 text-xl flex-shrink-0" />
                 <h3 className="text-xl font-bold text-gray-900">Providing IT Training Services Across the USA</h3>
               </div>
               <p className="text-gray-600">
@@ -213,13 +213,13 @@ const BusinessComputerTraining = () => {
 
             <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <FaClipboardList className="text-blue-600 text-xl flex-shrink-0" />
+                <FaClipboardList className="text-cyan-500 text-xl flex-shrink-0" />
                 <h3 className="text-xl font-bold text-gray-900">Steps to Enhance Your Team's Skills</h3>
               </div>
               <ol className="space-y-3 text-gray-600 text-sm">
                 {['Contact us via phone or our contact form.', 'Describe the training services you\'re seeking.', 'Receive a quote for the sessions.', 'Schedule a training appointment.', 'Our trainers provide the necessary training solutions.', 'Receive follow-up support and resources as needed.'].map((step, i) => (
                   <li key={i} className="flex gap-3 items-start">
-                    <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-700 rounded-full text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
+                    <span className="flex-shrink-0 w-6 h-6 bg-cyan-100 text-cyan-700 rounded-full text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
                     <span>{step}</span>
                   </li>
                 ))}
@@ -230,14 +230,14 @@ const BusinessComputerTraining = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-14 text-white text-center">
+      <section className="bg-gray-900 border-t-4 border-cyan-500 py-14 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
-          <FaHeadset className="mx-auto text-4xl text-blue-300 mb-4" />
+          <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Ready to Upskill Your Team?</h2>
-          <p className="text-blue-100 mb-6">
+          <p className="text-gray-400 mb-6">
             Our expert trainers in Palm Bay &amp; Melbourne can deliver customized IT training programs that fit your team's schedule and goals.
           </p>
-          <Link to="/contact" className="inline-block bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg">
+          <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today
           </Link>
         </div>

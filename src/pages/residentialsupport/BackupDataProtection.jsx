@@ -62,7 +62,7 @@ const BackupDataProtection = () => {
     setFormData({ name: '', phone: '', email: '', serviceType: '', serviceDeliveryMethod: '', problem: '' });
   };
 
-  const inputClass = "w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white";
+  const inputClass = "w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white";
   const labelClass = "block text-sm font-semibold text-gray-700 mb-1";
 
   return (
@@ -91,7 +91,7 @@ const BackupDataProtection = () => {
       >
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 max-w-6xl">
-          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-3">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-3">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-gray-500">/</span>
             <Link to="/residential-support" className="hover:text-white transition-colors">Residential Support</Link>
@@ -99,14 +99,14 @@ const BackupDataProtection = () => {
             <span className="text-gray-300">Backup &amp; Data Protection</span>
           </nav>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight">Backup and Data Protection</h1>
-          <p className="mt-3 text-blue-100 text-lg max-w-2xl">Keep your personal data safe with cloud backup, encryption, and disaster recovery solutions.</p>
+          <p className="mt-3 text-cyan-100 text-lg max-w-2xl">Keep your personal data safe with cloud backup, encryption, and disaster recovery solutions.</p>
         </div>
       </section>
 
       {/* Intro */}
       <section className="bg-white py-12">
         <div className="container mx-auto px-6 max-w-6xl">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-blue-600 pl-4">Expert Backup and Data Protection Services</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Backup and Data Protection Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
             At Best Computer Tech, we specialize in comprehensive backup and data protection services to safeguard your valuable information. Our certified technicians provide reliable solutions to ensure your data is secure and recoverable in case of any unforeseen events.
           </p>
@@ -116,24 +116,24 @@ const BackupDataProtection = () => {
       {/* Services Grid */}
       <section className="bg-gray-50 py-12">
         <div className="container mx-auto px-6 max-w-6xl">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-wider mb-6">Click any service to learn more</p>
+          <p className="text-sm font-semibold text-cyan-500 uppercase tracking-wider mb-6">Click any service to learn more</p>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {services.map((service) => (
               <div
                 key={service.id}
-                className="bg-white rounded-xl shadow-sm border border-gray-100 cursor-pointer hover:shadow-md hover:border-blue-200 transition-all service-card overflow-hidden"
+                className="bg-white rounded-xl shadow-sm border border-gray-100 cursor-pointer hover:shadow-md hover:border-cyan-200 transition-all service-card overflow-hidden"
                 onClick={() => handleServiceClick(service)}
               >
                 <div className="p-6">
-                  <div className="w-11 h-11 bg-blue-50 rounded-lg flex items-center justify-center mb-4">
-                    <service.icon className="text-xl text-blue-600" />
+                  <div className="w-11 h-11 bg-cyan-50 rounded-lg flex items-center justify-center mb-4">
+                    <service.icon className="text-xl text-cyan-500" />
                   </div>
                   <h3 className="text-base font-semibold text-gray-900 mb-1">{service.title}</h3>
                   <p className="text-gray-500 text-sm">{service.description}</p>
                 </div>
                 {selectedService?.id === service.id && (
-                  <div className="px-6 pb-6 pt-3 border-t border-blue-100 bg-blue-50">
-                    <p className="text-blue-800 text-sm leading-relaxed">{service.details}</p>
+                  <div className="px-6 pb-6 pt-3 border-t border-cyan-100 bg-cyan-50">
+                    <p className="text-gray-700 text-sm leading-relaxed">{service.details}</p>
                   </div>
                 )}
               </div>
@@ -146,12 +146,12 @@ const BackupDataProtection = () => {
       <section className="py-14 bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
-            <div className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 rounded-2xl p-8 text-white flex flex-col justify-center">
-              <p className="text-blue-300 text-sm font-semibold uppercase tracking-wider mb-2">Affordable Pricing</p>
+            <div className="bg-gray-900 rounded-2xl p-8 text-white flex flex-col justify-center">
+              <p className="text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-2">Affordable Pricing</p>
               <p className="text-6xl font-bold mb-1">$95</p>
-              <p className="text-blue-200 text-lg mb-4">Starting price</p>
-              <p className="text-blue-100 mb-8">For more than two decades, Best Computer Tech has resolved over 10,000 IT issues. Contact us for a custom data protection quote.</p>
-              <Link to="/contact" className="inline-block bg-white text-blue-900 font-bold px-6 py-3 rounded-full hover:bg-blue-50 transition-colors text-center shadow-lg">
+              <p className="text-gray-400 text-lg mb-4">Starting price</p>
+              <p className="text-gray-400 mb-8">For more than two decades, Best Computer Tech has resolved over 10,000 IT issues. Contact us for a custom data protection quote.</p>
+              <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-cyan-400 transition-colors text-center shadow-lg">
                 Get a Free Quote
               </Link>
             </div>
@@ -192,7 +192,7 @@ const BackupDataProtection = () => {
                   <label className={labelClass}>Explanation of Your Data Protection Needs</label>
                   <textarea name="problem" value={formData.problem} onChange={handleChange} rows={4} className={inputClass} required />
                 </div>
-                <button type="submit" className="w-full bg-blue-600 text-white font-bold px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                <button type="submit" className="w-full bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-lg hover:bg-cyan-400 transition-colors">
                   Submit Request
                 </button>
               </form>
@@ -207,7 +207,7 @@ const BackupDataProtection = () => {
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <FaMapMarkerAlt className="text-blue-600 text-xl flex-shrink-0" />
+                <FaMapMarkerAlt className="text-cyan-500 text-xl flex-shrink-0" />
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Beyond</h3>
               </div>
               <p className="text-gray-600">
@@ -217,13 +217,13 @@ const BackupDataProtection = () => {
 
             <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
-                <FaClipboardList className="text-blue-600 text-xl flex-shrink-0" />
+                <FaClipboardList className="text-cyan-500 text-xl flex-shrink-0" />
                 <h3 className="text-xl font-bold text-gray-900">How It Works</h3>
               </div>
               <ol className="space-y-3 text-gray-600 text-sm">
                 {['Contact us via phone or our contact form.', 'Describe your data protection needs.', 'Receive a quote for the services.', 'Schedule a service appointment.', 'Our technicians implement the backup and data protection solutions.', 'Receive ongoing support and maintenance as needed.'].map((step, i) => (
                   <li key={i} className="flex gap-3 items-start">
-                    <span className="flex-shrink-0 w-6 h-6 bg-blue-100 text-blue-700 rounded-full text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
+                    <span className="flex-shrink-0 w-6 h-6 bg-cyan-100 text-cyan-700 rounded-full text-xs font-bold flex items-center justify-center mt-0.5">{i + 1}</span>
                     <span>{step}</span>
                   </li>
                 ))}
@@ -234,14 +234,14 @@ const BackupDataProtection = () => {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-14 text-white text-center">
+      <section className="bg-gray-900 border-t-4 border-cyan-500 py-14 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
-          <FaHeadset className="mx-auto text-4xl text-blue-300 mb-4" />
+          <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Protect Your Data Today</h2>
-          <p className="text-blue-100 mb-6">
+          <p className="text-gray-400 mb-6">
             Don't risk losing irreplaceable files. Our data protection experts in Palm Bay &amp; Melbourne can set up a comprehensive backup solution for you.
           </p>
-          <Link to="/contact" className="inline-block bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg">
+          <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today
           </Link>
         </div>

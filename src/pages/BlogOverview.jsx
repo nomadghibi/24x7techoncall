@@ -22,7 +22,7 @@ import chatgptImage       from '../assets/optimized-blog/chatgpt-512.jpg';
 
 // ── Category badge config ──────────────────────────────────────────────────
 const categoryColors = {
-  'Local Guide':    'bg-blue-100 text-blue-700',
+  'Local Guide':    'bg-cyan-100 text-cyan-700',
   'AI & Tech':      'bg-purple-100 text-purple-700',
   'Computer Tips':  'bg-green-100 text-green-700',
   'Cybersecurity':  'bg-red-100 text-red-700',
@@ -184,13 +184,13 @@ const CategoryBadge = ({ category }) => (
 );
 
 const BlogCard = ({ post, index }) => (
-  <article className="flex flex-col bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200">
+  <article className="flex flex-col bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md hover:-translate-y-1 transition-all duration-200 group">
     {post.image && (
-      <Link to={post.link} tabIndex={-1} aria-hidden>
+      <Link to={post.link} tabIndex={-1} aria-hidden className="overflow-hidden">
         <img
           src={post.image}
           alt={post.title}
-          className="object-cover w-full h-48"
+          className="object-cover w-full h-48 group-hover:scale-105 transition-transform duration-300"
           loading={index < 6 ? 'eager' : 'lazy'}
           decoding="async"
           width={512}
@@ -206,10 +206,10 @@ const BlogCard = ({ post, index }) => (
         </span>
       </div>
       <h2 className="text-base font-bold text-gray-800 mb-2 leading-snug">{post.title}</h2>
-      <p className="text-sm text-gray-600 flex-1 mb-4 leading-relaxed">{post.summary}</p>
+      <p className="text-sm text-gray-500 flex-1 mb-4 leading-relaxed">{post.summary}</p>
       <Link
         to={post.link}
-        className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:text-blue-800 transition-colors"
+        className="inline-flex items-center gap-1.5 text-sm font-semibold text-cyan-500 hover:text-cyan-600 transition-colors"
       >
         Read Article <FaArrowRight className="w-3 h-3" />
       </Link>
@@ -274,52 +274,60 @@ const BlogOverview = () => {
       </Helmet>
 
       {/* ── Hero ── */}
-      <section className="bg-gradient-to-br from-gray-900 via-blue-950 to-blue-900 text-white py-16">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-3">
+      <section className="bg-gray-900 border-b-4 border-cyan-500 text-white py-16">
+        <div className="container mx-auto px-6 text-center max-w-3xl">
+          <nav className="flex items-center justify-center gap-2 text-sm text-cyan-300 mb-4">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <span className="text-gray-600">/</span>
+            <span className="text-gray-400">Blog</span>
+          </nav>
+          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-3">
             Tech Tips &amp; IT Insights
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Our Blog</h1>
-          <p className="text-lg text-gray-300">
+          <p className="text-lg text-gray-400 max-w-xl mx-auto">
             Practical guides, security tips, and IT news for homes and businesses across Brevard County.
           </p>
         </div>
       </section>
 
       <div className="bg-gray-50 py-14">
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto px-6 max-w-7xl">
 
           {/* ── Featured post ── */}
           {featuredPost && (
-            <div className="mb-12">
-              <p className="text-xs font-semibold uppercase tracking-widest text-blue-600 mb-4">Featured Article</p>
-              <article className="bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow">
+            <div className="mb-14">
+              <p className="text-xs font-semibold uppercase tracking-widest text-cyan-500 mb-4 flex items-center gap-2">
+                <span className="w-6 h-0.5 bg-cyan-500 inline-block"></span>
+                Featured Article
+              </p>
+              <article className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-lg transition-shadow group">
                 <div className="grid grid-cols-1 md:grid-cols-2">
-                  <Link to={featuredPost.link} tabIndex={-1} aria-hidden>
+                  <Link to={featuredPost.link} tabIndex={-1} aria-hidden className="overflow-hidden">
                     <img
                       src={featuredPost.image}
                       alt={featuredPost.title}
-                      className="object-cover w-full h-64 md:h-full"
+                      className="object-cover w-full h-64 md:h-full group-hover:scale-105 transition-transform duration-300"
                       loading="eager"
                       decoding="async"
                       width={512}
                       height={512}
                     />
                   </Link>
-                  <div className="flex flex-col justify-center p-8">
+                  <div className="flex flex-col justify-center p-8 lg:p-10">
                     <div className="flex items-center gap-3 mb-4">
                       <CategoryBadge category={featuredPost.category} />
                       <span className="flex items-center gap-1 text-xs text-gray-400">
                         <FaCalendarAlt className="w-3 h-3" /> {featuredPost.date}
                       </span>
                     </div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3 leading-snug">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 leading-snug">
                       {featuredPost.title}
                     </h2>
-                    <p className="text-gray-600 leading-relaxed mb-6">{featuredPost.summary}</p>
+                    <p className="text-gray-500 leading-relaxed mb-6">{featuredPost.summary}</p>
                     <Link
                       to={featuredPost.link}
-                      className="inline-flex items-center gap-2 px-6 py-2.5 bg-blue-600 text-white text-sm font-semibold rounded-full hover:bg-blue-700 transition-colors self-start"
+                      className="inline-flex items-center gap-2 px-6 py-2.5 bg-cyan-500 hover:bg-cyan-400 text-gray-900 text-sm font-bold rounded-full transition-colors self-start shadow-sm"
                     >
                       Read Article <FaArrowRight className="w-3 h-3" />
                     </Link>
@@ -330,8 +338,8 @@ const BlogOverview = () => {
           )}
 
           {/* ── All articles ── */}
-          <div className="mb-6">
-            <h2 className="text-2xl font-bold text-gray-800">All Articles</h2>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-gray-900 border-l-4 border-cyan-500 pl-4">All Articles</h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {regularPosts.map((post, index) => (
@@ -343,15 +351,16 @@ const BlogOverview = () => {
       </div>
 
       {/* ── Newsletter CTA ── */}
-      <section className="py-16 bg-gradient-to-r from-blue-700 to-blue-900 text-white text-center">
-        <div className="container mx-auto px-4 max-w-2xl">
+      <section className="py-16 bg-gray-900 border-t-4 border-cyan-500 text-white text-center">
+        <div className="container mx-auto px-6 max-w-2xl">
+          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-3">Stay Updated</p>
           <h2 className="text-3xl font-bold mb-3">Stay in the Loop</h2>
-          <p className="text-blue-200 mb-8">
+          <p className="text-gray-400 mb-8">
             Get the latest tech tips and IT news delivered straight to your inbox. No spam — just useful content.
           </p>
           <Link
             to="/subscribe"
-            className="inline-flex items-center gap-2 px-8 py-3 font-bold text-blue-900 bg-white rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+            className="inline-flex items-center gap-2 px-8 py-3 font-bold text-gray-900 bg-cyan-500 hover:bg-cyan-400 rounded-full transition-colors shadow-lg"
           >
             Subscribe to Newsletter <FaArrowRight className="w-4 h-4" />
           </Link>

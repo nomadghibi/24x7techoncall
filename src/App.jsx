@@ -187,7 +187,7 @@ const NotFound = () => (
     </p>
     <Link
       to="/"
-      className="inline-flex items-center px-5 py-3 font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700"
+      className="inline-flex items-center px-5 py-3 font-semibold text-gray-900 bg-cyan-500 rounded-full hover:bg-cyan-400"
     >
       Back to Home
     </Link>
@@ -263,7 +263,7 @@ const App = () => {
           <Suspense
             fallback={
               <div className="flex items-center justify-center min-h-[40vh]" role="status" aria-live="polite">
-                <div className="w-8 h-8 border-4 border-blue-200 rounded-full border-t-blue-600 animate-spin" aria-hidden="true"></div>
+                <div className="w-8 h-8 border-4 border-cyan-200 rounded-full border-t-blue-600 animate-spin" aria-hidden="true"></div>
                 <span className="sr-only">Loading page</span>
               </div>
             }

@@ -33,7 +33,7 @@ function KnowYourComputerHasVirus() {
       >
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
-          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-3">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-3">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-gray-500">/</span>
             <Link to="/how-to" className="hover:text-white transition-colors">How To</Link>
@@ -46,7 +46,7 @@ function KnowYourComputerHasVirus() {
 
       {/* Article */}
       <article className="container mx-auto px-6 py-12 max-w-4xl">
-        <Link to="/how-to" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors group">
+        <Link to="/how-to" className="inline-flex items-center gap-2 text-cyan-500 hover:text-gray-700 font-medium mb-8 transition-colors group">
           <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
           Back to How To Guides
         </Link>
@@ -67,22 +67,22 @@ function KnowYourComputerHasVirus() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 1: Run a Virus Scan</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 1: Run a Virus Scan</h2>
             <p className="text-gray-700">Use your antivirus software to run a full system scan.</p>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 2: Check for Unusual Activity</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 2: Check for Unusual Activity</h2>
             <p className="text-gray-700">Open the Task Manager or Activity Monitor to check for unfamiliar processes running on your computer.</p>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 3: Update Your Software</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 3: Update Your Software</h2>
             <p className="text-gray-700">Ensure your operating system and all software are up to date to prevent vulnerabilities.</p>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 4: Remove Suspicious Programs</h2>
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 4: Remove Suspicious Programs</h2>
             <p className="text-gray-700">Uninstall any programs that you don't recognize or that are behaving suspiciously.</p>
           </div>
         </div>
@@ -93,16 +93,16 @@ function KnowYourComputerHasVirus() {
       </article>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-14 text-white text-center">
+      <section className="bg-gray-900 border-t-4 border-cyan-500 py-14 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
-          <FaHeadset className="mx-auto text-4xl text-blue-300 mb-4" />
+          <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Professional Virus Removal?</h2>
-          <p className="text-blue-100 mb-6">
+          <p className="text-cyan-100 mb-6">
             Worried your computer is infected? Our experts in Palm Bay &amp; Melbourne provide fast, thorough malware and virus removal.
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+            className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-50 transition-colors shadow-lg"
           >
             Contact Us Today
           </Link>

@@ -129,7 +129,7 @@ const QuickTechHelp = () => {
             </p>
             <button
               onClick={handleBuyNowClick}
-              className="inline-block px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
+              className="inline-block px-4 py-2 mt-4 font-bold text-gray-900 bg-cyan-500 rounded hover:bg-cyan-400"
             >
               Buy Now for $19.95
             </button>

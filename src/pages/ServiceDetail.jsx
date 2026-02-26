@@ -64,7 +64,7 @@ function ServiceDetail() {
         <p>The service you are looking for does not exist.</p>
         <button
           onClick={() => navigate('/services')}
-          className="px-4 py-2 mt-4 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+          className="px-4 py-2 mt-4 font-bold text-gray-900 bg-cyan-500 rounded hover:bg-cyan-400 focus:outline-none focus:shadow-outline"
         >
           Back to Services
         </button>
@@ -149,7 +149,7 @@ function ServiceDetail() {
           />
         </div>
         <button
-          className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700 focus:outline-none focus:shadow-outline"
+          className="px-4 py-2 font-bold text-gray-900 bg-cyan-500 rounded hover:bg-cyan-400 focus:outline-none focus:shadow-outline"
           type="submit"
         >
           Submit

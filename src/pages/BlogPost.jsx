@@ -671,7 +671,7 @@ function BlogPost() {
           <FaFileAlt className="mx-auto text-6xl text-gray-300 mb-6" />
           <h1 className="text-3xl font-bold text-gray-800 mb-3">Post Not Found</h1>
           <p className="text-gray-500 mb-6">The blog post you're looking for doesn't exist or may have been moved.</p>
-          <Link to="/blog" className="inline-block bg-blue-600 text-white font-semibold px-6 py-3 rounded-full hover:bg-blue-700 transition-colors">
+          <Link to="/blog" className="inline-block bg-cyan-500 text-gray-900 font-semibold px-6 py-3 rounded-full hover:bg-cyan-400 transition-colors">
             ← Back to Blog
           </Link>
         </div>
@@ -708,7 +708,7 @@ function BlogPost() {
       >
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-gray-950/20"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
-          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-4">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-4">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-gray-500">/</span>
             <Link to="/blog" className="hover:text-white transition-colors">Blog</Link>
@@ -716,28 +716,28 @@ function BlogPost() {
             <span className="text-gray-400 truncate max-w-xs">{post.title}</span>
           </nav>
           <h1 className="text-3xl md:text-4xl font-bold leading-tight mb-3">{post.title}</h1>
-          <p className="text-blue-200 text-sm">{post.date}</p>
+          <p className="text-cyan-200 text-sm">{post.date}</p>
         </div>
       </section>
 
       {/* Article */}
       <article className="container mx-auto px-6 py-12 max-w-3xl">
-        <Link to="/blog" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors group">
+        <Link to="/blog" className="inline-flex items-center gap-2 text-cyan-500 hover:text-gray-700 font-medium mb-8 transition-colors group">
           <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
           Back to Blog
         </Link>
         <div className="prose prose-gray max-w-none text-gray-700 leading-relaxed">
           <div dangerouslySetInnerHTML={{ __html: post.content.replace(/\n/g, '<br />') }} />
         </div>
-        <div className="mt-10 p-6 rounded-xl bg-blue-50 border border-blue-100">
+        <div className="mt-10 p-6 rounded-xl bg-cyan-50 border border-cyan-100">
           <h3 className="text-lg font-bold text-gray-900 mb-2">Our Other Websites</h3>
           <p className="text-gray-700">
             Visit{' '}
-            <a href="https://techezeai.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+            <a href="https://techezeai.com" target="_blank" rel="noopener noreferrer" className="text-cyan-500 hover:underline">
               techezeai.com
             </a>{' '}
             and{' '}
-            <a href="https://reliablewebstudio.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+            <a href="https://reliablewebstudio.com" target="_blank" rel="noopener noreferrer" className="text-cyan-500 hover:underline">
               reliablewebstudio.com
             </a>
             .
@@ -749,7 +749,7 @@ function BlogPost() {
       <section className="bg-gray-50 py-16">
         <div className="container mx-auto px-6 max-w-7xl">
           <div className="text-center mb-10">
-            <p className="text-blue-600 font-semibold uppercase tracking-widest text-sm mb-2">Keep Reading</p>
+            <p className="text-cyan-500 font-semibold uppercase tracking-widest text-sm mb-2">Keep Reading</p>
             <h2 className="text-3xl font-bold text-gray-900">Related Blog Posts</h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -763,7 +763,7 @@ function BlogPost() {
                   <Link
                     key={key}
                     to={`/blog/${key}`}
-                    className="group bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 hover:border-blue-200 transition-all overflow-hidden flex flex-col"
+                    className="group bg-white rounded-2xl shadow-sm hover:shadow-md border border-gray-100 hover:border-cyan-200 transition-all overflow-hidden flex flex-col"
                   >
                     {relatedPostCardImage && (
                       <div className="h-48 overflow-hidden">
@@ -777,11 +777,11 @@ function BlogPost() {
                       </div>
                     )}
                     <div className="p-5 flex flex-col flex-grow">
-                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-blue-700 transition-colors line-clamp-2">
+                      <h3 className="font-bold text-gray-900 mb-2 group-hover:text-cyan-600 transition-colors line-clamp-2">
                         {relatedPost.title}
                       </h3>
                       <p className="text-sm text-gray-500 mb-3">{relatedPost.date}</p>
-                      <span className="mt-auto text-blue-600 text-sm font-semibold">Read Article →</span>
+                      <span className="mt-auto text-cyan-500 text-sm font-semibold">Read Article →</span>
                     </div>
                   </Link>
                 );
@@ -791,17 +791,17 @@ function BlogPost() {
       </section>
 
       {/* CTA */}
-      <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-blue-700 py-16 text-white text-center">
+      <section className="bg-gray-900 border-t-4 border-cyan-500 py-16 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
-          <FaHeadset className="mx-auto text-5xl text-blue-300 mb-5" />
+          <FaHeadset className="mx-auto text-5xl text-cyan-300 mb-5" />
           <h2 className="text-3xl font-bold mb-3">Need IT Support?</h2>
-          <p className="text-blue-100 mb-8 text-lg">
+          <p className="text-cyan-100 mb-8 text-lg">
             Our local experts in Palm Bay &amp; Melbourne are ready to help with any tech issue — in person, remotely, or on-site.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link
               to="/contact"
-              className="bg-white text-blue-900 font-bold px-7 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+              className="bg-cyan-500 text-gray-900 font-bold px-7 py-3 rounded-full hover:bg-cyan-50 transition-colors shadow-lg"
             >
               Contact Us
             </Link>

@@ -33,7 +33,7 @@ function SetUpEmail() {
       >
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
-          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-3">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-3">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-gray-500">/</span>
             <Link to="/how-to" className="hover:text-white transition-colors">How To</Link>
@@ -46,7 +46,7 @@ function SetUpEmail() {
 
       {/* Article */}
       <article className="container mx-auto px-6 py-12 max-w-4xl">
-        <Link to="/how-to" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors group">
+        <Link to="/how-to" className="inline-flex items-center gap-2 text-cyan-500 hover:text-gray-700 font-medium mb-8 transition-colors group">
           <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
           Back to How To Guides
         </Link>
@@ -57,32 +57,32 @@ function SetUpEmail() {
 
         <div className="space-y-8">
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 1: Choose an Email Client</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 1: Choose an Email Client</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>Popular email clients include Microsoft Outlook, Mozilla Thunderbird, Apple Mail, and Windows Mail.</li>
               <li>Download and install your preferred email client if it's not already installed.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 2: Gather Your Email Account Information</h2>
-            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 2: Gather Your Email Account Information</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-cyan-500 marker:font-bold">
               <li>You will need your email address, password, and server settings (incoming and outgoing mail server addresses).</li>
               <li>These settings can typically be found on your email provider's website or by contacting their support.</li>
             </ol>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 3: Open Your Email Client</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 3: Open Your Email Client</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>Open the email client you installed or the default email app on your computer.</li>
               <li>Look for an option to add a new account, usually found in the settings or preferences menu.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 4: Enter Your Email Account Information</h2>
-            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 4: Enter Your Email Account Information</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-cyan-500 marker:font-bold">
               <li>Enter your email address and password when prompted.</li>
               <li>If the client cannot automatically detect the server settings, you may need to enter them manually:
                 <ul className="mt-2 ml-4 space-y-1 list-disc list-outside pl-4 text-gray-600 marker:text-gray-400">
@@ -95,16 +95,16 @@ function SetUpEmail() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 5: Test the Configuration</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 5: Test the Configuration</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>Send a test email to ensure the configuration is correct and you can send and receive emails.</li>
               <li>Check for any error messages and adjust the settings if necessary.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 6: Customize Your Email Client</h2>
-            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 6: Customize Your Email Client</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-cyan-500 marker:font-bold">
               <li>Set up your signature, folders, and email filters.</li>
               <li>Customize the appearance and layout to your preference.</li>
             </ol>
@@ -117,16 +117,16 @@ function SetUpEmail() {
       </article>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-14 text-white text-center">
+      <section className="bg-gray-900 border-t-4 border-cyan-500 py-14 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
-          <FaHeadset className="mx-auto text-4xl text-blue-300 mb-4" />
+          <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Help Setting Up Email?</h2>
-          <p className="text-blue-100 mb-6">
+          <p className="text-cyan-100 mb-6">
             Our local IT experts in Palm Bay &amp; Melbourne can configure your email client, migrate accounts, or troubleshoot any mail issues quickly.
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+            className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-50 transition-colors shadow-lg"
           >
             Contact Us Today
           </Link>

@@ -124,7 +124,7 @@ const Checkout = () => {
                   id="firstName"
                   value={billingDetails.firstName}
                   onChange={handleBillingDetailsChange}
-                  className={`w-full p-2 border ${errors.firstName ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`w-full p-2 border ${errors.firstName ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500`}
                   required
                   aria-invalid={errors.firstName ? 'true' : 'false'}
                   aria-describedby={errors.firstName ? 'firstName-error' : undefined}
@@ -146,7 +146,7 @@ const Checkout = () => {
                   id="lastName"
                   value={billingDetails.lastName}
                   onChange={handleBillingDetailsChange}
-                  className={`w-full p-2 border ${errors.lastName ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`w-full p-2 border ${errors.lastName ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500`}
                   required
                   aria-invalid={errors.lastName ? 'true' : 'false'}
                   aria-describedby={errors.lastName ? 'lastName-error' : undefined}
@@ -169,7 +169,7 @@ const Checkout = () => {
                   value={billingDetails.streetAddress}
                   onChange={handleBillingDetailsChange}
                   placeholder="House number and street name"
-                  className={`w-full p-2 border ${errors.streetAddress ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                  className={`w-full p-2 border ${errors.streetAddress ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500`}
                   required
                   aria-invalid={errors.streetAddress ? 'true' : 'false'}
                   aria-describedby={errors.streetAddress ? 'streetAddress-error' : undefined}
@@ -191,7 +191,7 @@ const Checkout = () => {
                   id="apartment"
                   value={billingDetails.apartment}
                   onChange={handleBillingDetailsChange}
-                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500"
                 />
               </div>
 
@@ -206,7 +206,7 @@ const Checkout = () => {
                     id="city"
                     value={billingDetails.city}
                     onChange={handleBillingDetailsChange}
-                    className={`w-full p-2 border ${errors.city ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    className={`w-full p-2 border ${errors.city ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500`}
                     required
                     aria-invalid={errors.city ? 'true' : 'false'}
                     aria-describedby={errors.city ? 'city-error' : undefined}
@@ -228,7 +228,7 @@ const Checkout = () => {
                     id="state"
                     value={billingDetails.state}
                     onChange={handleBillingDetailsChange}
-                    className={`w-full p-2 border ${errors.state ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    className={`w-full p-2 border ${errors.state ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500`}
                     required
                     aria-invalid={errors.state ? 'true' : 'false'}
                     aria-describedby={errors.state ? 'state-error' : undefined}
@@ -250,7 +250,7 @@ const Checkout = () => {
                     id="zip"
                     value={billingDetails.zip}
                     onChange={handleBillingDetailsChange}
-                    className={`w-full p-2 border ${errors.zip ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500`}
+                    className={`w-full p-2 border ${errors.zip ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500`}
                     required
                     aria-invalid={errors.zip ? 'true' : 'false'}
                     aria-describedby={errors.zip ? 'zip-error' : undefined}

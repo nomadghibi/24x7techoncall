@@ -165,7 +165,7 @@ const categoryStyles = {
   'Strategy':           { border: 'border-indigo-500', badge: 'bg-indigo-100 text-indigo-700', icon: '📈' },
   'Privacy & Compliance': { border: 'border-green-500', badge: 'bg-green-100 text-green-700', icon: '🔒' },
   'Hardware':           { border: 'border-orange-500', badge: 'bg-orange-100 text-orange-700', icon: '💻' },
-  'Operations':         { border: 'border-blue-500',   badge: 'bg-blue-100 text-blue-700',   icon: '⚙️' },
+  'Operations':         { border: 'border-cyan-500',   badge: 'bg-cyan-100 text-cyan-600',   icon: '⚙️' },
 };
 
 // Group newsletters by year (already sorted newest → oldest)
@@ -203,7 +203,7 @@ function NewsletterCard({ issue }) {
           <a
             href={issue.file}
             download
-            className="flex-1 text-center px-3 py-2 text-sm font-semibold text-white bg-blue-600 rounded hover:bg-blue-700 transition-colors"
+            className="flex-1 text-center px-3 py-2 text-sm font-semibold text-gray-900 bg-cyan-500 rounded hover:bg-cyan-400 transition-colors"
           >
             Download PDF
           </a>
@@ -211,7 +211,7 @@ function NewsletterCard({ issue }) {
             href={issue.file}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 text-center px-3 py-2 text-sm font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded hover:bg-blue-100 transition-colors"
+            className="flex-1 text-center px-3 py-2 text-sm font-semibold text-cyan-600 bg-cyan-50 border border-cyan-200 rounded hover:bg-cyan-100 transition-colors"
           >
             Preview
           </a>
@@ -319,7 +319,7 @@ function Subscribe() {
                 </p>
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="mt-2 text-sm text-blue-600 underline hover:text-blue-800"
+                  className="mt-2 text-sm text-cyan-500 underline hover:text-gray-700"
                 >
                   Subscribe another address
                 </button>
@@ -335,7 +335,7 @@ function Subscribe() {
                     type="text"
                     value={name}
                     onChange={(e) => setName(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                     placeholder="First and last name"
                     required
                   />
@@ -349,14 +349,14 @@ function Subscribe() {
                     type="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-cyan-500"
                     placeholder="you@example.com"
                     required
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full px-6 py-3 font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="w-full px-6 py-3 font-semibold text-gray-900 bg-cyan-500 rounded-lg hover:bg-cyan-400 transition-colors"
                 >
                   Subscribe Now
                 </button>
@@ -392,7 +392,7 @@ function Subscribe() {
             <div className="p-6 md:p-8 flex flex-col md:flex-row md:items-center gap-6">
               <div className="flex-1">
                 <div className="flex flex-wrap items-center gap-3 mb-3">
-                  <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                  <span className="bg-cyan-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
                     Latest Issue
                   </span>
                   <span className={`inline-flex items-center gap-1 text-xs font-semibold px-2 py-1 rounded-full ${featuredStyle.badge}`}>
@@ -407,7 +407,7 @@ function Subscribe() {
                 <a
                   href={featuredIssue.file}
                   download
-                  className="text-center px-5 py-3 font-semibold text-white bg-blue-600 rounded-lg hover:bg-blue-700 transition-colors"
+                  className="text-center px-5 py-3 font-semibold text-gray-900 bg-cyan-500 rounded-lg hover:bg-cyan-400 transition-colors"
                 >
                   Download PDF
                 </a>
@@ -415,7 +415,7 @@ function Subscribe() {
                   href={featuredIssue.file}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-center px-5 py-3 font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded-lg hover:bg-blue-100 transition-colors"
+                  className="text-center px-5 py-3 font-semibold text-cyan-600 bg-cyan-50 border border-cyan-200 rounded-lg hover:bg-cyan-100 transition-colors"
                 >
                   Preview
                 </a>

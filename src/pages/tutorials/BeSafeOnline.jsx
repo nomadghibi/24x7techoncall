@@ -32,7 +32,7 @@ function BeSafeOnline() {
       >
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
-          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-3">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-3">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-gray-500">/</span>
             <Link to="/how-to" className="hover:text-white transition-colors">How To</Link>
@@ -45,7 +45,7 @@ function BeSafeOnline() {
 
       {/* Article */}
       <article className="container mx-auto px-6 py-12 max-w-4xl">
-        <Link to="/how-to" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors group">
+        <Link to="/how-to" className="inline-flex items-center gap-2 text-cyan-500 hover:text-gray-700 font-medium mb-8 transition-colors group">
           <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
           Back to How To Guides
         </Link>
@@ -56,8 +56,8 @@ function BeSafeOnline() {
 
         <div className="space-y-8">
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 1: Use Strong and Unique Passwords</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 1: Use Strong and Unique Passwords</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>Create Strong Passwords: Use a combination of upper and lower case letters, numbers, and special characters to create robust passwords that are difficult to guess.</li>
               <li>Unique Passwords: Avoid using the same password across multiple sites. Each account should have a unique password to prevent a breach in one account from compromising others.</li>
               <li>Password Manager: Use a reputable password manager to generate, store, and manage strong passwords securely, reducing the risk of forgotten passwords or reusing old ones.</li>
@@ -65,16 +65,16 @@ function BeSafeOnline() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 2: Enable Two-Factor Authentication (2FA)</h2>
-            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 2: Enable Two-Factor Authentication (2FA)</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-cyan-500 marker:font-bold">
               <li>Set Up 2FA: Enable two-factor authentication on your online accounts for an extra layer of security. This process requires a second form of verification, making unauthorized access more difficult.</li>
               <li>Verification Methods: Use authentication apps like Google Authenticator, Microsoft Authenticator, or receive codes via SMS. Authentication apps are generally more secure than SMS-based 2FA.</li>
             </ol>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 3: Be Cautious with Emails and Links</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 3: Be Cautious with Emails and Links</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>Phishing Scams: Be wary of unsolicited emails asking for personal information or containing suspicious links. Phishing is a common method used by attackers to steal sensitive information.</li>
               <li>Verify URLs: Hover over links to see the actual URL before clicking. Ensure the URL is legitimate and avoid clicking on links from unknown or untrusted sources.</li>
               <li>Attachments: Do not open email attachments from unknown or untrusted sources. Attachments can contain malware that can infect your computer or steal data.</li>
@@ -82,8 +82,8 @@ function BeSafeOnline() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 4: Secure Your Devices</h2>
-            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 4: Secure Your Devices</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-cyan-500 marker:font-bold">
               <li>Install Antivirus Software: Use reputable antivirus software to protect your devices from malware, ransomware, and other malicious threats. Keep the software updated regularly.</li>
               <li>Keep Software Updated: Regularly update your operating system, browser, and applications to protect against vulnerabilities that could be exploited by attackers.</li>
               <li>Firewall: Enable your device's firewall to block unauthorized access and protect your network from external threats.</li>
@@ -91,16 +91,16 @@ function BeSafeOnline() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 5: Use Secure Connections</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 5: Use Secure Connections</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>HTTPS: Ensure websites use HTTPS to encrypt data between your browser and the site, providing a secure connection that protects your information from eavesdroppers.</li>
               <li>VPN: Use a Virtual Private Network (VPN) to encrypt your internet connection, especially when using public Wi-Fi networks. A VPN helps protect your data from being intercepted by cybercriminals.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 6: Protect Your Personal Information</h2>
-            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 6: Protect Your Personal Information</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-cyan-500 marker:font-bold">
               <li>Limit Sharing: Be mindful of the personal information you share on social media and other online platforms. Avoid oversharing details that could be used for identity theft or fraud.</li>
               <li>Privacy Settings: Regularly review and adjust privacy settings on your social media accounts and apps to control who can see your information.</li>
               <li>Personal Details: Avoid sharing sensitive information like your home address, phone number, and financial details publicly, even in seemingly private forums.</li>
@@ -108,16 +108,16 @@ function BeSafeOnline() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 7: Monitor Your Online Accounts</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 7: Monitor Your Online Accounts</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>Regular Checks: Regularly check your online accounts for any suspicious activity, such as unauthorized logins or transactions. Prompt detection can help mitigate potential damage.</li>
               <li>Account Alerts: Enable alerts for account activities such as login attempts, password changes, and new device logins to stay informed about your account's security.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 8: Educate Yourself and Others</h2>
-            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 8: Educate Yourself and Others</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-cyan-500 marker:font-bold">
               <li>Stay Informed: Keep up to date with the latest online security threats, scams, and best practices to avoid falling victim to new types of attacks.</li>
               <li>Teach Others: Share your knowledge about online safety with friends, family, and colleagues. Educating others helps build a more secure online community.</li>
             </ol>
@@ -139,16 +139,16 @@ function BeSafeOnline() {
       </article>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-14 text-white text-center">
+      <section className="bg-gray-900 border-t-4 border-cyan-500 py-14 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
-          <FaHeadset className="mx-auto text-4xl text-blue-300 mb-4" />
+          <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Help with Online Security?</h2>
-          <p className="text-blue-100 mb-6">
+          <p className="text-cyan-100 mb-6">
             Our cybersecurity experts in Palm Bay &amp; Melbourne can audit your setup, remove threats, and strengthen your digital defenses.
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+            className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-50 transition-colors shadow-lg"
           >
             Contact Us Today
           </Link>

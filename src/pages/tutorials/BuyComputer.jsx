@@ -33,7 +33,7 @@ function BuyComputer() {
       >
         <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-950/60 to-transparent"></div>
         <div className="relative z-10 container mx-auto px-6 py-12 max-w-4xl">
-          <nav className="flex items-center gap-2 text-sm text-blue-300 mb-3">
+          <nav className="flex items-center gap-2 text-sm text-cyan-300 mb-3">
             <Link to="/" className="hover:text-white transition-colors">Home</Link>
             <span className="text-gray-500">/</span>
             <Link to="/how-to" className="hover:text-white transition-colors">How To</Link>
@@ -46,7 +46,7 @@ function BuyComputer() {
 
       {/* Article */}
       <article className="container mx-auto px-6 py-12 max-w-4xl">
-        <Link to="/how-to" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors group">
+        <Link to="/how-to" className="inline-flex items-center gap-2 text-cyan-500 hover:text-cyan-600 font-medium mb-8 transition-colors group">
           <FaArrowLeft className="group-hover:-translate-x-1 transition-transform" />
           Back to How To Guides
         </Link>
@@ -57,8 +57,8 @@ function BuyComputer() {
 
         <div className="space-y-8">
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 1: Determine Your Needs</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 1: Determine Your Needs</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>Identify what you will use the computer for (e.g., gaming, work, general use).</li>
               <li>Consider the software and hardware requirements for your intended use.</li>
               <li>Decide between a desktop and a laptop based on your mobility needs.</li>
@@ -66,24 +66,24 @@ function BuyComputer() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 2: Set Your Budget</h2>
-            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 2: Set Your Budget</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-cyan-500 marker:font-bold">
               <li>Determine how much you are willing to spend on a new computer.</li>
               <li>Keep in mind additional costs such as peripherals (mouse, keyboard) and software.</li>
             </ol>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 3: Research Computer Types</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 3: Research Computer Types</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>Learn about different types of computers: desktops, laptops, all-in-one PCs, and tablets.</li>
               <li>Consider the pros and cons of each type based on your needs.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 4: Compare Specifications</h2>
-            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 4: Compare Specifications</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-cyan-500 marker:font-bold">
               <li>Look at key specifications such as processor (CPU), memory (RAM), storage (HDD/SSD), and graphics card (GPU).</li>
               <li>Compare different models and brands to find the best fit for your needs.</li>
               <li>Read reviews and user feedback to get an idea of performance and reliability.</li>
@@ -91,16 +91,16 @@ function BuyComputer() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 5: Consider Future-Proofing</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 5: Consider Future-Proofing</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>Think about your future needs and whether the computer can be upgraded (e.g., adding more RAM or storage).</li>
               <li>Choose a model with a bit more power than you currently need to ensure it lasts longer.</li>
             </ul>
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 6: Look for Deals and Warranties</h2>
-            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-blue-600 marker:font-bold">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 6: Look for Deals and Warranties</h2>
+            <ol className="space-y-2 list-decimal list-outside pl-6 text-gray-700 marker:text-cyan-500 marker:font-bold">
               <li>Shop around for the best deals and discounts on computers.</li>
               <li>Check if the manufacturer or retailer offers a warranty and what it covers.</li>
               <li>Consider purchasing an extended warranty for added protection.</li>
@@ -108,8 +108,8 @@ function BuyComputer() {
           </div>
 
           <div>
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-blue-600 pl-4">Step 7: Make Your Purchase</h2>
-            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-blue-500">
+            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-cyan-500 pl-4">Step 7: Make Your Purchase</h2>
+            <ul className="space-y-2 list-disc list-outside pl-6 text-gray-700 marker:text-cyan-500">
               <li>Once you have chosen the right computer, make your purchase from a reputable retailer.</li>
               <li>Ensure you receive all necessary accessories and documentation.</li>
               <li>Set up your new computer following the manufacturer's instructions.</li>
@@ -123,16 +123,16 @@ function BuyComputer() {
       </article>
 
       {/* CTA */}
-      <section className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 py-14 text-white text-center">
+      <section className="bg-gray-900 border-t-4 border-cyan-500 py-14 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
-          <FaHeadset className="mx-auto text-4xl text-blue-300 mb-4" />
+          <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Help Choosing a Computer?</h2>
-          <p className="text-blue-100 mb-6">
+          <p className="text-cyan-100 mb-6">
             Not sure which model is right for you? Our local IT advisors in Palm Bay &amp; Melbourne can give you personalized recommendations for your budget and needs.
           </p>
           <Link
             to="/contact"
-            className="inline-block bg-white text-blue-900 font-bold px-8 py-3 rounded-full hover:bg-blue-50 transition-colors shadow-lg"
+            className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-50 transition-colors shadow-lg"
           >
             Contact Us Today
           </Link>

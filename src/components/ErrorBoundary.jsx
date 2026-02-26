@@ -37,14 +37,14 @@ class ErrorBoundary extends React.Component {
             <button
               type="button"
               onClick={this.handleRetry}
-              className="px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded hover:bg-blue-700"
+              className="px-4 py-2 text-sm font-medium text-white bg-cyan-500 rounded hover:bg-cyan-400"
             >
               Retry
             </button>
             <button
               type="button"
               onClick={() => window.location.reload()}
-              className="px-4 py-2 text-sm font-medium text-blue-700 border border-blue-200 rounded hover:bg-blue-50"
+              className="px-4 py-2 text-sm font-medium text-cyan-600 border border-cyan-200 rounded hover:bg-cyan-50"
             >
               Refresh Page
             </button>

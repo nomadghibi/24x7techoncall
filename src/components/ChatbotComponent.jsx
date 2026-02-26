@@ -121,7 +121,7 @@
 //     <div>
 //       <button
 //         onClick={toggleChatbot}
-//         className={`fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-transform duration-300 ${isOpen ? 'transform rotate-45' : ''}`}
+//         className={`fixed bottom-6 right-6 bg-cyan-500 text-gray-900 p-4 rounded-full shadow-lg hover:bg-cyan-400 transition-transform duration-300 ${isOpen ? 'transform rotate-45' : ''}`}
 //       >
 //         {isOpen ? <AiOutlineClose size={24} /> : <FaComments size={24} />}
 //       </button>
@@ -282,7 +282,7 @@ const ChatbotComponent = () => {
     <div>
       <button
         onClick={toggleChatbot}
-        className={`fixed bottom-6 right-6 bg-blue-600 text-white p-4 rounded-full shadow-lg hover:bg-blue-700 transition-transform duration-300 ${isOpen ? 'transform rotate-45' : ''}`}
+        className={`fixed bottom-6 right-6 bg-cyan-500 text-gray-900 p-4 rounded-full shadow-lg hover:bg-cyan-400 transition-transform duration-300 ${isOpen ? 'transform rotate-45' : ''}`}
       >
         {isOpen ? <AiOutlineClose size={24} /> : <FaComments size={24} />}
       </button>

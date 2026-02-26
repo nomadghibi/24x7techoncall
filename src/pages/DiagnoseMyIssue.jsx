@@ -240,9 +240,9 @@ function DiagnoseMyIssue() {
       </Helmet>
 
       {/* ── Hero ── */}
-      <section className="relative bg-gradient-to-br from-gray-900 via-blue-950 to-blue-900 text-white py-16">
+      <section className="relative bg-gray-900 text-white py-16">
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-blue-300 mb-3">
+          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-300 mb-3">
             Free Diagnostic Tool
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Diagnose My Issue</h1>
@@ -255,8 +255,8 @@ function DiagnoseMyIssue() {
               { icon: FaBolt,        text: 'Instant Recommendation' },
               { icon: FaShieldAlt,   text: 'Free to Use' },
             ].map(({ icon: Icon, text }) => (
-              <span key={text} className="flex items-center gap-2 px-4 py-1.5 bg-white/10 rounded-full text-sm text-blue-100 border border-white/20">
-                <Icon className="w-3.5 h-3.5 text-blue-300" /> {text}
+              <span key={text} className="flex items-center gap-2 px-4 py-1.5 bg-white/10 rounded-full text-sm text-cyan-100 border border-white/20">
+                <Icon className="w-3.5 h-3.5 text-cyan-300" /> {text}
               </span>
             ))}
           </div>
@@ -272,11 +272,11 @@ function DiagnoseMyIssue() {
             <div className="px-8 pt-8 pb-6 border-b border-gray-100">
               <div className="flex items-center justify-between mb-3 text-sm font-medium text-gray-500">
                 <span>Step {stepIndex + 1} of {diagnosticSteps.length}</span>
-                <span className="text-blue-600">{Math.round(progressPercent)}% complete</span>
+                <span className="text-cyan-500">{Math.round(progressPercent)}% complete</span>
               </div>
               <div className="w-full h-2 bg-gray-100 rounded-full">
                 <div
-                  className="h-2 bg-blue-600 rounded-full transition-all duration-500"
+                  className="h-2 bg-cyan-500 rounded-full transition-all duration-500"
                   style={{ width: `${progressPercent}%` }}
                 />
               </div>
@@ -287,9 +287,9 @@ function DiagnoseMyIssue() {
                     key={i}
                     className={`rounded-full transition-all duration-300 ${
                       i < stepIndex
-                        ? 'w-3 h-3 bg-blue-600'
+                        ? 'w-3 h-3 bg-cyan-500'
                         : i === stepIndex
-                        ? 'w-4 h-4 bg-blue-600 ring-4 ring-blue-100'
+                        ? 'w-4 h-4 bg-cyan-500 ring-4 ring-cyan-100'
                         : 'w-3 h-3 bg-gray-200'
                     }`}
                   />
@@ -312,17 +312,17 @@ function DiagnoseMyIssue() {
                       onClick={() => handleSelect(option.value)}
                       className={`flex items-center gap-3 p-4 text-left border-2 rounded-xl transition-all duration-200 ${
                         active
-                          ? 'border-blue-600 bg-blue-50 text-blue-900 shadow-sm'
-                          : 'border-gray-200 hover:border-blue-300 hover:bg-gray-50 text-gray-700'
+                          ? 'border-cyan-500 bg-cyan-50 text-gray-900 shadow-sm'
+                          : 'border-gray-200 hover:border-cyan-300 hover:bg-gray-50 text-gray-700'
                       }`}
                     >
                       <div className={`shrink-0 w-9 h-9 flex items-center justify-center rounded-lg ${
-                        active ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-500'
+                        active ? 'bg-cyan-500 text-gray-900' : 'bg-gray-100 text-gray-500'
                       }`}>
                         <Icon className="w-4 h-4" />
                       </div>
                       <span className="font-medium text-sm">{option.label}</span>
-                      {active && <FaCheckCircle className="w-4 h-4 text-blue-600 ml-auto shrink-0" />}
+                      {active && <FaCheckCircle className="w-4 h-4 text-cyan-500 ml-auto shrink-0" />}
                     </button>
                   );
                 })}
@@ -343,7 +343,7 @@ function DiagnoseMyIssue() {
                 type="button"
                 onClick={handleNext}
                 disabled={!currentValue}
-                className="flex items-center gap-2 px-7 py-2.5 text-sm font-semibold text-white bg-blue-600 rounded-full hover:bg-blue-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
+                className="flex items-center gap-2 px-7 py-2.5 text-sm font-semibold text-gray-900 bg-cyan-500 rounded-full hover:bg-cyan-400 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
               >
                 {stepIndex === diagnosticSteps.length - 1 ? 'See Recommendation' : 'Next'}
                 <FaChevronRight className="w-3 h-3" />
@@ -356,21 +356,21 @@ function DiagnoseMyIssue() {
           <div className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden">
 
             {/* Success header */}
-            <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-8 text-white text-center">
+            <div className="bg-gray-900 px-8 py-8 text-white text-center">
               <div className="w-14 h-14 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
                 <FaCheckCircle className="w-7 h-7 text-white" />
               </div>
               <h2 className="text-2xl font-bold mb-1">We Found Your Match!</h2>
-              <p className="text-blue-100 text-sm">Based on your answers, here's the best path forward.</p>
+              <p className="text-cyan-100 text-sm">Based on your answers, here's the best path forward.</p>
             </div>
 
             <div className="px-8 py-8 space-y-6">
 
               {/* Recommended service */}
-              <div className="p-5 bg-blue-50 border-2 border-blue-200 rounded-xl">
-                <p className="text-xs font-semibold uppercase tracking-widest text-blue-500 mb-1">Recommended Service</p>
-                <h3 className="text-xl font-bold text-blue-900 mb-2">{recommendation.title}</h3>
-                <p className="text-sm text-blue-800 leading-relaxed">{recommendation.reason}</p>
+              <div className="p-5 bg-cyan-50 border-2 border-cyan-200 rounded-xl">
+                <p className="text-xs font-semibold uppercase tracking-widest text-cyan-500 mb-1">Recommended Service</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{recommendation.title}</h3>
+                <p className="text-sm text-gray-700 leading-relaxed">{recommendation.reason}</p>
               </div>
 
               {/* Answers summary */}
@@ -424,7 +424,7 @@ function DiagnoseMyIssue() {
               <div className="pt-2 space-y-3">
                 <Link
                   to={recommendation.route}
-                  className="flex items-center justify-center gap-2 w-full py-3 font-bold text-white bg-blue-600 rounded-xl hover:bg-blue-700 transition-colors shadow-sm"
+                  className="flex items-center justify-center gap-2 w-full py-3 font-bold text-gray-900 bg-cyan-500 rounded-xl hover:bg-cyan-400 transition-colors shadow-sm"
                 >
                   Go to Recommended Service <FaChevronRight className="w-3 h-3" />
                 </Link>
@@ -446,7 +446,7 @@ function DiagnoseMyIssue() {
                 <div className="grid grid-cols-2 gap-3">
                   <a
                     href="tel:3219535199"
-                    className="flex items-center justify-center gap-2 py-2.5 text-sm font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded-xl hover:bg-blue-100 transition-colors"
+                    className="flex items-center justify-center gap-2 py-2.5 text-sm font-semibold text-cyan-600 bg-cyan-50 border border-cyan-200 rounded-xl hover:bg-cyan-100 transition-colors"
                   >
                     <FaPhoneAlt className="w-3.5 h-3.5" /> (321) 953-5199
                   </a>

@@ -317,7 +317,7 @@ function PriceEstimator() {
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
       </Helmet>
 
-      <section className="py-16 text-white bg-gradient-to-r from-indigo-700 to-blue-600">
+      <section className="py-16 text-white bg-gray-900 border-t-4 border-cyan-500">
         <div className="container px-4 mx-auto text-center">
           <h1 className="mb-3 text-4xl font-bold">Price Range Estimator</h1>
           <p className="max-w-2xl mx-auto text-lg">
@@ -395,9 +395,9 @@ function PriceEstimator() {
               </p>
             </div>
 
-            <div className="p-4 mb-5 border border-blue-200 rounded bg-blue-50">
-              <h3 className="mb-2 text-xl font-semibold text-blue-900">Recommended Service: {result.title}</h3>
-              <p className="text-sm text-blue-900">{result.reason}</p>
+            <div className="p-4 mb-5 border border-cyan-200 rounded bg-cyan-50">
+              <h3 className="mb-2 text-xl font-semibold text-gray-900">Recommended Service: {result.title}</h3>
+              <p className="text-sm text-gray-900">{result.reason}</p>
             </div>
 
             <div className="grid gap-4 p-4 mb-5 border border-gray-200 rounded bg-gray-50 sm:grid-cols-2">
@@ -438,13 +438,13 @@ function PriceEstimator() {
               </Link>
               <Link
                 to={result.route}
-                className="px-5 py-2 font-semibold text-center text-white bg-blue-600 rounded hover:bg-blue-700"
+                className="px-5 py-2 font-semibold text-center text-gray-900 bg-cyan-500 rounded hover:bg-cyan-400"
               >
                 View Recommended Service
               </Link>
               <a
                 href="tel:3219535199"
-                className="px-5 py-2 font-semibold text-center text-blue-700 bg-blue-100 rounded hover:bg-blue-200"
+                className="px-5 py-2 font-semibold text-center text-cyan-600 bg-cyan-100 rounded hover:bg-cyan-100"
               >
                 Call (321) 953-5199
               </a>

@@ -165,13 +165,13 @@ function Home() {
     <div>
       <Helmet>
         <title>Nationwide Remote Tech Support 24/7 | 24x7 Tech On Call</title>
-        <meta name="description" content="24x7 Tech On Call provides professional remote tech support for homes and businesses nationwide. Available 24/7 — no fix, no fee." />
+        <meta name="description" content="24x7 Tech On Call provides professional remote tech support for homes and businesses nationwide. Available 24/7." />
         <meta name="keywords" content="remote tech support, remote IT support, 24/7 computer help, online computer repair, nationwide tech support, remote computer support, remote virus removal, remote data recovery" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://24x7techoncall.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Nationwide Remote Tech Support 24/7 | 24x7 Tech On Call" />
-        <meta property="og:description" content="Professional remote tech support for homes and businesses nationwide. Available 24/7 — no fix, no fee." />
+        <meta property="og:description" content="Professional remote tech support for homes and businesses nationwide. Available 24/7." />
         <meta property="og:url" content="https://24x7techoncall.com/" />
         <meta property="og:image" content={heroImageSocial} />
         <meta property="og:locale" content="en_US" />
@@ -206,7 +206,7 @@ function Home() {
               Expert IT Help Delivered to Your <span className="text-cyan-400">Screen</span><br className="hidden sm:block" /> — No Visit Required
             </h1>
             <p className="mb-8 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-              Professional remote tech support for homes and businesses nationwide. Available 24/7 — no fix, no fee.
+              Professional remote tech support for homes and businesses nationwide. Available 24/7.
             </p>
             <div className="mb-8 max-w-3xl mx-auto">
               <p className="mb-3 text-xs font-bold uppercase tracking-widest text-cyan-300">Choose Your Support Type</p>
@@ -339,8 +339,8 @@ function Home() {
               },
               {
                 icon: FaHandshake,
-                title: 'No Fix, No Fee',
-                text: "If we can't fix it, you don't pay. Simple, honest service.",
+                title: 'Clear, Honest Service',
+                text: 'Straightforward support with clear communication and fair pricing.',
                 borderClass: 'border-yellow-400',
                 iconBgClass: 'bg-yellow-50',
                 iconTextClass: 'text-yellow-500',

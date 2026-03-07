@@ -108,7 +108,7 @@ const NewComputerSetup = () => {
             {[
               { step: '1', title: 'Call or Book Online', desc: "Contact us by phone or book a session online. Tell us what's going on — no tech jargon needed." },
               { step: '2', title: 'We Connect Securely', desc: 'We use a secure remote connection tool to access your screen. You stay in control the whole time.' },
-              { step: '3', title: 'Problem Solved', desc: 'We fix the issue while you watch. No home visit needed. No fix, no fee — guaranteed.' },
+              { step: '3', title: 'Problem Solved', desc: 'We fix the issue while you watch. No home visit needed. Clear communication and dependable support.' },
             ].map(({ step, title, desc }) => (
               <div key={step} className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
                 <div className="w-12 h-12 rounded-full bg-cyan-500 text-gray-900 font-extrabold text-lg flex items-center justify-center mb-4">{step}</div>

@@ -25,18 +25,18 @@ const ComputerRepair = () => {
     <div>
       <Helmet>
         <title>Remote Computer Repair & Troubleshooting | 24x7 Tech On Call</title>
-        <meta name="description" content="Expert remote computer repair and troubleshooting nationwide. We fix crashes, errors, slow performance, and Windows issues — no visit required. No fix, no fee." />
+        <meta name="description" content="Expert remote computer repair and troubleshooting nationwide. We fix crashes, errors, slow performance, and Windows issues — no visit required." />
         <meta name="keywords" content="remote computer repair, online computer troubleshooting, remote PC repair, fix slow computer online, Windows error repair, remote tech support" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
         <meta property="og:title" content="Remote Computer Repair & Troubleshooting | 24x7 Tech On Call" />
-        <meta property="og:description" content="Expert remote computer repair and troubleshooting nationwide. We fix crashes, errors, slow performance, and Windows issues — no visit required. No fix, no fee." />
+        <meta property="og:description" content="Expert remote computer repair and troubleshooting nationwide. We fix crashes, errors, slow performance, and Windows issues — no visit required." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Remote Computer Repair & Troubleshooting | 24x7 Tech On Call" />
-        <meta name="twitter:description" content="Expert remote computer repair and troubleshooting nationwide. We fix crashes, errors, slow performance, and Windows issues — no visit required. No fix, no fee." />
+        <meta name="twitter:description" content="Expert remote computer repair and troubleshooting nationwide. We fix crashes, errors, slow performance, and Windows issues — no visit required." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -106,7 +106,7 @@ const ComputerRepair = () => {
             {[
               { step: '1', title: 'Call or Book Online', desc: "Contact us by phone or book a session online. Tell us what's going on — no tech jargon needed." },
               { step: '2', title: 'We Connect Securely', desc: 'We use a secure remote connection tool to access your screen. You stay in control the whole time.' },
-              { step: '3', title: 'Problem Solved', desc: 'We fix the issue while you watch. No home visit needed. No fix, no fee — guaranteed.' },
+              { step: '3', title: 'Problem Solved', desc: 'We fix the issue while you watch. No home visit needed. Clear communication and dependable support.' },
             ].map(({ step, title, desc }) => (
               <div key={step} className="flex flex-col items-center text-center p-6 bg-white rounded-2xl shadow-sm border border-gray-100">
                 <div className="w-12 h-12 rounded-full bg-cyan-500 text-gray-900 font-extrabold text-lg flex items-center justify-center mb-4">{step}</div>
@@ -123,7 +123,7 @@ const ComputerRepair = () => {
         <div className="container mx-auto px-6 max-w-2xl">
           <p className="text-sm font-bold text-cyan-400 uppercase tracking-widest mb-3">Get Help Now</p>
           <h2 className="text-3xl font-bold mb-4">Got a Computer Problem? We Can Fix It Now.</h2>
-          <p className="text-gray-400 mb-8">Call us or book a remote session. Most issues resolved in under an hour. No fix, no fee.</p>
+          <p className="text-gray-400 mb-8">Call us or book a remote session. Most issues resolved in under an hour.</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="tel:3219535199"

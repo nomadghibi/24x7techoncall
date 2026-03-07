@@ -33,14 +33,14 @@ const remotePlans = [
   {
     id: 'annual',
     title: 'Annual Remote Care',
-    tagline: 'Best for regular users who want year-round peace of mind.',
-    price: '$199',
+    tagline: 'Best for households that want year-round support for 2 computers and 1 printer.',
+    price: '$299.90',
     period: 'per year',
     badge: 'Best Value',
     highlight: true,
     features: [
       'Windows & Mac support',
-      'Any brand computer — 1 PC covered',
+      'Coverage: 2 computers + 1 printer',
       'Unlimited remote sessions',
       'Virus removal as needed',
       'Speed-up & faster startup',
@@ -48,8 +48,8 @@ const remotePlans = [
       'Anti-virus installation & maintenance',
       'Routine remote check-ups',
       'Data back-up assistance',
-      '24/7 remote tech support',
-      '24/7 email & chat support',
+      'Support hours: Monday-Friday, 10:00 AM-5:00 PM',
+      'Email support during service hours',
       'Priority scheduling',
     ],
     cta: 'Subscribe Now',
@@ -92,7 +92,7 @@ function Pricing() {
     : `https://24x7techoncall.com${heroImage || ''}`;
 
   const handleOrderClick = (plan) => {
-    const priceMap = { remote: 99, annual: 199 };
+    const priceMap = { remote: 99, annual: 299.9 };
     navigate('/checkout', {
       state: { service: { title: plan.title, price: priceMap[plan.id] ?? 99 } },
     });

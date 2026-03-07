@@ -185,9 +185,11 @@ const trustPoints = [
 ];
 
 const annualBenefits = [
+  'Coverage for 2 computers and 1 printer',
   'Unlimited virus cleanup as needed',
   'Routine speed tune-ups and health checks',
   'Remote support for common home tech issues',
+  'Support hours: Monday-Friday, 10:00 AM-5:00 PM',
   'Data backup setup guidance',
   'Priority support response',
   'Best for families with multiple devices',
@@ -211,7 +213,7 @@ function ResidentialServices() {
       state: {
         service: {
           title: 'Annual Computer Care Plan',
-          price: '$199.00',
+          price: '$299.90',
           description: 'Annual care plan for ongoing home computer maintenance and support.',
         },
       },
@@ -417,9 +419,9 @@ function ResidentialServices() {
                 <span className="inline-block rounded-full bg-cyan-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-cyan-700 mb-4">
                   Residential Plan
                 </span>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Annual Computer Care Plan - $199/year</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Annual Computer Care Plan - $299.90/year</h2>
                 <p className="text-sm text-gray-600 mb-6">
-                  Great for home users who want support all year and predictable cost.
+                  Great for home users who want predictable support for 2 computers and 1 printer.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">

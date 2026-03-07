@@ -24,17 +24,21 @@ const normalizeService = (state) => {
   const service = state?.service;
 
   if (service && typeof service === 'object') {
+    const price = parsePrice(service.price ?? state?.price);
+    if (price <= 0) return null;
     return {
       title: service.title || service.item || 'Service',
-      price: parsePrice(service.price ?? state?.price),
+      price,
       isProduct: Boolean(service.isProduct),
     };
   }
 
   if (typeof service === 'string') {
+    const price = parsePrice(state?.price);
+    if (price <= 0) return null;
     return {
       title: service,
-      price: parsePrice(state?.price),
+      price,
       isProduct: false,
     };
   }

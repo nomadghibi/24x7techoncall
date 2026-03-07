@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
   FaBug, FaNetworkWired, FaDatabase, FaLaptopHouse, FaWifi,
-  FaQuestionCircle, FaChalkboardTeacher, FaCloud, FaCamera, FaLaptop,
+  FaQuestionCircle, FaChalkboardTeacher, FaCloud,
   FaStar, FaMapMarkerAlt, FaBolt, FaShieldAlt, FaHandshake,
   FaPhoneAlt, FaAward, FaUsers, FaRegClock, FaArrowRight,
 } from 'react-icons/fa';
@@ -16,7 +16,6 @@ import blogImage5  from '../assets/optimized-blog/webspeed-512.jpg';
 import blogImage6  from '../assets/optimized-blog/quality-content-512.jpg';
 import blogImage7  from '../assets/optimized-blog/it-support-512.jpg';
 import blogImage8  from '../assets/optimized-blog/business-cybersecurity-512.jpg';
-import blogImage9  from '../assets/optimized-blog/business-services-512.jpg';
 import blogImage10 from '../assets/optimized-blog/ai-optimized-512.jpg';
 
 const homeBlogPool = [
@@ -133,7 +132,7 @@ function Home() {
       'data-recovery':            '/residential-support/data-recovery',
       'cloud-consulting':         '/business-solutions/cloud-solutions',
       'managed-it':               '/business-solutions/managed-it-services',
-      'quick-tech-help':          '/residential-support/computer-training',
+      'quick-tech-help':          '/residential-support/senior-tech-help',
     };
     navigate(routes[serviceId] || '/residential-services');
   }, [navigate]);
@@ -285,14 +284,45 @@ function Home() {
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: FaMapMarkerAlt, color: 'cyan',   title: 'Nationwide Service', text: 'We serve all 50 states remotely. Wherever you are, we can help.' },
-              { icon: FaBolt,         color: 'green',  title: 'Fast Turnaround',    text: 'Most issues resolved same day. No long waits, no on-site visits.' },
-              { icon: FaShieldAlt,    color: 'purple', title: 'Trusted & Secure',   text: 'We protect your data and privacy on every job, guaranteed.' },
-              { icon: FaHandshake,    color: 'yellow', title: 'No Fix, No Fee',     text: "If we can't fix it, you don't pay. Simple, honest service." },
-            ].map(({ icon: Icon, color, title, text }) => (
-              <div key={title} className={`flex flex-col items-center text-center p-7 rounded-2xl border-t-4 border-${color}-400 bg-white shadow-sm hover:shadow-md transition-shadow`}>
-                <div className={`mb-4 w-14 h-14 bg-${color}-50 rounded-xl flex items-center justify-center`}>
-                  <Icon className={`w-6 h-6 text-${color}-500`} />
+              {
+                icon: FaMapMarkerAlt,
+                title: 'Nationwide Service',
+                text: 'We serve all 50 states remotely. Wherever you are, we can help.',
+                borderClass: 'border-cyan-400',
+                iconBgClass: 'bg-cyan-50',
+                iconTextClass: 'text-cyan-500',
+              },
+              {
+                icon: FaBolt,
+                title: 'Fast Turnaround',
+                text: 'Most issues resolved same day. No long waits, no on-site visits.',
+                borderClass: 'border-green-400',
+                iconBgClass: 'bg-green-50',
+                iconTextClass: 'text-green-500',
+              },
+              {
+                icon: FaShieldAlt,
+                title: 'Trusted & Secure',
+                text: 'We protect your data and privacy on every job, guaranteed.',
+                borderClass: 'border-purple-400',
+                iconBgClass: 'bg-purple-50',
+                iconTextClass: 'text-purple-500',
+              },
+              {
+                icon: FaHandshake,
+                title: 'No Fix, No Fee',
+                text: "If we can't fix it, you don't pay. Simple, honest service.",
+                borderClass: 'border-yellow-400',
+                iconBgClass: 'bg-yellow-50',
+                iconTextClass: 'text-yellow-500',
+              },
+            ].map(({ icon: Icon, title, text, borderClass, iconBgClass, iconTextClass }) => (
+              <div
+                key={title}
+                className={`flex flex-col items-center text-center p-7 rounded-2xl border-t-4 ${borderClass} bg-white shadow-sm hover:shadow-md transition-shadow`}
+              >
+                <div className={`mb-4 w-14 h-14 ${iconBgClass} rounded-xl flex items-center justify-center`}>
+                  <Icon className={`w-6 h-6 ${iconTextClass}`} />
                 </div>
                 <h3 className="font-bold text-gray-800 mb-2">{title}</h3>
                 <p className="text-sm text-gray-500">{text}</p>

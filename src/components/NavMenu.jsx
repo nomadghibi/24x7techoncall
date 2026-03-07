@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   FaBars, FaTimes, FaChevronDown, FaPhoneAlt,
   FaBug, FaWifi, FaDesktop,
-  FaComments, FaGraduationCap, FaShieldAlt, FaLock,
+  FaShieldAlt,
   FaCogs, FaDatabase, FaCloud,
   FaChartLine, FaHeadphones,
   FaEnvelope, FaTachometerAlt, FaUsers, FaNetworkWired, FaUserCog, FaLaptopHouse,

@@ -29,13 +29,14 @@ const PayNow = () => {
   const location = useLocation();
   const paypalClientId = import.meta.env.VITE_PAYPAL_CLIENT_ID;
   const amount = parseAmount(location.state?.amount);
+  const hasValidAmount = amount > 0;
   const description = location.state?.description || 'Service payment';
   const canonicalUrl = 'https://24x7techoncall.com/paynow';
   const [paid, setPaid] = useState(false);
   const [payerName, setPayerName] = useState('');
 
   /* ── No payment details ── */
-  if (!location.state?.amount) {
+  if (!location.state?.amount || !hasValidAmount) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-16">
         {helmet(canonicalUrl)}

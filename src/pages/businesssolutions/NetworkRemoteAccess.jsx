@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
-import { FaCheckCircle, FaPhoneAlt, FaArrowRight, FaNetworkWired, FaShieldAlt, FaWifi, FaLaptop } from 'react-icons/fa';
+import { FaCheckCircle, FaPhoneAlt, FaArrowRight } from 'react-icons/fa';
 import heroImage from '../../assets/optimized-hero/computers-optimized-1152.jpg';
 
 const NetworkRemoteAccess = () => {

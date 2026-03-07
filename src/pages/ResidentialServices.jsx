@@ -3,8 +3,8 @@ import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  FaBug, FaNetworkWired, FaDatabase,
-  FaLaptopHouse, FaChalkboardTeacher,
+  FaBug, FaDatabase,
+  FaLaptopHouse,
   FaCheckCircle, FaDollarSign, FaShieldAlt, FaSave,
   FaLaptop, FaLifeRing, FaPlay, FaPhoneAlt, FaBolt, FaArrowRight,
   FaWifi, FaEnvelope, FaTachometerAlt, FaDesktop, FaUsers,

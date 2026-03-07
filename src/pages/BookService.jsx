@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useMemo, useState } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import emailjs from 'emailjs-com';
 import {
-  FaEnvelope, FaPhone, FaClipboardList, FaCheckCircle,
-  FaPhoneAlt, FaClock, FaMapMarkerAlt, FaArrowRight,
+  FaEnvelope, FaPhone, FaCheckCircle,
+  FaPhoneAlt, FaClock, FaMapMarkerAlt,
 } from 'react-icons/fa';
 import socialImage from '../assets/optimized-hero/heroimage100-1152.jpg';
 
@@ -30,10 +30,40 @@ const BookService = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
+  const location = useLocation();
   const navigate = useNavigate();
   const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
   const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
   const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const prefill = location.state?.prefill;
+
+  const hasPrefillNotice = useMemo(
+    () => Boolean(prefill?.serviceType || prefill?.message),
+    [prefill]
+  );
+
+  useEffect(() => {
+    if (!prefill) return;
+    setFormData((prev) => {
+      let changed = false;
+      const next = { ...prev };
+
+      if (!next.serviceType && typeof prefill.serviceType === 'string' && prefill.serviceType.trim()) {
+        next.serviceType = prefill.serviceType.trim();
+        changed = true;
+      }
+
+      const incomingMessage = typeof prefill.message === 'string' ? prefill.message.trim() : '';
+      if (incomingMessage && !next.message.includes(incomingMessage)) {
+        next.message = next.message.trim()
+          ? `${incomingMessage}\n\n---\n${next.message.trim()}`
+          : incomingMessage;
+        changed = true;
+      }
+
+      return changed ? next : prev;
+    });
+  }, [prefill]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -118,6 +148,12 @@ const BookService = () => {
                 <p className="text-gray-500 text-sm mb-6">
                   Fill out the form and we'll confirm your booking within 1 business day.
                 </p>
+
+                {hasPrefillNotice && (
+                  <div className="p-4 mb-6 text-sm text-cyan-800 border border-cyan-200 rounded-lg bg-cyan-50">
+                    We pre-filled this request using your estimate details. Edit anything before submitting.
+                  </div>
+                )}
 
                 {submitted ? (
                   <div className="flex flex-col items-center gap-4 py-10 text-center">

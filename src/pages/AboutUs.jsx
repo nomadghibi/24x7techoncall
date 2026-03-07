@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
-  FaCheckCircle, FaAward, FaTools, FaBolt, FaStar,
-  FaMapMarkerAlt, FaShieldAlt, FaHandshake, FaCertificate,
+  FaCheckCircle, FaTools, FaBolt, FaStar,
+  FaMapMarkerAlt, FaHandshake, FaCertificate,
   FaUsers, FaLaptop, FaPhoneAlt,
 } from 'react-icons/fa';
 import emailjs from 'emailjs-com';

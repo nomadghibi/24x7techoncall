@@ -165,6 +165,18 @@ const NavMenu = () => {
   const isActive = (path) =>
     location.pathname === path || location.pathname.startsWith(path + '/');
 
+  const isResidentialContext =
+    location.pathname === '/residential-services' ||
+    location.pathname.startsWith('/residential-support');
+  const isBusinessContext =
+    location.pathname === '/business-services' ||
+    location.pathname.startsWith('/business-solutions');
+  const menuProfile = isResidentialContext
+    ? 'residential'
+    : isBusinessContext
+      ? 'business'
+      : 'default';
+
   const linkClass = (path) =>
     `text-sm font-medium transition-colors hover:text-cyan-400 ${
       isActive(path) ? 'text-cyan-400 border-b-2 border-cyan-400 pb-0.5' : 'text-gray-200'
@@ -228,61 +240,65 @@ const NavMenu = () => {
                 About Us
               </Link>
             </li>
-            <li>
-              <Link to="/diagnose-my-issue" className={linkClass('/diagnose-my-issue')} onClick={handleDirectLinkClick}>
-                Diagnose My Issue
-              </Link>
-            </li>
+            {menuProfile !== 'business' && (
+              <li>
+                <Link to="/diagnose-my-issue" className={linkClass('/diagnose-my-issue')} onClick={handleDirectLinkClick}>
+                  Diagnose My Issue
+                </Link>
+              </li>
+            )}
 
-            {/* Residential dropdown */}
-            <li
-              className="relative"
-              onMouseEnter={() => { cancelClose(); setResidentialOpen(true); prefetchPath('/residential-services'); }}
-              onMouseLeave={scheduleClose}
-            >
-              <button
-                className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-cyan-400 ${
-                  isActive('/residential-services') || isActive('/residential-support')
-                    ? 'text-cyan-400'
-                    : 'text-gray-200'
-                }`}
-                onClick={(e) => { e.preventDefault(); handleMenuClick('/residential-services'); }}
+            {menuProfile !== 'business' && (
+              <li
+                className="relative"
+                onMouseEnter={() => { cancelClose(); setResidentialOpen(true); prefetchPath('/residential-services'); }}
+                onMouseLeave={scheduleClose}
               >
-                Residential Services
-                <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${residentialOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <DropdownPanel
-                links={residentialLinks}
-                viewAllTo="/residential-services"
-                viewAllLabel="View All Residential Services"
-                open={residentialOpen}
-              />
-            </li>
+                <button
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-cyan-400 ${
+                    isActive('/residential-services') || isActive('/residential-support')
+                      ? 'text-cyan-400'
+                      : 'text-gray-200'
+                  }`}
+                  onClick={(e) => { e.preventDefault(); handleMenuClick('/residential-services'); }}
+                >
+                  Residential Services
+                  <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${residentialOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <DropdownPanel
+                  links={residentialLinks}
+                  viewAllTo="/residential-services"
+                  viewAllLabel="View All Residential Services"
+                  open={residentialOpen}
+                />
+              </li>
+            )}
 
-            {/* Business dropdown */}
-            <li
-              className="relative"
-              onMouseEnter={() => { cancelClose(); setBusinessOpen(true); prefetchPath('/business-services'); }}
-              onMouseLeave={scheduleClose}
-            >
-              <button
-                className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-cyan-400 ${
-                  isActive('/business-services') || isActive('/business-solutions')
-                    ? 'text-cyan-400'
-                    : 'text-gray-200'
-                }`}
-                onClick={(e) => { e.preventDefault(); handleMenuClick('/business-services'); }}
+            {menuProfile !== 'residential' && (
+              <li
+                className="relative"
+                onMouseEnter={() => { cancelClose(); setBusinessOpen(true); prefetchPath('/business-services'); }}
+                onMouseLeave={scheduleClose}
               >
-                Business Solutions
-                <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${businessOpen ? 'rotate-180' : ''}`} />
-              </button>
-              <DropdownPanel
-                links={businessLinks}
-                viewAllTo="/business-services"
-                viewAllLabel="View All Business Solutions"
-                open={businessOpen}
-              />
-            </li>
+                <button
+                  className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-cyan-400 ${
+                    isActive('/business-services') || isActive('/business-solutions')
+                      ? 'text-cyan-400'
+                      : 'text-gray-200'
+                  }`}
+                  onClick={(e) => { e.preventDefault(); handleMenuClick('/business-services'); }}
+                >
+                  Business Solutions
+                  <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${businessOpen ? 'rotate-180' : ''}`} />
+                </button>
+                <DropdownPanel
+                  links={businessLinks}
+                  viewAllTo="/business-services"
+                  viewAllLabel="View All Business Solutions"
+                  open={businessOpen}
+                />
+              </li>
+            )}
 
             <li>
               <Link to="/pricing" className={linkClass('/pricing')} onClick={handleDirectLinkClick}>
@@ -294,11 +310,13 @@ const NavMenu = () => {
                 Blog
               </Link>
             </li>
-            <li>
-              <Link to="/how-to" className={linkClass('/how-to')} onClick={handleDirectLinkClick}>
-                How To
-              </Link>
-            </li>
+            {menuProfile !== 'business' && (
+              <li>
+                <Link to="/how-to" className={linkClass('/how-to')} onClick={handleDirectLinkClick}>
+                  How To
+                </Link>
+              </li>
+            )}
             <li>
               <Link to="/contact" className={linkClass('/contact')} onClick={handleDirectLinkClick}>
                 Contact
@@ -331,59 +349,69 @@ const NavMenu = () => {
             <div className="flex flex-col bg-gray-900">
               <Link to="/" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Home</Link>
               <Link to="/about-us" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>About Us</Link>
-              <Link to="/diagnose-my-issue" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Diagnose My Issue</Link>
-
-              {/* Residential mobile toggle */}
-              <button
-                className="flex items-center justify-between px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors text-left"
-                onClick={() => handleSubmenuToggle('residential')}
-              >
-                <span>Residential Services</span>
-                <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${residentialOpen ? 'rotate-180' : ''}`} />
-              </button>
-              {residentialOpen && (
-                <div className="bg-gray-800 border-l-4 border-cyan-500 ml-6">
-                  {residentialLinks.map((item) => (
-                    <Link
-                      key={item.to}
-                      to={item.to}
-                      className="flex items-center gap-2.5 px-5 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
-                      onClick={handleSubmenuItemClick}
-                    >
-                      <item.icon className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
+              {menuProfile !== 'business' && (
+                <Link to="/diagnose-my-issue" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Diagnose My Issue</Link>
               )}
 
-              {/* Business mobile toggle */}
-              <button
-                className="flex items-center justify-between px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors text-left"
-                onClick={() => handleSubmenuToggle('business')}
-              >
-                <span>Business Solutions</span>
-                <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${businessOpen ? 'rotate-180' : ''}`} />
-              </button>
-              {businessOpen && (
-                <div className="bg-gray-800 border-l-4 border-cyan-500 ml-6">
-                  {businessLinks.map((item) => (
-                    <Link
-                      key={item.to}
-                      to={item.to}
-                      className="flex items-center gap-2.5 px-5 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
-                      onClick={handleSubmenuItemClick}
-                    >
-                      <item.icon className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
+              {menuProfile !== 'business' && (
+                <>
+                  <button
+                    className="flex items-center justify-between px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors text-left"
+                    onClick={() => handleSubmenuToggle('residential')}
+                  >
+                    <span>Residential Services</span>
+                    <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${residentialOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  {residentialOpen && (
+                    <div className="bg-gray-800 border-l-4 border-cyan-500 ml-6">
+                      {residentialLinks.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="flex items-center gap-2.5 px-5 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
+                          onClick={handleSubmenuItemClick}
+                        >
+                          <item.icon className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
+              )}
+
+              {menuProfile !== 'residential' && (
+                <>
+                  <button
+                    className="flex items-center justify-between px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors text-left"
+                    onClick={() => handleSubmenuToggle('business')}
+                  >
+                    <span>Business Solutions</span>
+                    <FaChevronDown className={`w-3 h-3 transition-transform duration-200 ${businessOpen ? 'rotate-180' : ''}`} />
+                  </button>
+                  {businessOpen && (
+                    <div className="bg-gray-800 border-l-4 border-cyan-500 ml-6">
+                      {businessLinks.map((item) => (
+                        <Link
+                          key={item.to}
+                          to={item.to}
+                          className="flex items-center gap-2.5 px-5 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-gray-700 transition-colors"
+                          onClick={handleSubmenuItemClick}
+                        >
+                          <item.icon className="w-3.5 h-3.5 text-cyan-400 shrink-0" />
+                          {item.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </>
               )}
 
               <Link to="/pricing" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Pricing</Link>
               <Link to="/blog" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Blog</Link>
-              <Link to="/how-to" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>How To</Link>
+              {menuProfile !== 'business' && (
+                <Link to="/how-to" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>How To</Link>
+              )}
               <Link to="/contact" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Contact</Link>
 
               {/* Mobile phone CTA */}

@@ -6,7 +6,7 @@ import {
   FaPowerOff, FaBug, FaTools, FaWifi, FaDatabase,
   FaBuilding, FaBolt, FaCalendarAlt, FaClock,
   FaExclamationTriangle, FaShieldAlt, FaCheck,
-  FaMapMarkerAlt, FaStore, FaHome, FaBriefcase,
+  FaHome, FaBriefcase,
   FaPhoneAlt, FaCheckCircle, FaRedo, FaEnvelope,
   FaChevronRight, FaChevronLeft, FaTachometerAlt,
 } from 'react-icons/fa';
@@ -31,9 +31,8 @@ const optionIcons = {
   important:      FaShieldAlt,
   low:            FaCheck,
   remote:         FaDesktop,
-  onsite:         FaMapMarkerAlt,
-  shop:           FaStore,
-  either:         FaBolt,
+  'remote-now':   FaBolt,
+  'remote-scheduled': FaCalendarAlt,
   home:           FaHome,
   'small-business': FaBriefcase,
 };
@@ -83,12 +82,10 @@ const diagnosticSteps = [
   },
   {
     id: 'supportPreference',
-    question: 'What support style do you prefer?',
+    question: 'Choose your remote support option',
     options: [
-      { value: 'remote', label: 'Remote support first' },
-      { value: 'onsite', label: 'On-site support' },
-      { value: 'shop',   label: 'Drop-off / in-shop repair' },
-      { value: 'either', label: 'Whichever is fastest' },
+      { value: 'remote-now',       label: 'Start remote diagnosis ASAP' },
+      { value: 'remote-scheduled', label: 'Schedule a remote session' },
     ],
   },
   {
@@ -112,13 +109,13 @@ const optionLabelMap = diagnosticSteps.reduce((acc, step) => {
 // ── Recommendation engine ──────────────────────────────────────────────────
 const getRecommendation = (answers) => {
   const issueToService = {
-    'no-power':  { title: 'PC and Laptop Repairs',       route: '/residential-support/pc-laptop-repairs',      reason: 'Power issues usually require hardware diagnostics and repair.' },
-    slow:        { title: 'Software Troubleshooting',    route: '/residential-support/software-troubleshooting', reason: 'Slow systems are often resolved through cleanup, updates, and configuration fixes.' },
-    malware:     { title: 'Virus and Malware Removal',   route: '/residential-support/virus-malware-removal',  reason: 'Malware symptoms need immediate cleanup and security hardening.' },
-    hardware:    { title: 'PC and Laptop Repairs',       route: '/residential-support/pc-laptop-repairs',      reason: 'Physical damage and component issues are best handled through hardware service.' },
-    network:     { title: 'Network Setup and Support',   route: '/residential-support/network-setup-support',  reason: 'Unstable internet and Wi-Fi issues usually need network-level troubleshooting.' },
-    'data-loss': { title: 'Data Recovery',               route: '/residential-support/data-recovery',          reason: 'File loss needs recovery-first handling before major system changes.' },
-    business:    { title: 'Business IT Services',        route: '/business-services',                          reason: 'Multi-device and office-wide issues are best solved with business IT support.' },
+    'no-power':  { title: 'Remote Diagnosis Session',    route: '/contact',                                    reason: 'Power issues often need hands-on repair. We start with remote triage and guide the safest next step.' },
+    slow:        { title: 'Computer Repair & Troubleshooting', route: '/residential-support/computer-repair',  reason: 'Slow systems are usually fixed remotely through cleanup, updates, and optimization.' },
+    malware:     { title: 'Virus and Malware Removal',   route: '/residential-support/virus-malware-removal',  reason: 'Malware symptoms are typically resolved in secure remote cleanup sessions.' },
+    hardware:    { title: 'Remote Diagnosis Session',    route: '/contact',                                    reason: 'Physical damage cannot be repaired remotely, but we can diagnose the impact and advise immediate next actions.' },
+    network:     { title: 'Wi-Fi and Internet Help',     route: '/residential-support/wifi-internet-help',     reason: 'Most internet and Wi-Fi issues can be diagnosed and fixed remotely.' },
+    'data-loss': { title: 'Data Recovery',               route: '/residential-support/data-recovery',          reason: 'Data loss should be assessed remotely first to reduce recovery risk.' },
+    business:    { title: 'Remote Help Desk',            route: '/business-solutions/remote-help-desk',        reason: 'Multi-device business issues are best handled through structured remote support.' },
   };
 
   const selected = issueToService[answers.primaryIssue] || {
@@ -129,7 +126,7 @@ const getRecommendation = (answers) => {
 
   const quickTechEligible =
     answers.urgency === 'today' &&
-    answers.supportPreference !== 'onsite' &&
+    answers.supportPreference === 'remote-now' &&
     ['slow', 'malware', 'network'].includes(answers.primaryIssue);
 
   const notes = [];
@@ -139,6 +136,8 @@ const getRecommendation = (answers) => {
     notes.push('For business systems, ask for a prevention plan to reduce repeat downtime.');
   if (answers.urgency === 'today')
     notes.push('Based on your urgency, request same-day availability when you book.');
+  if (answers.supportPreference === 'remote-scheduled')
+    notes.push('Book a scheduled remote session to reserve a dedicated technician window.');
 
   return { ...selected, quickTechEligible, notes };
 };
@@ -202,7 +201,7 @@ function DiagnoseMyIssue() {
     mainEntity: [
       { '@type': 'Question', name: 'Do you offer same-day computer repair in Nationwide?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, same-day service is often available depending on issue type and schedule. Contact us to confirm current availability.' } },
       { '@type': 'Question', name: 'Can you help with virus removal and slow computer performance?',   acceptedAnswer: { '@type': 'Answer', text: 'Yes, we provide malware cleanup, security hardening, and system optimization for home and small business devices.' } },
-      { '@type': 'Question', name: 'Do you provide remote and on-site support?',                      acceptedAnswer: { '@type': 'Answer', text: 'Yes, we provide remote support for many software issues and on-site support for network, hardware, and office setup needs.' } },
+      { '@type': 'Question', name: 'Is this diagnosis flow for remote support only?',                 acceptedAnswer: { '@type': 'Answer', text: 'Yes. This flow is designed for remote-first service nationwide. If a hardware issue needs in-person repair, we provide next-step guidance after remote triage.' } },
     ],
   };
 
@@ -247,11 +246,11 @@ function DiagnoseMyIssue() {
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Diagnose My Issue</h1>
           <p className="text-lg text-gray-300 mb-8">
-            Answer 6 quick questions and get an instant recommendation for the right service.
+            Answer 6 quick questions and get a remote-first recommendation for the right service.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             {[
-              { icon: FaCheckCircle, text: '6 Questions Only' },
+              { icon: FaDesktop,     text: 'Remote Service Only' },
               { icon: FaBolt,        text: 'Instant Recommendation' },
               { icon: FaShieldAlt,   text: 'Free to Use' },
             ].map(({ icon: Icon, text }) => (
@@ -299,6 +298,10 @@ function DiagnoseMyIssue() {
 
             {/* Question + options */}
             <div className="px-8 py-8">
+              <div className="mb-6 rounded-xl border border-cyan-200 bg-cyan-50 px-4 py-3">
+                <p className="text-xs font-semibold uppercase tracking-wider text-cyan-700 mb-1">Remote Service Only</p>
+                <p className="text-sm text-cyan-900">This wizard recommends remote support paths and remote triage for every issue type.</p>
+              </div>
               <h2 className="text-2xl font-bold text-gray-900 mb-6">{currentStep.question}</h2>
 
               <div className="grid gap-3 sm:grid-cols-2">
@@ -371,6 +374,7 @@ function DiagnoseMyIssue() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-cyan-500 mb-1">Recommended Service</p>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">{recommendation.title}</h3>
                 <p className="text-sm text-gray-700 leading-relaxed">{recommendation.reason}</p>
+                <p className="text-xs font-semibold text-cyan-700 mt-3">Service mode: Remote support only</p>
               </div>
 
               {/* Answers summary */}
@@ -433,7 +437,7 @@ function DiagnoseMyIssue() {
                     to="/book-service"
                     className="flex items-center justify-center gap-2 py-2.5 text-sm font-semibold text-white bg-green-600 rounded-xl hover:bg-green-700 transition-colors"
                   >
-                    Book Service
+                    Book Remote Service
                   </Link>
                   <Link
                     to="/contact"
@@ -448,7 +452,7 @@ function DiagnoseMyIssue() {
                     href="tel:3219535199"
                     className="flex items-center justify-center gap-2 py-2.5 text-sm font-semibold text-cyan-600 bg-cyan-50 border border-cyan-200 rounded-xl hover:bg-cyan-100 transition-colors"
                   >
-                    <FaPhoneAlt className="w-3.5 h-3.5" /> (321) 953-5199
+                    <FaPhoneAlt className="w-3.5 h-3.5" /> Call Remote Support
                   </a>
                   <button
                     type="button"

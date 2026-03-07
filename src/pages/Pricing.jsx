@@ -57,28 +57,28 @@ const remotePlans = [
   },
   {
     id: 'business',
-    title: 'Business Remote Support',
-    tagline: 'Best for small businesses needing reliable ongoing IT help.',
+    title: 'Business Monthly IT Support',
+    tagline: 'Remote managed support for growing teams that need proactive maintenance and fast issue resolution.',
     price: '$149',
-    period: 'per month',
-    badge: null,
+    period: 'monthly starting plan',
+    badge: 'Business',
     highlight: false,
     features: [
-      'Up to 5 users / devices covered',
+      'Up to 5 users and 5 managed endpoints',
       'Unlimited remote help desk sessions',
-      'Microsoft 365 admin & support',
-      'User account & password management',
-      'Email & productivity app support',
-      'Cybersecurity monitoring & alerts',
-      'Monthly patch & update management',
-      'VPN & remote access support',
-      'Backup monitoring & verification',
-      'Priority same-day response',
-      'Dedicated support contact',
-      'Monthly IT health report',
+      'Microsoft 365 admin and user support',
+      'Account setup, offboarding, and access resets',
+      'Endpoint patching and critical update management',
+      'Email, app, and workstation troubleshooting',
+      'Security baseline checks and alert triage',
+      'VPN and secure remote-access support',
+      'Backup status monitoring and restore coordination',
+      'Priority queue with same-day response target',
+      'Dedicated account contact',
+      'Monthly IT health report with action items',
     ],
-    cta: 'Get a Quote',
-    note: 'Need more users? Contact us for a custom plan.',
+    cta: 'Request Monthly Plan',
+    note: 'Need more than 5 users? We can scale this plan with custom per-user pricing.',
   },
 ];
 
@@ -116,7 +116,52 @@ function Pricing() {
     ? heroImage
     : `https://24x7techoncall.com${heroImage || ''}`;
 
+  const buildBusinessInquiryPrefill = (plan) => [
+    'Business Managed IT Contract Inquiry',
+    `Plan selected: ${plan.title}`,
+    `Pricing baseline: ${plan.price} ${plan.period}`,
+    '',
+    'Company profile',
+    '1) Company name:',
+    '2) Industry:',
+    '3) Number of users:',
+    '4) Number of devices (PC/Mac/Server):',
+    '5) Number of office locations:',
+    '6) Estimated IT budget range:',
+    '7) Preferred support coverage:',
+    '8) Compliance requirements:',
+    '',
+    'Current IT environment',
+    '1) Microsoft 365 or Google Workspace:',
+    '2) Current backup solution:',
+    '3) Current security tools:',
+    '4) Current IT provider (if any):',
+    '',
+    'Project priorities',
+    '1) Top issues to solve:',
+    '2) Business-critical systems:',
+    '3) Target start date:',
+    '4) Preferred contact method (phone/email):',
+    '5) Best time for a discovery call:',
+  ].join('\n');
+
   const handleOrderClick = (plan) => {
+    if (plan.id === 'business') {
+      navigate('/contact', {
+        state: {
+          prefill: {
+            source: 'business-contract',
+            planName: plan.title,
+            pricingBaseline: `${plan.price} ${plan.period}`,
+            recommendedService: plan.title,
+            recommendedRoute: '/pricing',
+            message: buildBusinessInquiryPrefill(plan),
+          },
+        },
+      });
+      return;
+    }
+
     const priceMap = { remote: 99, annual: 199, business: 149 };
     navigate('/checkout', {
       state: { service: { title: plan.title, price: priceMap[plan.id] ?? 149 } },

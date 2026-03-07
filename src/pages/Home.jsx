@@ -208,6 +208,35 @@ function Home() {
             <p className="mb-8 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
               Professional remote tech support for homes and businesses nationwide. Available 24/7 — no fix, no fee.
             </p>
+            <div className="mb-8 max-w-3xl mx-auto">
+              <p className="mb-3 text-xs font-bold uppercase tracking-widest text-cyan-300">Choose Your Support Type</p>
+              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <Link
+                  to="/residential-services"
+                  className="flex items-center gap-3 px-5 py-4 text-left bg-white/10 border border-white/25 rounded-2xl hover:bg-white/15 transition-colors"
+                >
+                  <span className="w-10 h-10 shrink-0 rounded-xl bg-cyan-400/20 border border-cyan-300/40 flex items-center justify-center">
+                    <FaLaptopHouse className="w-5 h-5 text-cyan-300" />
+                  </span>
+                  <span>
+                    <span className="block text-base font-bold text-white">Residential Support</span>
+                    <span className="block text-sm text-gray-300">Home users, families, and personal devices</span>
+                  </span>
+                </Link>
+                <Link
+                  to="/business-services"
+                  className="flex items-center gap-3 px-5 py-4 text-left bg-white/10 border border-white/25 rounded-2xl hover:bg-white/15 transition-colors"
+                >
+                  <span className="w-10 h-10 shrink-0 rounded-xl bg-cyan-400/20 border border-cyan-300/40 flex items-center justify-center">
+                    <FaNetworkWired className="w-5 h-5 text-cyan-300" />
+                  </span>
+                  <span>
+                    <span className="block text-base font-bold text-white">Business Support</span>
+                    <span className="block text-sm text-gray-300">Managed IT, help desk, Microsoft 365, and security</span>
+                  </span>
+                </Link>
+              </div>
+            </div>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/diagnose-my-issue" className="px-8 py-3.5 font-bold text-gray-900 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors shadow-lg">
                 Diagnose My Issue

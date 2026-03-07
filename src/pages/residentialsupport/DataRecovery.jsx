@@ -5,7 +5,7 @@ import { FaHdd, FaCompactDisc, FaServer, FaFileAlt, FaExclamationTriangle, FaBug
 import heroImage from '../../assets/optimized-hero/datarecovery2-1152.jpg';
 
 const DataRecovery = () => {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', problem: '' });
   const [selectedService, setSelectedService] = useState(null);
 
@@ -51,19 +51,19 @@ const DataRecovery = () => {
   return (
     <div>
       <Helmet>
-        <title>Data Recovery Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
-        <meta name="description" content="Expert data recovery services in Palm Bay and Melbourne, FL. We specialize in recovering lost data from hard drives, SSDs, RAID arrays, and more. Trust our certified technicians to restore your important files securely and efficiently." />
-        <meta name="keywords" content="data recovery near me, hard drive recovery Palm Bay, SSD recovery Melbourne FL, RAID recovery, virus recovery, data restoration, lost data recovery, Best Computer Tech" />
-        <link rel="canonical" href="https://bestcomputertec.com/residential-support/data-recovery" />
+        <title>Data Recovery Services | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Expert data recovery services in Nationwide. We specialize in recovering lost data from hard drives, SSDs, RAID arrays, and more. Trust our certified technicians to restore your important files securely and efficiently." />
+        <meta name="keywords" content="data recovery near me, hard drive recovery Palm Bay, SSD recovery Melbourne FL, RAID recovery, virus recovery, data restoration, lost data recovery, 24x7 Tech On Call" />
+        <link rel="canonical" href="https://24x7techoncall.com/residential-support/data-recovery" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Data Recovery Services | Best Computer Tech | Palm Bay & Melbourne, FL" />
-        <meta property="og:description" content="Recover your lost data with Best Computer Tech. Serving Palm Bay and Melbourne, FL, we specialize in data recovery from hard drives, SSDs, RAID arrays, and more." />
-        <meta property="og:url" content="https://bestcomputertec.com/residential-support/data-recovery" />
+        <meta property="og:title" content="Data Recovery Services | 24x7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="Recover your lost data with 24x7 Tech On Call. Serving Nationwide, we specialize in data recovery from hard drives, SSDs, RAID arrays, and more." />
+        <meta property="og:url" content="https://24x7techoncall.com/residential-support/data-recovery" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Data Recovery Services | Best Computer Tech" />
-        <meta name="twitter:description" content="Expert data recovery services in Palm Bay and Melbourne, FL. We recover lost data from hard drives, SSDs, RAID arrays, and more." />
+        <meta name="twitter:title" content="Data Recovery Services | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Expert data recovery services in Nationwide. We recover lost data from hard drives, SSDs, RAID arrays, and more." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -91,7 +91,7 @@ const DataRecovery = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Data Recovery Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we specialize in comprehensive data recovery services to retrieve your valuable data from damaged or corrupted storage devices. Our certified technicians are experienced in handling a wide range of data loss scenarios, ensuring your important files are recovered and secured.
+            At 24x7 Tech On Call, we specialize in comprehensive data recovery services to retrieve your valuable data from damaged or corrupted storage devices. Our certified technicians are experienced in handling a wide range of data loss scenarios, ensuring your important files are recovered and secured.
           </p>
         </div>
       </section>
@@ -186,7 +186,7 @@ const DataRecovery = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Space Coast</h3>
               </div>
               <p className="text-gray-600 mb-3">
-                Best Computer Tech proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient data recovery services.
+                24x7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient data recovery services.
               </p>
               <p className="text-gray-600">
                 We offer both onsite and remote services locally, and remote services across the USA.
@@ -217,7 +217,7 @@ const DataRecovery = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Lost Important Data?</h2>
           <p className="text-gray-400 mb-6">
-            Our data recovery specialists in Palm Bay &amp; Melbourne can help retrieve your valuable files from any storage device.
+            Our data recovery specialists nationwide can help retrieve your valuable files from any storage device.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

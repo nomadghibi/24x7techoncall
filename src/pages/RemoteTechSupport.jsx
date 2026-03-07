@@ -8,7 +8,7 @@ const RemoteTechSupport = () => {
     <div>
       <Helmet>
         <title>Remote Tech Support | Palm Bay/Melbourne FL | Expert IT Services</title>
-        <meta name="description" content="Reliable remote tech support services in Palm Bay/Melbourne, FL. Get professional IT help without leaving your home or office. Contact us for instant support!" />
+        <meta name="description" content="Reliable remote tech support services nationwide/the USA. Get professional IT help without leaving your home or office. Contact us for instant support!" />
         <meta name="keywords" content="Remote Tech Support Palm Bay/Melbourne FL, IT Support, Remote Assistance, Computer Help, Online Tech Support, Virtual IT Support, Computer Repair" />
       </Helmet>
       <HeroSection title="Remote Tech Support" image={heroImage} />

@@ -5,23 +5,23 @@ import { FaArrowLeft, FaHeadset } from 'react-icons/fa';
 import heroImage from '../../assets/optimized-hero/howtoemail-1152.jpg';
 
 function SetUpEmail() {
-  const canonicalUrl = 'https://bestcomputertec.com/how-to/set-up-email';
+  const canonicalUrl = 'https://24x7techoncall.com/how-to/set-up-email';
 
   return (
     <div>
       <Helmet>
-        <title>How to Set Up Email on Your Computer | Best Computer Tech</title>
+        <title>How to Set Up Email on Your Computer | 24x7 Tech On Call</title>
         <meta name="description" content="Step-by-step instructions to set up email on your computer using Outlook, Thunderbird, Apple Mail, and other clients." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Set Up Email on Your Computer | Best Computer Tech" />
+        <meta property="og:title" content="How to Set Up Email on Your Computer | 24x7 Tech On Call" />
         <meta property="og:description" content="Configure incoming and outgoing mail settings correctly for a reliable email setup." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Set Up Email on Your Computer | Best Computer Tech" />
+        <meta name="twitter:title" content="How to Set Up Email on Your Computer | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Set up email clients with the right IMAP/POP/SMTP settings in minutes." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
@@ -122,7 +122,7 @@ function SetUpEmail() {
           <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Help Setting Up Email?</h2>
           <p className="text-cyan-100 mb-6">
-            Our local IT experts in Palm Bay &amp; Melbourne can configure your email client, migrate accounts, or troubleshoot any mail issues quickly.
+            Our local IT experts nationwide &amp; Melbourne can configure your email client, migrate accounts, or troubleshoot any mail issues quickly.
           </p>
           <Link
             to="/contact"

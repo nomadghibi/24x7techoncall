@@ -7,15 +7,15 @@ import { FaHome, FaArrowRight, FaEnvelope } from 'react-icons/fa';
 
 const ConfirmationPage = () => {
   const navigate = useNavigate();
-  const canonicalUrl = 'https://bestcomputertec.com/confirmation';
+  const canonicalUrl = 'https://24x7techoncall.com/confirmation';
 
   return (
     <div className="container py-16 mx-auto text-center">
       <Helmet>
-        <title>Service Request Received | Best Computer Tech</title>
+        <title>Service Request Received | 24x7 Tech On Call</title>
         <meta
           name="description"
-          content="Confirmation page for completed service requests submitted to Best Computer Tech."
+          content="Confirmation page for completed service requests submitted to 24x7 Tech On Call."
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="noindex, nofollow" />

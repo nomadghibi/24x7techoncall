@@ -5,23 +5,23 @@ import { FaArrowLeft, FaHeadset } from 'react-icons/fa';
 import heroImage from '../../assets/optimized-hero/fixbrokenscreen-1152.jpg';
 
 function FixBrokenScreen() {
-  const canonicalUrl = 'https://bestcomputertec.com/how-to/fix-broken-screen';
+  const canonicalUrl = 'https://24x7techoncall.com/how-to/fix-broken-screen';
 
   return (
     <div>
       <Helmet>
-        <title>How to Fix a Broken Screen | Best Computer Tech</title>
-        <meta name="description" content="Learn how to fix a broken laptop screen with this step-by-step guide from Best Computer Tech. Serving Palm Bay and Melbourne, Florida." />
+        <title>How to Fix a Broken Screen | 24x7 Tech On Call</title>
+        <meta name="description" content="Learn how to fix a broken laptop screen with this step-by-step guide from 24x7 Tech On Call. Serving Nationwide, Florida." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Fix a Broken Screen | Best Computer Tech" />
+        <meta property="og:title" content="How to Fix a Broken Screen | 24x7 Tech On Call" />
         <meta property="og:description" content="Step-by-step instructions to replace a broken laptop screen safely and correctly." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Fix a Broken Screen | Best Computer Tech" />
+        <meta name="twitter:title" content="How to Fix a Broken Screen | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Follow this practical guide to replace a broken laptop screen." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
@@ -136,7 +136,7 @@ function FixBrokenScreen() {
           <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Professional Screen Repair?</h2>
           <p className="text-cyan-100 mb-6">
-            Not comfortable with a DIY repair? Our certified technicians in Palm Bay &amp; Melbourne handle screen replacements quickly and affordably.
+            Not comfortable with a DIY repair? Our certified technicians nationwide &amp; Melbourne handle screen replacements quickly and affordably.
           </p>
           <Link
             to="/contact"

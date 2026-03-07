@@ -99,7 +99,7 @@ const Checkout = () => {
   return (
     <div>
       <Helmet>
-        <link rel="canonical" href="https://bestcomputertec.com/checkout" />
+        <link rel="canonical" href="https://24x7techoncall.com/checkout" />
         <title>{checkoutTitle}</title>
         <meta
           name="description"

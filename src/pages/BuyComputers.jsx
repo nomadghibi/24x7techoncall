@@ -76,8 +76,8 @@ const BuyComputers = () => {
   return (
     <div className="container p-8 mx-auto">
       <Helmet>
-        <title>Buy Computers - Best Computer Tech</title>
-        <link rel="canonical" href="https://bestcomputertec.com/buy-computers" />
+        <title>Buy Computers - 24x7 Tech On Call</title>
+        <link rel="canonical" href="https://24x7techoncall.com/buy-computers" />
       </Helmet>
       <h1 className="mb-4 text-4xl font-bold">Buy Computers</h1>
       {bundles.map((bundle, index) => (
@@ -103,7 +103,7 @@ const BuyComputers = () => {
               </ul>
               <h3 className="mb-4 text-2xl font-bold">Seamless Transition Package:</h3>
               <p className="mb-4">
-                Every computer purchased from Best Computer Tech LLC comes with an all-inclusive data transfer service. This service ensures that all your files are seamlessly transferred from your old computer to your new one. Plus, it also includes:
+                Every computer purchased from 24x7 Tech On Call comes with an all-inclusive data transfer service. This service ensures that all your files are seamlessly transferred from your old computer to your new one. Plus, it also includes:
               </p>
               <ul className="mb-4 list-disc list-inside">
                 {bundle.services.map((service, index) => (

@@ -7,8 +7,8 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/businesscomputertraining-1152.jpg';
 
 const BusinessComputerTraining = () => {
-  const canonicalUrl = 'https://bestcomputertec.com/business-solutions/computer-training';
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const canonicalUrl = 'https://24x7techoncall.com/business-solutions/computer-training';
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', serviceDeliveryMethod: '', problem: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
@@ -63,17 +63,17 @@ const BusinessComputerTraining = () => {
   return (
     <div>
       <Helmet>
-        <title>Business Computer Training | Best Computer Tech | Palm Bay &amp; Melbourne, FL</title>
+        <title>Business Computer Training | 24x7 Tech On Call | Nationwide</title>
         <meta name="description" content="Comprehensive computer training programs, including Microsoft 365 training, designed to boost your team's technical skills and productivity." />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Business Computer Training | Best Computer Tech" />
+        <meta property="og:title" content="Business Computer Training | 24x7 Tech On Call" />
         <meta property="og:description" content="Comprehensive computer training programs, including Microsoft 365 training, designed to boost your team's technical skills and productivity." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business Computer Training | Best Computer Tech" />
+        <meta name="twitter:title" content="Business Computer Training | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Comprehensive computer training programs designed to boost your team's technical skills." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -102,7 +102,7 @@ const BusinessComputerTraining = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Professional Computer Training for Businesses</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we offer comprehensive computer training programs, including specialized Microsoft 365 training, designed to boost your team's technical skills and productivity. Our expert trainers deliver customized training solutions tailored to the unique needs of your business.
+            At 24x7 Tech On Call, we offer comprehensive computer training programs, including specialized Microsoft 365 training, designed to boost your team's technical skills and productivity. Our expert trainers deliver customized training solutions tailored to the unique needs of your business.
           </p>
         </div>
       </section>
@@ -207,7 +207,7 @@ const BusinessComputerTraining = () => {
                 <h3 className="text-xl font-bold text-gray-900">Providing IT Training Services Across the USA</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, Best Computer Tech has resolved over 10,000 IT issues, enabling businesses to focus on growth. Proudly serving Palm Bay, Melbourne, the Space Coast of Florida, and across the USA, our trainers deliver personalized and efficient training to help your team excel.
+                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues, enabling businesses to focus on growth. Proudly serving homes and businesses across the entire United States, our trainers deliver personalized and efficient training to help your team excel.
               </p>
             </div>
 
@@ -235,7 +235,7 @@ const BusinessComputerTraining = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Ready to Upskill Your Team?</h2>
           <p className="text-gray-400 mb-6">
-            Our expert trainers in Palm Bay &amp; Melbourne can deliver customized IT training programs that fit your team's schedule and goals.
+            Our expert trainers nationwide can deliver customized IT training programs that fit your team's schedule and goals.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

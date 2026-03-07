@@ -148,7 +148,7 @@ const buildDiagnosisSummary = (answers, recommendation) => {
   const lines = [
     'Diagnose My Issue Summary',
     `Recommended Service: ${recommendation.title}`,
-    `Recommended Path: https://bestcomputertec.com${recommendation.route}`,
+    `Recommended Path: https://24x7techoncall.com${recommendation.route}`,
     '',
     'Answers:',
     `- Device: ${safeLabel('deviceType')}`,
@@ -172,7 +172,7 @@ function DiagnoseMyIssue() {
   const [stepIndex, setStepIndex] = useState(0);
   const [answers, setAnswers]     = useState({});
 
-  const canonicalUrl   = 'https://bestcomputertec.com/diagnose-my-issue';
+  const canonicalUrl   = 'https://24x7techoncall.com/diagnose-my-issue';
   const isComplete     = stepIndex >= diagnosticSteps.length;
   const safeStepIndex  = Math.min(stepIndex, diagnosticSteps.length - 1);
   const currentStep    = diagnosticSteps[safeStepIndex];
@@ -200,7 +200,7 @@ function DiagnoseMyIssue() {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
-      { '@type': 'Question', name: 'Do you offer same-day computer repair in Palm Bay and Melbourne?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, same-day service is often available depending on issue type and schedule. Contact us to confirm current availability.' } },
+      { '@type': 'Question', name: 'Do you offer same-day computer repair in Nationwide?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, same-day service is often available depending on issue type and schedule. Contact us to confirm current availability.' } },
       { '@type': 'Question', name: 'Can you help with virus removal and slow computer performance?',   acceptedAnswer: { '@type': 'Answer', text: 'Yes, we provide malware cleanup, security hardening, and system optimization for home and small business devices.' } },
       { '@type': 'Question', name: 'Do you provide remote and on-site support?',                      acceptedAnswer: { '@type': 'Answer', text: 'Yes, we provide remote support for many software issues and on-site support for network, hardware, and office setup needs.' } },
     ],
@@ -210,7 +210,7 @@ function DiagnoseMyIssue() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home',             item: 'https://bestcomputertec.com/' },
+      { '@type': 'ListItem', position: 1, name: 'Home',             item: 'https://24x7techoncall.com/' },
       { '@type': 'ListItem', position: 2, name: 'Diagnose My Issue', item: canonicalUrl },
     ],
   };
@@ -223,17 +223,17 @@ function DiagnoseMyIssue() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
-        <title>Diagnose My Issue | Computer Repair Near You | Best Computer Tech</title>
-        <meta name="description" content="Use our step-by-step diagnosis wizard to find the right computer repair service in Palm Bay and Melbourne, FL. Fast recommendations for malware, slow PCs, data recovery, and network issues." />
+        <title>Diagnose My Issue | Computer Repair Near You | 24x7 Tech On Call</title>
+        <meta name="description" content="Use our step-by-step diagnosis wizard to find the right computer repair service in Nationwide. Fast recommendations for malware, slow PCs, data recovery, and network issues." />
         <meta name="keywords" content="computer repairs near you, computer repair near me, laptop repair near me, Palm Bay computer repair, Melbourne FL computer support, diagnose computer issue" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Diagnose My Issue | Best Computer Tech" />
-        <meta property="og:description" content="Answer a few questions and get the right support path for your computer issue in Palm Bay and Melbourne." />
+        <meta property="og:title" content="Diagnose My Issue | 24x7 Tech On Call" />
+        <meta property="og:description" content="Answer a few questions and get the right support path for your computer issue in Nationwide." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Diagnose My Issue | Best Computer Tech" />
+        <meta name="twitter:title" content="Diagnose My Issue | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Find the right local repair service with our quick diagnosis wizard." />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

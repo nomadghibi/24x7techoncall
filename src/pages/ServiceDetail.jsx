@@ -76,24 +76,24 @@ function ServiceDetail() {
     event.preventDefault();
     navigate('/checkout', { state: { service } });
   };
-  const canonicalUrl = `https://bestcomputertec.com/services/${serviceId}`;
-  const pageImage = socialImage?.startsWith('http') ? socialImage : `https://bestcomputertec.com${socialImage || ''}`;
+  const canonicalUrl = `https://24x7techoncall.com/services/${serviceId}`;
+  const pageImage = socialImage?.startsWith('http') ? socialImage : `https://24x7techoncall.com${socialImage || ''}`;
 
   return (
     <div className="container p-8 mx-auto">
       <Helmet>
         <title>{service.title} | Palm Bay/Melbourne FL | Tech Support Services</title>
-        <meta name="description" content={`${service.description} - Available in Palm Bay/Melbourne, FL. Contact us today for expert IT support.`} />
+        <meta name="description" content={`${service.description} - Available nationwide/the USA. Contact us today for expert IT support.`} />
         <meta name="keywords" content={`${service.title}, Palm Bay/Melbourne FL, IT Services, Tech Support, Computer Repair`} />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content={`${service.title} | Best Computer Tech`} />
+        <meta property="og:title" content={`${service.title} | 24x7 Tech On Call`} />
         <meta property="og:description" content={service.description} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={`${service.title} | Best Computer Tech`} />
+        <meta name="twitter:title" content={`${service.title} | 24x7 Tech On Call`} />
         <meta name="twitter:description" content={service.description} />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

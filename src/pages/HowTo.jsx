@@ -84,24 +84,24 @@ const tutorials = [
 ];
 
 function HowTo() {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
 
   return (
     <div>
       <Helmet>
-        <title>How To Guides | Best Computer Tech | Palm Bay & Melbourne, FL</title>
-        <meta name="description" content="Explore step-by-step tech support and tutorials from Best Computer Tech. Learn how to fix, set up, and optimize your devices with our expert guides." />
+        <title>How To Guides | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Explore step-by-step tech support and tutorials from 24x7 Tech On Call. Learn how to fix, set up, and optimize your devices with our expert guides." />
         <meta name="keywords" content="how-to guides, tech tutorials, laptop repair, network setup, data recovery, remote support, computer performance, online safety, Palm Bay, Melbourne FL" />
-        <link rel="canonical" href="https://bestcomputertec.com/how-to" />
+        <link rel="canonical" href="https://24x7techoncall.com/how-to" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="How To Guides | Best Computer Tech | Palm Bay & Melbourne, FL" />
-        <meta property="og:description" content="Get expert tech support with our How To Guides. Serving Palm Bay and Melbourne, FL, we offer step-by-step tutorials to help you fix, set up, and optimize your devices." />
-        <meta property="og:url" content="https://bestcomputertec.com/how-to" />
+        <meta property="og:title" content="How To Guides | 24x7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="Get expert tech support with our How To Guides. Serving Nationwide, we offer step-by-step tutorials to help you fix, set up, and optimize your devices." />
+        <meta property="og:url" content="https://24x7techoncall.com/how-to" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How To Guides | Best Computer Tech" />
-        <meta name="twitter:description" content="Find step-by-step tech tutorials on fixing, setting up, and optimizing your devices. Serving Palm Bay and Melbourne, FL." />
+        <meta name="twitter:title" content="How To Guides | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Find step-by-step tech tutorials on fixing, setting up, and optimizing your devices. Serving Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -122,7 +122,7 @@ function HowTo() {
           </span>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight">How To Guides</h1>
           <p className="mt-3 text-cyan-100 text-lg max-w-2xl">
-            Step-by-step tutorials to help you fix, optimize, and protect your devices — from our local IT experts in Brevard County, FL.
+            Step-by-step tutorials to help you fix, optimize, and protect your devices — from our local IT experts in the USA.
           </p>
           <a
             href="tel:3219535199"
@@ -182,7 +182,7 @@ function HowTo() {
           <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-3">We're Here to Help</p>
           <h2 className="text-3xl font-bold mb-3">Still Need Help?</h2>
           <p className="text-gray-400 mb-8 text-lg">
-            Our local IT experts in Palm Bay &amp; Melbourne are ready to assist — in person, remotely, or on-site.
+            Our local IT experts nationwide &amp; Melbourne are ready to assist — in person, remotely, or on-site.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Link

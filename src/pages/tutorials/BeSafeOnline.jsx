@@ -8,19 +8,19 @@ function BeSafeOnline() {
   return (
     <div>
       <Helmet>
-        <title>How to Be Safe Online | Palm Bay &amp; Melbourne FL | Best Computer Tech</title>
-        <meta name="description" content="Learn essential steps and guidelines to stay safe online, protect your personal information, and secure your digital presence. Stay vigilant against cyber threats with expert advice from Best Computer Tech." />
+        <title>How to Be Safe Online | Palm Bay &amp; Melbourne FL | 24x7 Tech On Call</title>
+        <meta name="description" content="Learn essential steps and guidelines to stay safe online, protect your personal information, and secure your digital presence. Stay vigilant against cyber threats with expert advice from 24x7 Tech On Call." />
         <meta name="keywords" content="online safety, cybersecurity, Palm Bay, Melbourne FL, strong passwords, two-factor authentication, secure connections, personal information protection, antivirus software, phishing scams, VPN" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://bestcomputertec.com/how-to/be-safe-online" />
+        <link rel="canonical" href="https://24x7techoncall.com/how-to/be-safe-online" />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Be Safe Online | Best Computer Tech" />
+        <meta property="og:title" content="How to Be Safe Online | 24x7 Tech On Call" />
         <meta property="og:description" content="Learn practical cybersecurity habits to protect your accounts, devices, and personal data online." />
-        <meta property="og:url" content="https://bestcomputertec.com/how-to/be-safe-online" />
+        <meta property="og:url" content="https://24x7techoncall.com/how-to/be-safe-online" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Be Safe Online | Best Computer Tech" />
+        <meta name="twitter:title" content="How to Be Safe Online | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Follow these steps to stay safer online and reduce cybersecurity risks." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
@@ -144,7 +144,7 @@ function BeSafeOnline() {
           <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Help with Online Security?</h2>
           <p className="text-cyan-100 mb-6">
-            Our cybersecurity experts in Palm Bay &amp; Melbourne can audit your setup, remove threats, and strengthen your digital defenses.
+            Our cybersecurity experts nationwide &amp; Melbourne can audit your setup, remove threats, and strengthen your digital defenses.
           </p>
           <Link
             to="/contact"

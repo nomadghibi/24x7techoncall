@@ -14,7 +14,7 @@
 //     return [
 //       {
 //         id: '1',
-//         message: 'Welcome to Best Computer Tech! Are you looking for residential computer help or business solutions service?',
+//         message: 'Welcome to 24x7 Tech On Call! Are you looking for residential computer help or business solutions service?',
 //         trigger: '2',
 //       },
 //       {
@@ -154,7 +154,7 @@ const ChatbotComponent = () => {
     return [
       {
         id: '1',
-        message: 'Welcome to Best Computer Tech! Are you looking for residential computer help or business solutions service?',
+        message: 'Welcome to 24x7 Tech On Call! Are you looking for residential computer help or business solutions service?',
         trigger: '2',
       },
       {

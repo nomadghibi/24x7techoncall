@@ -226,15 +226,15 @@ function Subscribe() {
   const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
-  const canonicalUrl = 'https://bestcomputertec.com/subscribe';
+  const canonicalUrl = 'https://24x7techoncall.com/subscribe';
   const pageImage = heroImage?.startsWith('http')
     ? heroImage
-    : `https://bestcomputertec.com${heroImage || ''}`;
+    : `https://24x7techoncall.com${heroImage || ''}`;
 
   const newsletterSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: 'Best Computer Tech 2025–2026 Monthly Newsletter Archive',
+    name: '24x7 Tech On Call 2025–2026 Monthly Newsletter Archive',
     itemListElement: newsletters.map((issue, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -242,7 +242,7 @@ function Subscribe() {
         '@type': 'CreativeWork',
         name: issue.title,
         datePublished: issue.publishDate,
-        url: `https://bestcomputertec.com${issue.file}`,
+        url: `https://24x7techoncall.com${issue.file}`,
         description: issue.summary,
       },
     })),
@@ -260,10 +260,10 @@ function Subscribe() {
   return (
     <div>
       <Helmet>
-        <title>Subscribe to Our Newsletter | Best Computer Tech</title>
+        <title>Subscribe to Our Newsletter | 24x7 Tech On Call</title>
         <meta
           name="description"
-          content="Subscribe for monthly IT newsletters and download practical issues on AI operations, cybersecurity, compliance, and business automation for Palm Bay and Melbourne, FL."
+          content="Subscribe for monthly IT newsletters and download practical issues on AI operations, cybersecurity, compliance, and business automation for Nationwide."
         />
         <meta
           name="keywords"
@@ -271,7 +271,7 @@ function Subscribe() {
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Subscribe to Our Newsletter | Best Computer Tech" />
+        <meta property="og:title" content="Subscribe to Our Newsletter | 24x7 Tech On Call" />
         <meta
           property="og:description"
           content="Join our newsletter for the latest tech support tips and offers."
@@ -280,7 +280,7 @@ function Subscribe() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Subscribe to Our Newsletter | Best Computer Tech" />
+        <meta name="twitter:title" content="Subscribe to Our Newsletter | 24x7 Tech On Call" />
         <meta
           name="twitter:description"
           content="Download monthly newsletters with practical AI, cybersecurity, and operations guidance."
@@ -296,7 +296,7 @@ function Subscribe() {
       >
         <div className="container mx-auto text-center px-4">
           <h1 className="mb-4 text-5xl font-bold leading-tight">Subscribe to Our Newsletter</h1>
-          <p className="mb-8 text-xl">Monthly IT insights for Palm Bay &amp; Melbourne, FL businesses.</p>
+          <p className="mb-8 text-xl">Monthly IT insights for Nationwide businesses.</p>
         </div>
       </section>
 

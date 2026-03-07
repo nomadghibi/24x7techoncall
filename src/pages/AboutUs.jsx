@@ -16,10 +16,10 @@ const inputClass =
 const labelClass = 'block mb-1 text-sm font-semibold text-gray-700';
 
 const AboutUs = () => {
-  const canonicalUrl = 'https://bestcomputertec.com/about-us';
+  const canonicalUrl = 'https://24x7techoncall.com/about-us';
   const pageImage = heroImage?.startsWith('http')
     ? heroImage
-    : `https://bestcomputertec.com${heroImage || ''}`;
+    : `https://24x7techoncall.com${heroImage || ''}`;
 
   const [formData, setFormData] = useState({
     firstName: '', lastName: '', phone: '', email: '', message: '',
@@ -52,19 +52,19 @@ const AboutUs = () => {
   return (
     <div>
       <Helmet>
-        <title>About Us | Your Trusted IT Support Partner in Palm Bay & Melbourne, FL</title>
-        <meta name="description" content="Discover our team and mission at Best Computer Tech. As your trusted IT support partner in Palm Bay and Melbourne, FL, we offer expert computer repair, tech support, and comprehensive IT solutions tailored to your needs." />
-        <meta name="keywords" content="About Us, IT Support Palm Bay, IT Support Melbourne FL, Computer Repair Palm Bay, Tech Support Melbourne, Best Computer Tech, IT solutions Palm Bay, Melbourne FL computer repair, tech support services, company mission, local IT experts" />
+        <title>About Us | Your Trusted Remote IT Support Partner | 24x7 Tech On Call</title>
+        <meta name="description" content="Discover our team and mission at 24x7 Tech On Call. Your trusted nationwide remote IT support partner offering expert computer repair, tech support, and comprehensive IT solutions." />
+        <meta name="keywords" content="About Us, 24x7 Tech On Call, remote IT support, nationwide tech support, online computer repair, remote tech experts, company mission" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="About Us | Your Trusted IT Support Partner in Palm Bay & Melbourne, FL" />
-        <meta property="og:description" content="Learn about Best Computer Tech, your go-to IT support partner in Palm Bay and Melbourne, FL. We specialize in computer repair, tech support, and IT solutions tailored to meet your business and personal needs." />
+        <meta property="og:title" content="About Us | 24x7 Tech On Call — Nationwide Remote IT Support" />
+        <meta property="og:description" content="Learn about 24x7 Tech On Call, your nationwide remote IT support partner. We specialize in computer repair, tech support, and IT solutions for homes and businesses." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | Your Trusted IT Support Partner in Palm Bay & Melbourne, FL" />
-        <meta name="twitter:description" content="Get to know Best Computer Tech, your trusted partner for IT support in Palm Bay and Melbourne, FL. We provide expert computer repair, tech support, and IT solutions." />
+        <meta name="twitter:title" content="About Us | 24x7 Tech On Call — Nationwide Remote IT Support" />
+        <meta name="twitter:description" content="Get to know 24x7 Tech On Call, your trusted nationwide partner for remote IT support, computer repair, and tech solutions." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -80,8 +80,8 @@ const AboutUs = () => {
             <span className="text-gray-500">/</span>
             <span className="text-gray-300">About Us</span>
           </nav>
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight">About Best Computer Tech</h1>
-          <p className="mt-3 text-cyan-100 text-lg max-w-2xl">Your trusted local IT experts serving Palm Bay, Melbourne, and all of Brevard County since 2009.</p>
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">About 24x7 Tech On Call</h1>
+          <p className="mt-3 text-cyan-100 text-lg max-w-2xl">Your trusted local IT experts serving the entire United States since 2009.</p>
           <a
             href="tel:3219535199"
             className="inline-flex items-center gap-2 mt-6 px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-gray-900 font-bold rounded-full transition-colors shadow-lg"
@@ -99,10 +99,10 @@ const AboutUs = () => {
               <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Our Story</p>
               <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-cyan-500 pl-4">Trusted IT Support Since 2009</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Since 2009, Best Computer Tech (BCT) has been a trusted name in IT support, offering comprehensive solutions both onsite on Florida's Space Coast and remotely across the USA. Our mission is to deliver exceptional tech support tailored to the diverse needs of residential and business clients.
+                Since 2009, 24x7 Tech On Call (BCT) has been a trusted name in IT support, offering comprehensive solutions both onsite on Florida's Space Coast and remotely across the USA. Our mission is to deliver exceptional tech support tailored to the diverse needs of residential and business clients.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
-                Whether you need Computer Repair, Network Setup, Data Recovery, or Cybersecurity Solutions, our skilled technicians are here every step of the way. As Palm Bay IT experts and leading providers of Melbourne FL tech services, we keep your technology running so you can focus on what matters most.
+                Whether you need Computer Repair, Network Setup, Data Recovery, or Cybersecurity Solutions, our skilled technicians are here every step of the way. As nationwide remote IT experts, we keep your technology running so you can focus on what matters most.
               </p>
               <div className="flex flex-col gap-3">
                 {[
@@ -131,7 +131,7 @@ const AboutUs = () => {
                 <FaMapMarkerAlt className="w-8 h-8 mb-3 text-cyan-400" />
                 <h3 className="text-2xl font-bold mb-2">US-Based Tech Support</h3>
                 <p className="text-gray-300 text-sm leading-relaxed">
-                  Proudly serving Palm Bay, Melbourne, and all of Brevard County — with remote support available nationwide.
+                  Proudly serving the entire United States — with remote support available nationwide.
                 </p>
               </div>
             </div>
@@ -183,7 +183,7 @@ const AboutUs = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Why Us</p>
-            <h2 className="text-3xl font-bold text-gray-900">Why Choose Best Computer Tech?</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Why Choose 24x7 Tech On Call?</h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 border-t-4 border-t-cyan-500 flex flex-col items-center text-center hover:shadow-md transition-shadow">
@@ -212,7 +212,7 @@ const AboutUs = () => {
                 <FaStar className="w-6 h-6 text-cyan-500" />
               </div>
               <h3 className="font-bold text-gray-800 mb-2">5-Star Satisfaction</h3>
-              <p className="text-sm text-gray-600">Our positive reviews and loyal client base reflect our commitment to excellence across Brevard County.</p>
+              <p className="text-sm text-gray-600">Our positive reviews and loyal client base reflect our commitment to excellence across the USA.</p>
             </div>
           </div>
         </div>

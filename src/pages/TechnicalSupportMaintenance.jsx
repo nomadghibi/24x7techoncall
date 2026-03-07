@@ -32,7 +32,7 @@ const TechnicalSupportMaintenance = () => {
     <div>
       <Helmet>
         <title>Technical Support & Maintenance | Palm Bay/Melbourne FL | IT Services</title>
-        <meta name="description" content="Comprehensive technical support and maintenance services in Palm Bay/Melbourne, FL. Keep your systems running smoothly with our expert IT support." />
+        <meta name="description" content="Comprehensive technical support and maintenance services nationwide/the USA. Keep your systems running smoothly with our expert IT support." />
         <meta name="keywords" content="Technical Support Palm Bay/Melbourne FL, IT Maintenance, System Support, Computer Repair, IT Services, Network Maintenance, IT Support" />
       </Helmet>
       <HeroSection title="Technical Support and Maintenance" image={heroImage} />

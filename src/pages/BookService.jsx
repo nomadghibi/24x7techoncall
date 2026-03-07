@@ -20,8 +20,8 @@ const steps = [
 ];
 
 const BookService = () => {
-  const canonicalUrl = 'https://bestcomputertec.com/book-service';
-  const pageImage = socialImage?.startsWith('http') ? socialImage : `https://bestcomputertec.com${socialImage || ''}`;
+  const canonicalUrl = 'https://24x7techoncall.com/book-service';
+  const pageImage = socialImage?.startsWith('http') ? socialImage : `https://24x7techoncall.com${socialImage || ''}`;
 
   const [formData, setFormData] = useState({
     name: '', email: '', phone: '', serviceType: '', message: '',
@@ -65,18 +65,18 @@ const BookService = () => {
   return (
     <div>
       <Helmet>
-        <title>Book a Service | Best Computer Tech | Palm Bay & Melbourne, FL</title>
-        <meta name="description" content="Book computer repair, IT support, and technology services with Best Computer Tech in Palm Bay and Melbourne, FL." />
-        <meta name="keywords" content="book computer service Palm Bay, schedule IT support Melbourne FL, computer repair appointment" />
+        <title>Book a Service | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Book computer repair, IT support, and technology services with 24x7 Tech On Call in Nationwide." />
+        <meta name="keywords" content="book remote computer service, schedule IT support online, remote computer repair appointment" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Book a Service | Best Computer Tech" />
-        <meta property="og:description" content="Schedule your computer and IT service appointment with Best Computer Tech." />
+        <meta property="og:title" content="Book a Service | 24x7 Tech On Call" />
+        <meta property="og:description" content="Schedule your computer and IT service appointment with 24x7 Tech On Call." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Book a Service | Best Computer Tech" />
+        <meta name="twitter:title" content="Book a Service | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Book a computer or IT support service appointment online." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -308,7 +308,7 @@ const BookService = () => {
                     </div>
                     <div>
                       <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide">Service Area</p>
-                      <p className="text-gray-800 font-semibold">Palm Bay &amp; Melbourne, FL<br /><span className="font-normal text-gray-500 text-sm">Remote support available nationwide</span></p>
+                      <p className="text-gray-800 font-semibold">Nationwide<br /><span className="font-normal text-gray-500 text-sm">Remote support available nationwide</span></p>
                     </div>
                   </li>
                 </ul>

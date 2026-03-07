@@ -3,10 +3,11 @@ import { Helmet } from 'react-helmet-async';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
-  FaTools, FaBug, FaNetworkWired, FaDatabase,
-  FaLaptopHouse, FaChalkboardTeacher, FaCloud,
+  FaBug, FaNetworkWired, FaDatabase,
+  FaLaptopHouse, FaChalkboardTeacher,
   FaCheckCircle, FaDollarSign, FaShieldAlt, FaSave,
   FaLaptop, FaLifeRing, FaPlay, FaPhoneAlt, FaBolt, FaArrowRight,
+  FaWifi, FaEnvelope, FaTachometerAlt, FaDesktop, FaUsers,
 } from 'react-icons/fa';
 
 import heroImage from '../assets/optimized-hero/residentail-1152.jpg';
@@ -14,66 +15,74 @@ import computerImage from '../assets/optimized-hero/computers-optimized-1152.jpg
 
 const services = [
   {
-    id: 'hardware-repairs',
-    title: 'Hardware Repairs',
-    description: 'Fixing broken screens, malfunctioning keyboards, and other hardware issues.',
-    icon: FaTools,
-    color: 'text-blue-500',
-    bg: 'bg-blue-50',
-  },
-  {
-    id: 'software-troubleshooting',
-    title: 'Software Troubleshooting',
-    description: 'Resolving OS errors, application crashes, and software installation issues.',
-    icon: FaLaptop,
-    color: 'text-green-500',
-    bg: 'bg-green-50',
-  },
-  {
-    id: 'virus-malware-removal',
-    title: 'Virus & Malware Removal',
-    description: 'Protecting your computer from harmful viruses and keeping your data safe.',
-    icon: FaBug,
-    color: 'text-red-500',
-    bg: 'bg-red-50',
-  },
-  {
-    id: 'network-setup-support',
-    title: 'Network Setup & Support',
-    description: 'Setting up and maintaining secure, efficient home or office networks.',
-    icon: FaNetworkWired,
-    color: 'text-purple-500',
-    bg: 'bg-purple-50',
-  },
-  {
-    id: 'data-recovery',
-    title: 'Data Recovery',
-    description: 'Retrieving lost or corrupted data from hard drives and storage devices.',
-    icon: FaDatabase,
-    color: 'text-yellow-500',
-    bg: 'bg-yellow-50',
-  },
-  {
-    id: 'remote-computer-support',
-    title: 'Remote Computer Support',
-    description: 'Professional support for your computer issues without needing a technician visit.',
+    id: 'computer-repair',
+    title: 'Computer Repair & Troubleshooting',
+    description: 'Remote diagnosis and repair for crashes, freezes, slow performance, and unresponsive systems.',
+    route: '/residential-support/computer-repair',
     icon: FaLaptopHouse,
     color: 'text-teal-500',
     bg: 'bg-teal-50',
   },
   {
-    id: 'cloud-consulting',
-    title: 'Cloud Consulting',
-    description: 'Expert advice on leveraging cloud technology for your home or business.',
-    icon: FaCloud,
+    id: 'virus-malware',
+    title: 'Virus & Malware Removal',
+    description: 'Remove viruses, spyware, ransomware, pop-ups, and browser hijackers — fast and thorough.',
+    route: '/residential-support/virus-malware-removal',
+    icon: FaBug,
+    color: 'text-red-500',
+    bg: 'bg-red-50',
+  },
+  {
+    id: 'wifi-internet',
+    title: 'Wi-Fi & Internet Help',
+    description: 'Fix slow internet, dropped connections, router issues, and Wi-Fi dead zones remotely.',
+    route: '/residential-support/wifi-internet-help',
+    icon: FaWifi,
+    color: 'text-purple-500',
+    bg: 'bg-purple-50',
+  },
+  {
+    id: 'email-printer-software',
+    title: 'Email, Printer & Software Support',
+    description: 'Setup and troubleshoot email accounts, printers, scanners, Zoom, and everyday apps.',
+    route: '/residential-support/email-printer-software',
+    icon: FaEnvelope,
+    color: 'text-green-500',
+    bg: 'bg-green-50',
+  },
+  {
+    id: 'pc-tune-up',
+    title: 'PC Tune-Up & Optimization',
+    description: 'Speed up a slow PC, clean startup programs, remove junk files, and Windows update repair.',
+    route: '/residential-support/pc-tune-up',
+    icon: FaTachometerAlt,
+    color: 'text-blue-500',
+    bg: 'bg-blue-50',
+  },
+  {
+    id: 'data-backup',
+    title: 'Data Backup & File Transfer',
+    description: 'Cloud backup setup, OneDrive sync, and transferring files from your old PC to a new one.',
+    route: '/residential-support/data-backup-transfer',
+    icon: FaDatabase,
+    color: 'text-yellow-500',
+    bg: 'bg-yellow-50',
+  },
+  {
+    id: 'new-computer-setup',
+    title: 'New Computer Setup',
+    description: 'Get your new PC ready fast — Windows setup, app installs, account sync, printer config.',
+    route: '/residential-support/new-computer-setup',
+    icon: FaDesktop,
     color: 'text-indigo-500',
     bg: 'bg-indigo-50',
   },
   {
-    id: 'computer-training',
-    title: 'Computer Training',
-    description: 'Learn to use your computer more effectively with our professional training sessions.',
-    icon: FaChalkboardTeacher,
+    id: 'senior-tech-help',
+    title: 'Tech Help for Seniors',
+    description: 'Patient, plain-language remote support for seniors — email, Zoom, tablets, smart TVs, and more.',
+    route: '/residential-support/senior-tech-help',
+    icon: FaUsers,
     color: 'text-orange-500',
     bg: 'bg-orange-50',
   },
@@ -150,23 +159,14 @@ function ResidentialServices() {
   const navigate = useNavigate();
   const [videoLoaded, setVideoLoaded] = useState(false);
 
-  const canonicalUrl = 'https://bestcomputertec.com/residential-services';
+  const canonicalUrl = 'https://24x7techoncall.com/residential-services';
   const pageImage = heroImage?.startsWith('http')
     ? heroImage
-    : `https://bestcomputertec.com${heroImage || ''}`;
+    : `https://24x7techoncall.com${heroImage || ''}`;
 
   const handleServiceClick = useCallback((serviceId) => {
-    const routes = {
-      'hardware-repairs': '/residential-support/pc-laptop-repairs',
-      'software-troubleshooting': '/residential-support/software-troubleshooting',
-      'virus-malware-removal': '/residential-support/virus-malware-removal',
-      'network-setup-support': '/residential-support/network-setup-support',
-      'data-recovery': '/residential-support/data-recovery',
-      'remote-computer-support': '/residential-support/remote-support',
-      'cloud-consulting': '/residential-support/cloud-consulting',
-      'computer-training': '/residential-support/computer-training',
-    };
-    navigate(routes[serviceId] || `/services/${serviceId}`);
+    const service = services.find((s) => s.id === serviceId);
+    navigate(service?.route || '/residential-services');
   }, [navigate]);
 
   const handleOrderNow = () => {
@@ -184,19 +184,19 @@ function ResidentialServices() {
   return (
     <div>
       <Helmet>
-        <title>Computer Repair Palm Bay Melbourne FL | Laptop Repair & Tech Support Services</title>
-        <meta name="description" content="Best Computer Repair and IT Support Services in Palm Bay/Melbourne, FL. We specialize in Laptop Repair, PC Repair, Network Setup, and Data Recovery. Call us for quick, reliable service." />
-        <meta name="keywords" content="Computer Repair Palm Bay/Melbourne FL, Tech Support Services, Laptop Repair, PC Repair, IT Support Palm Bay/Melbourne, Virus Removal, Data Recovery, Network Setup" />
+        <title>Remote Residential Tech Support | 24x7 Tech On Call</title>
+        <meta name="description" content="Professional remote tech support for home users nationwide. Virus removal, software troubleshooting, data recovery, cloud consulting, and more — no visit required." />
+        <meta name="keywords" content="remote residential tech support, home computer support online, remote virus removal, software troubleshooting online, remote IT help for home, nationwide computer support" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Computer Repair Palm Bay Melbourne FL | Best Computer Tech" />
-        <meta property="og:description" content="Residential computer repair and IT support services in Palm Bay and Melbourne, FL." />
+        <meta property="og:title" content="Remote Residential Tech Support | 24x7 Tech On Call" />
+        <meta property="og:description" content="Professional remote tech support for home users nationwide. No visit required — we fix it from your screen." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Computer Repair Palm Bay Melbourne FL | Best Computer Tech" />
-        <meta name="twitter:description" content="Fast and reliable residential tech support services from Best Computer Tech." />
+        <meta name="twitter:title" content="Remote Residential Tech Support | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Fast and reliable remote residential tech support from 24x7 Tech On Call. Available nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -213,13 +213,13 @@ function ResidentialServices() {
             <span className="text-gray-300">Residential Services</span>
           </nav>
           <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-2">
-            Palm Bay &amp; Melbourne, FL
+            Nationwide
           </p>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-            Residential Computer &amp; IT Services
+            Remote Residential Tech Support
           </h1>
           <p className="mt-3 text-cyan-100 text-lg max-w-2xl">
-            Fast, reliable tech support for your home — onsite and remote. Free diagnostic over the phone.
+            Professional remote tech support for home users across the USA — no visit required. Free diagnostic over the phone.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <a
@@ -243,7 +243,7 @@ function ResidentialServices() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-10">
             <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Why Us</p>
-            <h2 className="text-3xl font-bold text-gray-900">Why Homeowners Choose Best Computer Tech</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Why Homeowners Choose 24x7 Tech On Call</h2>
           </div>
 
           <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center">
@@ -256,7 +256,7 @@ function ResidentialServices() {
                 >
                   <img
                     src="https://img.youtube.com/vi/8GOvDyPOW7c/maxresdefault.jpg"
-                    alt="Best Computer Tech introduction video"
+                    alt="24x7 Tech On Call introduction video"
                     className="w-full rounded-xl"
                     loading="lazy"
                     decoding="async"
@@ -274,7 +274,7 @@ function ResidentialServices() {
                   <iframe
                     className="absolute top-0 left-0 w-full h-full"
                     src="https://www.youtube.com/embed/8GOvDyPOW7c?rel=0&autoplay=1"
-                    title="Best Computer Tech Introduction"
+                    title="24x7 Tech On Call Introduction"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -305,8 +305,8 @@ function ResidentialServices() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-10">
-            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">What We Fix</p>
-            <h2 className="text-3xl font-bold text-gray-900">Our Residential Services</h2>
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">What We Do Remotely</p>
+            <h2 className="text-3xl font-bold text-gray-900">Our Remote Services</h2>
             <p className="text-gray-500 mt-2 text-sm">Click any service to learn more.</p>
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
@@ -347,7 +347,7 @@ function ResidentialServices() {
                   Annual Computer Care Plan — $199/year
                 </h2>
                 <p className="text-gray-600 text-sm mb-6">
-                  One-time repairs in Palm Bay and Melbourne typically run $90–$180+ per incident. If you need two or more fixes per year, this plan pays for itself — and you get proactive care all year long.
+                  One-time repairs in Nationwide typically run $90–$180+ per incident. If you need two or more fixes per year, this plan pays for itself — and you get proactive care all year long.
                 </p>
 
                 <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 mb-6">

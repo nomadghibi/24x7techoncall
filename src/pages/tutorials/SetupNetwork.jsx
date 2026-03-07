@@ -5,23 +5,23 @@ import { FaArrowLeft, FaHeadset } from 'react-icons/fa';
 import heroImage from '../../assets/optimized-hero/setupnetwork-1152.jpg';
 
 function SetupNetwork() {
-  const canonicalUrl = 'https://bestcomputertec.com/how-to/setup-network';
+  const canonicalUrl = 'https://24x7techoncall.com/how-to/setup-network';
 
   return (
     <div>
       <Helmet>
-        <title>How to Set Up a Network | Best Computer Tech</title>
+        <title>How to Set Up a Network | 24x7 Tech On Call</title>
         <meta name="description" content="Step-by-step guide to set up a secure home or office network, including router setup, Wi-Fi security, and troubleshooting tips." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Set Up a Network | Best Computer Tech" />
+        <meta property="og:title" content="How to Set Up a Network | 24x7 Tech On Call" />
         <meta property="og:description" content="Learn how to configure a reliable network with proper security and device connectivity." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Set Up a Network | Best Computer Tech" />
+        <meta name="twitter:title" content="How to Set Up a Network | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Build a secure and efficient network with this practical setup guide." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
@@ -150,7 +150,7 @@ function SetupNetwork() {
           <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Professional Network Setup?</h2>
           <p className="text-cyan-100 mb-6">
-            Let our local IT experts in Palm Bay &amp; Melbourne set up a fast, secure network for your home or business — the first time, right.
+            Let our local IT experts nationwide &amp; Melbourne set up a fast, secure network for your home or business — the first time, right.
           </p>
           <Link
             to="/contact"

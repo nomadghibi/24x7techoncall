@@ -5,15 +5,15 @@ import { Helmet } from 'react-helmet-async';
 const BuyConfirmationPage = () => {
   const location = useLocation();
   const { orderNumber, orderDetails } = location.state || {};
-  const canonicalUrl = 'https://bestcomputertec.com/buy-confirmation';
+  const canonicalUrl = 'https://24x7techoncall.com/buy-confirmation';
 
   return (
     <div className="container p-8 mx-auto text-center">
       <Helmet>
-        <title>Order Confirmation | Best Computer Tech</title>
+        <title>Order Confirmation | 24x7 Tech On Call</title>
         <meta
           name="description"
-          content="Confirmation page for completed orders at Best Computer Tech."
+          content="Confirmation page for completed orders at 24x7 Tech On Call."
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="noindex, nofollow" />

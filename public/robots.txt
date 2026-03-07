@@ -6,4 +6,4 @@ Disallow: /confirmation
 Disallow: /buy-confirmation
 Allow: /
 
-Sitemap: https://bestcomputertec.com/sitemap.xml
+Sitemap: https://24x7techoncall.com/sitemap.xml

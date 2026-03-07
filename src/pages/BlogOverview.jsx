@@ -29,18 +29,59 @@ const categoryColors = {
   'Data & Backup':  'bg-amber-100 text-amber-700',
   'Business IT':    'bg-indigo-100 text-indigo-700',
   'Business & Web': 'bg-orange-100 text-orange-700',
+  'Remote Support': 'bg-teal-100 text-teal-700',
 };
 
 // ── Blog posts ─────────────────────────────────────────────────────────────
 const blogPosts = [
   {
-    title:    'Computer Repairs Near You: Local Guide for Palm Bay and Melbourne',
-    summary:  'Use this local checklist to find trusted computer repair near you, compare options, and choose the right service in Palm Bay and Melbourne, FL.',
+    title:    'What Is Remote Computer Support? How It Works and Why Americans Are Choosing It',
+    summary:  'Everything you need to know about remote computer support — how it works, what it fixes, and why it is the fastest way to get tech help in the USA.',
+    link:     '/blog/what-is-remote-computer-support',
+    date:     'March 7, 2026',
+    image:    remoteImage,
+    category: 'Remote Support',
+    featured: true,
+  },
+  {
+    title:    'Remote IT Support vs On-Site IT: Which Is Right for Your Business?',
+    summary:  'Compare remote IT support and on-site IT by cost, speed, and use case to find the best model for your business in 2026.',
+    link:     '/blog/remote-it-support-vs-on-site-it',
+    date:     'March 7, 2026',
+    image:    itSupportImage,
+    category: 'Business IT',
+  },
+  {
+    title:    '5 Signs You Need Remote Tech Support Right Now',
+    summary:  'Slow PC, pop-ups, error messages, broken software — 5 signs your computer needs professional remote tech support today.',
+    link:     '/blog/5-signs-you-need-remote-tech-support',
+    date:     'March 7, 2026',
+    image:    heroImage,
+    category: 'Remote Support',
+  },
+  {
+    title:    'How to Choose a Remote IT Support Company in the USA',
+    summary:  'Key criteria, red flags, and pricing models to help you pick the right remote IT support provider for your home or business.',
+    link:     '/blog/how-to-choose-remote-it-support-company-usa',
+    date:     'March 7, 2026',
+    image:    itConsultingImage,
+    category: 'Remote Support',
+  },
+  {
+    title:    'Is Remote Computer Repair Safe? What You Need to Know',
+    summary:  'Remote computer repair is safe when done right. Learn how to verify a legitimate provider and protect yourself from tech support scams.',
+    link:     '/blog/is-remote-computer-repair-safe',
+    date:     'March 7, 2026',
+    image:    cyberImage,
+    category: 'Cybersecurity',
+  },
+  {
+    title:    'Computer Repairs Near You: Local Guide for Nationwide',
+    summary:  'Use this local checklist to find trusted computer repair near you, compare options, and choose the right service in Nationwide.',
     link:     '/blog/computer-repairs-near-you-palm-bay-melbourne-guide',
     date:     'February 24, 2026',
     image:    businessImage,
     category: 'Local Guide',
-    featured: true,
   },
   {
     title:    'AI Trends in 2026: What Businesses Should Do Next',
@@ -219,16 +260,16 @@ const BlogCard = ({ post, index }) => (
 
 // ── Page ───────────────────────────────────────────────────────────────────
 const BlogOverview = () => {
-  const canonicalUrl      = 'https://bestcomputertec.com/blog';
-  const blogOverviewImage = `https://bestcomputertec.com${featuredPost?.image || ''}`;
+  const canonicalUrl      = 'https://24x7techoncall.com/blog';
+  const blogOverviewImage = `https://24x7techoncall.com${featuredPost?.image || ''}`;
 
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: 'Best Computer Tech Blog',
+    name: '24x7 Tech On Call Blog',
     url: canonicalUrl,
-    description: 'Tech support and cybersecurity insights for home users and small businesses in Palm Bay and Melbourne, FL.',
-    publisher: { '@type': 'Organization', name: 'Best Computer Tech LLC', logo: { '@type': 'ImageObject', url: 'https://bestcomputertec.com/favicon.ico' } },
+    description: 'Tech support and cybersecurity insights for home users and small businesses in Nationwide.',
+    publisher: { '@type': 'Organization', name: '24x7 Tech On Call', logo: { '@type': 'ImageObject', url: 'https://24x7techoncall.com/favicon.ico' } },
   };
 
   const blogItemListSchema = {
@@ -237,7 +278,7 @@ const BlogOverview = () => {
     itemListElement: blogPosts.map((post, index) => ({
       '@type': 'ListItem',
       position: index + 1,
-      url: `https://bestcomputertec.com${post.link}`,
+      url: `https://24x7techoncall.com${post.link}`,
       name: post.title,
     })),
   };
@@ -246,7 +287,7 @@ const BlogOverview = () => {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bestcomputertec.com/' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://24x7techoncall.com/' },
       { '@type': 'ListItem', position: 2, name: 'Blog', item: canonicalUrl },
     ],
   };
@@ -254,19 +295,19 @@ const BlogOverview = () => {
   return (
     <div>
       <Helmet>
-        <title>Blog | IT Support & Tech Tips | Best Computer Tech</title>
-        <meta name="description" content="Stay ahead in the tech world with our latest blog posts on IT support, cybersecurity, cloud solutions, digital transformation, and more. Serving Palm Bay and Melbourne, FL." />
-        <meta name="keywords" content="IT blog, tech blog, cybersecurity tips, cloud solutions, digital transformation, IT consulting, small business IT, Palm Bay tech blog, Melbourne FL IT news" />
+        <title>Blog | IT Support & Tech Tips | 24x7 Tech On Call</title>
+        <meta name="description" content="Stay ahead in the tech world with our latest blog posts on IT support, cybersecurity, cloud solutions, digital transformation, and more. Serving Nationwide." />
+        <meta name="keywords" content="IT blog, tech blog, cybersecurity tips, cloud solutions, digital transformation, IT consulting, small business IT, remote tech blog, nationwide IT news" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Blog | Best Computer Tech" />
-        <meta property="og:description" content="Explore the Best Computer Tech blog for insights on IT support, cybersecurity, cloud solutions, and more." />
+        <meta property="og:title" content="Blog | 24x7 Tech On Call" />
+        <meta property="og:description" content="Explore the 24x7 Tech On Call blog for insights on IT support, cybersecurity, cloud solutions, and more." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={blogOverviewImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog | Best Computer Tech" />
-        <meta name="twitter:description" content="Discover the latest blog posts from Best Computer Tech on IT support, cybersecurity, and more." />
+        <meta name="twitter:title" content="Blog | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Discover the latest blog posts from 24x7 Tech On Call on IT support, cybersecurity, and more." />
         <meta name="twitter:image" content={blogOverviewImage} />
         <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(blogItemListSchema)}</script>
@@ -286,7 +327,7 @@ const BlogOverview = () => {
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold mb-4">Our Blog</h1>
           <p className="text-lg text-gray-400 max-w-xl mx-auto">
-            Practical guides, security tips, and IT news for homes and businesses across Brevard County.
+            Practical guides, security tips, and IT news for homes and businesses across the USA.
           </p>
         </div>
       </section>

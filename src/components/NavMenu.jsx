@@ -2,10 +2,11 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import {
   FaBars, FaTimes, FaChevronDown, FaPhoneAlt,
-  FaLaptop, FaBug, FaTools, FaHdd, FaWifi, FaDesktop,
-  FaComments, FaGraduationCap, FaHome, FaShieldAlt, FaLock,
-  FaSearch, FaServer, FaCogs, FaDatabase, FaCloud,
-  FaCheckCircle, FaChartLine, FaHeadphones,
+  FaBug, FaWifi, FaDesktop,
+  FaComments, FaGraduationCap, FaShieldAlt, FaLock,
+  FaCogs, FaDatabase, FaCloud,
+  FaChartLine, FaHeadphones,
+  FaEnvelope, FaTachometerAlt, FaUsers, FaNetworkWired, FaUserCog, FaLaptopHouse,
 } from 'react-icons/fa';
 
 // ── Route prefetching ──────────────────────────────────────────────────────
@@ -25,6 +26,13 @@ const routePrefetchers = {
   '/residential-support/home-office-setup': () => import('../pages/residentialsupport/HomeOfficeSetup'),
   '/residential-support/backup-data-protection': () => import('../pages/residentialsupport/BackupDataProtection'),
   '/residential-support/cybersecurity-home': () => import('../pages/residentialsupport/CybersecurityHome'),
+  '/residential-support/computer-repair': () => import('../pages/residentialsupport/ComputerRepair'),
+  '/residential-support/wifi-internet-help': () => import('../pages/residentialsupport/WifiInternetHelp'),
+  '/residential-support/email-printer-software': () => import('../pages/residentialsupport/EmailPrinterSoftware'),
+  '/residential-support/pc-tune-up': () => import('../pages/residentialsupport/PcTuneUp'),
+  '/residential-support/data-backup-transfer': () => import('../pages/residentialsupport/DataBackupTransfer'),
+  '/residential-support/new-computer-setup': () => import('../pages/residentialsupport/NewComputerSetup'),
+  '/residential-support/senior-tech-help': () => import('../pages/residentialsupport/SeniorTechHelp'),
   '/business-services': () => import('../pages/BusinessServices'),
   '/business-solutions/it-consulting': () => import('../pages/businesssolutions/ITConsulting'),
   '/business-solutions/network-setup': () => import('../pages/businesssolutions/NetworkSetup'),
@@ -36,6 +44,11 @@ const routePrefetchers = {
   '/business-solutions/business-continuity': () => import('../pages/businesssolutions/BusinessContinuity'),
   '/business-solutions/computer-training': () => import('../pages/businesssolutions/BusinessComputerTraining'),
   '/business-solutions/digital-transformation': () => import('../pages/businesssolutions/DigitalTransformation'),
+  '/business-solutions/remote-help-desk': () => import('../pages/businesssolutions/RemoteHelpDesk'),
+  '/business-solutions/microsoft-365-support': () => import('../pages/businesssolutions/Microsoft365Support'),
+  '/business-solutions/user-device-management': () => import('../pages/businesssolutions/UserDeviceManagement'),
+  '/business-solutions/backup-recovery-support': () => import('../pages/businesssolutions/BackupRecoverySupport'),
+  '/business-solutions/network-remote-access': () => import('../pages/businesssolutions/NetworkRemoteAccess'),
   '/contact': () => import('../pages/Contact'),
   '/how-to': () => import('../pages/HowTo'),
   '/blog': () => import('../pages/BlogOverview'),
@@ -45,30 +58,25 @@ const prefetchedPaths = new Set();
 
 // ── Dropdown data ──────────────────────────────────────────────────────────
 const residentialLinks = [
-  { label: 'PC & Laptop Repairs',        to: '/residential-support/pc-laptop-repairs',       icon: FaLaptop },
-  { label: 'Virus & Malware Removal',    to: '/residential-support/virus-malware-removal',    icon: FaBug },
-  { label: 'Software Troubleshooting',   to: '/residential-support/software-troubleshooting', icon: FaTools },
-  { label: 'Data Recovery',              to: '/residential-support/data-recovery',            icon: FaHdd },
-  { label: 'Network Setup & Support',    to: '/residential-support/network-setup-support',    icon: FaWifi },
-  { label: 'Remote Support',             to: '/residential-support/remote-support',           icon: FaDesktop },
-  { label: 'Tech Consultation',          to: '/residential-support/tech-consultation',        icon: FaComments },
-  { label: 'Computer Training',          to: '/residential-support/computer-training',        icon: FaGraduationCap },
-  { label: 'Home Office Setup',          to: '/residential-support/home-office-setup',        icon: FaHome },
-  { label: 'Backup & Data Protection',   to: '/residential-support/backup-data-protection',   icon: FaShieldAlt },
-  { label: 'Cybersecurity for Home',     to: '/residential-support/cybersecurity-home',       icon: FaLock },
+  { label: 'Computer Repair & Troubleshooting', to: '/residential-support/computer-repair',       icon: FaLaptopHouse },
+  { label: 'Virus & Malware Removal',           to: '/residential-support/virus-malware-removal', icon: FaBug },
+  { label: 'Wi-Fi & Internet Help',             to: '/residential-support/wifi-internet-help',    icon: FaWifi },
+  { label: 'Email, Printer & Software Support', to: '/residential-support/email-printer-software', icon: FaEnvelope },
+  { label: 'PC Tune-Up & Optimization',         to: '/residential-support/pc-tune-up',            icon: FaTachometerAlt },
+  { label: 'Data Backup & File Transfer',        to: '/residential-support/data-backup-transfer',  icon: FaDatabase },
+  { label: 'New Computer Setup',                to: '/residential-support/new-computer-setup',    icon: FaDesktop },
+  { label: 'Tech Help for Seniors',             to: '/residential-support/senior-tech-help',      icon: FaUsers },
 ];
 
 const businessLinks = [
-  { label: 'IT Consulting',              to: '/business-solutions/it-consulting',             icon: FaSearch },
-  { label: 'Network Setup',             to: '/business-solutions/network-setup',             icon: FaServer },
-  { label: 'Managed IT Services',        to: '/business-solutions/managed-it-services',       icon: FaCogs },
-  { label: 'Data Recovery',              to: '/business-solutions/data-recovery',             icon: FaDatabase },
-  { label: 'Cloud Solutions',            to: '/business-solutions/cloud-solutions',           icon: FaCloud },
-  { label: 'Cybersecurity',              to: '/business-solutions/cybersecurity',             icon: FaShieldAlt },
-  { label: 'IT Support',                 to: '/business-solutions/it-support',                icon: FaHeadphones },
-  { label: 'Business Continuity',        to: '/business-solutions/business-continuity',       icon: FaCheckCircle },
-  { label: 'Computer Training',          to: '/business-solutions/computer-training',         icon: FaGraduationCap },
-  { label: 'Digital Transformation',     to: '/business-solutions/digital-transformation',    icon: FaChartLine },
+  { label: 'Managed IT Support',          to: '/business-solutions/managed-it-services',    icon: FaCogs },
+  { label: 'Remote Help Desk',            to: '/business-solutions/remote-help-desk',       icon: FaHeadphones },
+  { label: 'Microsoft 365 Support',       to: '/business-solutions/microsoft-365-support',  icon: FaCloud },
+  { label: 'User & Device Management',    to: '/business-solutions/user-device-management', icon: FaUserCog },
+  { label: 'Cybersecurity Support',       to: '/business-solutions/cybersecurity',          icon: FaShieldAlt },
+  { label: 'Backup & Recovery Support',   to: '/business-solutions/backup-recovery-support', icon: FaDatabase },
+  { label: 'Network & Remote Access',     to: '/business-solutions/network-remote-access',  icon: FaNetworkWired },
+  { label: 'Monthly IT Support Plans',    to: '/pricing',                                   icon: FaChartLine },
 ];
 
 // ── Component ──────────────────────────────────────────────────────────────
@@ -209,8 +217,8 @@ const NavMenu = () => {
 
           {/* ── Text Logo ── */}
           <Link to="/" className="flex flex-col leading-tight shrink-0" onClick={handleDirectLinkClick}>
-            <span className="text-2xl font-extrabold tracking-tight text-white">BEST</span>
-            <span className="text-sm font-bold tracking-widest text-cyan-400 uppercase">Computer Tech</span>
+            <span className="text-2xl font-extrabold tracking-tight text-white">24x7</span>
+            <span className="text-sm font-bold tracking-widest text-cyan-400 uppercase">Tech On Call</span>
           </Link>
 
           {/* ── Desktop nav links ── */}

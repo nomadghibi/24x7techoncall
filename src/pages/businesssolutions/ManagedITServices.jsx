@@ -7,7 +7,7 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/managedit-1152.jpg';
 
 const ManagedITServices = () => {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', serviceDeliveryMethod: '', problem: '' });
   const [selectedService, setSelectedService] = useState(null);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -63,18 +63,18 @@ const ManagedITServices = () => {
   return (
     <div>
       <Helmet>
-        <title>Managed IT Services | Best Computer Tech | Palm Bay &amp; Melbourne, FL</title>
-        <meta name="description" content="Ensure your business runs smoothly with managed IT services from Best Computer Tech. From network management to cybersecurity, we cover all your IT needs." />
-        <link rel="canonical" href="https://bestcomputertec.com/business-solutions/managed-it-services" />
+        <title>Managed IT Services | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Ensure your business runs smoothly with managed IT services from 24x7 Tech On Call. From network management to cybersecurity, we cover all your IT needs." />
+        <link rel="canonical" href="https://24x7techoncall.com/business-solutions/managed-it-services" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Managed IT Services | Best Computer Tech" />
-        <meta property="og:description" content="Ensure your business runs smoothly with managed IT services from Best Computer Tech. From network management to cybersecurity, we cover all your IT needs." />
-        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/managed-it-services" />
+        <meta property="og:title" content="Managed IT Services | 24x7 Tech On Call" />
+        <meta property="og:description" content="Ensure your business runs smoothly with managed IT services from 24x7 Tech On Call. From network management to cybersecurity, we cover all your IT needs." />
+        <meta property="og:url" content="https://24x7techoncall.com/business-solutions/managed-it-services" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Managed IT Services | Best Computer Tech" />
-        <meta name="twitter:description" content="Ensure your business runs smoothly with managed IT services from Best Computer Tech." />
+        <meta name="twitter:title" content="Managed IT Services | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Ensure your business runs smoothly with managed IT services from 24x7 Tech On Call." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -102,7 +102,7 @@ const ManagedITServices = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Managed IT Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we provide comprehensive managed IT services to ensure your business technology runs smoothly and efficiently. Our certified technicians offer a range of services tailored to meet the unique needs of your business.
+            At 24x7 Tech On Call, we provide comprehensive managed IT services to ensure your business technology runs smoothly and efficiently. Our certified technicians offer a range of services tailored to meet the unique needs of your business.
           </p>
         </div>
       </section>
@@ -207,10 +207,10 @@ const ManagedITServices = () => {
             <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <FaMapMarkerAlt className="text-cyan-500 text-xl flex-shrink-0" />
-                <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & the Space Coast</h3>
+                <h3 className="text-xl font-bold text-gray-900">Serving Clients Nationwide</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, Best Computer Tech has resolved over 10,000 IT issues, enabling businesses to focus on growth. Proudly serving Palm Bay, Melbourne, the Space Coast of Florida, and across the USA, we deliver personalized and efficient managed IT services to keep your operations running smoothly.
+                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues, enabling businesses to focus on growth. Proudly serving homes and businesses across the entire United States, we deliver personalized and efficient managed IT services to keep your operations running smoothly.
               </p>
             </div>
 
@@ -238,7 +238,7 @@ const ManagedITServices = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Ready for Worry-Free IT?</h2>
           <p className="text-gray-400 mb-6">
-            Our managed IT specialists in Palm Bay &amp; Melbourne can take full control of your technology so your team stays productive.
+            Our managed IT specialists nationwide can take full control of your technology so your team stays productive.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

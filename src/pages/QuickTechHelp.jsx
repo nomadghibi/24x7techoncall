@@ -6,27 +6,27 @@ import heroImage from '../assets/optimized-hero/quicktechhelp-1152.jpg'; // Adju
 
 const QuickTechHelp = () => {
   const navigate = useNavigate();
-  const canonicalUrl = 'https://bestcomputertec.com/quick-tech-help';
+  const canonicalUrl = 'https://24x7techoncall.com/quick-tech-help';
   const pageImage = heroImage?.startsWith('http')
     ? heroImage
-    : `https://bestcomputertec.com${heroImage || ''}`;
+    : `https://24x7techoncall.com${heroImage || ''}`;
   const serviceSchema = {
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: 'Quick Tech Help - 15 Minute Remote Tech Support',
     serviceType: 'Remote Computer Support',
     description:
-      'Fast 15-minute remote tech support for common computer issues in Palm Bay, Melbourne, and Brevard County, Florida.',
+      'Fast 15-minute remote tech support for common computer issues in the entire United States.',
     url: canonicalUrl,
     areaServed: [
       { '@type': 'City', name: 'Palm Bay' },
       { '@type': 'City', name: 'Melbourne' },
-      { '@type': 'AdministrativeArea', name: 'Brevard County' },
+      { '@type': 'AdministrativeArea', name: 'the USA' },
     ],
     provider: {
       '@type': 'LocalBusiness',
-      name: 'Best Computer Tech LLC',
-      url: 'https://bestcomputertec.com/',
+      name: '24x7 Tech On Call',
+      url: 'https://24x7techoncall.com/',
       telephone: '+1-321-953-5199',
       email: '365techoncall@gmail.com',
       address: {
@@ -55,10 +55,10 @@ const QuickTechHelp = () => {
   return (
     <div>
       <Helmet>
-        <title>Quick Tech Help | 15-Minute Remote Tech Support | Best Computer Tech</title>
+        <title>Quick Tech Help | 15-Minute Remote Tech Support | 24x7 Tech On Call</title>
         <meta
           name="description"
-          content="Get fast 15-minute remote tech support for common computer issues in Palm Bay, Melbourne, and Brevard County. Immediate help from certified technicians."
+          content="Get fast 15-minute remote tech support for common computer issues nationwide, Melbourne, and the USA. Immediate help from certified technicians."
         />
         <meta
           name="keywords"
@@ -66,16 +66,16 @@ const QuickTechHelp = () => {
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Quick Tech Help | Best Computer Tech" />
+        <meta property="og:title" content="Quick Tech Help | 24x7 Tech On Call" />
         <meta
           property="og:description"
-          content="Fast remote support for urgent computer problems from Best Computer Tech."
+          content="Fast remote support for urgent computer problems from 24x7 Tech On Call."
         />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Quick Tech Help | Best Computer Tech" />
+        <meta name="twitter:title" content="Quick Tech Help | 24x7 Tech On Call" />
         <meta
           name="twitter:description"
           content="Need immediate computer help? Get 15-minute quick tech support from our experts."

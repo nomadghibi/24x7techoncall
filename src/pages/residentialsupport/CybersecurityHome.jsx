@@ -7,7 +7,7 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/cybersecurity-1152.jpg';
 
 const CybersecurityHome = () => {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -68,18 +68,18 @@ const CybersecurityHome = () => {
   return (
     <div>
       <Helmet>
-        <title>Cybersecurity Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
-        <meta name="description" content="Protect your home devices and personal data with cybersecurity services from Best Computer Tech in Palm Bay and Melbourne, FL." />
-        <link rel="canonical" href="https://bestcomputertec.com/residential-support/cybersecurity-home" />
+        <title>Cybersecurity Services | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Protect your home devices and personal data with cybersecurity services from 24x7 Tech On Call in Nationwide." />
+        <link rel="canonical" href="https://24x7techoncall.com/residential-support/cybersecurity-home" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Cybersecurity Services | Best Computer Tech" />
-        <meta property="og:description" content="Protect your home devices and personal data with cybersecurity services from Best Computer Tech in Palm Bay and Melbourne, FL." />
-        <meta property="og:url" content="https://bestcomputertec.com/residential-support/cybersecurity-home" />
+        <meta property="og:title" content="Cybersecurity Services | 24x7 Tech On Call" />
+        <meta property="og:description" content="Protect your home devices and personal data with cybersecurity services from 24x7 Tech On Call in Nationwide." />
+        <meta property="og:url" content="https://24x7techoncall.com/residential-support/cybersecurity-home" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cybersecurity Services | Best Computer Tech" />
-        <meta name="twitter:description" content="Protect your home devices and personal data with cybersecurity services from Best Computer Tech in Palm Bay and Melbourne, FL." />
+        <meta name="twitter:title" content="Cybersecurity Services | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Protect your home devices and personal data with cybersecurity services from 24x7 Tech On Call in Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -107,7 +107,7 @@ const CybersecurityHome = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Cybersecurity Services for Home Users</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we specialize in comprehensive cybersecurity services for home users to protect your personal information and devices from cyber threats. Our certified technicians provide reliable solutions to ensure your online safety and security.
+            At 24x7 Tech On Call, we specialize in comprehensive cybersecurity services for home users to protect your personal information and devices from cyber threats. Our certified technicians provide reliable solutions to ensure your online safety and security.
           </p>
         </div>
       </section>
@@ -149,7 +149,7 @@ const CybersecurityHome = () => {
               <p className="text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-2">Affordable Pricing</p>
               <p className="text-6xl font-bold mb-1">$95</p>
               <p className="text-gray-400 text-lg mb-4">Starting price</p>
-              <p className="text-gray-400 mb-8">For more than two decades, Best Computer Tech has resolved over 10,000 IT issues. Contact us today for a custom security quote.</p>
+              <p className="text-gray-400 mb-8">For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues. Contact us today for a custom security quote.</p>
               <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-cyan-400 transition-colors text-center shadow-lg">
                 Get a Free Quote
               </Link>
@@ -210,7 +210,7 @@ const CybersecurityHome = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Beyond</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, Best Computer Tech has resolved over 10,000 IT issues for clients across Palm Bay, Melbourne, the Space Coast of Florida, and nationwide. Our experienced technicians deliver personalized cybersecurity solutions to protect your home and personal data.
+                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues for clients across the entire United States, and nationwide. Our experienced technicians deliver personalized cybersecurity solutions to protect your home and personal data.
               </p>
             </div>
 
@@ -238,7 +238,7 @@ const CybersecurityHome = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Help with Online Security?</h2>
           <p className="text-gray-400 mb-6">
-            Our cybersecurity experts in Palm Bay &amp; Melbourne can audit your setup, remove threats, and strengthen your digital defenses.
+            Our cybersecurity experts nationwide can audit your setup, remove threats, and strengthen your digital defenses.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

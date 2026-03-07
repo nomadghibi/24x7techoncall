@@ -16,15 +16,15 @@ function TopBar() {
             (321) 953-5199
           </a>
           <a
-            href="mailto:support@bestcomputertec.com"
+            href="mailto:365techoncall@gmail.com"
             className="hidden sm:flex items-center gap-1.5 hover:text-white transition-colors"
           >
             <FaEnvelope className="w-3 h-3 text-teal-300" />
-            support@bestcomputertec.com
+            365techoncall@gmail.com
           </a>
         </div>
 
-        {/* Right: hours + location */}
+        {/* Right: hours + service area */}
         <div className="flex items-center gap-4">
           <span className="hidden md:flex items-center gap-1.5">
             <FaClock className="w-3 h-3 text-teal-300" />
@@ -32,7 +32,7 @@ function TopBar() {
           </span>
           <span className="flex items-center gap-1.5">
             <FaMapMarkerAlt className="w-3 h-3 text-teal-300" />
-            Palm Bay &amp; Melbourne, FL
+            Serving All of USA
           </span>
         </div>
 

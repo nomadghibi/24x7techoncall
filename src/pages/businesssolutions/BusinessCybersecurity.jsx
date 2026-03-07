@@ -7,7 +7,7 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/businesscybersecurity-1152.jpg';
 
 const BusinessCybersecurity = () => {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', serviceDeliveryMethod: '', problem: '' });
   const [selectedService, setSelectedService] = useState(null);
 
@@ -63,19 +63,19 @@ const BusinessCybersecurity = () => {
   return (
     <div>
       <Helmet>
-        <title>Business Cybersecurity Services | Best Computer Tech | Palm Bay &amp; Melbourne, FL</title>
-        <meta name="description" content="Protect your business with advanced cybersecurity solutions from Best Computer Tech. We offer threat protection, endpoint security, data encryption, and more." />
+        <title>Business Cybersecurity Services | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Protect your business with advanced cybersecurity solutions from 24x7 Tech On Call. We offer threat protection, endpoint security, data encryption, and more." />
         <meta name="keywords" content="cybersecurity, business security, advanced threat protection, endpoint security, network security, data encryption, SIEM, incident response, penetration testing" />
-        <link rel="canonical" href="https://bestcomputertec.com/business-solutions/cybersecurity" />
+        <link rel="canonical" href="https://24x7techoncall.com/business-solutions/cybersecurity" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Business Cybersecurity Services | Best Computer Tech" />
-        <meta property="og:description" content="Protect your business with advanced cybersecurity solutions from Best Computer Tech." />
-        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/cybersecurity" />
+        <meta property="og:title" content="Business Cybersecurity Services | 24x7 Tech On Call" />
+        <meta property="og:description" content="Protect your business with advanced cybersecurity solutions from 24x7 Tech On Call." />
+        <meta property="og:url" content="https://24x7techoncall.com/business-solutions/cybersecurity" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business Cybersecurity Services | Best Computer Tech" />
-        <meta name="twitter:description" content="Protect your business with advanced cybersecurity solutions from Best Computer Tech." />
+        <meta name="twitter:title" content="Business Cybersecurity Services | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Protect your business with advanced cybersecurity solutions from 24x7 Tech On Call." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -103,7 +103,7 @@ const BusinessCybersecurity = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Advanced Cybersecurity Solutions for Businesses</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            In today's digital landscape, safeguarding your business from cyber threats is paramount. At Best Computer Tech, we deliver advanced cybersecurity solutions designed to protect your sensitive data and maintain uninterrupted operations. With over 20 years of experience, our certified security experts provide a comprehensive suite of services tailored to your unique needs.
+            In today's digital landscape, safeguarding your business from cyber threats is paramount. At 24x7 Tech On Call, we deliver advanced cybersecurity solutions designed to protect your sensitive data and maintain uninterrupted operations. With over 20 years of experience, our certified security experts provide a comprehensive suite of services tailored to your unique needs.
           </p>
         </div>
       </section>
@@ -203,10 +203,10 @@ const BusinessCybersecurity = () => {
             <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <FaMapMarkerAlt className="text-cyan-500 text-xl flex-shrink-0" />
-                <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & the Space Coast</h3>
+                <h3 className="text-xl font-bold text-gray-900">Serving Clients Nationwide</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, Best Computer Tech has resolved over 10,000 IT issues. Proudly serving Palm Bay, Melbourne, the Space Coast of Florida, and across the USA, our cybersecurity experts deliver personalized solutions to keep your business data and operations protected.
+                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues. Proudly serving homes and businesses across the entire United States, our cybersecurity experts deliver personalized solutions to keep your business data and operations protected.
               </p>
             </div>
 
@@ -234,7 +234,7 @@ const BusinessCybersecurity = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Protect Your Business Today</h2>
           <p className="text-gray-400 mb-6">
-            Our cybersecurity experts in Palm Bay &amp; Melbourne are ready to assess your vulnerabilities and implement robust defenses.
+            Our cybersecurity experts nationwide are ready to assess your vulnerabilities and implement robust defenses.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

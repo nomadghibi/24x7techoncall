@@ -32,7 +32,7 @@ const Cybersecurity = () => {
     <div>
         <Helmet>
         <title>Cybersecurity Services | Palm Bay/Melbourne FL | Protect Your Business</title>
-        <meta name="description" content="Top-notch cybersecurity services in Palm Bay/Melbourne, FL. Protect your business from online threats with our comprehensive security solutions. Contact us today for expert IT security." />
+        <meta name="description" content="Top-notch cybersecurity services nationwide/the USA. Protect your business from online threats with our comprehensive security solutions. Contact us today for expert IT security." />
         <meta name="keywords" content="Cybersecurity Palm Bay/Melbourne FL, IT Security, Network Security, Online Protection, Business Security, IT Services, Malware Protection, Data Security" />
       </Helmet>
       <HeroSection title="Cybersecurity Services" image={heroImage} />

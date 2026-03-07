@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "Bash(gh auth:*)",
-      "Bash(cd:*)"
+      "Bash(cd:*)",
+      "Bash(cd E:\\\\Users\\\\fredd\\\\Desktop\\\\besttechbackup:*)",
+      "Bash(cd /e/Users/fredd/Desktop/besttechbackup && npm run build 2>&1)",
+      "Bash(npm run:*)",
+      "Bash(cp:*)"
     ]
   }
 }

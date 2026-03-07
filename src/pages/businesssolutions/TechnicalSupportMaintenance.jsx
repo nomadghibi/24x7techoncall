@@ -7,8 +7,8 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/businessservices-1152.jpg';
 
 const TechnicalSupportMaintenance = () => {
-  const canonicalUrl = 'https://bestcomputertec.com/business-solutions/technical-support-maintenance';
-  const pageImage = heroImage?.startsWith('http') ? heroImage : `https://bestcomputertec.com${heroImage || ''}`;
+  const canonicalUrl = 'https://24x7techoncall.com/business-solutions/technical-support-maintenance';
+  const pageImage = heroImage?.startsWith('http') ? heroImage : `https://24x7techoncall.com${heroImage || ''}`;
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', serviceDeliveryMethod: '', problem: '' });
   const [selectedService, setSelectedService] = useState(null);
 
@@ -60,18 +60,18 @@ const TechnicalSupportMaintenance = () => {
   return (
     <div>
       <Helmet>
-        <title>Technical Support and Maintenance | Best Computer Tech | Palm Bay &amp; Melbourne, FL</title>
+        <title>Technical Support and Maintenance | 24x7 Tech On Call | Nationwide</title>
         <meta name="description" content="Comprehensive technical support and maintenance services for businesses, including troubleshooting, repair, malware removal, and ongoing IT support." />
         <meta name="keywords" content="technical support maintenance, business IT support Palm Bay, managed support Melbourne FL, hardware and software troubleshooting" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Technical Support and Maintenance | Best Computer Tech" />
+        <meta property="og:title" content="Technical Support and Maintenance | 24x7 Tech On Call" />
         <meta property="og:description" content="Keep your business systems running smoothly with proactive technical support and maintenance." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Technical Support and Maintenance | Best Computer Tech" />
+        <meta name="twitter:title" content="Technical Support and Maintenance | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Expert technical support and maintenance services for reliable business operations." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -100,7 +100,7 @@ const TechnicalSupportMaintenance = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Comprehensive Technical Support and Maintenance</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we provide comprehensive technical support and maintenance services to ensure your technology runs smoothly and efficiently. Our certified technicians offer a range of services tailored to meet the unique needs of your business.
+            At 24x7 Tech On Call, we provide comprehensive technical support and maintenance services to ensure your technology runs smoothly and efficiently. Our certified technicians offer a range of services tailored to meet the unique needs of your business.
           </p>
         </div>
       </section>
@@ -201,10 +201,10 @@ const TechnicalSupportMaintenance = () => {
             <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <FaMapMarkerAlt className="text-cyan-500 text-xl flex-shrink-0" />
-                <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & the Space Coast</h3>
+                <h3 className="text-xl font-bold text-gray-900">Serving Clients Nationwide</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, Best Computer Tech has resolved over 10,000 IT issues. Proudly serving Palm Bay, Melbourne, the Space Coast of Florida, and across the USA, our technicians deliver personalized and efficient technical support to keep your operations running smoothly.
+                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues. Proudly serving homes and businesses across the entire United States, our technicians deliver personalized and efficient technical support to keep your operations running smoothly.
               </p>
             </div>
 
@@ -232,7 +232,7 @@ const TechnicalSupportMaintenance = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Keep Your Business Systems Running Smoothly</h2>
           <p className="text-gray-400 mb-6">
-            Our technical support specialists in Palm Bay &amp; Melbourne are ready to diagnose, fix, and maintain your business technology.
+            Our technical support specialists nationwide are ready to diagnose, fix, and maintain your business technology.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

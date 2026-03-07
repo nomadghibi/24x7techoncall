@@ -49,6 +49,14 @@ const ComputerTraining = lazyWithRetry(() => import('./pages/residentialsupport/
 const HomeOfficeSetup = lazyWithRetry(() => import('./pages/residentialsupport/HomeOfficeSetup'));
 const BackupDataProtection = lazyWithRetry(() => import('./pages/residentialsupport/BackupDataProtection'));
 const CybersecurityHome = lazyWithRetry(() => import('./pages/residentialsupport/CybersecurityHome'));
+// New residential service pages
+const ComputerRepair = lazyWithRetry(() => import('./pages/residentialsupport/ComputerRepair'));
+const WifiInternetHelp = lazyWithRetry(() => import('./pages/residentialsupport/WifiInternetHelp'));
+const EmailPrinterSoftware = lazyWithRetry(() => import('./pages/residentialsupport/EmailPrinterSoftware'));
+const PcTuneUp = lazyWithRetry(() => import('./pages/residentialsupport/PcTuneUp'));
+const DataBackupTransfer = lazyWithRetry(() => import('./pages/residentialsupport/DataBackupTransfer'));
+const NewComputerSetup = lazyWithRetry(() => import('./pages/residentialsupport/NewComputerSetup'));
+const SeniorTechHelp = lazyWithRetry(() => import('./pages/residentialsupport/SeniorTechHelp'));
 const BusinessServices = lazyWithRetry(() => import('./pages/BusinessServices'));
 const ITConsulting = lazyWithRetry(() => import('./pages/businesssolutions/ITConsulting'));
 const NetworkSetup = lazyWithRetry(() => import('./pages/businesssolutions/NetworkSetup'));
@@ -62,6 +70,12 @@ const BusinessComputerTraining = lazyWithRetry(() => import('./pages/businesssol
 const DigitalTransformation = lazyWithRetry(() => import('./pages/businesssolutions/DigitalTransformation'));
 const TechnicalSupportMaintenance = lazyWithRetry(() => import('./pages/businesssolutions/TechnicalSupportMaintenance'));
 const WebsiteDevelopment = lazyWithRetry(() => import('./pages/businesssolutions/WebsiteDevelopment'));
+// New business service pages
+const RemoteHelpDesk = lazyWithRetry(() => import('./pages/businesssolutions/RemoteHelpDesk'));
+const Microsoft365Support = lazyWithRetry(() => import('./pages/businesssolutions/Microsoft365Support'));
+const UserDeviceManagement = lazyWithRetry(() => import('./pages/businesssolutions/UserDeviceManagement'));
+const BackupRecoverySupport = lazyWithRetry(() => import('./pages/businesssolutions/BackupRecoverySupport'));
+const NetworkRemoteAccess = lazyWithRetry(() => import('./pages/businesssolutions/NetworkRemoteAccess'));
 const Services = lazyWithRetry(() => import('./pages/Services'));
 const ServiceDetail = lazyWithRetry(() => import('./pages/ServiceDetail'));
 const Contact = lazyWithRetry(() => import('./pages/Contact'));
@@ -102,44 +116,20 @@ const routePrefetchers = [
   () => import('./pages/BookService'),
 ];
 
-const BASE_URL = 'https://bestcomputertec.com';
+const BASE_URL = 'https://24x7techoncall.com';
 const NOINDEX_PATHS = new Set(['/checkout', '/paynow', '/confirmation', '/buy-confirmation']);
 const SERVICE_ROOT_PATHS = new Set(['/residential-services', '/business-services', '/services']);
 const SERVICE_PATH_PREFIXES = ['/residential-support/', '/business-solutions/', '/services/'];
 
-const areaServed = [
-  { '@type': 'City', name: 'Palm Bay' },
-  { '@type': 'City', name: 'Melbourne' },
-  { '@type': 'City', name: 'West Melbourne' },
-  { '@type': 'AdministrativeArea', name: 'Brevard County' },
-];
-
-const localBusinessProvider = {
-  '@type': 'LocalBusiness',
-  name: 'Best Computer Tech LLC',
-  url: `${BASE_URL}/`,
-  telephone: '+1-321-953-5199',
-  email: '365techoncall@gmail.com',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: '602 Hurst Rd NE',
-    addressLocality: 'Palm Bay',
-    addressRegion: 'FL',
-    postalCode: '32907',
-    addressCountry: 'US',
-  },
-};
-
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: 'Best Computer Tech LLC',
+  name: '24x7 Tech On Call',
   url: `${BASE_URL}/`,
   telephone: '+1-321-953-5199',
   email: '365techoncall@gmail.com',
   priceRange: '$$',
-  areaServed,
-  address: localBusinessProvider.address,
+  areaServed: 'United States',
   openingHoursSpecification: [
     {
       '@type': 'OpeningHoursSpecification',
@@ -153,7 +143,7 @@ const localBusinessSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Best Computer Tech',
+  name: '24x7 Tech On Call',
   url: `${BASE_URL}/`,
   inLanguage: 'en-US',
 };
@@ -209,10 +199,10 @@ const App = () => {
         '@type': 'Service',
         name: serviceName,
         serviceType: serviceName,
-        description: `Professional ${serviceName.toLowerCase()} in Palm Bay, Melbourne, and Brevard County, Florida.`,
+        description: `Professional ${serviceName.toLowerCase()} across the United States.`,
         url: canonicalUrl,
-        areaServed,
-        provider: localBusinessProvider,
+        areaServed: 'United States',
+        provider: { '@type': 'LocalBusiness', name: '24x7 Tech On Call', url: `${BASE_URL}/` },
       }
     : null;
 
@@ -286,6 +276,13 @@ const App = () => {
               <Route path="/residential-support/home-office-setup" element={<HomeOfficeSetup />} />
               <Route path="/residential-support/backup-data-protection" element={<BackupDataProtection />} />
               <Route path="/residential-support/cybersecurity-home" element={<CybersecurityHome />} />
+              <Route path="/residential-support/computer-repair" element={<ComputerRepair />} />
+              <Route path="/residential-support/wifi-internet-help" element={<WifiInternetHelp />} />
+              <Route path="/residential-support/email-printer-software" element={<EmailPrinterSoftware />} />
+              <Route path="/residential-support/pc-tune-up" element={<PcTuneUp />} />
+              <Route path="/residential-support/data-backup-transfer" element={<DataBackupTransfer />} />
+              <Route path="/residential-support/new-computer-setup" element={<NewComputerSetup />} />
+              <Route path="/residential-support/senior-tech-help" element={<SeniorTechHelp />} />
               <Route path="/business-services" element={<BusinessServices />} />
               <Route path="/business-solutions/it-consulting" element={<ITConsulting />} />
               <Route path="/business-solutions/network-setup" element={<NetworkSetup />} />
@@ -299,6 +296,11 @@ const App = () => {
               <Route path="/business-solutions/digital-transformation" element={<DigitalTransformation />} />
               <Route path="/business-solutions/technical-support-maintenance" element={<TechnicalSupportMaintenance />} />
               <Route path="/business-solutions/website-development" element={<WebsiteDevelopment />} />
+              <Route path="/business-solutions/remote-help-desk" element={<RemoteHelpDesk />} />
+              <Route path="/business-solutions/microsoft-365-support" element={<Microsoft365Support />} />
+              <Route path="/business-solutions/user-device-management" element={<UserDeviceManagement />} />
+              <Route path="/business-solutions/backup-recovery-support" element={<BackupRecoverySupport />} />
+              <Route path="/business-solutions/network-remote-access" element={<NetworkRemoteAccess />} />
               <Route path="/services" element={<Services />} />
               <Route path="/services/:serviceId" element={<ServiceDetail />} />
               <Route path="/contact" element={<Contact />} />

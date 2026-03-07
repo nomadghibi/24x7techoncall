@@ -4,60 +4,85 @@ import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   FaCheckCircle, FaUsers, FaShieldAlt, FaPlay,
-  FaPhoneAlt, FaDatabase, FaCloud, FaCode,
-  FaCogs, FaSearch, FaBolt, FaStar, FaHandshake,
+  FaPhoneAlt, FaDatabase, FaCloud,
+  FaCogs, FaBolt, FaStar, FaHandshake,
   FaLock, FaChartLine, FaEnvelope, FaArrowRight,
+  FaHeadphones, FaNetworkWired, FaUserCog,
 } from 'react-icons/fa';
 import businessImage from '../assets/optimized-hero/businessservices-1152.jpg';
 
 const services = [
   {
-    id: 'it-consulting',
-    title: 'IT Consultancy',
-    description: 'Expert advice on IT infrastructure, software solutions, and technology strategy tailored to your business goals.',
-    icon: FaSearch,
+    id: 'managed-it-services',
+    title: 'Managed IT Support',
+    description: 'Proactive remote monitoring, patching, and maintenance to keep your team productive and systems secure.',
+    route: '/business-solutions/managed-it-services',
+    icon: FaCogs,
+    color: 'text-purple-500',
+    bg: 'bg-purple-50',
+  },
+  {
+    id: 'it-support',
+    title: 'Remote Help Desk',
+    description: 'Fast, responsive help desk support for employee workstation issues, errors, and everyday IT requests.',
+    route: '/business-solutions/remote-help-desk',
+    icon: FaHeadphones,
     color: 'text-blue-500',
     bg: 'bg-blue-50',
   },
   {
+    id: 'cloud-solutions',
+    title: 'Microsoft 365 Support',
+    description: 'Setup, admin, and troubleshooting for Microsoft 365, Outlook, Teams, OneDrive, and SharePoint.',
+    route: '/business-solutions/microsoft-365-support',
+    icon: FaCloud,
+    color: 'text-indigo-500',
+    bg: 'bg-indigo-50',
+  },
+  {
+    id: 'it-consulting',
+    title: 'User & Device Management',
+    description: 'Remote onboarding, offboarding, user accounts, password resets, permissions, and access control.',
+    route: '/business-solutions/user-device-management',
+    icon: FaUserCog,
+    color: 'text-green-500',
+    bg: 'bg-green-50',
+  },
+  {
     id: 'cybersecurity',
-    title: 'Cybersecurity',
-    description: 'Protecting your business from cyber threats with robust security solutions, monitoring, and staff training.',
+    title: 'Cybersecurity Support',
+    description: 'Endpoint protection, security hardening, phishing response, and staff security awareness training.',
+    route: '/business-solutions/cybersecurity',
     icon: FaShieldAlt,
     color: 'text-red-500',
     bg: 'bg-red-50',
   },
   {
     id: 'data-recovery',
-    title: 'Data Backup & Recovery',
-    description: 'Ensuring your critical data is safely backed up and can be quickly restored when disaster strikes.',
+    title: 'Backup & Recovery Support',
+    description: 'Backup monitoring, restore testing, disaster recovery planning, and cloud backup configuration.',
+    route: '/business-solutions/backup-recovery-support',
     icon: FaDatabase,
     color: 'text-yellow-500',
     bg: 'bg-yellow-50',
   },
   {
-    id: 'website-development',
-    title: 'Website Development',
-    description: 'Custom, responsive websites built to represent your brand — from design and development to deployment.',
-    icon: FaCode,
-    color: 'text-green-500',
-    bg: 'bg-green-50',
+    id: 'network-setup',
+    title: 'Network & Remote Access Support',
+    description: 'Remote troubleshooting for routers, switches, VPN, connectivity, and secure remote access setup.',
+    route: '/business-solutions/network-remote-access',
+    icon: FaNetworkWired,
+    color: 'text-teal-500',
+    bg: 'bg-teal-50',
   },
   {
-    id: 'managed-it-services',
-    title: 'Managed IT Services',
-    description: 'Proactive, full-service IT management so your team stays productive and your systems stay secure.',
-    icon: FaCogs,
-    color: 'text-purple-500',
-    bg: 'bg-purple-50',
-  },
-  {
-    id: 'cloud-solutions',
-    title: 'Cloud Migration',
-    description: 'Seamlessly transition your business to the cloud with minimal disruption and optimal performance.',
-    icon: FaCloud,
-    color: 'text-indigo-500',
-    bg: 'bg-indigo-50',
+    id: 'monthly-plans',
+    title: 'Monthly IT Support Plans',
+    description: 'Flexible monthly managed IT plans with predictable pricing and no long-term commitment required.',
+    route: '/pricing',
+    icon: FaUsers,
+    color: 'text-orange-500',
+    bg: 'bg-orange-50',
   },
 ];
 
@@ -65,8 +90,8 @@ const whyUs = [
   {
     icon: <FaHandshake className="w-6 h-6 text-cyan-500" />,
     bg: 'bg-cyan-50',
-    title: 'Proven Local Partner',
-    desc: 'Serving Brevard County businesses since 2009 — we understand the Space Coast market.',
+    title: 'Proven Nationwide Partner',
+    desc: 'Serving US businesses remotely since 2009 — fast response, real expertise, no fluff.',
   },
   {
     icon: <FaChartLine className="w-6 h-6 text-green-500" />,
@@ -152,10 +177,11 @@ const contractTerms = [
 function BusinessServices() {
   const navigate = useNavigate();
   const [videoLoaded, setVideoLoaded] = useState(false);
-  const canonicalUrl = 'https://bestcomputertec.com/business-services';
+  const canonicalUrl = 'https://24x7techoncall.com/business-services';
 
   const handleServiceClick = (serviceId) => {
-    navigate(`/business-solutions/${serviceId}`);
+    const service = services.find((s) => s.id === serviceId);
+    navigate(service?.route || '/business-services');
   };
 
   const handleManagedPlanQuote = (plan) => {
@@ -204,20 +230,20 @@ function BusinessServices() {
   return (
     <div>
       <Helmet>
-        <title>Business IT Services Palm Bay & Melbourne, FL | Best Computer Tech</title>
-        <meta name="description" content="Comprehensive IT services for businesses in Palm Bay and Melbourne FL, including managed IT, cybersecurity, data recovery, cloud solutions, and IT consultancy." />
-        <meta name="keywords" content="IT consultancy, cybersecurity, data recovery, website development, cloud migration, managed IT services, business continuity, technical support" />
+        <title>Remote Business IT Support | Managed IT, Help Desk & Microsoft 365 | 24x7 Tech On Call</title>
+        <meta name="description" content="Remote business IT support nationwide — managed IT, remote help desk, Microsoft 365 administration, cybersecurity, backup, and monthly IT support plans." />
+        <meta name="keywords" content="remote business IT support, managed IT services, remote help desk, Microsoft 365 support, cybersecurity support, backup recovery, monthly IT plans, nationwide IT support" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Business IT Services | Best Computer Tech" />
+        <meta property="og:title" content="Business IT Services | 24x7 Tech On Call" />
         <meta property="og:description" content="Explore business IT support services including cybersecurity, cloud solutions, managed IT, and data recovery." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={businessImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business IT Services | Best Computer Tech" />
-        <meta name="twitter:description" content="Business-focused IT services in Palm Bay and Melbourne, Florida." />
+        <meta name="twitter:title" content="Business IT Services | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Business-focused IT services in Nationwide, Florida." />
         <meta name="twitter:image" content={businessImage} />
         <link rel="preload" as="image" href={businessImage} />
       </Helmet>
@@ -235,13 +261,13 @@ function BusinessServices() {
             <span className="text-gray-300">Business Services</span>
           </nav>
           <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-2">
-            Palm Bay &amp; Melbourne, FL
+            Nationwide
           </p>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-            Business IT Services &amp; Managed Support
+            Remote Business IT Support &amp; Managed Services
           </h1>
           <p className="mt-3 text-cyan-100 text-lg max-w-2xl">
-            Predictable, proactive IT for Brevard County businesses — from cybersecurity to cloud migration.
+            Help desk, Microsoft 365, cybersecurity, backup, and monthly managed IT plans — all delivered remotely nationwide.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <a
@@ -308,7 +334,7 @@ function BusinessServices() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-10">
             <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Why Us</p>
-            <h2 className="text-3xl font-bold text-gray-900">Why Businesses Choose Best Computer Tech</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Why Businesses Choose 24x7 Tech On Call</h2>
           </div>
 
           <div className="bg-gray-50 rounded-2xl border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center">
@@ -321,7 +347,7 @@ function BusinessServices() {
                 >
                   <img
                     src="https://img.youtube.com/vi/8GOvDyPOW7c/maxresdefault.jpg"
-                    alt="Best Computer Tech business IT support video"
+                    alt="24x7 Tech On Call business IT support video"
                     className="w-full rounded-xl"
                     loading="lazy"
                     decoding="async"
@@ -339,7 +365,7 @@ function BusinessServices() {
                   <iframe
                     className="absolute top-0 left-0 w-full h-full"
                     src="https://www.youtube.com/embed/8GOvDyPOW7c?rel=0&autoplay=1"
-                    title="Best Computer Tech Business IT Support"
+                    title="24x7 Tech On Call Business IT Support"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
@@ -373,7 +399,7 @@ function BusinessServices() {
             <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Managed IT</p>
             <h2 className="text-3xl font-bold text-gray-900 mb-3">Yearly Managed IT Contracts</h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
-              Transparent annual contract options for Palm Bay and Melbourne businesses that want predictable IT support, stronger security, and fewer disruptions.
+              Transparent annual contract options for Nationwide businesses that want predictable IT support, stronger security, and fewer disruptions.
             </p>
           </div>
 

@@ -4,10 +4,10 @@ import HeroSection from '../components/HeroSection';
 import heroImage from '../assets/optimized-hero/fixbrokenscreen-1152.jpg'; // Ensure you have this image in your assets
 
 const CloudConsulting = () => {
-  const canonicalUrl = 'https://bestcomputertec.com/residential-support/cloud-consulting';
+  const canonicalUrl = 'https://24x7techoncall.com/residential-support/cloud-consulting';
   const pageImage = heroImage?.startsWith('http')
     ? heroImage
-    : `https://bestcomputertec.com${heroImage || ''}`;
+    : `https://24x7techoncall.com${heroImage || ''}`;
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -35,10 +35,10 @@ const CloudConsulting = () => {
   return (
     <div>
       <Helmet>
-        <title>Cloud Consulting Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
+        <title>Cloud Consulting Services | 24x7 Tech On Call | Nationwide</title>
         <meta
           name="description"
-          content="Plan, migrate, and optimize cloud solutions with expert cloud consulting support for homes and small businesses in Palm Bay and Melbourne, FL."
+          content="Plan, migrate, and optimize cloud solutions with expert cloud consulting support for homes and small businesses in Nationwide."
         />
         <meta
           name="keywords"
@@ -46,7 +46,7 @@ const CloudConsulting = () => {
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Cloud Consulting Services | Best Computer Tech" />
+        <meta property="og:title" content="Cloud Consulting Services | 24x7 Tech On Call" />
         <meta
           property="og:description"
           content="Get expert cloud consulting for migration, optimization, security, and cost control."
@@ -55,10 +55,10 @@ const CloudConsulting = () => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cloud Consulting Services | Best Computer Tech" />
+        <meta name="twitter:title" content="Cloud Consulting Services | 24x7 Tech On Call" />
         <meta
           name="twitter:description"
-          content="Cloud strategy and migration support for Palm Bay and Melbourne area clients."
+          content="Cloud strategy and migration support for Nationwide area clients."
         />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

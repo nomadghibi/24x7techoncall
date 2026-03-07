@@ -32,7 +32,7 @@ const SoftwareTroubleshooting = () => {
     <div>
         <Helmet>
         <title>Software Troubleshooting | Palm Bay/Melbourne FL | Expert IT Support</title>
-        <meta name="description" content="Expert software troubleshooting services in Palm Bay/Melbourne, FL. We resolve operating system errors, application crashes, and software installation issues. Contact us for reliable IT support." />
+        <meta name="description" content="Expert software troubleshooting services nationwide/the USA. We resolve operating system errors, application crashes, and software installation issues. Contact us for reliable IT support." />
         <meta name="keywords" content="Software Troubleshooting Palm Bay/Melbourne FL, IT Support, Computer Repair, Application Errors, Operating System Troubleshooting, Software Installation" />
       </Helmet>
       <HeroSection title="Software Troubleshooting" image={heroImage} />

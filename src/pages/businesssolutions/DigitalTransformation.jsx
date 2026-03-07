@@ -7,7 +7,7 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/digitaltransformation-1152.jpg';
 
 const DigitalTransformation = () => {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', serviceDeliveryMethod: '', problem: '' });
   const [selectedService, setSelectedService] = useState(null);
 
@@ -62,17 +62,17 @@ const DigitalTransformation = () => {
   return (
     <div>
       <Helmet>
-        <title>Digital Transformation Services | Best Computer Tech | Palm Bay &amp; Melbourne, FL</title>
+        <title>Digital Transformation Services | 24x7 Tech On Call | Nationwide</title>
         <meta name="description" content="Modernize your business with digital transformation services including workflow automation, system integration, and strategic technology planning." />
-        <link rel="canonical" href="https://bestcomputertec.com/business-solutions/digital-transformation" />
+        <link rel="canonical" href="https://24x7techoncall.com/business-solutions/digital-transformation" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Digital Transformation Services | Best Computer Tech" />
+        <meta property="og:title" content="Digital Transformation Services | 24x7 Tech On Call" />
         <meta property="og:description" content="Modernize your business with digital transformation services including workflow automation, system integration, and strategic technology planning." />
-        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/digital-transformation" />
+        <meta property="og:url" content="https://24x7techoncall.com/business-solutions/digital-transformation" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Digital Transformation Services | Best Computer Tech" />
+        <meta name="twitter:title" content="Digital Transformation Services | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Modernize your business with digital transformation services." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -101,7 +101,7 @@ const DigitalTransformation = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Empower Your Business with Digital Transformation</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we enable businesses in Palm Bay, Melbourne, FL, and nationwide to thrive in today's rapidly evolving digital landscape. Our expert consultants collaborate with you to craft and implement cutting-edge strategies that harness the latest technologies, enhancing your business operations and fueling growth.
+            At 24x7 Tech On Call, we enable businesses nationwide, the USA, and nationwide to thrive in today's rapidly evolving digital landscape. Our expert consultants collaborate with you to craft and implement cutting-edge strategies that harness the latest technologies, enhancing your business operations and fueling growth.
           </p>
         </div>
       </section>
@@ -201,10 +201,10 @@ const DigitalTransformation = () => {
             <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <FaMapMarkerAlt className="text-cyan-500 text-xl flex-shrink-0" />
-                <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & the Space Coast</h3>
+                <h3 className="text-xl font-bold text-gray-900">Serving Clients Nationwide</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, Best Computer Tech has resolved over 10,000 IT issues. Proudly serving Palm Bay, Melbourne, the Space Coast of Florida, and across the USA, our digital transformation experts deliver personalized solutions to move your business forward.
+                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues. Proudly serving homes and businesses across the entire United States, our digital transformation experts deliver personalized solutions to move your business forward.
               </p>
             </div>
 
@@ -232,7 +232,7 @@ const DigitalTransformation = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Ready to Transform Your Business?</h2>
           <p className="text-gray-400 mb-6">
-            Our digital transformation experts in Palm Bay &amp; Melbourne are ready to help you modernize your operations and stay ahead of the competition.
+            Our digital transformation experts nationwide are ready to help you modernize your operations and stay ahead of the competition.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

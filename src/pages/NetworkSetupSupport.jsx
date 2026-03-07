@@ -259,7 +259,7 @@ const NetworkSetupSupport = () => {
     new Promise((resolve) => setTimeout(() => resolve(data), 2000));
 
   // Define the canonical URL for this page
-  const canonicalUrl = 'https://bestcomputertec.com/residential-support/network-setup-support';
+  const canonicalUrl = 'https://24x7techoncall.com/residential-support/network-setup-support';
 
   return (
     <div>

@@ -7,7 +7,7 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/businessdatarecovery-1152.jpg';
 
 const BusinessDataRecovery = () => {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', serviceDeliveryMethod: '', problem: '' });
   const [selectedService, setSelectedService] = useState(null);
 
@@ -60,19 +60,19 @@ const BusinessDataRecovery = () => {
   return (
     <div>
       <Helmet>
-        <title>Business Data Recovery Services | Best Computer Tech | Palm Bay &amp; Melbourne, FL</title>
-        <meta name="description" content="Recover your business data with expert data recovery services from Best Computer Tech. We offer hard drive recovery, RAID recovery, cloud data recovery, and more." />
+        <title>Business Data Recovery Services | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Recover your business data with expert data recovery services from 24x7 Tech On Call. We offer hard drive recovery, RAID recovery, cloud data recovery, and more." />
         <meta name="keywords" content="data recovery, business data recovery, hard drive recovery, RAID recovery, SSD recovery, database recovery, cloud data recovery" />
-        <link rel="canonical" href="https://bestcomputertec.com/business-solutions/data-recovery" />
+        <link rel="canonical" href="https://24x7techoncall.com/business-solutions/data-recovery" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Business Data Recovery Services | Best Computer Tech" />
-        <meta property="og:description" content="Recover your business data with expert data recovery services from Best Computer Tech." />
-        <meta property="og:url" content="https://bestcomputertec.com/business-solutions/data-recovery" />
+        <meta property="og:title" content="Business Data Recovery Services | 24x7 Tech On Call" />
+        <meta property="og:description" content="Recover your business data with expert data recovery services from 24x7 Tech On Call." />
+        <meta property="og:url" content="https://24x7techoncall.com/business-solutions/data-recovery" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business Data Recovery Services | Best Computer Tech" />
-        <meta name="twitter:description" content="Expert business data recovery services in Palm Bay and Melbourne, FL." />
+        <meta name="twitter:title" content="Business Data Recovery Services | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Expert business data recovery services in Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -100,7 +100,7 @@ const BusinessDataRecovery = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Business Data Recovery Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            For over 20 years, Best Computer Tech has been a trusted provider of comprehensive data recovery services in Palm Bay, Melbourne, FL, and across the U.S. Our certified technicians use cutting-edge techniques to efficiently and securely recover lost or corrupted data, ensuring your business experiences minimal downtime.
+            For over 20 years, 24x7 Tech On Call has been a trusted provider of comprehensive data recovery services nationwide, the USA, and across the U.S. Our certified technicians use cutting-edge techniques to efficiently and securely recover lost or corrupted data, ensuring your business experiences minimal downtime.
           </p>
         </div>
       </section>
@@ -200,10 +200,10 @@ const BusinessDataRecovery = () => {
             <div className="bg-white rounded-xl p-8 border border-gray-100 shadow-sm">
               <div className="flex items-center gap-3 mb-4">
                 <FaMapMarkerAlt className="text-cyan-500 text-xl flex-shrink-0" />
-                <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & the Space Coast</h3>
+                <h3 className="text-xl font-bold text-gray-900">Serving Clients Nationwide</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, Best Computer Tech has resolved over 10,000 IT issues. Proudly serving Palm Bay, Melbourne, the Space Coast of Florida, and across the USA, our data recovery experts deliver personalized and efficient solutions to get your critical data back.
+                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues. Proudly serving homes and businesses across the entire United States, our data recovery experts deliver personalized and efficient solutions to get your critical data back.
               </p>
             </div>
 
@@ -231,7 +231,7 @@ const BusinessDataRecovery = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Lost Critical Business Data?</h2>
           <p className="text-gray-400 mb-6">
-            Our data recovery specialists in Palm Bay &amp; Melbourne are ready to retrieve your lost or corrupted data quickly and securely.
+            Our data recovery specialists nationwide are ready to retrieve your lost or corrupted data quickly and securely.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

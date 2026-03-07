@@ -116,32 +116,20 @@ function Contact() {
   const [submitError, setSubmitError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const canonicalUrl = 'https://bestcomputertec.com/contact';
-  const pageImage = socialImage?.startsWith('http') ? socialImage : `https://bestcomputertec.com${socialImage || ''}`;
+  const canonicalUrl = 'https://24x7techoncall.com/contact';
+  const pageImage = socialImage?.startsWith('http') ? socialImage : `https://24x7techoncall.com${socialImage || ''}`;
 
   const contactSchema = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
-    name: 'Contact Best Computer Tech',
+    name: 'Contact 24x7 Tech On Call',
     url: canonicalUrl,
     mainEntity: {
       '@type': 'LocalBusiness',
-      name: 'Best Computer Tech LLC',
+      name: '24x7 Tech On Call',
       telephone: '+1-321-953-5199',
       email: '365techoncall@gmail.com',
-      address: {
-        '@type': 'PostalAddress',
-        streetAddress: '602 Hurst Rd NE',
-        addressLocality: 'Palm Bay',
-        addressRegion: 'FL',
-        postalCode: '32907',
-        addressCountry: 'US',
-      },
-      areaServed: [
-        { '@type': 'City', name: 'Palm Bay' },
-        { '@type': 'City', name: 'Melbourne' },
-        { '@type': 'AdministrativeArea', name: 'Brevard County' },
-      ],
+      areaServed: 'United States',
     },
   };
 
@@ -207,26 +195,26 @@ function Contact() {
   return (
     <div>
       <Helmet>
-        <title>Contact Computer Repair in Palm Bay, FL | Best Computer Tech</title>
+        <title>Contact Computer Repair in the USA | 24x7 Tech On Call</title>
         <meta
           name="description"
-          content="Contact Best Computer Tech for local computer repair and IT support in Palm Bay, Melbourne, and Brevard County, Florida."
+          content="Contact 24x7 Tech On Call for professional remote computer repair and IT support available nationwide."
         />
         <meta
           name="keywords"
-          content="contact computer repair Palm Bay FL, IT support Melbourne FL, local tech support Brevard County"
+          content="contact remote tech support, remote IT support USA, 24x7 computer help, online computer repair support"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Contact Best Computer Tech | Palm Bay, FL" />
-        <meta property="og:description" content="Reach Best Computer Tech for local computer repair and IT support in Palm Bay and nearby Florida cities." />
+        <meta property="og:title" content="Contact 24x7 Tech On Call | Nationwide Remote Support" />
+        <meta property="og:description" content="Reach 24x7 Tech On Call for professional remote computer repair and IT support available nationwide." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Contact Best Computer Tech | Palm Bay, FL" />
-        <meta name="twitter:description" content="Call or email Best Computer Tech for local IT and computer repair services in Palm Bay, FL." />
+        <meta name="twitter:title" content="Contact 24x7 Tech On Call | Nationwide Remote Support" />
+        <meta name="twitter:description" content="Call or email 24x7 Tech On Call for professional remote IT and computer repair services nationwide." />
         <meta name="twitter:image" content={pageImage} />
         <script type="application/ld+json">{JSON.stringify(contactSchema)}</script>
       </Helmet>
@@ -243,9 +231,9 @@ function Contact() {
             <span className="text-gray-500">/</span>
             <span className="text-gray-300">Contact</span>
           </nav>
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight">Contact Best Computer Tech</h1>
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">Contact 24x7 Tech On Call</h1>
           <p className="mt-3 text-cyan-100 text-lg max-w-2xl">
-            Palm Bay &amp; Melbourne, FL — We respond within 1 business day.
+            Nationwide — We respond within 1 business day.
           </p>
           <a
             href="tel:3219535199"
@@ -689,7 +677,7 @@ function Contact() {
                     </div>
                     <div>
                       <p className="text-xs text-gray-400 font-semibold uppercase tracking-wide">Address</p>
-                      <p className="text-gray-800 font-semibold">602 Hurst Rd NE<br />Palm Bay, FL 32907</p>
+                      <p className="text-gray-800 font-semibold">602 Hurst Rd NE<br />the USA 32907</p>
                     </div>
                   </li>
                 </ul>

@@ -5,23 +5,23 @@ import { FaArrowLeft, FaHeadset } from 'react-icons/fa';
 import heroImage from '../../assets/optimized-hero/howtoimprove-1152.jpg';
 
 function ImprovePerformance() {
-  const canonicalUrl = 'https://bestcomputertec.com/how-to/improve-performance';
+  const canonicalUrl = 'https://24x7techoncall.com/how-to/improve-performance';
 
   return (
     <div>
       <Helmet>
-        <title>How to Improve Computer Performance | Best Computer Tech</title>
+        <title>How to Improve Computer Performance | 24x7 Tech On Call</title>
         <meta name="description" content="Learn practical ways to improve computer speed and stability, including cleanup, startup optimization, updates, and hardware upgrades." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Improve Computer Performance | Best Computer Tech" />
+        <meta property="og:title" content="How to Improve Computer Performance | 24x7 Tech On Call" />
         <meta property="og:description" content="A straightforward optimization checklist to speed up and stabilize your computer." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Improve Computer Performance | Best Computer Tech" />
+        <meta name="twitter:title" content="How to Improve Computer Performance | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Use these steps to improve startup, speed, and overall system performance." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
@@ -117,7 +117,7 @@ function ImprovePerformance() {
           <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need a Performance Tune-Up?</h2>
           <p className="text-cyan-100 mb-6">
-            Still running slow? Our technicians in Palm Bay &amp; Melbourne can diagnose and fix performance issues — including RAM upgrades and SSD installations.
+            Still running slow? Our technicians nationwide &amp; Melbourne can diagnose and fix performance issues — including RAM upgrades and SSD installations.
           </p>
           <Link
             to="/contact"

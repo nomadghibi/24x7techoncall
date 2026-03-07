@@ -5,23 +5,23 @@ import { FaArrowLeft, FaHeadset } from 'react-icons/fa';
 import heroImage from '../../assets/optimized-hero/howtobuycomputer-1152.jpg';
 
 function BuyComputer() {
-  const canonicalUrl = 'https://bestcomputertec.com/how-to/buy-computer';
+  const canonicalUrl = 'https://24x7techoncall.com/how-to/buy-computer';
 
   return (
     <div>
       <Helmet>
-        <title>How to Buy a Computer | Best Computer Tech</title>
+        <title>How to Buy a Computer | 24x7 Tech On Call</title>
         <meta name="description" content="Use this buying guide to choose the right computer for your needs, budget, and long-term performance goals." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Buy a Computer | Best Computer Tech" />
+        <meta property="og:title" content="How to Buy a Computer | 24x7 Tech On Call" />
         <meta property="og:description" content="A practical checklist for selecting the best desktop or laptop based on use case and budget." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Buy a Computer | Best Computer Tech" />
+        <meta name="twitter:title" content="How to Buy a Computer | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Compare specs, budget, and future-proofing with this computer buying guide." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
@@ -128,7 +128,7 @@ function BuyComputer() {
           <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Help Choosing a Computer?</h2>
           <p className="text-cyan-100 mb-6">
-            Not sure which model is right for you? Our local IT advisors in Palm Bay &amp; Melbourne can give you personalized recommendations for your budget and needs.
+            Not sure which model is right for you? Our local IT advisors nationwide &amp; Melbourne can give you personalized recommendations for your budget and needs.
           </p>
           <Link
             to="/contact"

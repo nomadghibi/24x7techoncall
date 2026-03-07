@@ -167,7 +167,7 @@ const buildEstimateSummary = (answers, result) => {
     'Price Estimator Summary',
     `Estimated Range: ${result.rangeLabel}`,
     `Recommended Service: ${result.title}`,
-    `Recommended Path: https://bestcomputertec.com${result.route}`,
+    `Recommended Path: https://24x7techoncall.com${result.route}`,
     '',
     'Selections:',
     `- Issue Type: ${safeLabel('issueType')}`,
@@ -185,7 +185,7 @@ function PriceEstimator() {
   const [stepIndex, setStepIndex] = useState(0);
   const [answers, setAnswers] = useState({});
 
-  const canonicalUrl = 'https://bestcomputertec.com/price-estimator';
+  const canonicalUrl = 'https://24x7techoncall.com/price-estimator';
   const isComplete = stepIndex >= estimatorSteps.length;
   const safeStepIndex = Math.min(stepIndex, estimatorSteps.length - 1);
   const currentStep = estimatorSteps[safeStepIndex];
@@ -230,7 +230,7 @@ function PriceEstimator() {
       },
       {
         '@type': 'Question',
-        name: 'Do you provide same-day service in Palm Bay and Melbourne?',
+        name: 'Do you provide same-day service in Nationwide?',
         acceptedAnswer: {
           '@type': 'Answer',
           text: 'Yes, same-day options are often available for eligible issues. Contact us or submit a booking request to confirm current availability.',
@@ -255,7 +255,7 @@ function PriceEstimator() {
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: 'https://bestcomputertec.com/',
+        item: 'https://24x7techoncall.com/',
       },
       {
         '@type': 'ListItem',
@@ -289,10 +289,10 @@ function PriceEstimator() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
-        <title>Computer Repair Price Estimator | Best Computer Tech</title>
+        <title>Computer Repair Price Estimator | 24x7 Tech On Call</title>
         <meta
           name="description"
-          content="Get a fast local computer repair price range estimate for Palm Bay and Melbourne. Compare support types and submit a pre-filled booking request."
+          content="Get a fast local computer repair price range estimate for Nationwide. Compare support types and submit a pre-filled booking request."
         />
         <meta
           name="keywords"
@@ -300,7 +300,7 @@ function PriceEstimator() {
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Computer Repair Price Estimator | Best Computer Tech" />
+        <meta property="og:title" content="Computer Repair Price Estimator | 24x7 Tech On Call" />
         <meta
           property="og:description"
           content="Estimate your repair price range in minutes and send pre-filled details to our support team."
@@ -308,7 +308,7 @@ function PriceEstimator() {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Computer Repair Price Estimator | Best Computer Tech" />
+        <meta name="twitter:title" content="Computer Repair Price Estimator | 24x7 Tech On Call" />
         <meta
           name="twitter:description"
           content="Use our interactive estimator to get a practical service price range."

@@ -223,7 +223,7 @@ const DataRecovery = () => {
     new Promise((resolve) => setTimeout(() => resolve(data), 2000));
 
   // Define the canonical URL for this page
-  const canonicalUrl = 'https://bestcomputertec.com/residential-support/data-recovery';
+  const canonicalUrl = 'https://24x7techoncall.com/residential-support/data-recovery';
 
   return (
     <div>

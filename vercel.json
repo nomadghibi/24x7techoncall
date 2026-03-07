@@ -9,12 +9,12 @@
       "has": [
         {
           "type": "host",
-          "value": "www.bestcomputertec.com"
+          "value": "www.24x7techoncall.com"
         }
       ],
       "status": 308,
       "headers": {
-        "Location": "https://bestcomputertec.com/$1"
+        "Location": "https://24x7techoncall.com/$1"
       }
     },
     {

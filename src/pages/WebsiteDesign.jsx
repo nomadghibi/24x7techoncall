@@ -32,7 +32,7 @@ const WebsiteDesign = () => {
     <div>
         <Helmet>
         <title>Website Design Services | Palm Bay/Melbourne FL | Custom Web Solutions</title>
-        <meta name="description" content="Professional website design services in Palm Bay/Melbourne, FL. We create custom, responsive websites tailored to your business needs. Contact us for expert web solutions." />
+        <meta name="description" content="Professional website design services nationwide/the USA. We create custom, responsive websites tailored to your business needs. Contact us for expert web solutions." />
         <meta name="keywords" content="Website Design Palm Bay/Melbourne FL, Custom Websites, Web Development, Responsive Design, Web Solutions, Business Websites, IT Services" />
       </Helmet>
       <HeroSection title="Website Design Services" image={heroImage} />

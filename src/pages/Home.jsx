@@ -2,7 +2,7 @@ import React, { useMemo, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import {
-  FaTools, FaBug, FaNetworkWired, FaDatabase, FaLaptopHouse,
+  FaBug, FaNetworkWired, FaDatabase, FaLaptopHouse, FaWifi,
   FaQuestionCircle, FaChalkboardTeacher, FaCloud, FaCamera, FaLaptop,
   FaStar, FaMapMarkerAlt, FaBolt, FaShieldAlt, FaHandshake,
   FaPhoneAlt, FaAward, FaUsers, FaRegClock, FaArrowRight,
@@ -20,7 +20,6 @@ import blogImage9  from '../assets/optimized-blog/business-services-512.jpg';
 import blogImage10 from '../assets/optimized-blog/ai-optimized-512.jpg';
 
 const homeBlogPool = [
-  { title: 'Computer Repairs Near You: Local Guide for Palm Bay and Melbourne', summary: 'Use this local checklist to find trusted computer repair near you, compare options, and choose the right service in Palm Bay and Melbourne.', link: '/blog/computer-repairs-near-you-palm-bay-melbourne-guide', date: 'February 24, 2026', image: blogImage9 },
   { title: 'AI Trends in 2026: What Businesses Should Do Next', summary: 'A practical 2026 guide to AI trends, governance, and realistic adoption steps for growing companies.', link: '/blog/ai-trends-2026-what-businesses-should-do-next', date: 'February 24, 2026', image: blogImage10 },
   { title: '5 Tips to Keep Your Computer Running Smoothly', summary: 'Use this maintenance checklist to keep your computer stable, secure, and fast.', link: '/blog/5-tips-to-keep-your-computer-running-smoothly', date: 'February 10, 2026', image: blogImage1 },
   { title: 'How to Protect Your Computer from Malware', summary: 'Reduce malware risk with layered security, MFA, safer downloads, and backup recovery.', link: '/blog/how-to-protect-your-computer-from-malware', date: 'February 5, 2026', image: blogImage2 },
@@ -45,7 +44,7 @@ const heroImageMobile  = '/hero-home-640.jpg';
 const heroImageMid     = '/hero-home-768.jpg';
 const heroImageLarge   = '/hero-home-896.jpg';
 const heroImageDesktop = '/hero-home-1024.jpg';
-const heroImageSocial  = 'https://bestcomputertec.com/hero-home-1024.jpg';
+const heroImageSocial  = 'https://24x7techoncall.com/hero-home-1024.jpg';
 
 const StarRating = ({ count = 5 }) => (
   <div className="flex gap-0.5 mb-3">
@@ -115,56 +114,45 @@ function Home() {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: 'Best Computer Tech LLC',
-    url: 'https://bestcomputertec.com/',
+    name: '24x7 Tech On Call',
+    url: 'https://24x7techoncall.com/',
     telephone: '+1-321-953-5199',
     email: '365techoncall@gmail.com',
     priceRange: '$$',
-    address: { '@type': 'PostalAddress', streetAddress: '602 Hurst Rd NE', addressLocality: 'Palm Bay', addressRegion: 'FL', postalCode: '32907', addressCountry: 'US' },
-    geo: { '@type': 'GeoCoordinates', latitude: 28.0836, longitude: -80.6081 },
     openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '18:00' }],
-    areaServed: [
-      { '@type': 'City', name: 'Palm Bay' },
-      { '@type': 'City', name: 'Melbourne' },
-      { '@type': 'City', name: 'West Melbourne' },
-      { '@type': 'AdministrativeArea', name: 'Brevard County' },
-    ],
-    serviceType: ['Computer Repair', 'IT Support', 'Network Setup', 'Virus and Malware Removal', 'Data Recovery'],
+    areaServed: 'United States',
+    serviceType: ['Remote Computer Support', 'Remote IT Support', 'Software Troubleshooting', 'Virus and Malware Removal', 'Data Recovery', 'Cloud Consulting'],
   };
 
   const handleReadMoreClick = useCallback((serviceId) => {
     const routes = {
-      'hardware-repairs':          '/residential-support/pc-laptop-repairs',
-      'software-troubleshooting':  '/residential-support/software-troubleshooting',
-      'virus-malware-removal':     '/residential-support/virus-malware-removal',
-      'network-setup-support':     '/residential-support/network-setup-support',
-      'data-recovery':             '/residential-support/data-recovery',
-      'remote-computer-support':   '/residential-support/remote-support',
-      'computer-training':         '/residential-support/computer-training',
-      'quick-tech-help':           '/diagnose-my-issue',
-      'cloud-consulting':          '/business-solutions/cloud-solutions',
-      'security-camera-installation': '/business-solutions/technical-support-maintenance',
+      'remote-computer-support':  '/residential-support/remote-support',
+      'virus-malware-removal':    '/residential-support/virus-malware-removal',
+      'network-setup-support':    '/residential-support/network-setup-support',
+      'software-troubleshooting': '/residential-support/software-troubleshooting',
+      'data-recovery':            '/residential-support/data-recovery',
+      'cloud-consulting':         '/business-solutions/cloud-solutions',
+      'managed-it':               '/business-solutions/managed-it-services',
+      'quick-tech-help':          '/residential-support/computer-training',
     };
     navigate(routes[serviceId] || '/residential-services');
   }, [navigate]);
 
   const services = useMemo(() => [
-    { id: 'hardware-repairs',           title: 'Hardware Repairs',          description: 'Fixing broken screens, malfunctioning keyboards, and other hardware issues.', icon: <FaTools size={28} color="#0891b2" /> },
-    { id: 'software-troubleshooting',   title: 'Software Troubleshooting',  description: 'Resolving OS errors, application crashes, and software installation issues.', icon: <FaLaptop size={28} color="#10B981" /> },
-    { id: 'virus-malware-removal',      title: 'Virus & Malware Removal',   description: 'Protecting your computer from harmful viruses and ensuring your data is safe.', icon: <FaBug size={28} color="#EF4444" /> },
-    { id: 'network-setup-support',      title: 'Network Setup & Support',   description: 'Setting up and maintaining secure and efficient home or office networks.', icon: <FaNetworkWired size={28} color="#8B5CF6" /> },
-    { id: 'data-recovery',              title: 'Data Recovery',             description: 'Retrieving lost or corrupted data from hard drives and other storage devices.', icon: <FaDatabase size={28} color="#FBBF24" /> },
-    { id: 'remote-computer-support',    title: 'Remote Computer Support',   description: 'Professional support for your computer issues without a technician visit.', icon: <FaLaptopHouse size={28} color="#14B8A6" /> },
-    { id: 'quick-tech-help',            title: 'Quick Tech Help',           description: 'Have a question about your computer? Get a quick repair quote instantly.', icon: <FaQuestionCircle size={28} color="#EC4899" /> },
-    { id: 'cloud-consulting',           title: 'Cloud Consulting',          description: 'Expert cloud support and migration guidance from the comfort of your home.', icon: <FaCloud size={28} color="#6366F1" /> },
-    { id: 'computer-training',          title: 'Computer Training',         description: 'Learn to use your computer more effectively with professional training.', icon: <FaChalkboardTeacher size={28} color="#F97316" /> },
-    { id: 'security-camera-installation', title: 'Security Camera & Cabling', description: 'Professional installation of security cameras and network cabling.', icon: <FaCamera size={28} color="#6B7280" /> },
+    { id: 'remote-computer-support',  title: 'Computer Repair & Troubleshooting', description: 'Remote diagnosis and repair for crashes, freezes, slow performance, and system errors.', icon: <FaLaptopHouse size={28} color="#14B8A6" /> },
+    { id: 'virus-malware-removal',    title: 'Virus & Malware Removal',           description: 'Remove viruses, spyware, ransomware, pop-ups, and browser hijackers — fast and thorough.', icon: <FaBug size={28} color="#EF4444" /> },
+    { id: 'network-setup-support',    title: 'Wi-Fi & Internet Help',             description: 'Fix slow internet, dropped connections, router issues, and Wi-Fi dead zones remotely.', icon: <FaWifi size={28} color="#8B5CF6" /> },
+    { id: 'software-troubleshooting', title: 'Email, Printer & Software Support', description: 'Setup and troubleshoot email, printers, Zoom, Microsoft Office, and everyday apps.', icon: <FaChalkboardTeacher size={28} color="#10B981" /> },
+    { id: 'data-recovery',            title: 'Data Backup & File Transfer',       description: 'Cloud backup setup, OneDrive sync, and file transfer from old PC to new.', icon: <FaDatabase size={28} color="#FBBF24" /> },
+    { id: 'cloud-consulting',         title: 'Microsoft 365 Support',             description: 'Setup, troubleshooting, and admin support for Microsoft 365, Teams, and SharePoint.', icon: <FaCloud size={28} color="#6366F1" /> },
+    { id: 'managed-it',               title: 'Managed IT Support',                description: 'Proactive remote monitoring, patching, and maintenance for businesses of all sizes.', icon: <FaNetworkWired size={28} color="#0891b2" /> },
+    { id: 'quick-tech-help',          title: 'Tech Help for Seniors',             description: 'Patient, plain-language remote support for seniors — email, Zoom, tablets, and more.', icon: <FaQuestionCircle size={28} color="#EC4899" /> },
   ], []);
 
   const testimonials = useMemo(() => [
-    { name: 'J Nash',       feedback: 'Best Computer Tech fixed my laptop in no time. The service was excellent and the staff were very friendly. Highly recommended!', date: 'July 10, 2023' },
-    { name: 'Jane Smith',   feedback: 'Great service and affordable rates. They helped me recover all my lost data. I am very grateful.', date: 'June 22, 2023' },
-    { name: 'Dan Johnson',  feedback: 'I needed urgent help with my network setup and Best Computer Tech came through with flying colors. Fast and reliable service.', date: 'May 30, 2023' },
+    { name: 'J Nash',       feedback: 'The remote support was amazing — they fixed my laptop in no time without any visit. The service was excellent and the staff were very friendly. Highly recommended!', date: 'July 10, 2023' },
+    { name: 'Jane Smith',   feedback: 'Great service and affordable rates. They helped me recover all my lost data remotely. I am very grateful.', date: 'June 22, 2023' },
+    { name: 'Dan Johnson',  feedback: 'I needed urgent help with my network setup and the team came through with flying colors. Fast and reliable remote service.', date: 'May 30, 2023' },
   ], []);
 
   const blogPosts = useMemo(() => pickRandomPosts(homeBlogPool, 3), []);
@@ -177,25 +165,21 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>Computer Repair & IT Support in Palm Bay & Melbourne, FL | Best Computer Tech</title>
-        <meta name="description" content="Best Computer Tech provides local computer repair and IT support in Palm Bay, Melbourne, and Brevard County, FL. Fast hardware repair, virus removal, network setup, and data recovery." />
-        <meta name="keywords" content="computer repair Palm Bay FL, computer repair Melbourne FL, local IT support Brevard County, virus removal Palm Bay, data recovery Melbourne, network setup Florida" />
+        <title>Nationwide Remote Tech Support 24/7 | 24x7 Tech On Call</title>
+        <meta name="description" content="24x7 Tech On Call provides professional remote tech support for homes and businesses nationwide. Available 24/7 — no fix, no fee." />
+        <meta name="keywords" content="remote tech support, remote IT support, 24/7 computer help, online computer repair, nationwide tech support, remote computer support, remote virus removal, remote data recovery" />
         <meta name="robots" content="index, follow" />
-        <link rel="canonical" href="https://bestcomputertec.com/" />
+        <link rel="canonical" href="https://24x7techoncall.com/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Computer Repair & IT Support in Palm Bay & Melbourne, FL | Best Computer Tech" />
-        <meta property="og:description" content="Local computer repair and IT support services for Palm Bay, Melbourne, and nearby Brevard County areas." />
-        <meta property="og:url" content="https://bestcomputertec.com/" />
+        <meta property="og:title" content="Nationwide Remote Tech Support 24/7 | 24x7 Tech On Call" />
+        <meta property="og:description" content="Professional remote tech support for homes and businesses nationwide. Available 24/7 — no fix, no fee." />
+        <meta property="og:url" content="https://24x7techoncall.com/" />
         <meta property="og:image" content={heroImageSocial} />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Best Computer Tech | Palm Bay & Melbourne, FL" />
-        <meta name="twitter:description" content="Computer repair, IT support, network setup, and data recovery in Palm Bay and Melbourne, Florida." />
+        <meta name="twitter:title" content="24x7 Tech On Call | Nationwide Remote Tech Support" />
+        <meta name="twitter:description" content="Remote computer support, IT help, virus removal, and data recovery — available 24/7 across the USA." />
         <meta name="twitter:image" content={heroImageSocial} />
-        <meta name="geo.region" content="US-FL" />
-        <meta name="geo.placename" content="Palm Bay, Melbourne, Florida" />
-        <meta name="geo.position" content="28.0836;-80.6081" />
-        <meta name="ICBM" content="28.0836, -80.6081" />
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
 
@@ -205,7 +189,7 @@ function Home() {
           src={heroImageMobile}
           srcSet={`${heroImageMobile} 640w, ${heroImageMid} 768w, ${heroImageLarge} 896w, ${heroImageDesktop} 1024w`}
           sizes="100vw"
-          alt="Best Computer Tech computer repair and IT support in Palm Bay and Melbourne"
+          alt="24x7 Tech On Call — nationwide remote computer and IT support"
           className="object-cover w-full"
           style={{ minHeight: '600px', maxHeight: '720px' }}
           width={1024}
@@ -217,13 +201,13 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80 flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-4xl mx-auto">
             <span className="inline-block px-4 py-1.5 mb-5 text-xs font-bold uppercase tracking-widest text-cyan-400 border border-cyan-400/40 rounded-full bg-cyan-400/10">
-              Palm Bay &amp; Melbourne, FL
+              Serving All 50 States
             </span>
             <h1 className="mb-5 text-4xl sm:text-6xl font-extrabold leading-tight">
-              Fast, Reliable <span className="text-cyan-400">Computer Repair</span><br className="hidden sm:block" /> &amp; IT Support
+              Expert IT Help Delivered to Your <span className="text-cyan-400">Screen</span><br className="hidden sm:block" /> — No Visit Required
             </h1>
             <p className="mb-8 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-              Local experts serving Brevard County homes and businesses. Same-day response — no fix, no fee.
+              Professional remote tech support for homes and businesses nationwide. Available 24/7 — no fix, no fee.
             </p>
             <div className="flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Link to="/diagnose-my-issue" className="px-8 py-3.5 font-bold text-gray-900 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors shadow-lg">
@@ -233,7 +217,7 @@ function Home() {
                 Get a Free Quote
               </Link>
               <a href="tel:+13219535199" className="flex items-center gap-2 px-8 py-3.5 font-semibold text-white bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition-colors">
-                <FaPhoneAlt className="w-4 h-4" /> (321) 953-5199
+                <FaPhoneAlt className="w-4 h-4" /> Call: (321) 953-5199
               </a>
             </div>
           </div>
@@ -294,17 +278,17 @@ function Home() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
             <p className="text-sm font-bold text-cyan-600 uppercase tracking-widest mb-2">Why Us</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Why Choose Best Computer Tech?</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Why Choose 24x7 Tech On Call?</h2>
             <p className="text-lg text-gray-500 max-w-xl mx-auto">
-              We're your local Brevard County team — not a call center, not a chain. Just real experts who care.
+              We're your remote IT experts — not a call center, not a chain. Just real technicians who care.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { icon: FaMapMarkerAlt, color: 'cyan',   title: 'Locally Based',    text: 'We live and work in Palm Bay & Melbourne. We know your community.' },
-              { icon: FaBolt,         color: 'green',  title: 'Fast Turnaround',  text: 'Most repairs completed same day or next day. No long waits.' },
-              { icon: FaShieldAlt,    color: 'purple', title: 'Trusted & Secure', text: 'We protect your data and privacy on every job, guaranteed.' },
-              { icon: FaHandshake,    color: 'yellow', title: 'No Fix, No Fee',   text: "If we can't fix it, you don't pay. Simple, honest service." },
+              { icon: FaMapMarkerAlt, color: 'cyan',   title: 'Nationwide Service', text: 'We serve all 50 states remotely. Wherever you are, we can help.' },
+              { icon: FaBolt,         color: 'green',  title: 'Fast Turnaround',    text: 'Most issues resolved same day. No long waits, no on-site visits.' },
+              { icon: FaShieldAlt,    color: 'purple', title: 'Trusted & Secure',   text: 'We protect your data and privacy on every job, guaranteed.' },
+              { icon: FaHandshake,    color: 'yellow', title: 'No Fix, No Fee',     text: "If we can't fix it, you don't pay. Simple, honest service." },
             ].map(({ icon: Icon, color, title, text }) => (
               <div key={title} className={`flex flex-col items-center text-center p-7 rounded-2xl border-t-4 border-${color}-400 bg-white shadow-sm hover:shadow-md transition-shadow`}>
                 <div className={`mb-4 w-14 h-14 bg-${color}-50 rounded-xl flex items-center justify-center`}>
@@ -327,7 +311,7 @@ function Home() {
           <div className="text-center mb-12">
             <p className="text-sm font-bold text-cyan-600 uppercase tracking-widest mb-2">Reviews</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">What Our Customers Say</h2>
-            <p className="text-lg text-gray-500">Real reviews from real clients across Palm Bay and Melbourne.</p>
+            <p className="text-lg text-gray-500">Real reviews from real clients across the USA.</p>
           </div>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {testimonials.map((testimonial, index) => (
@@ -335,7 +319,7 @@ function Home() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <a href="https://www.google.com/maps/place/Best+Computer+Tech" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.google.com/maps/search/24x7+Tech+On+Call" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors">
               <FaStar className="text-yellow-400" /> Read more reviews on Google
             </a>

@@ -5,23 +5,23 @@ import { FaArrowLeft, FaHeadset } from 'react-icons/fa';
 import heroImage from '../../assets/optimized-hero/datarecovery-1152.jpg';
 
 function RecoverData() {
-  const canonicalUrl = 'https://bestcomputertec.com/how-to/recover-data';
+  const canonicalUrl = 'https://24x7techoncall.com/how-to/recover-data';
 
   return (
     <div>
       <Helmet>
-        <title>How to Recover Lost Data | Best Computer Tech</title>
+        <title>How to Recover Lost Data | 24x7 Tech On Call</title>
         <meta name="description" content="Learn practical steps to recover lost files safely and improve your chances of successful data recovery." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Recover Lost Data | Best Computer Tech" />
+        <meta property="og:title" content="How to Recover Lost Data | 24x7 Tech On Call" />
         <meta property="og:description" content="A step-by-step recovery guide covering software tools, safe workflows, and backup tips." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Recover Lost Data | Best Computer Tech" />
+        <meta name="twitter:title" content="How to Recover Lost Data | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Recover deleted files with safer methods and avoid data overwrite." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
@@ -104,7 +104,7 @@ function RecoverData() {
           <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Professional Data Recovery?</h2>
           <p className="text-cyan-100 mb-6">
-            Lost critical files or dealing with a failing drive? Our data recovery specialists in Palm Bay &amp; Melbourne can help retrieve what matters most.
+            Lost critical files or dealing with a failing drive? Our data recovery specialists nationwide &amp; Melbourne can help retrieve what matters most.
           </p>
           <Link
             to="/contact"

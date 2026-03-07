@@ -15,7 +15,6 @@ const staticRoutes = [
   '/price-estimator',
   '/quick-tech-help',
   '/residential-services',
-  '/residential-support/pc-laptop-repairs',
   '/residential-support/virus-malware-removal',
   '/residential-support/software-troubleshooting',
   '/residential-support/data-recovery',
@@ -23,9 +22,15 @@ const staticRoutes = [
   '/residential-support/remote-support',
   '/residential-support/tech-consultation',
   '/residential-support/computer-training',
-  '/residential-support/home-office-setup',
   '/residential-support/backup-data-protection',
   '/residential-support/cybersecurity-home',
+  '/residential-support/computer-repair',
+  '/residential-support/wifi-internet-help',
+  '/residential-support/email-printer-software',
+  '/residential-support/pc-tune-up',
+  '/residential-support/data-backup-transfer',
+  '/residential-support/new-computer-setup',
+  '/residential-support/senior-tech-help',
   '/business-services',
   '/business-solutions/it-consulting',
   '/business-solutions/network-setup',
@@ -39,6 +44,11 @@ const staticRoutes = [
   '/business-solutions/digital-transformation',
   '/business-solutions/technical-support-maintenance',
   '/business-solutions/website-development',
+  '/business-solutions/remote-help-desk',
+  '/business-solutions/microsoft-365-support',
+  '/business-solutions/user-device-management',
+  '/business-solutions/backup-recovery-support',
+  '/business-solutions/network-remote-access',
   '/services',
   '/contact',
   '/how-to',
@@ -51,6 +61,11 @@ const staticRoutes = [
   '/how-to/be-safe-online',
   '/how-to/set-up-email',
   '/blog',
+  '/blog/what-is-remote-computer-support',
+  '/blog/remote-it-support-vs-on-site-it',
+  '/blog/5-signs-you-need-remote-tech-support',
+  '/blog/how-to-choose-remote-it-support-company-usa',
+  '/blog/is-remote-computer-repair-safe',
   '/blog/computer-repairs-near-you-palm-bay-melbourne-guide',
   '/blog/ai-trends-2026-what-businesses-should-do-next',
   '/blog/5-tips-to-keep-your-computer-running-smoothly',
@@ -97,7 +112,7 @@ const links = staticRoutes.map((route) => ({
 
 const sitemapPath = resolve(__dirname, 'public', 'sitemap.xml');
 
-const sitemapStream = new SitemapStream({ hostname: 'https://bestcomputertec.com' });
+const sitemapStream = new SitemapStream({ hostname: 'https://24x7techoncall.com' });
 const writeStream = createWriteStream(sitemapPath);
 
 sitemapStream.pipe(writeStream);

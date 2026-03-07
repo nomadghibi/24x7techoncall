@@ -7,8 +7,8 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/websitedevelopment-1152.jpg';
 
 const WebsiteDevelopment = () => {
-  const canonicalUrl = 'https://bestcomputertec.com/business-solutions/website-development';
-  const pageImage = heroImage?.startsWith('http') ? heroImage : `https://bestcomputertec.com${heroImage || ''}`;
+  const canonicalUrl = 'https://24x7techoncall.com/business-solutions/website-development';
+  const pageImage = heroImage?.startsWith('http') ? heroImage : `https://24x7techoncall.com${heroImage || ''}`;
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', serviceDeliveryMethod: '', problem: '' });
   const [selectedService, setSelectedService] = useState(null);
 
@@ -58,18 +58,18 @@ const WebsiteDevelopment = () => {
   return (
     <div>
       <Helmet>
-        <title>Website Development Services | Best Computer Tech | Palm Bay &amp; Melbourne, FL</title>
+        <title>Website Development Services | 24x7 Tech On Call | Nationwide</title>
         <meta name="description" content="Custom website development services for businesses including frontend, backend, hosting, security, and SEO support." />
         <meta name="keywords" content="website development Palm Bay, business web design Melbourne FL, SEO website services, custom website support" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Website Development Services | Best Computer Tech" />
+        <meta property="og:title" content="Website Development Services | 24x7 Tech On Call" />
         <meta property="og:description" content="Build and grow your online presence with secure, high-performance website development services." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Website Development Services | Best Computer Tech" />
+        <meta name="twitter:title" content="Website Development Services | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Professional website development and maintenance services for local businesses." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -98,7 +98,7 @@ const WebsiteDevelopment = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Website Development Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we offer comprehensive website development services to help you establish a strong online presence. Our experienced developers provide a range of services tailored to meet the unique needs of your business.
+            At 24x7 Tech On Call, we offer comprehensive website development services to help you establish a strong online presence. Our experienced developers provide a range of services tailored to meet the unique needs of your business.
           </p>
         </div>
       </section>
@@ -202,7 +202,7 @@ const WebsiteDevelopment = () => {
                 <h3 className="text-xl font-bold text-gray-900">Providing Website Development Nationwide</h3>
               </div>
               <p className="text-gray-600">
-                At Best Computer Tech, we have helped numerous businesses establish a strong online presence with our expert website development services. Our team of skilled developers is dedicated to delivering high-quality websites that meet your business needs, serving clients locally and across the USA.
+                At 24x7 Tech On Call, we have helped numerous businesses establish a strong online presence with our expert website development services. Our team of skilled developers is dedicated to delivering high-quality websites that meet your business needs, serving clients locally and across the USA.
               </p>
             </div>
 

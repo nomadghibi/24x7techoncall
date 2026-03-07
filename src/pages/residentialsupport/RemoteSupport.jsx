@@ -5,7 +5,7 @@ import { FaTools, FaBug, FaTachometerAlt, FaNetworkWired, FaPrint, FaEnvelope, F
 import heroImage from '../../assets/optimized-hero/computers-optimized-1152.jpg';
 
 const RemoteSupport = () => {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', problem: '' });
   const [selectedService, setSelectedService] = useState(null);
 
@@ -51,19 +51,19 @@ const RemoteSupport = () => {
   return (
     <div>
       <Helmet>
-        <title>Remote Support Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
-        <meta name="description" content="Get expert remote support services in Palm Bay and Melbourne, FL. We offer software troubleshooting, virus removal, system optimization, network support, and email configuration to keep your systems running smoothly from anywhere." />
-        <meta name="keywords" content="remote support near me, software troubleshooting Palm Bay, virus removal Melbourne FL, system optimization, network support, email configuration, remote IT help, Best Computer Tech" />
-        <link rel="canonical" href="https://bestcomputertec.com/residential-support/remote-support" />
+        <title>Remote Computer Support Services | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Get expert remote tech support nationwide. We offer software troubleshooting, virus removal, system optimization, network support, and email configuration to keep your systems running smoothly from anywhere." />
+        <meta name="keywords" content="remote computer support, remote tech support USA, software troubleshooting online, virus removal remote, system optimization, network support, email configuration, remote IT help, 24x7 Tech On Call" />
+        <link rel="canonical" href="https://24x7techoncall.com/residential-support/remote-support" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Remote Support Services | Best Computer Tech | Palm Bay & Melbourne, FL" />
-        <meta property="og:description" content="Best Computer Tech offers expert remote support services, including software troubleshooting, virus removal, and more. Serving Palm Bay and Melbourne, FL." />
-        <meta property="og:url" content="https://bestcomputertec.com/residential-support/remote-support" />
+        <meta property="og:title" content="Remote Computer Support Services | 24x7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="24x7 Tech On Call offers expert remote computer support nationwide, including software troubleshooting, virus removal, and more." />
+        <meta property="og:url" content="https://24x7techoncall.com/residential-support/remote-support" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote Support Services | Best Computer Tech" />
-        <meta name="twitter:description" content="Expert remote support services in Palm Bay and Melbourne, FL. Software troubleshooting, virus removal, system optimization, and more." />
+        <meta name="twitter:title" content="Remote Support Services | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Expert remote support services in Nationwide. Software troubleshooting, virus removal, system optimization, and more." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -91,7 +91,7 @@ const RemoteSupport = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Remote Support Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we specialize in comprehensive remote support services to resolve your technical issues quickly and efficiently. Our certified technicians can diagnose and fix a wide range of problems without needing to visit your location, ensuring your devices are up and running in no time.
+            At 24x7 Tech On Call, we specialize in comprehensive remote support services to resolve your technical issues quickly and efficiently. Our certified technicians can diagnose and fix a wide range of problems without needing to visit your location, ensuring your devices are up and running in no time.
           </p>
         </div>
       </section>
@@ -186,7 +186,7 @@ const RemoteSupport = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Space Coast</h3>
               </div>
               <p className="text-gray-600 mb-3">
-                Best Computer Tech proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient remote support services.
+                24x7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient remote support services.
               </p>
               <p className="text-gray-600">
                 We offer both onsite and remote services locally, and remote services across the entire USA.
@@ -217,7 +217,7 @@ const RemoteSupport = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Remote Tech Help Now?</h2>
           <p className="text-gray-400 mb-6">
-            Our remote support technicians in Palm Bay &amp; Melbourne can connect to your device and resolve most issues in a single session.
+            Our remote support technicians nationwide can connect to your device and resolve most issues in a single session.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

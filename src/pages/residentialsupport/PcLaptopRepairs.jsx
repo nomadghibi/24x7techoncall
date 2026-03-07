@@ -7,7 +7,7 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/hardwarerepairs-1152.jpg';
 
 const PcLaptopRepairs = () => {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -72,19 +72,19 @@ const PcLaptopRepairs = () => {
   return (
     <div>
       <Helmet>
-        <title>PC and Laptop Repairs | Best Computer Tech | Palm Bay & Melbourne, FL</title>
-        <meta name="description" content="Get expert PC and laptop repair services in Palm Bay and Melbourne, FL. We specialize in screen replacement, keyboard repair, virus removal, and more. Any brand, any problem, we fix it all!" />
+        <title>PC and Laptop Repairs | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Get expert PC and laptop repair services in Nationwide. We specialize in screen replacement, keyboard repair, virus removal, and more. Any brand, any problem, we fix it all!" />
         <meta name="keywords" content="PC repair near me, laptop repair near me, computer repair Palm Bay, computer repair Melbourne FL, screen replacement, keyboard repair, battery replacement, virus removal, Windows repair, Mac repair, free diagnostic" />
-        <link rel="canonical" href="https://bestcomputertec.com/residential-support/pc-laptop-repairs" />
+        <link rel="canonical" href="https://24x7techoncall.com/residential-support/pc-laptop-repairs" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="PC and Laptop Repairs | Best Computer Tech | Palm Bay & Melbourne, FL" />
-        <meta property="og:description" content="Professional PC and laptop repair services including virus removal, screen replacement, and more. Serving Palm Bay & Melbourne, FL for over 20 years." />
-        <meta property="og:url" content="https://bestcomputertec.com/residential-support/pc-laptop-repairs" />
+        <meta property="og:title" content="PC and Laptop Repairs | 24x7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="Professional PC and laptop repair services including virus removal, screen replacement, and more. Serving Nationwide for over 20 years." />
+        <meta property="og:url" content="https://24x7techoncall.com/residential-support/pc-laptop-repairs" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="PC and Laptop Repairs | Best Computer Tech" />
-        <meta name="twitter:description" content="Expert PC and laptop repairs in Palm Bay and Melbourne, FL. We fix any brand, any problem. Free diagnostic available." />
+        <meta name="twitter:title" content="PC and Laptop Repairs | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Expert PC and laptop repairs in Nationwide. We fix any brand, any problem. Free diagnostic available." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -112,7 +112,7 @@ const PcLaptopRepairs = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert PC and Laptop Repairs</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we specialize in comprehensive PC and laptop repairs for any brand and any problem, serving Palm Bay and Melbourne, FL, for over 20 years. Whether it's a Windows or Mac, our certified technicians provide free diagnostics and are equipped to fix it all, ensuring your device is restored to peak performance quickly and efficiently.
+            At 24x7 Tech On Call, we specialize in comprehensive PC and laptop repairs for any brand and any problem, serving Nationwide, for over 20 years. Whether it's a Windows or Mac, our certified technicians provide free diagnostics and are equipped to fix it all, ensuring your device is restored to peak performance quickly and efficiently.
           </p>
         </div>
       </section>
@@ -210,7 +210,7 @@ const PcLaptopRepairs = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Space Coast</h3>
               </div>
               <p className="text-gray-600 mb-3">
-                Best Computer Tech proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida. Our technicians are well-acquainted with the needs of our local customers, providing personalized and efficient PC and laptop repair services.
+                24x7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida. Our technicians are well-acquainted with the needs of our local customers, providing personalized and efficient PC and laptop repair services.
               </p>
               <p className="text-gray-600">
                 We offer both onsite and remote services for Palm Bay, Melbourne, and the Space Coast of Florida, and provide remote services across the USA.
@@ -241,7 +241,7 @@ const PcLaptopRepairs = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Ready to Get Your Device Fixed?</h2>
           <p className="text-gray-400 mb-6">
-            Our certified technicians in Palm Bay &amp; Melbourne are ready to diagnose and repair any issue — fast, affordable, and reliable.
+            Our certified technicians nationwide are ready to diagnose and repair any issue — fast, affordable, and reliable.
           </p>
           <Link
             to="/contact"

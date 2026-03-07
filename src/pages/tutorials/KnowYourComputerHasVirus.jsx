@@ -5,23 +5,23 @@ import { FaArrowLeft, FaHeadset } from 'react-icons/fa';
 import heroImage from '../../assets/optimized-hero/computerhasviures-1152.jpg';
 
 function KnowYourComputerHasVirus() {
-  const canonicalUrl = 'https://bestcomputertec.com/how-to/know-your-computer-has-virus';
+  const canonicalUrl = 'https://24x7techoncall.com/how-to/know-your-computer-has-virus';
 
   return (
     <div>
       <Helmet>
-        <title>How to Know Your Computer Has a Virus | Best Computer Tech</title>
-        <meta name="description" content="Learn the common signs of computer viruses and what to do next with this quick guide from Best Computer Tech." />
+        <title>How to Know Your Computer Has a Virus | 24x7 Tech On Call</title>
+        <meta name="description" content="Learn the common signs of computer viruses and what to do next with this quick guide from 24x7 Tech On Call." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Know Your Computer Has a Virus | Best Computer Tech" />
+        <meta property="og:title" content="How to Know Your Computer Has a Virus | 24x7 Tech On Call" />
         <meta property="og:description" content="A practical checklist to identify malware symptoms and protect your device." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Know Your Computer Has a Virus | Best Computer Tech" />
+        <meta name="twitter:title" content="How to Know Your Computer Has a Virus | 24x7 Tech On Call" />
         <meta name="twitter:description" content="Identify virus symptoms and take immediate protective steps." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>
@@ -98,7 +98,7 @@ function KnowYourComputerHasVirus() {
           <FaHeadset className="mx-auto text-4xl text-cyan-300 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Professional Virus Removal?</h2>
           <p className="text-cyan-100 mb-6">
-            Worried your computer is infected? Our experts in Palm Bay &amp; Melbourne provide fast, thorough malware and virus removal.
+            Worried your computer is infected? Our experts nationwide &amp; Melbourne provide fast, thorough malware and virus removal.
           </p>
           <Link
             to="/contact"

@@ -7,7 +7,7 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/homeofficesetup-1152.jpg';
 
 const HomeOfficeSetup = () => {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', problem: '' });
   const [selectedService, setSelectedService] = useState(null);
 
@@ -61,19 +61,19 @@ const HomeOfficeSetup = () => {
   return (
     <div>
       <Helmet>
-        <title>Home Office Setup Services | Best Computer Tech | Palm Bay & Melbourne, FL</title>
-        <meta name="description" content="Transform your home into a productive workspace with our expert home office setup services in Palm Bay and Melbourne, FL. We handle everything from workspace design and equipment setup to network configuration and remote access solutions." />
-        <meta name="keywords" content="home office setup near me, workspace design Palm Bay, home office setup Melbourne FL, equipment setup, network configuration, remote access, home office solutions, Best Computer Tech" />
-        <link rel="canonical" href="https://bestcomputertec.com/residential-support/home-office-setup" />
+        <title>Home Office Setup Services | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Transform your home into a productive workspace with our expert home office setup services in Nationwide. We handle everything from workspace design and equipment setup to network configuration and remote access solutions." />
+        <meta name="keywords" content="home office setup near me, workspace design Palm Bay, home office setup Melbourne FL, equipment setup, network configuration, remote access, home office solutions, 24x7 Tech On Call" />
+        <link rel="canonical" href="https://24x7techoncall.com/residential-support/home-office-setup" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Home Office Setup Services | Best Computer Tech | Palm Bay & Melbourne, FL" />
-        <meta property="og:description" content="Set up a functional and efficient home office with Best Computer Tech. Serving Palm Bay and Melbourne, FL, we offer comprehensive services including workspace design, equipment setup, and network configuration." />
-        <meta property="og:url" content="https://bestcomputertec.com/residential-support/home-office-setup" />
+        <meta property="og:title" content="Home Office Setup Services | 24x7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="Set up a functional and efficient home office with 24x7 Tech On Call. Serving Nationwide, we offer comprehensive services including workspace design, equipment setup, and network configuration." />
+        <meta property="og:url" content="https://24x7techoncall.com/residential-support/home-office-setup" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Home Office Setup Services | Best Computer Tech" />
-        <meta name="twitter:description" content="Expert home office setup services in Palm Bay and Melbourne, FL." />
+        <meta name="twitter:title" content="Home Office Setup Services | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Expert home office setup services in Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -101,7 +101,7 @@ const HomeOfficeSetup = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Home Office Setup Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we specialize in comprehensive home office setup services to create an efficient and comfortable workspace for you. Our certified technicians are experienced in designing and implementing home office solutions tailored to your specific needs.
+            At 24x7 Tech On Call, we specialize in comprehensive home office setup services to create an efficient and comfortable workspace for you. Our certified technicians are experienced in designing and implementing home office solutions tailored to your specific needs.
           </p>
         </div>
       </section>
@@ -196,7 +196,7 @@ const HomeOfficeSetup = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Space Coast</h3>
               </div>
               <p className="text-gray-600 mb-3">
-                Best Computer Tech proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient home office setup services.
+                24x7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient home office setup services.
               </p>
               <p className="text-gray-600">
                 We offer both onsite and remote services locally, and remote services across the USA.
@@ -227,7 +227,7 @@ const HomeOfficeSetup = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Ready to Build Your Home Office?</h2>
           <p className="text-gray-400 mb-6">
-            Our home office specialists in Palm Bay &amp; Melbourne can design and set up your perfect workspace from start to finish.
+            Our home office specialists nationwide can design and set up your perfect workspace from start to finish.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

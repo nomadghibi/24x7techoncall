@@ -7,7 +7,7 @@ import { emailPublicKey, emailServiceId, emailTemplateId } from '../../utils/ema
 import heroImage from '../../assets/optimized-hero/networksetupsupport-1152.jpg';
 
 const NetworkSetupSupport = () => {
-  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://bestcomputertec.com' + (heroImage || '');
+  const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
   const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', problem: '' });
   const [selectedService, setSelectedService] = useState(null);
 
@@ -61,19 +61,19 @@ const NetworkSetupSupport = () => {
   return (
     <div>
       <Helmet>
-        <title>Network Setup and Support | Best Computer Tech | Palm Bay & Melbourne, FL</title>
-        <meta name="description" content="Professional network setup and support services in Palm Bay and Melbourne, FL. We specialize in network design, Wi-Fi setup, security enhancements, VPN configuration, and performance optimization to ensure your network runs smoothly and securely." />
-        <meta name="keywords" content="network setup near me, Wi-Fi configuration Palm Bay, network support Melbourne FL, network security, VPN setup, firewall configuration, performance optimization, network design, Best Computer Tech" />
-        <link rel="canonical" href="https://bestcomputertec.com/residential-support/network-setup-support" />
+        <title>Network Setup and Support | 24x7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Professional network setup and support services in Nationwide. We specialize in network design, Wi-Fi setup, security enhancements, VPN configuration, and performance optimization to ensure your network runs smoothly and securely." />
+        <meta name="keywords" content="network setup near me, Wi-Fi configuration Palm Bay, network support Melbourne FL, network security, VPN setup, firewall configuration, performance optimization, network design, 24x7 Tech On Call" />
+        <link rel="canonical" href="https://24x7techoncall.com/residential-support/network-setup-support" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Network Setup and Support | Best Computer Tech | Palm Bay & Melbourne, FL" />
-        <meta property="og:description" content="Get expert network setup and support services from Best Computer Tech. Serving Palm Bay and Melbourne, FL, we offer Wi-Fi setup, network security, VPN configuration, and more." />
-        <meta property="og:url" content="https://bestcomputertec.com/residential-support/network-setup-support" />
+        <meta property="og:title" content="Network Setup and Support | 24x7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="Get expert network setup and support services from 24x7 Tech On Call. Serving Nationwide, we offer Wi-Fi setup, network security, VPN configuration, and more." />
+        <meta property="og:url" content="https://24x7techoncall.com/residential-support/network-setup-support" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Network Setup and Support | Best Computer Tech" />
-        <meta name="twitter:description" content="Professional network setup and support services in Palm Bay and Melbourne, FL." />
+        <meta name="twitter:title" content="Network Setup and Support | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Professional network setup and support services in Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -101,7 +101,7 @@ const NetworkSetupSupport = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Network Setup and Support</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At Best Computer Tech, we specialize in comprehensive network setup and support services to ensure your home or office network runs smoothly and securely. Our certified technicians are experienced in designing, implementing, and maintaining robust network solutions tailored to your needs.
+            At 24x7 Tech On Call, we specialize in comprehensive network setup and support services to ensure your home or office network runs smoothly and securely. Our certified technicians are experienced in designing, implementing, and maintaining robust network solutions tailored to your needs.
           </p>
         </div>
       </section>
@@ -196,7 +196,7 @@ const NetworkSetupSupport = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Space Coast</h3>
               </div>
               <p className="text-gray-600 mb-3">
-                Best Computer Tech proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient network setup and support services.
+                24x7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient network setup and support services.
               </p>
               <p className="text-gray-600">
                 We offer both onsite and remote services for Palm Bay, Melbourne, and the Space Coast of Florida, and remote services across the USA.
@@ -227,7 +227,7 @@ const NetworkSetupSupport = () => {
           <FaHeadset className="mx-auto text-4xl text-cyan-400 mb-4" />
           <h2 className="text-3xl font-bold mb-3">Need Help with Your Network?</h2>
           <p className="text-gray-400 mb-6">
-            Our certified network technicians in Palm Bay &amp; Melbourne can set up, secure, and optimize your home or office network.
+            Our certified network technicians nationwide can set up, secure, and optimize your home or office network.
           </p>
           <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today

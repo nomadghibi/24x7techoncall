@@ -68,18 +68,18 @@ const CybersecurityHome = () => {
   return (
     <div>
       <Helmet>
-        <title>Cybersecurity Services | 24x7 Tech On Call | Nationwide</title>
-        <meta name="description" content="Protect your home devices and personal data with cybersecurity services from 24x7 Tech On Call in Nationwide." />
+        <title>Cybersecurity Services | 24/7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Protect your home devices and personal data with cybersecurity services from 24/7 Tech On Call in Nationwide." />
         <link rel="canonical" href="https://24x7techoncall.com/residential-support/cybersecurity-home" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Cybersecurity Services | 24x7 Tech On Call" />
-        <meta property="og:description" content="Protect your home devices and personal data with cybersecurity services from 24x7 Tech On Call in Nationwide." />
+        <meta property="og:title" content="Cybersecurity Services | 24/7 Tech On Call" />
+        <meta property="og:description" content="Protect your home devices and personal data with cybersecurity services from 24/7 Tech On Call in Nationwide." />
         <meta property="og:url" content="https://24x7techoncall.com/residential-support/cybersecurity-home" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cybersecurity Services | 24x7 Tech On Call" />
-        <meta name="twitter:description" content="Protect your home devices and personal data with cybersecurity services from 24x7 Tech On Call in Nationwide." />
+        <meta name="twitter:title" content="Cybersecurity Services | 24/7 Tech On Call" />
+        <meta name="twitter:description" content="Protect your home devices and personal data with cybersecurity services from 24/7 Tech On Call in Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -107,7 +107,7 @@ const CybersecurityHome = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Cybersecurity Services for Home Users</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we specialize in comprehensive cybersecurity services for home users to protect your personal information and devices from cyber threats. Our certified technicians provide reliable solutions to ensure your online safety and security.
+            At 24/7 Tech On Call, we specialize in comprehensive cybersecurity services for home users to protect your personal information and devices from cyber threats. Our certified technicians provide reliable solutions to ensure your online safety and security.
           </p>
         </div>
       </section>
@@ -149,7 +149,7 @@ const CybersecurityHome = () => {
               <p className="text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-2">Affordable Pricing</p>
               <p className="text-6xl font-bold mb-1">$95</p>
               <p className="text-gray-400 text-lg mb-4">Starting price</p>
-              <p className="text-gray-400 mb-8">For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues. Contact us today for a custom security quote.</p>
+              <p className="text-gray-400 mb-8">For more than two decades, 24/7 Tech On Call has resolved over 10,000 IT issues. Contact us today for a custom security quote.</p>
               <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-cyan-400 transition-colors text-center shadow-lg">
                 Get a Free Quote
               </Link>
@@ -210,7 +210,7 @@ const CybersecurityHome = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Beyond</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues for clients across the entire United States, and nationwide. Our experienced technicians deliver personalized cybersecurity solutions to protect your home and personal data.
+                For more than two decades, 24/7 Tech On Call has resolved over 10,000 IT issues for clients across the entire United States, and nationwide. Our experienced technicians deliver personalized cybersecurity solutions to protect your home and personal data.
               </p>
             </div>
 

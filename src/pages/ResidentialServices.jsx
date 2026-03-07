@@ -223,7 +223,7 @@ function ResidentialServices() {
   return (
     <div>
       <Helmet>
-        <title>Residential Remote Tech Support | 24x7 Tech On Call</title>
+        <title>Residential Remote Tech Support | 24/7 Tech On Call</title>
         <meta
           name="description"
           content="Residential remote tech support made simple. Fast help for computer repair, virus removal, Wi-Fi issues, email, printers, and new computer setup."
@@ -234,7 +234,7 @@ function ResidentialServices() {
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Residential Remote Tech Support | 24x7 Tech On Call" />
+        <meta property="og:title" content="Residential Remote Tech Support | 24/7 Tech On Call" />
         <meta
           property="og:description"
           content="Simple and reliable residential remote tech support across the USA."
@@ -243,7 +243,7 @@ function ResidentialServices() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Residential Remote Tech Support | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Residential Remote Tech Support | 24/7 Tech On Call" />
         <meta
           name="twitter:description"
           content="Home tech support made simple: repair, malware cleanup, Wi-Fi help, and setup assistance."

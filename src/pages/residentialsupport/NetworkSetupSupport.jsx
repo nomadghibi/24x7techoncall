@@ -61,18 +61,18 @@ const NetworkSetupSupport = () => {
   return (
     <div>
       <Helmet>
-        <title>Network Setup and Support | 24x7 Tech On Call | Nationwide</title>
+        <title>Network Setup and Support | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Professional network setup and support services in Nationwide. We specialize in network design, Wi-Fi setup, security enhancements, VPN configuration, and performance optimization to ensure your network runs smoothly and securely." />
-        <meta name="keywords" content="network setup near me, Wi-Fi configuration Palm Bay, network support Melbourne FL, network security, VPN setup, firewall configuration, performance optimization, network design, 24x7 Tech On Call" />
+        <meta name="keywords" content="network setup near me, Wi-Fi configuration Palm Bay, network support Melbourne FL, network security, VPN setup, firewall configuration, performance optimization, network design, 24/7 Tech On Call" />
         <link rel="canonical" href="https://24x7techoncall.com/residential-support/network-setup-support" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Network Setup and Support | 24x7 Tech On Call | Nationwide" />
-        <meta property="og:description" content="Get expert network setup and support services from 24x7 Tech On Call. Serving Nationwide, we offer Wi-Fi setup, network security, VPN configuration, and more." />
+        <meta property="og:title" content="Network Setup and Support | 24/7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="Get expert network setup and support services from 24/7 Tech On Call. Serving Nationwide, we offer Wi-Fi setup, network security, VPN configuration, and more." />
         <meta property="og:url" content="https://24x7techoncall.com/residential-support/network-setup-support" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Network Setup and Support | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Network Setup and Support | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Professional network setup and support services in Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -101,7 +101,7 @@ const NetworkSetupSupport = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Network Setup and Support</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we specialize in comprehensive network setup and support services to ensure your home or office network runs smoothly and securely. Our certified technicians are experienced in designing, implementing, and maintaining robust network solutions tailored to your needs.
+            At 24/7 Tech On Call, we specialize in comprehensive network setup and support services to ensure your home or office network runs smoothly and securely. Our certified technicians are experienced in designing, implementing, and maintaining robust network solutions tailored to your needs.
           </p>
         </div>
       </section>
@@ -196,7 +196,7 @@ const NetworkSetupSupport = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Space Coast</h3>
               </div>
               <p className="text-gray-600 mb-3">
-                24x7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient network setup and support services.
+                24/7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient network setup and support services.
               </p>
               <p className="text-gray-600">
                 We offer both onsite and remote services for Palm Bay, Melbourne, and the Space Coast of Florida, and remote services across the USA.

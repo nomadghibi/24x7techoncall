@@ -10,18 +10,18 @@ function KnowYourComputerHasVirus() {
   return (
     <div>
       <Helmet>
-        <title>How to Know Your Computer Has a Virus | 24x7 Tech On Call</title>
-        <meta name="description" content="Learn the common signs of computer viruses and what to do next with this quick guide from 24x7 Tech On Call." />
+        <title>How to Know Your Computer Has a Virus | 24/7 Tech On Call</title>
+        <meta name="description" content="Learn the common signs of computer viruses and what to do next with this quick guide from 24/7 Tech On Call." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Know Your Computer Has a Virus | 24x7 Tech On Call" />
+        <meta property="og:title" content="How to Know Your Computer Has a Virus | 24/7 Tech On Call" />
         <meta property="og:description" content="A practical checklist to identify malware symptoms and protect your device." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Know Your Computer Has a Virus | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="How to Know Your Computer Has a Virus | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Identify virus symptoms and take immediate protective steps." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>

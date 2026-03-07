@@ -229,7 +229,7 @@ const NavMenu = () => {
 
           {/* ── Text Logo ── */}
           <Link to="/" className="flex flex-col leading-tight shrink-0" onClick={handleDirectLinkClick}>
-            <span className="text-2xl font-extrabold tracking-tight text-white">24x7</span>
+            <span className="text-2xl font-extrabold tracking-tight text-white">24/7</span>
             <span className="text-sm font-bold tracking-widest text-cyan-400 uppercase">Tech On Call</span>
           </Link>
 

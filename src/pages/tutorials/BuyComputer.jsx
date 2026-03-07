@@ -10,18 +10,18 @@ function BuyComputer() {
   return (
     <div>
       <Helmet>
-        <title>How to Buy a Computer | 24x7 Tech On Call</title>
+        <title>How to Buy a Computer | 24/7 Tech On Call</title>
         <meta name="description" content="Use this buying guide to choose the right computer for your needs, budget, and long-term performance goals." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Buy a Computer | 24x7 Tech On Call" />
+        <meta property="og:title" content="How to Buy a Computer | 24/7 Tech On Call" />
         <meta property="og:description" content="A practical checklist for selecting the best desktop or laptop based on use case and budget." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Buy a Computer | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="How to Buy a Computer | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Compare specs, budget, and future-proofing with this computer buying guide." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>

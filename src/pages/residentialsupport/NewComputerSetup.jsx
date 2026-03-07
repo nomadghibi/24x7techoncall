@@ -26,18 +26,18 @@ const NewComputerSetup = () => {
   return (
     <div>
       <Helmet>
-        <title>Remote New Computer Setup Service | 24x7 Tech On Call</title>
+        <title>Remote New Computer Setup Service | 24/7 Tech On Call</title>
         <meta name="description" content="Got a new PC? We'll set it up remotely — Windows configuration, app installs, account sync, printer setup, and file transfer. Fast and nationwide." />
         <meta name="keywords" content="remote new computer setup, new PC setup online, Windows configuration help, set up new laptop remotely, new computer help nationwide" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Remote New Computer Setup Service | 24x7 Tech On Call" />
+        <meta property="og:title" content="Remote New Computer Setup Service | 24/7 Tech On Call" />
         <meta property="og:description" content="Got a new PC? We'll set it up remotely — Windows configuration, app installs, account sync, printer setup, and file transfer. Fast and nationwide." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote New Computer Setup Service | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Remote New Computer Setup Service | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Got a new PC? We'll set it up remotely — Windows configuration, app installs, account sync, printer setup, and file transfer. Fast and nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

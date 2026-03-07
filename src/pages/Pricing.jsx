@@ -101,7 +101,7 @@ function Pricing() {
   return (
     <div>
       <Helmet>
-        <title>Residential Tech Support Pricing | 24x7 Tech On Call</title>
+        <title>Residential Tech Support Pricing | 24/7 Tech On Call</title>
         <meta
           name="description"
           content="Simple residential tech support pricing for home users. On-demand and annual remote support plans, plus local on-site service in Brevard County, FL."
@@ -112,13 +112,13 @@ function Pricing() {
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Residential Tech Support Pricing | 24x7 Tech On Call" />
+        <meta property="og:title" content="Residential Tech Support Pricing | 24/7 Tech On Call" />
         <meta property="og:description" content="Transparent residential pricing for remote home tech support. No hidden fees." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Residential Tech Support Pricing | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Residential Tech Support Pricing | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Affordable remote and local residential tech support pricing." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

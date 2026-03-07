@@ -10,18 +10,18 @@ function FixBrokenScreen() {
   return (
     <div>
       <Helmet>
-        <title>How to Fix a Broken Screen | 24x7 Tech On Call</title>
-        <meta name="description" content="Learn how to fix a broken laptop screen with this step-by-step guide from 24x7 Tech On Call. Serving Nationwide, Florida." />
+        <title>How to Fix a Broken Screen | 24/7 Tech On Call</title>
+        <meta name="description" content="Learn how to fix a broken laptop screen with this step-by-step guide from 24/7 Tech On Call. Serving Nationwide, Florida." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Fix a Broken Screen | 24x7 Tech On Call" />
+        <meta property="og:title" content="How to Fix a Broken Screen | 24/7 Tech On Call" />
         <meta property="og:description" content="Step-by-step instructions to replace a broken laptop screen safely and correctly." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Fix a Broken Screen | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="How to Fix a Broken Screen | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Follow this practical guide to replace a broken laptop screen." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>

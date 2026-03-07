@@ -95,18 +95,18 @@ const BookService = () => {
   return (
     <div>
       <Helmet>
-        <title>Book a Service | 24x7 Tech On Call | Nationwide</title>
-        <meta name="description" content="Book computer repair, IT support, and technology services with 24x7 Tech On Call in Nationwide." />
+        <title>Book a Service | 24/7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Book computer repair, IT support, and technology services with 24/7 Tech On Call in Nationwide." />
         <meta name="keywords" content="book remote computer service, schedule IT support online, remote computer repair appointment" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Book a Service | 24x7 Tech On Call" />
-        <meta property="og:description" content="Schedule your computer and IT service appointment with 24x7 Tech On Call." />
+        <meta property="og:title" content="Book a Service | 24/7 Tech On Call" />
+        <meta property="og:description" content="Schedule your computer and IT service appointment with 24/7 Tech On Call." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Book a Service | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Book a Service | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Book a computer or IT support service appointment online." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

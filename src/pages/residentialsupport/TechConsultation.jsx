@@ -59,18 +59,18 @@ const TechConsultation = () => {
   return (
     <div>
       <Helmet>
-        <title>Personalized Tech Consultation | 24x7 Tech On Call | Nationwide</title>
+        <title>Personalized Tech Consultation | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Get expert personalized tech consultation services in Nationwide. We offer technology assessments, hardware recommendations, software solutions, network design, and security assessments tailored to your needs." />
-        <meta name="keywords" content="tech consultation near me, technology assessment Palm Bay, tech consultation Melbourne FL, hardware recommendations, software solutions, network design, security assessments, personalized tech services, 24x7 Tech On Call" />
+        <meta name="keywords" content="tech consultation near me, technology assessment Palm Bay, tech consultation Melbourne FL, hardware recommendations, software solutions, network design, security assessments, personalized tech services, 24/7 Tech On Call" />
         <link rel="canonical" href="https://24x7techoncall.com/residential-support/tech-consultation" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Personalized Tech Consultation | 24x7 Tech On Call | Nationwide" />
-        <meta property="og:description" content="Receive personalized tech consultation from the experts at 24x7 Tech On Call. Serving Nationwide." />
+        <meta property="og:title" content="Personalized Tech Consultation | 24/7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="Receive personalized tech consultation from the experts at 24/7 Tech On Call. Serving Nationwide." />
         <meta property="og:url" content="https://24x7techoncall.com/residential-support/tech-consultation" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Personalized Tech Consultation | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Personalized Tech Consultation | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Expert tech consultation services in Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -99,7 +99,7 @@ const TechConsultation = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Personalized Tech Consultation</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we specialize in personalized tech consultation services to help you make informed decisions about your technology needs. Our certified technicians provide expert advice and tailored solutions to ensure your tech setup meets your specific requirements.
+            At 24/7 Tech On Call, we specialize in personalized tech consultation services to help you make informed decisions about your technology needs. Our certified technicians provide expert advice and tailored solutions to ensure your tech setup meets your specific requirements.
           </p>
         </div>
       </section>
@@ -194,7 +194,7 @@ const TechConsultation = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Space Coast</h3>
               </div>
               <p className="text-gray-600 mb-3">
-                24x7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient tech consultation services.
+                24/7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient tech consultation services.
               </p>
               <p className="text-gray-600">
                 We offer both onsite and remote consultations locally, and remote consultations across the USA.

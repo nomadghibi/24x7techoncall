@@ -4,7 +4,7 @@ const MapComponent = () => {
 
   return (
     <iframe
-      title="24x7 Tech On Call Location"
+      title="24/7 Tech On Call Location"
       src={mapUrl}
       style={{ width: '100%', height: '400px', border: 0 }}
       loading="lazy"

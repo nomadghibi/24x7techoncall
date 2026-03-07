@@ -62,18 +62,18 @@ const BusinessContinuity = () => {
   return (
     <div>
       <Helmet>
-        <title>Business Continuity Services | 24x7 Tech On Call | Nationwide</title>
+        <title>Business Continuity Services | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Ensure your business remains operational during disruptions with our comprehensive Business Continuity services. We provide disaster recovery, data backup, IT infrastructure management, and more." />
         <meta name="keywords" content="business continuity, disaster recovery, data backup, IT infrastructure management, risk assessment, emergency response planning" />
         <link rel="canonical" href="https://24x7techoncall.com/business-solutions/business-continuity" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Business Continuity Services | 24x7 Tech On Call" />
+        <meta property="og:title" content="Business Continuity Services | 24/7 Tech On Call" />
         <meta property="og:description" content="Ensure your business remains operational during disruptions with our comprehensive Business Continuity services." />
         <meta property="og:url" content="https://24x7techoncall.com/business-solutions/business-continuity" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business Continuity Services | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Business Continuity Services | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Comprehensive business continuity and disaster recovery services in Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -102,7 +102,7 @@ const BusinessContinuity = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Ensure Business Continuity with Our Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we provide comprehensive business continuity solutions to help your business stay operational during unexpected disruptions. Our team of experts offers a range of services designed to minimize downtime and ensure seamless operations.
+            At 24/7 Tech On Call, we provide comprehensive business continuity solutions to help your business stay operational during unexpected disruptions. Our team of experts offers a range of services designed to minimize downtime and ensure seamless operations.
           </p>
         </div>
       </section>
@@ -205,7 +205,7 @@ const BusinessContinuity = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Clients Nationwide</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues. Proudly serving homes and businesses across the entire United States, our team delivers personalized and efficient business continuity solutions to keep your operations running.
+                For more than two decades, 24/7 Tech On Call has resolved over 10,000 IT issues. Proudly serving homes and businesses across the entire United States, our team delivers personalized and efficient business continuity solutions to keep your operations running.
               </p>
             </div>
 

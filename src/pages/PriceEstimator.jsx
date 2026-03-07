@@ -289,7 +289,7 @@ function PriceEstimator() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
-        <title>Computer Repair Price Estimator | 24x7 Tech On Call</title>
+        <title>Computer Repair Price Estimator | 24/7 Tech On Call</title>
         <meta
           name="description"
           content="Get a fast local computer repair price range estimate for Nationwide. Compare support types and submit a pre-filled booking request."
@@ -300,7 +300,7 @@ function PriceEstimator() {
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Computer Repair Price Estimator | 24x7 Tech On Call" />
+        <meta property="og:title" content="Computer Repair Price Estimator | 24/7 Tech On Call" />
         <meta
           property="og:description"
           content="Estimate your repair price range in minutes and send pre-filled details to our support team."
@@ -308,7 +308,7 @@ function PriceEstimator() {
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Computer Repair Price Estimator | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Computer Repair Price Estimator | 24/7 Tech On Call" />
         <meta
           name="twitter:description"
           content="Use our interactive estimator to get a practical service price range."

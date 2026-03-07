@@ -10,18 +10,18 @@ function RecoverData() {
   return (
     <div>
       <Helmet>
-        <title>How to Recover Lost Data | 24x7 Tech On Call</title>
+        <title>How to Recover Lost Data | 24/7 Tech On Call</title>
         <meta name="description" content="Learn practical steps to recover lost files safely and improve your chances of successful data recovery." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Recover Lost Data | 24x7 Tech On Call" />
+        <meta property="og:title" content="How to Recover Lost Data | 24/7 Tech On Call" />
         <meta property="og:description" content="A step-by-step recovery guide covering software tools, safe workflows, and backup tips." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Recover Lost Data | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="How to Recover Lost Data | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Recover deleted files with safer methods and avoid data overwrite." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>

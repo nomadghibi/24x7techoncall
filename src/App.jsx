@@ -124,7 +124,7 @@ const SERVICE_PATH_PREFIXES = ['/residential-support/', '/business-solutions/', 
 const localBusinessSchema = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  name: '24x7 Tech On Call',
+  name: '24/7 Tech On Call',
   url: `${BASE_URL}/`,
   telephone: '+1-321-953-5199',
   email: '365techoncall@gmail.com',
@@ -143,7 +143,7 @@ const localBusinessSchema = {
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: '24x7 Tech On Call',
+  name: '24/7 Tech On Call',
   url: `${BASE_URL}/`,
   inLanguage: 'en-US',
 };
@@ -202,7 +202,7 @@ const App = () => {
         description: `Professional ${serviceName.toLowerCase()} across the United States.`,
         url: canonicalUrl,
         areaServed: 'United States',
-        provider: { '@type': 'LocalBusiness', name: '24x7 Tech On Call', url: `${BASE_URL}/` },
+        provider: { '@type': 'LocalBusiness', name: '24/7 Tech On Call', url: `${BASE_URL}/` },
       }
     : null;
 

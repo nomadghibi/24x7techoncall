@@ -59,7 +59,7 @@ function Services() {
     provider: {
       '@type': 'LocalBusiness',
       '@id': 'https://24x7techoncall.com/#localbusiness',
-      name: '24x7 Tech On Call',
+      name: '24/7 Tech On Call',
       url: 'https://24x7techoncall.com/',
       telephone: '+1-321-953-5199',
       email: '365techoncall@gmail.com',
@@ -81,10 +81,10 @@ function Services() {
   return (
     <div>
         <Helmet>
-        <title>Computer Repair Services in Nationwide | 24x7 Tech On Call</title>
+        <title>Computer Repair Services in Nationwide | 24/7 Tech On Call</title>
         <meta
           name="description"
-          content="Explore local computer repair and IT support services in the entire United States. 24x7 Tech On Call offers laptop repair, virus removal, network setup, and data recovery."
+          content="Explore local computer repair and IT support services in the entire United States. 24/7 Tech On Call offers laptop repair, virus removal, network setup, and data recovery."
         />
         <meta
           name="keywords"
@@ -93,7 +93,7 @@ function Services() {
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Computer Repair Services in Nationwide | 24x7 Tech On Call" />
+        <meta property="og:title" content="Computer Repair Services in Nationwide | 24/7 Tech On Call" />
         <meta
           property="og:description"
           content="Local computer repair and IT support services for the United States."
@@ -102,10 +102,10 @@ function Services() {
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="24x7 Tech On Call Services | Nationwide" />
+        <meta name="twitter:title" content="24/7 Tech On Call Services | Nationwide" />
         <meta
           name="twitter:description"
-          content="Browse local computer repair and IT support services from 24x7 Tech On Call in Nationwide, Florida."
+          content="Browse local computer repair and IT support services from 24/7 Tech On Call in Nationwide, Florida."
         />
         <meta name="twitter:image" content={heroImage} />
         <script type="application/ld+json">{JSON.stringify(servicesPageSchema)}</script>

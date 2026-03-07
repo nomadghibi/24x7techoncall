@@ -22,17 +22,17 @@ const RemoteHelpDesk = () => {
   return (
     <div>
       <Helmet>
-        <title>Remote Help Desk for Small Businesses | 24x7 Tech On Call</title>
+        <title>Remote Help Desk for Small Businesses | 24/7 Tech On Call</title>
         <meta name="description" content="Fast, reliable remote help desk for small and mid-size businesses. We resolve employee tech issues by phone, chat, or remote access — no on-site visit needed." />
         <meta name="keywords" content="remote help desk, business IT support, small business tech support, employee tech help" />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Remote Help Desk for Small Businesses | 24x7 Tech On Call" />
+        <meta property="og:title" content="Remote Help Desk for Small Businesses | 24/7 Tech On Call" />
         <meta property="og:description" content="Fast, reliable remote help desk for small and mid-size businesses. We resolve employee tech issues by phone, chat, or remote access — no on-site visit needed." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote Help Desk for Small Businesses | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Remote Help Desk for Small Businesses | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Fast, reliable remote help desk for small and mid-size businesses. We resolve employee tech issues by phone, chat, or remote access — no on-site visit needed." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

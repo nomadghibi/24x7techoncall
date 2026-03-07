@@ -68,18 +68,18 @@ const BackupDataProtection = () => {
   return (
     <div>
       <Helmet>
-        <title>Backup and Data Protection Services | 24x7 Tech On Call | Nationwide</title>
+        <title>Backup and Data Protection Services | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Secure your valuable data with our comprehensive backup and data protection services in Nationwide. We offer cloud backup, disaster recovery, and data encryption solutions." />
-        <meta name="keywords" content="data protection near me, data backup Palm Bay, cloud backup Melbourne FL, disaster recovery, data encryption, secure data storage, backup services, 24x7 Tech On Call" />
+        <meta name="keywords" content="data protection near me, data backup Palm Bay, cloud backup Melbourne FL, disaster recovery, data encryption, secure data storage, backup services, 24/7 Tech On Call" />
         <link rel="canonical" href="https://24x7techoncall.com/residential-support/backup-data-protection" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Backup and Data Protection Services | 24x7 Tech On Call | Nationwide" />
-        <meta property="og:description" content="Protect your data with 24x7 Tech On Call's backup and data protection services. Serving Nationwide." />
+        <meta property="og:title" content="Backup and Data Protection Services | 24/7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="Protect your data with 24/7 Tech On Call's backup and data protection services. Serving Nationwide." />
         <meta property="og:url" content="https://24x7techoncall.com/residential-support/backup-data-protection" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Backup and Data Protection Services | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Backup and Data Protection Services | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Comprehensive backup and data protection services in Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -108,7 +108,7 @@ const BackupDataProtection = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Backup and Data Protection Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we specialize in comprehensive backup and data protection services to safeguard your valuable information. Our certified technicians provide reliable solutions to ensure your data is secure and recoverable in case of any unforeseen events.
+            At 24/7 Tech On Call, we specialize in comprehensive backup and data protection services to safeguard your valuable information. Our certified technicians provide reliable solutions to ensure your data is secure and recoverable in case of any unforeseen events.
           </p>
         </div>
       </section>
@@ -150,7 +150,7 @@ const BackupDataProtection = () => {
               <p className="text-cyan-400 text-sm font-semibold uppercase tracking-wider mb-2">Affordable Pricing</p>
               <p className="text-6xl font-bold mb-1">$95</p>
               <p className="text-gray-400 text-lg mb-4">Starting price</p>
-              <p className="text-gray-400 mb-8">For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues. Contact us for a custom data protection quote.</p>
+              <p className="text-gray-400 mb-8">For more than two decades, 24/7 Tech On Call has resolved over 10,000 IT issues. Contact us for a custom data protection quote.</p>
               <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-cyan-400 transition-colors text-center shadow-lg">
                 Get a Free Quote
               </Link>
@@ -211,7 +211,7 @@ const BackupDataProtection = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Beyond</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues for clients across the entire United States, and nationwide. We deliver personalized data protection solutions to keep your information secure.
+                For more than two decades, 24/7 Tech On Call has resolved over 10,000 IT issues for clients across the entire United States, and nationwide. We deliver personalized data protection solutions to keep your information secure.
               </p>
             </div>
 

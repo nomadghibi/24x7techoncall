@@ -12,10 +12,10 @@ const ConfirmationPage = () => {
   return (
     <div className="container py-16 mx-auto text-center">
       <Helmet>
-        <title>Service Request Received | 24x7 Tech On Call</title>
+        <title>Service Request Received | 24/7 Tech On Call</title>
         <meta
           name="description"
-          content="Confirmation page for completed service requests submitted to 24x7 Tech On Call."
+          content="Confirmation page for completed service requests submitted to 24/7 Tech On Call."
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="noindex, nofollow" />

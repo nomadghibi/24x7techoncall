@@ -30,18 +30,18 @@ const HardwareRepairs = () => {
   return (
     <div>
       <Helmet>
-        <title>Hardware Repair Services | 24x7 Tech On Call | Nationwide</title>
+        <title>Hardware Repair Services | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Professional hardware repair services nationwide, Melbourne, and the Space Coast of Florida. We specialize in screen replacement, keyboard repair, battery replacement, and more." />
-        <meta name="keywords" content="hardware repair, screen replacement, keyboard repair, battery replacement, computer repair, Palm Bay, Melbourne FL, Space Coast, 24x7 Tech On Call" />
+        <meta name="keywords" content="hardware repair, screen replacement, keyboard repair, battery replacement, computer repair, Palm Bay, Melbourne FL, Space Coast, 24/7 Tech On Call" />
         <link rel="canonical" href="https://24x7techoncall.com/hardware-repairs" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Hardware Repair Services | 24x7 Tech On Call | Nationwide" />
-        <meta property="og:description" content="Get your hardware repaired by certified technicians at 24x7 Tech On Call. Serving Palm Bay, Melbourne, and the Space Coast of Florida." />
+        <meta property="og:title" content="Hardware Repair Services | 24/7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="Get your hardware repaired by certified technicians at 24/7 Tech On Call. Serving Palm Bay, Melbourne, and the Space Coast of Florida." />
         <meta property="og:url" content="https://24x7techoncall.com/hardware-repairs" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Hardware Repair Services | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Hardware Repair Services | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Expert hardware repair services nationwide, Melbourne, and the Space Coast of Florida. We fix screens, keyboards, batteries, and more." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -50,7 +50,7 @@ const HardwareRepairs = () => {
       <div className="container p-8 mx-auto">
         <h2 className="mb-4 text-3xl font-semibold">Expert Hardware Repairs</h2>
         <p className="mb-4">
-          At 24x7 Tech On Call, we specialize in comprehensive hardware repairs to keep your computer running smoothly. Our certified technicians are experienced in diagnosing and fixing a wide range of hardware issues, ensuring your device is back to optimal performance in no time.
+          At 24/7 Tech On Call, we specialize in comprehensive hardware repairs to keep your computer running smoothly. Our certified technicians are experienced in diagnosing and fixing a wide range of hardware issues, ensuring your device is back to optimal performance in no time.
         </p>
 
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -136,7 +136,7 @@ const HardwareRepairs = () => {
           <div className="p-6 bg-white rounded-lg shadow-lg">
             <h3 className="mb-2 text-2xl font-semibold">Serving Palm Bay, Melbourne, and Space Coast of Florida</h3>
             <p className="mb-4">
-              24x7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida. Our technicians are well-acquainted with the needs of our local customers, providing personalized and efficient hardware repair services to keep your devices running smoothly.
+              24/7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida. Our technicians are well-acquainted with the needs of our local customers, providing personalized and efficient hardware repair services to keep your devices running smoothly.
             </p>
           </div>
 

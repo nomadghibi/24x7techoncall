@@ -22,17 +22,17 @@ const BackupRecoverySupport = () => {
   return (
     <div>
       <Helmet>
-        <title>Business Backup & Disaster Recovery Support | 24x7 Tech On Call</title>
+        <title>Business Backup & Disaster Recovery Support | 24/7 Tech On Call</title>
         <meta name="description" content="We remotely set up and manage backup systems for your business data — so you're protected against ransomware, hardware failure, and accidental deletion." />
         <meta name="keywords" content="business backup support, disaster recovery, cloud backup setup, ransomware recovery, data protection small business" />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Business Backup & Disaster Recovery Support | 24x7 Tech On Call" />
+        <meta property="og:title" content="Business Backup & Disaster Recovery Support | 24/7 Tech On Call" />
         <meta property="og:description" content="We remotely set up and manage backup systems for your business data — so you're protected against ransomware, hardware failure, and accidental deletion." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business Backup & Disaster Recovery Support | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Business Backup & Disaster Recovery Support | 24/7 Tech On Call" />
         <meta name="twitter:description" content="We remotely set up and manage backup systems for your business data — so you're protected against ransomware, hardware failure, and accidental deletion." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

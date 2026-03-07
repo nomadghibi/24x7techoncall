@@ -266,10 +266,10 @@ const BlogOverview = () => {
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    name: '24x7 Tech On Call Blog',
+    name: '24/7 Tech On Call Blog',
     url: canonicalUrl,
     description: 'Tech support and cybersecurity insights for home users and small businesses in Nationwide.',
-    publisher: { '@type': 'Organization', name: '24x7 Tech On Call', logo: { '@type': 'ImageObject', url: 'https://24x7techoncall.com/favicon.ico' } },
+    publisher: { '@type': 'Organization', name: '24/7 Tech On Call', logo: { '@type': 'ImageObject', url: 'https://24x7techoncall.com/favicon.ico' } },
   };
 
   const blogItemListSchema = {
@@ -295,19 +295,19 @@ const BlogOverview = () => {
   return (
     <div>
       <Helmet>
-        <title>Blog | IT Support & Tech Tips | 24x7 Tech On Call</title>
+        <title>Blog | IT Support & Tech Tips | 24/7 Tech On Call</title>
         <meta name="description" content="Stay ahead in the tech world with our latest blog posts on IT support, cybersecurity, cloud solutions, digital transformation, and more. Serving Nationwide." />
         <meta name="keywords" content="IT blog, tech blog, cybersecurity tips, cloud solutions, digital transformation, IT consulting, small business IT, remote tech blog, nationwide IT news" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Blog | 24x7 Tech On Call" />
-        <meta property="og:description" content="Explore the 24x7 Tech On Call blog for insights on IT support, cybersecurity, cloud solutions, and more." />
+        <meta property="og:title" content="Blog | 24/7 Tech On Call" />
+        <meta property="og:description" content="Explore the 24/7 Tech On Call blog for insights on IT support, cybersecurity, cloud solutions, and more." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={blogOverviewImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Blog | 24x7 Tech On Call" />
-        <meta name="twitter:description" content="Discover the latest blog posts from 24x7 Tech On Call on IT support, cybersecurity, and more." />
+        <meta name="twitter:title" content="Blog | 24/7 Tech On Call" />
+        <meta name="twitter:description" content="Discover the latest blog posts from 24/7 Tech On Call on IT support, cybersecurity, and more." />
         <meta name="twitter:image" content={blogOverviewImage} />
         <script type="application/ld+json">{JSON.stringify(blogSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(blogItemListSchema)}</script>

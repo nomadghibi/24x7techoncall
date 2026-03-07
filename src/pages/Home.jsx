@@ -113,7 +113,7 @@ function Home() {
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    name: '24x7 Tech On Call',
+    name: '24/7 Tech On Call',
     url: 'https://24x7techoncall.com/',
     telephone: '+1-321-953-5199',
     email: '365techoncall@gmail.com',
@@ -164,19 +164,19 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>Nationwide Remote Tech Support 24/7 | 24x7 Tech On Call</title>
-        <meta name="description" content="24x7 Tech On Call provides professional remote tech support for homes and businesses nationwide. Available 24/7." />
+        <title>Nationwide Remote Tech Support 24/7 | 24/7 Tech On Call</title>
+        <meta name="description" content="24/7 Tech On Call provides professional remote tech support for homes and businesses nationwide. Available 24/7." />
         <meta name="keywords" content="remote tech support, remote IT support, 24/7 computer help, online computer repair, nationwide tech support, remote computer support, remote virus removal, remote data recovery" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://24x7techoncall.com/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Nationwide Remote Tech Support 24/7 | 24x7 Tech On Call" />
+        <meta property="og:title" content="Nationwide Remote Tech Support 24/7 | 24/7 Tech On Call" />
         <meta property="og:description" content="Professional remote tech support for homes and businesses nationwide. Available 24/7." />
         <meta property="og:url" content="https://24x7techoncall.com/" />
         <meta property="og:image" content={heroImageSocial} />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="24x7 Tech On Call | Nationwide Remote Tech Support" />
+        <meta name="twitter:title" content="24/7 Tech On Call | Nationwide Remote Tech Support" />
         <meta name="twitter:description" content="Remote computer support, IT help, virus removal, and data recovery — available 24/7 across the USA." />
         <meta name="twitter:image" content={heroImageSocial} />
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
@@ -188,7 +188,7 @@ function Home() {
           src={heroImageMobile}
           srcSet={`${heroImageMobile} 640w, ${heroImageMid} 768w, ${heroImageLarge} 896w, ${heroImageDesktop} 1024w`}
           sizes="100vw"
-          alt="24x7 Tech On Call — nationwide remote computer and IT support"
+          alt="24/7 Tech On Call — nationwide remote computer and IT support"
           className="object-cover w-full"
           style={{ minHeight: '600px', maxHeight: '720px' }}
           width={1024}
@@ -306,7 +306,7 @@ function Home() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
             <p className="text-sm font-bold text-cyan-600 uppercase tracking-widest mb-2">Why Us</p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Why Choose 24x7 Tech On Call?</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Why Choose 24/7 Tech On Call?</h2>
             <p className="text-lg text-gray-500 max-w-xl mx-auto">
               We're your remote IT experts — not a call center, not a chain. Just real technicians who care.
             </p>
@@ -378,7 +378,7 @@ function Home() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <a href="https://www.google.com/maps/search/24x7+Tech+On+Call" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.google.com/maps/search/24/7+Tech+On+Call" target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors">
               <FaStar className="text-yellow-400" /> Read more reviews on Google
             </a>

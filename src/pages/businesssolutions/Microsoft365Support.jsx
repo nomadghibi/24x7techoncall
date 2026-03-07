@@ -22,17 +22,17 @@ const Microsoft365Support = () => {
   return (
     <div>
       <Helmet>
-        <title>Microsoft 365 Setup & Support for Businesses | 24x7 Tech On Call</title>
+        <title>Microsoft 365 Setup & Support for Businesses | 24/7 Tech On Call</title>
         <meta name="description" content="Expert Microsoft 365 remote support for businesses. We handle setup, migration, licensing, and day-to-day M365 issues — all remotely." />
         <meta name="keywords" content="Microsoft 365 support, M365 setup, Office 365 business support, Exchange Online migration, Microsoft Teams deployment" />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Microsoft 365 Setup & Support for Businesses | 24x7 Tech On Call" />
+        <meta property="og:title" content="Microsoft 365 Setup & Support for Businesses | 24/7 Tech On Call" />
         <meta property="og:description" content="Expert Microsoft 365 remote support for businesses. We handle setup, migration, licensing, and day-to-day M365 issues — all remotely." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Microsoft 365 Setup & Support for Businesses | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Microsoft 365 Setup & Support for Businesses | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Expert Microsoft 365 remote support for businesses. We handle setup, migration, licensing, and day-to-day M365 issues — all remotely." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

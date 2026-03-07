@@ -230,19 +230,19 @@ function BusinessServices() {
   return (
     <div>
       <Helmet>
-        <title>Remote Business IT Support | Managed IT, Help Desk & Microsoft 365 | 24x7 Tech On Call</title>
+        <title>Remote Business IT Support | Managed IT, Help Desk & Microsoft 365 | 24/7 Tech On Call</title>
         <meta name="description" content="Remote business IT support nationwide — managed IT, remote help desk, Microsoft 365 administration, cybersecurity, backup, and monthly IT support plans." />
         <meta name="keywords" content="remote business IT support, managed IT services, remote help desk, Microsoft 365 support, cybersecurity support, backup recovery, monthly IT plans, nationwide IT support" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Business IT Services | 24x7 Tech On Call" />
+        <meta property="og:title" content="Business IT Services | 24/7 Tech On Call" />
         <meta property="og:description" content="Explore business IT support services including cybersecurity, cloud solutions, managed IT, and data recovery." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={businessImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business IT Services | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Business IT Services | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Business-focused IT services in Nationwide, Florida." />
         <meta name="twitter:image" content={businessImage} />
         <link rel="preload" as="image" href={businessImage} />
@@ -334,7 +334,7 @@ function BusinessServices() {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-10">
             <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Why Us</p>
-            <h2 className="text-3xl font-bold text-gray-900">Why Businesses Choose 24x7 Tech On Call</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Why Businesses Choose 24/7 Tech On Call</h2>
           </div>
 
           <div className="bg-gray-50 rounded-2xl border border-gray-100 p-6 md:p-8 flex flex-col md:flex-row gap-8 items-center">
@@ -347,7 +347,7 @@ function BusinessServices() {
                 >
                   <img
                     src="https://img.youtube.com/vi/8GOvDyPOW7c/maxresdefault.jpg"
-                    alt="24x7 Tech On Call business IT support video"
+                    alt="24/7 Tech On Call business IT support video"
                     className="w-full rounded-xl"
                     loading="lazy"
                     decoding="async"
@@ -365,7 +365,7 @@ function BusinessServices() {
                   <iframe
                     className="absolute top-0 left-0 w-full h-full"
                     src="https://www.youtube.com/embed/8GOvDyPOW7c?rel=0&autoplay=1"
-                    title="24x7 Tech On Call Business IT Support"
+                    title="24/7 Tech On Call Business IT Support"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen

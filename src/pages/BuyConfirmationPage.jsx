@@ -15,10 +15,10 @@ const BuyConfirmationPage = () => {
   return (
     <div className="container p-8 mx-auto text-center">
       <Helmet>
-        <title>Order Confirmation | 24x7 Tech On Call</title>
+        <title>Order Confirmation | 24/7 Tech On Call</title>
         <meta
           name="description"
-          content="Confirmation page for completed orders at 24x7 Tech On Call."
+          content="Confirmation page for completed orders at 24/7 Tech On Call."
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="noindex, nofollow" />

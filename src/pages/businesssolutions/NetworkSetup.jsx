@@ -63,19 +63,19 @@ const NetworkSetup = () => {
   return (
     <div>
       <Helmet>
-        <title>Business Network Setup Services | 24x7 Tech On Call | Nationwide</title>
+        <title>Business Network Setup Services | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Professional network setup services for businesses including design, implementation, Wi-Fi, VPN, security, and monitoring in Nationwide." />
         <meta name="keywords" content="business network setup Palm Bay, network security services Melbourne FL, Wi-Fi setup business, VPN setup support, network monitoring" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Business Network Setup Services | 24x7 Tech On Call" />
+        <meta property="og:title" content="Business Network Setup Services | 24/7 Tech On Call" />
         <meta property="og:description" content="Reliable business network setup and support for secure, high-performance operations." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business Network Setup Services | 24x7 Tech On Call" />
-        <meta name="twitter:description" content="Get expert business network setup, security, and support from 24x7 Tech On Call." />
+        <meta name="twitter:title" content="Business Network Setup Services | 24/7 Tech On Call" />
+        <meta name="twitter:description" content="Get expert business network setup, security, and support from 24/7 Tech On Call." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -103,7 +103,7 @@ const NetworkSetup = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Network Setup Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we specialize in comprehensive network setup services to ensure your business has a reliable and secure network infrastructure. Our certified technicians provide expert advice and customized solutions to meet your specific business needs.
+            At 24/7 Tech On Call, we specialize in comprehensive network setup services to ensure your business has a reliable and secure network infrastructure. Our certified technicians provide expert advice and customized solutions to meet your specific business needs.
           </p>
         </div>
       </section>
@@ -206,7 +206,7 @@ const NetworkSetup = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Clients Nationwide</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues. Proudly serving homes and businesses across the entire United States, our network experts deliver personalized and efficient network setup solutions to keep your operations running smoothly.
+                For more than two decades, 24/7 Tech On Call has resolved over 10,000 IT issues. Proudly serving homes and businesses across the entire United States, our network experts deliver personalized and efficient network setup solutions to keep your operations running smoothly.
               </p>
             </div>
 

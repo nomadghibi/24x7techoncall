@@ -36,7 +36,7 @@ function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <span className="text-2xl font-extrabold text-white tracking-tight">24x7</span>
+              <span className="text-2xl font-extrabold text-white tracking-tight">24/7</span>
               <span className="block text-xs font-bold tracking-widest text-cyan-400 uppercase">Tech On Call</span>
             </div>
             <p className="text-sm text-gray-400 mb-6 leading-relaxed">
@@ -51,7 +51,7 @@ function Footer() {
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-cyan-500 hover:text-gray-900 transition-colors text-gray-400">
                 <FaInstagram className="w-4 h-4" />
               </a>
-              <a href="https://www.google.com/search?q=24x7+Tech+On+Call" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews"
+              <a href="https://www.google.com/search?q=24/7+Tech+On+Call" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews"
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-cyan-500 hover:text-gray-900 transition-colors text-gray-400">
                 <FaGoogle className="w-4 h-4" />
               </a>
@@ -130,7 +130,7 @@ function Footer() {
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-6 py-5 max-w-7xl flex flex-col items-center justify-between gap-2 sm:flex-row">
           <p className="text-xs text-gray-500">
-            &copy; 2009–{currentYear} 24x7 Tech On Call. All rights reserved.
+            &copy; 2009–{currentYear} 24/7 Tech On Call. All rights reserved.
           </p>
           <p className="text-xs text-gray-500">
             Designed by{' '}

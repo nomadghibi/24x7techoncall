@@ -10,18 +10,18 @@ function ImprovePerformance() {
   return (
     <div>
       <Helmet>
-        <title>How to Improve Computer Performance | 24x7 Tech On Call</title>
+        <title>How to Improve Computer Performance | 24/7 Tech On Call</title>
         <meta name="description" content="Learn practical ways to improve computer speed and stability, including cleanup, startup optimization, updates, and hardware upgrades." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Improve Computer Performance | 24x7 Tech On Call" />
+        <meta property="og:title" content="How to Improve Computer Performance | 24/7 Tech On Call" />
         <meta property="og:description" content="A straightforward optimization checklist to speed up and stabilize your computer." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Improve Computer Performance | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="How to Improve Computer Performance | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Use these steps to improve startup, speed, and overall system performance." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>

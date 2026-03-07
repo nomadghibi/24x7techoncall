@@ -60,18 +60,18 @@ const TechnicalSupportMaintenance = () => {
   return (
     <div>
       <Helmet>
-        <title>Technical Support and Maintenance | 24x7 Tech On Call | Nationwide</title>
+        <title>Technical Support and Maintenance | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Comprehensive technical support and maintenance services for businesses, including troubleshooting, repair, malware removal, and ongoing IT support." />
         <meta name="keywords" content="technical support maintenance, business IT support Palm Bay, managed support Melbourne FL, hardware and software troubleshooting" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Technical Support and Maintenance | 24x7 Tech On Call" />
+        <meta property="og:title" content="Technical Support and Maintenance | 24/7 Tech On Call" />
         <meta property="og:description" content="Keep your business systems running smoothly with proactive technical support and maintenance." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Technical Support and Maintenance | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Technical Support and Maintenance | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Expert technical support and maintenance services for reliable business operations." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -100,7 +100,7 @@ const TechnicalSupportMaintenance = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Comprehensive Technical Support and Maintenance</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we provide comprehensive technical support and maintenance services to ensure your technology runs smoothly and efficiently. Our certified technicians offer a range of services tailored to meet the unique needs of your business.
+            At 24/7 Tech On Call, we provide comprehensive technical support and maintenance services to ensure your technology runs smoothly and efficiently. Our certified technicians offer a range of services tailored to meet the unique needs of your business.
           </p>
         </div>
       </section>
@@ -204,7 +204,7 @@ const TechnicalSupportMaintenance = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Clients Nationwide</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues. Proudly serving homes and businesses across the entire United States, our technicians deliver personalized and efficient technical support to keep your operations running smoothly.
+                For more than two decades, 24/7 Tech On Call has resolved over 10,000 IT issues. Proudly serving homes and businesses across the entire United States, our technicians deliver personalized and efficient technical support to keep your operations running smoothly.
               </p>
             </div>
 

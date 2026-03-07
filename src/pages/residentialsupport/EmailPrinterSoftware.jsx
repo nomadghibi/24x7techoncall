@@ -26,18 +26,18 @@ const EmailPrinterSoftware = () => {
   return (
     <div>
       <Helmet>
-        <title>Remote Email, Printer & Software Support | 24x7 Tech On Call</title>
+        <title>Remote Email, Printer & Software Support | 24/7 Tech On Call</title>
         <meta name="description" content="Remote help for email setup, printer issues, software installation, Zoom, Microsoft Office, and more. Nationwide support — no visit needed." />
         <meta name="keywords" content="remote email setup help, online printer troubleshooting, software installation support, Microsoft Office help remote, Zoom troubleshooting online, remote tech support" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Remote Email, Printer & Software Support | 24x7 Tech On Call" />
+        <meta property="og:title" content="Remote Email, Printer & Software Support | 24/7 Tech On Call" />
         <meta property="og:description" content="Remote help for email setup, printer issues, software installation, Zoom, Microsoft Office, and more. Nationwide support — no visit needed." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote Email, Printer & Software Support | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Remote Email, Printer & Software Support | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Remote help for email setup, printer issues, software installation, Zoom, Microsoft Office, and more. Nationwide support — no visit needed." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

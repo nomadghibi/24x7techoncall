@@ -25,7 +25,7 @@ const QuickTechHelp = () => {
     ],
     provider: {
       '@type': 'LocalBusiness',
-      name: '24x7 Tech On Call',
+      name: '24/7 Tech On Call',
       url: 'https://24x7techoncall.com/',
       telephone: '+1-321-953-5199',
       email: '365techoncall@gmail.com',
@@ -55,7 +55,7 @@ const QuickTechHelp = () => {
   return (
     <div>
       <Helmet>
-        <title>Quick Tech Help | 15-Minute Remote Tech Support | 24x7 Tech On Call</title>
+        <title>Quick Tech Help | 15-Minute Remote Tech Support | 24/7 Tech On Call</title>
         <meta
           name="description"
           content="Get fast 15-minute remote tech support for common computer issues nationwide, Melbourne, and the USA. Immediate help from certified technicians."
@@ -66,16 +66,16 @@ const QuickTechHelp = () => {
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Quick Tech Help | 24x7 Tech On Call" />
+        <meta property="og:title" content="Quick Tech Help | 24/7 Tech On Call" />
         <meta
           property="og:description"
-          content="Fast remote support for urgent computer problems from 24x7 Tech On Call."
+          content="Fast remote support for urgent computer problems from 24/7 Tech On Call."
         />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Quick Tech Help | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Quick Tech Help | 24/7 Tech On Call" />
         <meta
           name="twitter:description"
           content="Need immediate computer help? Get 15-minute quick tech support from our experts."

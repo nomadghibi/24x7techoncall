@@ -87,13 +87,13 @@ function ServiceDetail() {
         <meta name="keywords" content={`${service.title}, Palm Bay/Melbourne FL, IT Services, Tech Support, Computer Repair`} />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content={`${service.title} | 24x7 Tech On Call`} />
+        <meta property="og:title" content={`${service.title} | 24/7 Tech On Call`} />
         <meta property="og:description" content={service.description} />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content={`${service.title} | 24x7 Tech On Call`} />
+        <meta name="twitter:title" content={`${service.title} | 24/7 Tech On Call`} />
         <meta name="twitter:description" content={service.description} />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

@@ -53,18 +53,18 @@ const SoftwareTroubleshooting = () => {
   return (
     <div>
       <Helmet>
-        <title>Software Troubleshooting | 24x7 Tech On Call | Nationwide</title>
+        <title>Software Troubleshooting | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Expert software troubleshooting services including OS errors, application crashes, software installation, and more. Serving Nationwide." />
         <meta name="keywords" content="software troubleshooting, OS errors, application crashes, software installation, driver issues, system performance" />
         <link rel="canonical" href="https://24x7techoncall.com/residential-support/software-troubleshooting" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Software Troubleshooting | 24x7 Tech On Call" />
+        <meta property="og:title" content="Software Troubleshooting | 24/7 Tech On Call" />
         <meta property="og:description" content="Expert software troubleshooting services including OS errors, application crashes, software installation, and more." />
         <meta property="og:url" content="https://24x7techoncall.com/residential-support/software-troubleshooting" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Software Troubleshooting | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Software Troubleshooting | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Expert software troubleshooting services including OS errors, application crashes, software installation, and more." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -93,7 +93,7 @@ const SoftwareTroubleshooting = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Software Troubleshooting</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we specialize in comprehensive software troubleshooting services to ensure your applications and systems run smoothly. Our certified technicians are experienced in diagnosing and resolving a wide range of software issues, ensuring your device operates at its best.
+            At 24/7 Tech On Call, we specialize in comprehensive software troubleshooting services to ensure your applications and systems run smoothly. Our certified technicians are experienced in diagnosing and resolving a wide range of software issues, ensuring your device operates at its best.
           </p>
         </div>
       </section>
@@ -188,7 +188,7 @@ const SoftwareTroubleshooting = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Space Coast</h3>
               </div>
               <p className="text-gray-600 mb-3">
-                24x7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient software troubleshooting services.
+                24/7 Tech On Call proudly serves the local communities of Palm Bay, Melbourne, and the Space Coast of Florida, providing personalized and efficient software troubleshooting services.
               </p>
               <p className="text-gray-600">
                 We offer both onsite and remote services locally, and remote services across the USA.

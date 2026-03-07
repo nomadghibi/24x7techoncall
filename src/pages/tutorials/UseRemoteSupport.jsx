@@ -10,18 +10,18 @@ function UseRemoteSupport() {
   return (
     <div>
       <Helmet>
-        <title>How to Use Remote Support | 24x7 Tech On Call</title>
+        <title>How to Use Remote Support | 24/7 Tech On Call</title>
         <meta name="description" content="Follow this guide to securely use remote support for computer troubleshooting and technical help." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Use Remote Support | 24x7 Tech On Call" />
+        <meta property="og:title" content="How to Use Remote Support | 24/7 Tech On Call" />
         <meta property="og:description" content="Step-by-step instructions for starting and safely managing a remote support session." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Use Remote Support | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="How to Use Remote Support | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Set up and use remote support securely with this practical guide." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>

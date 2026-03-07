@@ -26,18 +26,18 @@ const PcTuneUp = () => {
   return (
     <div>
       <Helmet>
-        <title>Remote PC Tune-Up & Optimization | 24x7 Tech On Call</title>
+        <title>Remote PC Tune-Up & Optimization | 24/7 Tech On Call</title>
         <meta name="description" content="Speed up your slow computer with a remote PC tune-up. We clean junk files, fix startup, remove bloatware, and optimize Windows performance — no visit needed." />
         <meta name="keywords" content="remote PC tune-up, speed up slow computer online, Windows optimization remote, clean slow PC, startup optimization, Windows 11 upgrade help, remote computer cleanup" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Remote PC Tune-Up & Optimization | 24x7 Tech On Call" />
+        <meta property="og:title" content="Remote PC Tune-Up & Optimization | 24/7 Tech On Call" />
         <meta property="og:description" content="Speed up your slow computer with a remote PC tune-up. We clean junk files, fix startup, remove bloatware, and optimize Windows performance — no visit needed." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote PC Tune-Up & Optimization | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Remote PC Tune-Up & Optimization | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Speed up your slow computer with a remote PC tune-up. We clean junk files, fix startup, remove bloatware, and optimize Windows performance — no visit needed." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

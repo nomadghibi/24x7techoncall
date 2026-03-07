@@ -22,17 +22,17 @@ const UserDeviceManagement = () => {
   return (
     <div>
       <Helmet>
-        <title>Remote User & Device Management for SMBs | 24x7 Tech On Call</title>
+        <title>Remote User & Device Management for SMBs | 24/7 Tech On Call</title>
         <meta name="description" content="We remotely manage your team's user accounts, devices, and software — keeping everything secure, organized, and running smoothly." />
         <meta name="keywords" content="remote device management, user account management, SMB IT management, employee onboarding IT, patch management" />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Remote User & Device Management for SMBs | 24x7 Tech On Call" />
+        <meta property="og:title" content="Remote User & Device Management for SMBs | 24/7 Tech On Call" />
         <meta property="og:description" content="We remotely manage your team's user accounts, devices, and software — keeping everything secure, organized, and running smoothly." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote User & Device Management for SMBs | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Remote User & Device Management for SMBs | 24/7 Tech On Call" />
         <meta name="twitter:description" content="We remotely manage your team's user accounts, devices, and software — keeping everything secure, organized, and running smoothly." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

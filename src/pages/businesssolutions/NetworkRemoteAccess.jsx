@@ -22,17 +22,17 @@ const NetworkRemoteAccess = () => {
   return (
     <div>
       <Helmet>
-        <title>Business Network & Remote Access Support | 24x7 Tech On Call</title>
+        <title>Business Network & Remote Access Support | 24/7 Tech On Call</title>
         <meta name="description" content="We remotely diagnose and fix business network issues, set up secure VPN access, and ensure your team can connect from anywhere." />
         <meta name="keywords" content="business network support, VPN setup, remote access configuration, Wi-Fi troubleshooting, network security small business" />
         <link rel="canonical" href={canonicalUrl} />
-        <meta property="og:title" content="Business Network & Remote Access Support | 24x7 Tech On Call" />
+        <meta property="og:title" content="Business Network & Remote Access Support | 24/7 Tech On Call" />
         <meta property="og:description" content="We remotely diagnose and fix business network issues, set up secure VPN access, and ensure your team can connect from anywhere." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business Network & Remote Access Support | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Business Network & Remote Access Support | 24/7 Tech On Call" />
         <meta name="twitter:description" content="We remotely diagnose and fix business network issues, set up secure VPN access, and ensure your team can connect from anywhere." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

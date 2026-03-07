@@ -10,18 +10,18 @@ function SetUpEmail() {
   return (
     <div>
       <Helmet>
-        <title>How to Set Up Email on Your Computer | 24x7 Tech On Call</title>
+        <title>How to Set Up Email on Your Computer | 24/7 Tech On Call</title>
         <meta name="description" content="Step-by-step instructions to set up email on your computer using Outlook, Thunderbird, Apple Mail, and other clients." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Set Up Email on Your Computer | 24x7 Tech On Call" />
+        <meta property="og:title" content="How to Set Up Email on Your Computer | 24/7 Tech On Call" />
         <meta property="og:description" content="Configure incoming and outgoing mail settings correctly for a reliable email setup." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Set Up Email on Your Computer | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="How to Set Up Email on Your Computer | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Set up email clients with the right IMAP/POP/SMTP settings in minutes." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>

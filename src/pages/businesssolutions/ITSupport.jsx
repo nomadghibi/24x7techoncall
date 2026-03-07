@@ -62,17 +62,17 @@ const ITSupport = () => {
   return (
     <div>
       <Helmet>
-        <title>Business IT Support | 24x7 Tech On Call | Nationwide</title>
+        <title>Business IT Support | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Reliable business IT support services for troubleshooting, maintenance, and system uptime in Nationwide." />
         <link rel="canonical" href="https://24x7techoncall.com/business-solutions/it-support" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Business IT Support | 24x7 Tech On Call" />
+        <meta property="og:title" content="Business IT Support | 24/7 Tech On Call" />
         <meta property="og:description" content="Reliable business IT support services for troubleshooting, maintenance, and system uptime in Nationwide." />
         <meta property="og:url" content="https://24x7techoncall.com/business-solutions/it-support" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business IT Support | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Business IT Support | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Reliable business IT support services for troubleshooting, maintenance, and system uptime in Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -101,7 +101,7 @@ const ITSupport = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Reliable IT Support for Your Business</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we recognize that dependable IT support is crucial for the seamless operation of your business. Serving Palm Bay, the USA, and clients across the U.S., our team of skilled IT professionals provides a comprehensive suite of support services designed to keep your technology running smoothly.
+            At 24/7 Tech On Call, we recognize that dependable IT support is crucial for the seamless operation of your business. Serving Palm Bay, the USA, and clients across the U.S., our team of skilled IT professionals provides a comprehensive suite of support services designed to keep your technology running smoothly.
           </p>
         </div>
       </section>
@@ -197,7 +197,7 @@ const ITSupport = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Clients Nationwide</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues, enabling businesses to focus on growth. Proudly serving homes and businesses across the entire United States, our experienced technicians deliver personalized and efficient IT support tailored to your business.
+                For more than two decades, 24/7 Tech On Call has resolved over 10,000 IT issues, enabling businesses to focus on growth. Proudly serving homes and businesses across the entire United States, our experienced technicians deliver personalized and efficient IT support tailored to your business.
               </p>
             </div>
 

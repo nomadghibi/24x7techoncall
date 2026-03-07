@@ -35,7 +35,7 @@ const CloudConsulting = () => {
   return (
     <div>
       <Helmet>
-        <title>Cloud Consulting Services | 24x7 Tech On Call | Nationwide</title>
+        <title>Cloud Consulting Services | 24/7 Tech On Call | Nationwide</title>
         <meta
           name="description"
           content="Plan, migrate, and optimize cloud solutions with expert cloud consulting support for homes and small businesses in Nationwide."
@@ -46,7 +46,7 @@ const CloudConsulting = () => {
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Cloud Consulting Services | 24x7 Tech On Call" />
+        <meta property="og:title" content="Cloud Consulting Services | 24/7 Tech On Call" />
         <meta
           property="og:description"
           content="Get expert cloud consulting for migration, optimization, security, and cost control."
@@ -55,7 +55,7 @@ const CloudConsulting = () => {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cloud Consulting Services | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Cloud Consulting Services | 24/7 Tech On Call" />
         <meta
           name="twitter:description"
           content="Cloud strategy and migration support for Nationwide area clients."

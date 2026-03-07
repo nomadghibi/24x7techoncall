@@ -234,7 +234,7 @@ function Subscribe() {
   const newsletterSchema = {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
-    name: '24x7 Tech On Call 2025–2026 Monthly Newsletter Archive',
+    name: '24/7 Tech On Call 2025–2026 Monthly Newsletter Archive',
     itemListElement: newsletters.map((issue, index) => ({
       '@type': 'ListItem',
       position: index + 1,
@@ -260,7 +260,7 @@ function Subscribe() {
   return (
     <div>
       <Helmet>
-        <title>Subscribe to Our Newsletter | 24x7 Tech On Call</title>
+        <title>Subscribe to Our Newsletter | 24/7 Tech On Call</title>
         <meta
           name="description"
           content="Subscribe for monthly IT newsletters and download practical issues on AI operations, cybersecurity, compliance, and business automation for Nationwide."
@@ -271,7 +271,7 @@ function Subscribe() {
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Subscribe to Our Newsletter | 24x7 Tech On Call" />
+        <meta property="og:title" content="Subscribe to Our Newsletter | 24/7 Tech On Call" />
         <meta
           property="og:description"
           content="Join our newsletter for the latest tech support tips and offers."
@@ -280,7 +280,7 @@ function Subscribe() {
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Subscribe to Our Newsletter | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Subscribe to Our Newsletter | 24/7 Tech On Call" />
         <meta
           name="twitter:description"
           content="Download monthly newsletters with practical AI, cybersecurity, and operations guidance."

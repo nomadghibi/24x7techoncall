@@ -10,18 +10,18 @@ function SetupNetwork() {
   return (
     <div>
       <Helmet>
-        <title>How to Set Up a Network | 24x7 Tech On Call</title>
+        <title>How to Set Up a Network | 24/7 Tech On Call</title>
         <meta name="description" content="Step-by-step guide to set up a secure home or office network, including router setup, Wi-Fi security, and troubleshooting tips." />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="article" />
-        <meta property="og:title" content="How to Set Up a Network | 24x7 Tech On Call" />
+        <meta property="og:title" content="How to Set Up a Network | 24/7 Tech On Call" />
         <meta property="og:description" content="Learn how to configure a reliable network with proper security and device connectivity." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={heroImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How to Set Up a Network | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="How to Set Up a Network | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Build a secure and efficient network with this practical setup guide." />
         <meta name="twitter:image" content={heroImage} />
       </Helmet>

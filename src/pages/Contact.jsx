@@ -122,11 +122,11 @@ function Contact() {
   const contactSchema = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
-    name: 'Contact 24x7 Tech On Call',
+    name: 'Contact 24/7 Tech On Call',
     url: canonicalUrl,
     mainEntity: {
       '@type': 'LocalBusiness',
-      name: '24x7 Tech On Call',
+      name: '24/7 Tech On Call',
       telephone: '+1-321-953-5199',
       email: '365techoncall@gmail.com',
       areaServed: 'United States',
@@ -195,26 +195,26 @@ function Contact() {
   return (
     <div>
       <Helmet>
-        <title>Contact Computer Repair in the USA | 24x7 Tech On Call</title>
+        <title>Contact Computer Repair in the USA | 24/7 Tech On Call</title>
         <meta
           name="description"
-          content="Contact 24x7 Tech On Call for professional remote computer repair and IT support available nationwide."
+          content="Contact 24/7 Tech On Call for professional remote computer repair and IT support available nationwide."
         />
         <meta
           name="keywords"
-          content="contact remote tech support, remote IT support USA, 24x7 computer help, online computer repair support"
+          content="contact remote tech support, remote IT support USA, 24/7 computer help, online computer repair support"
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href={canonicalUrl} />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Contact 24x7 Tech On Call | Nationwide Remote Support" />
-        <meta property="og:description" content="Reach 24x7 Tech On Call for professional remote computer repair and IT support available nationwide." />
+        <meta property="og:title" content="Contact 24/7 Tech On Call | Nationwide Remote Support" />
+        <meta property="og:description" content="Reach 24/7 Tech On Call for professional remote computer repair and IT support available nationwide." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:locale" content="en_US" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Contact 24x7 Tech On Call | Nationwide Remote Support" />
-        <meta name="twitter:description" content="Call or email 24x7 Tech On Call for professional remote IT and computer repair services nationwide." />
+        <meta name="twitter:title" content="Contact 24/7 Tech On Call | Nationwide Remote Support" />
+        <meta name="twitter:description" content="Call or email 24/7 Tech On Call for professional remote IT and computer repair services nationwide." />
         <meta name="twitter:image" content={pageImage} />
         <script type="application/ld+json">{JSON.stringify(contactSchema)}</script>
       </Helmet>
@@ -231,7 +231,7 @@ function Contact() {
             <span className="text-gray-500">/</span>
             <span className="text-gray-300">Contact</span>
           </nav>
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight">Contact 24x7 Tech On Call</h1>
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">Contact 24/7 Tech On Call</h1>
           <p className="mt-3 text-cyan-100 text-lg max-w-2xl">
             Nationwide — We respond within 1 business day.
           </p>

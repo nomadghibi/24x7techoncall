@@ -89,18 +89,18 @@ function HowTo() {
   return (
     <div>
       <Helmet>
-        <title>How To Guides | 24x7 Tech On Call | Nationwide</title>
-        <meta name="description" content="Explore step-by-step tech support and tutorials from 24x7 Tech On Call. Learn how to fix, set up, and optimize your devices with our expert guides." />
+        <title>How To Guides | 24/7 Tech On Call | Nationwide</title>
+        <meta name="description" content="Explore step-by-step tech support and tutorials from 24/7 Tech On Call. Learn how to fix, set up, and optimize your devices with our expert guides." />
         <meta name="keywords" content="how-to guides, tech tutorials, laptop repair, network setup, data recovery, remote support, computer performance, online safety, Palm Bay, Melbourne FL" />
         <link rel="canonical" href="https://24x7techoncall.com/how-to" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="How To Guides | 24x7 Tech On Call | Nationwide" />
+        <meta property="og:title" content="How To Guides | 24/7 Tech On Call | Nationwide" />
         <meta property="og:description" content="Get expert tech support with our How To Guides. Serving Nationwide, we offer step-by-step tutorials to help you fix, set up, and optimize your devices." />
         <meta property="og:url" content="https://24x7techoncall.com/how-to" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="How To Guides | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="How To Guides | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Find step-by-step tech tutorials on fixing, setting up, and optimizing your devices. Serving Nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

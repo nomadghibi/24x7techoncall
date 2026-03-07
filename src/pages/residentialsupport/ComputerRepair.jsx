@@ -24,18 +24,18 @@ const ComputerRepair = () => {
   return (
     <div>
       <Helmet>
-        <title>Remote Computer Repair & Troubleshooting | 24x7 Tech On Call</title>
+        <title>Remote Computer Repair & Troubleshooting | 24/7 Tech On Call</title>
         <meta name="description" content="Expert remote computer repair and troubleshooting nationwide. We fix crashes, errors, slow performance, and Windows issues — no visit required." />
         <meta name="keywords" content="remote computer repair, online computer troubleshooting, remote PC repair, fix slow computer online, Windows error repair, remote tech support" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Remote Computer Repair & Troubleshooting | 24x7 Tech On Call" />
+        <meta property="og:title" content="Remote Computer Repair & Troubleshooting | 24/7 Tech On Call" />
         <meta property="og:description" content="Expert remote computer repair and troubleshooting nationwide. We fix crashes, errors, slow performance, and Windows issues — no visit required." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote Computer Repair & Troubleshooting | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Remote Computer Repair & Troubleshooting | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Expert remote computer repair and troubleshooting nationwide. We fix crashes, errors, slow performance, and Windows issues — no visit required." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

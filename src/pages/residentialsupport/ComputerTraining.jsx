@@ -68,18 +68,18 @@ const ComputerTraining = () => {
   return (
     <div>
       <Helmet>
-        <title>Computer Training Services | 24x7 Tech On Call | Nationwide</title>
+        <title>Computer Training Services | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Improve your computer skills with our comprehensive training services in Nationwide. We offer personalized training for all ages, including senior citizens, covering everything from basic computer usage to advanced software and online security training." />
-        <meta name="keywords" content="computer training near me, IT training Palm Bay, senior citizen computer training Melbourne FL, software training, online security training, data management, computer classes for seniors, 24x7 Tech On Call" />
+        <meta name="keywords" content="computer training near me, IT training Palm Bay, senior citizen computer training Melbourne FL, software training, online security training, data management, computer classes for seniors, 24/7 Tech On Call" />
         <link rel="canonical" href="https://24x7techoncall.com/residential-support/computer-training" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Computer Training Services | 24x7 Tech On Call | Nationwide" />
-        <meta property="og:description" content="Enhance your computer skills with 24x7 Tech On Call. Serving Nationwide, we offer tailored training for all ages, including senior citizens." />
+        <meta property="og:title" content="Computer Training Services | 24/7 Tech On Call | Nationwide" />
+        <meta property="og:description" content="Enhance your computer skills with 24/7 Tech On Call. Serving Nationwide, we offer tailored training for all ages, including senior citizens." />
         <meta property="og:url" content="https://24x7techoncall.com/residential-support/computer-training" />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Computer Training Services | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Computer Training Services | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Comprehensive computer training services in Nationwide for all ages." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -108,7 +108,7 @@ const ComputerTraining = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Expert Computer Training Services</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we specialize in comprehensive computer training services to enhance your technical skills. Our certified trainers provide personalized training sessions tailored to your needs, ensuring you gain the knowledge and confidence to use your computer effectively.
+            At 24/7 Tech On Call, we specialize in comprehensive computer training services to enhance your technical skills. Our certified trainers provide personalized training sessions tailored to your needs, ensuring you gain the knowledge and confidence to use your computer effectively.
           </p>
         </div>
       </section>
@@ -211,7 +211,7 @@ const ComputerTraining = () => {
                 <h3 className="text-xl font-bold text-gray-900">Serving Palm Bay, Melbourne & Beyond</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, 24x7 Tech On Call has served clients across the entire United States, and nationwide. Our trainers deliver personalized and efficient training solutions for individuals of all ages and skill levels — including senior citizens.
+                For more than two decades, 24/7 Tech On Call has served clients across the entire United States, and nationwide. Our trainers deliver personalized and efficient training solutions for individuals of all ages and skill levels — including senior citizens.
               </p>
             </div>
 

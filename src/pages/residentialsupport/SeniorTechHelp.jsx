@@ -26,18 +26,18 @@ const SeniorTechHelp = () => {
   return (
     <div>
       <Helmet>
-        <title>Remote Tech Help for Seniors | 24x7 Tech On Call</title>
+        <title>Remote Tech Help for Seniors | 24/7 Tech On Call</title>
         <meta name="description" content="Patient, plain-language remote tech support for seniors. Help with email, Zoom, tablets, smart TVs, online safety, and more — available nationwide." />
         <meta name="keywords" content="tech help for seniors, remote computer help for elderly, senior tech support online, Zoom help seniors, tablet help for older adults, senior friendly tech support" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Remote Tech Help for Seniors | 24x7 Tech On Call" />
+        <meta property="og:title" content="Remote Tech Help for Seniors | 24/7 Tech On Call" />
         <meta property="og:description" content="Patient, plain-language remote tech support for seniors. Help with email, Zoom, tablets, smart TVs, online safety, and more — available nationwide." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote Tech Help for Seniors | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Remote Tech Help for Seniors | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Patient, plain-language remote tech support for seniors. Help with email, Zoom, tablets, smart TVs, online safety, and more — available nationwide." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

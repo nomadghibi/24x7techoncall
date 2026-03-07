@@ -52,19 +52,19 @@ const AboutUs = () => {
   return (
     <div>
       <Helmet>
-        <title>About Us | Your Trusted Remote IT Support Partner | 24x7 Tech On Call</title>
-        <meta name="description" content="Discover our team and mission at 24x7 Tech On Call. Your trusted nationwide remote IT support partner offering expert computer repair, tech support, and comprehensive IT solutions." />
-        <meta name="keywords" content="About Us, 24x7 Tech On Call, remote IT support, nationwide tech support, online computer repair, remote tech experts, company mission" />
+        <title>About Us | Your Trusted Remote IT Support Partner | 24/7 Tech On Call</title>
+        <meta name="description" content="Discover our team and mission at 24/7 Tech On Call. Your trusted nationwide remote IT support partner offering expert computer repair, tech support, and comprehensive IT solutions." />
+        <meta name="keywords" content="About Us, 24/7 Tech On Call, remote IT support, nationwide tech support, online computer repair, remote tech experts, company mission" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="About Us | 24x7 Tech On Call — Nationwide Remote IT Support" />
-        <meta property="og:description" content="Learn about 24x7 Tech On Call, your nationwide remote IT support partner. We specialize in computer repair, tech support, and IT solutions for homes and businesses." />
+        <meta property="og:title" content="About Us | 24/7 Tech On Call — Nationwide Remote IT Support" />
+        <meta property="og:description" content="Learn about 24/7 Tech On Call, your nationwide remote IT support partner. We specialize in computer repair, tech support, and IT solutions for homes and businesses." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Us | 24x7 Tech On Call — Nationwide Remote IT Support" />
-        <meta name="twitter:description" content="Get to know 24x7 Tech On Call, your trusted nationwide partner for remote IT support, computer repair, and tech solutions." />
+        <meta name="twitter:title" content="About Us | 24/7 Tech On Call — Nationwide Remote IT Support" />
+        <meta name="twitter:description" content="Get to know 24/7 Tech On Call, your trusted nationwide partner for remote IT support, computer repair, and tech solutions." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -80,7 +80,7 @@ const AboutUs = () => {
             <span className="text-gray-500">/</span>
             <span className="text-gray-300">About Us</span>
           </nav>
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight">About 24x7 Tech On Call</h1>
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">About 24/7 Tech On Call</h1>
           <p className="mt-3 text-cyan-100 text-lg max-w-2xl">Your trusted local IT experts serving the entire United States since 2009.</p>
           <a
             href="tel:3219535199"
@@ -99,7 +99,7 @@ const AboutUs = () => {
               <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Our Story</p>
               <h2 className="text-3xl font-bold text-gray-900 mb-6 border-l-4 border-cyan-500 pl-4">Trusted IT Support Since 2009</h2>
               <p className="text-gray-600 leading-relaxed mb-4">
-                Since 2009, 24x7 Tech On Call (BCT) has been a trusted name in IT support, offering comprehensive solutions both onsite on Florida's Space Coast and remotely across the USA. Our mission is to deliver exceptional tech support tailored to the diverse needs of residential and business clients.
+                Since 2009, 24/7 Tech On Call (BCT) has been a trusted name in IT support, offering comprehensive solutions both onsite on Florida's Space Coast and remotely across the USA. Our mission is to deliver exceptional tech support tailored to the diverse needs of residential and business clients.
               </p>
               <p className="text-gray-600 leading-relaxed mb-6">
                 Whether you need Computer Repair, Network Setup, Data Recovery, or Cybersecurity Solutions, our skilled technicians are here every step of the way. As nationwide remote IT experts, we keep your technology running so you can focus on what matters most.
@@ -183,7 +183,7 @@ const AboutUs = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="text-center mb-12">
             <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Why Us</p>
-            <h2 className="text-3xl font-bold text-gray-900">Why Choose 24x7 Tech On Call?</h2>
+            <h2 className="text-3xl font-bold text-gray-900">Why Choose 24/7 Tech On Call?</h2>
           </div>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100 border-t-4 border-t-cyan-500 flex flex-col items-center text-center hover:shadow-md transition-shadow">

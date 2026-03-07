@@ -222,17 +222,17 @@ function DiagnoseMyIssue() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
-        <title>Diagnose My Issue | Computer Repair Near You | 24x7 Tech On Call</title>
+        <title>Diagnose My Issue | Computer Repair Near You | 24/7 Tech On Call</title>
         <meta name="description" content="Use our step-by-step diagnosis wizard to find the right computer repair service in Nationwide. Fast recommendations for malware, slow PCs, data recovery, and network issues." />
         <meta name="keywords" content="computer repairs near you, computer repair near me, laptop repair near me, Palm Bay computer repair, Melbourne FL computer support, diagnose computer issue" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Diagnose My Issue | 24x7 Tech On Call" />
+        <meta property="og:title" content="Diagnose My Issue | 24/7 Tech On Call" />
         <meta property="og:description" content="Answer a few questions and get the right support path for your computer issue in Nationwide." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:title" content="Diagnose My Issue | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Diagnose My Issue | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Find the right local repair service with our quick diagnosis wizard." />
         <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
         <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>

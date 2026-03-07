@@ -26,18 +26,18 @@ const WifiInternetHelp = () => {
   return (
     <div>
       <Helmet>
-        <title>Remote Wi-Fi & Internet Troubleshooting | 24x7 Tech On Call</title>
+        <title>Remote Wi-Fi & Internet Troubleshooting | 24/7 Tech On Call</title>
         <meta name="description" content="Fix slow internet, dropped Wi-Fi, and router issues remotely. Our technicians troubleshoot your home network without a visit — nationwide support." />
         <meta name="keywords" content="remote wifi troubleshooting, fix slow internet remotely, router help online, wifi dead zone fix, internet connection issues remote support" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Remote Wi-Fi & Internet Troubleshooting | 24x7 Tech On Call" />
+        <meta property="og:title" content="Remote Wi-Fi & Internet Troubleshooting | 24/7 Tech On Call" />
         <meta property="og:description" content="Fix slow internet, dropped Wi-Fi, and router issues remotely. Our technicians troubleshoot your home network without a visit — nationwide support." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote Wi-Fi & Internet Troubleshooting | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Remote Wi-Fi & Internet Troubleshooting | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Fix slow internet, dropped Wi-Fi, and router issues remotely. Our technicians troubleshoot your home network without a visit — nationwide support." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

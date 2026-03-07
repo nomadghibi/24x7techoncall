@@ -18,8 +18,8 @@ const parseAmount = (value) => {
 
 const helmet = (canonicalUrl) => (
   <Helmet>
-    <title>Pay Now | 24x7 Tech On Call</title>
-    <meta name="description" content="Secure payment page for 24x7 Tech On Call services." />
+    <title>Pay Now | 24/7 Tech On Call</title>
+    <meta name="description" content="Secure payment page for 24/7 Tech On Call services." />
     <link rel="canonical" href={canonicalUrl} />
     <meta name="robots" content="noindex, nofollow" />
   </Helmet>
@@ -99,7 +99,7 @@ const PayNow = () => {
             </div>
             <div>
               <p className="text-xs text-cyan-400 font-semibold uppercase tracking-widest">Secure Payment</p>
-              <h1 className="text-xl font-bold leading-tight">24x7 Tech On Call</h1>
+              <h1 className="text-xl font-bold leading-tight">24/7 Tech On Call</h1>
             </div>
           </div>
           <div className="border-t border-white/10 pt-4 space-y-2">

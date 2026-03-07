@@ -63,17 +63,17 @@ const BusinessComputerTraining = () => {
   return (
     <div>
       <Helmet>
-        <title>Business Computer Training | 24x7 Tech On Call | Nationwide</title>
+        <title>Business Computer Training | 24/7 Tech On Call | Nationwide</title>
         <meta name="description" content="Comprehensive computer training programs, including Microsoft 365 training, designed to boost your team's technical skills and productivity." />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Business Computer Training | 24x7 Tech On Call" />
+        <meta property="og:title" content="Business Computer Training | 24/7 Tech On Call" />
         <meta property="og:description" content="Comprehensive computer training programs, including Microsoft 365 training, designed to boost your team's technical skills and productivity." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Business Computer Training | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Business Computer Training | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Comprehensive computer training programs designed to boost your team's technical skills." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
@@ -102,7 +102,7 @@ const BusinessComputerTraining = () => {
         <div className="container mx-auto px-6 max-w-6xl">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-cyan-500 pl-4">Professional Computer Training for Businesses</h2>
           <p className="text-gray-600 text-lg max-w-3xl">
-            At 24x7 Tech On Call, we offer comprehensive computer training programs, including specialized Microsoft 365 training, designed to boost your team's technical skills and productivity. Our expert trainers deliver customized training solutions tailored to the unique needs of your business.
+            At 24/7 Tech On Call, we offer comprehensive computer training programs, including specialized Microsoft 365 training, designed to boost your team's technical skills and productivity. Our expert trainers deliver customized training solutions tailored to the unique needs of your business.
           </p>
         </div>
       </section>
@@ -207,7 +207,7 @@ const BusinessComputerTraining = () => {
                 <h3 className="text-xl font-bold text-gray-900">Providing IT Training Services Across the USA</h3>
               </div>
               <p className="text-gray-600">
-                For more than two decades, 24x7 Tech On Call has resolved over 10,000 IT issues, enabling businesses to focus on growth. Proudly serving homes and businesses across the entire United States, our trainers deliver personalized and efficient training to help your team excel.
+                For more than two decades, 24/7 Tech On Call has resolved over 10,000 IT issues, enabling businesses to focus on growth. Proudly serving homes and businesses across the entire United States, our trainers deliver personalized and efficient training to help your team excel.
               </p>
             </div>
 

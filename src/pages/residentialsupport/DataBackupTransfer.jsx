@@ -24,18 +24,18 @@ const DataBackupTransfer = () => {
   return (
     <div>
       <Helmet>
-        <title>Remote Data Backup & File Transfer Help | 24x7 Tech On Call</title>
+        <title>Remote Data Backup & File Transfer Help | 24/7 Tech On Call</title>
         <meta name="description" content="Remote help for cloud backup setup, OneDrive sync, and transferring files from your old computer to a new one. Nationwide — no visit needed." />
         <meta name="keywords" content="remote data backup setup, OneDrive help online, file transfer old computer to new, cloud backup setup remote, data migration support" />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Remote Data Backup & File Transfer Help | 24x7 Tech On Call" />
+        <meta property="og:title" content="Remote Data Backup & File Transfer Help | 24/7 Tech On Call" />
         <meta property="og:description" content="Remote help for cloud backup setup, OneDrive sync, and transferring files from your old computer to a new one. Nationwide — no visit needed." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote Data Backup & File Transfer Help | 24x7 Tech On Call" />
+        <meta name="twitter:title" content="Remote Data Backup & File Transfer Help | 24/7 Tech On Call" />
         <meta name="twitter:description" content="Remote help for cloud backup setup, OneDrive sync, and transferring files from your old computer to a new one. Nationwide — no visit needed." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>

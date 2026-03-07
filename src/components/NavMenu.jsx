@@ -176,11 +176,57 @@ const NavMenu = () => {
     : isBusinessContext
       ? 'business'
       : 'default';
+  const isHome = location.pathname === '/';
 
   const linkClass = (path) =>
     `text-sm font-medium transition-colors hover:text-cyan-400 ${
       isActive(path) ? 'text-cyan-400 border-b-2 border-cyan-400 pb-0.5' : 'text-gray-200'
     }`;
+
+  if (isHome) {
+    return (
+      <nav
+        className="fixed top-0 z-40 w-full text-white"
+        onMouseOver={(e) => prefetchFromLink(e.target)}
+        onFocusCapture={(e) => prefetchFromLink(e.target)}
+      >
+        <div className={`w-full border-b-2 border-cyan-500 transition-all duration-300 ${
+          scrolled ? 'bg-gray-900 shadow-lg' : 'bg-gray-900'
+        }`}>
+          <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 py-3 max-w-7xl">
+            <Link to="/" className="text-lg sm:text-xl font-extrabold tracking-tight text-white" onClick={handleDirectLinkClick}>
+              24/7 Tech On Call
+            </Link>
+            <a
+              href="tel:3219535199"
+              className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 bg-cyan-500 hover:bg-cyan-400 transition-colors text-gray-900 text-xs sm:text-sm font-bold rounded-full shrink-0"
+            >
+              <FaPhoneAlt className="w-3.5 h-3.5" />
+              (321) 953-5199
+            </a>
+          </div>
+          <div className="border-t border-gray-700/60">
+            <div className="container mx-auto grid grid-cols-2 gap-2 px-4 sm:px-6 py-2.5 max-w-7xl">
+              <Link
+                to="/residential-services"
+                className="inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-gray-800 border border-gray-700 rounded-full hover:bg-gray-700 transition-colors"
+                onClick={handleDirectLinkClick}
+              >
+                Residential Services
+              </Link>
+              <Link
+                to="/business-services"
+                className="inline-flex items-center justify-center px-4 py-2 text-xs sm:text-sm font-semibold text-white bg-gray-800 border border-gray-700 rounded-full hover:bg-gray-700 transition-colors"
+                onClick={handleDirectLinkClick}
+              >
+                Business Services
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
 
   // ── Dropdown panel ────────────────────────────────────────────────────
   const DropdownPanel = ({ links, viewAllTo, viewAllLabel, open }) => (

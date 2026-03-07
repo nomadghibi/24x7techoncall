@@ -30,6 +30,77 @@ const steps = [
   'We connect only when you approve the session, and you can end it any time.',
 ];
 
+const rustDeskLatestReleaseApi = 'https://api.github.com/repos/rustdesk/rustdesk/releases/latest';
+const rustDeskLatestReleasePage = 'https://github.com/rustdesk/rustdesk/releases/latest';
+
+const detectClientPlatform = () => {
+  if (typeof navigator === 'undefined') {
+    return { platform: 'other', arch: '' };
+  }
+
+  const ua = navigator.userAgent.toLowerCase();
+  const platformHint = (navigator.userAgentData?.platform || navigator.platform || '').toLowerCase();
+  const archHint = (navigator.userAgentData?.architecture || '').toLowerCase();
+  const archFromUa = /arm64|aarch64|apple silicon/.test(ua)
+    ? 'arm64'
+    : /x86_64|win64|x64|amd64|intel/.test(ua)
+      ? 'x64'
+      : '';
+  const arch = archHint || archFromUa;
+
+  if (platformHint.includes('win') || ua.includes('windows')) {
+    return { platform: 'windows', arch };
+  }
+  if (platformHint.includes('mac') || ua.includes('mac os')) {
+    return { platform: 'macos', arch };
+  }
+  if (platformHint.includes('linux') || ua.includes('linux')) {
+    return { platform: 'linux', arch };
+  }
+
+  return { platform: 'other', arch };
+};
+
+const getPlatformLabel = (platform) => {
+  if (platform === 'windows') return 'Windows';
+  if (platform === 'macos') return 'macOS';
+  if (platform === 'linux') return 'Linux';
+  return 'Unknown';
+};
+
+const pickReleaseAssetUrl = (assets, clientPlatform) => {
+  const normalized = assets
+    .filter((asset) => asset && typeof asset.name === 'string')
+    .map((asset) => ({ ...asset, normalizedName: asset.name.toLowerCase() }));
+  const findAsset = (rules) => normalized.find((asset) => rules.every((rule) => rule(asset)));
+  const has = (text) => (asset) => asset.normalizedName.includes(text);
+  const endsWith = (extension) => (asset) => asset.normalizedName.endsWith(extension);
+
+  if (clientPlatform.platform === 'windows') {
+    return (
+      findAsset([has('x86_64'), endsWith('.exe')])?.browser_download_url
+      || findAsset([has('x86_64'), endsWith('.msi')])?.browser_download_url
+      || findAsset([endsWith('.exe')])?.browser_download_url
+      || findAsset([endsWith('.msi')])?.browser_download_url
+      || null
+    );
+  }
+
+  if (clientPlatform.platform === 'macos') {
+    return (
+      findAsset([has('universal'), endsWith('.dmg')])?.browser_download_url
+      || (clientPlatform.arch === 'arm64'
+        ? findAsset([has('aarch64'), endsWith('.dmg')])?.browser_download_url
+        : null)
+      || findAsset([has('x86_64'), endsWith('.dmg')])?.browser_download_url
+      || findAsset([endsWith('.dmg')])?.browser_download_url
+      || null
+    );
+  }
+
+  return null;
+};
+
 const templateMessage = `RustDesk Help Request
 Name:
 RustDesk ID:
@@ -55,6 +126,8 @@ function RustDeskSupport() {
   const canonicalUrl = 'https://24x7techoncall.com/rustdesk-support';
   const pageImage = heroImage?.startsWith('http') ? heroImage : `https://24x7techoncall.com${heroImage || ''}`;
   const smsBody = useMemo(() => encodeURIComponent(templateMessage), []);
+  const clientPlatform = useMemo(detectClientPlatform, []);
+  const platformLabel = useMemo(() => getPlatformLabel(clientPlatform.platform), [clientPlatform.platform]);
 
   const [formData, setFormData] = useState({
     name: '',
@@ -71,6 +144,8 @@ function RustDeskSupport() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
   const [copyLabel, setCopyLabel] = useState('Copy Message Template');
+  const [isResolvingDownload, setIsResolvingDownload] = useState(false);
+  const [downloadNotice, setDownloadNotice] = useState('');
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -128,6 +203,40 @@ function RustDeskSupport() {
       setSubmitError('We could not send your details right now. Please text (321) 953-5199 or email 365techoncall@gmail.com.');
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const handleAutoDownload = async () => {
+    setDownloadNotice('');
+    setIsResolvingDownload(true);
+
+    try {
+      const response = await fetch(rustDeskLatestReleaseApi, {
+        headers: {
+          Accept: 'application/vnd.github+json',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`GitHub API failed with status ${response.status}`);
+      }
+
+      const release = await response.json();
+      const assets = Array.isArray(release.assets) ? release.assets : [];
+      const directAssetUrl = pickReleaseAssetUrl(assets, clientPlatform);
+      const fallbackUrl = release?.html_url || rustDeskLatestReleasePage;
+
+      if (directAssetUrl) {
+        window.open(directAssetUrl, '_blank', 'noopener,noreferrer');
+      } else {
+        window.open(fallbackUrl, '_blank', 'noopener,noreferrer');
+        setDownloadNotice('We opened the latest RustDesk downloads page because a direct installer was not detected for this device.');
+      }
+    } catch {
+      window.open(rustDeskLatestReleasePage, '_blank', 'noopener,noreferrer');
+      setDownloadNotice('Auto-detect could not complete right now, so we opened the latest RustDesk downloads page.');
+    } finally {
+      setIsResolvingDownload(false);
     }
   };
 
@@ -192,14 +301,27 @@ function RustDeskSupport() {
                 <p className="text-gray-600 mb-4">
                   Use official links only to avoid unsafe downloads.
                 </p>
-                <div className="flex flex-col gap-3 sm:flex-row">
+                <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                  <button
+                    type="button"
+                    onClick={handleAutoDownload}
+                    disabled={isResolvingDownload}
+                    className={`inline-flex items-center justify-center gap-2 px-6 py-3 font-bold rounded-full transition-colors ${
+                      isResolvingDownload
+                        ? 'text-gray-600 bg-gray-200 cursor-wait'
+                        : 'text-gray-900 bg-cyan-500 hover:bg-cyan-400'
+                    }`}
+                  >
+                    <FaDownload className="w-4 h-4" />
+                    {isResolvingDownload ? 'Checking Platform...' : `Auto Download for ${platformLabel}`}
+                  </button>
                   <a
                     href="https://rustdesk.com/"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center gap-2 px-6 py-3 font-bold text-gray-900 bg-cyan-500 hover:bg-cyan-400 rounded-full transition-colors"
+                    className="inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold text-gray-700 bg-gray-100 border border-gray-200 rounded-full hover:bg-gray-200 transition-colors"
                   >
-                    <FaDownload className="w-4 h-4" /> Download from RustDesk.com
+                    Official Website
                   </a>
                   <a
                     href="https://github.com/rustdesk/rustdesk/releases"
@@ -210,6 +332,14 @@ function RustDeskSupport() {
                     GitHub Releases
                   </a>
                 </div>
+                <p className="mt-4 text-sm text-gray-500">
+                  Detected platform: <strong>{platformLabel}</strong>. If this looks wrong, use the manual links above.
+                </p>
+                {downloadNotice && (
+                  <p className="mt-3 text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded-lg px-4 py-3">
+                    {downloadNotice}
+                  </p>
+                )}
               </div>
 
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">

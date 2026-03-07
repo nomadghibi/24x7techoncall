@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaCheck, FaPhoneAlt, FaStar, FaEnvelope, FaWifi, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaCheck, FaPhoneAlt, FaStar, FaWifi, FaMapMarkerAlt } from 'react-icons/fa';
 import { useNavigate, Link } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import heroImage from '../assets/optimized-hero/priceimage-1152.jpg';
@@ -55,31 +55,6 @@ const remotePlans = [
     cta: 'Subscribe Now',
     note: '$50 one-time setup fee on first enrollment.',
   },
-  {
-    id: 'business',
-    title: 'Business Monthly IT Support',
-    tagline: 'Remote managed support for growing teams that need proactive maintenance and fast issue resolution.',
-    price: '$149',
-    period: 'monthly starting plan',
-    badge: 'Business',
-    highlight: false,
-    features: [
-      'Up to 5 users and 5 managed endpoints',
-      'Unlimited remote help desk sessions',
-      'Microsoft 365 admin and user support',
-      'Account setup, offboarding, and access resets',
-      'Endpoint patching and critical update management',
-      'Email, app, and workstation troubleshooting',
-      'Security baseline checks and alert triage',
-      'VPN and secure remote-access support',
-      'Backup status monitoring and restore coordination',
-      'Priority queue with same-day response target',
-      'Dedicated account contact',
-      'Monthly IT health report with action items',
-    ],
-    cta: 'Request Monthly Plan',
-    note: 'Need more than 5 users? We can scale this plan with custom per-user pricing.',
-  },
 ];
 
 const faqs = [
@@ -116,80 +91,35 @@ function Pricing() {
     ? heroImage
     : `https://24x7techoncall.com${heroImage || ''}`;
 
-  const buildBusinessInquiryPrefill = (plan) => [
-    'Business Managed IT Contract Inquiry',
-    `Plan selected: ${plan.title}`,
-    `Pricing baseline: ${plan.price} ${plan.period}`,
-    '',
-    'Company profile',
-    '1) Company name:',
-    '2) Industry:',
-    '3) Number of users:',
-    '4) Number of devices (PC/Mac/Server):',
-    '5) Number of office locations:',
-    '6) Estimated IT budget range:',
-    '7) Preferred support coverage:',
-    '8) Compliance requirements:',
-    '',
-    'Current IT environment',
-    '1) Microsoft 365 or Google Workspace:',
-    '2) Current backup solution:',
-    '3) Current security tools:',
-    '4) Current IT provider (if any):',
-    '',
-    'Project priorities',
-    '1) Top issues to solve:',
-    '2) Business-critical systems:',
-    '3) Target start date:',
-    '4) Preferred contact method (phone/email):',
-    '5) Best time for a discovery call:',
-  ].join('\n');
-
   const handleOrderClick = (plan) => {
-    if (plan.id === 'business') {
-      navigate('/contact', {
-        state: {
-          prefill: {
-            source: 'business-contract',
-            planName: plan.title,
-            pricingBaseline: `${plan.price} ${plan.period}`,
-            recommendedService: plan.title,
-            recommendedRoute: '/pricing',
-            message: buildBusinessInquiryPrefill(plan),
-          },
-        },
-      });
-      return;
-    }
-
-    const priceMap = { remote: 99, annual: 199, business: 149 };
+    const priceMap = { remote: 99, annual: 199 };
     navigate('/checkout', {
-      state: { service: { title: plan.title, price: priceMap[plan.id] ?? 149 } },
+      state: { service: { title: plan.title, price: priceMap[plan.id] ?? 99 } },
     });
   };
 
   return (
     <div>
       <Helmet>
-        <title>Remote Tech Support Pricing | 24x7 Tech On Call | Nationwide USA</title>
+        <title>Residential Tech Support Pricing | 24x7 Tech On Call</title>
         <meta
           name="description"
-          content="Simple, transparent pricing for remote computer support across the USA. On-demand sessions, annual plans, and business IT support. On-site available locally in Brevard County, FL."
+          content="Simple residential tech support pricing for home users. On-demand and annual remote support plans, plus local on-site service in Brevard County, FL."
         />
         <meta
           name="keywords"
-          content="remote tech support pricing USA, remote computer repair cost, IT support plans, online computer help price, annual tech support subscription, business remote IT support"
+          content="residential tech support pricing, home computer support cost, remote computer repair pricing, annual home tech support plan"
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Remote Tech Support Pricing | 24x7 Tech On Call" />
-        <meta property="og:description" content="Transparent remote IT support pricing for home users and businesses across all 50 states. No hidden fees." />
+        <meta property="og:title" content="Residential Tech Support Pricing | 24x7 Tech On Call" />
+        <meta property="og:description" content="Transparent residential pricing for remote home tech support. No hidden fees." />
         <meta property="og:url" content={canonicalUrl} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content={pageImage} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Remote Tech Support Pricing | 24x7 Tech On Call" />
-        <meta name="twitter:description" content="Affordable remote IT support plans for home users and businesses nationwide." />
+        <meta name="twitter:title" content="Residential Tech Support Pricing | 24x7 Tech On Call" />
+        <meta name="twitter:description" content="Affordable remote and local residential tech support pricing." />
         <meta name="twitter:image" content={pageImage} />
       </Helmet>
 
@@ -206,11 +136,11 @@ function Pricing() {
             <span className="text-gray-300">Pricing</span>
           </nav>
           <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-2">
-            Transparent &amp; Affordable
+            Residential Pricing
           </p>
-          <h1 className="text-3xl md:text-5xl font-bold leading-tight">Simple, Honest Pricing</h1>
+          <h1 className="text-3xl md:text-5xl font-bold leading-tight">Simple Home Tech Support Pricing</h1>
           <p className="mt-3 text-cyan-100 text-lg max-w-2xl">
-            Remote support available nationwide — no visit required, no hidden fees.
+            Pricing made for home users. Clear rates, no surprise fees, and fast support.
           </p>
           <a
             href="tel:3219535199"
@@ -230,13 +160,13 @@ function Pricing() {
             <span className="inline-flex items-center gap-2 bg-cyan-100 text-cyan-700 text-xs font-bold px-3 py-1 rounded-full mb-3">
               <FaWifi className="w-3 h-3" /> 100% Remote · Available in All 50 States
             </span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">Remote Support Plans</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">Residential Remote Plans</h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              Our primary service. We connect securely to your computer over the internet and fix issues in real time — no travel, no wait.
+              Designed for home customers. We connect securely and fix issues while you watch.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3 items-start">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 items-start max-w-5xl mx-auto">
             {remotePlans.map((plan) => (
               <div
                 key={plan.id}
@@ -306,9 +236,9 @@ function Pricing() {
             <span className="inline-flex items-center gap-2 bg-amber-100 text-amber-700 text-xs font-bold px-3 py-1 rounded-full mb-3">
               <FaMapMarkerAlt className="w-3 h-3" /> On-Site · Local Service Only
             </span>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">On-Site Support</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">On-Site Residential Support</h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              On-site visits are available exclusively in our local service area — <strong>Brevard County, FL</strong> (Palm Bay, Melbourne, and surrounding areas). If you are outside this area, our remote plans cover all your needs.
+              On-site home visits are available in <strong>Brevard County, FL</strong> (Palm Bay, Melbourne, and nearby areas). Outside this area, use our remote plans.
             </p>
           </div>
 
@@ -381,13 +311,13 @@ function Pricing() {
         </div>
       </section>
 
-      {/* ── Custom Quote CTA ── */}
+      {/* ── Residential CTA ── */}
       <section className="py-16 bg-gray-900 border-t-4 border-cyan-500 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-3">Custom Plans Available</p>
-          <h2 className="text-3xl font-bold mb-3">Need a Custom Business Quote?</h2>
+          <p className="text-sm font-semibold uppercase tracking-widest text-cyan-400 mb-3">Residential Support</p>
+          <h2 className="text-3xl font-bold mb-3">Need Help Choosing the Right Home Plan?</h2>
           <p className="text-gray-400 mb-8">
-            Need more than 5 users, multiple locations, or a tailored managed IT plan? We build custom remote IT solutions for businesses of all sizes across the USA.
+            Call us and we will recommend the best residential option based on your issue and urgency.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a
@@ -397,12 +327,18 @@ function Pricing() {
               <FaPhoneAlt className="w-4 h-4" /> (321) 953-5199
             </a>
             <Link
-              to="/contact"
-              className="flex items-center gap-2 px-7 py-3 font-semibold text-white bg-white/10 border border-white/30 rounded-full hover:bg-white/20 transition-colors"
+              to="/diagnose-my-issue"
+              className="px-7 py-3 font-semibold text-white bg-white/10 border border-white/30 rounded-full hover:bg-white/20 transition-colors"
             >
-              <FaEnvelope className="w-4 h-4" /> Send a Message
+              Diagnose My Issue
             </Link>
           </div>
+          <p className="mt-6 text-sm text-gray-400">
+            Need business IT pricing? Visit{' '}
+            <Link to="/business-services" className="text-cyan-300 hover:text-cyan-200 underline">
+              Business Services
+            </Link>.
+          </p>
         </div>
       </section>
     </div>

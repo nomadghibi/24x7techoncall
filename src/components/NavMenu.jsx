@@ -52,6 +52,7 @@ const routePrefetchers = {
   '/contact': () => import('../pages/Contact'),
   '/how-to': () => import('../pages/HowTo'),
   '/blog': () => import('../pages/BlogOverview'),
+  '/rustdesk-support': () => import('../pages/RustDeskSupport'),
 };
 
 const prefetchedPaths = new Set();
@@ -351,6 +352,13 @@ const NavMenu = () => {
                 Pricing
               </Link>
             </li>
+            {menuProfile !== 'business' && (
+              <li>
+                <Link to="/rustdesk-support" className={linkClass('/rustdesk-support')} onClick={handleDirectLinkClick}>
+                  RustDesk Help
+                </Link>
+              </li>
+            )}
             <li>
               <Link to="/blog" className={linkClass('/blog')} onClick={handleDirectLinkClick}>
                 Blog
@@ -454,6 +462,9 @@ const NavMenu = () => {
               )}
 
               <Link to="/pricing" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Pricing</Link>
+              {menuProfile !== 'business' && (
+                <Link to="/rustdesk-support" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>RustDesk Help</Link>
+              )}
               <Link to="/blog" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Blog</Link>
               {menuProfile !== 'business' && (
                 <Link to="/how-to" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>How To</Link>

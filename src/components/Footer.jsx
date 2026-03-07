@@ -9,6 +9,7 @@ const quickLinks = [
   { label: 'Home',        to: '/' },
   { label: 'About Us',    to: '/about-us' },
   { label: 'Pricing',     to: '/pricing' },
+  { label: 'RustDesk Help', to: '/rustdesk-support' },
   { label: 'Blog',        to: '/blog' },
   { label: 'How To',      to: '/how-to' },
   { label: 'Contact',     to: '/contact' },

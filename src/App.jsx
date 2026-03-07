@@ -99,6 +99,7 @@ const SetupEmail = lazyWithRetry(() => import('./pages/tutorials/SetUpemail'));
 const QuickTechHelp = lazyWithRetry(() => import('./pages/QuickTechHelp'));
 const DiagnoseMyIssue = lazyWithRetry(() => import('./pages/DiagnoseMyIssue'));
 const PriceEstimator = lazyWithRetry(() => import('./pages/PriceEstimator'));
+const RustDeskSupport = lazyWithRetry(() => import('./pages/RustDeskSupport'));
 const ConfirmationPage = lazyWithRetry(() => import('./pages/ConfirmationPage'));
 const BuyConfirmationPage = lazyWithRetry(() => import('./pages/BuyConfirmationPage'));
 
@@ -114,6 +115,7 @@ const routePrefetchers = [
   () => import('./pages/Pricing'),
   () => import('./pages/AboutUs'),
   () => import('./pages/BookService'),
+  () => import('./pages/RustDeskSupport'),
 ];
 
 const BASE_URL = 'https://24x7techoncall.com';
@@ -263,6 +265,7 @@ const App = () => {
               <Route path="/diagnose-my-issue" element={<DiagnoseMyIssue />} />
               <Route path="/price-estimator" element={<PriceEstimator />} />
               <Route path="/quick-tech-help" element={<QuickTechHelp />} />
+              <Route path="/rustdesk-support" element={<RustDeskSupport />} />
               <Route path="/residential-services" element={<ResidentialServices />} />
               <Route path="/residential-support/pc-laptop-repairs" element={<PcLaptopRepairs />} />
               <Route path="/residential-support/virus-malware-removal" element={<VirusMalwareRemoval />} />

@@ -211,9 +211,20 @@ function Home() {
             <p className="mb-7 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
               Fast remote support for homes and businesses across all 50 states.
             </p>
-            <Link to="/diagnose-my-issue" className="inline-flex items-center justify-center px-8 py-3.5 font-bold text-gray-900 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors shadow-lg">
-              Diagnose My Issue
-            </Link>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-xl mx-auto">
+              <Link
+                to="/residential-services"
+                className="inline-flex items-center justify-center px-8 py-3.5 font-bold text-gray-900 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors shadow-lg"
+              >
+                Residential Services
+              </Link>
+              <Link
+                to="/business-services"
+                className="inline-flex items-center justify-center px-8 py-3.5 font-bold text-white bg-gray-800 border border-gray-600 rounded-full hover:bg-gray-700 transition-colors shadow-lg"
+              >
+                Business Services
+              </Link>
+            </div>
           </div>
         </div>
       </section>

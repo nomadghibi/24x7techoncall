@@ -355,7 +355,7 @@ const NavMenu = () => {
             {menuProfile !== 'business' && (
               <li>
                 <Link to="/rustdesk-support" className={linkClass('/rustdesk-support')} onClick={handleDirectLinkClick}>
-                  RustDesk Help
+                  Remote Support
                 </Link>
               </li>
             )}
@@ -463,7 +463,7 @@ const NavMenu = () => {
 
               <Link to="/pricing" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Pricing</Link>
               {menuProfile !== 'business' && (
-                <Link to="/rustdesk-support" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>RustDesk Help</Link>
+                <Link to="/rustdesk-support" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Remote Support</Link>
               )}
               <Link to="/blog" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Blog</Link>
               {menuProfile !== 'business' && (

@@ -44,6 +44,9 @@ const heroImageMid     = '/hero-home-768.jpg';
 const heroImageLarge   = '/hero-home-896.jpg';
 const heroImageDesktop = '/hero-home-1024.jpg';
 const heroImageSocial  = 'https://24x7techoncall.com/hero-home-1024.jpg';
+const primaryPhoneHref = 'tel:+13219535199';
+const primaryPhoneLabel = '(321) 953-5199';
+const googleReviewsUrl = 'https://www.google.com/maps/search/?api=1&query=24%2F7+Tech+On+Call';
 
 const StarRating = ({ count = 5 }) => (
   <div className="flex gap-0.5 mb-3">
@@ -118,7 +121,7 @@ function Home() {
     telephone: '+1-321-953-5199',
     email: '365techoncall@gmail.com',
     priceRange: '$$',
-    openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '18:00' }],
+    openingHoursSpecification: [{ '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '10:00', closes: '17:00' }],
     areaServed: 'United States',
     serviceType: ['Remote Computer Support', 'Remote IT Support', 'Software Troubleshooting', 'Virus and Malware Removal', 'Data Recovery', 'Cloud Consulting'],
   };
@@ -165,19 +168,19 @@ function Home() {
     <div>
       <Helmet>
         <title>Nationwide Remote Tech Support 24/7 | 24/7 Tech On Call</title>
-        <meta name="description" content="24/7 Tech On Call provides professional remote tech support for homes and businesses nationwide. Available 24/7." />
+        <meta name="description" content="24/7 Tech On Call provides professional remote tech support for homes and businesses nationwide." />
         <meta name="keywords" content="remote tech support, remote IT support, 24/7 computer help, online computer repair, nationwide tech support, remote computer support, remote virus removal, remote data recovery" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://24x7techoncall.com/" />
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Nationwide Remote Tech Support 24/7 | 24/7 Tech On Call" />
-        <meta property="og:description" content="Professional remote tech support for homes and businesses nationwide. Available 24/7." />
+        <meta property="og:description" content="Professional remote tech support for homes and businesses nationwide." />
         <meta property="og:url" content="https://24x7techoncall.com/" />
         <meta property="og:image" content={heroImageSocial} />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="24/7 Tech On Call | Nationwide Remote Tech Support" />
-        <meta name="twitter:description" content="Remote computer support, IT help, virus removal, and data recovery — available 24/7 across the USA." />
+        <meta name="twitter:description" content="Remote computer support, IT help, virus removal, and data recovery across the USA." />
         <meta name="twitter:image" content={heroImageSocial} />
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
@@ -206,7 +209,7 @@ function Home() {
               Expert IT Help Delivered to Your <span className="text-cyan-400">Screen</span><br className="hidden sm:block" /> — No Visit Required
             </h1>
             <p className="mb-8 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-              Professional remote tech support for homes and businesses nationwide. Available 24/7.
+              Fast remote support for homes and businesses across all 50 states.
             </p>
             <div className="mb-8 max-w-3xl mx-auto">
               <p className="mb-3 text-xs font-bold uppercase tracking-widest text-cyan-300">Choose Your Support Type</p>
@@ -244,8 +247,8 @@ function Home() {
               <Link to="/contact" className="px-8 py-3.5 font-semibold text-white border-2 border-white/40 rounded-full hover:bg-white/10 transition-colors">
                 Get a Free Quote
               </Link>
-              <a href="tel:+13219535199" className="flex items-center gap-2 px-8 py-3.5 font-semibold text-white bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition-colors">
-                <FaPhoneAlt className="w-4 h-4" /> Call: (321) 953-5199
+              <a href={primaryPhoneHref} aria-label={`Call ${primaryPhoneLabel}`} className="flex items-center gap-2 px-8 py-3.5 font-semibold text-white bg-white/10 border border-white/20 rounded-full hover:bg-white/20 transition-colors">
+                <FaPhoneAlt className="w-4 h-4" /> Call: {primaryPhoneLabel}
               </a>
             </div>
           </div>
@@ -260,7 +263,7 @@ function Home() {
               { icon: FaAward,    stat: '10+',      label: 'Years of Experience' },
               { icon: FaUsers,    stat: '500+',     label: 'Happy Clients' },
               { icon: FaRegClock, stat: 'Same Day', label: 'Response Time' },
-              { icon: FaStar,     stat: '5-Star',   label: 'Google Rated' },
+              { icon: FaStar,     stat: '5-Star',   label: 'Google Reviews' },
             ].map(({ icon: Icon, stat, label }) => (
               <div key={label} className="flex flex-col items-center gap-1">
                 <Icon className="text-cyan-400 w-6 h-6 mb-1" />
@@ -378,7 +381,7 @@ function Home() {
             ))}
           </div>
           <div className="text-center mt-8">
-            <a href="https://www.google.com/maps/search/24/7+Tech+On+Call" target="_blank" rel="noopener noreferrer"
+            <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-sm font-semibold text-gray-600 hover:text-gray-900 transition-colors">
               <FaStar className="text-yellow-400" /> Read more reviews on Google
             </a>
@@ -416,11 +419,11 @@ function Home() {
           <p className="text-sm font-bold text-cyan-400 uppercase tracking-widest mb-3">Get In Touch</p>
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Fix Your Tech?</h2>
           <p className="text-lg text-gray-400 mb-8">
-            Call us, send a message, or book a service online. We're here Mon–Fri, 9am–6pm.
+            Call us, send a message, or book a service online. We're here Monday-Friday, 10:00 AM-5:00 PM.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="tel:+13219535199" className="flex items-center gap-2 px-7 py-3.5 font-bold text-gray-900 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors shadow-lg">
-              <FaPhoneAlt className="w-4 h-4" /> (321) 953-5199
+            <a href={primaryPhoneHref} aria-label={`Call ${primaryPhoneLabel}`} className="flex items-center gap-2 px-7 py-3.5 font-bold text-gray-900 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors shadow-lg">
+              <FaPhoneAlt className="w-4 h-4" /> {primaryPhoneLabel}
             </a>
             <Link to="/contact" className="px-7 py-3.5 font-semibold text-white border border-gray-600 rounded-full hover:bg-white/10 transition-colors">
               Send a Message

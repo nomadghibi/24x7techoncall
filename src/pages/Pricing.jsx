@@ -34,7 +34,7 @@ const remotePlans = [
     id: 'annual',
     title: 'Annual Remote Care',
     tagline: 'Best for households that want year-round support for 2 computers and 1 printer.',
-    price: '$299.90',
+    price: '$299',
     period: 'per year',
     badge: 'Best Value',
     highlight: true,
@@ -92,7 +92,7 @@ function Pricing() {
     : `https://24x7techoncall.com${heroImage || ''}`;
 
   const handleOrderClick = (plan) => {
-    const priceMap = { remote: 99, annual: 299.9 };
+    const priceMap = { remote: 99, annual: 299 };
     navigate('/checkout', {
       state: { service: { title: plan.title, price: priceMap[plan.id] ?? 99 } },
     });

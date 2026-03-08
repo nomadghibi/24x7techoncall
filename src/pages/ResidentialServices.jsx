@@ -213,7 +213,7 @@ function ResidentialServices() {
       state: {
         service: {
           title: 'Annual Computer Care Plan',
-          price: '$299.90',
+          price: '$299',
           description: 'Annual care plan for ongoing home computer maintenance and support.',
         },
       },
@@ -419,7 +419,7 @@ function ResidentialServices() {
                 <span className="inline-block rounded-full bg-cyan-100 px-3 py-1 text-xs font-bold uppercase tracking-wide text-cyan-700 mb-4">
                   Residential Plan
                 </span>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Annual Computer Care Plan - $299.90/year</h2>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Annual Computer Care Plan - $299/year</h2>
                 <p className="text-sm text-gray-600 mb-6">
                   Great for home users who want predictable support for 2 computers and 1 printer.
                 </p>

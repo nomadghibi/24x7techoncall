@@ -78,7 +78,7 @@ const businessLinks = [
   { label: 'Cybersecurity Support',       to: '/business-solutions/cybersecurity',          icon: FaShieldAlt },
   { label: 'Backup & Recovery Support',   to: '/business-solutions/backup-recovery-support', icon: FaDatabase },
   { label: 'Network & Remote Access',     to: '/business-solutions/network-remote-access',  icon: FaNetworkWired },
-  { label: 'Monthly IT Support Plans',    to: '/pricing',                                   icon: FaChartLine },
+  { label: 'Monthly IT Support Plans',    to: '/business-services#managed-plans',           icon: FaChartLine },
 ];
 
 // ── Component ──────────────────────────────────────────────────────────────
@@ -341,7 +341,11 @@ const NavMenu = () => {
             )}
 
             <li>
-              <Link to="/pricing" className={linkClass('/pricing')} onClick={handleDirectLinkClick}>
+              <Link
+                to={isBusinessContext ? '/business-services#managed-plans' : '/pricing'}
+                className={linkClass(isBusinessContext ? '/business-services' : '/pricing')}
+                onClick={handleDirectLinkClick}
+              >
                 Pricing
               </Link>
             </li>
@@ -448,7 +452,7 @@ const NavMenu = () => {
                 </>
               )}
 
-              <Link to="/pricing" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Pricing</Link>
+              <Link to={isBusinessContext ? '/business-services#managed-plans' : '/pricing'} className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Pricing</Link>
               <Link to="/service-areas" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Service Areas</Link>
               {menuProfile !== 'business' && (
                 <Link to="/rustdesk-support" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Remote Support</Link>

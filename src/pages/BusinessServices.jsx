@@ -79,7 +79,7 @@ const services = [
     id: 'monthly-plans',
     title: 'Monthly IT Support Plans',
     description: 'Flexible monthly managed IT plans with predictable pricing and no long-term commitment required.',
-    route: '/pricing',
+    route: '/business-services#managed-plans',
     icon: FaUsers,
     color: 'text-orange-500',
     bg: 'bg-orange-50',
@@ -113,13 +113,35 @@ const whyUs = [
   },
 ];
 
+// Annual prices per user/month; monthly = annual × 1.16 (rounded)
 const managedContractPlans = [
+  {
+    id: 'business-starter',
+    name: 'Business Starter',
+    annualPrice: 85,
+    monthlyPrice: 99,
+    billing: 'per user / month',
+    annualTerm: '5-user minimum · annual term',
+    monthlyTerm: '5-user minimum · month-to-month',
+    sla: 'Business-hours support SLA',
+    summary: 'Perfect for small teams (1–9 users) that need reliable remote IT support without a large commitment.',
+    highlight: false,
+    features: [
+      'Help desk support during business hours',
+      'Remote troubleshooting & software support',
+      'Microsoft 365 basic user support',
+      'Email & printer setup and troubleshooting',
+      'Security basics & software updates',
+    ],
+  },
   {
     id: 'business-core',
     name: 'Business Core',
-    price: '$125',
+    annualPrice: 125,
+    monthlyPrice: 145,
     billing: 'per user / month',
-    term: '10-user minimum · annual term',
+    annualTerm: '5-user minimum · annual term',
+    monthlyTerm: '5-user minimum · month-to-month',
     sla: 'Business-hours support SLA',
     summary: 'Best for stable teams that need proactive IT management and predictable support.',
     highlight: false,
@@ -134,9 +156,11 @@ const managedContractPlans = [
   {
     id: 'business-secure',
     name: 'Business Secure',
-    price: '$165',
+    annualPrice: 165,
+    monthlyPrice: 192,
     billing: 'per user / month',
-    term: '10-user minimum · annual term',
+    annualTerm: '10-user minimum · annual term',
+    monthlyTerm: '10-user minimum · month-to-month',
     sla: 'Priority queue during business hours',
     summary: 'Adds stronger security controls for teams with higher risk or compliance pressure.',
     highlight: true,
@@ -151,15 +175,17 @@ const managedContractPlans = [
   {
     id: 'business-complete',
     name: 'Business Complete',
-    price: '$215',
+    annualPrice: 215,
+    monthlyPrice: 249,
     billing: 'per user / month',
-    term: '10-user minimum · annual term',
-    sla: 'Priority response + scheduled onsite time',
-    summary: 'For growing teams that want strategy, priority handling, and regular onsite support.',
+    annualTerm: '10-user minimum · annual term',
+    monthlyTerm: '10-user minimum · month-to-month',
+    sla: 'Priority response + dedicated account manager',
+    summary: 'For growing teams that want strategy, priority handling, and a dedicated IT partner.',
     highlight: false,
     features: [
       'Everything in Business Secure',
-      'Scheduled onsite support blocks',
+      'Dedicated account manager',
       'Vendor & ISP escalation management',
       'Quarterly vCIO roadmap & budgeting review',
       'Priority triage for critical business systems',
@@ -168,26 +194,38 @@ const managedContractPlans = [
 ];
 
 const contractTerms = [
+  'Annual plans save ~14% vs month-to-month and include priority onboarding.',
   'One-time onboarding is quoted separately based on users, devices, and environment complexity.',
   'Hardware, software licenses, major project work, and compliance audits are outside monthly scope.',
   'After-hours support is available as an add-on or billed at premium emergency rates.',
-  'Annual prepay discount available for qualified contracts.',
 ];
 
 function BusinessServices() {
   const navigate = useNavigate();
   const [videoLoaded, setVideoLoaded] = useState(false);
+  const [billingAnnual, setBillingAnnual] = useState(true);
   const canonicalUrl = 'https://24x7techoncall.com/business-services';
 
   const handleServiceClick = (serviceId) => {
     const service = services.find((s) => s.id === serviceId);
-    navigate(service?.route || '/business-services');
+    const route = service?.route || '/business-services';
+    if (route.includes('#')) {
+      const [path, hash] = route.split('#');
+      navigate(path);
+      setTimeout(() => {
+        document.getElementById(hash)?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    } else {
+      navigate(route);
+    }
   };
 
   const handleManagedPlanQuote = (plan) => {
+    const price = billingAnnual ? `$${plan.annualPrice}` : `$${plan.monthlyPrice}`;
+    const term  = billingAnnual ? 'annual' : 'month-to-month';
     const prefillMessage = [
       'Managed IT Contract Inquiry',
-      `Plan: ${plan.name} (${plan.price} ${plan.billing})`,
+      `Plan: ${plan.name} (${price} ${plan.billing} · ${term})`,
       '',
       'Company Information',
       '- Company name:',
@@ -219,7 +257,7 @@ function BusinessServices() {
           source: 'business-contract',
           message: prefillMessage,
           planName: plan.name,
-          pricingBaseline: `${plan.price} ${plan.billing}`,
+          pricingBaseline: `${billingAnnual ? `$${plan.annualPrice}` : `$${plan.monthlyPrice}`} ${plan.billing} (${billingAnnual ? 'annual' : 'month-to-month'})`,
           recommendedService: 'Managed IT Services',
           recommendedRoute: '/business-services',
         },
@@ -393,86 +431,97 @@ function BusinessServices() {
       </section>
 
       {/* ── Managed IT Contract Plans ── */}
-      <section className="py-16 bg-gray-50">
+      <section id="managed-plans" className="py-16 bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
             <p className="text-sm font-semibold uppercase tracking-widest text-cyan-500 mb-2">Managed IT</p>
-            <h2 className="text-3xl font-bold text-gray-900 mb-3">Yearly Managed IT Contracts</h2>
-            <p className="text-gray-500 max-w-2xl mx-auto">
-              Transparent annual contract options for Nationwide businesses that want predictable IT support, stronger security, and fewer disruptions.
+            <h2 className="text-3xl font-bold text-gray-900 mb-3">Managed IT Support Plans</h2>
+            <p className="text-gray-500 max-w-2xl mx-auto mb-8">
+              Flexible plans for businesses of all sizes — from small teams to growing companies. Choose annual for the best rate or month-to-month for flexibility.
             </p>
+
+            {/* Billing Toggle */}
+            <div className="inline-flex items-center gap-3 bg-white border border-gray-200 rounded-full px-2 py-1.5 shadow-sm">
+              <button
+                onClick={() => setBillingAnnual(true)}
+                className={`px-5 py-2 rounded-full text-sm font-bold transition-colors ${billingAnnual ? 'bg-gray-900 text-white' : 'text-gray-500 hover:text-gray-700'}`}
+              >
+                Annual
+              </button>
+              <button
+                onClick={() => setBillingAnnual(false)}
+                className={`px-5 py-2 rounded-full text-sm font-bold transition-colors ${!billingAnnual ? 'bg-gray-900 text-white' : 'text-gray-500 hover:text-gray-700'}`}
+              >
+                Monthly
+              </button>
+              {billingAnnual && (
+                <span className="text-xs font-bold text-cyan-600 bg-cyan-50 border border-cyan-200 px-2 py-0.5 rounded-full mr-1">
+                  Save ~14%
+                </span>
+              )}
+            </div>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 items-start">
-            {managedContractPlans.map((plan) => (
-              <article
-                key={plan.id}
-                className={`relative flex flex-col bg-white rounded-2xl shadow-md overflow-hidden transition-shadow hover:shadow-xl ${
-                  plan.highlight
-                    ? 'ring-2 ring-cyan-500'
-                    : 'border border-gray-200'
-                }`}
-              >
-                {plan.highlight && (
-                  <div className="absolute top-0 right-0 bg-cyan-500 text-gray-900 text-xs font-bold px-4 py-1 rounded-bl-xl flex items-center gap-1">
-                    <FaStar className="w-3 h-3" /> Most Selected
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-4 items-start">
+            {managedContractPlans.map((plan) => {
+              const price = billingAnnual ? plan.annualPrice : plan.monthlyPrice;
+              const term  = billingAnnual ? plan.annualTerm : plan.monthlyTerm;
+              return (
+                <article
+                  key={plan.id}
+                  className={`relative flex flex-col bg-white rounded-2xl shadow-md overflow-hidden transition-shadow hover:shadow-xl ${
+                    plan.highlight ? 'ring-2 ring-cyan-500' : 'border border-gray-200'
+                  }`}
+                >
+                  {plan.highlight && (
+                    <div className="absolute top-0 right-0 bg-cyan-500 text-gray-900 text-xs font-bold px-4 py-1 rounded-bl-xl flex items-center gap-1">
+                      <FaStar className="w-3 h-3" /> Most Selected
+                    </div>
+                  )}
+
+                  {/* Header */}
+                  <div className={`px-5 pt-7 pb-5 text-center ${plan.highlight ? 'bg-gray-900 text-white' : 'bg-white'}`}>
+                    <h3 className={`text-lg font-bold mb-1 ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>{plan.name}</h3>
+                    <p className={`text-xs mb-4 leading-relaxed ${plan.highlight ? 'text-gray-400' : 'text-gray-500'}`}>{plan.summary}</p>
+                    <div className="flex items-end justify-center gap-1">
+                      <span className={`text-4xl font-extrabold ${plan.highlight ? 'text-cyan-400' : 'text-gray-900'}`}>${price}</span>
+                      <span className="text-xs mb-2 text-gray-400">/user/mo</span>
+                    </div>
+                    <p className={`text-xs mt-1.5 ${plan.highlight ? 'text-gray-500' : 'text-gray-400'}`}>{term}</p>
                   </div>
-                )}
 
-                {/* Header */}
-                <div className={`px-6 pt-8 pb-6 text-center ${plan.highlight ? 'bg-gray-900 text-white' : 'bg-white'}`}>
-                  <h3 className={`text-xl font-bold mb-1 ${plan.highlight ? 'text-white' : 'text-gray-900'}`}>
-                    {plan.name}
-                  </h3>
-                  <p className={`text-sm mb-4 ${plan.highlight ? 'text-gray-400' : 'text-gray-500'}`}>
-                    {plan.summary}
-                  </p>
-                  <div className="flex items-end justify-center gap-1">
-                    <span className={`text-5xl font-extrabold ${plan.highlight ? 'text-cyan-400' : 'text-gray-900'}`}>
-                      {plan.price}
-                    </span>
-                    <span className={`text-sm mb-2 ${plan.highlight ? 'text-gray-400' : 'text-gray-400'}`}>
-                      /{plan.billing.replace('per ', '')}
-                    </span>
+                  {/* Features */}
+                  <div className="px-5 py-5 flex-1 bg-white">
+                    <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">{plan.sla}</p>
+                    <ul className="space-y-2.5">
+                      {plan.features.map((feature) => (
+                        <li key={feature} className="flex items-start gap-2.5 text-sm text-gray-700">
+                          <FaCheckCircle className="text-cyan-500 mt-0.5 shrink-0 w-3.5 h-3.5" />
+                          {feature}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className={`text-xs mt-1 ${plan.highlight ? 'text-gray-500' : 'text-gray-400'}`}>
-                    {plan.term}
-                  </p>
-                </div>
 
-                {/* Features */}
-                <div className="px-6 py-6 flex-1 bg-white">
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">{plan.sla}</p>
-                  <ul className="space-y-3">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3 text-sm text-gray-700">
-                        <FaCheckCircle className="text-cyan-500 mt-0.5 shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* CTA */}
-                <div className="px-6 pb-8 bg-white">
-                  <button
-                    onClick={() => handleManagedPlanQuote(plan)}
-                    className={`w-full py-3 font-bold rounded-lg transition-colors ${
-                      plan.highlight
-                        ? 'bg-cyan-500 text-gray-900 hover:bg-cyan-400'
-                        : 'bg-gray-900 text-white hover:bg-gray-800'
-                    }`}
-                  >
-                    Request {plan.name} Quote
-                  </button>
-                </div>
-              </article>
-            ))}
+                  {/* CTA */}
+                  <div className="px-5 pb-6 bg-white">
+                    <button
+                      onClick={() => handleManagedPlanQuote(plan)}
+                      className={`w-full py-2.5 font-bold rounded-lg transition-colors text-sm ${
+                        plan.highlight ? 'bg-cyan-500 text-gray-900 hover:bg-cyan-400' : 'bg-gray-900 text-white hover:bg-gray-800'
+                      }`}
+                    >
+                      Request {plan.name} Quote
+                    </button>
+                  </div>
+                </article>
+              );
+            })}
           </div>
 
           {/* Contract Terms */}
           <div className="max-w-4xl mx-auto mt-8 p-5 border border-gray-200 rounded-xl bg-white">
-            <h3 className="mb-3 text-lg font-bold text-gray-900 border-l-4 border-cyan-500 pl-3">Contract Terms at a Glance</h3>
+            <h3 className="mb-3 text-lg font-bold text-gray-900 border-l-4 border-cyan-500 pl-3">Good to Know</h3>
             <ul className="space-y-2">
               {contractTerms.map((term) => (
                 <li key={term} className="flex items-start gap-2 text-sm text-gray-600">

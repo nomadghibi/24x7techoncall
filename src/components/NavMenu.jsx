@@ -53,6 +53,7 @@ const routePrefetchers = {
   '/how-to': () => import('../pages/HowTo'),
   '/blog': () => import('../pages/BlogOverview'),
   '/rustdesk-support': () => import('../pages/RustDeskSupport'),
+  '/service-areas': () => import('../pages/ServiceAreas'),
 };
 
 const prefetchedPaths = new Set();
@@ -352,6 +353,11 @@ const NavMenu = () => {
                 Pricing
               </Link>
             </li>
+            <li>
+              <Link to="/service-areas" className={linkClass('/service-areas')} onClick={handleDirectLinkClick}>
+                Service Areas
+              </Link>
+            </li>
             {menuProfile !== 'business' && (
               <li>
                 <Link to="/rustdesk-support" className={linkClass('/rustdesk-support')} onClick={handleDirectLinkClick}>
@@ -462,6 +468,7 @@ const NavMenu = () => {
               )}
 
               <Link to="/pricing" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Pricing</Link>
+              <Link to="/service-areas" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Service Areas</Link>
               {menuProfile !== 'business' && (
                 <Link to="/rustdesk-support" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Remote Support</Link>
               )}

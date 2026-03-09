@@ -7,6 +7,7 @@ import {
   FaStar, FaMapMarkerAlt, FaBolt, FaShieldAlt, FaHandshake,
   FaPhoneAlt, FaAward, FaUsers, FaRegClock, FaArrowRight,
 } from 'react-icons/fa';
+import { locations } from '../data/locations';
 import { useInView } from 'react-intersection-observer';
 import blogImage1  from '../assets/optimized-blog/5-tips-512.jpg';
 import blogImage2  from '../assets/optimized-blog/protect-malware-512.jpg';
@@ -334,6 +335,39 @@ function Home() {
                 <p className="text-sm text-gray-500">{text}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Service Areas ── */}
+      <section className="py-20 bg-gray-50 border-t border-gray-200">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-10">
+            <p className="text-sm font-bold text-cyan-600 uppercase tracking-widest mb-2">Where We Work</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Areas We Serve</h2>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              100% remote — we serve all 50 states. Here are some of the cities we support:
+            </p>
+          </div>
+          <div className="grid grid-cols-2 gap-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6">
+            {locations.slice(0, 24).map((loc) => (
+              <Link
+                key={loc.slug}
+                to={`/tech-support/${loc.slug}`}
+                className="flex items-center gap-2 px-3 py-2.5 bg-white rounded-lg border border-gray-200 text-sm text-gray-600 hover:border-cyan-400 hover:text-cyan-700 hover:shadow-sm transition-all duration-150 group"
+              >
+                <FaMapMarkerAlt className="w-3 h-3 text-gray-400 group-hover:text-cyan-400 shrink-0 transition-colors" />
+                <span className="truncate">{loc.city}, {loc.stateAbbr}</span>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              to="/service-areas"
+              className="inline-flex items-center gap-2 px-8 py-3 font-semibold text-cyan-700 bg-cyan-50 border border-cyan-200 rounded-full hover:bg-cyan-100 transition-colors"
+            >
+              View All {locations.length}+ Service Areas <FaArrowRight className="w-3.5 h-3.5" />
+            </Link>
           </div>
         </div>
       </section>

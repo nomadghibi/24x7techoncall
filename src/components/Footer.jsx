@@ -131,9 +131,14 @@ function Footer() {
       {/* ── Bottom bar ── */}
       <div className="border-t border-gray-800">
         <div className="container mx-auto px-6 py-5 max-w-7xl flex flex-col items-center justify-between gap-2 sm:flex-row">
-          <p className="text-xs text-gray-500">
-            &copy; 2009–{currentYear} 24/7 Tech On Call. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center sm:items-start gap-0.5">
+            <p className="text-xs text-gray-500">
+              &copy; 2009–{currentYear} 24/7 Tech On Call. All rights reserved.
+            </p>
+            <p className="text-xs text-gray-600">
+              A division of <span className="text-gray-400 font-medium">Best Computer Tech LLC</span> — a US company.
+            </p>
+          </div>
           <p className="text-xs text-gray-500">
             Designed by{' '}
             <a href="https://reliablewebstudio.com" target="_blank" rel="noopener noreferrer"

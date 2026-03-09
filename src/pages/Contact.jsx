@@ -150,6 +150,7 @@ function Contact() {
   const [submitError, setSubmitError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [businessStep, setBusinessStep] = useState(1);
+  const isMicroBusiness = businessContractData.userCount === '1-4 users';
 
   const canonicalUrl = 'https://24x7techoncall.com/contact';
   const pageImage = socialImage?.startsWith('http') ? socialImage : `https://24x7techoncall.com${socialImage || ''}`;
@@ -367,10 +368,16 @@ function Contact() {
                                 options={['Professional services','Legal / Accounting','Real estate','Healthcare','Retail / eCommerce','Construction / Field services','Manufacturing / Logistics','Education / Non-profit','Other']} />
                               <Select id="user_count" label="Number of Users" name="userCount"
                                 value={businessContractData.userCount} onChange={handleBusinessFieldChange} required
-                                options={['1-10 users','11-25 users','26-50 users','51-100 users','100+ users']} />
+                                options={['1-4 users','5-10 users','11-25 users','26-50 users','51-100 users','100+ users']} />
+                              {isMicroBusiness && (
+                                <div className="sm:col-span-2 p-4 bg-cyan-50 border border-cyan-300 rounded-xl text-sm">
+                                  <p className="font-bold text-cyan-800 mb-1">Solo Pro plan recommended for your team size</p>
+                                  <p className="text-cyan-700">Our <strong>Solo Pro</strong> plan is a flat $129/mo (annual) or $149/mo (month-to-month) — built for 1–4 person teams. Fill out the rest of the form and we'll send you a Solo Pro proposal.</p>
+                                </div>
+                              )}
                               <Select id="device_count" label="Number of Devices" name="deviceCount"
                                 value={businessContractData.deviceCount} onChange={handleBusinessFieldChange} required
-                                options={['1-10 devices','11-25 devices','26-50 devices','51-100 devices','100+ devices']} />
+                                options={['1-4 devices','5-10 devices','11-25 devices','26-50 devices','51-100 devices','100+ devices']} />
                               <Select id="office_locations" label="Office Locations" name="officeLocations"
                                 value={businessContractData.officeLocations} onChange={handleBusinessFieldChange} required
                                 options={['1 location','2-3 locations','4-5 locations','6+ locations']} />

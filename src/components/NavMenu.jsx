@@ -367,7 +367,12 @@ const NavMenu = () => {
               </Link>
             </li>
             <li>
-              <Link to="/contact" className={linkClass('/contact')} onClick={handleDirectLinkClick}>
+              <Link
+                to="/contact"
+                state={isBusinessContext ? { prefill: { source: 'business-contact' } } : undefined}
+                className={linkClass('/contact')}
+                onClick={handleDirectLinkClick}
+              >
                 Contact
               </Link>
             </li>
@@ -458,7 +463,7 @@ const NavMenu = () => {
                 <Link to="/rustdesk-support" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Remote Support</Link>
               )}
               <Link to="/blog" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Blog</Link>
-              <Link to="/contact" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Contact</Link>
+              <Link to="/contact" state={isBusinessContext ? { prefill: { source: 'business-contact' } } : undefined} className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Contact</Link>
 
               {/* Mobile phone CTA */}
               <div className="px-6 py-4 border-t border-gray-700">

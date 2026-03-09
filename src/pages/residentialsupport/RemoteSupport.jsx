@@ -1,13 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
+import emailjs from 'emailjs-com';
 import { FaTools, FaBug, FaTachometerAlt, FaNetworkWired, FaPrint, FaEnvelope, FaDatabase, FaShieldAlt, FaDownload, FaQuestionCircle, FaHeadset, FaMapMarkerAlt, FaClipboardList } from 'react-icons/fa';
 import heroImage from '../../assets/optimized-hero/computers-optimized-1152.jpg';
 
 const RemoteSupport = () => {
+  const navigate = useNavigate();
   const pageImage = heroImage?.startsWith('http') ? heroImage : 'https://24x7techoncall.com' + (heroImage || '');
-  const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', problem: '' });
+  const [formData, setFormData] = useState({ name: '', phone: '', email: '', serviceType: '', message: '' });
   const [selectedService, setSelectedService] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  const emailServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const emailTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const emailPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const services = [
     { id: 'software-troubleshooting', title: 'Software Troubleshooting', description: 'Diagnosing and fixing software issues remotely.', details: 'Our Software Troubleshooting services include system crashes, application errors, software updates, compatibility issues, and performance problems.', icon: FaTools },
@@ -42,7 +50,23 @@ const RemoteSupport = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    setSubmitError('');
+
+    if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+      setSubmitError('Booking is temporarily unavailable. Please call (321) 953-5199.');
+      return;
+    }
+
+    setIsSubmitting(true);
+    emailjs.sendForm(emailServiceId, emailTemplateId, e.target, emailPublicKey)
+      .then(() => {
+        setFormData({ name: '', phone: '', email: '', serviceType: '', message: '' });
+        navigate('/confirmation');
+      })
+      .catch(() => {
+        setSubmitError('We could not submit your request right now. Please try again or call (321) 953-5199.');
+      })
+      .finally(() => setIsSubmitting(false));
   };
 
   const inputClass = "w-full px-4 py-2.5 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent bg-white";
@@ -148,7 +172,7 @@ const RemoteSupport = () => {
                 </div>
                 <div>
                   <label className={labelClass}>Phone No.</label>
-                  <input type="text" name="phone" value={formData.phone} onChange={handleChange} className={inputClass} required />
+                  <input type="tel" name="phone" value={formData.phone} onChange={handleChange} className={inputClass} required />
                 </div>
                 <div>
                   <label className={labelClass}>Email</label>
@@ -164,12 +188,18 @@ const RemoteSupport = () => {
                   </select>
                 </div>
                 <div>
-                  <label className={labelClass}>Explanation of the Problem</label>
-                  <textarea name="problem" value={formData.problem} onChange={handleChange} rows={4} className={inputClass} required />
+                  <label className={labelClass}>Explain the Problem</label>
+                  <textarea name="message" value={formData.message} onChange={handleChange} rows={4} className={inputClass} required />
                 </div>
-                <button type="submit" className="w-full bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-lg hover:bg-cyan-400 transition-colors">
-                  Submit Request
+                {submitError && (
+                  <div className="p-4 text-sm text-red-800 bg-red-50 border border-red-200 rounded-lg">{submitError}</div>
+                )}
+                <button type="submit" disabled={isSubmitting} className="w-full bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-lg hover:bg-cyan-400 transition-colors disabled:opacity-60 disabled:cursor-not-allowed">
+                  {isSubmitting ? 'Submitting...' : 'Submit Request'}
                 </button>
+                <p className="text-xs text-gray-400 text-center">
+                  Or call us directly at <a href="tel:3219535199" className="text-cyan-500 hover:underline">(321) 953-5199</a>
+                </p>
               </form>
             </div>
           </div>

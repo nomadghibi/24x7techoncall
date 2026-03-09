@@ -135,7 +135,7 @@ const RemoteHelpDesk = () => {
               Book Remote Session <FaArrowRight />
             </Link>
             <Link
-              to="/contact"
+              to="/contact" state={{ prefill: { source: 'business-contact' } }}
               className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold px-6 py-3 rounded-lg transition-colors"
             >
               Contact Us

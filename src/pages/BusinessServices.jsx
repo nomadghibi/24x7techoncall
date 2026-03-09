@@ -550,7 +550,7 @@ function BusinessServices() {
               <FaPhoneAlt className="w-4 h-4" /> (321) 953-5199
             </a>
             <Link
-              to="/contact"
+              to="/contact" state={{ prefill: { source: 'business-contact' } }}
               className="flex items-center gap-2 px-7 py-3 font-semibold text-white bg-white/10 border border-white/30 rounded-full hover:bg-white/20 transition-colors"
             >
               <FaEnvelope className="w-4 h-4" /> Send a Message

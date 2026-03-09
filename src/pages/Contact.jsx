@@ -133,7 +133,7 @@ function Contact() {
   const location = useLocation();
   const prefill = location.state?.prefill;
   const prefillMessage = typeof prefill?.message === 'string' ? prefill.message.trim() : '';
-  const isBusinessContractPrefill = prefill?.source === 'business-contract';
+  const isBusinessContractPrefill = prefill?.source === 'business-contract' || prefill?.source === 'business-contact';
   const { planName, pricingBaseline } = extractBusinessPlanData(prefill);
   const prefillSourceLabel = prefill?.source === 'diagnose-my-issue'
     ? 'diagnosis wizard'
@@ -301,13 +301,26 @@ function Contact() {
                       <span className="inline-block px-3 py-1 text-xs font-bold text-cyan-700 bg-cyan-50 border border-cyan-200 rounded-full mb-3">
                         Business IT Inquiry
                       </span>
-                      <h2 className="text-2xl font-bold text-gray-900 mb-1">
-                        Request a Quote — <span className="text-cyan-600">{planName}</span>
-                      </h2>
-                      <p className="text-sm text-gray-500">
-                        Pricing baseline: <strong className="text-gray-700">{pricingBaseline}</strong>
-                        {' · '}Complete the form and we'll send a tailored proposal within 1 business day.
-                      </p>
+                      {prefill?.source === 'business-contract' ? (
+                        <>
+                          <h2 className="text-2xl font-bold text-gray-900 mb-1">
+                            Request a Quote — <span className="text-cyan-600">{planName}</span>
+                          </h2>
+                          <p className="text-sm text-gray-500">
+                            Pricing baseline: <strong className="text-gray-700">{pricingBaseline}</strong>
+                            {' · '}Complete the form and we'll send a tailored proposal within 1 business day.
+                          </p>
+                        </>
+                      ) : (
+                        <>
+                          <h2 className="text-2xl font-bold text-gray-900 mb-1">
+                            Business IT Contact Form
+                          </h2>
+                          <p className="text-sm text-gray-500">
+                            Tell us about your business and we'll follow up within 1 business day with the right solution.
+                          </p>
+                        </>
+                      )}
                     </div>
 
                     {submitted ? (

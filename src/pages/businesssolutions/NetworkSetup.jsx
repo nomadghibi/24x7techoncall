@@ -146,7 +146,7 @@ const NetworkSetup = () => {
               <p className="text-6xl font-bold mb-1">$95</p>
               <p className="text-gray-400 text-lg mb-4">Starting price</p>
               <p className="text-gray-400 mb-8">Our Network Setup Services are designed to offer you the best support at affordable prices. Contact us today to learn more about our pricing and packages.</p>
-              <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-cyan-400 transition-colors text-center shadow-lg">
+              <Link to="/contact" state={{ prefill: { source: 'business-contact' } }} className="inline-block bg-cyan-500 text-gray-900 font-bold px-6 py-3 rounded-full hover:bg-cyan-400 transition-colors text-center shadow-lg">
                 Get a Free Quote
               </Link>
             </div>
@@ -236,7 +236,7 @@ const NetworkSetup = () => {
           <p className="text-gray-400 mb-6">
             Our network specialists nationwide can design and implement a fast, secure network built for your business.
           </p>
-          <Link to="/contact" className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
+          <Link to="/contact" state={{ prefill: { source: 'business-contact' } }} className="inline-block bg-cyan-500 text-gray-900 font-bold px-8 py-3 rounded-full hover:bg-cyan-400 transition-colors shadow-lg">
             Contact Us Today
           </Link>
         </div>

@@ -102,6 +102,8 @@ const PriceEstimator = lazyWithRetry(() => import('./pages/PriceEstimator'));
 const RustDeskSupport = lazyWithRetry(() => import('./pages/RustDeskSupport'));
 const ConfirmationPage = lazyWithRetry(() => import('./pages/ConfirmationPage'));
 const BuyConfirmationPage = lazyWithRetry(() => import('./pages/BuyConfirmationPage'));
+const ServiceAreas = lazyWithRetry(() => import('./pages/ServiceAreas'));
+const LocationPage = lazyWithRetry(() => import('./pages/locations/LocationPage'));
 
 const routePrefetchers = [
   () => import('./pages/DiagnoseMyIssue'),
@@ -116,6 +118,7 @@ const routePrefetchers = [
   () => import('./pages/AboutUs'),
   () => import('./pages/BookService'),
   () => import('./pages/RustDeskSupport'),
+  () => import('./pages/ServiceAreas'),
 ];
 
 const BASE_URL = 'https://24x7techoncall.com';
@@ -325,6 +328,8 @@ const App = () => {
               <Route path="/subscribe" element={<Subscribe />} />
               <Route path="/pricing" element={<Pricing />} />
               <Route path="/about-us" element={<AboutUs />} />
+              <Route path="/service-areas" element={<ServiceAreas />} />
+              <Route path="/tech-support/:citySlug" element={<LocationPage />} />
               <Route path="/buy-computers" element={<Navigate to="/services" replace />} />
               <Route path="/confirmation" element={<ConfirmationPage />} />
               <Route path="/buy-confirmation" element={<BuyConfirmationPage />} />

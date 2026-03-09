@@ -6,13 +6,14 @@ import {
 } from 'react-icons/fa';
 
 const quickLinks = [
-  { label: 'Home',        to: '/' },
-  { label: 'About Us',    to: '/about-us' },
-  { label: 'Pricing',     to: '/pricing' },
+  { label: 'Home',          to: '/' },
+  { label: 'About Us',      to: '/about-us' },
+  { label: 'Pricing',       to: '/pricing' },
+  { label: 'Service Areas', to: '/service-areas' },
   { label: 'RustDesk Help', to: '/rustdesk-support' },
-  { label: 'Blog',        to: '/blog' },
-  { label: 'How To',      to: '/how-to' },
-  { label: 'Contact',     to: '/contact' },
+  { label: 'Blog',          to: '/blog' },
+  { label: 'How To',        to: '/how-to' },
+  { label: 'Contact',       to: '/contact' },
 ];
 
 const serviceLinks = [

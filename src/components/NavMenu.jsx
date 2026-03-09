@@ -289,14 +289,6 @@ const NavMenu = () => {
               </Link>
             </li>
             {menuProfile !== 'business' && (
-              <li>
-                <Link to="/diagnose-my-issue" className={linkClass('/diagnose-my-issue')} onClick={handleDirectLinkClick}>
-                  Diagnose My Issue
-                </Link>
-              </li>
-            )}
-
-            {menuProfile !== 'business' && (
               <li
                 className="relative"
                 onMouseEnter={() => { cancelClose(); setResidentialOpen(true); prefetchPath('/residential-services'); }}
@@ -370,13 +362,6 @@ const NavMenu = () => {
                 Blog
               </Link>
             </li>
-            {menuProfile !== 'business' && (
-              <li>
-                <Link to="/how-to" className={linkClass('/how-to')} onClick={handleDirectLinkClick}>
-                  How To
-                </Link>
-              </li>
-            )}
             <li>
               <Link to="/contact" className={linkClass('/contact')} onClick={handleDirectLinkClick}>
                 Contact
@@ -409,10 +394,6 @@ const NavMenu = () => {
             <div className="flex flex-col bg-gray-900">
               <Link to="/" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Home</Link>
               <Link to="/about-us" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>About Us</Link>
-              {menuProfile !== 'business' && (
-                <Link to="/diagnose-my-issue" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Diagnose My Issue</Link>
-              )}
-
               {menuProfile !== 'business' && (
                 <>
                   <button
@@ -473,9 +454,6 @@ const NavMenu = () => {
                 <Link to="/rustdesk-support" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Remote Support</Link>
               )}
               <Link to="/blog" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Blog</Link>
-              {menuProfile !== 'business' && (
-                <Link to="/how-to" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>How To</Link>
-              )}
               <Link to="/contact" className="px-6 py-3 text-sm text-gray-200 hover:bg-gray-800 hover:text-white transition-colors" onClick={handleSubmenuItemClick}>Contact</Link>
 
               {/* Mobile phone CTA */}

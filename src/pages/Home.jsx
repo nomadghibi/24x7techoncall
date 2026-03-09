@@ -226,6 +226,14 @@ function Home() {
                 Business Services
               </Link>
             </div>
+            <div className="mt-4">
+              <Link
+                to="/diagnose-my-issue"
+                className="inline-flex items-center gap-2 px-5 py-2 text-sm font-semibold text-cyan-300 border border-cyan-400/40 rounded-full bg-cyan-400/10 hover:bg-cyan-400/20 transition-colors"
+              >
+                <FaQuestionCircle className="w-3.5 h-3.5" /> Not sure what's wrong? Diagnose My Issue
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -413,9 +421,12 @@ function Home() {
               <BlogPostCard key={post.link || index} post={post} />
             ))}
           </div>
-          <div className="text-center mt-10">
+          <div className="text-center mt-10 flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link to="/blog" className="inline-flex items-center gap-2 px-8 py-3 font-semibold text-cyan-700 bg-cyan-50 border border-cyan-200 rounded-full hover:bg-cyan-100 transition-colors">
               View All Articles <FaArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <Link to="/how-to" className="inline-flex items-center gap-2 px-8 py-3 font-semibold text-gray-600 bg-gray-100 border border-gray-200 rounded-full hover:bg-gray-200 transition-colors">
+              Browse How-To Guides <FaArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>
         </div>

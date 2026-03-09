@@ -357,6 +357,65 @@ function RustDeskSupport() {
               </div>
 
               <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">Where to Find Your ID &amp; Password</h2>
+                <p className="text-gray-500 text-sm mb-6">After RustDesk opens, you will see this screen. Your ID and one-time password are on the left side.</p>
+
+                {/* RustDesk window mockup */}
+                <div className="rounded-xl overflow-hidden border border-gray-300 shadow-md max-w-lg mx-auto">
+                  {/* Title bar */}
+                  <div className="flex items-center gap-2 bg-gray-800 px-4 py-2.5">
+                    <span className="w-3 h-3 rounded-full bg-red-500" />
+                    <span className="w-3 h-3 rounded-full bg-yellow-400" />
+                    <span className="w-3 h-3 rounded-full bg-green-500" />
+                    <span className="ml-3 text-gray-300 text-xs font-medium tracking-wide">RustDesk</span>
+                  </div>
+                  {/* App body */}
+                  <div className="bg-gray-100 p-5 flex flex-col sm:flex-row gap-4">
+                    {/* Left panel — ID and password */}
+                    <div className="flex-1 bg-white rounded-lg border border-gray-200 p-4 space-y-4">
+                      <div className="relative">
+                        <p className="text-xs text-gray-500 mb-1 font-semibold uppercase tracking-wide">Your ID</p>
+                        <div className="flex items-center gap-2">
+                          <span className="text-2xl font-bold text-gray-800 tracking-widest">123 456 789</span>
+                        </div>
+                        {/* Callout */}
+                        <div className="mt-2 inline-flex items-center gap-1.5 bg-cyan-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">
+                          <span>①</span> Copy &amp; share this number
+                        </div>
+                      </div>
+                      <div className="border-t border-gray-100 pt-4 relative">
+                        <p className="text-xs text-gray-500 mb-1 font-semibold uppercase tracking-wide">One-Time Password</p>
+                        <div className="flex items-center gap-2">
+                          <span className="text-xl font-bold text-gray-800 tracking-widest">abc · 123</span>
+                        </div>
+                        {/* Callout */}
+                        <div className="mt-2 inline-flex items-center gap-1.5 bg-cyan-500 text-gray-900 text-xs font-bold px-3 py-1 rounded-full">
+                          <span>②</span> Share this password too
+                        </div>
+                      </div>
+                    </div>
+                    {/* Right panel — connect to remote (greyed out, not relevant) */}
+                    <div className="flex-1 bg-white rounded-lg border border-gray-200 p-4 opacity-40">
+                      <p className="text-xs text-gray-500 mb-2 font-semibold uppercase tracking-wide">Control Remote Device</p>
+                      <div className="h-8 bg-gray-200 rounded mb-3" />
+                      <div className="h-9 bg-gray-300 rounded-full" />
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  <div className="flex items-start gap-3 bg-cyan-50 border border-cyan-200 rounded-xl p-3">
+                    <span className="w-6 h-6 rounded-full bg-cyan-500 text-gray-900 text-xs font-bold flex items-center justify-center shrink-0">①</span>
+                    <p className="text-sm text-gray-700"><strong>Your ID</strong> — the large number on the left. This is your device address. It never changes.</p>
+                  </div>
+                  <div className="flex items-start gap-3 bg-cyan-50 border border-cyan-200 rounded-xl p-3">
+                    <span className="w-6 h-6 rounded-full bg-cyan-500 text-gray-900 text-xs font-bold flex items-center justify-center shrink-0">②</span>
+                    <p className="text-sm text-gray-700"><strong>One-Time Password</strong> — below the ID. It changes every session. Share it only with us.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-1">3) Send Your RustDesk Code</h2>
                 <p className="text-gray-500 text-sm mb-6">
                   Submit below, or send by text/email if that is easier.

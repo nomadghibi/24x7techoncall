@@ -18,6 +18,18 @@
       }
     },
     {
+      "src": "/sitemap\\.xml",
+      "dest": "/sitemap.xml"
+    },
+    {
+      "src": "/robots\\.txt",
+      "dest": "/robots.txt"
+    },
+    {
+      "src": "/google([A-Za-z0-9]+)\\.html",
+      "dest": "/google$1.html"
+    },
+    {
       "src": "/assets/(.*)",
       "headers": {
         "Cache-Control": "public, max-age=31536000, immutable"

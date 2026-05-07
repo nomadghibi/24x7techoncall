@@ -40,6 +40,24 @@ const primaryPhoneHref = 'tel:+13219535199';
 const primaryPhoneLabel = '(321) 953-5199';
 const googleReviewsUrl = 'https://www.google.com/maps/search/?api=1&query=24%2F7+Tech+On+Call';
 
+const remoteSupportSteps = [
+  {
+    icon: FaPhoneAlt,
+    title: '1. Call or Start Online',
+    text: 'Call us or open the remote support page so we know what problem you need fixed.',
+  },
+  {
+    icon: FaShieldAlt,
+    title: '2. Download RustDesk',
+    text: 'You approve the connection and stay in control while we connect securely to your device.',
+  },
+  {
+    icon: FaBolt,
+    title: '3. We Fix It Fast',
+    text: 'Most slow computer, Wi-Fi, printer, email, and malware issues are resolved the same day.',
+  },
+];
+
 const StarRating = ({ count = 5 }) => (
   <div className="flex gap-0.5 mb-3">
     {Array.from({ length: count }).map((_, i) => (
@@ -159,20 +177,20 @@ function Home() {
   return (
     <div>
       <Helmet>
-        <title>Nationwide Remote Tech Support 24/7 | 24/7 Tech On Call</title>
-        <meta name="description" content="24/7 Tech On Call provides professional remote tech support for homes and businesses nationwide." />
-        <meta name="keywords" content="remote tech support, remote IT support, 24/7 computer help, online computer repair, nationwide tech support, remote computer support, remote virus removal, remote data recovery" />
+        <title>Remote Tech Support for Homes and Businesses | 24/7 Tech On Call</title>
+        <meta name="description" content="Remote tech support for slow computers, virus removal, Wi-Fi problems, printer issues, and business IT help. Most issues fixed remotely, no visit required." />
+        <meta name="keywords" content="remote tech support, remote IT support, slow computer help, remote virus removal, wifi troubleshooting, printer help, business IT support, remote computer support" />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://24x7techoncall.com/" />
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Nationwide Remote Tech Support 24/7 | 24/7 Tech On Call" />
-        <meta property="og:description" content="Professional remote tech support for homes and businesses nationwide." />
+        <meta property="og:title" content="Remote Tech Support for Homes and Businesses | 24/7 Tech On Call" />
+        <meta property="og:description" content="Fast remote help for common computer problems, home tech issues, and business IT support." />
         <meta property="og:url" content="https://24x7techoncall.com/" />
         <meta property="og:image" content={heroImageSocial} />
         <meta property="og:locale" content="en_US" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="24/7 Tech On Call | Nationwide Remote Tech Support" />
-        <meta name="twitter:description" content="Remote computer support, IT help, virus removal, and data recovery across the USA." />
+        <meta name="twitter:title" content="24/7 Tech On Call | Remote Tech Support" />
+        <meta name="twitter:description" content="Remote help for slow computers, malware cleanup, Wi-Fi problems, printers, email, and business IT support." />
         <meta name="twitter:image" content={heroImageSocial} />
         <script type="application/ld+json">{JSON.stringify(localBusinessSchema)}</script>
       </Helmet>
@@ -195,26 +213,41 @@ function Home() {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80 flex items-center justify-center">
           <div className="text-center text-white px-6 max-w-4xl mx-auto">
             <span className="inline-block px-4 py-1.5 mb-5 text-xs font-bold uppercase tracking-widest text-cyan-400 border border-cyan-400/40 rounded-full bg-cyan-400/10">
-              Serving All 50 States
+              Remote Support Across All 50 States
             </span>
             <h1 className="mb-5 text-4xl sm:text-6xl font-extrabold leading-tight">
-              Expert IT Help Delivered to Your <span className="text-cyan-400">Screen</span><br className="hidden sm:block" /> — No Visit Required
+              Remote Tech Support for <span className="text-cyan-400">Homes and Businesses</span><br className="hidden sm:block" /> No Visit Required
             </h1>
             <p className="mb-7 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-              Fast remote support for homes and businesses across all 50 states.
+              Slow computer, virus pop-ups, Wi-Fi issues, printer problems, or business IT trouble? We fix most issues remotely while you watch.
             </p>
-            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-xl mx-auto">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center max-w-2xl mx-auto">
+              <a
+                href={primaryPhoneHref}
+                aria-label={`Call ${primaryPhoneLabel}`}
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-bold text-gray-900 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors shadow-lg"
+              >
+                <FaPhoneAlt className="w-4 h-4" /> Call {primaryPhoneLabel}
+              </a>
+              <Link
+                to="/rustdesk-support"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 font-bold text-white bg-gray-800 border border-gray-500 rounded-full hover:bg-gray-700 transition-colors shadow-lg"
+              >
+                Start Remote Support
+              </Link>
+            </div>
+            <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 max-w-xl mx-auto mt-4">
               <Link
                 to="/residential-services"
                 className="inline-flex items-center justify-center px-8 py-3.5 font-bold text-gray-900 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors shadow-lg"
               >
-                Residential Services
+                Residential Help
               </Link>
               <Link
                 to="/business-services"
                 className="inline-flex items-center justify-center px-8 py-3.5 font-bold text-white bg-gray-800 border border-gray-600 rounded-full hover:bg-gray-700 transition-colors shadow-lg"
               >
-                Business Services
+                Business IT Help
               </Link>
             </div>
             <div className="mt-4">
@@ -225,6 +258,37 @@ function Home() {
                 <FaQuestionCircle className="w-3.5 h-3.5" /> Not sure what's wrong? Diagnose My Issue
               </Link>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 bg-white border-b border-gray-100">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-8">
+            <p className="text-sm font-bold text-cyan-600 uppercase tracking-widest mb-2">How It Works</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Get Remote Help in 3 Simple Steps</h2>
+            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+              No store visit and no waiting for an on-site appointment. We connect securely and fix most issues remotely.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+            {remoteSupportSteps.map(({ icon: Icon, title, text }) => (
+              <article key={title} className="rounded-2xl border border-gray-100 bg-gray-50 p-6 shadow-sm text-center">
+                <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50">
+                  <Icon className="w-5 h-5 text-cyan-600" />
+                </div>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{title}</h3>
+                <p className="text-sm text-gray-600">{text}</p>
+              </article>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
+            <Link to="/rustdesk-support" className="inline-flex items-center gap-2 px-8 py-3 font-semibold text-white bg-gray-900 rounded-full hover:bg-gray-800 transition-colors">
+              Open Remote Support Page <FaArrowRight className="w-3.5 h-3.5" />
+            </Link>
+            <a href={primaryPhoneHref} className="inline-flex items-center gap-2 px-8 py-3 font-semibold text-cyan-700 bg-cyan-50 border border-cyan-200 rounded-full hover:bg-cyan-100 transition-colors">
+              <FaPhoneAlt className="w-3.5 h-3.5" /> Call First Instead
+            </a>
           </div>
         </div>
       </section>
@@ -259,7 +323,7 @@ function Home() {
             <p className="text-sm font-bold text-cyan-600 uppercase tracking-widest mb-2">What We Do</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">Our Services</h2>
             <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-              From quick fixes to full IT management — we keep your technology running so you don't have to worry.
+              From slow computers and virus cleanup to business help desk support, we solve the problems people call about most.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
@@ -427,14 +491,17 @@ function Home() {
       <section className="py-20 bg-gray-900 border-t-4 border-cyan-500 text-white text-center">
         <div className="container mx-auto px-6 max-w-2xl">
           <p className="text-sm font-bold text-cyan-400 uppercase tracking-widest mb-3">Get In Touch</p>
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Fix Your Tech?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Ready to Start Remote Support?</h2>
           <p className="text-lg text-gray-400 mb-8">
-            Call us, send a message, or book a service online. We're here Monday-Friday, 10:00 AM-5:00 PM.
+            Call now, start the remote support page, or send a message. We're here Monday-Friday, 10:00 AM-5:00 PM.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href={primaryPhoneHref} aria-label={`Call ${primaryPhoneLabel}`} className="flex items-center gap-2 px-7 py-3.5 font-bold text-gray-900 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors shadow-lg">
               <FaPhoneAlt className="w-4 h-4" /> {primaryPhoneLabel}
             </a>
+            <Link to="/rustdesk-support" className="px-7 py-3.5 font-semibold text-white border border-cyan-500 rounded-full hover:bg-cyan-500/10 transition-colors">
+              Start Remote Support
+            </Link>
             <Link to="/contact" className="px-7 py-3.5 font-semibold text-white border border-gray-600 rounded-full hover:bg-white/10 transition-colors">
               Send a Message
             </Link>

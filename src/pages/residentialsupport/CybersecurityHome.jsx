@@ -28,7 +28,7 @@ const CybersecurityHome = () => {
     { id: 'parental-controls', title: 'Parental Controls', description: 'Setting up controls to protect children online.', details: 'Our Parental Controls services offer content filtering, usage monitoring, time limits, safe search, and app restrictions.', icon: FaChalkboardTeacher },
     { id: 'security-audits', title: 'Security Audits', description: 'Conducting security audits to identify vulnerabilities.', details: 'Our Security Audits services include system scans, risk assessment, penetration testing, compliance checks, and actionable reports.', icon: FaDatabase },
     { id: 'regular-updates-maintenance', title: 'Regular Updates and Maintenance', description: 'Keeping your systems updated with the latest security patches.', details: 'Our Regular Updates and Maintenance services provide automated updates, patch management, system monitoring, performance tuning, and security enhancements.', icon: FaSync },
-    { id: 'consultation-support', title: 'Consultation and Support', description: 'Providing expert advice and ongoing support for cybersecurity.', details: 'Our Consultation and Support services offer personalized consultations, 24/7 support, incident response, security planning, and ongoing education.', icon: FaTools }
+    { id: 'consultation-support', title: 'Consultation and Support', description: 'Providing expert advice and ongoing support for cybersecurity.', details: 'Our Consultation and Support services offer personalized consultations, Monday-Friday support (10:00 AM-5:00 PM), incident response, security planning, and ongoing education.', icon: FaTools }
   ];
 
   const handleServiceClick = (service) => {

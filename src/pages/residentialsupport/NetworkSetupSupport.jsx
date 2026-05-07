@@ -21,7 +21,7 @@ const NetworkSetupSupport = () => {
     { id: 'vpn-setup', title: 'VPN Setup', description: 'Configuring virtual private networks for secure remote access.', details: 'Our VPN Setup services cover secure remote access, encryption configuration, multi-device support, access control, and VPN maintenance.', icon: FaKey },
     { id: 'network-monitoring', title: 'Network Monitoring', description: 'Continuous monitoring to prevent and address issues.', details: 'Our Network Monitoring services include real-time monitoring, alert systems, performance tracking, security monitoring, and report generation.', icon: FaEye },
     { id: 'firewall-configuration', title: 'Firewall Configuration', description: 'Setting up firewalls to protect against cyber threats.', details: 'Our Firewall Configuration services offer threat protection, access control, rule configuration, traffic monitoring, and regular updates.', icon: FaShieldAlt },
-    { id: 'consultation-support', title: 'Consultation and Support', description: 'Providing expert advice and ongoing support.', details: 'Our Consultation and Support services offer expert consultation, 24/7 support, custom solutions, system maintenance, and ongoing assistance.', icon: FaTools }
+    { id: 'consultation-support', title: 'Consultation and Support', description: 'Providing expert advice and ongoing support.', details: 'Our Consultation and Support services offer expert consultation, Monday-Friday support (10:00 AM-5:00 PM), custom solutions, system maintenance, and ongoing assistance.', icon: FaTools }
   ];
 
   const handleServiceClick = (service) => {

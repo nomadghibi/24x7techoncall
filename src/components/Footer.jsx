@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  FaFacebook, FaInstagram, FaGoogle,
+  FaGoogle,
   FaPhoneAlt, FaMapMarkerAlt, FaClock, FaEnvelope, FaArrowRight,
 } from 'react-icons/fa';
 
@@ -27,6 +27,7 @@ const serviceLinks = [
 
 function Footer() {
   const currentYear = new Date().getFullYear();
+  const googleReviewsUrl = 'https://www.google.com/maps/search/?api=1&query=24%2F7+Tech+On+Call';
 
   return (
     <footer className="bg-gray-900 text-gray-300 border-t-4 border-cyan-500">
@@ -42,18 +43,10 @@ function Footer() {
               <span className="block text-xs font-bold tracking-widest text-cyan-400 uppercase">Tech On Call</span>
             </div>
             <p className="text-sm text-gray-400 mb-6 leading-relaxed">
-              Your trusted remote IT experts, available 24/7 across the USA.
+              Your trusted remote IT experts serving customers across all 50 states.
             </p>
             <div className="flex items-center gap-3">
-              <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-cyan-500 hover:text-gray-900 transition-colors text-gray-400">
-                <FaFacebook className="w-4 h-4" />
-              </a>
-              <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram"
-                className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-cyan-500 hover:text-gray-900 transition-colors text-gray-400">
-                <FaInstagram className="w-4 h-4" />
-              </a>
-              <a href="https://www.google.com/search?q=24/7+Tech+On+Call" target="_blank" rel="noopener noreferrer" aria-label="Google Reviews"
+              <a href={googleReviewsUrl} target="_blank" rel="noopener noreferrer" aria-label="Google Reviews"
                 className="w-9 h-9 flex items-center justify-center rounded-full bg-gray-800 hover:bg-cyan-500 hover:text-gray-900 transition-colors text-gray-400">
                 <FaGoogle className="w-4 h-4" />
               </a>
@@ -120,7 +113,7 @@ function Footer() {
                 <div className="w-8 h-8 rounded-lg bg-gray-800 flex items-center justify-center shrink-0">
                   <FaClock className="w-3.5 h-3.5 text-cyan-400" />
                 </div>
-                <span className="pt-1">Mon – Fri: 9:00 AM – 6:00 PM</span>
+                <span className="pt-1">Mon - Fri: 10:00 AM - 5:00 PM</span>
               </li>
             </ul>
           </div>

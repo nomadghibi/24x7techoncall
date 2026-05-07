@@ -52,7 +52,7 @@ function LocationPage() {
     areaServed: { '@type': 'City', name: city, containedInPlace: { '@type': 'State', name: state } },
     serviceType: ['Remote Computer Support', 'Virus Removal', 'Software Troubleshooting', 'Data Recovery', 'Wi-Fi Help', 'Microsoft 365 Support'],
     openingHoursSpecification: [
-      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '09:00', closes: '18:00' },
+      { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday','Tuesday','Wednesday','Thursday','Friday'], opens: '10:00', closes: '17:00' },
     ],
   };
 
@@ -179,7 +179,7 @@ function LocationPage() {
             Need Tech Support in {city}?
           </h2>
           <p className="text-lg text-gray-400 mb-8">
-            Call us now or book online. We're available Monday–Friday, 9:00 AM–6:00 PM.
+            Call us now or book online. We're available Monday-Friday, 10:00 AM-5:00 PM.
           </p>
           <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <a href={PHONE_HREF}

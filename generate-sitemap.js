@@ -3,6 +3,7 @@ import { createWriteStream } from 'fs';
 import { SitemapStream, streamToPromise } from 'sitemap';
 import { resolve } from 'path';
 import { fileURLToPath } from 'url';
+import { locations } from './src/data/locations.js';
 
 // Get __dirname in ES modules
 const __filename = fileURLToPath(import.meta.url);
@@ -14,6 +15,7 @@ const staticRoutes = [
   '/diagnose-my-issue',
   '/price-estimator',
   '/quick-tech-help',
+  '/rustdesk-support',
   '/residential-services',
   '/residential-support/pc-laptop-repairs',
   '/residential-support/virus-malware-removal',
@@ -88,6 +90,7 @@ const staticRoutes = [
   '/blog/how-chatgpt-is-transforming-customer-support',
   '/book-service',
   '/subscribe',
+  '/service-areas',
   '/newsletters/best-computer-tech-monthly-newsletter-2026-01-agents-become-co-workers.pdf',
   '/newsletters/best-computer-tech-monthly-newsletter-2026-02-identity-first-security-beating-ai-powered-phishing-and-fraud.pdf',
   '/newsletters/best-computer-tech-monthly-newsletter-2025-01-agents-become-co-workers.pdf',
@@ -106,8 +109,11 @@ const staticRoutes = [
   '/about-us',
 ];
 
+const locationRoutes = locations.map((location) => `/tech-support/${location.slug}`);
+const allRoutes = [...new Set([...staticRoutes, ...locationRoutes])];
+
 // Transform staticRoutes into the format expected by SitemapStream
-const links = staticRoutes.map((route) => ({
+const links = allRoutes.map((route) => ({
   url: route,
   changefreq: 'weekly', // Set a default changefreq
   priority: 0.8, // Set a default priority

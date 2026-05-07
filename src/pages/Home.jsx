@@ -31,15 +31,6 @@ const homeBlogPool = [
   { title: 'How to Secure Your Business Network', summary: 'Strengthen network security with segmentation, firewall hardening, and clear response planning.', link: '/blog/how-to-secure-your-business-network', date: 'December 18, 2025', image: blogImage8 },
 ];
 
-const pickRandomPosts = (posts, count) => {
-  const shuffled = [...posts];
-  for (let i = shuffled.length - 1; i > 0; i -= 1) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
-  }
-  return shuffled.slice(0, count);
-};
-
 const heroImageMobile  = '/hero-home-640.jpg';
 const heroImageMid     = '/hero-home-768.jpg';
 const heroImageLarge   = '/hero-home-896.jpg';
@@ -158,7 +149,7 @@ function Home() {
     { name: 'Dan Johnson',  feedback: 'I needed urgent help with my network setup and the team came through with flying colors. Fast and reliable remote service.', date: 'May 30, 2023' },
   ], []);
 
-  const blogPosts = useMemo(() => pickRandomPosts(homeBlogPool, 3), []);
+  const blogPosts = useMemo(() => homeBlogPool.slice(0, 3), []);
 
   const { ref: servicesRef,     inView: servicesInView }     = useInView({ triggerOnce: true, threshold: 0.1 });
   const { ref: whyUsRef,        inView: whyUsInView }        = useInView({ triggerOnce: true, threshold: 0.1 });

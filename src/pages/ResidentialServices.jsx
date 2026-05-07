@@ -184,6 +184,62 @@ const trustPoints = [
   },
 ];
 
+const commonProblems = [
+  {
+    title: 'Computer running slow',
+    symptom: 'Slow startup, lag, and freezing during normal use.',
+    route: '/residential-support/pc-tune-up',
+  },
+  {
+    title: 'Pop-ups and virus warnings',
+    symptom: 'Fake alerts, browser redirects, and suspicious apps.',
+    route: '/residential-support/virus-malware-removal',
+  },
+  {
+    title: 'Wi-Fi keeps disconnecting',
+    symptom: 'Dropped calls, buffering, and weak room-to-room signal.',
+    route: '/residential-support/wifi-internet-help',
+  },
+  {
+    title: 'Printer not printing',
+    symptom: 'Offline printer, driver errors, and scan failures.',
+    route: '/residential-support/email-printer-software',
+  },
+  {
+    title: 'Email not sending or receiving',
+    symptom: 'Outlook sync issues, login loops, and password prompts.',
+    route: '/residential-support/email-printer-software',
+  },
+  {
+    title: 'New computer setup problems',
+    symptom: 'Need transfer of files, apps, accounts, and printer setup.',
+    route: '/residential-support/new-computer-setup',
+  },
+];
+
+const residentialFaqs = [
+  {
+    question: 'Can you fix my computer remotely?',
+    answer: 'Yes. Most home computer issues can be diagnosed and resolved remotely without an in-home visit.',
+  },
+  {
+    question: 'What residential tech problems do you fix most often?',
+    answer: 'The most common issues are slow computers, malware or pop-up infections, Wi-Fi drops, printer setup failures, and email problems.',
+  },
+  {
+    question: 'Do you help with printer and email setup?',
+    answer: 'Yes. We troubleshoot printer connection problems, driver issues, and email setup or sync errors for home users.',
+  },
+  {
+    question: 'How fast can I get support?',
+    answer: 'We provide support Monday-Friday from 10:00 AM to 5:00 PM and resolve most common issues the same day.',
+  },
+  {
+    question: 'Do you support Windows and Mac?',
+    answer: 'Yes. We support both Windows and Mac computers and can guide multi-device home setups.',
+  },
+];
+
 const annualBenefits = [
   'Coverage for 2 computers and 1 printer',
   'Unlimited virus cleanup as needed',
@@ -202,6 +258,18 @@ function ResidentialServices() {
   const pageImage = heroImage?.startsWith('http')
     ? heroImage
     : `https://24x7techoncall.com${heroImage || ''}`;
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: residentialFaqs.map((faq) => ({
+      '@type': 'Question',
+      name: faq.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: faq.answer,
+      },
+    })),
+  };
 
   const handleServiceClick = useCallback((serviceId) => {
     const service = services.find((item) => item.id === serviceId);
@@ -226,11 +294,11 @@ function ResidentialServices() {
         <title>Residential Remote Tech Support | 24/7 Tech On Call</title>
         <meta
           name="description"
-          content="Residential remote tech support made simple. Fast help for computer repair, virus removal, Wi-Fi issues, email, printers, and new computer setup."
+          content="Residential remote tech support for common home computer problems: slow PC, virus removal, Wi-Fi issues, printer not printing, and email setup help."
         />
         <meta
           name="keywords"
-          content="residential tech support, home computer support, remote virus removal, wifi help, printer setup, senior tech help"
+          content="home computer repair, slow computer fix, virus removal service, wifi troubleshooting, printer not printing fix, email setup support, residential tech support"
         />
         <link rel="canonical" href={canonicalUrl} />
         <meta name="robots" content="index, follow" />
@@ -249,6 +317,7 @@ function ResidentialServices() {
           content="Home tech support made simple: repair, malware cleanup, Wi-Fi help, and setup assistance."
         />
         <meta name="twitter:image" content={pageImage} />
+        <script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
       </Helmet>
 
       <section
@@ -266,10 +335,10 @@ function ResidentialServices() {
             For Home Customers
           </p>
           <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-            Home Tech Help, Made Simple
+            Home Tech Help for Common Computer Problems
           </h1>
           <p className="mt-3 text-cyan-100 text-lg max-w-2xl">
-            Choose a residential service below. We fix most problems remotely while you watch.
+            Fast remote support for slow computers, virus pop-ups, Wi-Fi drops, printer errors, and email issues.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 mt-6">
             <a
@@ -399,6 +468,28 @@ function ResidentialServices() {
         </div>
       </section>
 
+      <section className="py-14 bg-white border-y border-gray-100">
+        <div className="container mx-auto px-6 max-w-6xl">
+          <div className="text-center mb-8">
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-600 mb-2">Common Issues We Fix</p>
+            <h2 className="text-3xl font-bold text-gray-900">Most Common Home Tech Problems</h2>
+            <p className="text-sm text-gray-500 mt-2">Click a problem to go straight to the matching service.</p>
+          </div>
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {commonProblems.map((problem) => (
+              <Link
+                key={problem.title}
+                to={problem.route}
+                className="rounded-xl border border-gray-200 bg-gray-50 p-5 hover:border-cyan-300 hover:bg-cyan-50 transition-colors"
+              >
+                <h3 className="text-base font-bold text-gray-900 mb-1">{problem.title}</h3>
+                <p className="text-sm text-gray-600">{problem.symptom}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="py-16 bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm">
@@ -479,6 +570,23 @@ function ResidentialServices() {
             >
               Contact Us
             </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-14 bg-white">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <div className="text-center mb-8">
+            <p className="text-sm font-semibold uppercase tracking-widest text-cyan-600 mb-2">Residential FAQ</p>
+            <h2 className="text-3xl font-bold text-gray-900">Questions Home Users Ask Most</h2>
+          </div>
+          <div className="space-y-4">
+            {residentialFaqs.map((faq) => (
+              <article key={faq.question} className="rounded-xl border border-gray-200 bg-gray-50 p-5">
+                <h3 className="text-base font-bold text-gray-900 mb-1">{faq.question}</h3>
+                <p className="text-sm text-gray-600">{faq.answer}</p>
+              </article>
+            ))}
           </div>
         </div>
       </section>
